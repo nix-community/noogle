@@ -14,6 +14,8 @@ Noogle is a Nix API search engine. It allows you to search functions based on th
 
 The idea is to use a fork of `nixdoc`to generate json data from all functions. That have the `Type` field which is currently supported from nixdoc.
 
+View the prototype [here](https://hsjobeki.github.io/noogle/)
+
 ## Contrbute
 
 ### Build this page
