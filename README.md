@@ -1,4 +1,4 @@
-# Noogle
+# [Noogle](https://hsjobeki.github.io/noogle/)
 
 Noogle is a Nix API search engine. It allows you to search functions based on their types and other attributes in `nix` projects. In `nixpkgs` especially the `builtins` and `lib` attributes.
 
