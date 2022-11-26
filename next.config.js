@@ -5,6 +5,8 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
+  basePath: "/noogle",
+  assetPrefix: "/noogle/",
 };
 
 module.exports = nextConfig;
