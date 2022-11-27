@@ -8,11 +8,10 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { info } from "console";
-import { FuncData } from "../../pages";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
+import { FuncData } from "../../types/nix";
 
 interface PreviewProps {
   func: FuncData;

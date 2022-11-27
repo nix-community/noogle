@@ -18,8 +18,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import ClearIcon from "@mui/icons-material/Clear";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { nixTypes } from "../../models/nix";
-import { NixType } from "../../types/nix";
+import { NixType, nixTypes } from "../../types/nix";
 
 export type BasicListItem = {
   item: React.ReactNode;
