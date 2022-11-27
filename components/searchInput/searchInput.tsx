@@ -57,7 +57,12 @@ export function SearchInput(props: SearchInputProps) {
       </IconButton>
       <InputBase
         autoFocus
-        sx={{ ml: 1, flex: 1, backgroundColor: "#fff", p: 1 }}
+        sx={{
+          ml: 1,
+          flex: 1,
+          backgroundColor: "paper.main",
+          p: 1,
+        }}
         placeholder={placeholder}
         inputProps={{ "aria-label": "search-input" }}
         value={term}

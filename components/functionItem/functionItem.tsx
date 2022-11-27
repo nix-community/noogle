@@ -25,6 +25,8 @@ export default function FunctionItem(props: FunctionItemProps) {
       sx={{
         display: "flex",
         justifyContent: "left",
+        px: 2,
+        py: 1,
         color: selected ? "primary.main" : undefined,
         borderColor: selected ? "action.selected" : "none",
         borderWidth: 1,

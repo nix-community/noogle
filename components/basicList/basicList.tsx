@@ -9,7 +9,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-import { BasicDataViewProps, NixType } from "../../types/basicDataView";
+import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -18,6 +18,8 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import ClearIcon from "@mui/icons-material/Clear";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { nixTypes } from "../../models/nix";
+import { NixType } from "../../types/nix";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -106,14 +108,7 @@ export function BasicList(props: BasicListProps) {
     setSearchTerm(term);
     setPage(1);
   };
-  const nixTypes: NixType[] = [
-    "any",
-    "attrset",
-    "list",
-    "string",
-    "bool",
-    "int",
-  ];
+
   return (
     <Stack>
       <SearchInput
@@ -123,7 +118,7 @@ export function BasicList(props: BasicListProps) {
       />
       <Box>
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item xs={12} lg={3}>
             <Stack direction="row">
               <SelectOption
                 label="from type"
@@ -150,7 +145,7 @@ export function BasicList(props: BasicListProps) {
               />
             </Stack>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={12} lg={9}>
             {preview}
           </Grid>
         </Grid>

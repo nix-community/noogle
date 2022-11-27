@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType } from "../types/basicDataView";
 import { Preview } from "../components/preview/preview";
+import { nixTypes } from "../models/nix";
 
 const libfuns = {
   mapAttrs: {
@@ -379,18 +380,20 @@ const search =
 const filter =
   (to: NixType, from: NixType) =>
   (data: FuncData[]): FuncData[] => {
-    return data.filter(({ info }) => info.from === from && info.to === to);
+    return data.filter(
+      ({ info }) => from.includes(info.from) && to.includes(info.to)
+    );
   };
 
+const initialTypes = nixTypes;
 export default function FunctionsPage() {
-  // const [visibleFuncs, setVisibleFuncs] = useState(mockData);
   const [selected, setSelected] = useState<string | null>(null);
   const [term, setTerm] = useState<string>("");
-  const [to, setTo] = useState<NixType>("any");
-  const [from, setFrom] = useState<NixType>("any");
+  const [to, setTo] = useState<NixType[]>(initialTypes);
+  const [from, setFrom] = useState<NixType[]>(initialTypes);
 
   const handleSelect = (key: string) => {
-    setSelected((curr) => {
+    setSelected((curr: string | null) => {
       if (curr === key) {
         return null;
       } else {
@@ -409,11 +412,17 @@ export default function FunctionsPage() {
   };
 
   const handleFilter = (t: NixType, mode: "to" | "from") => {
+    let filterBy;
+    if (t === "any") {
+      filterBy = nixTypes;
+    } else {
+      filterBy = [t];
+    }
     if (mode === "from") {
-      setFrom(t);
+      setFrom(filterBy);
     }
     if (mode === "to") {
-      setTo(t);
+      setTo(filterBy);
     }
   };
 
