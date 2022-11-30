@@ -4,7 +4,7 @@ const darkThemeOptions: ThemeOptions = {
   palette: {
     mode: "dark",
     background: {
-      paper: "#031456"
+      paper: "#031456 "
     },
     primary: {
       main: "#6586c8"

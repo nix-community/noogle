@@ -56,11 +56,7 @@ const SelectOption = (props: SelectOptionProps) => {
     <FormControl>
       <FormLabel>
         <Box>
-          <IconButton
-            // disabled={value === ""}
-            aria-label="clear-button"
-            onClick={handleClear}
-          >
+          <IconButton aria-label="clear-button" onClick={handleClear}>
             <ClearIcon />
           </IconButton>
           {label}
