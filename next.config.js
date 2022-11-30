@@ -13,7 +13,7 @@ const nextConfig = (phase, { defaultConfig }) => {
     },
   };
   if (phase !== PHASE_DEVELOPMENT_SERVER) {
-    return { ...config, basePath: "/noogle", assetPrefix: "/noogle/" };
+    return { ...config, basePath: "", assetPrefix: "" };
   }
   return config;
 };
