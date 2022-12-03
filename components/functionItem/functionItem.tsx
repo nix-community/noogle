@@ -1,28 +1,19 @@
-import {
-  Box,
-  Card,
-  ListItemText,
-  Paper,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { ListItemText, Paper, Stack, Typography } from "@mui/material";
+import { DocItem } from "../../types/nix";
 
 interface FunctionItemProps {
   selected: boolean;
   name: String;
-  info: {
-    "attr-path": String;
-    source: String;
-    from: String;
-    to: String;
-  };
+  docItem: DocItem;
 }
 export default function FunctionItem(props: FunctionItemProps) {
-  const { name, info, selected } = props;
+  const { name, docItem, selected } = props;
+  const { fn_type, category } = docItem;
   return (
     <Paper
       elevation={0}
       sx={{
+        cursor: "pointer",
         display: "flex",
         justifyContent: "left",
         px: 2,
@@ -31,11 +22,14 @@ export default function FunctionItem(props: FunctionItemProps) {
         borderColor: selected ? "action.selected" : "none",
         borderWidth: 1,
         borderStyle: selected ? "solid" : "none",
+        "&:hover": {
+          backgroundColor: "action.hover",
+        },
       }}
     >
       <Stack>
-        <ListItemText primary={name} secondary={info["attr-path"]} />
-        <Typography>{`${info.from} -> ${info.to} `}</Typography>
+        <ListItemText primary={name} secondary={category} />
+        <Typography>{`${fn_type} `}</Typography>
       </Stack>
     </Paper>
   );

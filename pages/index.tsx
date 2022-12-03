@@ -2,23 +2,23 @@ import { BasicList, BasicListItem } from "../components/basicList";
 import { useState, useMemo } from "react";
 import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
-import { NixType, nixTypes, FuncData } from "../types/nix";
-import { nixFuns } from "../models/nix";
+import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
 import { Preview } from "../components/preview/preview";
+import metadata from "../models/data.json";
+// const mockData: FuncData[] = Object.entries(nixFuns).map(([key, value]) => ({
+//   name: key,
+//   info: value,
+// }));
 
-const mockData: FuncData[] = Object.entries(nixFuns).map(([key, value]) => ({
-  name: key,
-  info: value,
-}));
+const data: MetaData = metadata as MetaData;
 
-const pipe =
-  (...fns: ((arr: FuncData[]) => FuncData[])[]) =>
-  (x: FuncData[]) =>
-    fns.reduce((v, f) => f(v), x);
+function pipe<T>(...fns: ((arr: T) => T)[]) {
+  return (x: T) => fns.reduce((v, f) => f(v), x);
+}
 
 const search =
   (term: string) =>
-  (data: FuncData[]): FuncData[] => {
+  (data: MetaData): MetaData => {
     return data.filter((item) => {
       return Object.values(item).some((value) => {
         const valueAsString = value.toString();
@@ -26,11 +26,44 @@ const search =
       });
     });
   };
+
+const preProcess = (a: string | undefined) => {
+  if (a?.match(/\[(.*)\]/)) {
+    return "list";
+  }
+  if (a?.toLowerCase()?.includes("attrset")) {
+    return "attrset";
+  }
+  return a;
+};
 const filter =
   (to: NixType[], from: NixType[]) =>
-  (data: FuncData[]): FuncData[] => {
+  (data: MetaData): MetaData => {
     return data.filter(
-      ({ info }) => from.includes(info.from) && to.includes(info.to)
+      // TODO: Implement proper type matching
+      ({ name, fn_type }) => {
+        if (fn_type) {
+          const args = fn_type.split("->");
+          const front = args.slice(0, -1);
+          let firstTerm = front.at(0);
+          if (firstTerm?.includes("::")) {
+            firstTerm = firstTerm.split("::").at(1);
+          }
+          const inpArgs = [firstTerm, ...front.slice(1, -1)];
+          const parsedInpTypes = inpArgs.map(preProcess);
+          // const fn_from =
+          const fn_to = args.at(-1);
+          const parsedOutType = preProcess(fn_to);
+          if (name.includes("escapeShellArgs")) {
+            console.log({ args, inp_args: inpArgs, fn_to });
+          }
+          return (
+            from.some((f) => parsedInpTypes.join(" ").includes(f)) &&
+            to.some((t) => parsedOutType?.includes(t))
+          );
+        }
+        return false;
+      }
     );
   };
 
@@ -52,7 +85,7 @@ export default function FunctionsPage() {
   };
 
   const filteredData = useMemo(
-    () => pipe(filter(to, from), search(term))(mockData),
+    () => pipe(filter(to, from), search(term))(data),
     [to, from, term]
   );
 
@@ -76,23 +109,27 @@ export default function FunctionsPage() {
   };
 
   const preRenderedItems: BasicListItem[] = filteredData.map(
-    ({ name, info }) => ({
+    (docItem: DocItem) => ({
       item: (
         <Box
           sx={{
             width: "100%",
             height: "100%",
           }}
-          onClick={() => handleSelect(name)}
+          onClick={() => handleSelect(docItem.name)}
         >
-          <FunctionItem name={name} info={info} selected={selected === name} />
+          <FunctionItem
+            name={docItem.name}
+            docItem={docItem}
+            selected={selected === docItem.name}
+          />
         </Box>
       ),
-      key: name,
+      key: docItem.name,
     })
   );
   const preview = (
-    <Preview func={mockData.find((f) => f.name === selected) || mockData[0]} />
+    <Preview docItem={data.find((f) => f.name === selected) || data[0]} />
   );
 
   return (

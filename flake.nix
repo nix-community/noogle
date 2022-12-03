@@ -1,10 +1,12 @@
 {
   inputs.dream2nix.url = "github:nix-community/dream2nix";
+  inputs.nixdoc-fork.url = "github:hsjobeki/nixdoc";
   outputs = inp:
   let
+    system = "x86_64-linux";
     inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
   in                              
-    inp.dream2nix.lib.makeFlakeOutputs {
+    (inp.dream2nix.lib.makeFlakeOutputs {
       systemsFromFile = ./nix_systems;
       config.projectRoot = ./.;
       source = ./.;
@@ -15,6 +17,9 @@
       ];
       packageOverrides = {
         ${name}.staticPage = {
+          preBuild = ''
+          cp ${inp.nixdoc-fork.packages.${system}.data} ./models/data.json
+          '';
           installPhase = ''
             runHook preInstall
 
@@ -26,5 +31,9 @@
           '';
         };
       };
-    };
+    }); 
+    # // {
+    #   packages.${system}.nixi = inp.nixdoc-fork.packages.${system}.data;
+    # };
+
 }

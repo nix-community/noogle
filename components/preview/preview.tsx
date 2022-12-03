@@ -8,46 +8,77 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import Highlight from "react-highlight";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
-import OutputIcon from "@mui/icons-material/Output";
-import { FuncData } from "../../types/nix";
-
+import { DocItem } from "../../types/nix";
+import CodeIcon from "@mui/icons-material/Code";
 interface PreviewProps {
-  func: FuncData;
+  docItem: DocItem;
 }
 
 export const Preview = (props: PreviewProps) => {
-  const { func } = props;
+  const { docItem } = props;
+  const { name, description, category, example, fn_type } = docItem;
+
+  const prefix = category.split(/([\/.])/gm).at(4);
   return (
     <Box sx={{ p: 1, width: "100%" }}>
-      <Typography variant="h2">{func.name}</Typography>
+      <Typography variant="h2">{`${prefix}.${name}`}</Typography>
       <List sx={{ width: "100%" }}>
         <ListItem>
           <ListItemIcon>
             <LocalLibraryIcon />
           </ListItemIcon>
           <ListItemText
-            primary={func.info["attr-path"]}
-            secondary={func.info["doc-url"]}
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            primary={category.replace("./", "nixpkgs/")}
+            secondary={description}
           />
           <ListItemSecondaryAction>
-            <Link href={func.info["doc-url"]}>View Docs</Link>
+            <Link href={"#"}>View Docs</Link>
           </ListItemSecondaryAction>
         </ListItem>
         <ListItem>
           <ListItemIcon>
             <InputIcon />
           </ListItemIcon>
-          <ListItemText primary={func.info.from} secondary="argument type" />
+          <ListItemText
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            primary={fn_type}
+            secondary="function signature"
+          />
         </ListItem>
-        <ListItem>
+        <ListItem
+          sx={{
+            backgroundColor: "background.paper",
+          }}
+        >
           <ListItemIcon>
-            <OutputIcon />
+            <CodeIcon />
           </ListItemIcon>
-          <ListItemText primary={func.info.to} secondary="return type" />
+          <ListItemText
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            disableTypography
+            primary={
+              <Typography sx={{ color: "text.secondary" }}>Example</Typography>
+            }
+            secondary={
+              <Box sx={{ mt: -2, pl: 1.5 }}>
+                <Highlight className="nix">{example}</Highlight>
+              </Box>
+            }
+          />
         </ListItem>
-        <ListItem></ListItem>
       </List>
     </Box>
   );
