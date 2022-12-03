@@ -32,6 +32,7 @@ export type BasicListProps = BasicDataViewProps & {
 interface SelectOptionProps {
   label: string;
   handleChange: (value: string) => void;
+  selected?: string;
   options: {
     value: string;
     label: string;
@@ -53,17 +54,32 @@ const SelectOption = (props: SelectOptionProps) => {
   };
 
   return (
-    <FormControl>
-      <FormLabel>
-        <Box>
+    <FormControl
+      sx={{
+        // pl: 1.5,
+        flexDirection: "row",
+      }}
+    >
+      <FormLabel sx={{ width: "11rem", wordWrap: "unset" }}>
+        <Typography>
           <IconButton aria-label="clear-button" onClick={handleClear}>
             <ClearIcon />
           </IconButton>
           {label}
-        </Box>
+        </Typography>
       </FormLabel>
 
-      <RadioGroup sx={{ pl: 1.5 }} value={value} onChange={_handleChange}>
+      <RadioGroup
+        sx={{
+          // pl: 1.5,
+          width: "100%",
+          "&.MuiFormGroup-root": {
+            flexDirection: "row",
+          },
+        }}
+        value={value}
+        onChange={_handleChange}
+      >
         {options.map(({ value, label }) => (
           <FormControlLabel
             key={value}
@@ -78,7 +94,14 @@ const SelectOption = (props: SelectOptionProps) => {
 };
 
 export function BasicList(props: BasicListProps) {
-  const { items, pageCount = 1, handleSearch, handleFilter, preview } = props;
+  const {
+    items,
+    pageCount = 1,
+    handleSearch,
+    handleFilter,
+    preview,
+    selected = "",
+  } = props;
   // const [from, setFrom] = useState<NixType>("any");
   // const [to, setTo] = useState<NixType>("any");
 
@@ -112,44 +135,69 @@ export function BasicList(props: BasicListProps) {
         clearSearch={() => _handleSearch("")}
       />
       <Box>
+        {/* <Stack direction="row"> */}
         <Grid container>
-          <Grid item xs={12} lg={3}>
-            <Stack direction="row">
-              <SelectOption
-                label="from type"
-                handleChange={(value) => {
-                  _handleFilter(value as NixType, "from");
-                }}
-                options={nixTypes.map((v) => ({ value: v, label: v }))}
-              />
-              <Typography
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
-              >
-                <ChevronRightIcon />
-              </Typography>
-              <SelectOption
-                label="to type"
-                handleChange={(value) => {
-                  _handleFilter(value as NixType, "to");
-                }}
-                options={nixTypes.map((v) => ({ value: v, label: v }))}
-              />
-            </Stack>
+          <Grid item xs={12} md={5}>
+            <SelectOption
+              label="from type"
+              handleChange={(value) => {
+                _handleFilter(value as NixType, "from");
+              }}
+              options={nixTypes.map((v) => ({ value: v, label: v }))}
+            />
           </Grid>
-          <Grid item xs={12} lg={9}>
-            {preview}
+          <Grid
+            item
+            md={2}
+            sx={{
+              display: {
+                md: "flex",
+                xs: "none",
+              },
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+            // sx={{
+            //   width: "100%",
+            //   display: "flex",
+            //   justifyContent: "center",
+            //   alignItems: "center",
+            //   // flexDirection: "column",
+            // }}
+            >
+              <ChevronRightIcon />
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <SelectOption
+              label="to type"
+              handleChange={(value) => {
+                _handleFilter(value as NixType, "to");
+              }}
+              options={nixTypes.map((v) => ({ value: v, label: v }))}
+            />
           </Grid>
         </Grid>
+        {/* </Stack> */}
       </Box>
       <List aria-label="basic-list" sx={{ pt: 0 }}>
         {items.map(({ item, key }) => (
-          <ListItem key={key} aria-label={`item-${key}`} sx={{ px: 0 }}>
-            {item}
-          </ListItem>
+          <>
+            {key === selected && (
+              <ListItem
+                key={`${key}-preview`}
+                aria-label={`item-${key}`}
+                sx={{ px: 0 }}
+              >
+                {preview}
+              </ListItem>
+            )}
+            <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
+              {item}
+            </ListItem>
+          </>
         ))}
       </List>
 

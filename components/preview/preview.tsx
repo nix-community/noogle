@@ -32,7 +32,17 @@ export const Preview = (props: PreviewProps) => {
     ?.replace(".nix", "");
   const docsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${name}`;
   return (
-    <Box sx={{ p: 1, width: "100%" }}>
+    <Box
+      sx={{
+        p: 1,
+        pt: 2,
+        mt: 2,
+        mb: -2,
+        width: "100%",
+        borderTop: "solid 1px",
+        borderTopColor: "primary.main",
+      }}
+    >
       <Typography variant="h2">{`${prefix}.${name}`}</Typography>
       <List sx={{ width: "100%" }}>
         <ListItem>

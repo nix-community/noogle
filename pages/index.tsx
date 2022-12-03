@@ -5,10 +5,6 @@ import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
 import { Preview } from "../components/preview/preview";
 import metadata from "../models/data.json";
-// const mockData: FuncData[] = Object.entries(nixFuns).map(([key, value]) => ({
-//   name: key,
-//   info: value,
-// }));
 
 const data: MetaData = metadata as MetaData;
 
@@ -57,9 +53,6 @@ const filter =
           // const fn_from =
           const fn_to = args.at(-1);
           const parsedOutType = preProcess(fn_to);
-          if (name.includes("escapeShellArgs")) {
-            console.log({ args, inp_args: inpArgs, fn_to });
-          }
           return (
             from.some((f) => parsedInpTypes.join(" ").includes(f)) &&
             to.some((t) => parsedOutType?.includes(t))
@@ -138,6 +131,7 @@ export default function FunctionsPage() {
   return (
     <Box sx={{ ml: 2 }}>
       <BasicList
+        selected={selected}
         items={preRenderedItems}
         handleSearch={handleSearch}
         handleFilter={handleFilter}

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Image } from "../image";
 import nixSnowflake from "../../public/nix-snowflake.svg";
+import nixWhite from "../../public/white.svg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 // import Link from "next/link";
 export interface LayoutProps {
@@ -21,15 +22,15 @@ export function Layout(props: LayoutProps) {
   return (
     <Box
       sx={{
+        height: "100vh",
+        overflow: "hidden",
         bgcolor:
           theme.palette.mode === "light"
             ? "rgb(242, 248, 253)"
             : "rgb(23, 17, 22)",
       }}
     >
-      <header
-      // style={{ position: "sticky", top: 0, width: "100%", zIndex: 100 }}
-      >
+      <header>
         <Box
           sx={{
             position: "fixed",
@@ -46,7 +47,13 @@ export function Layout(props: LayoutProps) {
 
         <Box
           sx={{
-            p: 2,
+            position: "fixed",
+            top: 0,
+            width: "100%",
+            p: 1,
+            zIndex: 1,
+            borderBottomRightRadius: 16,
+            borderBottomLeftRadius: 16,
             backgroundColor:
               theme.palette.mode === "light"
                 ? "primary.main"
@@ -54,7 +61,7 @@ export function Layout(props: LayoutProps) {
           }}
         >
           <Typography
-            variant="h1"
+            variant="h2"
             sx={{
               textAlign: "center",
               color: "#fff",
@@ -64,35 +71,44 @@ export function Layout(props: LayoutProps) {
               sx={{
                 display: {
                   xs: "none",
-                  md: "block",
+                  md: "inline-block",
                 },
               }}
+              component="span"
             >
               <Image
-                src={nixSnowflake}
+                src={nixWhite}
                 alt="nix-logo"
-                height={90}
+                height={50}
                 style={{
-                  marginBottom: "-1rem",
+                  marginBottom: "-0.5rem",
                 }}
               />
             </Box>
             <Box sx={{ ml: 1 }} component="span">{`noog\u03BBe`}</Box>
-            <IconButton sx={{ float: "right", top: "1em", right: "1em" }}>
-              <GitHubIcon
-                fontSize="large"
-                sx={{
-                  display: {
-                    xs: "none",
-                    md: "block",
-                  },
-                }}
-              />
-            </IconButton>
+            <Link href="https://github.com/hsjobeki/noogle">
+              <IconButton sx={{ float: "right", top: "0.5em", right: "1em" }}>
+                <GitHubIcon
+                  fontSize="large"
+                  sx={{
+                    display: {
+                      xs: "none",
+                      md: "inline-block",
+                    },
+                  }}
+                />
+              </IconButton>
+            </Link>
           </Typography>
         </Box>
       </header>
-      <main>
+      <main
+        style={{
+          marginTop: "6em",
+          maxHeight: "calc(100vh - 8em)",
+          overflowY: "scroll",
+        }}
+      >
         <Container sx={{ pt: 0 }} maxWidth="xl">
           {children}
         </Container>
