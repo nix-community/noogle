@@ -27,7 +27,7 @@ export type BasicListItem = {
 export type BasicListProps = BasicDataViewProps & {
   handleFilter: (t: NixType, mode: "from" | "to") => void;
   preview: React.ReactNode;
-  selected?: string;
+  selected?: string | null;
 };
 
 interface SelectOptionProps {
