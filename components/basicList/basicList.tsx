@@ -27,12 +27,13 @@ export type BasicListItem = {
 export type BasicListProps = BasicDataViewProps & {
   handleFilter: (t: NixType, mode: "from" | "to") => void;
   preview: React.ReactNode;
+  selected?: string;
 };
 
 interface SelectOptionProps {
   label: string;
   handleChange: (value: string) => void;
-  selected?: string;
+
   options: {
     value: string;
     label: string;
