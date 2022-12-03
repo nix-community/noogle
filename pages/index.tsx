@@ -21,8 +21,11 @@ const search =
   (data: MetaData): MetaData => {
     return data.filter((item) => {
       return Object.values(item).some((value) => {
-        const valueAsString = value.toString();
-        return valueAsString.toLowerCase().includes(term.toLocaleLowerCase());
+        if (value) {
+          const valueAsString = value.toString();
+          return valueAsString.toLowerCase().includes(term.toLocaleLowerCase());
+        }
+        return false;
       });
     });
   };
