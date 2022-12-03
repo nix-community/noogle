@@ -8,8 +8,11 @@ import {
   Stack,
   Typography,
   Grid,
+  Slide,
+  Collapse,
+  Grow,
 } from "@mui/material";
-import { BasicDataViewProps } from "../../types/basicDataView";
+import { BasicDataItem, BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -127,6 +130,17 @@ export function BasicList(props: BasicListProps) {
     setSearchTerm(term);
     setPage(1);
   };
+  // const refs = items.forEach(({,key})=>({key: React.createRef()))
+  const refs: {
+    [key: string]: React.RefObject<HTMLLIElement>;
+  } = React.useMemo(
+    () =>
+      items.reduce(
+        (prev, curr) => ({ [curr.key]: React.createRef(), ...prev }),
+        {}
+      ),
+    [items]
+  );
 
   return (
     <Stack>
@@ -185,8 +199,14 @@ export function BasicList(props: BasicListProps) {
       </Box>
       <List aria-label="basic-list" sx={{ pt: 0 }}>
         {items.map(({ item, key }) => (
-          <>
-            {key === selected && (
+          <Box key={key}>
+            <Slide
+              direction="up"
+              in={key === selected}
+              mountOnEnter
+              unmountOnExit
+              container={refs[key]?.current}
+            >
               <ListItem
                 key={`${key}-preview`}
                 aria-label={`item-${key}`}
@@ -194,11 +214,17 @@ export function BasicList(props: BasicListProps) {
               >
                 {preview}
               </ListItem>
-            )}
-            <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
+              {/* )} */}
+            </Slide>
+            <ListItem
+              sx={{ px: 0 }}
+              key={key}
+              aria-label={`item-${key}`}
+              ref={refs[key] || undefined}
+            >
               {item}
             </ListItem>
-          </>
+          </Box>
         ))}
       </List>
 
