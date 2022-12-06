@@ -1,3 +1,7 @@
+🚧 under construction 🚧
+
+Any contributions are welcome
+
 # [Noogle](https://hsjobeki.github.io/noogle/)
 
 Noogle is a Nix API search engine. It allows you to search functions based on their types and other attributes in `nix` projects. In `nixpkgs` especially the `builtins` and `lib` attributes.
@@ -15,6 +19,20 @@ Noogle is a Nix API search engine. It allows you to search functions based on th
 The idea is to use a fork of `nixdoc`to generate json data from all functions. That have the `Type` field which is currently supported from nixdoc.
 
 View the prototype [here](https://hsjobeki.github.io/noogle/)
+
+## We need your help / what is missing
+
+- Parsing `Types:` into a real type signature tree
+- Upstream missing type informations (like in /lib/attrsets.nix)
+- Write type signatures for the `builtins` in json
+- Add path, where each function can be imported from. e.g. `lib.makeOverridable` or `lib.customisation.makeOverridable` (it is available in both sets)
+- Website
+    - Make sure functions with missing type signatures can be found too
+    - Add filter by tags e.g. lib.lists
+    - Mobile optimization for reading on the go
+- Clean up / enhance my nixdoc fork. 
+    - Make the `sloppy` parser more error resistant
+    - Some valueable information can be used from the rnix AST ?
 
 ## Contrbute
 
