@@ -34,7 +34,9 @@ View the prototype [here](https://hsjobeki.github.io/noogle/)
     - Make the `sloppy` parser more error resistant
     - Some valueable information can be used from the rnix AST ?
 
-## Contrbute
+## Contribute
+
+Contributions are very welcome just file an pr / issue
 
 ### Build this page
 
