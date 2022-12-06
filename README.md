@@ -36,7 +36,7 @@ View the prototype [here](https://hsjobeki.github.io/noogle/)
 
 ## Contribute
 
-Contributions are very welcome just file an pr / issue
+Contributions are very welcome just file a PR or issue
 
 ### Build this page
 
