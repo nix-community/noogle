@@ -2,7 +2,7 @@
 
 Any contributions are welcome
 
-# [Noogle](https://hsjobeki.github.io/noogle/)
+# [Noogle](https://noogle.dev)
 
 Noogle is a Nix API search engine. It allows you to search functions based on their types and other attributes in `nix` projects. In `nixpkgs` especially the `builtins` and `lib` attributes.
 
@@ -18,7 +18,7 @@ Noogle is a Nix API search engine. It allows you to search functions based on th
 
 The idea is to use a fork of `nixdoc`to generate json data from all functions. That have the `Type` field which is currently supported from nixdoc.
 
-View the prototype [here](https://hsjobeki.github.io/noogle/)
+View the prototype [here](https://noogle.dev)
 
 ## We need your help / what is missing
 
