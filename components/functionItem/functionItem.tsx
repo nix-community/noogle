@@ -29,7 +29,11 @@ export default function FunctionItem(props: FunctionItemProps) {
     >
       <Stack>
         <ListItemText primary={name} secondary={category} />
-        <Typography>{`${fn_type} `}</Typography>
+        <Typography
+          sx={{
+            color: !fn_type ? "text.secondary" : "text.primary",
+          }}
+        >{`${fn_type || "No type yet provided"} `}</Typography>
       </Stack>
     </Paper>
   );

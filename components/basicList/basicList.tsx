@@ -198,8 +198,8 @@ export function BasicList(props: BasicListProps) {
         {/* </Stack> */}
       </Box>
       <List aria-label="basic-list" sx={{ pt: 0 }}>
-        {items.map(({ item, key }) => (
-          <Box key={key}>
+        {items.map(({ item, key }, idx) => (
+          <Box key={`${key}-${idx}`}>
             <Slide
               direction="up"
               in={key === selected}

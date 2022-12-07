@@ -27,11 +27,26 @@ const search =
   };
 
 const preProcess = (a: string | undefined) => {
-  if (a?.match(/\[(.*)\]/)) {
-    return "list";
-  }
-  if (a?.toLowerCase()?.includes("attrset")) {
-    return "attrset";
+  if (a) {
+    let b = a;
+    if (a.includes("::")) {
+      b = a.split("::")[1];
+    }
+    const cleaned = b?.replace("(", "").replace(")", "").trim();
+    let typ = cleaned;
+    if (cleaned.match(/\[(.*)\]/)) {
+      typ = "list";
+    }
+    if (
+      cleaned.toLowerCase().includes("attrset") ||
+      cleaned.trim().startsWith("{")
+    ) {
+      typ = "attrset";
+    }
+    if (cleaned.length === 1 && ["a", "b", "c", "d", "e"].includes(cleaned)) {
+      typ = "any";
+    }
+    return typ;
   }
   return a;
 };
@@ -57,6 +72,10 @@ const filter =
             from.some((f) => parsedInpTypes.join(" ").includes(f)) &&
             to.some((t) => parsedOutType?.includes(t))
           );
+        }
+        //function type could not be detected only show those without filters
+        if (fn_type === null) {
+          return to.includes("any") && from.includes("any");
         }
         return false;
       }

@@ -89,12 +89,22 @@ export const Preview = (props: PreviewProps) => {
             }}
             disableTypography
             primary={
-              <Typography sx={{ color: "text.secondary" }}>Example</Typography>
+              example && (
+                <Typography sx={{ color: "text.secondary" }}>
+                  Example
+                </Typography>
+              )
             }
             secondary={
-              <Box sx={{ mt: -2, pl: 1.5 }}>
-                <Highlight className="nix">{example}</Highlight>
-              </Box>
+              example ? (
+                <Box sx={{ mt: -2, pl: 1.5 }}>
+                  <Highlight className="nix">{example}</Highlight>
+                </Box>
+              ) : (
+                <Typography
+                  sx={{ color: "text.secondary" }}
+                >{`no example yet provided`}</Typography>
+              )
             }
           />
         </ListItem>
