@@ -18,6 +18,12 @@ const search =
     return data.filter((item) => {
       return Object.values(item).some((value) => {
         if (value) {
+          if (typeof value === "object" && value.length > 0) {
+            return value
+              .join("\n")
+              .toLocaleLowerCase()
+              .includes(term.toLowerCase());
+          }
           const valueAsString = value.toString();
           return valueAsString.toLowerCase().includes(term.toLocaleLowerCase());
         }
