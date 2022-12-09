@@ -31,7 +31,7 @@ export type BasicListProps = BasicDataViewProps & {
   handleFilter: (t: NixType, mode: "from" | "to") => void;
   preview: React.ReactNode;
   selected?: string | null;
-  itemsPerPage: Number;
+  itemsPerPage: number;
 };
 
 interface SelectOptionProps {
