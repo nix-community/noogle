@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Box,
   IconButton,
@@ -31,6 +31,7 @@ export type BasicListProps = BasicDataViewProps & {
   handleFilter: (t: NixType, mode: "from" | "to") => void;
   preview: React.ReactNode;
   selected?: string | null;
+  itemsPerPage: Number;
 };
 
 interface SelectOptionProps {
@@ -101,6 +102,7 @@ export function BasicList(props: BasicListProps) {
   const {
     items,
     pageCount = 1,
+    itemsPerPage,
     handleSearch,
     handleFilter,
     preview,
@@ -110,6 +112,12 @@ export function BasicList(props: BasicListProps) {
   // const [to, setTo] = useState<NixType>("any");
 
   const [page, setPage] = useState(1);
+
+  const pageItems = useMemo(() => {
+    const startIdx = (page - 1) * itemsPerPage;
+    const endIdx = page * itemsPerPage;
+    return items.slice(startIdx, endIdx);
+  }, [page, items, itemsPerPage]);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -130,17 +138,6 @@ export function BasicList(props: BasicListProps) {
     setSearchTerm(term);
     setPage(1);
   };
-  // const refs = items.forEach(({,key})=>({key: React.createRef()))
-  const refs: {
-    [key: string]: React.RefObject<HTMLLIElement>;
-  } = React.useMemo(
-    () =>
-      items.reduce(
-        (prev, curr) => ({ [curr.key]: React.createRef(), ...prev }),
-        {}
-      ),
-    [items]
-  );
 
   return (
     <Stack>
@@ -198,14 +195,13 @@ export function BasicList(props: BasicListProps) {
         {/* </Stack> */}
       </Box>
       <List aria-label="basic-list" sx={{ pt: 0 }}>
-        {items.map(({ item, key }, idx) => (
+        {pageItems.map(({ item, key }, idx) => (
           <Box key={`${key}-${idx}`}>
             <Slide
               direction="up"
               in={key === selected}
               mountOnEnter
               unmountOnExit
-              container={refs[key]?.current}
             >
               <ListItem
                 key={`${key}-preview`}
@@ -216,12 +212,7 @@ export function BasicList(props: BasicListProps) {
               </ListItem>
               {/* )} */}
             </Slide>
-            <ListItem
-              sx={{ px: 0 }}
-              key={key}
-              aria-label={`item-${key}`}
-              ref={refs[key] || undefined}
-            >
+            <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
               {item}
             </ListItem>
           </Box>
@@ -230,7 +221,7 @@ export function BasicList(props: BasicListProps) {
 
       <Pagination
         sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
-        count={pageCount}
+        count={Math.ceil(items.length / itemsPerPage) || 1}
         color="primary"
         page={page}
         onChange={handlePageChange}

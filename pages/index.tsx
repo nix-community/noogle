@@ -4,9 +4,13 @@ import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
 import { Preview } from "../components/preview/preview";
-import metadata from "../models/data.json";
+import nixLibs from "../models/lib.json";
+import nixBuiltins from "../models/builtins.json";
 
-const data: MetaData = metadata as MetaData;
+const data: MetaData = [
+  ...(nixLibs as MetaData),
+  ...(nixBuiltins as MetaData),
+].sort((a, b) => a.name.localeCompare(b.name));
 
 function pipe<T>(...fns: ((arr: T) => T)[]) {
   return (x: T) => fns.reduce((v, f) => f(v), x);
@@ -110,6 +114,8 @@ export default function FunctionsPage() {
     [to, from, term]
   );
 
+  // const pageData = useMemo(()=>filteredData.,[filteredData])
+
   const handleSearch = (term: string) => {
     setTerm(term);
   };
@@ -128,6 +134,7 @@ export default function FunctionsPage() {
       setTo(filterBy);
     }
   };
+  const getKey = (item: DocItem) => `${item.category}/${item.name}`;
 
   const preRenderedItems: BasicListItem[] = filteredData.map(
     (docItem: DocItem) => ({
@@ -137,26 +144,27 @@ export default function FunctionsPage() {
             width: "100%",
             height: "100%",
           }}
-          onClick={() => handleSelect(docItem.name)}
+          onClick={() => handleSelect(getKey(docItem))}
         >
           <FunctionItem
             name={docItem.name}
             docItem={docItem}
-            selected={selected === docItem.name}
+            selected={selected === getKey(docItem)}
           />
         </Box>
       ),
-      key: docItem.name,
+      key: getKey(docItem),
     })
   );
   const preview = (
-    <Preview docItem={data.find((f) => f.name === selected) || data[0]} />
+    <Preview docItem={data.find((f) => getKey(f) === selected) || data[0]} />
   );
 
   return (
     <Box sx={{ ml: 2 }}>
       <BasicList
         selected={selected}
+        itemsPerPage={8}
         items={preRenderedItems}
         handleSearch={handleSearch}
         handleFilter={handleFilter}

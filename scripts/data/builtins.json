@@ -1,0 +1,447 @@
+{
+  "abort": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Abort Nix expression evaluation and print the error message *s*."
+  },
+  "add": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the sum of the numbers *e1* and *e2*."
+  },
+  "all": {
+    "args": ["pred", "list"],
+    "arity": 2,
+    "doc": "Return `true` if the function *pred* returns `true` for all elements\nof *list*, and `false` otherwise."
+  },
+  "any": {
+    "args": ["pred", "list"],
+    "arity": 2,
+    "doc": "Return `true` if the function *pred* returns `true` for at least one\nelement of *list*, and `false` otherwise."
+  },
+  "attrNames": {
+    "args": ["set"],
+    "arity": 1,
+    "doc": "Return the names of the attributes in the set *set* in an\nalphabetically sorted list. For instance, `builtins.attrNames { y\n= 1; x = \"foo\"; }` evaluates to `[ \"x\" \"y\" ]`."
+  },
+  "attrValues": {
+    "args": ["set"],
+    "arity": 1,
+    "doc": "Return the values of the attributes in the set *set* in the order\ncorresponding to the sorted attribute names."
+  },
+  "baseNameOf": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Return the *base name* of the string *s*, that is, everything\nfollowing the final slash in the string. This is similar to the GNU\n`basename` command."
+  },
+  "bitAnd": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the bitwise AND of the integers *e1* and *e2*."
+  },
+  "bitOr": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the bitwise OR of the integers *e1* and *e2*."
+  },
+  "bitXor": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the bitwise XOR of the integers *e1* and *e2*."
+  },
+  "break": {
+    "args": ["v"],
+    "arity": 1,
+    "doc": "In debug mode (enabled using `--debugger`), pause Nix expression evaluation and enter the REPL.\nOtherwise, return the argument `v`."
+  },
+  "catAttrs": {
+    "args": ["attr", "list"],
+    "arity": 2,
+    "doc": "Collect each attribute named *attr* from a list of attribute\nsets.  Attrsets that don't contain the named attribute are\nignored. For example,\n\n```nix\nbuiltins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n```\n\nevaluates to `[1 2]`."
+  },
+  "ceil": {
+    "args": ["double"],
+    "arity": 1,
+    "doc": "Converts an IEEE-754 double-precision floating-point number (*double*) to\nthe next higher integer.\n\nIf the datatype is neither an integer nor a \"float\", an evaluation error will be\nthrown."
+  },
+  "compareVersions": {
+    "args": ["s1", "s2"],
+    "arity": 2,
+    "doc": "Compare two strings representing versions and return `-1` if\nversion *s1* is older than version *s2*, `0` if they are the same,\nand `1` if *s1* is newer than *s2*. The version comparison\nalgorithm is the same as the one used by [`nix-env\n-u`](../command-ref/nix-env.md#operation---upgrade)."
+  },
+  "concatLists": {
+    "args": ["lists"],
+    "arity": 1,
+    "doc": "Concatenate a list of lists into a single list."
+  },
+  "concatMap": {
+    "args": ["f", "list"],
+    "arity": 2,
+    "doc": "This function is equivalent to `builtins.concatLists (map f list)`\nbut is more efficient."
+  },
+  "concatStringsSep": {
+    "args": ["separator", "list"],
+    "arity": 2,
+    "doc": "Concatenate a list of strings with a separator between each\nelement, e.g. `concatStringsSep \"/\" [\"usr\" \"local\" \"bin\"] ==\n\"usr/local/bin\"`."
+  },
+  "deepSeq": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "This is like `seq e1 e2`, except that *e1* is evaluated *deeply*:\nif it’s a list or set, its elements or attributes are also\nevaluated recursively."
+  },
+  "dirOf": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Return the directory part of the string *s*, that is, everything\nbefore the final slash in the string. This is similar to the GNU\n`dirname` command."
+  },
+  "div": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the quotient of the numbers *e1* and *e2*."
+  },
+  "elem": {
+    "args": ["x", "xs"],
+    "arity": 2,
+    "doc": "Return `true` if a value equal to *x* occurs in the list *xs*, and\n`false` otherwise."
+  },
+  "elemAt": {
+    "args": ["xs", "n"],
+    "arity": 2,
+    "doc": "Return element *n* from the list *xs*. Elements are counted starting\nfrom 0. A fatal error occurs if the index is out of bounds."
+  },
+  "fetchClosure": {
+    "args": ["args"],
+    "arity": 1,
+    "doc": "Fetch a Nix store closure from a binary cache, rewriting it into\ncontent-addressed form. For example,\n\n```nix\nbuiltins.fetchClosure {\n  fromStore = \"https://cache.nixos.org\";\n  fromPath = /nix/store/r2jd6ygnmirm2g803mksqqjm4y39yi6i-git-2.33.1;\n  toPath = /nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1;\n}\n```\n\nfetches `/nix/store/r2jd...` from the specified binary cache,\nand rewrites it into the content-addressed store path\n`/nix/store/ldbh...`.\n\nIf `fromPath` is already content-addressed, or if you are\nallowing impure evaluation (`--impure`), then `toPath` may be\nomitted.\n\nTo find out the correct value for `toPath` given a `fromPath`,\nyou can use `nix store make-content-addressed`:\n\n```console\n# nix store make-content-addressed --from https://cache.nixos.org /nix/store/r2jd6ygnmirm2g803mksqqjm4y39yi6i-git-2.33.1\nrewrote '/nix/store/r2jd6ygnmirm2g803mksqqjm4y39yi6i-git-2.33.1' to '/nix/store/ldbhlwhh39wha58rm61bkiiwm6j7211j-git-2.33.1'\n```\n\nThis function is similar to `builtins.storePath` in that it\nallows you to use a previously built store path in a Nix\nexpression. However, it is more reproducible because it requires\nspecifying a binary cache from which the path can be fetched.\nAlso, requiring a content-addressed final store path avoids the\nneed for users to configure binary cache public keys.\n\nThis function is only available if you enable the experimental\nfeature `fetch-closure`."
+  },
+  "fetchGit": {
+    "args": ["args"],
+    "arity": 1,
+    "doc": "Fetch a path from git. *args* can be a URL, in which case the HEAD\nof the repo at that URL is fetched. Otherwise, it can be an\nattribute with the following attributes (all except `url` optional):\n\n  - url\\\n    The URL of the repo.\n\n  - name\\\n    The name of the directory the repo should be exported to in the\n    store. Defaults to the basename of the URL.\n\n  - rev\\\n    The git revision to fetch. Defaults to the tip of `ref`.\n\n  - ref\\\n    The git ref to look for the requested revision under. This is\n    often a branch or tag name. Defaults to `HEAD`.\n\n    By default, the `ref` value is prefixed with `refs/heads/`. As\n    of Nix 2.3.0 Nix will not prefix `refs/heads/` if `ref` starts\n    with `refs/`.\n\n  - submodules\\\n    A Boolean parameter that specifies whether submodules should be\n    checked out. Defaults to `false`.\n\n  - shallow\\\n    A Boolean parameter that specifies whether fetching a shallow clone\n    is allowed. Defaults to `false`.\n\n  - allRefs\\\n    Whether to fetch all refs of the repository. With this argument being\n    true, it's possible to load a `rev` from *any* `ref` (by default only\n    `rev`s from the specified `ref` are supported).\n\nHere are some examples of how to use `fetchGit`.\n\n  - To fetch a private repository over SSH:\n\n    ```nix\n    builtins.fetchGit {\n      url = \"git@github.com:my-secret/repository.git\";\n      ref = \"master\";\n      rev = \"adab8b916a45068c044658c4158d81878f9ed1c3\";\n    }\n    ```\n\n  - To fetch an arbitrary reference:\n\n    ```nix\n    builtins.fetchGit {\n      url = \"https://github.com/NixOS/nix.git\";\n      ref = \"refs/heads/0.5-release\";\n    }\n    ```\n\n  - If the revision you're looking for is in the default branch of\n    the git repository you don't strictly need to specify the branch\n    name in the `ref` attribute.\n\n    However, if the revision you're looking for is in a future\n    branch for the non-default branch you will need to specify the\n    the `ref` attribute as well.\n\n    ```nix\n    builtins.fetchGit {\n      url = \"https://github.com/nixos/nix.git\";\n      rev = \"841fcbd04755c7a2865c51c1e2d3b045976b7452\";\n      ref = \"1.11-maintenance\";\n    }\n    ```\n\n    > **Note**\n    >\n    > It is nice to always specify the branch which a revision\n    > belongs to. Without the branch being specified, the fetcher\n    > might fail if the default branch changes. Additionally, it can\n    > be confusing to try a commit from a non-default branch and see\n    > the fetch fail. If the branch is specified the fault is much\n    > more obvious.\n\n  - If the revision you're looking for is in the default branch of\n    the git repository you may omit the `ref` attribute.\n\n    ```nix\n    builtins.fetchGit {\n      url = \"https://github.com/nixos/nix.git\";\n      rev = \"841fcbd04755c7a2865c51c1e2d3b045976b7452\";\n    }\n    ```\n\n  - To fetch a specific tag:\n\n    ```nix\n    builtins.fetchGit {\n      url = \"https://github.com/nixos/nix.git\";\n      ref = \"refs/tags/1.9\";\n    }\n    ```\n\n  - To fetch the latest version of a remote branch:\n\n    ```nix\n    builtins.fetchGit {\n      url = \"ssh://git@github.com/nixos/nix.git\";\n      ref = \"master\";\n    }\n    ```\n\n    > **Note**\n    >\n    > Nix will refetch the branch in accordance with\n    > the option `tarball-ttl`.\n\n    > **Note**\n    >\n    > This behavior is disabled in *Pure evaluation mode*."
+  },
+  "fetchTarball": {
+    "args": ["args"],
+    "arity": 1,
+    "doc": "Download the specified URL, unpack it and return the path of the\nunpacked tree. The file must be a tape archive (`.tar`) compressed\nwith `gzip`, `bzip2` or `xz`. The top-level path component of the\nfiles in the tarball is removed, so it is best if the tarball\ncontains a single directory at top level. The typical use of the\nfunction is to obtain external Nix expression dependencies, such as\na particular version of Nixpkgs, e.g.\n\n```nix\nwith import (fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz) {};\n\nstdenv.mkDerivation { … }\n```\n\nThe fetched tarball is cached for a certain amount of time (1\nhour by default) in `~/.cache/nix/tarballs/`. You can change the\ncache timeout either on the command line with `--tarball-ttl`\n*number-of-seconds* or in the Nix configuration file by adding\nthe line `tarball-ttl = ` *number-of-seconds*.\n\nNote that when obtaining the hash with `nix-prefetch-url` the\noption `--unpack` is required.\n\nThis function can also verify the contents against a hash. In that\ncase, the function takes a set instead of a URL. The set requires\nthe attribute `url` and the attribute `sha256`, e.g.\n\n```nix\nwith import (fetchTarball {\n  url = \"https://github.com/NixOS/nixpkgs/archive/nixos-14.12.tar.gz\";\n  sha256 = \"1jppksrfvbk5ypiqdz4cddxdl8z6zyzdb2srq8fcffr327ld5jj2\";\n}) {};\n\nstdenv.mkDerivation { … }\n```\n\nThis function is not available if [restricted evaluation\nmode](../command-ref/conf-file.md) is enabled."
+  },
+  "fetchurl": {
+    "args": ["url"],
+    "arity": 1,
+    "doc": "Download the specified URL and return the path of the downloaded\nfile. This function is not available if [restricted evaluation\nmode](../command-ref/conf-file.md) is enabled."
+  },
+  "filter": {
+    "args": ["f", "list"],
+    "arity": 2,
+    "doc": "Return a list consisting of the elements of *list* for which the\nfunction *f* returns `true`."
+  },
+  "filterSource": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "> **Warning**\n>\n> `filterSource` should not be used to filter store paths. Since\n> `filterSource` uses the name of the input directory while naming\n> the output directory, doing so will produce a directory name in\n> the form of `<hash2>-<hash>-<name>`, where `<hash>-<name>` is\n> the name of the input directory. Since `<hash>` depends on the\n> unfiltered directory, the name of the output directory will\n> indirectly depend on files that are filtered out by the\n> function. This will trigger a rebuild even when a filtered out\n> file is changed. Use `builtins.path` instead, which allows\n> specifying the name of the output directory.\n\nThis function allows you to copy sources into the Nix store while\nfiltering certain files. For instance, suppose that you want to use\nthe directory `source-dir` as an input to a Nix expression, e.g.\n\n```nix\nstdenv.mkDerivation {\n  ...\n  src = ./source-dir;\n}\n```\n\nHowever, if `source-dir` is a Subversion working copy, then all\nthose annoying `.svn` subdirectories will also be copied to the\nstore. Worse, the contents of those directories may change a lot,\ncausing lots of spurious rebuilds. With `filterSource` you can\nfilter out the `.svn` directories:\n\n```nix\nsrc = builtins.filterSource\n  (path: type: type != \"directory\" || baseNameOf path != \".svn\")\n  ./source-dir;\n```\n\nThus, the first argument *e1* must be a predicate function that is\ncalled for each regular file, directory or symlink in the source\ntree *e2*. If the function returns `true`, the file is copied to the\nNix store, otherwise it is omitted. The function is called with two\narguments. The first is the full path of the file. The second is a\nstring that identifies the type of the file, which is either\n`\"regular\"`, `\"directory\"`, `\"symlink\"` or `\"unknown\"` (for other\nkinds of files such as device nodes or fifos — but note that those\ncannot be copied to the Nix store, so if the predicate returns\n`true` for them, the copy will fail). If you exclude a directory,\nthe entire corresponding subtree of *e2* will be excluded."
+  },
+  "floor": {
+    "args": ["double"],
+    "arity": 1,
+    "doc": "Converts an IEEE-754 double-precision floating-point number (*double*) to\nthe next lower integer.\n\nIf the datatype is neither an integer nor a \"float\", an evaluation error will be\nthrown."
+  },
+  "foldl'": {
+    "args": ["op", "nul", "list"],
+    "arity": 3,
+    "doc": "Reduce a list by applying a binary operator, from left to right,\ne.g. `foldl' op nul [x0 x1 x2 ...] = op (op (op nul x0) x1) x2)\n...`. The operator is applied strictly, i.e., its arguments are\nevaluated first. For example, `foldl' (x: y: x + y) 0 [1 2 3]`\nevaluates to 6."
+  },
+  "fromJSON": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Convert a JSON string to a Nix value. For example,\n\n```nix\nbuiltins.fromJSON ''{\"x\": [1, 2, 3], \"y\": null}''\n```\n\nreturns the value `{ x = [ 1 2 3 ]; y = null; }`."
+  },
+  "functionArgs": {
+    "args": ["f"],
+    "arity": 1,
+    "doc": "Return a set containing the names of the formal arguments expected\nby the function *f*. The value of each attribute is a Boolean\ndenoting whether the corresponding argument has a default value. For\ninstance, `functionArgs ({ x, y ? 123}: ...) = { x = false; y =\ntrue; }`.\n\n\"Formal argument\" here refers to the attributes pattern-matched by\nthe function. Plain lambdas are not included, e.g. `functionArgs (x:\n...) = { }`."
+  },
+  "genList": {
+    "args": ["generator", "length"],
+    "arity": 2,
+    "doc": "Generate list of size *length*, with each element *i* equal to the\nvalue returned by *generator* `i`. For example,\n\n```nix\nbuiltins.genList (x: x * x) 5\n```\n\nreturns the list `[ 0 1 4 9 16 ]`."
+  },
+  "genericClosure": {
+    "args": ["attrset"],
+    "arity": 1,
+    "doc": "Take an *attrset* with values named `startSet` and `operator` in order to\nreturn a *list of attrsets* by starting with the `startSet`, recursively\napplying the `operator` function to each element. The *attrsets* in the\n`startSet` and produced by the `operator` must each contain value named\n`key` which are comparable to each other. The result is produced by\nrepeatedly calling the operator for each element encountered with a\nunique key, terminating when no new elements are produced. For example,\n\n```\nbuiltins.genericClosure {\n  startSet = [ {key = 5;} ];\n  operator = item: [{\n    key = if (item.key / 2 ) * 2 == item.key\n         then item.key / 2\n         else 3 * item.key + 1;\n  }];\n}\n```\nevaluates to\n```\n[ { key = 5; } { key = 16; } { key = 8; } { key = 4; } { key = 2; } { key = 1; } ]\n```"
+  },
+  "getAttr": {
+    "args": ["s", "set"],
+    "arity": 2,
+    "doc": "`getAttr` returns the attribute named *s* from *set*. Evaluation\naborts if the attribute doesn’t exist. This is a dynamic version of\nthe `.` operator, since *s* is an expression rather than an\nidentifier."
+  },
+  "getEnv": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "`getEnv` returns the value of the environment variable *s*, or an\nempty string if the variable doesn’t exist. This function should be\nused with care, as it can introduce all sorts of nasty environment\ndependencies in your Nix expression.\n\n`getEnv` is used in Nix Packages to locate the file\n`~/.nixpkgs/config.nix`, which contains user-local settings for Nix\nPackages. (That is, it does a `getEnv \"HOME\"` to locate the user’s\nhome directory.)"
+  },
+  "getFlake": {
+    "args": ["args"],
+    "arity": 1,
+    "doc": "Fetch a flake from a flake reference, and return its output attributes and some metadata. For example:\n\n```nix\n(builtins.getFlake \"nix/55bc52401966fbffa525c574c14f67b00bc4fb3a\").packages.x86_64-linux.nix\n```\n\nUnless impure evaluation is allowed (`--impure`), the flake reference\nmust be \"locked\", e.g. contain a Git revision or content hash. An\nexample of an unlocked usage is:\n\n```nix\n(builtins.getFlake \"github:edolstra/dwarffs\").rev\n```\n\nThis function is only available if you enable the experimental feature\n`flakes`."
+  },
+  "groupBy": {
+    "args": ["f", "list"],
+    "arity": 2,
+    "doc": "Groups elements of *list* together by the string returned from the\nfunction *f* called on each element. It returns an attribute set\nwhere each attribute value contains the elements of *list* that are\nmapped to the same corresponding attribute name returned by *f*.\n\nFor example,\n\n```nix\nbuiltins.groupBy (builtins.substring 0 1) [\"foo\" \"bar\" \"baz\"]\n```\n\nevaluates to\n\n```nix\n{ b = [ \"bar\" \"baz\" ]; f = [ \"foo\" ]; }\n```"
+  },
+  "hasAttr": {
+    "args": ["s", "set"],
+    "arity": 2,
+    "doc": "`hasAttr` returns `true` if *set* has an attribute named *s*, and\n`false` otherwise. This is a dynamic version of the `?` operator,\nsince *s* is an expression rather than an identifier."
+  },
+  "hashFile": {
+    "args": ["type", "p"],
+    "arity": 2,
+    "doc": "Return a base-16 representation of the cryptographic hash of the\nfile at path *p*. The hash algorithm specified by *type* must be one\nof `\"md5\"`, `\"sha1\"`, `\"sha256\"` or `\"sha512\"`."
+  },
+  "hashString": {
+    "args": ["type", "s"],
+    "arity": 2,
+    "doc": "Return a base-16 representation of the cryptographic hash of string\n*s*. The hash algorithm specified by *type* must be one of `\"md5\"`,\n`\"sha1\"`, `\"sha256\"` or `\"sha512\"`."
+  },
+  "head": {
+    "args": ["list"],
+    "arity": 1,
+    "doc": "Return the first element of a list; abort evaluation if the argument\nisn’t a list or is an empty list. You can test whether a list is\nempty by comparing it with `[]`."
+  },
+  "import": {
+    "args": ["path"],
+    "arity": 1,
+    "doc": "Load, parse and return the Nix expression in the file *path*. If\n*path* is a directory, the file ` default.nix ` in that directory\nis loaded. Evaluation aborts if the file doesn’t exist or contains\nan incorrect Nix expression. `import` implements Nix’s module\nsystem: you can put any Nix expression (such as a set or a\nfunction) in a separate file, and use it from Nix expressions in\nother files.\n\n> **Note**\n>\n> Unlike some languages, `import` is a regular function in Nix.\n> Paths using the angle bracket syntax (e.g., `import` *\\<foo\\>*)\n> are [normal path values](language-values.md).\n\nA Nix expression loaded by `import` must not contain any *free\nvariables* (identifiers that are not defined in the Nix expression\nitself and are not built-in). Therefore, it cannot refer to\nvariables that are in scope at the call site. For instance, if you\nhave a calling expression\n\n```nix\nrec {\n  x = 123;\n  y = import ./foo.nix;\n}\n```\n\nthen the following `foo.nix` will give an error:\n\n```nix\nx + 456\n```\n\nsince `x` is not in scope in `foo.nix`. If you want `x` to be\navailable in `foo.nix`, you should pass it as a function argument:\n\n```nix\nrec {\n  x = 123;\n  y = import ./foo.nix x;\n}\n```\n\nand\n\n```nix\nx: x + 456\n```\n\n(The function argument doesn’t have to be called `x` in `foo.nix`;\nany name would work.)"
+  },
+  "intersectAttrs": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return a set consisting of the attributes in the set *e2* that also\nexist in the set *e1*."
+  },
+  "isAttrs": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a set, and `false` otherwise."
+  },
+  "isBool": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a bool, and `false` otherwise."
+  },
+  "isFloat": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a float, and `false` otherwise."
+  },
+  "isFunction": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a function, and `false` otherwise."
+  },
+  "isInt": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to an integer, and `false` otherwise."
+  },
+  "isList": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a list, and `false` otherwise."
+  },
+  "isNull": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to `null`, and `false` otherwise.\n\n> **Warning**\n>\n> This function is *deprecated*; just write `e == null` instead."
+  },
+  "isPath": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a path, and `false` otherwise."
+  },
+  "isString": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return `true` if *e* evaluates to a string, and `false` otherwise."
+  },
+  "length": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return the length of the list *e*."
+  },
+  "lessThan": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return `true` if the number *e1* is less than the number *e2*, and\n`false` otherwise. Evaluation aborts if either *e1* or *e2* does not\nevaluate to a number."
+  },
+  "listToAttrs": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Construct a set from a list specifying the names and values of each\nattribute. Each element of the list should be a set consisting of a\nstring-valued attribute `name` specifying the name of the attribute,\nand an attribute `value` specifying its value. Example:\n\n```nix\nbuiltins.listToAttrs\n  [ { name = \"foo\"; value = 123; }\n    { name = \"bar\"; value = 456; }\n  ]\n```\n\nevaluates to\n\n```nix\n{ foo = 123; bar = 456; }\n```"
+  },
+  "map": {
+    "args": ["f", "list"],
+    "arity": 2,
+    "doc": "Apply the function *f* to each element in the list *list*. For\nexample,\n\n```nix\nmap (x: \"foo\" + x) [ \"bar\" \"bla\" \"abc\" ]\n```\n\nevaluates to `[ \"foobar\" \"foobla\" \"fooabc\" ]`."
+  },
+  "mapAttrs": {
+    "args": ["f", "attrset"],
+    "arity": 2,
+    "doc": "Apply function *f* to every element of *attrset*. For example,\n\n```nix\nbuiltins.mapAttrs (name: value: value * 10) { a = 1; b = 2; }\n```\n\nevaluates to `{ a = 10; b = 20; }`."
+  },
+  "match": {
+    "args": ["regex", "str"],
+    "arity": 2,
+    "doc": "Returns a list if the [extended POSIX regular\nexpression](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04)\n*regex* matches *str* precisely, otherwise returns `null`. Each item\nin the list is a regex group.\n\n```nix\nbuiltins.match \"ab\" \"abc\"\n```\n\nEvaluates to `null`.\n\n```nix\nbuiltins.match \"abc\" \"abc\"\n```\n\nEvaluates to `[ ]`.\n\n```nix\nbuiltins.match \"a(b)(c)\" \"abc\"\n```\n\nEvaluates to `[ \"b\" \"c\" ]`.\n\n```nix\nbuiltins.match \"[[:space:]]+([[:upper:]]+)[[:space:]]+\" \"  FOO   \"\n```\n\nEvaluates to `[ \"FOO\" ]`."
+  },
+  "mul": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the product of the numbers *e1* and *e2*."
+  },
+  "parseDrvName": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Split the string *s* into a package name and version. The package\nname is everything up to but not including the first dash followed\nby a digit, and the version is everything following that dash. The\nresult is returned in a set `{ name, version }`. Thus,\n`builtins.parseDrvName \"nix-0.12pre12876\"` returns `{ name =\n\"nix\"; version = \"0.12pre12876\"; }`."
+  },
+  "partition": {
+    "args": ["pred", "list"],
+    "arity": 2,
+    "doc": "Given a predicate function *pred*, this function returns an\nattrset containing a list named `right`, containing the elements\nin *list* for which *pred* returned `true`, and a list named\n`wrong`, containing the elements for which it returned\n`false`. For example,\n\n```nix\nbuiltins.partition (x: x > 10) [1 23 9 3 42]\n```\n\nevaluates to\n\n```nix\n{ right = [ 23 42 ]; wrong = [ 1 9 3 ]; }\n```"
+  },
+  "path": {
+    "args": ["args"],
+    "arity": 1,
+    "doc": "An enrichment of the built-in path type, based on the attributes\npresent in *args*. All are optional except `path`:\n\n  - path\\\n    The underlying path.\n\n  - name\\\n    The name of the path when added to the store. This can used to\n    reference paths that have nix-illegal characters in their names,\n    like `@`.\n\n  - filter\\\n    A function of the type expected by `builtins.filterSource`,\n    with the same semantics.\n\n  - recursive\\\n    When `false`, when `path` is added to the store it is with a\n    flat hash, rather than a hash of the NAR serialization of the\n    file. Thus, `path` must refer to a regular file, not a\n    directory. This allows similar behavior to `fetchurl`. Defaults\n    to `true`.\n\n  - sha256\\\n    When provided, this is the expected hash of the file at the\n    path. Evaluation will fail if the hash is incorrect, and\n    providing a hash allows `builtins.path` to be used even when the\n    `pure-eval` nix config option is on."
+  },
+  "pathExists": {
+    "args": ["path"],
+    "arity": 1,
+    "doc": "Return `true` if the path *path* exists at evaluation time, and\n`false` otherwise."
+  },
+  "placeholder": {
+    "args": ["output"],
+    "arity": 1,
+    "doc": "Return a placeholder string for the specified *output* that will be\nsubstituted by the corresponding output path at build time. Typical\noutputs would be `\"out\"`, `\"bin\"` or `\"dev\"`."
+  },
+  "readDir": {
+    "args": ["path"],
+    "arity": 1,
+    "doc": "Return the contents of the directory *path* as a set mapping\ndirectory entries to the corresponding file type. For instance, if\ndirectory `A` contains a regular file `B` and another directory\n`C`, then `builtins.readDir ./A` will return the set\n\n```nix\n{ B = \"regular\"; C = \"directory\"; }\n```\n\nThe possible values for the file type are `\"regular\"`,\n`\"directory\"`, `\"symlink\"` and `\"unknown\"`."
+  },
+  "readFile": {
+    "args": ["path"],
+    "arity": 1,
+    "doc": "Return the contents of the file *path* as a string."
+  },
+  "removeAttrs": {
+    "args": ["set", "list"],
+    "arity": 2,
+    "doc": "Remove the attributes listed in *list* from *set*. The attributes\ndon’t have to exist in *set*. For instance,\n\n```nix\nremoveAttrs { x = 1; y = 2; z = 3; } [ \"a\" \"x\" \"z\" ]\n```\n\nevaluates to `{ y = 2; }`."
+  },
+  "replaceStrings": {
+    "args": ["from", "to", "s"],
+    "arity": 3,
+    "doc": "Given string *s*, replace every occurrence of the strings in *from*\nwith the corresponding string in *to*. For example,\n\n```nix\nbuiltins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n```\n\nevaluates to `\"fabir\"`."
+  },
+  "seq": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Evaluate *e1*, then evaluate and return *e2*. This ensures that a\ncomputation is strict in the value of *e1*."
+  },
+  "sort": {
+    "args": ["comparator", "list"],
+    "arity": 2,
+    "doc": "Return *list* in sorted order. It repeatedly calls the function\n*comparator* with two elements. The comparator should return `true`\nif the first element is less than the second, and `false` otherwise.\nFor example,\n\n```nix\nbuiltins.sort builtins.lessThan [ 483 249 526 147 42 77 ]\n```\n\nproduces the list `[ 42 77 147 249 483 526 ]`.\n\nThis is a stable sort: it preserves the relative order of elements\ndeemed equal by the comparator."
+  },
+  "split": {
+    "args": ["regex", "str"],
+    "arity": 2,
+    "doc": "Returns a list composed of non matched strings interleaved with the\nlists of the [extended POSIX regular\nexpression](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04)\n*regex* matches of *str*. Each item in the lists of matched\nsequences is a regex group.\n\n```nix\nbuiltins.split \"(a)b\" \"abc\"\n```\n\nEvaluates to `[ \"\" [ \"a\" ] \"c\" ]`.\n\n```nix\nbuiltins.split \"([ac])\" \"abc\"\n```\n\nEvaluates to `[ \"\" [ \"a\" ] \"b\" [ \"c\" ] \"\" ]`.\n\n```nix\nbuiltins.split \"(a)|(c)\" \"abc\"\n```\n\nEvaluates to `[ \"\" [ \"a\" null ] \"b\" [ null \"c\" ] \"\" ]`.\n\n```nix\nbuiltins.split \"([[:upper:]]+)\" \" FOO \"\n```\n\nEvaluates to `[ \" \" [ \"FOO\" ] \" \" ]`."
+  },
+  "splitVersion": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Split a string representing a version into its components, by the\nsame version splitting logic underlying the version comparison in\n[`nix-env -u`](../command-ref/nix-env.md#operation---upgrade)."
+  },
+  "storePath": {
+    "args": ["path"],
+    "arity": 1,
+    "doc": "This function allows you to define a dependency on an already\nexisting store path. For example, the derivation attribute `src\n= builtins.storePath /nix/store/f1d18v1y…-source` causes the\nderivation to depend on the specified path, which must exist or\nbe substitutable. Note that this differs from a plain path\n(e.g. `src = /nix/store/f1d18v1y…-source`) in that the latter\ncauses the path to be *copied* again to the Nix store, resulting\nin a new path (e.g. `/nix/store/ld01dnzc…-source-source`).\n\nThis function is not available in pure evaluation mode."
+  },
+  "stringLength": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return the length of the string *e*. If *e* is not a string,\nevaluation is aborted."
+  },
+  "sub": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Return the difference between the numbers *e1* and *e2*."
+  },
+  "substring": {
+    "args": ["start", "len", "s"],
+    "arity": 3,
+    "doc": "Return the substring of *s* from character position *start*\n(zero-based) up to but not including *start + len*. If *start* is\ngreater than the length of the string, an empty string is returned,\nand if *start + len* lies beyond the end of the string, only the\nsubstring up to the end of the string is returned. *start* must be\nnon-negative. For example,\n\n```nix\nbuiltins.substring 0 3 \"nixos\"\n```\n\nevaluates to `\"nix\"`."
+  },
+  "tail": {
+    "args": ["list"],
+    "arity": 1,
+    "doc": "Return the second to last elements of a list; abort evaluation if\nthe argument isn’t a list or is an empty list.\n\n> **Warning**\n>\n> This function should generally be avoided since it's inefficient:\n> unlike Haskell's `tail`, it takes O(n) time, so recursing over a\n> list by repeatedly calling `tail` takes O(n^2) time."
+  },
+  "throw": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "Throw an error message *s*. This usually aborts Nix expression\nevaluation, but in `nix-env -qa` and other commands that try to\nevaluate a set of derivations to get information about those\nderivations, a derivation that throws an error is silently skipped\n(which is not the case for `abort`)."
+  },
+  "toFile": {
+    "args": ["name", "s"],
+    "arity": 2,
+    "doc": "Store the string *s* in a file in the Nix store and return its\npath.  The file has suffix *name*. This file can be used as an\ninput to derivations. One application is to write builders\n“inline”. For instance, the following Nix expression combines the\n[Nix expression for GNU Hello](expression-syntax.md) and its\n[build script](build-script.md) into one file:\n\n```nix\n{ stdenv, fetchurl, perl }:\n\nstdenv.mkDerivation {\n  name = \"hello-2.1.1\";\n\n  builder = builtins.toFile \"builder.sh\" \"\n    source $stdenv/setup\n\n    PATH=$perl/bin:$PATH\n\n    tar xvfz $src\n    cd hello-*\n    ./configure --prefix=$out\n    make\n    make install\n  \";\n\n  src = fetchurl {\n    url = \"http://ftp.nluug.nl/pub/gnu/hello/hello-2.1.1.tar.gz\";\n    sha256 = \"1md7jsfd8pa45z73bz1kszpp01yw6x5ljkjk2hx7wl800any6465\";\n  };\n  inherit perl;\n}\n```\n\nIt is even possible for one file to refer to another, e.g.,\n\n```nix\nbuilder = let\n  configFile = builtins.toFile \"foo.conf\" \"\n    # This is some dummy configuration file.\n    ...\n  \";\nin builtins.toFile \"builder.sh\" \"\n  source $stdenv/setup\n  ...\n  cp ${configFile} $out/etc/foo.conf\n\";\n```\n\nNote that `${configFile}` is an\n[antiquotation](language-values.md), so the result of the\nexpression `configFile`\n(i.e., a path like `/nix/store/m7p7jfny445k...-foo.conf`) will be\nspliced into the resulting string.\n\nIt is however *not* allowed to have files mutually referring to each\nother, like so:\n\n```nix\nlet\n  foo = builtins.toFile \"foo\" \"...${bar}...\";\n  bar = builtins.toFile \"bar\" \"...${foo}...\";\nin foo\n```\n\nThis is not allowed because it would cause a cyclic dependency in\nthe computation of the cryptographic hashes for `foo` and `bar`.\n\nIt is also not possible to reference the result of a derivation. If\nyou are using Nixpkgs, the `writeTextFile` function is able to do\nthat."
+  },
+  "toJSON": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return a string containing a JSON representation of *e*. Strings,\nintegers, floats, booleans, nulls and lists are mapped to their JSON\nequivalents. Sets (except derivations) are represented as objects.\nDerivations are translated to a JSON string containing the\nderivation’s output path. Paths are copied to the store and\nrepresented as a JSON string of the resulting store path."
+  },
+  "toPath": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "**DEPRECATED.** Use `/. + \"/path\"` to convert a string into an absolute\npath. For relative paths, use `./. + \"/path\"`."
+  },
+  "toString": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Convert the expression *e* to a string. *e* can be:\n\n  - A string (in which case the string is returned unmodified).\n\n  - A path (e.g., `toString /foo/bar` yields `\"/foo/bar\"`.\n\n  - A set containing `{ __toString = self: ...; }` or `{ outPath = ...; }`.\n\n  - An integer.\n\n  - A list, in which case the string representations of its elements\n    are joined with spaces.\n\n  - A Boolean (`false` yields `\"\"`, `true` yields `\"1\"`).\n\n  - `null`, which yields the empty string."
+  },
+  "toXML": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return a string containing an XML representation of *e*. The main\napplication for `toXML` is to communicate information with the\nbuilder in a more structured format than plain environment\nvariables.\n\nHere is an example where this is the case:\n\n```nix\n{ stdenv, fetchurl, libxslt, jira, uberwiki }:\n\nstdenv.mkDerivation (rec {\n  name = \"web-server\";\n\n  buildInputs = [ libxslt ];\n\n  builder = builtins.toFile \"builder.sh\" \"\n    source $stdenv/setup\n    mkdir $out\n    echo \"$servlets\" | xsltproc ${stylesheet} - > $out/server-conf.xml ①\n  \";\n\n  stylesheet = builtins.toFile \"stylesheet.xsl\" ②\n   \"<?xml version='1.0' encoding='UTF-8'?>\n    <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' version='1.0'>\n      <xsl:template match='/'>\n        <Configure>\n          <xsl:for-each select='/expr/list/attrs'>\n            <Call name='addWebApplication'>\n              <Arg><xsl:value-of select=\\\"attr[@name = 'path']/string/@value\\\" /></Arg>\n              <Arg><xsl:value-of select=\\\"attr[@name = 'war']/path/@value\\\" /></Arg>\n            </Call>\n          </xsl:for-each>\n        </Configure>\n      </xsl:template>\n    </xsl:stylesheet>\n  \";\n\n  servlets = builtins.toXML [ ③\n    { path = \"/bugtracker\"; war = jira + \"/lib/atlassian-jira.war\"; }\n    { path = \"/wiki\"; war = uberwiki + \"/uberwiki.war\"; }\n  ];\n})\n```\n\nThe builder is supposed to generate the configuration file for a\n[Jetty servlet container](http://jetty.mortbay.org/). A servlet\ncontainer contains a number of servlets (`*.war` files) each\nexported under a specific URI prefix. So the servlet configuration\nis a list of sets containing the `path` and `war` of the servlet\n(①). This kind of information is difficult to communicate with the\nnormal method of passing information through an environment\nvariable, which just concatenates everything together into a\nstring (which might just work in this case, but wouldn’t work if\nfields are optional or contain lists themselves). Instead the Nix\nexpression is converted to an XML representation with `toXML`,\nwhich is unambiguous and can easily be processed with the\nappropriate tools. For instance, in the example an XSLT stylesheet\n(at point ②) is applied to it (at point ①) to generate the XML\nconfiguration file for the Jetty server. The XML representation\nproduced at point ③ by `toXML` is as follows:\n\n```xml\n<?xml version='1.0' encoding='utf-8'?>\n<expr>\n  <list>\n    <attrs>\n      <attr name=\"path\">\n        <string value=\"/bugtracker\" />\n      </attr>\n      <attr name=\"war\">\n        <path value=\"/nix/store/d1jh9pasa7k2...-jira/lib/atlassian-jira.war\" />\n      </attr>\n    </attrs>\n    <attrs>\n      <attr name=\"path\">\n        <string value=\"/wiki\" />\n      </attr>\n      <attr name=\"war\">\n        <path value=\"/nix/store/y6423b1yi4sx...-uberwiki/uberwiki.war\" />\n      </attr>\n    </attrs>\n  </list>\n</expr>\n```\n\nNote that we used the `toFile` built-in to write the builder and\nthe stylesheet “inline” in the Nix expression. The path of the\nstylesheet is spliced into the builder using the syntax `xsltproc\n${stylesheet}`."
+  },
+  "trace": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Evaluate *e1* and print its abstract syntax representation on\nstandard error. Then return *e2*. This function is useful for\ndebugging."
+  },
+  "traceVerbose": {
+    "args": ["e1", "e2"],
+    "arity": 2,
+    "doc": "Evaluate *e1* and print its abstract syntax representation on standard\nerror if `--trace-verbose` is enabled. Then return *e2*. This function\nis useful for debugging."
+  },
+  "tryEval": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Try to shallowly evaluate *e*. Return a set containing the\nattributes `success` (`true` if *e* evaluated successfully,\n`false` if an error was thrown) and `value`, equalling *e* if\nsuccessful and `false` otherwise. `tryEval` will only prevent\nerrors created by `throw` or `assert` from being thrown.\nErrors `tryEval` will not catch are for example those created\nby `abort` and type errors generated by builtins. Also note that\nthis doesn't evaluate *e* deeply, so `let e = { x = throw \"\"; };\nin (builtins.tryEval e).success` will be `true`. Using\n`builtins.deepSeq` one can get the expected result:\n`let e = { x = throw \"\"; }; in\n(builtins.tryEval (builtins.deepSeq e e)).success` will be\n`false`."
+  },
+  "typeOf": {
+    "args": ["e"],
+    "arity": 1,
+    "doc": "Return a string representing the type of the value *e*, namely\n`\"int\"`, `\"bool\"`, `\"string\"`, `\"path\"`, `\"null\"`, `\"set\"`,\n`\"list\"`, `\"lambda\"` or `\"float\"`."
+  },
+  "zipAttrsWith": {
+    "args": ["f", "list"],
+    "arity": 2,
+    "doc": "Transpose a list of attribute sets into an attribute set of lists,\nthen apply `mapAttrs`.\n\n`f` receives two arguments: the attribute name and a non-empty\nlist of all values encountered for that attribute name.\n\nThe result is an attribute set where the attribute names are the\nunion of the attribute names in each element of `list`. The attribute\nvalues are the return values of `f`.\n\n```nix\nbuiltins.zipAttrsWith\n  (name: values: { inherit name values; })\n  [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n```\n\nevaluates to\n\n```\n{\n  a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n  b = { name = \"b\"; values = [ \"z\" ]; };\n}\n```"
+  }
+}
