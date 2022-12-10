@@ -1,20 +1,25 @@
 import {
   Box,
   Container,
+  IconButton,
   Link,
   List,
   ListItem,
+  ListItemButton,
   ListItemIcon,
   ListItemSecondaryAction,
   ListItemText,
+  Tooltip,
   Typography,
 } from "@mui/material";
+// import CloseIcon from "@mui/icons-material/Close";
 import Highlight from "react-highlight";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
 import { DocItem } from "../../types/nix";
 import CodeIcon from "@mui/icons-material/Code";
 import ReactMarkdown from "react-markdown";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 // import hljs from "highlight.js";
 
@@ -22,30 +27,30 @@ import ReactMarkdown from "react-markdown";
 import "highlight.js/styles/github.css";
 interface PreviewProps {
   docItem: DocItem;
+  handleClose: () => void;
 }
 
 export const Preview = (props: PreviewProps) => {
-  const { docItem } = props;
+  const { docItem, handleClose } = props;
   const { name, description, category, example, fn_type } = docItem;
 
   const getGeneratedExamples = () => {
     if (description) {
-      // const regex = /\`\`\`.*\`\`\`/gm;
       const regex = /(```.+?```)/gms;
       console.log({ description, regex });
       if (typeof description === "object") {
         return description
           .join(" ")
           .match(regex)
-          ?.join("")
-          ?.replace("```nix", "")
-          ?.replace("```", "");
+          ?.join("\n#---\n")
+          ?.replaceAll("```nix", "")
+          ?.replaceAll("```", "");
       } else {
         return description
           .match(regex)
-          ?.join("")
-          ?.replace("```nix", "")
-          ?.replace("```", "");
+          ?.join("\n#---\n")
+          ?.replaceAll("```nix", "")
+          ?.replaceAll("```", "");
       }
     }
   };
@@ -69,8 +74,17 @@ export const Preview = (props: PreviewProps) => {
         borderTopColor: "primary.main",
       }}
     >
+      {/* <Box sx={{ display: "flex" }}> */}
       <Typography variant="h2">{`${prefix}.${name}`}</Typography>
+      {/* </Box> */}
       <List sx={{ width: "100%" }}>
+        <ListItem>
+          <Tooltip title="close details">
+            <IconButton onClick={() => handleClose()}>
+              <ExpandLessIcon />
+            </IconButton>
+          </Tooltip>
+        </ListItem>
         <ListItem>
           <ListItemIcon>
             <LocalLibraryIcon />
@@ -102,9 +116,6 @@ export const Preview = (props: PreviewProps) => {
               </Container>
             }
           />
-          {/* <ListItemSecondaryAction>
-            <Link href={docsRef}>View Docs</Link>
-          </ListItemSecondaryAction> */}
         </ListItem>
         <ListItem>
           <ListItemIcon>

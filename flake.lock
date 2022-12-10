@@ -43,11 +43,11 @@
     "crane": {
       "flake": false,
       "locked": {
-        "lastModified": 1661875961,
-        "narHash": "sha256-f1h/2c6Teeu1ofAHWzrS8TwBPcnN+EEu+z1sRVmMQTk=",
+        "lastModified": 1670284777,
+        "narHash": "sha256-JF0pc0s4z/X+Iy+lNHOwUQ8I5bz+q7uX4HrKTNIEj24=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "d9f394e4e20e97c2a60c3ad82c2b6ef99be19e24",
+        "rev": "2243fb9c872de25cb564a02d324ea6a5b9853052",
         "type": "github"
       },
       "original": {
@@ -89,11 +89,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1670319715,
-        "narHash": "sha256-W8GEZps6o+eZgMcYfoPbINiaH+yDhKENemgAcqCpu0s=",
+        "lastModified": 1670559747,
+        "narHash": "sha256-yT/ofVjhgGrdFQeFONFpLNnVJa8ALMuSvlILczvIIn4=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "3681e0d5f5ab33a33238642a5fe004d372c66ab7",
+        "rev": "8b4d355e8008c47791219da30fc390baf78c4099",
         "type": "github"
       },
       "original": {
@@ -263,11 +263,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1670448771,
-        "narHash": "sha256-vO89DbrTBCiV3e3E1cDv8Pldm9D4VRFiJzBx2iTt42c=",
+        "lastModified": 1670665290,
+        "narHash": "sha256-VkuPWVA+DF1AYx4hdw7JUxrJOdHP/cLhyL+t+xH9UsU=",
         "owner": "hsjobeki",
         "repo": "nixdoc",
-        "rev": "9fbc589aef4c0eb256ce9b360fbbc2d1ccf0aa8d",
+        "rev": "f9377fac1265f1e02329343aaff573dff68f9402",
         "type": "github"
       },
       "original": {

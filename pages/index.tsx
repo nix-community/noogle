@@ -60,22 +60,23 @@ const preProcess = (a: string | undefined) => {
   }
   return a;
 };
-const filter =
+const filterByType =
   (to: NixType[], from: NixType[]) =>
   (data: MetaData): MetaData => {
+    //if user wants any data show all
+    if (to.includes("any") && from.includes("any")) {
+      return data;
+    }
     return data.filter(
       // TODO: Implement proper type matching
       ({ name, fn_type }) => {
         if (fn_type) {
-          const args = fn_type.split("->");
+          const cleanType = fn_type.replace(/ /g, "").replace(`${name}::`, "");
+          const args = cleanType.split("->");
           const front = args.slice(0, -1);
-          let firstTerm = front.at(0);
-          if (firstTerm?.includes("::")) {
-            firstTerm = firstTerm.split("::").at(1);
-          }
-          const inpArgs = [firstTerm, ...front.slice(1, -1)];
-          const parsedInpTypes = inpArgs.map(preProcess);
-          // const fn_from =
+
+          const parsedInpTypes = front.map(preProcess);
+
           const fn_to = args.at(-1);
           const parsedOutType = preProcess(fn_to);
           return (
@@ -110,11 +111,9 @@ export default function FunctionsPage() {
   };
 
   const filteredData = useMemo(
-    () => pipe(filter(to, from), search(term))(data),
+    () => pipe(filterByType(to, from), search(term))(data),
     [to, from, term]
   );
-
-  // const pageData = useMemo(()=>filteredData.,[filteredData])
 
   const handleSearch = (term: string) => {
     setTerm(term);
@@ -157,11 +156,14 @@ export default function FunctionsPage() {
     })
   );
   const preview = (
-    <Preview docItem={data.find((f) => getKey(f) === selected) || data[0]} />
+    <Preview
+      docItem={data.find((f) => getKey(f) === selected) || data[0]}
+      handleClose={() => setSelected(null)}
+    />
   );
 
   return (
-    <Box sx={{ ml: 2 }}>
+    <Box sx={{ ml: { xs: 0, md: 2 } }}>
       <BasicList
         selected={selected}
         itemsPerPage={8}

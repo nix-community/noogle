@@ -220,6 +220,8 @@ export function BasicList(props: BasicListProps) {
       </List>
 
       <Pagination
+        hideNextButton
+        hidePrevButton
         sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
         count={Math.ceil(items.length / itemsPerPage) || 1}
         color="primary"

@@ -109,7 +109,7 @@ export function Layout(props: LayoutProps) {
           overflowY: "scroll",
         }}
       >
-        <Container sx={{ pt: 0 }} maxWidth="xl">
+        <Container sx={{ pt: 0, px: { xs: 0, md: 2 } }} maxWidth="xl">
           {children}
         </Container>
       </main>
