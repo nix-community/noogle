@@ -107,6 +107,8 @@ export function Layout(props: LayoutProps) {
           marginTop: "6em",
           maxHeight: "calc(100vh - 8em)",
           overflowY: "scroll",
+          overflowX: "hidden",
+          width: "100vw",
         }}
       >
         <Container sx={{ pt: 0, px: { xs: 0, md: 2 } }} maxWidth="xl">

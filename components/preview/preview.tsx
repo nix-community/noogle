@@ -20,7 +20,7 @@ import { DocItem } from "../../types/nix";
 import CodeIcon from "@mui/icons-material/Code";
 import ReactMarkdown from "react-markdown";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-
+import styles from "./preview.module.css";
 // import hljs from "highlight.js";
 
 // needed for nextjs to import the classes of github theme
@@ -66,33 +66,45 @@ export const Preview = (props: PreviewProps) => {
     <Box
       sx={{
         p: 1,
-        pt: 2,
-        mt: 2,
-        mb: -2,
         width: "100%",
-        borderTop: "solid 1px",
-        borderTopColor: "primary.main",
+        overflow: "none",
       }}
     >
-      {/* <Box sx={{ display: "flex" }}> */}
-      <Typography variant="h2">{`${prefix}.${name}`}</Typography>
-      {/* </Box> */}
+      <Box
+        sx={{
+          display: { md: "flex", xs: "flex" },
+          flexDirection: { md: "row", xs: "column-reverse" },
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
+        >{`${prefix}.${name}`}</Typography>
+        <Tooltip title="close details">
+          <IconButton
+            sx={{
+              mx: { xs: "auto", md: 1 },
+              left: { lg: "calc(50% - 2rem)", xs: "unset" },
+              position: { lg: "absolute", xs: "relative" },
+            }}
+            size="small"
+            onClick={() => handleClose()}
+          >
+            <ExpandLessIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
+      </Box>
       <List sx={{ width: "100%" }}>
-        <ListItem>
-          <Tooltip title="close details">
-            <IconButton onClick={() => handleClose()}>
-              <ExpandLessIcon />
-            </IconButton>
-          </Tooltip>
-        </ListItem>
-        <ListItem>
+        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" } }}>
           <ListItemIcon>
-            <LocalLibraryIcon />
+            <LocalLibraryIcon sx={{ m: "auto" }} />
           </ListItemIcon>
           <ListItemText
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
+              alignSelf: "flex-start",
             }}
             primaryTypographyProps={{
               color: "text.secondary",
@@ -105,6 +117,7 @@ export const Preview = (props: PreviewProps) => {
             primary={"nixpkgs/" + category.replace("./", "")}
             secondary={
               <Container
+                component={"div"}
                 sx={{ ml: "0 !important", pl: "0 !important" }}
                 maxWidth="lg"
               >
@@ -117,14 +130,15 @@ export const Preview = (props: PreviewProps) => {
             }
           />
         </ListItem>
-        <ListItem>
+        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" } }}>
           <ListItemIcon>
-            <InputIcon />
+            <InputIcon sx={{ m: "auto" }} />
           </ListItemIcon>
           <ListItemText
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
+              alignSelf: "flex-start",
             }}
             primaryTypographyProps={{
               color: "text.secondary",
@@ -141,15 +155,17 @@ export const Preview = (props: PreviewProps) => {
         <ListItem
           sx={{
             backgroundColor: "background.paper",
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <ListItemIcon>
-            <CodeIcon />
+            <CodeIcon sx={{ m: "auto" }} />
           </ListItemIcon>
           <ListItemText
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
+              alignSelf: "flex-start",
             }}
             disableTypography
             primary={
@@ -161,8 +177,10 @@ export const Preview = (props: PreviewProps) => {
             }
             secondary={
               finalExample ? (
-                <Box sx={{ mt: -2, pl: 1.5 }}>
-                  <Highlight className="nix">{finalExample}</Highlight>
+                <Box sx={{ mt: -2 }}>
+                  <Highlight className={`nix ${styles.hljs}`}>
+                    {finalExample}
+                  </Highlight>
                 </Box>
               ) : (
                 <Typography

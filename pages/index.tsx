@@ -3,7 +3,6 @@ import { useState, useMemo } from "react";
 import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
-import { Preview } from "../components/preview/preview";
 import nixLibs from "../models/lib.json";
 import nixBuiltins from "../models/builtins.json";
 
@@ -36,69 +35,81 @@ const search =
     });
   };
 
-const preProcess = (a: string | undefined) => {
-  if (a) {
-    let b = a;
-    if (a.includes("::")) {
-      b = a.split("::")[1];
+function getTypes(
+  fnName: string,
+  fnType: string | undefined
+): { args: NixType[]; types: NixType[] } {
+  if (fnType) {
+    let cleanType = fnType.replace(/ /g, "").replace(`${fnName}::`, "");
+    const tokens = cleanType
+      .split(/(::|->|\[|\]|\{|\}|\(|\))/gm)
+      .filter(Boolean);
+    const lastArrowIdx = tokens.lastIndexOf("->");
+    if (lastArrowIdx) {
+      // Function has at least on return value
+      const interpretToken = (token: string) => {
+        if (token === "(" || token === ")") {
+          return "function" as NixType;
+        } else if (token === "[" || token === "]") {
+          return "list" as NixType;
+        } else if (token === "{" || token === "}") {
+          return "attrset" as NixType;
+        } else if (nixTypes.includes(token.toLowerCase() as NixType)) {
+          return token.toLowerCase() as NixType;
+        } else if (
+          token.length === 1 &&
+          ["a", "b", "c", "d", "e"].includes(token)
+        ) {
+          return "any" as NixType;
+        } else {
+          return undefined;
+        }
+      };
+      const returnValueTokens = tokens.slice(lastArrowIdx + 1);
+      const types = returnValueTokens
+        .map(interpretToken)
+        .filter(Boolean)
+        .filter((e, i, s) => s.indexOf(e) === i);
+      const args = tokens
+        .slice(0, lastArrowIdx)
+        .map(interpretToken)
+        .filter(Boolean)
+        .filter((e, i, s) => s.indexOf(e) === i);
+      return { args, types } as { args: NixType[]; types: NixType[] };
     }
-    const cleaned = b?.replace("(", "").replace(")", "").trim();
-    let typ = cleaned;
-    if (cleaned.match(/\[(.*)\]/)) {
-      typ = "list";
-    }
-    if (
-      cleaned.toLowerCase().includes("attrset") ||
-      cleaned.trim().startsWith("{")
-    ) {
-      typ = "attrset";
-    }
-    if (cleaned.length === 1 && ["a", "b", "c", "d", "e"].includes(cleaned)) {
-      typ = "any";
-    }
-    return typ;
   }
-  return a;
-};
+  return { args: ["any"], types: ["any"] };
+}
+
 const filterByType =
-  (to: NixType[], from: NixType[]) =>
+  ({ to, from }: { to: NixType; from: NixType }) =>
   (data: MetaData): MetaData => {
-    //if user wants any data show all
-    if (to.includes("any") && from.includes("any")) {
+    if (to === "any" && from === "any") {
       return data;
+    } else {
+      return data.filter(
+        // TODO: Implement proper type matching
+        ({ name, fn_type }) => {
+          if (fn_type) {
+            const parsedType = getTypes(name, fn_type);
+            return (
+              parsedType.args.includes(from) && parsedType.types.includes(to)
+            );
+          } else {
+            return to === "any" && from === "any";
+          }
+        }
+      );
     }
-    return data.filter(
-      // TODO: Implement proper type matching
-      ({ name, fn_type }) => {
-        if (fn_type) {
-          const cleanType = fn_type.replace(/ /g, "").replace(`${name}::`, "");
-          const args = cleanType.split("->");
-          const front = args.slice(0, -1);
-
-          const parsedInpTypes = front.map(preProcess);
-
-          const fn_to = args.at(-1);
-          const parsedOutType = preProcess(fn_to);
-          return (
-            from.some((f) => parsedInpTypes.join(" ").includes(f)) &&
-            to.some((t) => parsedOutType?.includes(t))
-          );
-        }
-        //function type could not be detected only show those without filters
-        if (fn_type === null) {
-          return to.includes("any") && from.includes("any");
-        }
-        return false;
-      }
-    );
   };
 
-const initialTypes = nixTypes;
 export default function FunctionsPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [term, setTerm] = useState<string>("");
-  const [to, setTo] = useState<NixType[]>(initialTypes);
-  const [from, setFrom] = useState<NixType[]>(initialTypes);
+  const [filter, setFilter] = useState<{ to: NixType; from: NixType }>({
+    to: "any",
+    from: "any",
+  });
 
   const handleSelect = (key: string) => {
     setSelected((curr: string | null) => {
@@ -111,55 +122,42 @@ export default function FunctionsPage() {
   };
 
   const filteredData = useMemo(
-    () => pipe(filterByType(to, from), search(term))(data),
-    [to, from, term]
+    () => pipe(filterByType(filter), search(term))(data),
+    [filter, term]
   );
 
   const handleSearch = (term: string) => {
     setTerm(term);
   };
 
-  const handleFilter = (t: NixType, mode: "to" | "from") => {
-    let filterBy;
-    if (t === "any") {
-      filterBy = nixTypes;
-    } else {
-      filterBy = [t];
-    }
-    if (mode === "from") {
-      setFrom(filterBy);
-    }
-    if (mode === "to") {
-      setTo(filterBy);
-    }
+  const handleFilter = (filter: { from: NixType; to: NixType }) => {
+    setFilter(filter);
   };
   const getKey = (item: DocItem) => `${item.category}/${item.name}`;
 
   const preRenderedItems: BasicListItem[] = filteredData.map(
-    (docItem: DocItem) => ({
-      item: (
-        <Box
-          sx={{
-            width: "100%",
-            height: "100%",
-          }}
-          onClick={() => handleSelect(getKey(docItem))}
-        >
-          <FunctionItem
-            name={docItem.name}
-            docItem={docItem}
-            selected={selected === getKey(docItem)}
-          />
-        </Box>
-      ),
-      key: getKey(docItem),
-    })
-  );
-  const preview = (
-    <Preview
-      docItem={data.find((f) => getKey(f) === selected) || data[0]}
-      handleClose={() => setSelected(null)}
-    />
+    (docItem: DocItem) => {
+      const key = getKey(docItem);
+      return {
+        item: (
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+            }}
+            onClick={!(selected === key) ? () => handleSelect(key) : undefined}
+          >
+            <FunctionItem
+              name={docItem.name}
+              docItem={docItem}
+              selected={selected === key}
+              handleClose={() => setSelected(null)}
+            />
+          </Box>
+        ),
+        key,
+      };
+    }
   );
 
   return (
@@ -170,7 +168,6 @@ export default function FunctionsPage() {
         items={preRenderedItems}
         handleSearch={handleSearch}
         handleFilter={handleFilter}
-        preview={selected ? preview : null}
       />
     </Box>
   );
