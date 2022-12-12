@@ -64,7 +64,7 @@ export default function FunctionItem(props: FunctionItemProps) {
                 color: !fn_type ? "text.secondary" : "text.primary",
               }}
             >
-              {`${fn_type || "No type yet provided"} `}
+              {`${fn_type || "No type provided yet."} `}
             </Typography>
           </>
         )}

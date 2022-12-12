@@ -182,7 +182,7 @@ export const Preview = (props: PreviewProps) => {
               color: "text.primary",
               fontSize: "1rem",
             }}
-            secondary={fn_type || "no type yet provided"}
+            secondary={fn_type || "no type provided yet."}
             primary="function signature "
           />
         </ListItem>
