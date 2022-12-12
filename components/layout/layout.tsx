@@ -5,6 +5,7 @@ import {
   Link,
   useTheme,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import { Image } from "../image";
 import nixSnowflake from "../../public/nix-snowflake.svg";
@@ -23,18 +24,16 @@ export function Layout(props: LayoutProps) {
     <Box
       sx={{
         height: "100vh",
-        overflow: "hidden",
+        overflow: "scroll",
         bgcolor:
-          theme.palette.mode === "light"
-            ? "rgb(242, 248, 253)"
-            : "rgb(23, 17, 22)",
+          theme.palette.mode === "light" ? "rgb(242, 248, 253)" : "#070c16",
       }}
     >
       <header>
         <Box
           sx={{
-            position: "fixed",
-            top: "15rem",
+            // position: "fixed",
+            // top: "15rem",
             height: "100%",
             width: "100%",
             zIndex: 0,
@@ -47,8 +46,8 @@ export function Layout(props: LayoutProps) {
 
         <Box
           sx={{
-            position: "fixed",
-            top: 0,
+            // position: "fixed",
+            // top: 0,
             width: "100%",
             p: 1,
             zIndex: 1,
@@ -61,10 +60,13 @@ export function Layout(props: LayoutProps) {
           }}
         >
           <Typography
-            variant="h2"
+            variant="h1"
+            component="h1"
             sx={{
               textAlign: "center",
               color: "#fff",
+              fontSize: "30pt",
+              lineHeight: 1.2,
             }}
           >
             <Box
@@ -79,35 +81,40 @@ export function Layout(props: LayoutProps) {
               <Image
                 src={nixWhite}
                 alt="nix-logo"
-                height={50}
+                height={25}
                 style={{
-                  marginBottom: "-0.5rem",
+                  marginBottom: "0rem",
                 }}
               />
             </Box>
             <Box sx={{ ml: 1 }} component="span">{`noog\u03BBe`}</Box>
             <Link href="https://github.com/hsjobeki/noogle">
-              <IconButton sx={{ float: "right", top: "0.5em", right: "1em" }}>
-                <GitHubIcon
-                  fontSize="large"
-                  sx={{
-                    display: {
-                      xs: "none",
-                      md: "inline-block",
-                    },
-                  }}
-                />
-              </IconButton>
+              <Tooltip title="Contribute on Github">
+                <IconButton
+                  // ButtonProps={{ ref: iconRef }}
+                  // buttonProps
+                  // ref={iconRef}
+                  sx={{ float: "right", top: "0.6rem", right: "1em", p: 0 }}
+                >
+                  <GitHubIcon
+                    // fontSize=""
+                    sx={{
+                      display: {
+                        xs: "none",
+                        md: "inline-block",
+                      },
+                    }}
+                  />
+                </IconButton>
+              </Tooltip>
             </Link>
           </Typography>
         </Box>
       </header>
       <main
         style={{
-          marginTop: "6em",
-          maxHeight: "calc(100vh - 8em)",
-          overflowY: "scroll",
-          overflowX: "hidden",
+          marginTop: "1rem",
+          // height:
           width: "100vw",
         }}
       >

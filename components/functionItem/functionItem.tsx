@@ -36,7 +36,7 @@ export default function FunctionItem(props: FunctionItemProps) {
         cursor: !selected ? "pointer" : "default",
         display: "flex",
         justifyContent: "left",
-        px: 2,
+        px: { xs: 0, md: 2 },
         py: 1,
         color: selected ? "primary.main" : undefined,
         borderColor: selected ? "primary.light" : "none",

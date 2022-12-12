@@ -1,4 +1,11 @@
-.hljs {
-    padding: 0 !important;
 
+.hljs {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+}
+.hljs .pre {
+    width: 100%;
+}
+.hljs .nix {
+    overflow-x: scroll;
 }

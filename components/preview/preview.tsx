@@ -1,18 +1,17 @@
+import React, { useEffect } from "react";
 import {
   Box,
   Container,
   IconButton,
-  Link,
   List,
   ListItem,
-  ListItemButton,
   ListItemIcon,
-  ListItemSecondaryAction,
   ListItemText,
   Tooltip,
   Typography,
+  useTheme,
+  Link as MuiLink,
 } from "@mui/material";
-// import CloseIcon from "@mui/icons-material/Close";
 import Highlight from "react-highlight";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
@@ -23,10 +22,11 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import styles from "./preview.module.css";
 import rehypeHighlight from "rehype-highlight";
 import nix from "highlight.js/lib/languages/nix";
+import Link from "next/link";
 
-// import hljs from "highlight.js";
-// needed for nextjs to import the classes of github theme
-import "highlight.js/styles/github.css";
+// import "highlight.js/styles/github-dark.css";
+// import "highlight.js/styles/github.css";
+
 interface PreviewProps {
   docItem: DocItem;
   handleClose: () => void;
@@ -35,39 +35,28 @@ interface PreviewProps {
 export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose } = props;
   const { name, description, category, example, fn_type } = docItem;
+  const theme = useTheme();
 
-  const getGeneratedExamples = () => {
-    if (description) {
-      const regex = /(```.+?```)/gms;
-      console.log({ description, regex });
-      if (typeof description === "object") {
-        return description
-          .join(" ")
-          .match(regex)
-          ?.join("\n#---\n")
-          ?.replaceAll("```nix", "")
-          ?.replaceAll("```", "");
-      } else {
-        return description
-          .match(regex)
-          ?.join("\n#---\n")
-          ?.replaceAll("```nix", "")
-          ?.replaceAll("```", "");
-      }
+  useEffect(() => {
+    if (theme.palette.mode === "dark") {
+      // @ts-ignore - dont check type of css module
+      import("highlight.js/styles/github-dark.css");
+    } else {
+      // @ts-ignore - dont check type of css module
+      import("highlight.js/styles/github.css");
     }
-  };
+  }, [theme]);
 
-  const finalExample = example || getGeneratedExamples();
-  console.log({ finalExample });
   const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
   const libName = category
     .match(/(?:[a-zA-Z]*)\.nix/gm)?.[0]
     ?.replace(".nix", "");
-  const docsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${name}`;
+  const libDocsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${name}`;
+  const builtinsDocsRef = `https://nixos.org/manual/nix/stable/language/builtins.html#builtins-${name}`;
   return (
     <Box
       sx={{
-        p: 1,
+        p: { xs: 0.5, md: 1 },
         width: "100%",
         overflow: "none",
       }}
@@ -97,16 +86,26 @@ export const Preview = (props: PreviewProps) => {
           </IconButton>
         </Tooltip>
       </Box>
-      <List sx={{ width: "100%" }}>
-        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" } }}>
+      <List sx={{ width: "100%" }} disablePadding>
+        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
-            <LocalLibraryIcon sx={{ m: "auto" }} />
+            <Tooltip title={"read docs"}>
+              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
+                <Link
+                  href={prefix != "builtins" ? libDocsRef : builtinsDocsRef}
+                >
+                  <LocalLibraryIcon sx={{ m: "auto" }} />
+                </Link>
+              </MuiLink>
+            </Tooltip>
           </ListItemIcon>
           <ListItemText
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
               alignSelf: "flex-start",
+              width: "100%",
+              px: 0,
             }}
             primaryTypographyProps={{
               color: "text.secondary",
@@ -117,7 +116,24 @@ export const Preview = (props: PreviewProps) => {
               fontSize: "1rem",
               component: "div",
             }}
-            primary={"nixpkgs/" + category.replace("./", "")}
+            primary={
+              prefix !== "builtins" ? (
+                <Tooltip title={"browse source code"}>
+                  <MuiLink>
+                    <Link
+                      href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+                        "./",
+                        ""
+                      )}`}
+                    >
+                      {"github:NixOS/nixpkgs/" + category.replace("./", "")}
+                    </Link>
+                  </MuiLink>
+                </Tooltip>
+              ) : (
+                "github:NixOS/nix/" + category.replace("./", "")
+              )
+            }
             secondary={
               <Container
                 component={"div"}
@@ -154,8 +170,6 @@ export const Preview = (props: PreviewProps) => {
                         rehypePlugins={[
                           [rehypeHighlight, { languages: { nix } }],
                         ]}
-
-                        // languages: { nix } }}
                       >
                         {description}
                       </ReactMarkdown>
@@ -164,13 +178,25 @@ export const Preview = (props: PreviewProps) => {
             }
           />
         </ListItem>
-        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" } }}>
+        <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
-            <InputIcon sx={{ m: "auto" }} />
+            <Tooltip title={"browse source code"}>
+              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
+                <Link
+                  href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+                    "./",
+                    ""
+                  )}`}
+                >
+                  <InputIcon sx={{ m: "auto" }} />
+                </Link>
+              </MuiLink>
+            </Tooltip>
           </ListItemIcon>
           <ListItemText
             sx={{
               overflow: "hidden",
+              width: "100%",
               textOverflow: "ellipsis",
               alignSelf: "flex-start",
             }}
@@ -190,39 +216,44 @@ export const Preview = (props: PreviewProps) => {
           sx={{
             backgroundColor: "background.paper",
             flexDirection: { xs: "column", sm: "row" },
+            px: 0,
           }}
         >
-          <ListItemIcon>
-            <CodeIcon sx={{ m: "auto" }} />
-          </ListItemIcon>
-          <ListItemText
-            sx={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              alignSelf: "flex-start",
-            }}
-            disableTypography
-            primary={
-              finalExample && (
+          {example && (
+            <ListItemIcon>
+              <CodeIcon sx={{ m: "auto" }} />
+            </ListItemIcon>
+          )}
+          {example && (
+            <ListItemText
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                alignSelf: "flex-start",
+                width: "100%",
+                px: 0,
+              }}
+              disableTypography
+              primary={
                 <Typography sx={{ color: "text.secondary" }}>
                   Example
                 </Typography>
-              )
-            }
-            secondary={
-              finalExample ? (
-                <Box sx={{ mt: -2 }}>
+              }
+              secondary={
+                <Box
+                  sx={{
+                    "&.MuiBox-root>pre": {
+                      width: "100%",
+                    },
+                  }}
+                >
                   <Highlight className={`nix ${styles.hljs}`}>
-                    {finalExample}
+                    {example}
                   </Highlight>
                 </Box>
-              ) : (
-                <Typography
-                  sx={{ color: "text.secondary" }}
-                >{`no example yet provided`}</Typography>
-              )
-            }
-          />
+              }
+            />
+          )}
         </ListItem>
       </List>
     </Box>
