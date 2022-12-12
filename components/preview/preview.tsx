@@ -21,8 +21,10 @@ import CodeIcon from "@mui/icons-material/Code";
 import ReactMarkdown from "react-markdown";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import styles from "./preview.module.css";
-// import hljs from "highlight.js";
+import rehypeHighlight from "rehype-highlight";
+import nix from "highlight.js/lib/languages/nix";
 
+// import hljs from "highlight.js";
 // needed for nextjs to import the classes of github theme
 import "highlight.js/styles/github.css";
 interface PreviewProps {
@@ -79,7 +81,7 @@ export const Preview = (props: PreviewProps) => {
       >
         <Typography
           variant="h4"
-          sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
+          sx={{ wordWrap: "normal", lineBreak: "" }}
         >{`${prefix}.${name}`}</Typography>
         <Tooltip title="close details">
           <IconButton
@@ -113,19 +115,51 @@ export const Preview = (props: PreviewProps) => {
             secondaryTypographyProps={{
               color: "text.primary",
               fontSize: "1rem",
+              component: "div",
             }}
             primary={"nixpkgs/" + category.replace("./", "")}
             secondary={
               <Container
                 component={"div"}
-                sx={{ ml: "0 !important", pl: "0 !important" }}
-                maxWidth="lg"
+                sx={{
+                  ml: "0 !important",
+                  pl: "0 !important",
+                  overflow: "visible",
+                }}
+                maxWidth="md"
               >
                 {typeof description === "object"
                   ? description.map((d, idx) => (
-                      <ReactMarkdown key={idx}>{d}</ReactMarkdown>
+                      <ReactMarkdown
+                        key={idx}
+                        components={{
+                          h1: "h3",
+                          h2: "h4",
+                          h3: "h5",
+                        }}
+                        rehypePlugins={[
+                          [rehypeHighlight, { languages: { nix } }],
+                        ]}
+                      >
+                        {d}
+                      </ReactMarkdown>
                     ))
-                  : description && <ReactMarkdown>{description}</ReactMarkdown>}
+                  : description && (
+                      <ReactMarkdown
+                        components={{
+                          h1: "h3",
+                          h2: "h4",
+                          h3: "h5",
+                        }}
+                        rehypePlugins={[
+                          [rehypeHighlight, { languages: { nix } }],
+                        ]}
+
+                        // languages: { nix } }}
+                      >
+                        {description}
+                      </ReactMarkdown>
+                    )}
               </Container>
             }
           />
