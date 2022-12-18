@@ -16,9 +16,24 @@ Noogle is a Nix API search engine. It allows you to search functions based on th
  
 ## How it works
 
-The idea is to use a fork of `nixdoc`to generate json data from all functions. That have the `Type` field which is currently supported from nixdoc.
+### Indexers:
 
-View the prototype [here](https://noogle.dev)
+Data collections need to be up-to-date
+Those collections are then combined and dumped somewhere (db / json)
+
+For the indexing i currently use:
+
+- Nixdoc (a fork) to collect nixpkgs.lib informations
+- nix __dump-builtins + builtins-types.json for the nix builtins
+
+As some parts of nix already have nixos modules their input/output can be discovered. I still lack some tool to integrate that into noogle.
+
+### Search:
+
+- haskell-like types are parsed and splitted between input and ouput
+- text search, looks in all metadata fields for an exact matching word or character sequence. I dont have elastic search yet.
+
+# View the prototype [here](https://noogle.dev)
 
 ## We need your help / what is missing
 
