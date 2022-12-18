@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   Box,
   IconButton,
@@ -23,6 +23,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 
 import { NixType, nixTypes } from "../../types/nix";
 import { Filter } from "../searchInput/searchInput";
+import { useRouter } from "next/router";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -46,7 +47,19 @@ export function BasicList(props: BasicListProps) {
   // const [from, setFrom] = useState<NixType>("any");
   // const [to, setTo] = useState<NixType>("any");
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
+  const router = useRouter();
+  useEffect(() => {
+    const { query } = router;
+    if (query?.page) {
+      if (typeof query.page === "string") {
+        const page = Number(query.page);
+        setPage(page);
+      }
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router]);
 
   const pageItems = useMemo(() => {
     const startIdx = (page - 1) * itemsPerPage;
@@ -80,6 +93,7 @@ export function BasicList(props: BasicListProps) {
         handleFilter={_handleFilter}
         placeholder="search nix functions"
         handleSearch={_handleSearch}
+        page={page}
         clearSearch={() => _handleSearch("")}
       />
 

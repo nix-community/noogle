@@ -87,10 +87,11 @@ export interface SearchInputProps {
   handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
   clearSearch: () => void;
   placeholder: string;
+  page: number;
 }
 
 export function SearchInput(props: SearchInputProps) {
-  const { handleSearch, clearSearch, placeholder, handleFilter } = props;
+  const { handleSearch, clearSearch, placeholder, handleFilter, page } = props;
   const { enqueueSnackbar } = useSnackbar();
   const [term, setTerm] = useState("");
   const [to, setTo] = useState<NixType>("any");
@@ -128,6 +129,9 @@ export function SearchInput(props: SearchInputProps) {
     if (term) {
       queries.push(`search=${term}`);
     }
+
+    queries.push(`page=${page}`);
+
     queries.push(`to=${to}&from=${from}`);
     const handle = `https://noogle.dev?${queries.join("&")}`;
     navigator.clipboard.writeText(handle);
