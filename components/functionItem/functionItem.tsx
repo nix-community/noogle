@@ -13,7 +13,7 @@ import { DocItem, NixType } from "../../types/nix";
 import { Preview } from "../preview/preview";
 import StarIcon from "@mui/icons-material/Star";
 import ShareIcon from "@mui/icons-material/Share";
-import { useLocalStorage } from "beautiful-react-hooks";
+import { useLocalStorage } from "usehooks-ts";
 import { useSnackbar } from "notistack";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
