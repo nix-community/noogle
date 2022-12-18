@@ -80,7 +80,7 @@ const SelectOption = (props: SelectOptionProps) => {
   );
 };
 
-type Filter = { from: NixType; to: NixType };
+export type Filter = { from: NixType; to: NixType };
 
 export interface SearchInputProps {
   handleSearch: (term: string) => void;

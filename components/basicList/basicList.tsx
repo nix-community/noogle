@@ -22,13 +22,14 @@ import FormLabel from "@mui/material/FormLabel";
 import ClearIcon from "@mui/icons-material/Clear";
 
 import { NixType, nixTypes } from "../../types/nix";
+import { Filter } from "../searchInput/searchInput";
 
 export type BasicListItem = {
   item: React.ReactNode;
   key: string;
 };
 export type BasicListProps = BasicDataViewProps & {
-  handleFilter: (filter: { from: NixType; to: NixType }) => void;
+  handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
   selected?: string | null;
   itemsPerPage: number;
 };
@@ -62,7 +63,7 @@ export function BasicList(props: BasicListProps) {
     setPage(value);
   };
 
-  const _handleFilter = (filter: { from: NixType; to: NixType }) => {
+  const _handleFilter = (filter: Filter | ((curr: Filter) => Filter)) => {
     handleFilter(filter);
     setPage(1);
   };

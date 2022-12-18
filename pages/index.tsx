@@ -1,5 +1,5 @@
 import { BasicList, BasicListItem } from "../components/basicList";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
@@ -123,17 +123,6 @@ export default function FunctionsPage() {
   const handleSearch = (term: string) => {
     setTerm(term);
   };
-
-  // useEffect(() => {
-  //   const query = [];
-  //   if (term) {
-  //     query.push(`search=${term}`);
-  //   }
-  //   if (filter) {
-  //     query.push(`to=${filter.to}&from=${filter.from}`);
-  //   }
-  //   router.push(`?${query.join("&")}`);
-  // }, [filter, term]);
 
   type Filter = { from: NixType; to: NixType };
   const handleFilter = (newFilter: Filter | ((curr: Filter) => Filter)) => {
