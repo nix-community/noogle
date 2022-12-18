@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { SnackbarProvider } from "notistack";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -46,7 +47,12 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={userPrefersDarkmode ? darkTheme : lightTheme}>
           <CssBaseline />
-          {getContent()}
+          <SnackbarProvider
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+            maxSnack={1}
+          >
+            {getContent()}
+          </SnackbarProvider>
         </ThemeProvider>
       </CacheProvider>
     </>

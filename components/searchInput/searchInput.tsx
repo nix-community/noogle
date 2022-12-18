@@ -1,8 +1,7 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import {
   Box,
@@ -13,10 +12,14 @@ import {
   Grid,
   Radio,
   RadioGroup,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NixType, nixTypes } from "../../types/nix";
+import { useRouter } from "next/router";
+import ShareIcon from "@mui/icons-material/Share";
+import { useSnackbar } from "notistack";
 
 interface SelectOptionProps {
   label: string;
@@ -77,22 +80,62 @@ const SelectOption = (props: SelectOptionProps) => {
   );
 };
 
+type Filter = { from: NixType; to: NixType };
+
 export interface SearchInputProps {
   handleSearch: (term: string) => void;
-  handleFilter: (filter: { to: NixType; from: NixType }) => void;
+  handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
   clearSearch: () => void;
   placeholder: string;
 }
 
 export function SearchInput(props: SearchInputProps) {
   const { handleSearch, clearSearch, placeholder, handleFilter } = props;
-
+  const { enqueueSnackbar } = useSnackbar();
   const [term, setTerm] = useState("");
   const [to, setTo] = useState<NixType>("any");
   const [from, setFrom] = useState<NixType>("any");
 
+  const router = useRouter();
+  useEffect(() => {
+    const { query } = router;
+    if (query?.search) {
+      if (typeof query.search === "string") {
+        const search = query.search;
+        setTerm(search);
+        handleSearch(search);
+      }
+    }
+    if (query?.to) {
+      if (typeof query.to === "string") {
+        const to = query.to as NixType;
+        setTo(to);
+        handleFilter((curr) => ({ ...curr, to }));
+      }
+    }
+    if (query?.from) {
+      if (typeof query.from === "string") {
+        const from = query.from as NixType;
+        setFrom(from);
+        handleFilter((curr) => ({ ...curr, from }));
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router]);
+
+  const handleShare = () => {
+    const queries = [];
+    if (term) {
+      queries.push(`search=${term}`);
+    }
+    queries.push(`to=${to}&from=${from}`);
+    const handle = `https://noogle.dev?${queries.join("&")}`;
+    navigator.clipboard.writeText(handle);
+    enqueueSnackbar("link copied to clipboard", { variant: "default" });
+  };
   const handleSubmit = React.useRef((input: string) => {
     handleSearch(input);
+    router.query[term] = term;
   }).current;
   const debouncedSubmit = useMemo(
     () => debounce(handleSubmit, 300),
@@ -100,7 +143,6 @@ export function SearchInput(props: SearchInputProps) {
   );
 
   const _handleFilter = (t: NixType, mode: "from" | "to") => {
-    console.log({ t, mode });
     if (mode === "to") {
       setTo(t);
       handleFilter({ to: t, from });
@@ -156,23 +198,19 @@ export function SearchInput(props: SearchInputProps) {
           value={term}
           onChange={(e) => handleChange(e)}
         />
-        <IconButton
-          type="submit"
-          onClick={() => handleSubmit(term)}
-          sx={{
-            p: 1,
-            bgcolor: "primary.dark",
-            color: "common.white",
-            "&:hover": {
-              backgroundColor: "primary.main",
-              opacity: [0.9, 0.8, 0.7],
-            },
-          }}
-          aria-label="search-button"
-        >
-          <SearchIcon />
-        </IconButton>
+        <Tooltip title="share search result">
+          <IconButton
+            sx={{
+              p: 1,
+              color: "common.black",
+            }}
+            onClick={handleShare}
+          >
+            <ShareIcon fontSize="inherit" />
+          </IconButton>
+        </Tooltip>
       </Paper>
+
       <Box>
         <Grid container>
           <Grid item xs={12} md={5}>

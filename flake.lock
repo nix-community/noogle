@@ -340,6 +340,20 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1671160997,
+        "narHash": "sha256-fcPZMRjAkUhrfXwoq2RPejfhtPnQ+aI5CTr4x8d0JPs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4172cdda7e56a48065475fb98c57b03b83c1fde4",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "poetry2nix": {
       "flake": false,
       "locked": {
@@ -385,7 +399,8 @@
     "root": {
       "inputs": {
         "dream2nix": "dream2nix",
-        "nixdoc-fork": "nixdoc-fork"
+        "nixdoc-fork": "nixdoc-fork",
+        "nixpkgs": "nixpkgs_4"
       }
     },
     "rust-analyzer-src": {

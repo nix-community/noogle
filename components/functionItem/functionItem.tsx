@@ -1,7 +1,23 @@
-import { ListItemText, Paper, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  ListItemText,
+  Paper,
+  Stack,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { useMemo } from "react";
-import { DocItem } from "../../types/nix";
+import { DocItem, NixType } from "../../types/nix";
 import { Preview } from "../preview/preview";
+import StarIcon from "@mui/icons-material/Star";
+import ShareIcon from "@mui/icons-material/Share";
+import { useLocalStorage } from "beautiful-react-hooks";
+import { useSnackbar } from "notistack";
+import StarRateIcon from "@mui/icons-material/StarRate";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { Key } from "@mui/icons-material";
 
 interface FunctionItemProps {
   selected: boolean;
@@ -9,9 +25,20 @@ interface FunctionItemProps {
   docItem: DocItem;
   handleClose: () => void;
 }
+const getKey = (item: DocItem) => `${item.category}/${item.name}`;
+
 export default function FunctionItem(props: FunctionItemProps) {
   const { name, docItem, selected, handleClose } = props;
   const { fn_type, category, description } = docItem;
+  const { enqueueSnackbar } = useSnackbar();
+  const [favorites, setfavorites] = useLocalStorage<string[]>(
+    "personal-favorite",
+    []
+  );
+  const isFavorit = useMemo(
+    () => favorites.includes(getKey(docItem)),
+    [docItem, favorites]
+  );
   const descriptionPreview = useMemo(() => {
     const getFirstWords = (s: string) => {
       const indexOfDot = s.indexOf(".");
@@ -29,6 +56,27 @@ export default function FunctionItem(props: FunctionItemProps) {
       return "";
     }
   }, [description]);
+
+  const handleShare = () => {
+    const queries = [];
+    const key = getKey(docItem);
+    if (key) {
+      queries.push(`fn=${key}`);
+    }
+    const handle = `https://noogle.dev/preview?${queries.join("&")}`;
+    navigator.clipboard.writeText(handle);
+    enqueueSnackbar("link copied to clipboard", { variant: "default" });
+  };
+  const handleFavorit = () => {
+    const key = getKey(docItem);
+    setfavorites((curr) => {
+      if (curr.includes(key)) {
+        return curr.filter((v) => v !== key);
+      } else {
+        return [...curr, key];
+      }
+    });
+  };
   return (
     <Paper
       elevation={0}
@@ -36,8 +84,9 @@ export default function FunctionItem(props: FunctionItemProps) {
         cursor: !selected ? "pointer" : "default",
         display: "flex",
         justifyContent: "left",
-        px: { xs: 0, md: 2 },
-        py: 1,
+        px: selected ? 0 : { xs: 0, md: 2 },
+        pt: 1,
+        mb: 0,
         color: selected ? "primary.main" : undefined,
         borderColor: selected ? "primary.light" : "none",
         borderWidth: 1,
@@ -52,6 +101,9 @@ export default function FunctionItem(props: FunctionItemProps) {
       <Stack sx={{ width: "100%" }}>
         {!selected && (
           <>
+            <Box sx={{ float: "right", position: "absolute", right: 4 }}>
+              {isFavorit && <StarIcon />}
+            </Box>
             <ListItemText
               primary={`${
                 category.includes(".nix") ? "lib" : "builtins"
@@ -68,7 +120,27 @@ export default function FunctionItem(props: FunctionItemProps) {
             </Typography>
           </>
         )}
-        {selected && <Preview docItem={docItem} handleClose={handleClose} />}
+        {selected && (
+          <>
+            <Preview docItem={docItem} handleClose={handleClose} />
+            <Toolbar
+              sx={{
+                justifyContent: "end",
+              }}
+            >
+              <Tooltip title={`${isFavorit ? "remove" : "add"} favorite`}>
+                <IconButton onClick={handleFavorit}>
+                  {isFavorit ? <StarIcon /> : <StarBorderIcon />}
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Share">
+                <IconButton onClick={handleShare}>
+                  <ShareIcon />
+                </IconButton>
+              </Tooltip>
+            </Toolbar>
+          </>
+        )}
       </Stack>
     </Paper>
   );

@@ -29,11 +29,12 @@ import Link from "next/link";
 
 interface PreviewProps {
   docItem: DocItem;
-  handleClose: () => void;
+  closeComponent?: React.ReactNode;
+  handleClose?: () => void;
 }
 
 export const Preview = (props: PreviewProps) => {
-  const { docItem, handleClose } = props;
+  const { docItem, handleClose, closeComponent = undefined } = props;
   const { name, description, category, example, fn_type } = docItem;
   const theme = useTheme();
 
@@ -70,21 +71,23 @@ export const Preview = (props: PreviewProps) => {
       >
         <Typography
           variant="h4"
-          sx={{ wordWrap: "normal", lineBreak: "" }}
+          sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
         >{`${prefix}.${name}`}</Typography>
-        <Tooltip title="close details">
-          <IconButton
-            sx={{
-              mx: { xs: "auto", md: 1 },
-              left: { lg: "calc(50% - 2rem)", xs: "unset" },
-              position: { lg: "absolute", xs: "relative" },
-            }}
-            size="small"
-            onClick={() => handleClose()}
-          >
-            <ExpandLessIcon fontSize="large" />
-          </IconButton>
-        </Tooltip>
+        {closeComponent || (
+          <Tooltip title="close details">
+            <IconButton
+              sx={{
+                mx: { xs: "auto", md: 1 },
+                left: { lg: "calc(50% - 2rem)", xs: "unset" },
+                position: { lg: "absolute", xs: "relative" },
+              }}
+              size="small"
+              onClick={() => handleClose?.()}
+            >
+              <ExpandLessIcon fontSize="large" />
+            </IconButton>
+          </Tooltip>
+        )}
       </Box>
       <List sx={{ width: "100%" }} disablePadding>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
@@ -212,19 +215,19 @@ export const Preview = (props: PreviewProps) => {
             primary="function signature "
           />
         </ListItem>
-        <ListItem
-          sx={{
-            backgroundColor: "background.paper",
-            flexDirection: { xs: "column", sm: "row" },
-            px: 0,
-          }}
-        >
-          {example && (
+        {example && (
+          <ListItem
+            sx={{
+              backgroundColor: "background.paper",
+              flexDirection: { xs: "column", sm: "row" },
+              px: 0,
+            }}
+          >
+            (
             <ListItemIcon>
               <CodeIcon sx={{ m: "auto" }} />
             </ListItemIcon>
-          )}
-          {example && (
+            )
             <ListItemText
               sx={{
                 overflow: "hidden",
@@ -253,8 +256,8 @@ export const Preview = (props: PreviewProps) => {
                 </Box>
               }
             />
-          )}
-        </ListItem>
+          </ListItem>
+        )}
       </List>
     </Box>
   );

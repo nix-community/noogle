@@ -1,9 +1,10 @@
 {
   inputs.dream2nix.url = "github:nix-community/dream2nix";
   inputs.nixdoc-fork.url = "github:hsjobeki/nixdoc";
-  outputs = inp:
+  outputs = {self, nixpkgs,...}@inp:
   let
     system = "x86_64-linux";
+    pkgs = inp.nixpkgs.legacyPackages.${system}; 
     inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
   in                              
     (inp.dream2nix.lib.makeFlakeOutputs {
@@ -31,9 +32,11 @@
           '';
         };
       };
-    }); 
-    # // {
-    #   packages.${system}.nixi = inp.nixdoc-fork.packages.${system}.data;
-    # };
+    })
+    // {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [nodejs-18_x ];
+      };
+    };
 
 }

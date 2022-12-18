@@ -1,15 +1,10 @@
 import { BasicList, BasicListItem } from "../components/basicList";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
-import nixLibs from "../models/lib.json";
-import nixBuiltins from "../models/builtins.json";
-
-const data: MetaData = [
-  ...(nixLibs as MetaData),
-  ...(nixBuiltins as MetaData),
-].sort((a, b) => a.name.localeCompare(b.name));
+import { data } from "../models/data";
+import { useRouter } from "next/router";
 
 function pipe<T>(...fns: ((arr: T) => T)[]) {
   return (x: T) => fns.reduce((v, f) => f(v), x);
@@ -107,8 +102,10 @@ export default function FunctionsPage() {
     to: "any",
     from: "any",
   });
+  const router = useRouter();
 
   const handleSelect = (key: string) => {
+    console.log({ key });
     setSelected((curr: string | null) => {
       if (curr === key) {
         return null;
@@ -127,8 +124,20 @@ export default function FunctionsPage() {
     setTerm(term);
   };
 
-  const handleFilter = (filter: { from: NixType; to: NixType }) => {
-    setFilter(filter);
+  // useEffect(() => {
+  //   const query = [];
+  //   if (term) {
+  //     query.push(`search=${term}`);
+  //   }
+  //   if (filter) {
+  //     query.push(`to=${filter.to}&from=${filter.from}`);
+  //   }
+  //   router.push(`?${query.join("&")}`);
+  // }, [filter, term]);
+
+  type Filter = { from: NixType; to: NixType };
+  const handleFilter = (newFilter: Filter | ((curr: Filter) => Filter)) => {
+    setFilter(newFilter);
   };
   const getKey = (item: DocItem) => `${item.category}/${item.name}`;
 
