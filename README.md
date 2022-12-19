@@ -42,8 +42,9 @@ As some parts of nix already have nixos modules their input/output can be discov
 - Write type signatures for the `builtins` in json
 - Add path, where each function can be imported from. e.g. `lib.makeOverridable` or `lib.customisation.makeOverridable` (it is available in both sets)
 - Website
-    - Make sure functions with missing type signatures can be found too
+    - improve share / social interactions
     - Add filter by tags e.g. lib.lists
+    - Prepare for scaling up: Either use api or use indexedDB with WebAssembly for complete offline usage?
     - Mobile optimization for reading on the go
 - Clean up / enhance my nixdoc fork. 
     - Make the `sloppy` parser more error resistant
