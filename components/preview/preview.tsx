@@ -223,11 +223,10 @@ export const Preview = (props: PreviewProps) => {
               px: 0,
             }}
           >
-            (
             <ListItemIcon>
               <CodeIcon sx={{ m: "auto" }} />
             </ListItemIcon>
-            )
+
             <ListItemText
               sx={{
                 overflow: "hidden",
