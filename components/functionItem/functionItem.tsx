@@ -48,7 +48,7 @@ export default function FunctionItem(props: FunctionItemProps) {
       return s.split(" ").filter(Boolean).slice(0, 10).join(" ");
     };
     if (typeof description === "object") {
-      const singleString = description.join("");
+      const singleString = description?.join("") || "";
       return getFirstWords(singleString);
     } else if (description) {
       return getFirstWords(description);
@@ -84,7 +84,7 @@ export default function FunctionItem(props: FunctionItemProps) {
         cursor: !selected ? "pointer" : "default",
         display: "flex",
         justifyContent: "left",
-        px: selected ? 0 : { xs: 0, md: 2 },
+        px: selected ? 0 : { xs: 0.8, md: 2 },
         pt: 1,
         mb: 0,
         color: selected ? "primary.main" : undefined,

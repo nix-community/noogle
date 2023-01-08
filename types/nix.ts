@@ -12,9 +12,9 @@ export type DocItem = {
     id: string;
     category: string;
     name: string;
-    fn_type?: string;
-    description?: string | string[];
-    example?: string | string[];
+    fn_type?: null | string;
+    description?: null | string | string[];
+    example?: null | string | string[];
 };
 
 export type MetaData = DocItem[];
