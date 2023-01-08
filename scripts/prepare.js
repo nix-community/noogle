@@ -5,6 +5,7 @@ const info = Object.entries(builtins).map(([name, meta]) => {
   const fn_type = types[name]?.fn_type || null;
   const { args, arity, doc } = meta;
   return {
+    id: `builtins.${name}`,
     category: "builtins",
     fn_type,
     name,

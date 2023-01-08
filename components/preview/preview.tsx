@@ -23,6 +23,7 @@ import styles from "./preview.module.css";
 import rehypeHighlight from "rehype-highlight";
 import nix from "highlight.js/lib/languages/nix";
 import Link from "next/link";
+import { idText } from "typescript";
 
 // import "highlight.js/styles/github-dark.css";
 // import "highlight.js/styles/github.css";
@@ -35,7 +36,7 @@ interface PreviewProps {
 
 export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose, closeComponent = undefined } = props;
-  const { name, description, category, example, fn_type } = docItem;
+  const { name, description, category, example, fn_type, id } = docItem;
   const theme = useTheme();
 
   useEffect(() => {
@@ -72,7 +73,9 @@ export const Preview = (props: PreviewProps) => {
         <Typography
           variant="h4"
           sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
-        >{`${prefix}.${name}`}</Typography>
+        >
+          {`${id}`}
+        </Typography>
         {closeComponent || (
           <Tooltip title="close details">
             <IconButton
@@ -89,13 +92,18 @@ export const Preview = (props: PreviewProps) => {
           </Tooltip>
         )}
       </Box>
+      {
+        <Box sx={{ my: 1 }}>
+          <Typography variant="subtitle1">{`short form: lib.${name}`}</Typography>
+        </Box>
+      }
       <List sx={{ width: "100%" }} disablePadding>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
             <Tooltip title={"read docs"}>
               <MuiLink sx={{ m: "auto", color: "primary.light" }}>
                 <Link
-                  href={prefix != "builtins" ? libDocsRef : builtinsDocsRef}
+                  href={!id.includes("builtins") ? libDocsRef : builtinsDocsRef}
                 >
                   <LocalLibraryIcon sx={{ m: "auto" }} />
                 </Link>
@@ -120,7 +128,7 @@ export const Preview = (props: PreviewProps) => {
               component: "div",
             }}
             primary={
-              prefix !== "builtins" ? (
+              !id.includes("builtins") ? (
                 <Tooltip title={"browse source code"}>
                   <MuiLink>
                     <Link
@@ -147,7 +155,7 @@ export const Preview = (props: PreviewProps) => {
                 }}
                 maxWidth="md"
               >
-                {typeof description === "object"
+                {Array.isArray(description)
                   ? description.map((d, idx) => (
                       <ReactMarkdown
                         key={idx}

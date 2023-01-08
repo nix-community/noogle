@@ -4,96 +4,7 @@ import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
 import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
 import { data } from "../models/data";
-import { useRouter } from "next/router";
-
-function pipe<T>(...fns: ((arr: T) => T)[]) {
-  return (x: T) => fns.reduce((v, f) => f(v), x);
-}
-
-const search =
-  (term: string) =>
-  (data: MetaData): MetaData => {
-    return data.filter((item) => {
-      return Object.values(item).some((value) => {
-        if (value) {
-          if (typeof value === "object" && value.length > 0) {
-            return value.join("\n").toLowerCase().includes(term.toLowerCase());
-          }
-          const valueAsString = value.toString();
-          return valueAsString.toLowerCase().includes(term.toLowerCase());
-        }
-        return false;
-      });
-    });
-  };
-
-function getTypes(
-  fnName: string,
-  fnType: string | undefined
-): { args: NixType[]; types: NixType[] } {
-  if (fnType) {
-    let cleanType = fnType.replace(/ /g, "").replace(`${fnName}::`, "");
-    const tokens = cleanType
-      .split(/(::|->|\[|\]|\{|\}|\(|\))/gm)
-      .filter(Boolean);
-    const lastArrowIdx = tokens.lastIndexOf("->");
-    if (lastArrowIdx) {
-      // Function has at least on return value
-      const interpretToken = (token: string) => {
-        if (token === "(" || token === ")") {
-          return "function" as NixType;
-        } else if (token === "[" || token === "]") {
-          return "list" as NixType;
-        } else if (token === "{" || token === "}") {
-          return "attrset" as NixType;
-        } else if (nixTypes.includes(token.toLowerCase() as NixType)) {
-          return token.toLowerCase() as NixType;
-        } else if (
-          token.length === 1 &&
-          ["a", "b", "c", "d", "e"].includes(token)
-        ) {
-          return "any" as NixType;
-        } else {
-          return undefined;
-        }
-      };
-      const returnValueTokens = tokens.slice(lastArrowIdx + 1);
-      const types = returnValueTokens
-        .map(interpretToken)
-        .filter(Boolean)
-        .filter((e, i, s) => s.indexOf(e) === i);
-      const args = tokens
-        .slice(0, lastArrowIdx)
-        .map(interpretToken)
-        .filter(Boolean)
-        .filter((e, i, s) => s.indexOf(e) === i);
-      return { args, types } as { args: NixType[]; types: NixType[] };
-    }
-  }
-  return { args: ["any"], types: ["any"] };
-}
-
-const filterByType =
-  ({ to, from }: { to: NixType; from: NixType }) =>
-  (data: MetaData): MetaData => {
-    if (to === "any" && from === "any") {
-      return data;
-    } else {
-      return data.filter(
-        // TODO: Implement proper type matching
-        ({ name, fn_type }) => {
-          if (fn_type) {
-            const parsedType = getTypes(name, fn_type);
-            return (
-              parsedType.args.includes(from) && parsedType.types.includes(to)
-            );
-          } else {
-            return to === "any" && from === "any";
-          }
-        }
-      );
-    }
-  };
+import { byQuery, byType, pipe } from "../queries";
 
 export default function FunctionsPage() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -102,7 +13,6 @@ export default function FunctionsPage() {
     to: "any",
     from: "any",
   });
-  const router = useRouter();
 
   const handleSelect = (key: string) => {
     console.log({ key });
@@ -116,7 +26,7 @@ export default function FunctionsPage() {
   };
 
   const filteredData = useMemo(
-    () => pipe(filterByType(filter), search(term))(data),
+    () => pipe(byType(filter), byQuery(term))(data),
     [filter, term]
   );
 

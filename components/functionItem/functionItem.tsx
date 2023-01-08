@@ -29,7 +29,7 @@ const getKey = (item: DocItem) => `${item.category}/${item.name}`;
 
 export default function FunctionItem(props: FunctionItemProps) {
   const { name, docItem, selected, handleClose } = props;
-  const { fn_type, category, description } = docItem;
+  const { fn_type, category, description, id } = docItem;
   const { enqueueSnackbar } = useSnackbar();
   const [favorites, setfavorites] = useLocalStorage<string[]>(
     "personal-favorite",
@@ -104,12 +104,7 @@ export default function FunctionItem(props: FunctionItemProps) {
             <Box sx={{ float: "right", position: "absolute", right: 4 }}>
               {isFavorit && <StarIcon />}
             </Box>
-            <ListItemText
-              primary={`${
-                category.includes(".nix") ? "lib" : "builtins"
-              }.${name}`}
-              secondary={category}
-            />
+            <ListItemText primary={`${id}`} secondary={category} />
             <ListItemText secondary={descriptionPreview} />
             <Typography
               sx={{

@@ -9,6 +9,7 @@ export const nixTypes: NixType[] = [
 ];
   
 export type DocItem = {
+    id: string;
     category: string;
     name: string;
     fn_type?: string;
