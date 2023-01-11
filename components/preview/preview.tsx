@@ -24,6 +24,7 @@ import rehypeHighlight from "rehype-highlight";
 import nix from "highlight.js/lib/languages/nix";
 import Link from "next/link";
 import { idText } from "typescript";
+import { TrendingUpSharp } from "@mui/icons-material";
 
 // import "highlight.js/styles/github-dark.css";
 // import "highlight.js/styles/github.css";
@@ -92,11 +93,11 @@ export const Preview = (props: PreviewProps) => {
           </Tooltip>
         )}
       </Box>
-      {
+      {prefix !== "builtins" && (
         <Box sx={{ my: 1 }}>
           <Typography variant="subtitle1">{`short form: lib.${name}`}</Typography>
         </Box>
-      }
+      )}
       <List sx={{ width: "100%" }} disablePadding>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
