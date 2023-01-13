@@ -13,8 +13,6 @@ import {
   Link as MuiLink,
 } from "@mui/material";
 import Highlight from "react-highlight";
-import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
-import InputIcon from "@mui/icons-material/Input";
 import { DocItem } from "../../types/nix";
 import CodeIcon from "@mui/icons-material/Code";
 import ReactMarkdown from "react-markdown";
@@ -25,7 +23,8 @@ import nix from "highlight.js/lib/languages/nix";
 import Link from "next/link";
 import { idText } from "typescript";
 import { TrendingUpSharp } from "@mui/icons-material";
-
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import InputIcon from "@mui/icons-material/Input";
 // import "highlight.js/styles/github-dark.css";
 // import "highlight.js/styles/github.css";
 
@@ -101,15 +100,9 @@ export const Preview = (props: PreviewProps) => {
       <List sx={{ width: "100%" }} disablePadding>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
-            <Tooltip title={"read docs"}>
-              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
-                <Link
-                  href={!id.includes("builtins") ? libDocsRef : builtinsDocsRef}
-                >
-                  <LocalLibraryIcon sx={{ m: "auto" }} />
-                </Link>
-              </MuiLink>
-            </Tooltip>
+            <LocalLibraryIcon sx={{ m: "auto" }} />
+            {/* <Tooltip title={"read docs"}>
+            </Tooltip> */}
           </ListItemIcon>
           <ListItemText
             sx={{
@@ -128,24 +121,25 @@ export const Preview = (props: PreviewProps) => {
               fontSize: "1rem",
               component: "div",
             }}
-            primary={
-              !id.includes("builtins") ? (
-                <Tooltip title={"browse source code"}>
-                  <MuiLink>
-                    <Link
-                      href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
-                        "./",
-                        ""
-                      )}`}
-                    >
-                      {"github:NixOS/nixpkgs/" + category.replace("./", "")}
-                    </Link>
-                  </MuiLink>
-                </Tooltip>
-              ) : (
-                "github:NixOS/nix/" + category.replace("./", "")
-              )
-            }
+            // primary={
+            //   !id.includes("builtins") ? (
+            //     <Tooltip title={"browse source code"}>
+            //       <div>A</div>
+            //       {/* <MuiLink>
+            //         <Link
+            //           href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+            //             "./",
+            //             ""
+            //           )}`}
+            //         >
+            //           {"github:NixOS/nixpkgs/" + category.replace("./", "")}
+            //         </Link>
+            //       </MuiLink> */}
+            //     </Tooltip>
+            //   ) : (
+            //     "github:NixOS/nix/" + category.replace("./", "")
+            //   )
+            // }
             secondary={
               <Container
                 component={"div"}
@@ -192,18 +186,7 @@ export const Preview = (props: PreviewProps) => {
         </ListItem>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
-            <Tooltip title={"browse source code"}>
-              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
-                <Link
-                  href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
-                    "./",
-                    ""
-                  )}`}
-                >
-                  <InputIcon sx={{ m: "auto" }} />
-                </Link>
-              </MuiLink>
-            </Tooltip>
+            <InputIcon sx={{ m: "auto" }} />
           </ListItemIcon>
           <ListItemText
             sx={{

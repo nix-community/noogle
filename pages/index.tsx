@@ -1,48 +1,142 @@
+import React from "react";
 import { BasicList, BasicListItem } from "../components/basicList";
 import { useState, useMemo } from "react";
 import { Box } from "@mui/material";
 import FunctionItem from "../components/functionItem/functionItem";
-import { NixType, nixTypes, MetaData, DocItem } from "../types/nix";
+import { NixType, DocItem } from "../types/nix";
 import { data } from "../models/data";
 import { byQuery, byType, pipe } from "../queries";
+import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 
-export default function FunctionsPage() {
-  const [selected, setSelected] = useState<string | null>(null);
-  const [term, setTerm] = useState<string>("");
-  const [filter, setFilter] = useState<{ to: NixType; from: NixType }>({
-    to: "any",
-    from: "any",
+const initialPageState: PageState = {
+  selected: null,
+  term: "",
+  filter: { from: "any", to: "any" },
+  page: 1,
+};
+
+type PageContextType = {
+  pageState: PageState;
+  setPageState: React.Dispatch<React.SetStateAction<PageState>>;
+  setPageStateVariable: SetPageStateVariable;
+};
+const PageContext = React.createContext<PageContextType>({
+  pageState: initialPageState,
+  setPageState: () => {},
+  setPageStateVariable: function a<T>() {
+    return () => {};
+  },
+});
+
+interface PageContextProviderProps {
+  children: React.ReactNode;
+  serverSideProps: PageState;
+}
+
+type SetPageStateVariable = <T>(
+  field: keyof PageState
+) => (value: React.SetStateAction<T> | T) => void;
+
+const PageContextProvider = (props: PageContextProviderProps) => {
+  const router = useRouter();
+  const { children, serverSideProps } = props;
+  const [pageState, setPageState] = useState<PageState>(serverSideProps);
+  function setPageStateVariable<T>(field: keyof PageState) {
+    return function (value: React.SetStateAction<T> | T) {
+      {
+        if (typeof value !== "function") {
+          setPageState((curr) => {
+            const query = router.query;
+            query[field] = JSON.stringify(value);
+            router.push({ query });
+            return { ...curr, [field]: value };
+          });
+        } else {
+          const setter = value as Function;
+          setPageState((curr) => {
+            const query = router.query;
+            const newValue = setter(curr[field]);
+            query[field] = JSON.stringify(newValue);
+            router.push({ query });
+
+            return { ...curr, [field]: newValue };
+          });
+        }
+      }
+    };
+  }
+  return (
+    <PageContext.Provider
+      value={{ pageState, setPageState, setPageStateVariable }}
+    >
+      {children}
+    </PageContext.Provider>
+  );
+};
+
+export const usePageContext = () => React.useContext(PageContext);
+
+type Filter = { to: NixType; from: NixType };
+
+interface PageState {
+  selected: string | null;
+  term: string;
+  filter: Filter;
+  page: number;
+}
+
+export const getServerSideProps: GetServerSideProps<PageState> = async (
+  context
+) => {
+  const { query } = context;
+  const initialProps = { ...initialPageState };
+  Object.entries(query).forEach(([key, value]) => {
+    if (value && !Array.isArray(value)) {
+      try {
+        const parsedValue = JSON.parse(value) as never;
+        const initialValue = initialPageState[key as keyof PageState];
+
+        if (!initialValue || typeof parsedValue === typeof initialValue) {
+          initialProps[key as keyof PageState] = JSON.parse(value) as never;
+        } else {
+          throw "Type of query param does not match the initial values type";
+        }
+      } catch (error) {
+        console.error("Invalid query:", { key, value, error });
+      }
+    }
   });
 
-  const handleSelect = (key: string) => {
-    console.log({ key });
-    setSelected((curr: string | null) => {
-      if (curr === key) {
-        return null;
-      } else {
-        return key;
-      }
-    });
+  return {
+    props: {
+      ...initialProps,
+    },
   };
+};
+
+export default function FunctionsPage(serverSideProps: PageState) {
+  return (
+    <PageContextProvider serverSideProps={serverSideProps}>
+      <Functions />
+    </PageContextProvider>
+  );
+}
+
+function Functions() {
+  const { pageState, setPageStateVariable } = usePageContext();
+  const { selected, term, filter } = pageState;
+
+  const setSelected = setPageStateVariable<string | null>("selected");
 
   const filteredData = useMemo(
     () => pipe(byType(filter), byQuery(term))(data),
     [filter, term]
   );
 
-  const handleSearch = (term: string) => {
-    setTerm(term);
-  };
-
-  type Filter = { from: NixType; to: NixType };
-  const handleFilter = (newFilter: Filter | ((curr: Filter) => Filter)) => {
-    setFilter(newFilter);
-  };
-  const getKey = (item: DocItem) => `${item.category}/${item.name}`;
-
   const preRenderedItems: BasicListItem[] = filteredData.map(
     (docItem: DocItem) => {
-      const key = getKey(docItem);
+      const key = docItem.id;
       return {
         item: (
           <Box
@@ -50,7 +144,7 @@ export default function FunctionsPage() {
               width: "100%",
               height: "100%",
             }}
-            onClick={!(selected === key) ? () => handleSelect(key) : undefined}
+            onClick={!(selected === key) ? () => setSelected(key) : undefined}
           >
             <FunctionItem
               name={docItem.name}
@@ -67,13 +161,7 @@ export default function FunctionsPage() {
 
   return (
     <Box sx={{ ml: { xs: 0, md: 2 } }}>
-      <BasicList
-        selected={selected}
-        itemsPerPage={8}
-        items={preRenderedItems}
-        handleSearch={handleSearch}
-        handleFilter={handleFilter}
-      />
+      <BasicList itemsPerPage={8} items={preRenderedItems} />
     </Box>
   );
 }

@@ -31,14 +31,6 @@ export default function FunctionItem(props: FunctionItemProps) {
   const { name, docItem, selected, handleClose } = props;
   const { fn_type, category, description, id } = docItem;
   const { enqueueSnackbar } = useSnackbar();
-  const [favorites, setfavorites] = useLocalStorage<string[]>(
-    "personal-favorite",
-    []
-  );
-  const isFavorit = useMemo(
-    () => favorites.includes(getKey(docItem)),
-    [docItem, favorites]
-  );
   const descriptionPreview = useMemo(() => {
     const getFirstWords = (s: string) => {
       const indexOfDot = s.indexOf(".");
@@ -67,16 +59,6 @@ export default function FunctionItem(props: FunctionItemProps) {
     navigator.clipboard.writeText(handle);
     enqueueSnackbar("link copied to clipboard", { variant: "default" });
   };
-  const handleFavorit = () => {
-    const key = getKey(docItem);
-    setfavorites((curr) => {
-      if (curr.includes(key)) {
-        return curr.filter((v) => v !== key);
-      } else {
-        return [...curr, key];
-      }
-    });
-  };
   return (
     <Paper
       elevation={0}
@@ -101,9 +83,6 @@ export default function FunctionItem(props: FunctionItemProps) {
       <Stack sx={{ width: "100%" }}>
         {!selected && (
           <>
-            <Box sx={{ float: "right", position: "absolute", right: 4 }}>
-              {isFavorit && <StarIcon />}
-            </Box>
             <ListItemText primary={`${id}`} secondary={category} />
             <ListItemText secondary={descriptionPreview} />
             <Typography
@@ -123,11 +102,6 @@ export default function FunctionItem(props: FunctionItemProps) {
                 justifyContent: "end",
               }}
             >
-              <Tooltip title={`${isFavorit ? "remove" : "add"} favorite`}>
-                <IconButton onClick={handleFavorit}>
-                  {isFavorit ? <StarIcon /> : <StarBorderIcon />}
-                </IconButton>
-              </Tooltip>
               <Tooltip title="Share">
                 <IconButton onClick={handleShare}>
                   <ShareIcon />
