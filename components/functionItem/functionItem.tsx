@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useMemo } from "react";
-import { DocItem, NixType } from "../../types/nix";
+import { DocItem, NixType } from "../../models/nix";
 import { Preview } from "../preview/preview";
 import StarIcon from "@mui/icons-material/Star";
 import ShareIcon from "@mui/icons-material/Share";

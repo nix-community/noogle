@@ -3,94 +3,24 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
-import {
-  Box,
-  debounce,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Grid,
-  Radio,
-  RadioGroup,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, debounce, Grid, Tooltip, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { NixType, nixTypes } from "../../types/nix";
+import { NixType, nixTypes } from "../../models/nix";
 import SearchIcon from "@mui/icons-material/Search";
-import { usePageContext } from "../../pages";
-
-interface SelectOptionProps {
-  label: string;
-  handleChange: (value: string) => void;
-  value: string;
-
-  options: {
-    value: string;
-    label: string;
-  }[];
-}
-
-const SelectOption = (props: SelectOptionProps) => {
-  const { label, handleChange, options, value } = props;
-
-  const _handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newVal = (event.target as HTMLInputElement).value as NixType;
-    handleChange(newVal);
-  };
-
-  return (
-    <FormControl
-      sx={{
-        flexDirection: "row",
-      }}
-    >
-      <FormLabel
-        sx={{
-          width: "7rem",
-          wordWrap: "unset",
-          margin: "auto",
-          padding: 1,
-        }}
-      >
-        <Typography sx={{ minWidth: "max-content" }}>{label}</Typography>
-      </FormLabel>
-
-      <RadioGroup
-        sx={{
-          width: "100%",
-          "&.MuiFormGroup-root": {
-            flexDirection: "row",
-          },
-        }}
-        value={value}
-        onChange={_handleChange}
-      >
-        {options.map(({ value, label }) => (
-          <FormControlLabel
-            key={value}
-            value={value}
-            control={<Radio />}
-            label={label}
-          />
-        ))}
-      </RadioGroup>
-    </FormControl>
-  );
-};
+import { usePageContext } from "../pageContext";
+import { initialPageState } from "../../models/internals";
+import { SelectOption } from "../selectOption";
 
 export type Filter = { from: NixType; to: NixType };
 
 export interface SearchInputProps {
   handleSearch: (term: string) => void;
   handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
-  clearSearch: () => void;
   placeholder: string;
-  page: number;
 }
 
 export function SearchInput(props: SearchInputProps) {
-  const { handleSearch, clearSearch, placeholder, handleFilter, page } = props;
+  const { handleSearch, placeholder, handleFilter } = props;
   const { pageState } = usePageContext();
   const { filter, term } = pageState;
   const [_term, _setTerm] = useState(term);
@@ -105,7 +35,9 @@ export function SearchInput(props: SearchInputProps) {
   );
 
   const handleClear = () => {
-    clearSearch();
+    _setTerm("");
+    handleFilter(initialPageState.filter);
+    handleSubmit("");
   };
   const handleType = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -1,6 +1,6 @@
-import { MetaData } from "../types/nix";
-import nixLibs from "../models/lib.json";
-import nixBuiltins from "../models/builtins.json";
+import { MetaData } from "../nix";
+import nixLibs from "./lib.json";
+import nixBuiltins from "./builtins.json";
 
 export const data: MetaData = [
   ...(nixLibs as MetaData),

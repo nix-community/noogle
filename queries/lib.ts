@@ -1,4 +1,4 @@
-import { NixType, nixTypes } from "../types/nix";
+import { NixType, nixTypes } from "../models/nix";
 
 export function pipe<T>(...fns: ((arr: T) => T)[]) {
   return (x: T) => fns.reduce((v, f) => f(v), x);

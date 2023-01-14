@@ -4,8 +4,7 @@ import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
 
 import { Filter } from "../searchInput/searchInput";
-
-import { usePageContext } from "../../pages";
+import { usePageContext } from "../pageContext";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -54,8 +53,6 @@ export function BasicList(props: BasicListProps) {
         handleFilter={handleFilter}
         placeholder="search nix functions"
         handleSearch={handleSearch}
-        page={page}
-        clearSearch={() => handleSearch("")}
       />
 
       <List aria-label="basic-list" sx={{ pt: 0 }}>
