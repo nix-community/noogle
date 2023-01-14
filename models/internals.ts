@@ -8,6 +8,7 @@ export type PageState = {
     term: string;
     filter: Filter;
     page: number;
+    itemsPerPage: number;
 };
 
 export const initialPageState: PageState = {
@@ -16,6 +17,7 @@ export const initialPageState: PageState = {
   term: "",
   filter: { from: "any", to: "any" },
   page: 1,
+  itemsPerPage: 10,
 };
 
 export type Filter = { to: NixType; from: NixType };

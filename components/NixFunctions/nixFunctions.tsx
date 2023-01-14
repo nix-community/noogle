@@ -50,7 +50,7 @@ export function NixFunctions(props: FunctionsProps) {
 
   return (
     <Box sx={{ ml: { xs: 0, md: 2 } }}>
-      <BasicList itemsPerPage={8} items={preRenderedItems} />
+      <BasicList items={preRenderedItems} />
     </Box>
   );
 }

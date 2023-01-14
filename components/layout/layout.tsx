@@ -3,9 +3,10 @@ import {
   Typography,
   Container,
   Link,
-  useTheme,
   IconButton,
   Tooltip,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { Image } from "../image";
 import nixSnowflake from "../../public/nix-snowflake.svg";
@@ -15,6 +16,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 export interface LayoutProps {
   children: React.ReactNode;
 }
+
+export const useMobile = () => useMediaQuery(useTheme().breakpoints.down("md"));
 
 export function Layout(props: LayoutProps) {
   const { children } = props;
