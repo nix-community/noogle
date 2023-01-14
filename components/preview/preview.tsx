@@ -102,12 +102,12 @@ export const Preview = (props: PreviewProps) => {
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
             <Tooltip title={"read docs"}>
-              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
-                <Link
-                  href={!id.includes("builtins") ? libDocsRef : builtinsDocsRef}
-                >
-                  <LocalLibraryIcon sx={{ m: "auto" }} />
-                </Link>
+              <MuiLink
+                sx={{ m: "auto", color: "primary.light" }}
+                target="_blank"
+                href={!id.includes("builtins") ? libDocsRef : builtinsDocsRef}
+              >
+                <LocalLibraryIcon sx={{ m: "auto" }} />
               </MuiLink>
             </Tooltip>
           </ListItemIcon>
@@ -131,15 +131,14 @@ export const Preview = (props: PreviewProps) => {
             primary={
               !id.includes("builtins") ? (
                 <Tooltip title={"browse source code"}>
-                  <MuiLink>
-                    <Link
-                      href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
-                        "./",
-                        ""
-                      )}`}
-                    >
-                      {"github:NixOS/nixpkgs/" + category.replace("./", "")}
-                    </Link>
+                  <MuiLink
+                    target={"_blank"}
+                    href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+                      "./",
+                      ""
+                    )}`}
+                  >
+                    {"github:NixOS/nixpkgs/" + category.replace("./", "")}
                   </MuiLink>
                 </Tooltip>
               ) : (
@@ -193,15 +192,15 @@ export const Preview = (props: PreviewProps) => {
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
             <Tooltip title={"browse source code"}>
-              <MuiLink sx={{ m: "auto", color: "primary.light" }}>
-                <Link
-                  href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
-                    "./",
-                    ""
-                  )}`}
-                >
-                  <InputIcon sx={{ m: "auto" }} />
-                </Link>
+              <MuiLink
+                sx={{ m: "auto", color: "primary.light" }}
+                target="_blank"
+                href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+                  "./",
+                  ""
+                )}`}
+              >
+                <InputIcon sx={{ m: "auto" }} />
               </MuiLink>
             </Tooltip>
           </ListItemIcon>
