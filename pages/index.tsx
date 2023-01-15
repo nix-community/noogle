@@ -64,10 +64,11 @@ export default function FunctionsPage() {
       };
     }
   );
-
   return (
-    <Box sx={{ ml: { xs: 0, md: 2 } }}>
+    <Box sx={{ ml: { xs: 0, md: 2 }, mb: 5 }}>
       <BasicList
+        term={term}
+        filter={filter}
         selected={selected}
         itemsPerPage={8}
         items={preRenderedItems}
