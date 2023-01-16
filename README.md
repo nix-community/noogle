@@ -1,6 +1,6 @@
-🚧 under construction 🚧
-
-Any contributions are welcome
+![Website](https://img.shields.io/website?down_message=noogle.dev&up_message=noogle.dev&url=https%3A%2F%2Fnoogle.dev)
+![GitHub top language](https://img.shields.io/github/languages/top/hsjobeki/noogle)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hsjobeki/noogle/main.yml)
 
 # [Noogle](https://noogle.dev)
 
