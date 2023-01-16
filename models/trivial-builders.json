@@ -1,0 +1,238 @@
+[
+  {
+    "id": "test.trivial-builders.runCommand",
+    "category": "test/trivial-builders.nix",
+    "name": "runCommand",
+    "fn_type": null,
+    "description": [
+      "Run the shell command `buildCommand' to produce a store path named\n`name'.  The attributes in `env' are added to the environment\nprior to running the command. By default `runCommand` runs in a\nstdenv with no compiler environment. `runCommandCC` uses the default\nstdenv, `pkgs.stdenv`."
+    ],
+    "example": "\n\n\nrunCommand \"name\" {envVariable = true;} ''echo hello > $out''\nrunCommandCC \"name\" {} ''gcc -o myfile myfile.c; cp myfile $out'';\n\n\nThe `*Local` variants force a derivation to be built locally,\nit is not substituted.\n\nThis is intended for very cheap commands (<1s execution time).\nIt saves on the network roundrip and can speed up a build.\n\nIt is the same as adding the special fields\n\n`preferLocalBuild = true;`\n`allowSubstitutes = false;`\n\nto a derivation’s attributes.\n"
+  },
+  {
+    "id": "test.trivial-builders.runCommandWith",
+    "category": "test/trivial-builders.nix",
+    "name": "runCommandWith",
+    "fn_type": null,
+    "description": [
+      "Generalized version of the `runCommand`-variants\nwhich does customized behavior via a single\nattribute set passed as the first argument\ninstead of having a lot of variants like\n`runCommand*`. Additionally it allows changing\nthe used `stdenv` freely and has a more explicit\napproach to changing the arguments passed to\n`stdenv.mkDerivation`."
+    ],
+    "example": null
+  },
+  {
+    "id": "test.trivial-builders.writeTextFile",
+    "category": "test/trivial-builders.nix",
+    "name": "writeTextFile",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to the nix store.\nThe contents of text is added to the file in the store."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path>\nwriteTextFile {\nname = \"my-file\";\ntext = ''\nContents of File\n'';\n}\n\n\nSee also the `writeText` helper function below.\n\n\n# Writes executable my-file to /nix/store/<store path>/bin/my-file\nwriteTextFile {\nname = \"my-file\";\ntext = ''\nContents of File\n'';\nexecutable = true;\ndestination = \"/bin/my-file\";\n}\n"
+  },
+  {
+    "id": "test.trivial-builders.writeText",
+    "category": "test/trivial-builders.nix",
+    "name": "writeText",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to nix store with no optional parameters available."
+    ],
+    "example": "\n\n\n# Writes contents of file to /nix/store/<store path>\nwriteText \"my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeTextDir",
+    "category": "test/trivial-builders.nix",
+    "name": "writeTextDir",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to nix store in a specific directory with no\noptional parameters available."
+    ],
+    "example": "\n\n\n# Writes contents of file to /nix/store/<store path>/share/my-file\nwriteTextDir \"share/my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeScript",
+    "category": "test/trivial-builders.nix",
+    "name": "writeScript",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to /nix/store/<store path> and marks the file as\nexecutable.",
+      "If passed as a build input, will be used as a setup hook. This makes setup\nhooks more efficient to create: you don't need a derivation that copies\nthem to $out/nix-support/setup-hook, instead you can use the file as is."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path> and makes executable\nwriteScript \"my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeScriptBin",
+    "category": "test/trivial-builders.nix",
+    "name": "writeScriptBin",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to /nix/store/<store path>/bin/<name> and\nmarks the file as executable."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path>/bin/my-file and makes executable.\nwriteScriptBin \"my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeShellScript",
+    "category": "test/trivial-builders.nix",
+    "name": "writeShellScript",
+    "fn_type": null,
+    "description": [
+      "Similar to writeScript. Writes a Shell script and checks its syntax.\nAutomatically includes interpreter above the contents passed."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path> and makes executable.\nwriteShellScript \"my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeShellScriptBin",
+    "category": "test/trivial-builders.nix",
+    "name": "writeShellScriptBin",
+    "fn_type": null,
+    "description": [
+      "Similar to writeShellScript and writeScriptBin.\nWrites an executable Shell script to /nix/store/<store path>/bin/<name> and checks its syntax.\nAutomatically includes interpreter above the contents passed."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path>/bin/my-file and makes executable.\nwriteShellScriptBin \"my-file\"\n''\nContents of File\n'';\n"
+  },
+  {
+    "id": "test.trivial-builders.writeShellApplication",
+    "category": "test/trivial-builders.nix",
+    "name": "writeShellApplication",
+    "fn_type": null,
+    "description": [
+      "Similar to writeShellScriptBin and writeScriptBin.\nWrites an executable Shell script to /nix/store/<store path>/bin/<name> and\nchecks its syntax with shellcheck and the shell's -n option.\nAutomatically includes sane set of shellopts (errexit, nounset, pipefail)\nand handles creation of PATH based on runtimeInputs",
+      "Note that the checkPhase uses stdenv.shell for the test run of the script,\nwhile the generated shebang uses runtimeShell. If, for whatever reason,\nthose were to mismatch you might lose fidelity in the default checks."
+    ],
+    "example": "\n\nWrites my-file to /nix/store/<store path>/bin/my-file and makes executable.\n\n\nwriteShellApplication {\nname = \"my-file\";\nruntimeInputs = [ curl w3m ];\ntext = ''\ncurl -s 'https://nixos.org' | w3m -dump -T text/html\n'';\n}\n"
+  },
+  {
+    "id": "test.trivial-builders.concatTextFile",
+    "category": "test/trivial-builders.nix",
+    "name": "concatTextFile",
+    "fn_type": null,
+    "description": [
+      "concat a list of files to the nix store.\nThe contents of files are added to the file in the store."
+    ],
+    "example": "\n\n\n# Writes my-file to /nix/store/<store path>\nconcatTextFile {\n  name = \"my-file\";\nfiles = [ drv1 \"${drv2}/path/to/file\" ];\n}\n\n\nSee also the `concatText` helper function below.\n\n\n# Writes executable my-file to /nix/store/<store path>/bin/my-file\nconcatTextFile {\nname = \"my-file\";\nfiles = [ drv1 \"${drv2}/path/to/file\" ];\nexecutable = true;\ndestination = \"/bin/my-file\";\n}\n"
+  },
+  {
+    "id": "test.trivial-builders.concatText",
+    "category": "test/trivial-builders.nix",
+    "name": "concatText",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to nix store with no optional parameters available."
+    ],
+    "example": "\n\n\n# Writes contents of files to /nix/store/<store path>\nconcatText \"my-file\" [ file1 file2 ]\n"
+  },
+  {
+    "id": "test.trivial-builders.concatScript",
+    "category": "test/trivial-builders.nix",
+    "name": "concatScript",
+    "fn_type": null,
+    "description": [
+      "Writes a text file to nix store with and mark it as executable."
+    ],
+    "example": "\n# Writes contents of files to /nix/store/<store path>\nconcatScript \"my-file\" [ file1 file2 ]\n"
+  },
+  {
+    "id": "test.trivial-builders.symlinkJoin",
+    "category": "test/trivial-builders.nix",
+    "name": "symlinkJoin",
+    "fn_type": null,
+    "description": [
+      "Create a forest of symlinks to the files in `paths'.",
+      "This creates a single derivation that replicates the directory structure\nof all the input paths.",
+      "BEWARE: it may not \"work right\" when the passed paths contain symlinks to directories."
+    ],
+    "example": "\n\n\n# adds symlinks of hello to current build.\nsymlinkJoin { name = \"myhello\"; paths = [ pkgs.hello ]; }\n\n\n\n\n# adds symlinks of hello and stack to current build and prints \"links added\"\nsymlinkJoin { name = \"myexample\"; paths = [ pkgs.hello pkgs.stack ]; postBuild = \"echo links added\"; }\n\n\nThis creates a derivation with a directory structure like the following:\n\n\n/nix/store/sglsr5g079a5235hy29da3mq3hv8sjmm-myexample\n|-- bin\n|   |-- hello -> /nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10/bin/hello\n|   `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/bin/stack\n`-- share\n|-- bash-completion\n|   `-- completions\n|       `-- stack -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/bash-completion/completions/stack\n|-- fish\n|   `-- vendor_completions.d\n|       `-- stack.fish -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1/share/fish/vendor_completions.d/stack.fish\n...\n\n\nsymlinkJoin and linkFarm are similar functions, but they output\nderivations with different structure.\n\nsymlinkJoin is used to create a derivation with a familiar directory\nstructure (top-level bin/, share/, etc), but with all actual files being symlinks to\nthe files in the input derivations.\n\nsymlinkJoin is used many places in nixpkgs to create a single derivation\nthat appears to contain binaries, libraries, documentation, etc from\nmultiple input derivations.\n\nlinkFarm is instead used to create a simple derivation with symlinks to\nother derivations.  A derivation created with linkFarm is often used in CI\nas a easy way to build multiple derivations at once.\n"
+  },
+  {
+    "id": "test.trivial-builders.linkFarm",
+    "category": "test/trivial-builders.nix",
+    "name": "linkFarm",
+    "fn_type": null,
+    "description": [
+      "Quickly create a set of symlinks to derivations.",
+      "This creates a simple derivation with symlinks to all inputs.",
+      "entries can be a list of attribute sets like",
+      "\n[ { name = \"name\" ; path = \"/nix/store/...\"; } ]",
+      "\nor an attribute set name -> path like",
+      "\n{ name = \"/nix/store/...\"; other = \"/nix/store/...\"; }"
+    ],
+    "example": "\n\n# Symlinks hello and stack paths in store to current $out/hello-test and\n# $out/foobar.\nlinkFarm \"myexample\" [ { name = \"hello-test\"; path = pkgs.hello; } { name = \"foobar\"; path = pkgs.stack; } ]\n\nThis creates a derivation with a directory structure like the following:\n\n/nix/store/qc5728m4sa344mbks99r3q05mymwm4rw-myexample\n|-- foobar -> /nix/store/6lzdpxshx78281vy056lbk553ijsdr44-stack-2.1.3.1\n`-- hello-test -> /nix/store/qy93dp4a3rqyn2mz63fbxjg228hffwyw-hello-2.10\n\n\nSee the note on symlinkJoin for the difference between linkFarm and symlinkJoin.\n"
+  },
+  {
+    "id": "test.trivial-builders.linkFarmFromDrvs",
+    "category": "test/trivial-builders.nix",
+    "name": "linkFarmFromDrvs",
+    "fn_type": null,
+    "description": [
+      "Easily create a linkFarm from a set of derivations.",
+      "This calls linkFarm with a list of entries created from the list of input\nderivations.  It turns each input derivation into an attribute set\nlike { name = drv.name ; path = drv }, and passes this to linkFarm."
+    ],
+    "example": "\n\n# Symlinks the hello, gcc, and ghc derivations in $out\nlinkFarmFromDrvs \"myexample\" [ pkgs.hello pkgs.gcc pkgs.ghc ]\n\nThis creates a derivation with a directory structure like the following:\n\n\n/nix/store/m3s6wkjy9c3wy830201bqsb91nk2yj8c-myexample\n|-- gcc-wrapper-9.2.0 -> /nix/store/fqhjxf9ii4w4gqcsx59fyw2vvj91486a-gcc-wrapper-9.2.0\n|-- ghc-8.6.5 -> /nix/store/gnf3s07bglhbbk4y6m76sbh42siym0s6-ghc-8.6.5\n`-- hello-2.10 -> /nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10\n"
+  },
+  {
+    "id": "test.trivial-builders.makeSetupHook",
+    "category": "test/trivial-builders.nix",
+    "name": "makeSetupHook",
+    "fn_type": null,
+    "description": [
+      "Make a package that just contains a setup hook with the given contents.\nThis setup hook will be invoked by any package that includes this package\nas a buildInput. Optionally takes a list of substitutions that should be\napplied to the resulting script."
+    ],
+    "example": "\n# setup hook that depends on the hello package and runs ./myscript.sh\nmyhellohook = makeSetupHook { deps = [ hello ]; } ./myscript.sh;\n\n\n# writes a Linux-exclusive setup hook where @bash@ myscript.sh is substituted for the\n# bash interpreter.\n\nmyhellohookSub = makeSetupHook {\ndeps = [ hello ];\nsubstitutions = { bash = \"${pkgs.bash}/bin/bash\"; };\nmeta.platforms = lib.platforms.linux;\n} ./myscript.sh;\n\n\n\n# setup hook with a package test\nmyhellohookTested = makeSetupHook {\ndeps = [ hello ];\nsubstitutions = { bash = \"${pkgs.bash}/bin/bash\"; };\nmeta.platforms = lib.platforms.linux;\npassthru.tests.greeting = callPackage ./test { };\n} ./myscript.sh;\n"
+  },
+  {
+    "id": "test.trivial-builders.writeDirectReferencesToFile",
+    "category": "test/trivial-builders.nix",
+    "name": "writeDirectReferencesToFile",
+    "fn_type": null,
+    "description": [
+      "Write the set of references to a file, that is, their immediate dependencies.",
+      "This produces the equivalent of `nix-store -q --references`."
+    ],
+    "example": null
+  },
+  {
+    "id": "test.trivial-builders.writeStringReferencesToFile",
+    "category": "test/trivial-builders.nix",
+    "name": "writeStringReferencesToFile",
+    "fn_type": null,
+    "description": [
+      "Extract a string's references to derivations and paths (its\ncontext) and write them to a text file, removing the input string\nitself from the dependency graph. This is useful when you want to\nmake a derivation depend on the string's references, but not its\ncontents (to avoid unnecessary rebuilds, for example).",
+      "Note that this only works as intended on Nix >= 2.3."
+    ],
+    "example": null
+  },
+  {
+    "id": "test.trivial-builders.requireFile",
+    "category": "test/trivial-builders.nix",
+    "name": "requireFile",
+    "fn_type": null,
+    "description": [
+      "Print an error message if the file with the specified name and\nhash doesn't exist in the Nix store. This function should only\nbe used by non-redistributable software with an unfree license\nthat we need to require the user to download manually. It produces\npackages that cannot be built automatically."
+    ],
+    "example": "\n\n\nrequireFile {\nname = \"my-file\";\nurl = \"http://example.com/download/\";\nsha256 = \"ffffffffffffffffffffffffffffffffffffffffffffffffffff\";\n}\n"
+  },
+  {
+    "id": "test.trivial-builders.applyPatches",
+    "category": "test/trivial-builders.nix",
+    "name": "applyPatches",
+    "fn_type": null,
+    "description": ["Applies a list of patches to a source directory."],
+    "example": "\n\nPatching nixpkgs\n\n\napplyPatches {\n\tsrc = pkgs.path;\n\tpatches = [\n\t(pkgs.fetchpatch {\n\turl = \"https://github.com/NixOS/nixpkgs/commit/1f770d20550a413e508e081ddc08464e9d08ba3d.patch\";\n\tsha256 = \"1nlzx171y3r3jbk0qhvnl711kmdk57jlq4na8f8bs8wz2pbffymr\";\n\t})\n\t];\n}\n"
+  },
+  {
+    "id": "test.trivial-builders.emptyFile",
+    "category": "test/trivial-builders.nix",
+    "name": "emptyFile",
+    "fn_type": null,
+    "description": ["An immutable file in the store with a length of 0 bytes."],
+    "example": null
+  },
+  {
+    "id": "test.trivial-builders.emptyDirectory",
+    "category": "test/trivial-builders.nix",
+    "name": "emptyDirectory",
+    "fn_type": null,
+    "description": ["An immutable empty directory in the store."],
+    "example": null
+  }
+]
