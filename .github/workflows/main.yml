@@ -20,10 +20,7 @@ jobs:
     - uses: cachix/cachix-action@v11
       with:
         name: noogle
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'  
-        nix_path: nixpkgs=channel:nixos-unstable
-        extra_nix_config: |
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix build
     - name: Publish to Cloudflare Pages
       if: github.event_name == 'push'
