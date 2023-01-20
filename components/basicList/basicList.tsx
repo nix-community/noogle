@@ -24,6 +24,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { NixType, nixTypes } from "../../types/nix";
 import { Filter } from "../searchInput/searchInput";
 import { useRouter } from "next/router";
+import { FunctionOfTheDay } from "../functionOfTheDay";
+import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -31,10 +33,13 @@ export type BasicListItem = {
 };
 export type BasicListProps = BasicDataViewProps & {
   handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
+  filter: Filter;
+  term: string;
   selected?: string | null;
   itemsPerPage: number;
 };
 
+type ViewMode = "explore" | "browse";
 export function BasicList(props: BasicListProps) {
   const {
     items,
@@ -43,11 +48,13 @@ export function BasicList(props: BasicListProps) {
     handleSearch,
     handleFilter,
     selected = "",
+    filter,
+    term,
   } = props;
-  // const [from, setFrom] = useState<NixType>("any");
-  // const [to, setTo] = useState<NixType>("any");
 
   const [page, setPage] = useState<number>(1);
+  const [mode, setMode] = useState<ViewMode>("explore");
+
   const router = useRouter();
   useEffect(() => {
     const { query } = router;
@@ -57,7 +64,6 @@ export function BasicList(props: BasicListProps) {
         setPage(page);
       }
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
 
@@ -67,8 +73,6 @@ export function BasicList(props: BasicListProps) {
     return items.slice(startIdx, endIdx);
   }, [page, items, itemsPerPage]);
 
-  const [searchTerm, setSearchTerm] = useState("");
-
   const handlePageChange = (
     _event: React.ChangeEvent<unknown>,
     value: number
@@ -77,16 +81,23 @@ export function BasicList(props: BasicListProps) {
   };
 
   const _handleFilter = (filter: Filter | ((curr: Filter) => Filter)) => {
+    setMode("browse");
     handleFilter(filter);
     setPage(1);
   };
 
   const _handleSearch = (term: string) => {
+    setMode("browse");
     handleSearch && handleSearch(term);
-    setSearchTerm(term);
+
     setPage(1);
   };
 
+  const showFunctionExplore =
+    mode === "explore" &&
+    filter.to === "any" &&
+    filter.from === "any" &&
+    term === "";
   return (
     <Stack>
       <SearchInput
@@ -96,26 +107,45 @@ export function BasicList(props: BasicListProps) {
         page={page}
         clearSearch={() => _handleSearch("")}
       />
+      {showFunctionExplore ? (
+        <FunctionOfTheDay handleClose={() => setMode("browse")} />
+      ) : (
+        <List aria-label="basic-list" sx={{ pt: 0 }}>
+          {items.length ? (
+            pageItems.map(({ item, key }, idx) => (
+              <Box key={`${key}-${idx}`}>
+                <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
+                  {item}
+                </ListItem>
+              </Box>
+            ))
+          ) : (
+            <Box sx={{ mt: 3 }}>
+              <EmptyRecordsPlaceholder
+                CardProps={{
+                  sx: { backgroundColor: "inherit" },
+                }}
+                title={"No search results found"}
+                subtitle={
+                  "Maybe the function does not exist or is not documented."
+                }
+              />
+            </Box>
+          )}
+        </List>
+      )}
 
-      <List aria-label="basic-list" sx={{ pt: 0 }}>
-        {pageItems.map(({ item, key }, idx) => (
-          <Box key={`${key}-${idx}`}>
-            <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
-              {item}
-            </ListItem>
-          </Box>
-        ))}
-      </List>
-
-      <Pagination
-        hideNextButton
-        hidePrevButton
-        sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
-        count={Math.ceil(items.length / itemsPerPage) || 1}
-        color="primary"
-        page={page}
-        onChange={handlePageChange}
-      />
+      {Math.ceil(items.length / itemsPerPage) > 0 && !showFunctionExplore && (
+        <Pagination
+          hideNextButton
+          hidePrevButton
+          sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
+          count={Math.ceil(items.length / itemsPerPage) || 1}
+          color="primary"
+          page={page}
+          onChange={handlePageChange}
+        />
+      )}
     </Stack>
   );
 }
