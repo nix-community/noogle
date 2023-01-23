@@ -26,9 +26,6 @@ import Link from "next/link";
 import { idText } from "typescript";
 import { TrendingUpSharp } from "@mui/icons-material";
 
-// import "highlight.js/styles/github-dark.css";
-// import "highlight.js/styles/github.css";
-
 interface PreviewProps {
   docItem: DocItem;
   closeComponent?: React.ReactNode;

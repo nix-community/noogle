@@ -11,7 +11,6 @@ import { Image } from "../image";
 import nixSnowflake from "../../public/nix-snowflake.svg";
 import nixWhite from "../../public/white.svg";
 import GitHubIcon from "@mui/icons-material/GitHub";
-// import Link from "next/link";
 export interface LayoutProps {
   children: React.ReactNode;
 }
@@ -32,8 +31,6 @@ export function Layout(props: LayoutProps) {
       <header>
         <Box
           sx={{
-            // position: "fixed",
-            // top: "15rem",
             height: "100%",
             width: "100%",
             zIndex: 0,
@@ -46,8 +43,6 @@ export function Layout(props: LayoutProps) {
 
         <Box
           sx={{
-            // position: "fixed",
-            // top: 0,
             width: "100%",
             p: 1,
             zIndex: 1,
@@ -91,13 +86,9 @@ export function Layout(props: LayoutProps) {
             <Link href="https://github.com/hsjobeki/noogle" target="_blank">
               <Tooltip title="Contribute on Github">
                 <IconButton
-                  // ButtonProps={{ ref: iconRef }}
-                  // buttonProps
-                  // ref={iconRef}
                   sx={{ float: "right", top: "0.6rem", right: "1em", p: 0 }}
                 >
                   <GitHubIcon
-                    // fontSize=""
                     sx={{
                       display: {
                         xs: "none",

@@ -36,9 +36,7 @@ function getRandomIntInclusive(
   return Math.floor(generator() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
-// const todaysFunction = data.at(
 const todaysIdx = getRandomIntInclusive(0, data.length - 1, rng);
-// ) as DocItem;
 
 interface FunctionOfTheDayProps {
   handleClose: () => void;
