@@ -114,8 +114,6 @@ export function Layout(props: LayoutProps) {
       <main
         style={{
           marginTop: "1rem",
-          // height:
-          width: "100vw",
         }}
       >
         <Container sx={{ pt: 0, px: { xs: 0, md: 2 } }} maxWidth="xl">
