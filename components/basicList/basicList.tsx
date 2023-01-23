@@ -15,6 +15,7 @@ export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
 };
 
+type ViewMode = "explore" | "browse";
 export function BasicList(props: BasicListProps) {
   const { items } = props;
   const { pageState, setPageStateVariable } = usePageContext();
@@ -56,6 +57,11 @@ export function BasicList(props: BasicListProps) {
     setPage(1);
   };
 
+  const showFunctionExplore =
+    mode === "explore" &&
+    filter.to === "any" &&
+    filter.from === "any" &&
+    term === "";
   return (
     <Stack>
       <SearchInput
@@ -63,6 +69,33 @@ export function BasicList(props: BasicListProps) {
         placeholder="search nix functions"
         handleSearch={handleSearch}
       />
+      {showFunctionExplore ? (
+        <FunctionOfTheDay handleClose={() => setMode("browse")} />
+      ) : (
+        <List aria-label="basic-list" sx={{ pt: 0 }}>
+          {items.length ? (
+            pageItems.map(({ item, key }, idx) => (
+              <Box key={`${key}-${idx}`}>
+                <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
+                  {item}
+                </ListItem>
+              </Box>
+            ))
+          ) : (
+            <Box sx={{ mt: 3 }}>
+              <EmptyRecordsPlaceholder
+                CardProps={{
+                  sx: { backgroundColor: "inherit" },
+                }}
+                title={"No search results found"}
+                subtitle={
+                  "Maybe the function does not exist or is not documented."
+                }
+              />
+            </Box>
+          )}
+        </List>
+      )}
 
       <List aria-label="basic-list" sx={{ pt: 0 }}>
         {pageItems.map(({ item, key }, idx) => (

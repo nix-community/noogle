@@ -1,0 +1,1 @@
+export {FunctionOfTheDay} from "./functionOfTheDay"

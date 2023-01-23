@@ -91,7 +91,7 @@ export function Layout(props: LayoutProps) {
               />
             </Box>
             <Box sx={{ ml: 1 }} component="span">{`noog\u03BBe`}</Box>
-            <Link href="https://github.com/hsjobeki/noogle">
+            <Link href="https://github.com/hsjobeki/noogle" target="_blank">
               <Tooltip title="Contribute on Github">
                 <IconButton
                   // ButtonProps={{ ref: iconRef }}
