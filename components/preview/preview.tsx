@@ -35,7 +35,8 @@ export const Preview = (props: PreviewProps) => {
   const libName = category
     .match(/(?:[a-zA-Z]*)\.nix/gm)?.[0]
     ?.replace(".nix", "");
-  const libDocsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${name}`;
+  const sanitizedName = name.replace("'", "-prime");
+  const libDocsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${sanitizedName}`;
   const builtinsDocsRef = `https://nixos.org/manual/nix/stable/language/builtins.html#builtins-${name}`;
   return (
     <Box

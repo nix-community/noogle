@@ -15,12 +15,13 @@ export type Filter = { from: NixType; to: NixType };
 
 export interface SearchInputProps {
   handleSearch: (term: string) => void;
+  handleClear: () => void;
   handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
   placeholder: string;
 }
 
 export function SearchInput(props: SearchInputProps) {
-  const { handleSearch, placeholder, handleFilter } = props;
+  const { handleSearch, placeholder, handleFilter, handleClear } = props;
   const { pageState } = usePageContext();
   const { filter, term } = pageState;
   const [_term, _setTerm] = useState(term);
@@ -34,10 +35,11 @@ export function SearchInput(props: SearchInputProps) {
     [handleSubmit]
   );
 
-  const handleClear = () => {
+  const _handleClear = () => {
     _setTerm("");
-    handleFilter(initialPageState.filter);
-    handleSubmit("");
+    handleClear();
+    // handleFilter(initialPageState.filter);
+    // handleSubmit("");
   };
   const handleType = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -63,7 +65,7 @@ export function SearchInput(props: SearchInputProps) {
           handleSubmit(term);
         }}
       >
-        <IconButton aria-label="clear-button" onClick={handleClear}>
+        <IconButton aria-label="clear-button" onClick={_handleClear}>
           <ClearIcon />
         </IconButton>
         <InputBase

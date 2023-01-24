@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { Box, List, ListItem, Stack, TablePagination } from "@mui/material";
 import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
@@ -6,6 +6,8 @@ import { SearchInput } from "../searchInput";
 import { Filter } from "../searchInput/searchInput";
 import { usePageContext } from "../pageContext";
 import { useMobile } from "../layout/layout";
+import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
+import { FunctionOfTheDay } from "../functionOfTheDay";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -16,16 +18,19 @@ export type BasicListProps = BasicDataViewProps & {
 };
 
 type ViewMode = "explore" | "browse";
+
 export function BasicList(props: BasicListProps) {
   const { items } = props;
-  const { pageState, setPageStateVariable } = usePageContext();
+  const { pageState, setPageStateVariable, resetQueries } = usePageContext();
   const isMobile = useMobile();
-  const { page, itemsPerPage } = pageState;
+  const { page, itemsPerPage, filter, term, FOTD } = pageState;
+  const [mode, setMode] = useState<ViewMode>("explore");
 
   const setPage = setPageStateVariable<number>("page");
   const setTerm = setPageStateVariable<string>("term");
   const setFilter = setPageStateVariable<Filter>("filter");
   const setItemsPerPage = setPageStateVariable<number>("itemsPerPage");
+  // const setFOTD = setPageStateVariable<boolean>("FOTD");
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -46,6 +51,9 @@ export function BasicList(props: BasicListProps) {
     console.log(value);
     setPage(value + 1);
   };
+  const handleClear = () => {
+    resetQueries();
+  };
 
   const handleFilter = (filter: Filter | ((curr: Filter) => Filter)) => {
     setFilter(filter);
@@ -57,20 +65,27 @@ export function BasicList(props: BasicListProps) {
     setPage(1);
   };
 
-  const showFunctionExplore =
+  const showFunctionOfTheDay =
     mode === "explore" &&
     filter.to === "any" &&
     filter.from === "any" &&
-    term === "";
+    term === "" &&
+    FOTD;
   return (
     <Stack>
       <SearchInput
         handleFilter={handleFilter}
+        handleClear={handleClear}
         placeholder="search nix functions"
         handleSearch={handleSearch}
       />
-      {showFunctionExplore ? (
-        <FunctionOfTheDay handleClose={() => setMode("browse")} />
+      {showFunctionOfTheDay ? (
+        <FunctionOfTheDay
+          handleClose={() => {
+            // setFOTD(false);
+            setMode("browse");
+          }}
+        />
       ) : (
         <List aria-label="basic-list" sx={{ pt: 0 }}>
           {items.length ? (
@@ -96,31 +111,22 @@ export function BasicList(props: BasicListProps) {
           )}
         </List>
       )}
-
-      <List aria-label="basic-list" sx={{ pt: 0 }}>
-        {pageItems.map(({ item, key }, idx) => (
-          <Box key={`${key}-${idx}`}>
-            <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
-              {item}
-            </ListItem>
-          </Box>
-        ))}
-      </List>
-
-      <TablePagination
-        component={"div"}
-        sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
-        count={items.length}
-        color="primary"
-        page={page - 1}
-        onPageChange={handlePageChange}
-        rowsPerPage={itemsPerPage}
-        labelRowsPerPage={"per Page"}
-        rowsPerPageOptions={[10, 20, 50, 100]}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        showFirstButton={!isMobile}
-        showLastButton={!isMobile}
-      />
+      {!showFunctionOfTheDay && (
+        <TablePagination
+          component={"div"}
+          sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
+          count={items.length}
+          color="primary"
+          page={page - 1}
+          onPageChange={handlePageChange}
+          rowsPerPage={itemsPerPage}
+          labelRowsPerPage={"per Page"}
+          rowsPerPageOptions={[10, 20, 50, 100]}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          showFirstButton={!isMobile}
+          showLastButton={!isMobile}
+        />
+      )}
     </Stack>
   );
 }

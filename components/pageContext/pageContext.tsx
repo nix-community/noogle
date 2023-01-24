@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { initialPageState, PageState } from "../../models/internals";
+import {
+  InitialPageState,
+  initialPageState,
+  PageState,
+} from "../../models/internals";
 
 type PageContextType = {
   pageState: PageState;
   setPageState: React.Dispatch<React.SetStateAction<PageState>>;
   setPageStateVariable: SetPageStateVariable;
+  resetQueries: () => void;
 };
 
 export const PageContext = React.createContext<PageContextType>({
-  pageState: initialPageState,
+  pageState: { ...initialPageState, FOTD: true },
   setPageState: () => {},
+  resetQueries: () => {},
   setPageStateVariable: function a<T>() {
     return () => {};
   },
@@ -22,14 +28,14 @@ interface PageContextProviderProps {
 }
 
 export type SetPageStateVariable = <T>(
-  field: keyof PageState
+  field: keyof InitialPageState
 ) => (value: React.SetStateAction<T> | T) => void;
 
 export const PageContextProvider = (props: PageContextProviderProps) => {
   const router = useRouter();
   const { children, serverSideProps } = props;
   const [pageState, setPageState] = useState<PageState>(serverSideProps);
-  function setPageStateVariable<T>(field: keyof PageState) {
+  function setPageStateVariable<T>(field: keyof InitialPageState) {
     return function (value: React.SetStateAction<T> | T) {
       {
         if (typeof value !== "function") {
@@ -53,9 +59,13 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
       }
     };
   }
+  function resetQueries() {
+    router.push({ query: undefined });
+    setPageState((curr) => ({ ...curr, ...initialPageState }));
+  }
   return (
     <PageContext.Provider
-      value={{ pageState, setPageState, setPageStateVariable }}
+      value={{ pageState, setPageState, setPageStateVariable, resetQueries }}
     >
       {children}
     </PageContext.Provider>

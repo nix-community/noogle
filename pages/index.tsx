@@ -1,6 +1,11 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import { initialPageState, PageState } from "../models/internals";
+import {
+  initialPageState,
+  ComputedState,
+  PageState,
+  InitialPageState,
+} from "../models/internals";
 import { PageContext, PageContextProvider } from "../components/pageContext";
 import { NixFunctions } from "../components/NixFunctions";
 
@@ -9,14 +14,18 @@ export const getServerSideProps: GetServerSideProps<PageState> = async (
 ) => {
   const { query } = context;
   const initialProps = { ...initialPageState };
+  console.log({ query });
+
   Object.entries(query).forEach(([key, value]) => {
     if (value && !Array.isArray(value)) {
       try {
         const parsedValue = JSON.parse(value) as never;
-        const initialValue = initialPageState[key as keyof PageState];
+        const initialValue = initialPageState[key as keyof InitialPageState];
 
         if (!initialValue || typeof parsedValue === typeof initialValue) {
-          initialProps[key as keyof PageState] = JSON.parse(value) as never;
+          initialProps[key as keyof InitialPageState] = JSON.parse(
+            value
+          ) as never;
         } else {
           throw "Type of query param does not match the initial values type";
         }
@@ -25,10 +34,12 @@ export const getServerSideProps: GetServerSideProps<PageState> = async (
       }
     }
   });
+  const FOTD = Object.entries(query).length === 0;
 
   return {
     props: {
       ...initialProps,
+      FOTD,
     },
   };
 };

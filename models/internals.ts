@@ -1,6 +1,9 @@
 import { data } from "./data";
 import { MetaData, NixType } from "./nix";
 
+export type ComputedState  = {
+  FOTD: boolean;
+}
 
 export type PageState = {
     data: MetaData;
@@ -9,9 +12,11 @@ export type PageState = {
     filter: Filter;
     page: number;
     itemsPerPage: number;
-};
+} & ComputedState;
 
-export const initialPageState: PageState = {
+export type InitialPageState = Omit<PageState, keyof ComputedState>;
+
+export const initialPageState: InitialPageState = {
   data: data,
   selected: null,
   term: "",
