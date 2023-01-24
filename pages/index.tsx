@@ -5,7 +5,8 @@ import {
   InitialPageState,
 } from "../models/internals";
 import { PageContext, PageContextProvider } from "../components/pageContext";
-const NixFunctions = React.lazy(() => import("../components/NixFunctions"));
+// const NixFunctions = React.lazy(() => import("../components/NixFunctions"));
+import NixFunctions from "../components/NixFunctions";
 
 import { NextRouter, useRouter } from "next/router";
 import { LinearProgress } from "@mui/material";
@@ -65,13 +66,13 @@ export default function FunctionsPage() {
         <PageContextProvider pageProps={initialProps}>
           <PageContext.Consumer>
             {(context) => (
-              <Suspense fallback={<LinearProgress />}>
-                <NixFunctions
-                  setPageState={context.setPageState}
-                  pageState={context.pageState}
-                  setPageStateVariable={context.setPageStateVariable}
-                />
-              </Suspense>
+              // <Suspense fallback={<LinearProgress />}>
+              <NixFunctions
+                setPageState={context.setPageState}
+                pageState={context.pageState}
+                setPageStateVariable={context.setPageStateVariable}
+              />
+              // </Suspense>
             )}
           </PageContext.Consumer>
         </PageContextProvider>
