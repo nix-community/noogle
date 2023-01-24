@@ -1,13 +1,5 @@
 import React, { useMemo, useState } from "react";
-import {
-  Box,
-  CircularProgress,
-  LinearProgress,
-  List,
-  ListItem,
-  Stack,
-  TablePagination,
-} from "@mui/material";
+import { Box, List, ListItem, Stack, TablePagination } from "@mui/material";
 import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
 
