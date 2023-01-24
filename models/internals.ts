@@ -1,4 +1,4 @@
-import { data } from "./data";
+// import { data } from "./data";
 import { MetaData, NixType } from "./nix";
 
 export type ComputedState  = {
@@ -17,7 +17,7 @@ export type PageState = {
 export type InitialPageState = Omit<PageState, keyof ComputedState>;
 
 export const initialPageState: InitialPageState = {
-  data: data,
+  data: [] as MetaData,
   selected: null,
   term: "",
   filter: { from: "any", to: "any" },

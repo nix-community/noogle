@@ -1,20 +1,19 @@
-import React from "react";
-import { GetServerSideProps } from "next";
+import React, { Suspense, useEffect, useState } from "react";
 import {
   initialPageState,
-  ComputedState,
   PageState,
   InitialPageState,
 } from "../models/internals";
 import { PageContext, PageContextProvider } from "../components/pageContext";
-import { NixFunctions } from "../components/NixFunctions";
+const NixFunctions = React.lazy(() => import("../components/NixFunctions"));
 
-export const getServerSideProps: GetServerSideProps<PageState> = async (
-  context
-) => {
+import { NextRouter, useRouter } from "next/router";
+import { LinearProgress } from "@mui/material";
+
+// export const getServerSideProps: GetServerSideProps<PageState> = async (
+const getInitialProps = async (context: NextRouter) => {
   const { query } = context;
   const initialProps = { ...initialPageState };
-  console.log({ query });
 
   Object.entries(query).forEach(([key, value]) => {
     if (value && !Array.isArray(value)) {
@@ -44,17 +43,39 @@ export const getServerSideProps: GetServerSideProps<PageState> = async (
   };
 };
 
-export default function FunctionsPage(serverSideProps: PageState) {
+export default function FunctionsPage() {
+  const router = useRouter();
+  const [initialProps, setInitialProps] = useState<PageState | null>(null);
+  useEffect(() => {
+    if (router.isReady) {
+      getInitialProps(router).then((r) => {
+        const { props } = r;
+        console.info("Url Query changed\n\nUpdating pageState with delta:", {
+          props,
+        });
+        setInitialProps((curr) => ({ ...curr, ...props }));
+      });
+    }
+  }, [router]);
   return (
-    <PageContextProvider serverSideProps={serverSideProps}>
-      <PageContext.Consumer>
-        {(context) => (
-          <NixFunctions
-            pageState={context.pageState}
-            setPageStateVariable={context.setPageStateVariable}
-          />
-        )}
-      </PageContext.Consumer>
-    </PageContextProvider>
+    <>
+      {!initialProps ? (
+        <LinearProgress />
+      ) : (
+        <PageContextProvider pageProps={initialProps}>
+          <PageContext.Consumer>
+            {(context) => (
+              <Suspense fallback={<LinearProgress />}>
+                <NixFunctions
+                  setPageState={context.setPageState}
+                  pageState={context.pageState}
+                  setPageStateVariable={context.setPageStateVariable}
+                />
+              </Suspense>
+            )}
+          </PageContext.Consumer>
+        </PageContextProvider>
+      )}
+    </>
   );
 }

@@ -24,7 +24,7 @@ export const PageContext = React.createContext<PageContextType>({
 
 interface PageContextProviderProps {
   children: React.ReactNode;
-  serverSideProps: PageState;
+  pageProps: PageState;
 }
 
 export type SetPageStateVariable = <T>(
@@ -33,8 +33,8 @@ export type SetPageStateVariable = <T>(
 
 export const PageContextProvider = (props: PageContextProviderProps) => {
   const router = useRouter();
-  const { children, serverSideProps } = props;
-  const [pageState, setPageState] = useState<PageState>(serverSideProps);
+  const { children, pageProps } = props;
+  const [pageState, setPageState] = useState<PageState>(pageProps);
   function setPageStateVariable<T>(field: keyof InitialPageState) {
     return function (value: React.SetStateAction<T> | T) {
       {
@@ -60,7 +60,9 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
     };
   }
   function resetQueries() {
-    router.push({ query: undefined });
+    if (Object.entries(router.query).length !== 0) {
+      router.push({ query: undefined });
+    }
     setPageState((curr) => ({ ...curr, ...initialPageState }));
   }
   return (

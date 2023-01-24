@@ -11,10 +11,9 @@ import {
 
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
-import { data } from "../../models/data";
-import { DocItem } from "../../types/nix";
 import { Preview } from "../preview/preview";
 import ClearIcon from "@mui/icons-material/Clear";
+import { DocItem, MetaData } from "../../models/nix";
 
 const date = new Date();
 
@@ -36,18 +35,21 @@ function getRandomIntInclusive(
   return Math.floor(generator() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
-const todaysIdx = getRandomIntInclusive(0, data.length - 1, rng);
-
 interface FunctionOfTheDayProps {
   handleClose: () => void;
+  data: MetaData;
 }
 export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
-  const { handleClose } = props;
+  const { handleClose, data } = props;
   const {
     palette: { info, error },
   } = useTheme();
+  const todaysIdx = useMemo(
+    () => getRandomIntInclusive(0, data.length - 1, rng),
+    [data.length]
+  );
   const [idx, setIdx] = useState<number>(todaysIdx);
-  const slectedFunction = useMemo(() => data.at(idx) as DocItem, [idx]);
+  const selectedFunction = useMemo(() => data.at(idx) as DocItem, [idx, data]);
 
   const setNext = () => {
     setIdx((curr) => {
@@ -101,7 +103,7 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
           }
         />
         <CardContent>
-          <Preview docItem={slectedFunction} closeComponent={<></>} />
+          <Preview docItem={selectedFunction} closeComponent={<></>} />
         </CardContent>
         <CardActions
           sx={{
