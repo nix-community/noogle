@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Box,
   Container,
@@ -12,19 +12,13 @@ import {
   useTheme,
   Link as MuiLink,
 } from "@mui/material";
-import Highlight from "react-highlight";
+import { DocItem } from "../../models/nix";
+import CodeIcon from "@mui/icons-material/Code";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
-import { DocItem } from "../../types/nix";
-import CodeIcon from "@mui/icons-material/Code";
-import ReactMarkdown from "react-markdown";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import styles from "./preview.module.css";
-import rehypeHighlight from "rehype-highlight";
-import nix from "highlight.js/lib/languages/nix";
-import Link from "next/link";
-import { idText } from "typescript";
-import { TrendingUpSharp } from "@mui/icons-material";
+import { MarkdownPreview } from "../markdownPreview";
+import { CodeHighlight } from "../codeHighlight";
 
 interface PreviewProps {
   docItem: DocItem;
@@ -36,16 +30,6 @@ export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose, closeComponent = undefined } = props;
   const { name, description, category, example, fn_type, id } = docItem;
   const theme = useTheme();
-
-  useEffect(() => {
-    if (theme.palette.mode === "dark") {
-      // @ts-ignore - dont check type of css module
-      import("highlight.js/styles/github-dark.css");
-    } else {
-      // @ts-ignore - dont check type of css module
-      import("highlight.js/styles/github.css");
-    }
-  }, [theme]);
 
   const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
   const libName = category
@@ -155,33 +139,10 @@ export const Preview = (props: PreviewProps) => {
               >
                 {Array.isArray(description)
                   ? description.map((d, idx) => (
-                      <ReactMarkdown
-                        key={idx}
-                        components={{
-                          h1: "h3",
-                          h2: "h4",
-                          h3: "h5",
-                        }}
-                        rehypePlugins={[
-                          [rehypeHighlight, { languages: { nix } }],
-                        ]}
-                      >
-                        {d}
-                      </ReactMarkdown>
+                      <MarkdownPreview key={idx} description={d} />
                     ))
                   : description && (
-                      <ReactMarkdown
-                        components={{
-                          h1: "h3",
-                          h2: "h4",
-                          h3: "h5",
-                        }}
-                        rehypePlugins={[
-                          [rehypeHighlight, { languages: { nix } }],
-                        ]}
-                      >
-                        {description}
-                      </ReactMarkdown>
+                      <MarkdownPreview description={description} />
                     )}
               </Container>
             }
@@ -248,17 +209,7 @@ export const Preview = (props: PreviewProps) => {
                 </Typography>
               }
               secondary={
-                <Box
-                  sx={{
-                    "&.MuiBox-root>pre": {
-                      width: "100%",
-                    },
-                  }}
-                >
-                  <Highlight className={`nix ${styles.hljs}`}>
-                    {example}
-                  </Highlight>
-                </Box>
+                <CodeHighlight code={example} theme={theme.palette.mode} />
               }
             />
           </ListItem>

@@ -1,4 +1,4 @@
-import { DocItem, MetaData } from "../types/nix";
+import { DocItem, MetaData } from "../models/nix";
 
 export const byQuery =
 (rawTerm: string) =>

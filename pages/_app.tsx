@@ -36,11 +36,18 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
       </Layout>
     );
   };
+
   return (
     <>
       <Head>
         <title>noogle</title>
-        <meta name="description" content="Search nix functions" />
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Search nix functions. Search functions within the nix ecosystem based on type, name, description, example, category and more."
+        />
+        <meta />
+        <meta name="robots" content="all" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 

@@ -1,72 +1,42 @@
-import React, { useState, useMemo, useEffect } from "react";
-import {
-  Box,
-  IconButton,
-  List,
-  ListItem,
-  Pagination,
-  Stack,
-  Typography,
-  Grid,
-  Slide,
-  Collapse,
-  Grow,
-} from "@mui/material";
-import { BasicDataItem, BasicDataViewProps } from "../../types/basicDataView";
+import React, { useMemo, useState } from "react";
+import { Box, List, ListItem, Stack, TablePagination } from "@mui/material";
+import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import ClearIcon from "@mui/icons-material/Clear";
 
-import { NixType, nixTypes } from "../../types/nix";
 import { Filter } from "../searchInput/searchInput";
-import { useRouter } from "next/router";
-import { FunctionOfTheDay } from "../functionOfTheDay";
+import { usePageContext } from "../pageContext";
+import { useMobile } from "../layout/layout";
 import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
+import { FunctionOfTheDay } from "../functionOfTheDay";
 
 export type BasicListItem = {
   item: React.ReactNode;
   key: string;
 };
 export type BasicListProps = BasicDataViewProps & {
-  handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
-  filter: Filter;
-  term: string;
   selected?: string | null;
-  itemsPerPage: number;
 };
 
 type ViewMode = "explore" | "browse";
-export function BasicList(props: BasicListProps) {
-  const {
-    items,
-    pageCount = 1,
-    itemsPerPage,
-    handleSearch,
-    handleFilter,
-    selected = "",
-    filter,
-    term,
-  } = props;
 
-  const [page, setPage] = useState<number>(1);
+export function BasicList(props: BasicListProps) {
+  const { items } = props;
+  const { pageState, setPageStateVariable, resetQueries } = usePageContext();
+  const isMobile = useMobile();
+  const { page, itemsPerPage, filter, term, FOTD, data } = pageState;
   const [mode, setMode] = useState<ViewMode>("explore");
 
-  const router = useRouter();
-  useEffect(() => {
-    const { query } = router;
-    if (query?.page) {
-      if (typeof query.page === "string") {
-        const page = Number(query.page);
-        setPage(page);
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router]);
+  const setPage = setPageStateVariable<number>("page");
+  const setTerm = setPageStateVariable<string>("term");
+  const setFilter = setPageStateVariable<Filter>("filter");
+  const setItemsPerPage = setPageStateVariable<number>("itemsPerPage");
 
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setItemsPerPage(parseInt(event.target.value, 10));
+    setPage(1);
+  };
   const pageItems = useMemo(() => {
     const startIdx = (page - 1) * itemsPerPage;
     const endIdx = page * itemsPerPage;
@@ -74,41 +44,47 @@ export function BasicList(props: BasicListProps) {
   }, [page, items, itemsPerPage]);
 
   const handlePageChange = (
-    _event: React.ChangeEvent<unknown>,
+    event: React.MouseEvent<HTMLButtonElement> | null,
     value: number
   ) => {
-    setPage(value);
+    setPage(value + 1);
+  };
+  const handleClear = () => {
+    resetQueries();
   };
 
-  const _handleFilter = (filter: Filter | ((curr: Filter) => Filter)) => {
-    setMode("browse");
-    handleFilter(filter);
+  const handleFilter = (filter: Filter | ((curr: Filter) => Filter)) => {
+    setFilter(filter);
     setPage(1);
   };
 
-  const _handleSearch = (term: string) => {
-    setMode("browse");
-    handleSearch && handleSearch(term);
-
+  const handleSearch = (term: string) => {
+    setTerm(term);
     setPage(1);
   };
 
-  const showFunctionExplore =
+  const showFunctionOfTheDay =
     mode === "explore" &&
     filter.to === "any" &&
     filter.from === "any" &&
-    term === "";
+    term === "" &&
+    FOTD === true;
   return (
     <Stack>
       <SearchInput
-        handleFilter={_handleFilter}
+        handleFilter={handleFilter}
+        handleClear={handleClear}
         placeholder="search nix functions"
-        handleSearch={_handleSearch}
-        page={page}
-        clearSearch={() => _handleSearch("")}
+        handleSearch={handleSearch}
       />
-      {showFunctionExplore ? (
-        <FunctionOfTheDay handleClose={() => setMode("browse")} />
+
+      {showFunctionOfTheDay ? (
+        <FunctionOfTheDay
+          data={data}
+          handleClose={() => {
+            setMode("browse");
+          }}
+        />
       ) : (
         <List aria-label="basic-list" sx={{ pt: 0 }}>
           {items.length ? (
@@ -134,16 +110,20 @@ export function BasicList(props: BasicListProps) {
           )}
         </List>
       )}
-
-      {Math.ceil(items.length / itemsPerPage) > 0 && !showFunctionExplore && (
-        <Pagination
-          hideNextButton
-          hidePrevButton
+      {!showFunctionOfTheDay && (
+        <TablePagination
+          component={"div"}
           sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
-          count={Math.ceil(items.length / itemsPerPage) || 1}
+          count={items.length}
           color="primary"
-          page={page}
-          onChange={handlePageChange}
+          page={page - 1}
+          onPageChange={handlePageChange}
+          rowsPerPage={itemsPerPage}
+          labelRowsPerPage={"per Page"}
+          rowsPerPageOptions={[10, 20, 50, 100]}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          showFirstButton={!isMobile}
+          showLastButton={!isMobile}
         />
       )}
     </Stack>

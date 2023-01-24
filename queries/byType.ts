@@ -1,4 +1,4 @@
-import { MetaData, NixType } from "../types/nix";
+import { MetaData, NixType } from "../models/nix";
 import { getTypes } from "./lib";
 
 export const byType =
