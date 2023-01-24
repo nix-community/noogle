@@ -50,12 +50,7 @@ export default function FunctionItem(props: FunctionItemProps) {
   }, [description]);
 
   const handleShare = () => {
-    const queries = [];
-    const key = getKey(docItem);
-    if (key) {
-      queries.push(`fn=${key}`);
-    }
-    const handle = `https://noogle.dev/preview?${queries.join("&")}`;
+    const handle = window.location.href;
     navigator.clipboard.writeText(handle);
     enqueueSnackbar("link copied to clipboard", { variant: "default" });
   };
