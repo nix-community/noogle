@@ -23,13 +23,12 @@ export type BasicListItem = {
 };
 export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
-  loading?: boolean;
 };
 
 type ViewMode = "explore" | "browse";
 
 export function BasicList(props: BasicListProps) {
-  const { items, loading = true } = props;
+  const { items } = props;
   const { pageState, setPageStateVariable, resetQueries } = usePageContext();
   const isMobile = useMobile();
   const { page, itemsPerPage, filter, term, FOTD, data } = pageState;
@@ -86,63 +85,54 @@ export function BasicList(props: BasicListProps) {
         placeholder="search nix functions"
         handleSearch={handleSearch}
       />
-      {loading ? (
-        <LinearProgress />
+
+      {showFunctionOfTheDay ? (
+        <FunctionOfTheDay
+          data={data}
+          handleClose={() => {
+            setMode("browse");
+          }}
+        />
       ) : (
-        <>
-          {showFunctionOfTheDay ? (
-            <FunctionOfTheDay
-              data={data}
-              handleClose={() => {
-                setMode("browse");
-              }}
-            />
+        <List aria-label="basic-list" sx={{ pt: 0 }}>
+          {items.length ? (
+            pageItems.map(({ item, key }, idx) => (
+              <Box key={`${key}-${idx}`}>
+                <ListItem sx={{ px: 0 }} key={key} aria-label={`item-${key}`}>
+                  {item}
+                </ListItem>
+              </Box>
+            ))
           ) : (
-            <List aria-label="basic-list" sx={{ pt: 0 }}>
-              {items.length ? (
-                pageItems.map(({ item, key }, idx) => (
-                  <Box key={`${key}-${idx}`}>
-                    <ListItem
-                      sx={{ px: 0 }}
-                      key={key}
-                      aria-label={`item-${key}`}
-                    >
-                      {item}
-                    </ListItem>
-                  </Box>
-                ))
-              ) : (
-                <Box sx={{ mt: 3 }}>
-                  <EmptyRecordsPlaceholder
-                    CardProps={{
-                      sx: { backgroundColor: "inherit" },
-                    }}
-                    title={"No search results found"}
-                    subtitle={
-                      "Maybe the function does not exist or is not documented."
-                    }
-                  />
-                </Box>
-              )}
-            </List>
+            <Box sx={{ mt: 3 }}>
+              <EmptyRecordsPlaceholder
+                CardProps={{
+                  sx: { backgroundColor: "inherit" },
+                }}
+                title={"No search results found"}
+                subtitle={
+                  "Maybe the function does not exist or is not documented."
+                }
+              />
+            </Box>
           )}
-          {!showFunctionOfTheDay && (
-            <TablePagination
-              component={"div"}
-              sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
-              count={items.length}
-              color="primary"
-              page={page - 1}
-              onPageChange={handlePageChange}
-              rowsPerPage={itemsPerPage}
-              labelRowsPerPage={"per Page"}
-              rowsPerPageOptions={[10, 20, 50, 100]}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              showFirstButton={!isMobile}
-              showLastButton={!isMobile}
-            />
-          )}
-        </>
+        </List>
+      )}
+      {!showFunctionOfTheDay && (
+        <TablePagination
+          component={"div"}
+          sx={{ display: "flex", justifyContent: "center", mt: 1, mb: 10 }}
+          count={items.length}
+          color="primary"
+          page={page - 1}
+          onPageChange={handlePageChange}
+          rowsPerPage={itemsPerPage}
+          labelRowsPerPage={"per Page"}
+          rowsPerPageOptions={[10, 20, 50, 100]}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          showFirstButton={!isMobile}
+          showLastButton={!isMobile}
+        />
       )}
     </Stack>
   );

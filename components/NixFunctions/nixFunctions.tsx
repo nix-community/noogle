@@ -55,7 +55,7 @@ export function NixFunctions(props: FunctionsProps) {
 
   return (
     <Box sx={{ ml: { xs: 0, md: 2 } }}>
-      <BasicList items={preRenderedItems} loading={!Boolean(data.length)} />
+      <BasicList items={preRenderedItems} />
     </Box>
   );
 }
