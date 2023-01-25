@@ -81,16 +81,15 @@ export function SearchInput(props: SearchInputProps) {
           value={_term}
           onChange={(e) => handleType(e)}
         />
-        <Tooltip title="share search result">
-          <IconButton
-            sx={{
-              p: 1,
-            }}
-            aria-label="search-button"
-          >
-            <SearchIcon fontSize="inherit" />
-          </IconButton>
-        </Tooltip>
+        <IconButton
+          sx={{
+            p: 1,
+          }}
+          aria-label="search-button"
+          onClick={() => handleSearch(_term)}
+        >
+          <SearchIcon fontSize="inherit" />
+        </IconButton>
       </Paper>
 
       <Box>
