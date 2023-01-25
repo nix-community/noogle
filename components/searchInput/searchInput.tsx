@@ -3,12 +3,11 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
-import { Box, debounce, Grid, Tooltip, Typography } from "@mui/material";
+import { Box, debounce, Grid, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NixType, nixTypes } from "../../models/nix";
 import SearchIcon from "@mui/icons-material/Search";
 import { usePageContext } from "../pageContext";
-import { initialPageState } from "../../models/internals";
 import { SelectOption } from "../selectOption";
 
 export type Filter = { from: NixType; to: NixType };
