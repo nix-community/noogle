@@ -49,6 +49,7 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
         <meta />
         <meta name="robots" content="all" />
         <link rel="icon" href="/favicon.png" />
+        <link rel="search" type="application/opensearchdescription+xml" title="Search nix function on noogle" href="/search.xml"></link>
       </Head>
 
       <CacheProvider value={emotionCache}>
