@@ -46,7 +46,7 @@ export default function FunctionsPage() {
   const router = useRouter();
   const [initialProps, setInitialProps] = useState<PageState | null>(null);
   useEffect(() => {
-    if (router.isReady) {
+    if (router.isReady && initialProps === null) {
       getInitialProps(router).then((r) => {
         const { props } = r;
         console.info("Url Query changed\n\nUpdating pageState with delta:", {
@@ -55,7 +55,7 @@ export default function FunctionsPage() {
         setInitialProps((curr) => ({ ...curr, ...props }));
       });
     }
-  }, [router]);
+  }, [router, initialProps]);
   return (
     <>
       {!initialProps ? (
