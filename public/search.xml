@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Noogle</ShortName>
+    <Description>Search for nix functions by name.</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/png">https://noogle.dev/favicon.png</Image>
+    <Url type="text/html" template="https://noogle.dev/?term=%22{searchTerms}%22"/>
+    <moz:SearchForm>https://noogle.dev</moz:SearchForm>
+</OpenSearchDescription>
