@@ -1,54 +1,79 @@
+# [Noogle](https://noogle.dev)
+
 ![Website](https://img.shields.io/website?down_message=noogle.dev&up_message=noogle.dev&url=https%3A%2F%2Fnoogle.dev)
 ![GitHub top language](https://img.shields.io/github/languages/top/hsjobeki/noogle)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hsjobeki/noogle/main.yml)
+![built-with-dream2nix](https://img.shields.io/badge/built%20with-dream2nix-blue)
 
-# [Noogle](https://noogle.dev)
+Noogle is a Nix API search engine. It allows you to search functions based on
+their types and other attributes in `nix` projects. In `nixpkgs` especially
+the `builtins` and `lib` attributes.
 
-Noogle is a Nix API search engine. It allows you to search functions based on their types and other attributes in `nix` projects. In `nixpkgs` especially the `builtins` and `lib` attributes.
+## Current Features
 
-- Beginners-friendly search for nix and nix-related functions
-- Expert search with directly typing type signatures
-- Search functions based on:
-  - type 
-  - signature
+- [x] Beginners-friendly search for nix and nix-related functions
+- [x] Search by **type** signatures
+- [x] Sorted by relevance based on:
+  - id
   - name
-- tree-search from one type to another
- 
-## How it works
+  - category
+  - description
+  - example
+- [ ] tree-search from one type to another
+- [ ] functions from external libraries and nix frameworks
 
-### Indexers:
+## Available data
 
-Data collections need to be up-to-date
-Those collections are then combined and dumped somewhere (db / json)
+Currently there are the following subsets of nix functions available.
 
-For the indexing i currently use:
+- nix/**builtins**
+- nixpkgs/**lib**
+- nixpkgs/build-support/**trivial-builders**
 
-- Nixdoc (a fork) to collect nixpkgs.lib informations
-- nix __dump-builtins + builtins-types.json for the nix builtins
+### Search
 
-As some parts of nix already have nixos modules their input/output can be discovered. I still lack some tool to integrate that into noogle.
+- types are parsed and interpreted
+- text search, looks in all metadata fields for an **exact match** word
+or character sequence.
+Noogle does not offer elastic search yet. And it remains open if it ever will.
 
-### Search:
+> If you have a function/set that you would like to find here,
+> don't hesitate to file an issue.
 
-- haskell-like types are parsed and splitted between input and ouput
-- text search, looks in all metadata fields for an exact matching word or character sequence. I dont have elastic search yet.
-
-# View the prototype [here](https://noogle.dev)
+**View the prototype [here](https://noogle.dev)**
 
 ## We need your help / what is missing
 
-- Parsing `Types:` into a real type signature tree
-- Upstream missing type informations (like in /lib/attrsets.nix)
-- Write type signatures for the `builtins` in json
-- Add path, where each function can be imported from. e.g. `lib.makeOverridable` or `lib.customisation.makeOverridable` (it is available in both sets)
-- Website
-    - improve share / social interactions
-    - Add filter by tags e.g. lib.lists
-    - Prepare for scaling up: Either use api or use indexedDB with WebAssembly for complete offline usage?
-    - Mobile optimization for reading on the go
-- Clean up / enhance my nixdoc fork. 
-    - Make the `sloppy` parser more error resistant
-    - Some valueable information can be used from the rnix AST ?
+### Extend available function
+
+Currently there is only a limited set of data.
+
+Because nixpkgs is very inconsistently documented it is
+really hard to extend the scope.
+
+So if you want to help noogle, we must improve nixpkgs itself.
+
+- [ ] Parsing `Types:` into a real type signature tree
+- [ ] Fix: line beginnings that include Asterisk (*) : Is interpreted as List-Markdown
+- [x] Upstream missing type informations (like in /lib/attrsets.nix)
+- [x] Write type signatures for the `builtins` in json
+- [ ] Add path, where each function can be imported from.
+
+e.g. `lib.makeOverridable` or `lib.customisation.makeOverridable`
+it is available in both sets
+
+### Website
+
+- [x] improve share (deeplinks)
+- [ ] social interactions
+- [ ] Add filter by tags e.g. lib.lists
+- [ ] Prepare for scaling up (we expect more users)
+- [x] Mobile optimization for reading on the go
+
+## Nixdoc / Indexer (fork)
+
+- [ ] Parse types directly while also parsing comments
+- [ ] Extend the scope, so that is can parse more comments
 
 ## Contribute
 
@@ -62,4 +87,5 @@ Contributions are very welcome just file a PR or issue
 
 `nix develop`
 
-This command creates the node_modules folder with all needed dependencies based on dream2nix.
+This command creates the node_modules folder
+with all needed dependencies based on dream2nix.

@@ -1,5 +1,4 @@
 import {
-  Box,
   IconButton,
   ListItemText,
   Paper,
@@ -9,15 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 import { useMemo } from "react";
-import { DocItem, NixType } from "../../models/nix";
+import { DocItem } from "../../models/nix";
 import { Preview } from "../preview/preview";
-import StarIcon from "@mui/icons-material/Star";
 import ShareIcon from "@mui/icons-material/Share";
-import { useLocalStorage } from "usehooks-ts";
 import { useSnackbar } from "notistack";
-import StarRateIcon from "@mui/icons-material/StarRate";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { Key } from "@mui/icons-material";
 
 interface FunctionItemProps {
   selected: boolean;
@@ -25,10 +19,9 @@ interface FunctionItemProps {
   docItem: DocItem;
   handleClose: () => void;
 }
-const getKey = (item: DocItem) => `${item.category}/${item.name}`;
 
 export default function FunctionItem(props: FunctionItemProps) {
-  const { name, docItem, selected, handleClose } = props;
+  const { docItem, selected, handleClose } = props;
   const { fn_type, category, description, id } = docItem;
   const { enqueueSnackbar } = useSnackbar();
   const descriptionPreview = useMemo(() => {
