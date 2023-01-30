@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { ThemeOptions } from "@mui/system";
 import { useEffect } from "react";
 import Highlight, { HighlightProps } from "react-highlight";
 import styles from "./codeHighlight.module.css";
@@ -6,10 +7,12 @@ import styles from "./codeHighlight.module.css";
 interface CodeHighlightProps {
   theme: "light" | "dark";
   code: HighlightProps["children"];
+  lang?: string;
+  background?: ThemeOptions["palette"] | string;
 }
 
 export const CodeHighlight = (props: CodeHighlightProps) => {
-  const { theme, code } = props;
+  const { theme, code, lang, background } = props;
   useEffect(() => {
     if (theme === "dark") {
       // @ts-ignore - dont check type of css module
@@ -23,13 +26,21 @@ export const CodeHighlight = (props: CodeHighlightProps) => {
   return (
     <Box
       sx={{
-        "&.MuiBox-root>pre": {
+        "&.MuiBox-root": {
           width: "100%",
           marginTop: 0,
         },
+        "&.MuiBox-root>pre": {
+          marginTop: 0,
+        },
+        "&.MuiBox-root>pre code.hljs": {
+          bgcolor: background || undefined,
+        },
       }}
     >
-      <Highlight className={`nix ${styles.hljs}`}>{code}</Highlight>
+      <Highlight className={`${lang || "nix"} ${styles.hljs}`}>
+        {code}
+      </Highlight>
     </Box>
   );
 };

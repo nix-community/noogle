@@ -15,9 +15,8 @@ const info = Object.entries(builtins).map(([name, meta]) => {
     ],
   };
 });
-fs.writeFile("./models/builtins.json", JSON.stringify(info), (err) => {
+fs.writeFile("./models/data/builtins.json", JSON.stringify(info), (err) => {
   if (err) {
     console.error(err);
   }
-  // file written successfully
 });

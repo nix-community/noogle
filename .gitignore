@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/models/data/*
+# !/models/data/index.ts
 
 # nix
 .direnv/

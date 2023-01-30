@@ -12,6 +12,11 @@
       system = "x86_64-linux";
       pkgs = inp.nixpkgs.legacyPackages.${system};
       inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
+      prepareData = ''
+        cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./models/data/lib.json
+        cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./models/data/trivial-builders.json
+        node ./scripts/make-builtins.js       
+      '';
     in
     (inp.dream2nix.lib.makeFlakeOutputs {
       systemsFromFile = ./nix_systems;
@@ -24,9 +29,7 @@
       ];
       packageOverrides = {
         ${name}.staticPage = {
-          preBuild = ''
-            cp ${inp.nixdoc-fork.packages.${system}.data} ./models/lib.json
-          '';
+          preBuild = prepareData;
           installPhase = ''
             runHook preInstall
 
@@ -43,6 +46,7 @@
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [ nodejs-18_x ];
         shellHook = ''
+          ${prepareData}
           ${self.checks.${system}.pre-commit-check.shellHook}
         '';
       };
