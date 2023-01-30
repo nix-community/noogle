@@ -19,7 +19,9 @@
       packageOverrides = {
         ${name}.staticPage = {
           preBuild = ''
-          cp ${inp.nixdoc-fork.packages.${system}.data} ./models/lib.json
+          cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./models/data/lib.json
+          cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./models/data/trivial-builders.json
+          
           '';
           installPhase = ''
             runHook preInstall

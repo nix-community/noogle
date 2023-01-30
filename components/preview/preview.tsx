@@ -75,9 +75,11 @@ export const Preview = (props: PreviewProps) => {
           </Tooltip>
         )}
       </Box>
-      {prefix !== "builtins" && (
+      {prefix !== "builtins" && id.includes("lib.") && (
         <Box sx={{ my: 1 }}>
-          <Typography variant="subtitle1">{`short form: lib.${name}`}</Typography>
+          <Typography variant="subtitle1">
+            {`short form: lib.${name}`}
+          </Typography>
         </Box>
       )}
       <List sx={{ width: "100%" }} disablePadding>
@@ -172,13 +174,24 @@ export const Preview = (props: PreviewProps) => {
             }}
             primaryTypographyProps={{
               color: "text.secondary",
+              gutterBottom: true,
               fontSize: 14,
             }}
             secondaryTypographyProps={{
-              color: "text.primary",
+              color: fn_type ? "text.primary" : "text.secondary",
               fontSize: "1rem",
             }}
-            secondary={fn_type || "no type provided yet."}
+            secondary={
+              fn_type ? (
+                <CodeHighlight
+                  code={fn_type}
+                  theme={theme.palette.mode}
+                  lang={"Haskell"}
+                />
+              ) : (
+                "no type provided yet."
+              )
+            }
             primary="function signature "
           />
         </ListItem>
@@ -209,7 +222,13 @@ export const Preview = (props: PreviewProps) => {
                 </Typography>
               }
               secondary={
-                <CodeHighlight code={example} theme={theme.palette.mode} />
+                <CodeHighlight
+                  code={example}
+                  theme={theme.palette.mode}
+                  background={
+                    theme.palette.mode === "light" ? "action.hover" : undefined
+                  }
+                />
               }
             />
           </ListItem>

@@ -9,6 +9,9 @@ const lightThemeOptions: ThemeOptions = {
     },
     secondary: {
       main: "#6ad541"
+    },
+    background: {
+      default: "#fafaff"
     }
   },
 };
