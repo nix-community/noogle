@@ -35,6 +35,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.pre-commit-config.yaml
 
 # vercel
 .vercel
