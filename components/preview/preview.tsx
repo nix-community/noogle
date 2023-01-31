@@ -195,7 +195,6 @@ export const Preview = (props: PreviewProps) => {
             primary="function signature "
           />
         </ListItem>
-        {console.log({ fn_type })}
         {example && (
           <ListItem
             sx={{
