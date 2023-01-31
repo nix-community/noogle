@@ -178,8 +178,8 @@ export const Preview = (props: PreviewProps) => {
               fontSize: 14,
             }}
             secondaryTypographyProps={{
-              color: fn_type ? "text.primary" : "text.secondary",
-              fontSize: "1rem",
+              // color: fn_type ? "text.primary" : "text.secondary",
+              fontSize: theme.typography.fontSize + 4,
             }}
             secondary={
               fn_type ? (
@@ -195,6 +195,7 @@ export const Preview = (props: PreviewProps) => {
             primary="function signature "
           />
         </ListItem>
+        {console.log({ fn_type })}
         {example && (
           <ListItem
             sx={{

@@ -28,10 +28,10 @@ export const CodeHighlight = (props: CodeHighlightProps) => {
       sx={{
         "&.MuiBox-root": {
           width: "100%",
-          marginTop: 0,
+          margin: 0,
         },
         "&.MuiBox-root>pre": {
-          marginTop: 0,
+          margin: 0,
         },
         "&.MuiBox-root>pre code.hljs": {
           bgcolor: background || undefined,
