@@ -13,20 +13,17 @@
       pkgs = inp.nixpkgs.legacyPackages.${system};
       inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
       prepareData = ''
-        cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./models/data/lib.json
-        cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./models/data/trivial-builders.json
+        cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./website/models/data/lib.json
+        cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./website/models/data/trivial-builders.json
         node ./scripts/make-builtins.js       
       '';
     in
     (inp.dream2nix.lib.makeFlakeOutputs {
-      systemsFromFile = ./nix_systems;
+      systems = [ system ];
+      projects = ./projects.toml;
       config.projectRoot = ./.;
       source = ./.;
-      settings = [
-        {
-          subsystemInfo.nodejs = 18;
-        }
-      ];
+
       packageOverrides = {
         ${name}.staticPage = {
           preBuild = prepareData;

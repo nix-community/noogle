@@ -15,8 +15,12 @@ const info = Object.entries(builtins).map(([name, meta]) => {
     ],
   };
 });
-fs.writeFile("./models/data/builtins.json", JSON.stringify(info), (err) => {
-  if (err) {
-    console.error(err);
+fs.writeFile(
+  "./website/models/data/builtins.json",
+  JSON.stringify(info),
+  (err) => {
+    if (err) {
+      console.error(err);
+    }
   }
-});
+);
