@@ -13,8 +13,8 @@
       pkgs = inp.nixpkgs.legacyPackages.${system};
       inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
       prepareData = ''
-        cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./models/data/lib.json
-        cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./models/data/trivial-builders.json
+        cp -f ${inp.nixdoc-fork.packages.${system}.data.lib} ./models/data/lib.json
+        cp -f ${inp.nixdoc-fork.packages.${system}.data.build_support} ./models/data/trivial-builders.json
         node ./scripts/make-builtins.js       
       '';
     in
