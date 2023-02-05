@@ -1,5 +1,8 @@
 const builtins = require("./data/builtins.json");
 const types = require("./data/builtins.types.json");
+const derivation = require("./data/derivation.json");
+builtins["derivation"] = derivation.derivation;
+
 const fs = require("fs");
 const info = Object.entries(builtins).map(([name, meta]) => {
   const fn_type = types[name]?.fn_type || null;

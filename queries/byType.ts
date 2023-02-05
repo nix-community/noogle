@@ -12,6 +12,9 @@ export const byType =
       ({ name, fn_type }) => {
         if (fn_type) {
           const parsedType = getTypes(name, fn_type);
+          // if(name === "derivation"){
+          //   console.log({name,parsedType,fn_type});
+          // }
           return (
             parsedType.args.includes(from) && parsedType.types.includes(to)
           );
