@@ -6,7 +6,7 @@ export const byQuery =
     const term = rawTerm.toLowerCase();
     return data.reduce((results: (DocItem & {relevance: number})[], docItem: DocItem)=>{
         const matchesOn = Object.keys(docItem).filter(key=>{
-            const rawValue = docItem[key as keyof DocItem];
+            const rawValue = String(docItem[key as keyof DocItem]);
             if(rawValue === null || rawValue === undefined){
                 return false;
             }

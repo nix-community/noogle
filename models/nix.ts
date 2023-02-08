@@ -16,6 +16,7 @@ export type DocItem = {
     fn_type?: null | string;
     description?: null | string | string[];
     example?: null | string | string[];
+    line?: null | number;
 };
 
 export type MetaData = DocItem[];

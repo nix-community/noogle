@@ -28,7 +28,7 @@ interface PreviewProps {
 
 export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose, closeComponent = undefined } = props;
-  const { name, description, category, example, fn_type, id } = docItem;
+  const { name, description, category, example, fn_type, id, line } = docItem;
   const theme = useTheme();
 
   const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
@@ -120,7 +120,7 @@ export const Preview = (props: PreviewProps) => {
                     href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
                       "./",
                       ""
-                    )}`}
+                    )}#L${line}`}
                   >
                     {"github:NixOS/nixpkgs/" + category.replace("./", "")}
                   </MuiLink>

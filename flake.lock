@@ -315,11 +315,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1675353900,
-        "narHash": "sha256-8wc6dvfIcoEFKNBB8D2l32+TjXuBsj/AKnTqvINl6yY=",
+        "lastModified": 1675862788,
+        "narHash": "sha256-TS8YpNtYKBWP6xXrJ7DIdmJwwcCq0Tuf9NhQYWXoPXA=",
         "owner": "hsjobeki",
         "repo": "nixdoc",
-        "rev": "057981e5c53313e40824f05c82249cf0d2a5b552",
+        "rev": "76276fdb30ab4fcbe7ba19844a2afd9447256674",
         "type": "github"
       },
       "original": {
