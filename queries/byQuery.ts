@@ -31,6 +31,7 @@ const getRelevance = (matchesOn: (keyof DocItem)[]): number => {
         category: 3,
         example: 2,
         description: 1,
+        line: 1,
     }
     return matchesOn.reduce((count,key)=>{
         return count + relevanceMap[key]
