@@ -24,7 +24,7 @@
   },
   "deepSeq": { "fn_type": "deepSeq :: a -> b -> b" },
   "derivation": {
-    "fn_type": "derivation :: {\n    builder :: String | Path | Package,\n    name :: String,\n    system :: String,\n    args :: ? [ String ],\n    outputs :: ? [ String ],\n    __contentAddressed :: ? Bool,\n    __structuredAttrs :: ? Bool,\n    allowedReferences :: ? [ String ],\n    allowedRequisites :: ? [ String ],\n    disallowedReferences :: ? [ String ],\n    disallowedRequisites :: ? [ String ],\n    exportReferenceGraph :: ? [ String | Package ],\n    impureEnvVars :: ? [ String ],\n    outputHash :: ? String,\n    outputHashAlgo :: ? String,\n    outputHashMode :: ? String,\n    passAsFile :: ? [ String ],\n    preferLocalBuild :: ? [ String ],\n    allowSubstitutes :: ? Bool,\n} -> Derivation"
+    "fn_type": "let \n    Derivation :: {\n        all :: [ Derivation ];\n        builder :: String;\n        drvAttrs :: {\n            builder = String; \n            name = String;\n            outputs = [ output :: String ]; \n            system = String;\n            ${additionalArgs} :: String;\n        }\n        drvPath :: String;\n        name :: String;\n        outPath :: String;\n        outputName :: String;\n        outputs :: [ output :: String ];\n        system :: String;\n        type :: \"derivation\";\n        ${output} :: Derivation;\n        ${additionalArgs} :: String;\n    };\nin\n    builtins.derivation :: {\n        name :: String;\n        outputs :: [ output :: String ] ? [ \"out\" ];\n        builder :: String;\n        system :: String;\n        ${additionalArgs} :: String;\n    } -> Derivation"
   },
   "dirOf": { "fn_type": "dirOf :: String -> String" },
   "div": { "fn_type": "div :: Number -> Number -> Number" },
