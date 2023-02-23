@@ -10,9 +10,10 @@
 
 [noogle]
 name = "noogle"
-relPath = "website"
+relPath = ""
 subsystem = "nodejs"
 translator = "package-lock"
+builder = "strict-builder"
 translators = ["package-lock", "package-json"]
 
 [noogle.subsystemInfo]

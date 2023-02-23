@@ -11,28 +11,29 @@
     let
       system = "x86_64-linux";
       pkgs = inp.nixpkgs.legacyPackages.${system};
-      inherit (builtins.fromJSON (builtins.readFile ./package.json)) name;
-      prepareData = ''
-        cp ${inp.nixdoc-fork.packages.${system}.data.lib} ./website/models/data/lib.json
-        cp ${inp.nixdoc-fork.packages.${system}.data.build_support} ./website/models/data/trivial-builders.json
-        node ./scripts/make-builtins.js       
+      inherit (builtins.fromJSON (builtins.readFile ./website/package.json)) name;
+      prepareData = prefix: ''
+        cp -f ${inp.nixdoc-fork.packages.${system}.data.lib} ${prefix}./models/data/lib.json
+        cp -f ${inp.nixdoc-fork.packages.${system}.data.build_support} ${prefix}./models/data/trivial-builders.json
+        node ${prefix}./scripts/make-builtins.js ${prefix}./models/data      
       '';
     in
     (inp.dream2nix.lib.makeFlakeOutputs {
       systems = [ system ];
       projects = ./projects.toml;
-      config.projectRoot = ./.;
-      source = ./.;
+      config.projectRoot = ./website;
+      source = ./website;
 
       packageOverrides = {
         ${name}.staticPage = {
-          preBuild = prepareData;
+          preBuild = prepareData "";
           installPhase = ''
             runHook preInstall
 
             npm run export
             mkdir -p $out/static
-            cp -r ./out/* $out/static/         
+            cp -r ./out/* $out/static/
+            cp -r ./ $lib         
 
             runHook postInstall
           '';
@@ -43,7 +44,7 @@
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [ nodejs-18_x ];
         shellHook = ''
-          ${prepareData}
+          ${prepareData "./website/"}
           ${self.checks.${system}.pre-commit-check.shellHook}
         '';
       };
