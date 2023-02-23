@@ -10,7 +10,7 @@
 
 [noogle]
 name = "noogle"
-relPath = ""
+relPath = "website"
 subsystem = "nodejs"
 translator = "package-lock"
 builder = "strict-builder"
@@ -18,3 +18,17 @@ translators = ["package-lock", "package-json"]
 
 [noogle.subsystemInfo]
 nodejs = 18
+
+[indexer]
+name = "indexer"
+relPath = "indexer"
+subsystem = "rust"
+translator = "cargo-lock"
+translators = ["cargo-lock", "cargo-toml"]
+
+[indexer.subsystemInfo]
+workspaceMembers = []
+[[indexer.subsystemInfo.crates]]
+name = "indexer"
+relPath = "indexer"
+version = "0.1.0"
