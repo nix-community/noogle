@@ -6,7 +6,7 @@ export const byQuery =
     const term = rawTerm.toLowerCase();
     return data.reduce((results: (DocItem & {relevance: number})[], docItem: DocItem)=>{
         const matchesOn = Object.keys(docItem).filter(key=>{
-            const rawValue = docItem[key as keyof DocItem];
+            const rawValue = String(docItem[key as keyof DocItem]);
             if(rawValue === null || rawValue === undefined){
                 return false;
             }
@@ -31,6 +31,7 @@ const getRelevance = (matchesOn: (keyof DocItem)[]): number => {
         category: 3,
         example: 2,
         description: 1,
+        line: 1,
     }
     return matchesOn.reduce((count,key)=>{
         return count + relevanceMap[key]

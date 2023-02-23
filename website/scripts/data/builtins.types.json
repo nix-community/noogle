@@ -23,6 +23,9 @@
     "fn_type": "concatStringsSep :: String -> [String] -> String"
   },
   "deepSeq": { "fn_type": "deepSeq :: a -> b -> b" },
+  "derivation": {
+    "fn_type": "let \n    Derivation :: {\n        all :: [ Derivation ];\n        builder :: String;\n        drvAttrs :: {\n            builder = String; \n            name = String;\n            outputs = [ output :: String ]; \n            system = String;\n            ${additionalArgs} :: String;\n        }\n        drvPath :: String;\n        name :: String;\n        outPath :: String;\n        outputName :: String;\n        outputs :: [ output :: String ];\n        system :: String;\n        type :: \"derivation\";\n        ${output} :: Derivation;\n        ${additionalArgs} :: String;\n    };\nin\n    builtins.derivation :: {\n        name :: String;\n        outputs :: [ output :: String ] ? [ \"out\" ];\n        builder :: String;\n        system :: String;\n        ${additionalArgs} :: String;\n    } -> Derivation"
+  },
   "dirOf": { "fn_type": "dirOf :: String -> String" },
   "div": { "fn_type": "div :: Number -> Number -> Number" },
   "elem": { "fn_type": "elem :: a -> [b] -> Bool" },
