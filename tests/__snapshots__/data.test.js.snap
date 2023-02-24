@@ -1,0 +1,4160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`confirm data update 1`] = `
+[
+  {
+    "category": "./lib/versions.nix",
+    "description": "Break a version string into its component parts.",
+    "example": "splitVersion "1.2.3"
+=> ["1" "2" "3"]",
+    "fn_type": null,
+    "id": "lib.versions.splitVersion",
+    "line": 12,
+    "name": "splitVersion",
+  },
+  {
+    "category": "./lib/versions.nix",
+    "description": "Get the major version string from a string.",
+    "example": "major "1.2.3"
+=> "1"",
+    "fn_type": null,
+    "id": "lib.versions.major",
+    "line": 20,
+    "name": "major",
+  },
+  {
+    "category": "./lib/versions.nix",
+    "description": "Get the minor version string from a string.",
+    "example": "minor "1.2.3"
+=> "2"",
+    "fn_type": null,
+    "id": "lib.versions.minor",
+    "line": 28,
+    "name": "minor",
+  },
+  {
+    "category": "./lib/versions.nix",
+    "description": "Get the patch version string from a string.",
+    "example": "patch "1.2.3"
+=> "3"",
+    "fn_type": null,
+    "id": "lib.versions.patch",
+    "line": 36,
+    "name": "patch",
+  },
+  {
+    "category": "./lib/versions.nix",
+    "description": "Get string of the first two parts (major and minor)
+    of a version string.",
+    "example": "majorMinor "1.2.3"
+=> "1.2"",
+    "fn_type": null,
+    "id": "lib.versions.majorMinor",
+    "line": 45,
+    "name": "majorMinor",
+  },
+  {
+    "category": "./lib/versions.nix",
+    "description": "Pad a version string with zeros to match the given number of components.",
+    "example": "pad 3 "1.2"
+=> "1.2.0"
+pad 3 "1.3-rc1"
+=> "1.3.0-rc1"
+pad 3 "1.2.3.4"
+=> "1.2.3"",
+    "fn_type": null,
+    "id": "lib.versions.pad",
+    "line": 59,
+    "name": "pad",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "The identity function
+    For when you need a function that does “nothing”.",
+    "example": null,
+    "fn_type": "id :: a -> a",
+    "id": "lib.trivial.id",
+    "line": 13,
+    "name": "id",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "The constant function
+
+    Ignores the second argument. If called with only one argument,
+    constructs a function that always returns a static value.",
+    "example": "let f = const 5; in f 10
+=> 5",
+    "fn_type": "const :: a -> b -> a",
+    "id": "lib.trivial.const",
+    "line": 26,
+    "name": "const",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Pipes a value through a list of functions, left to right.",
+    "example": "pipe 2 [
+  (x: x + 2)  # 2 + 2 = 4
+  (x: x * 2)  # 4 * 2 = 8
+]
+=> 8
+
+# ideal to do text transformations
+pipe [ "a/b" "a/c" ] [
+
+  # create the cp command
+  (map (file: ''cp "\${src}/\${file}" $out\\n''))
+
+  # concatenate all commands into one string
+  lib.concatStrings
+
+  # make that string into a nix derivation
+  (pkgs.runCommand "copy-to-out" {})
+
+]
+=> <drv which copies all files to $out>
+
+     The output type of each function has to be the input type
+     of the next function, and the last function returns the
+     final value.",
+    "fn_type": "pipe :: a -> [<functions>] -> <return type of last function>",
+    "id": "lib.trivial.pipe",
+    "line": 61,
+    "name": "pipe",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Concatenate two lists",
+    "example": "concat [ 1 2 ] [ 3 4 ]
+=> [ 1 2 3 4 ]",
+    "fn_type": "concat :: [a] -> [a] -> [a]",
+    "id": "lib.trivial.concat",
+    "line": 80,
+    "name": "concat",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "boolean “or”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.or",
+    "line": 83,
+    "name": "or",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "boolean “and”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.and",
+    "line": 86,
+    "name": "and",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "bitwise “and”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.bitAnd",
+    "line": 89,
+    "name": "bitAnd",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "bitwise “or”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.bitOr",
+    "line": 95,
+    "name": "bitOr",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "bitwise “xor”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.bitXor",
+    "line": 100,
+    "name": "bitXor",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "bitwise “not”",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.bitNot",
+    "line": 106,
+    "name": "bitNot",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Convert a boolean to a string.
+
+    This function uses the strings "true" and "false" to represent
+    boolean values. Calling \`toString\` on a bool instead returns "1"
+    and "" (sic!).",
+    "example": null,
+    "fn_type": "boolToString :: bool -> string",
+    "id": "lib.trivial.boolToString",
+    "line": 114,
+    "name": "boolToString",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Merge two attribute sets shallowly, right side trumps left
+
+    mergeAttrs :: attrs -> attrs -> attrs",
+    "example": "mergeAttrs { a = 1; b = 2; } { b = 3; c = 4; }
+=> { a = 1; b = 3; c = 4; }",
+    "fn_type": null,
+    "id": "lib.trivial.mergeAttrs",
+    "line": 125,
+    "name": "mergeAttrs",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Flip the order of the arguments of a binary function.",
+    "example": "flip concat [1] [2]
+=> [ 2 1 ]",
+    "fn_type": "flip :: (a -> b -> c) -> (b -> a -> c)",
+    "id": "lib.trivial.flip",
+    "line": 140,
+    "name": "flip",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Apply function if the supplied argument is non-null.",
+    "example": "mapNullable (x: x+1) null
+=> null
+mapNullable (x: x+1) 22
+=> 23",
+    "fn_type": null,
+    "id": "lib.trivial.mapNullable",
+    "line": 149,
+    "name": "mapNullable",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Returns the current full nixpkgs version number.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.version",
+    "line": 164,
+    "name": "version",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Returns the current nixpkgs release number as string.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.release",
+    "line": 167,
+    "name": "release",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "The latest release that is supported, at the time of release branch-off,
+    if applicable.
+
+    Ideally, out-of-tree modules should be able to evaluate cleanly with all
+    supported Nixpkgs versions (master, release and old release until EOL).
+    So if possible, deprecation warnings should take effect only when all
+    out-of-tree expressions/libs/modules can upgrade to the new way without
+    losing support for supported Nixpkgs versions.
+
+    This release number allows deprecation warnings to be implemented such that
+    they take effect as soon as the oldest release reaches end of life.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.oldestSupportedRelease",
+    "line": 181,
+    "name": "oldestSupportedRelease",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Whether a feature is supported in all supported releases (at the time of
+    release branch-off, if applicable). See \`oldestSupportedRelease\`.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.isInOldestRelease",
+    "line": 187,
+    "name": "isInOldestRelease",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Returns the current nixpkgs release code name.
+
+    On each release the first letter is bumped and a new animal is chosen
+    starting with that new letter.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.codeName",
+    "line": 200,
+    "name": "codeName",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Returns the current nixpkgs version suffix as string.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.versionSuffix",
+    "line": 202,
+    "name": "versionSuffix",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Attempts to return the the current revision of nixpkgs and
+    returns the supplied default value otherwise.",
+    "example": null,
+    "fn_type": "revisionWithDefault :: string -> string",
+    "id": "lib.trivial.revisionWithDefault",
+    "line": 213,
+    "name": "revisionWithDefault",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Determine whether the function is being called from inside a Nix
+    shell.",
+    "example": null,
+    "fn_type": "inNixShell :: bool",
+    "id": "lib.trivial.inNixShell",
+    "line": 230,
+    "name": "inNixShell",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Determine whether the function is being called from inside pure-eval mode
+    by seeing whether \`builtins\` contains \`currentSystem\`. If not, we must be in
+    pure-eval mode.",
+    "example": null,
+    "fn_type": "inPureEvalMode :: bool",
+    "id": "lib.trivial.inPureEvalMode",
+    "line": 238,
+    "name": "inPureEvalMode",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Return minimum of two numbers.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.min",
+    "line": 243,
+    "name": "min",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Return maximum of two numbers.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.max",
+    "line": 246,
+    "name": "max",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Integer modulus",
+    "example": "mod 11 10
+=> 1
+mod 1 10
+=> 1",
+    "fn_type": null,
+    "id": "lib.trivial.mod",
+    "line": 256,
+    "name": "mod",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "C-style comparisons
+
+    a < b,  compare a b => -1
+    a == b, compare a b => 0
+    a > b,  compare a b => 1",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.compare",
+    "line": 269,
+    "name": "compare",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Split type into two subtypes by predicate \`p\`, take all elements
+    of the first subtype to be less than all the elements of the
+    second subtype, compare elements of a single subtype with \`yes\`
+    and \`no\` respectively.",
+    "example": "let cmp = splitByAndCompare (hasPrefix "foo") compare compare; in
+
+cmp "a" "z" => -1
+cmp "fooa" "fooz" => -1
+
+cmp "f" "a" => 1
+cmp "fooa" "a" => -1
+# while
+compare "fooa" "a" => 1",
+    "fn_type": "(a -> bool) -> (a -> a -> int) -> (a -> a -> int) -> (a -> a -> int)",
+    "id": "lib.trivial.splitByAndCompare",
+    "line": 293,
+    "name": "splitByAndCompare",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Reads a JSON file.
+
+    Type :: path -> any",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.importJSON",
+    "line": 313,
+    "name": "importJSON",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Reads a TOML file.
+
+    Type :: path -> any",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.importTOML",
+    "line": 320,
+    "name": "importTOML",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Print a warning before returning the second argument. This function behaves
+like \`builtins.trace\`, but requires a string message and formats it as a
+warning, including the \`warning: \` prefix.
+
+To get a call stack trace and abort evaluation, set the environment variable
+\`NIX_ABORT_ON_WARN=true\` and set the Nix options \`--option pure-eval false --show-trace\`",
+    "example": null,
+    "fn_type": "string -> a -> a",
+    "id": "lib.trivial.warn",
+    "line": 348,
+    "name": "warn",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Like warn, but only warn when the first argument is \`true\`.",
+    "example": null,
+    "fn_type": "bool -> string -> a -> a",
+    "id": "lib.trivial.warnIf",
+    "line": 357,
+    "name": "warnIf",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Like warnIf, but negated (warn if the first argument is \`false\`).",
+    "example": null,
+    "fn_type": "bool -> string -> a -> a",
+    "id": "lib.trivial.warnIfNot",
+    "line": 364,
+    "name": "warnIfNot",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Like the \`assert b; e\` expression, but with a custom error message and
+without the semicolon.
+
+If true, return the identity function, \`r: r\`.
+
+If false, throw the error message.
+
+Calls can be juxtaposed using function application, as \`(r: r) a = a\`, so
+\`(r: r) (r: r) a = a\`, and so forth.",
+    "example": "throwIfNot (lib.isList overlays) "The overlays argument to nixpkgs must be a list."
+lib.foldr (x: throwIfNot (lib.isFunction x) "All overlays passed to nixpkgs must be functions.") (r: r) overlays
+pkgs",
+    "fn_type": "bool -> string -> a -> a",
+    "id": "lib.trivial.throwIfNot",
+    "line": 386,
+    "name": "throwIfNot",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Like throwIfNot, but negated (throw if the first argument is \`true\`).",
+    "example": null,
+    "fn_type": "bool -> string -> a -> a",
+    "id": "lib.trivial.throwIf",
+    "line": 393,
+    "name": "throwIf",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Check if the elements in a list are valid values from a enum, returning the identity function, or throwing an error message otherwise.",
+    "example": "let colorVariants = ["bright" "dark" "black"]
+in checkListOfEnum "color variants" [ "standard" "light" "dark" ] colorVariants;
+=>
+error: color variants: bright, black unexpected; valid ones: standard, light, dark",
+    "fn_type": "String -> List ComparableVal -> List ComparableVal -> a -> a",
+    "id": "lib.trivial.checkListOfEnum",
+    "line": 405,
+    "name": "checkListOfEnum",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Add metadata about expected function arguments to a function.
+    The metadata should match the format given by
+    builtins.functionArgs, i.e. a set from expected argument to a bool
+    representing whether that argument has a default or not.
+    setFunctionArgs : (a → b) → Map String Bool → (a → b)
+
+    This function is necessary because you can't dynamically create a
+    function of the { a, b ? foo, ... }: format, but some facilities
+    like callPackage expect to be able to query expected arguments.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.setFunctionArgs",
+    "line": 429,
+    "name": "setFunctionArgs",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Extract the expected function arguments from a function.
+    This works both with nix-native { a, b ? foo, ... }: style
+    functions and functions with args set with 'setFunctionArgs'. It
+    has the same return type and semantics as builtins.functionArgs.
+    setFunctionArgs : (a → b) → Map String Bool.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.functionArgs",
+    "line": 442,
+    "name": "functionArgs",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Check whether something is a function or something
+    annotated with function args.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.isFunction",
+    "line": 449,
+    "name": "isFunction",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Turns any non-callable values into constant functions.
+Returns callable values as is.",
+    "example": "nix-repl> lib.toFunction 1 2
+1
+
+nix-repl> lib.toFunction (x: x + 1) 2
+3",
+    "fn_type": null,
+    "id": "lib.trivial.toFunction",
+    "line": 466,
+    "name": "toFunction",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "Convert the given positive integer to a string of its hexadecimal
+    representation. For example:
+
+    toHexString 0 => "0"
+
+    toHexString 16 => "10"
+
+    toHexString 250 => "FA"",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.toHexString",
+    "line": 481,
+    "name": "toHexString",
+  },
+  {
+    "category": "./lib/trivial.nix",
+    "description": "\`toBaseDigits base i\` converts the positive integer i to a list of its
+    digits in the given base. For example:
+
+    toBaseDigits 10 123 => [ 1 2 3 ]
+
+    toBaseDigits 2 6 => [ 1 1 0 ]
+
+    toBaseDigits 16 250 => [ 15 10 ]",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.trivial.toBaseDigits",
+    "line": 507,
+    "name": "toBaseDigits",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Concatenate a list of strings.",
+    "example": "concatStrings ["foo" "bar"]
+=> "foobar"",
+    "fn_type": "concatStrings :: [string] -> string",
+    "id": "lib.strings.concatStrings",
+    "line": 45,
+    "name": "concatStrings",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Map a function over a list and concatenate the resulting strings.",
+    "example": "concatMapStrings (x: "a" + x) ["foo" "bar"]
+=> "afooabar"",
+    "fn_type": "concatMapStrings :: (a -> string) -> [a] -> string",
+    "id": "lib.strings.concatMapStrings",
+    "line": 55,
+    "name": "concatMapStrings",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Like \`concatMapStrings\` except that the f functions also gets the
+    position as a parameter.",
+    "example": "concatImapStrings (pos: x: "\${toString pos}-\${x}") ["foo" "bar"]
+=> "1-foo2-bar"",
+    "fn_type": "concatImapStrings :: (int -> a -> string) -> [a] -> string",
+    "id": "lib.strings.concatImapStrings",
+    "line": 66,
+    "name": "concatImapStrings",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Place an element between each element of a list",
+    "example": "intersperse "/" ["usr" "local" "bin"]
+=> ["usr" "/" "local" "/" "bin"].",
+    "fn_type": "intersperse :: a -> [a] -> [a]",
+    "id": "lib.strings.intersperse",
+    "line": 76,
+    "name": "intersperse",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Concatenate a list of strings with a separator between each element",
+    "example": "concatStringsSep "/" ["usr" "local" "bin"]
+=> "usr/local/bin"",
+    "fn_type": "concatStringsSep :: string -> [string] -> string",
+    "id": "lib.strings.concatStringsSep",
+    "line": 93,
+    "name": "concatStringsSep",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Maps a function over a list of strings and then concatenates the
+    result with the specified separator interspersed between
+    elements.",
+    "example": "concatMapStringsSep "-" (x: toUpper x)  ["foo" "bar" "baz"]
+=> "FOO-BAR-BAZ"",
+    "fn_type": "concatMapStringsSep :: string -> (a -> string) -> [a] -> string",
+    "id": "lib.strings.concatMapStringsSep",
+    "line": 106,
+    "name": "concatMapStringsSep",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Same as \`concatMapStringsSep\`, but the mapping function
+    additionally receives the position of its argument.",
+    "example": "concatImapStringsSep "-" (pos: x: toString (x / pos)) [ 6 6 6 ]
+=> "6-3-2"",
+    "fn_type": "concatIMapStringsSep :: string -> (int -> a -> string) -> [a] -> string",
+    "id": "lib.strings.concatImapStringsSep",
+    "line": 123,
+    "name": "concatImapStringsSep",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Concatenate a list of strings, adding a newline at the end of each one.
+    Defined as \`concatMapStrings (s: s + "\\n")\`.",
+    "example": "concatLines [ "foo" "bar" ]
+=> "foo\\nbar\\n"",
+    "fn_type": "concatLines :: [string] -> string",
+    "id": "lib.strings.concatLines",
+    "line": 140,
+    "name": "concatLines",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Construct a Unix-style, colon-separated search path consisting of
+    the given \`subDir\` appended to each of the given paths.",
+    "example": "makeSearchPath "bin" ["/root" "/usr" "/usr/local"]
+=> "/root/bin:/usr/bin:/usr/local/bin"
+makeSearchPath "bin" [""]
+=> "/bin"",
+    "fn_type": "makeSearchPath :: string -> [string] -> string",
+    "id": "lib.strings.makeSearchPath",
+    "line": 153,
+    "name": "makeSearchPath",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Construct a Unix-style search path by appending the given
+    \`subDir\` to the specified \`output\` of each of the packages. If no
+    output by the given name is found, fallback to \`.out\` and then to
+    the default.",
+    "example": "makeSearchPathOutput "dev" "bin" [ pkgs.openssl pkgs.zlib ]
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/bin:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/bin"",
+    "fn_type": "string -> string -> [package] -> string",
+    "id": "lib.strings.makeSearchPathOutput",
+    "line": 171,
+    "name": "makeSearchPathOutput",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Construct a library search path (such as RPATH) containing the
+    libraries for a set of packages",
+    "example": "makeLibraryPath [ "/usr" "/usr/local" ]
+=> "/usr/lib:/usr/local/lib"
+pkgs = import <nixpkgs> { }
+makeLibraryPath [ pkgs.openssl pkgs.zlib ]
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r/lib:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/lib"",
+    "fn_type": null,
+    "id": "lib.strings.makeLibraryPath",
+    "line": 189,
+    "name": "makeLibraryPath",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Construct a binary search path (such as $PATH) containing the
+    binaries for a set of packages.",
+    "example": "makeBinPath ["/root" "/usr" "/usr/local"]
+=> "/root/bin:/usr/bin:/usr/local/bin"",
+    "fn_type": null,
+    "id": "lib.strings.makeBinPath",
+    "line": 198,
+    "name": "makeBinPath",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Normalize path, removing extraneous /s",
+    "example": "normalizePath "/a//b///c/"
+=> "/a/b/c/"",
+    "fn_type": "normalizePath :: string -> string",
+    "id": "lib.strings.normalizePath",
+    "line": 208,
+    "name": "normalizePath",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Depending on the boolean \`cond', return either the given string
+    or the empty string. Useful to concatenate against a bigger string.",
+    "example": "optionalString true "some-string"
+=> "some-string"
+optionalString false "some-string"
+=> """,
+    "fn_type": "optionalString :: bool -> string -> string",
+    "id": "lib.strings.optionalString",
+    "line": 221,
+    "name": "optionalString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Determine whether a string has given prefix.",
+    "example": "hasPrefix "foo" "foobar"
+=> true
+hasPrefix "foo" "barfoo"
+=> false",
+    "fn_type": "hasPrefix :: string -> string -> bool",
+    "id": "lib.strings.hasPrefix",
+    "line": 237,
+    "name": "hasPrefix",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Determine whether a string has given suffix.",
+    "example": "hasSuffix "foo" "foobar"
+=> false
+hasSuffix "foo" "barfoo"
+=> true",
+    "fn_type": "hasSuffix :: string -> string -> bool",
+    "id": "lib.strings.hasSuffix",
+    "line": 253,
+    "name": "hasSuffix",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Determine whether a string contains the given infix",
+    "example": "hasInfix "bc" "abcd"
+=> true
+hasInfix "ab" "abcd"
+=> true
+hasInfix "cd" "abcd"
+=> true
+hasInfix "foo" "abcd"
+=> false",
+    "fn_type": "hasInfix :: string -> string -> bool",
+    "id": "lib.strings.hasInfix",
+    "line": 278,
+    "name": "hasInfix",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Convert a string to a list of characters (i.e. singleton strings).
+    This allows you to, e.g., map a function over each character.  However,
+    note that this will likely be horribly inefficient; Nix is not a
+    general purpose programming language. Complex string manipulations
+    should, if appropriate, be done in a derivation.
+    Also note that Nix treats strings as a list of bytes and thus doesn't
+    handle unicode.",
+    "example": "stringToCharacters ""
+=> [ ]
+stringToCharacters "abc"
+=> [ "a" "b" "c" ]
+stringToCharacters "🦄"
+=> [ "�" "�" "�" "�" ]",
+    "fn_type": "stringToCharacters :: string -> [string]",
+    "id": "lib.strings.stringToCharacters",
+    "line": 299,
+    "name": "stringToCharacters",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Manipulate a string character by character and replace them by
+    strings before concatenating the results.",
+    "example": "stringAsChars (x: if x == "a" then "i" else x) "nax"
+=> "nix"",
+    "fn_type": "stringAsChars :: (string -> string) -> string -> string",
+    "id": "lib.strings.stringAsChars",
+    "line": 311,
+    "name": "stringAsChars",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Convert char to ascii value, must be in printable range",
+    "example": "charToInt "A"
+=> 65
+charToInt "("
+=> 40",
+    "fn_type": "charToInt :: string -> int",
+    "id": "lib.strings.charToInt",
+    "line": 330,
+    "name": "charToInt",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Escape occurrence of the elements of \`list\` in \`string\` by
+    prefixing it with a backslash.",
+    "example": "escape ["(" ")"] "(foo)"
+=> "\\\\(foo\\\\)"",
+    "fn_type": "escape :: [string] -> string -> string",
+    "id": "lib.strings.escape",
+    "line": 343,
+    "name": "escape",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Escape occurrence of the element of \`list\` in \`string\` by
+    converting to its ASCII value and prefixing it with \\\\x.
+    Only works for printable ascii characters.",
+    "example": "escapeC [" "] "foo bar"
+=> "foo\\\\x20bar"",
+    "fn_type": "escapeC = [string] -> string -> string",
+    "id": "lib.strings.escapeC",
+    "line": 356,
+    "name": "escapeC",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Quote string to be used safely within the Bourne shell.",
+    "example": "escapeShellArg "esc'ape\\nme"
+=> "'esc'\\\\''ape\\nme'"",
+    "fn_type": "escapeShellArg :: string -> string",
+    "id": "lib.strings.escapeShellArg",
+    "line": 366,
+    "name": "escapeShellArg",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Quote all arguments to be safely passed to the Bourne shell.",
+    "example": "escapeShellArgs ["one" "two three" "four'five"]
+=> "'one' 'two three' 'four'\\\\''five'"",
+    "fn_type": "escapeShellArgs :: [string] -> string",
+    "id": "lib.strings.escapeShellArgs",
+    "line": 376,
+    "name": "escapeShellArgs",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Test whether the given name is a valid POSIX shell variable name.",
+    "example": "isValidPosixName "foo_bar000"
+=> true
+isValidPosixName "0-bad.jpg"
+=> false",
+    "fn_type": "string -> bool",
+    "id": "lib.strings.isValidPosixName",
+    "line": 388,
+    "name": "isValidPosixName",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Translate a Nix value into a shell variable declaration, with proper escaping.
+
+    The value can be a string (mapped to a regular variable), a list of strings
+    (mapped to a Bash-style array) or an attribute set of strings (mapped to a
+    Bash-style associative array). Note that "string" includes string-coercible
+    values like paths or derivations.
+
+    Strings are translated into POSIX sh-compatible code; lists and attribute sets
+    assume a shell that understands Bash syntax (e.g. Bash or ZSH).",
+    "example": "''
+  \${toShellVar "foo" "some string"}
+  [[ "$foo" == "some string" ]]
+''",
+    "fn_type": "string -> (string | listOf string | attrsOf string) -> string",
+    "id": "lib.strings.toShellVar",
+    "line": 408,
+    "name": "toShellVar",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Translate an attribute set into corresponding shell variable declarations
+    using \`toShellVar\`.",
+    "example": "let
+  foo = "value";
+  bar = foo;
+in ''
+  \${toShellVars { inherit foo bar; }}
+  [[ "$foo" == "$bar" ]]
+''",
+    "fn_type": "attrsOf (string | listOf string | attrsOf string) -> string",
+    "id": "lib.strings.toShellVars",
+    "line": 436,
+    "name": "toShellVars",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Turn a string into a Nix expression representing that string",
+    "example": "escapeNixString "hello\\\${}\\n"
+=> "\\"hello\\\\\\\${}\\\\n\\""",
+    "fn_type": "string -> string",
+    "id": "lib.strings.escapeNixString",
+    "line": 446,
+    "name": "escapeNixString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Turn a string into an exact regular expression",
+    "example": "escapeRegex "[^a-z]*"
+=> "\\\\[\\\\^a-z]\\\\*"",
+    "fn_type": "string -> string",
+    "id": "lib.strings.escapeRegex",
+    "line": 456,
+    "name": "escapeRegex",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Quotes a string if it can't be used as an identifier directly.",
+    "example": "escapeNixIdentifier "hello"
+=> "hello"
+escapeNixIdentifier "0abc"
+=> "\\"0abc\\""",
+    "fn_type": "string -> string",
+    "id": "lib.strings.escapeNixIdentifier",
+    "line": 468,
+    "name": "escapeNixIdentifier",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Escapes a string such that it is safe to include verbatim in an XML
+    document.",
+    "example": "escapeXML ''"test" 'test' < & >''
+=> "&quot;test&quot; &apos;test&apos; &lt; &amp; &gt;"",
+    "fn_type": "string -> string",
+    "id": "lib.strings.escapeXML",
+    "line": 482,
+    "name": "escapeXML",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Converts an ASCII string to lower-case.",
+    "example": "toLower "HOME"
+=> "home"",
+    "fn_type": "toLower :: string -> string",
+    "id": "lib.strings.toLower",
+    "line": 501,
+    "name": "toLower",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Converts an ASCII string to upper-case.",
+    "example": "toUpper "home"
+=> "HOME"",
+    "fn_type": "toUpper :: string -> string",
+    "id": "lib.strings.toUpper",
+    "line": 511,
+    "name": "toUpper",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Appends string context from another string.  This is an implementation
+    detail of Nix and should be used carefully.
+
+    Strings in Nix carry an invisible \`context\` which is a list of strings
+    representing store paths.  If the string is later used in a derivation
+    attribute, the derivation will properly populate the inputDrvs and
+    inputSrcs.",
+    "example": "pkgs = import <nixpkgs> { };
+addContextFrom pkgs.coreutils "bar"
+=> "bar"",
+    "fn_type": null,
+    "id": "lib.strings.addContextFrom",
+    "line": 526,
+    "name": "addContextFrom",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Cut a string with a separator and produces a list of strings which
+    were separated by this separator.",
+    "example": "splitString "." "foo.bar.baz"
+=> [ "foo" "bar" "baz" ]
+splitString "/" "/usr/local/bin"
+=> [ "" "usr" "local" "bin" ]",
+    "fn_type": null,
+    "id": "lib.strings.splitString",
+    "line": 537,
+    "name": "splitString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Return a string without the specified prefix, if the prefix matches.",
+    "example": "removePrefix "foo." "foo.bar.baz"
+=> "bar.baz"
+removePrefix "xxx" "foo.bar.baz"
+=> "foo.bar.baz"",
+    "fn_type": "string -> string -> string",
+    "id": "lib.strings.removePrefix",
+    "line": 553,
+    "name": "removePrefix",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Return a string without the specified suffix, if the suffix matches.",
+    "example": "removeSuffix "front" "homefront"
+=> "home"
+removeSuffix "xxx" "homefront"
+=> "homefront"",
+    "fn_type": "string -> string -> string",
+    "id": "lib.strings.removeSuffix",
+    "line": 577,
+    "name": "removeSuffix",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Return true if string v1 denotes a version older than v2.",
+    "example": "versionOlder "1.1" "1.2"
+=> true
+versionOlder "1.1" "1.1"
+=> false",
+    "fn_type": null,
+    "id": "lib.strings.versionOlder",
+    "line": 599,
+    "name": "versionOlder",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Return true if string v1 denotes a version equal to or newer than v2.",
+    "example": "versionAtLeast "1.1" "1.0"
+=> true
+versionAtLeast "1.1" "1.1"
+=> true
+versionAtLeast "1.1" "1.2"
+=> false",
+    "fn_type": null,
+    "id": "lib.strings.versionAtLeast",
+    "line": 611,
+    "name": "versionAtLeast",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "This function takes an argument that's either a derivation or a
+    derivation's "name" attribute and extracts the name part from that
+    argument.",
+    "example": "getName "youtube-dl-2016.01.01"
+=> "youtube-dl"
+getName pkgs.youtube-dl
+=> "youtube-dl"",
+    "fn_type": null,
+    "id": "lib.strings.getName",
+    "line": 623,
+    "name": "getName",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "This function takes an argument that's either a derivation or a
+    derivation's "name" attribute and extracts the version part from that
+    argument.",
+    "example": "getVersion "youtube-dl-2016.01.01"
+=> "2016.01.01"
+getVersion pkgs.youtube-dl
+=> "2016.01.01"",
+    "fn_type": null,
+    "id": "lib.strings.getVersion",
+    "line": 640,
+    "name": "getVersion",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Extract name with version from URL. Ask for separator which is
+    supposed to start extension.",
+    "example": "nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2" "-"
+=> "nix"
+nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2" "_"
+=> "nix-1.7-x86"",
+    "fn_type": null,
+    "id": "lib.strings.nameFromURL",
+    "line": 656,
+    "name": "nameFromURL",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create a -D<feature>=<value> string that can be passed to typical Meson
+    invocations.",
+    "example": "mesonOption "engine" "opengl"
+=> "-Dengine=opengl"",
+    "fn_type": "mesonOption :: string -> string -> string
+
+    @param feature The feature to be set
+    @param value The desired value",
+    "id": "lib.strings.mesonOption",
+    "line": 675,
+    "name": "mesonOption",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create a -D<condition>={true,false} string that can be passed to typical
+    Meson invocations.",
+    "example": "mesonBool "hardened" true
+=> "-Dhardened=true"
+mesonBool "static" false
+=> "-Dstatic=false"",
+    "fn_type": "mesonBool :: string -> bool -> string
+
+    @param condition The condition to be made true or false
+    @param flag The controlling flag of the condition",
+    "id": "lib.strings.mesonBool",
+    "line": 694,
+    "name": "mesonBool",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create a -D<feature>={enabled,disabled} string that can be passed to
+    typical Meson invocations.",
+    "example": "mesonEnable "docs" true
+=> "-Ddocs=enabled"
+mesonEnable "savage" false
+=> "-Dsavage=disabled"",
+    "fn_type": "mesonEnable :: string -> bool -> string
+
+    @param feature The feature to be enabled or disabled
+    @param flag The controlling flag",
+    "id": "lib.strings.mesonEnable",
+    "line": 713,
+    "name": "mesonEnable",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create an --{enable,disable}-<feat> string that can be passed to
+    standard GNU Autoconf scripts.",
+    "example": "enableFeature true "shared"
+=> "--enable-shared"
+enableFeature false "shared"
+=> "--disable-shared"",
+    "fn_type": null,
+    "id": "lib.strings.enableFeature",
+    "line": 727,
+    "name": "enableFeature",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create an --{enable-<feat>=<value>,disable-<feat>} string that can be passed to
+    standard GNU Autoconf scripts.",
+    "example": "enableFeatureAs true "shared" "foo"
+=> "--enable-shared=foo"
+enableFeatureAs false "shared" (throw "ignored")
+=> "--disable-shared"",
+    "fn_type": null,
+    "id": "lib.strings.enableFeatureAs",
+    "line": 740,
+    "name": "enableFeatureAs",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create an --{with,without}-<feat> string that can be passed to
+    standard GNU Autoconf scripts.",
+    "example": "withFeature true "shared"
+=> "--with-shared"
+withFeature false "shared"
+=> "--without-shared"",
+    "fn_type": null,
+    "id": "lib.strings.withFeature",
+    "line": 751,
+    "name": "withFeature",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create an --{with-<feat>=<value>,without-<feat>} string that can be passed to
+    standard GNU Autoconf scripts.",
+    "example": "withFeatureAs true "shared" "foo"
+=> "--with-shared=foo"
+withFeatureAs false "shared" (throw "ignored")
+=> "--without-shared"",
+    "fn_type": null,
+    "id": "lib.strings.withFeatureAs",
+    "line": 764,
+    "name": "withFeatureAs",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Create a fixed width string with additional prefix to match
+    required width.
+
+    This function will fail if the input string is longer than the
+    requested length.",
+    "example": "fixedWidthString 5 "0" (toString 15)
+=> "00015"",
+    "fn_type": "fixedWidthString :: int -> string -> string -> string",
+    "id": "lib.strings.fixedWidthString",
+    "line": 778,
+    "name": "fixedWidthString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Format a number adding leading zeroes up to fixed width.",
+    "example": "fixedWidthNumber 5 15
+=> "00015"",
+    "fn_type": null,
+    "id": "lib.strings.fixedWidthNumber",
+    "line": 795,
+    "name": "fixedWidthNumber",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Convert a float to a string, but emit a warning when precision is lost
+    during the conversion",
+    "example": "floatToString 0.000001
+=> "0.000001"
+floatToString 0.0000001
+=> trace: warning: Imprecise conversion from float to string 0.000000
+   "0.000000"",
+    "fn_type": null,
+    "id": "lib.strings.floatToString",
+    "line": 807,
+    "name": "floatToString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Soft-deprecated function. While the original implementation is available as
+    isConvertibleWithToString, consider using isStringLike instead, if suitable.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings.isCoercibleToString",
+    "line": 815,
+    "name": "isCoercibleToString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Check whether a list or other value can be passed to toString.
+
+    Many types of value are coercible to string this way, including int, float,
+    null, bool, list of similarly coercible values.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings.isConvertibleWithToString",
+    "line": 824,
+    "name": "isConvertibleWithToString",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Check whether a value can be coerced to a string.
+    The value must be a string, path, or attribute set.
+
+    String-like values can be used without explicit conversion in
+    string interpolations and in most functions that expect a string.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings.isStringLike",
+    "line": 835,
+    "name": "isStringLike",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Check whether a value is a store path.",
+    "example": "isStorePath "/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11/bin/python"
+=> false
+isStorePath "/nix/store/d945ibfx9x185xf04b890y4f9g3cbb63-python-2.7.11"
+=> true
+isStorePath pkgs.python
+=> true
+isStorePath [] || isStorePath 42 || isStorePath {} || …
+=> false",
+    "fn_type": null,
+    "id": "lib.strings.isStorePath",
+    "line": 853,
+    "name": "isStorePath",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Parse a string as an int. Does not support parsing of integers with preceding zero due to
+ ambiguity between zero-padded and octal numbers. See toIntBase10.",
+    "example": "toInt "1337"
+=> 1337
+
+toInt "-4"
+=> -4
+
+toInt " 123 "
+=> 123
+
+toInt "00024"
+=> error: Ambiguity in interpretation of 00024 between octal and zero padded integer.
+
+toInt "3.14"
+=> error: floating point JSON numbers are not supported",
+    "fn_type": "string -> int",
+    "id": "lib.strings.toInt",
+    "line": 884,
+    "name": "toInt",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Parse a string as a base 10 int. This supports parsing of zero-padded integers.",
+    "example": "toIntBase10 "1337"
+=> 1337
+
+toIntBase10 "-4"
+=> -4
+
+toIntBase10 " 123 "
+=> 123
+
+toIntBase10 "00024"
+=> 24
+
+toIntBase10 "3.14"
+=> error: floating point JSON numbers are not supported",
+    "fn_type": "string -> int",
+    "id": "lib.strings.toIntBase10",
+    "line": 934,
+    "name": "toIntBase10",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Read a list of paths from \`file\`, relative to the \`rootPath\`.
+    Lines beginning with \`#\` are treated as comments and ignored.
+    Whitespace is significant.
+
+    NOTE: This function is not performant and should be avoided.",
+    "example": "readPathsFromFile /prefix
+  ./pkgs/development/libraries/qt-5/5.4/qtbase/series
+=> [ "/prefix/dlopen-resolv.patch" "/prefix/tzdir.patch"
+     "/prefix/dlopen-libXcursor.patch" "/prefix/dlopen-openssl.patch"
+     "/prefix/dlopen-dbus.patch" "/prefix/xdg-config-dirs.patch"
+     "/prefix/nix-profiles-library-paths.patch"
+     "/prefix/compose-search-path.patch" ]",
+    "fn_type": null,
+    "id": "lib.strings.readPathsFromFile",
+    "line": 977,
+    "name": "readPathsFromFile",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Read the contents of a file removing the trailing \\n",
+    "example": "$ echo "1.0" > ./version
+
+fileContents ./version
+=> "1.0"",
+    "fn_type": "fileContents :: path -> string",
+    "id": "lib.strings.fileContents",
+    "line": 997,
+    "name": "fileContents",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Creates a valid derivation name from a potentially invalid one.",
+    "example": "sanitizeDerivationName "../hello.bar # foo"
+=> "-hello.bar-foo"
+sanitizeDerivationName ""
+=> "unknown"
+sanitizeDerivationName pkgs.hello
+=> "-nix-store-2g75chlbpxlrqn15zlby2dfh8hr9qwbk-hello-2.10"",
+    "fn_type": "sanitizeDerivationName :: String -> String",
+    "id": "lib.strings.sanitizeDerivationName",
+    "line": 1012,
+    "name": "sanitizeDerivationName",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Computes the Levenshtein distance between two strings.
+    Complexity O(n*m) where n and m are the lengths of the strings.
+    Algorithm adjusted from https://stackoverflow.com/a/9750974/6605742",
+    "example": "levenshtein "foo" "foo"
+=> 0
+levenshtein "book" "hook"
+=> 1
+levenshtein "hello" "Heyo"
+=> 3",
+    "fn_type": "levenshtein :: string -> string -> int",
+    "id": "lib.strings.levenshtein",
+    "line": 1051,
+    "name": "levenshtein",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Returns the length of the prefix common to both strings.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings.commonPrefixLength",
+    "line": 1072,
+    "name": "commonPrefixLength",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Returns the length of the suffix common to both strings.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings.commonSuffixLength",
+    "line": 1080,
+    "name": "commonSuffixLength",
+  },
+  {
+    "category": "./lib/strings.nix",
+    "description": "Returns whether the levenshtein distance between two strings is at most some value
+    Complexity is O(min(n,m)) for k <= 2 and O(n*m) otherwise",
+    "example": "levenshteinAtMost 0 "foo" "foo"
+=> true
+levenshteinAtMost 1 "foo" "boa"
+=> false
+levenshteinAtMost 2 "foo" "boa"
+=> true
+levenshteinAtMost 2 "This is a sentence" "this is a sentense."
+=> false
+levenshteinAtMost 3 "This is a sentence" "this is a sentense."
+=> true",
+    "fn_type": "levenshteinAtMost :: int -> string -> string -> bool",
+    "id": "lib.strings.levenshteinAtMost",
+    "line": 1104,
+    "name": "levenshteinAtMost",
+  },
+  {
+    "category": "./lib/strings-with-deps.nix",
+    "description": "!!! The interface of this function is kind of messed up, since
+    it's way too overloaded and almost but not quite computes a
+    topological sort of the depstrings.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.strings-with-deps.textClosureList",
+    "line": 59,
+    "name": "textClosureList",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Returns the type of a path: regular (for file), symlink, or directory.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.sources.pathType",
+    "line": 25,
+    "name": "pathType",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Returns true if the path exists and is a directory, false otherwise.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.sources.pathIsDirectory",
+    "line": 30,
+    "name": "pathIsDirectory",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Returns true if the path exists and is a regular file, false otherwise.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.sources.pathIsRegularFile",
+    "line": 35,
+    "name": "pathIsRegularFile",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "A basic filter for \`cleanSourceWith\` that removes
+directories of version control system, backup files (*~)
+and some generated files.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.sources.cleanSourceFilter",
+    "line": 42,
+    "name": "cleanSourceFilter",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Filters a source tree removing version control files and directories using cleanSourceFilter.",
+    "example": "cleanSource ./.",
+    "fn_type": null,
+    "id": "lib.sources.cleanSource",
+    "line": 65,
+    "name": "cleanSource",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Like \`builtins.filterSource\`, except it will compose with itself,
+allowing you to chain multiple calls together without any
+intermediate copies being put in the nix store.",
+    "example": "lib.cleanSourceWith {
+  filter = f;
+  src = lib.cleanSourceWith {
+    filter = g;
+    src = ./.;
+  };
+}
+# Succeeds!
+
+builtins.filterSource f (builtins.filterSource g ./.)
+# Fails!",
+    "fn_type": null,
+    "id": "lib.sources.cleanSourceWith",
+    "line": 86,
+    "name": "cleanSourceWith",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Add logging to a source, for troubleshooting the filtering behavior.",
+    "example": null,
+    "fn_type": "sources.trace :: sourceLike -> Source",
+    "id": "lib.sources.trace",
+    "line": 114,
+    "name": "trace",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Filter sources by a list of regular expressions.",
+    "example": "src = sourceByRegex ./my-subproject [".*\\.py$" "^database.sql$"]",
+    "fn_type": null,
+    "id": "lib.sources.sourceByRegex",
+    "line": 137,
+    "name": "sourceByRegex",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Get all files ending with the specified suffices from the given
+source directory or its descendants, omitting files that do not match
+any suffix. The result of the example below will include files like
+\`./dir/module.c\` and \`./dir/subdir/doc.xml\` if present.",
+    "example": "sourceFilesBySuffices ./. [ ".xml" ".c" ]",
+    "fn_type": "sourceLike -> [String] -> Source",
+    "id": "lib.sources.sourceFilesBySuffices",
+    "line": 159,
+    "name": "sourceFilesBySuffices",
+  },
+  {
+    "category": "./lib/sources.nix",
+    "description": "Get the commit id of a git repo.",
+    "example": "commitIdFromGitRepo <nixpkgs/.git>",
+    "fn_type": null,
+    "id": "lib.sources.commitIdFromGitRepo",
+    "line": 176,
+    "name": "commitIdFromGitRepo",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Returns true when the given argument is an option",
+    "example": "isOption 1             // => false
+isOption (mkOption {}) // => true",
+    "fn_type": "isOption :: a -> bool",
+    "id": "lib.options.isOption",
+    "line": 53,
+    "name": "isOption",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Creates an Option attribute set. mkOption accepts an attribute set with the following keys:
+
+    All keys default to \`null\` when not given.",
+    "example": "mkOption { }  // => { _type = "option"; }
+mkOption { default = "foo"; } // => { _type = "option"; default = "foo"; }",
+    "fn_type": null,
+    "id": "lib.options.mkOption",
+    "line": 63,
+    "name": "mkOption",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Creates an Option attribute set for a boolean value option i.e an
+    option to be toggled on or off:",
+    "example": "mkEnableOption "foo"
+=> { _type = "option"; default = false; description = "Whether to enable foo."; example = true; type = { ... }; }",
+    "fn_type": null,
+    "id": "lib.options.mkEnableOption",
+    "line": 95,
+    "name": "mkEnableOption",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Creates an Option attribute set for an option that specifies the
+    package a module should use for some purpose.
+
+    The package is specified as a list of strings representing its attribute path in nixpkgs.
+
+    Because of this, you need to pass nixpkgs itself as the first argument.
+
+    The second argument is the name of the option, used in the description "The <name> package to use.".
+
+    You can also pass an example value, either a literal string or a package's attribute path.
+
+    You can omit the default path if the name of the option is also attribute path in nixpkgs.",
+    "example": "mkPackageOption pkgs "hello" { }
+=> { _type = "option"; default = «derivation /nix/store/3r2vg51hlxj3cx5vscp0vkv60bqxkaq0-hello-2.10.drv»; defaultText = { ... }; description = "The hello package to use."; type = { ... }; }
+
+
+mkPackageOption pkgs "GHC" {
+  default = [ "ghc" ];
+  example = "pkgs.haskell.packages.ghc92.ghc.withPackages (hkgs: [ hkgs.primes ])";
+}
+=> { _type = "option"; default = «derivation /nix/store/jxx55cxsjrf8kyh3fp2ya17q99w7541r-ghc-8.10.7.drv»; defaultText = { ... }; description = "The GHC package to use."; example = { ... }; type = { ... }; }",
+    "fn_type": "mkPackageOption :: pkgs -> string -> { default :: [string]; example :: null | string | [string]; } -> option",
+    "id": "lib.options.mkPackageOption",
+    "line": 133,
+    "name": "mkPackageOption",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Like mkPackageOption, but emit an mdDoc description instead of DocBook.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.mkPackageOptionMD",
+    "line": 151,
+    "name": "mkPackageOptionMD",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "This option accepts anything, but it does not produce any result.
+
+    This is useful for sharing a module across different module sets
+    without having to implement similar features as long as the
+    values of the options are not accessed.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.mkSinkUndeclaredOptions",
+    "line": 160,
+    "name": "mkSinkUndeclaredOptions",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": ""Merge" option definitions by checking that they all have the same value.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.mergeEqualOption",
+    "line": 193,
+    "name": "mergeEqualOption",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Extracts values of all "value" keys of the given list.",
+    "example": "getValues [ { value = 1; } { value = 2; } ] // => [ 1 2 ]
+getValues [ ]                               // => [ ]",
+    "fn_type": "getValues :: [ { value :: a; } ] -> [a]",
+    "id": "lib.options.getValues",
+    "line": 213,
+    "name": "getValues",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Extracts values of all "file" keys of the given list",
+    "example": "getFiles [ { file = "file1"; } { file = "file2"; } ] // => [ "file1" "file2" ]
+getFiles [ ]                                         // => [ ]",
+    "fn_type": "getFiles :: [ { file :: a; } ] -> [a]",
+    "id": "lib.options.getFiles",
+    "line": 223,
+    "name": "getFiles",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "This function recursively removes all derivation attributes from
+    \`x\` except for the \`name\` attribute.
+
+    This is to make the generation of \`options.xml\` much more
+    efficient: the XML representation of derivations is very large
+    (on the order of megabytes) and is not actually used by the
+    manual generator.
+
+    This function was made obsolete by renderOptionValue and is kept for
+    compatibility with out-of-tree code.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.scrubOptionValue",
+    "line": 281,
+    "name": "scrubOptionValue",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Ensures that the given option value (default or example) is a \`_type\`d string
+    by rendering Nix values to \`literalExpression\`s.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.renderOptionValue",
+    "line": 292,
+    "name": "renderOptionValue",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "For use in the \`defaultText\` and \`example\` option attributes. Causes the
+    given string to be rendered verbatim in the documentation as Nix code. This
+    is necessary for complex values, e.g. functions, or values that depend on
+    other values or packages.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.literalExpression",
+    "line": 305,
+    "name": "literalExpression",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "For use in the \`defaultText\` and \`example\` option attributes. Causes the
+    given DocBook text to be inserted verbatim in the documentation, for when
+    a \`literalExpression\` would be too hard to read.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.literalDocBook",
+    "line": 316,
+    "name": "literalDocBook",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Transition marker for documentation that's already migrated to markdown
+    syntax.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.mdDoc",
+    "line": 326,
+    "name": "mdDoc",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "For use in the \`defaultText\` and \`example\` option attributes. Causes the
+    given MD text to be inserted verbatim in the documentation, for when
+    a \`literalExpression\` would be too hard to read.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.options.literalMD",
+    "line": 334,
+    "name": "literalMD",
+  },
+  {
+    "category": "./lib/options.nix",
+    "description": "Convert an option, described as a list of the option parts to a
+    human-readable version.",
+    "example": "(showOption ["foo" "bar" "baz"]) == "foo.bar.baz"
+(showOption ["foo" "bar.baz" "tux"]) == "foo.\\"bar.baz\\".tux"
+(showOption ["windowManager" "2bwm" "enable"]) == "windowManager.\\"2bwm\\".enable"
+
+     Placeholders will not be quoted as they are not actual values:
+(showOption ["foo" "*" "bar"]) == "foo.*.bar"
+(showOption ["foo" "<name>" "bar"]) == "foo.<name>.bar"",
+    "fn_type": null,
+    "id": "lib.options.showOption",
+    "line": 352,
+    "name": "showOption",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Evaluate a set of modules.  The result is a set with the attributes:
+
+  ‘options’: The nested set of all option declarations,
+
+  ‘config’: The nested set of all option values.
+
+  ‘type’: A module system type representing the module set as a submodule,
+        to be extended by configuration from the containing module set.
+
+        This is also available as the module argument ‘moduleType’.
+
+  ‘extendModules’: A function similar to ‘evalModules’ but building on top
+        of the module set. Its arguments, ‘modules’ and ‘specialArgs’ are
+        added to the existing values.
+
+        Using ‘extendModules’ a few times has no performance impact as long
+        as you only reference the final ‘options’ and ‘config’.
+        If you do reference multiple ‘config’ (or ‘options’) from before and
+        after ‘extendModules’, performance is the same as with multiple
+        ‘evalModules’ invocations, because the new modules' ability to
+        override existing configuration fundamentally requires a new
+        fixpoint to be constructed.
+
+        This is also available as a module argument.
+
+  ‘_module’: A portion of the configuration tree which is elided from
+        ‘config’. It contains some values that are mostly internal to the
+        module system implementation.
+
+ !!! Please think twice before adding to this argument list! The more
+ that is specified here instead of in the modules themselves the harder
+ it is to transparently move a set of modules to be a submodule of another
+ config (as the proper arguments need to be replicated at each call to
+ evalModules) and the less declarative the module set is.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.evalModules",
+    "line": 103,
+    "name": "evalModules",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Collects all modules recursively into the form
+
+  {
+    disabled = [ <list of disabled modules> ];
+    # All modules of the main module list
+    modules = [
+      {
+        key = <key1>;
+        module = <module for key1>;
+        # All modules imported by the module for key1
+        modules = [
+          {
+            key = <key1-1>;
+            module = <module for key1-1>;
+            # All modules imported by the module for key1-1
+            modules = [ ... ];
+          }
+          ...
+        ];
+      }
+      ...
+    ];
+  }",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.collectStructuredModules",
+    "line": 394,
+    "name": "collectStructuredModules",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Wrap a module with a default location for reporting errors.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.setDefaultModuleLocation",
+    "line": 430,
+    "name": "setDefaultModuleLocation",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Massage a module into canonical form, that is, a set consisting
+    of ‘options’, ‘config’ and ‘imports’ attributes.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.unifyModuleSyntax",
+    "line": 437,
+    "name": "unifyModuleSyntax",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Merge a list of modules.  This will recurse over the option
+    declarations in all modules, combining them into a single set.
+    At the same time, for each option declaration, it will merge the
+    corresponding option definitions in all machines, returning them
+    in the ‘value’ attribute of each option.
+
+    This returns a set like
+      {
+        # A recursive set of options along with their final values
+        matchedOptions = {
+          foo = { _type = "option"; value = "option value of foo"; ... };
+          bar.baz = { _type = "option"; value = "option value of bar.baz"; ... };
+          ...
+        };
+        # A list of definitions that weren't matched by any option
+        unmatchedDefns = [
+          { file = "file.nix"; prefix = [ "qux" ]; value = "qux"; }
+          ...
+        ];
+      }",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mergeModules",
+    "line": 517,
+    "name": "mergeModules",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "byName is like foldAttrs, but will look for attributes to merge in the
+       specified attribute name.
+
+       byName "foo" (module: value: ["module.hidden=\${module.hidden},value=\${value}"])
+       [
+         {
+           hidden="baz";
+           foo={qux="bar"; gla="flop";};
+         }
+         {
+           hidden="fli";
+           foo={qux="gne"; gli="flip";};
+         }
+       ]
+       ===>
+       {
+         gla = [ "module.hidden=baz,value=flop" ];
+         gli = [ "module.hidden=fli,value=flip" ];
+         qux = [ "module.hidden=baz,value=bar" "module.hidden=fli,value=gne" ];
+       }",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.byName",
+    "line": 544,
+    "name": "byName",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Merge multiple option declarations into a single declaration.  In
+    general, there should be only one declaration of each option.
+    The exception is the ‘options’ attribute, which specifies
+    sub-options.  These can be specified multiple times to allow one
+    module to add sub-options to an option declared somewhere else
+    (e.g. multiple modules define sub-options for ‘fileSystems’).
+
+    'loc' is the list of attribute names where the option is located.
+
+    'opts' is a list of modules.  Each module has an options attribute which
+    correspond to the definition of 'loc' in 'opt.file'.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mergeOptionDecls",
+    "line": 670,
+    "name": "mergeOptionDecls",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Merge all the definitions of an option to produce the final
+    config value.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.evalOptionValue",
+    "line": 702,
+    "name": "evalOptionValue",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Given a config set, expand mkMerge properties, and push down the
+    other properties into the children.  The result is a list of
+    config sets that do not have properties at top-level.  For
+    example,
+
+      mkMerge [ { boot = set1; } (mkIf cond { boot = set2; services = set3; }) ]
+
+    is transformed into
+
+      [ { boot = set1; } { boot = mkIf cond set2; services = mkIf cond set3; } ].
+
+    This transform is the critical step that allows mkIf conditions
+    to refer to the full configuration without creating an infinite
+    recursion.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.pushDownProperties",
+    "line": 797,
+    "name": "pushDownProperties",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Given a config value, expand mkMerge properties, and discharge
+    any mkIf conditions.  That is, this is the place where mkIf
+    conditions are actually evaluated.  The result is a list of
+    config values.  For example, ‘mkIf false x’ yields ‘[]’,
+    ‘mkIf true x’ yields ‘[x]’, and
+
+      mkMerge [ 1 (mkIf true 2) (mkIf true (mkIf false 3)) ]
+
+    yields ‘[ 1 2 ]’.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.dischargeProperties",
+    "line": 818,
+    "name": "dischargeProperties",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Given a list of config values, process the mkOverride properties,
+    that is, return the values that have the highest (that is,
+    numerically lowest) priority, and strip the mkOverride
+    properties.  For example,
+
+      [ { file = "/1"; value = mkOverride 10 "a"; }
+        { file = "/2"; value = mkOverride 20 "b"; }
+        { file = "/3"; value = "z"; }
+        { file = "/4"; value = mkOverride 10 "d"; }
+      ]
+
+    yields
+
+      [ { file = "/1"; value = "a"; }
+        { file = "/4"; value = "d"; }
+      ]
+
+    Note that "z" has the default priority 100.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.filterOverrides",
+    "line": 852,
+    "name": "filterOverrides",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Sort a list of properties.  The sort priority of a property is
+    defaultOrderPriority by default, but can be overridden by wrapping the property
+    using mkOrder.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.sortProperties",
+    "line": 867,
+    "name": "sortProperties",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Properties.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkIf",
+    "line": 889,
+    "name": "mkIf",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Compatibility.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.fixMergeModules",
+    "line": 964,
+    "name": "fixMergeModules",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Return a module that causes a warning to be shown if the
+    specified option is defined. For example,
+
+      mkRemovedOptionModule [ "boot" "loader" "grub" "bootDevice" ] "<replacement instructions>"
+
+    causes a assertion if the user defines boot.loader.grub.bootDevice.
+
+    replacementInstructions is a string that provides instructions on
+    how to achieve the same functionality without the removed option,
+    or alternatively a reasoning why the functionality is not needed.
+    replacementInstructions SHOULD be provided!",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkRemovedOptionModule",
+    "line": 978,
+    "name": "mkRemovedOptionModule",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Return a module that causes a warning to be shown if the
+    specified "from" option is defined; the defined value is however
+    forwarded to the "to" option. This can be used to rename options
+    while providing backward compatibility. For example,
+
+      mkRenamedOptionModule [ "boot" "copyKernels" ] [ "boot" "loader" "grub" "copyKernels" ]
+
+    forwards any definitions of boot.copyKernels to
+    boot.loader.grub.copyKernels while printing a warning.
+
+    This also copies over the priority from the aliased option to the
+    non-aliased option.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkRenamedOptionModule",
+    "line": 1009,
+    "name": "mkRenamedOptionModule",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Return a module that causes a warning to be shown if any of the "from"
+    option is defined; the defined values can be used in the "mergeFn" to set
+    the "to" value.
+    This function can be used to merge multiple options into one that has a
+    different type.
+
+    "mergeFn" takes the module "config" as a parameter and must return a value
+    of "to" option type.
+
+      mkMergedOptionModule
+        [ [ "a" "b" "c" ]
+          [ "d" "e" "f" ] ]
+        [ "x" "y" "z" ]
+        (config:
+          let value = p: getAttrFromPath p config;
+          in
+          if      (value [ "a" "b" "c" ]) == true then "foo"
+          else if (value [ "d" "e" "f" ]) == true then "bar"
+          else "baz")
+
+    - options.a.b.c is a removed boolean option
+    - options.d.e.f is a removed boolean option
+    - options.x.y.z is a new str option that combines a.b.c and d.e.f
+      functionality
+
+    This show a warning if any a.b.c or d.e.f is set, and set the value of
+    x.y.z to the result of the merge function",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkMergedOptionModule",
+    "line": 1063,
+    "name": "mkMergedOptionModule",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Single "from" version of mkMergedOptionModule.
+    Return a module that causes a warning to be shown if the "from" option is
+    defined; the defined value can be used in the "mergeFn" to set the "to"
+    value.
+    This function can be used to change an option into another that has a
+    different type.
+
+    "mergeFn" takes the module "config" as a parameter and must return a value of
+    "to" option type.
+
+      mkChangedOptionModule [ "a" "b" "c" ] [ "x" "y" "z" ]
+        (config:
+          let value = getAttrFromPath [ "a" "b" "c" ] config;
+          in
+          if   value > 100 then "high"
+          else "normal")
+
+    - options.a.b.c is a removed int option
+    - options.x.y.z is a new str option that supersedes a.b.c
+
+    This show a warning if a.b.c is set, and set the value of x.y.z to the
+    result of the change function",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkChangedOptionModule",
+    "line": 1110,
+    "name": "mkChangedOptionModule",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Like ‘mkRenamedOptionModule’, but doesn't show a warning.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkAliasOptionModule",
+    "line": 1118,
+    "name": "mkAliasOptionModule",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Transitional version of mkAliasOptionModule that uses MD docs.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkAliasOptionModuleMD",
+    "line": 1124,
+    "name": "mkAliasOptionModuleMD",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "mkDerivedConfig : Option a -> (a -> Definition b) -> Definition b
+
+   Create config definitions with the same priority as the definition of another option.
+   This should be used for option definitions where one option sets the value of another as a convenience.
+   For instance a config file could be set with a \`text\` or \`source\` option, where text translates to a \`source\`
+   value using \`mkDerivedConfig options.text (pkgs.writeText "filename.conf")\`.
+
+   It takes care of setting the right priority using \`mkOverride\`.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.mkDerivedConfig",
+    "line": 1147,
+    "name": "mkDerivedConfig",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Use this function to import a JSON file as NixOS configuration.
+
+    modules.importJSON :: path -> attrs",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.importJSON",
+    "line": 1185,
+    "name": "importJSON",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Use this function to import a TOML file as NixOS configuration.
+
+    modules.importTOML :: path -> attrs",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.modules.importTOML",
+    "line": null,
+    "name": "importTOML",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Add to or override the meta attributes of the given
+    derivation.",
+    "example": "addMetaAttrs {description = "Bla blah";} somePkg",
+    "fn_type": null,
+    "id": "lib.meta.addMetaAttrs",
+    "line": 15,
+    "name": "addMetaAttrs",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Disable Hydra builds of given derivation.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.dontDistribute",
+    "line": 21,
+    "name": "dontDistribute",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Change the symbolic name of a package for presentation purposes
+    (i.e., so that nix-env users can tell them apart).",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.setName",
+    "line": 27,
+    "name": "setName",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Like \`setName\`, but takes the previous name as an argument.",
+    "example": "updateName (oldName: oldName + "-experimental") somePkg",
+    "fn_type": null,
+    "id": "lib.meta.updateName",
+    "line": 35,
+    "name": "updateName",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Append a suffix to the name of a package (before the version
+    part).",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.appendToName",
+    "line": 40,
+    "name": "appendToName",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Apply a function to each derivation and only to derivations in an attrset.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.mapDerivationAttrset",
+    "line": 46,
+    "name": "mapDerivationAttrset",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Set the nix-env priority of the package.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.setPrio",
+    "line": 50,
+    "name": "setPrio",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Decrease the nix-env priority of the package, i.e., other
+    versions/variants of the package will be preferred.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.lowPrio",
+    "line": 55,
+    "name": "lowPrio",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Apply lowPrio to an attrset with derivations",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.lowPrioSet",
+    "line": 59,
+    "name": "lowPrioSet",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Increase the nix-env priority of the package, i.e., this
+    version/variant of the package will be preferred.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.hiPrio",
+    "line": 65,
+    "name": "hiPrio",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Apply hiPrio to an attrset with derivations",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.hiPrioSet",
+    "line": 69,
+    "name": "hiPrioSet",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Check to see if a platform is matched by the given \`meta.platforms\`
+    element.
+
+    A \`meta.platform\` pattern is either
+
+      1. (legacy) a system string.
+
+      2. (modern) a pattern for the entire platform structure (see \`lib.systems.inspect.platformPatterns\`).
+
+      3. (modern) a pattern for the platform \`parsed\` field (see \`lib.systems.inspect.patterns\`).
+
+    We can inject these into a pattern for the whole of a structured platform,
+    and then match that.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.platformMatch",
+    "line": 86,
+    "name": "platformMatch",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Check if a package is available on a given platform.
+
+    A package is available on a platform if both
+
+      1. One of \`meta.platforms\` pattern matches the given
+         platform, or \`meta.platforms\` is not present.
+
+      2. None of \`meta.badPlatforms\` pattern matches the given platform.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.meta.availableOn",
+    "line": 104,
+    "name": "availableOn",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Get the corresponding attribute in lib.licenses
+    from the SPDX ID.
+    For SPDX IDs, see
+    https://spdx.org/licenses",
+    "example": "lib.getLicenseFromSpdxId "MIT" == lib.licenses.mit
+=> true
+lib.getLicenseFromSpdxId "mIt" == lib.licenses.mit
+=> true
+lib.getLicenseFromSpdxId "MY LICENSE"
+=> trace: warning: getLicenseFromSpdxId: No license matches the given SPDX ID: MY LICENSE
+=> { shortName = "MY LICENSE"; }",
+    "fn_type": "getLicenseFromSpdxId :: str -> AttrSet",
+    "id": "lib.meta.getLicenseFromSpdxId",
+    "line": 125,
+    "name": "getLicenseFromSpdxId",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Get the path to the main program of a derivation with either
+    meta.mainProgram or pname or name",
+    "example": "getExe pkgs.hello
+=> "/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
+getExe pkgs.mustache-go
+=> "/nix/store/am9ml4f4ywvivxnkiaqwr0hyxka1xjsf-mustache-go-1.3.0/bin/mustache"",
+    "fn_type": "getExe :: derivation -> string",
+    "id": "lib.meta.getExe",
+    "line": 146,
+    "name": "getExe",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Create a list consisting of a single element.  \`singleton x\` is
+    sometimes more convenient with respect to indentation than \`[x]\`
+    when x spans multiple lines.",
+    "example": "singleton "foo"
+=> [ "foo" ]",
+    "fn_type": "singleton :: a -> [a]",
+    "id": "lib.lists.singleton",
+    "line": 23,
+    "name": "singleton",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Apply the function to each element in the list. Same as \`map\`, but arguments
+    flipped.",
+    "example": "forEach [ 1 2 ] (x:
+  toString x
+)
+=> [ "1" "2" ]",
+    "fn_type": "forEach :: [a] -> (a -> b) -> [b]",
+    "id": "lib.lists.forEach",
+    "line": 36,
+    "name": "forEach",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "“right fold” a binary function \`op\` between successive elements of
+    \`list\` with \`nul\` as the starting value, i.e.,
+    \`foldr op nul [x_1 x_2 ... x_n] == op x_1 (op x_2 ... (op x_n nul))\`.",
+    "example": "concat = foldr (a: b: a + b) "z"
+concat [ "a" "b" "c" ]
+=> "abcz"
+# different types
+strange = foldr (int: str: toString (int + 1) + str) "a"
+strange [ 1 2 3 4 ]
+=> "2345a"",
+    "fn_type": "foldr :: (a -> b -> b) -> b -> [a] -> b",
+    "id": "lib.lists.foldr",
+    "line": 53,
+    "name": "foldr",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "\`fold\` is an alias of \`foldr\` for historic reasons",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.lists.fold",
+    "line": 64,
+    "name": "fold",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "“left fold”, like \`foldr\`, but from the left:
+    \`foldl op nul [x_1 x_2 ... x_n] == op (... (op (op nul x_1) x_2) ... x_n)\`.",
+    "example": "lconcat = foldl (a: b: a + b) "z"
+lconcat [ "a" "b" "c" ]
+=> "zabc"
+# different types
+lstrange = foldl (str: int: str + toString (int + 1)) "a"
+lstrange [ 1 2 3 4 ]
+=> "a2345"",
+    "fn_type": "foldl :: (b -> a -> b) -> b -> [a] -> b",
+    "id": "lib.lists.foldl",
+    "line": 81,
+    "name": "foldl",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Strict version of \`foldl\`.
+
+    The difference is that evaluation is forced upon access. Usually used
+    with small whole results (in contrast with lazily-generated list or large
+    lists where only a part is consumed.)",
+    "example": null,
+    "fn_type": "foldl' :: (b -> a -> b) -> b -> [a] -> b",
+    "id": "lib.lists.foldl'",
+    "line": 97,
+    "name": "foldl'",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Map with index starting from 0",
+    "example": "imap0 (i: v: "\${v}-\${toString i}") ["a" "b"]
+=> [ "a-0" "b-1" ]",
+    "fn_type": "imap0 :: (int -> a -> b) -> [a] -> [b]",
+    "id": "lib.lists.imap0",
+    "line": 107,
+    "name": "imap0",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Map with index starting from 1",
+    "example": "imap1 (i: v: "\${v}-\${toString i}") ["a" "b"]
+=> [ "a-1" "b-2" ]",
+    "fn_type": "imap1 :: (int -> a -> b) -> [a] -> [b]",
+    "id": "lib.lists.imap1",
+    "line": 117,
+    "name": "imap1",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Map and concatenate the result.",
+    "example": "concatMap (x: [x] ++ ["z"]) ["a" "b"]
+=> [ "a" "z" "b" "z" ]",
+    "fn_type": "concatMap :: (a -> [b]) -> [a] -> [b]",
+    "id": "lib.lists.concatMap",
+    "line": 127,
+    "name": "concatMap",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Flatten the argument into a single list; that is, nested lists are
+    spliced into the top-level lists.",
+    "example": "flatten [1 [2 [3] 4] 5]
+=> [1 2 3 4 5]
+flatten 1
+=> [1]",
+    "fn_type": null,
+    "id": "lib.lists.flatten",
+    "line": 138,
+    "name": "flatten",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Remove elements equal to 'e' from a list.  Useful for buildInputs.",
+    "example": "remove 3 [ 1 3 4 3 ]
+=> [ 1 4 ]",
+    "fn_type": "remove :: a -> [a] -> [a]",
+    "id": "lib.lists.remove",
+    "line": 152,
+    "name": "remove",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Find the sole element in the list matching the specified
+    predicate, returns \`default\` if no such element exists, or
+    \`multiple\` if there are multiple matching elements.",
+    "example": "findSingle (x: x == 3) "none" "multiple" [ 1 3 3 ]
+=> "multiple"
+findSingle (x: x == 3) "none" "multiple" [ 1 3 ]
+=> 3
+findSingle (x: x == 3) "none" "multiple" [ 1 9 ]
+=> "none"",
+    "fn_type": "findSingle :: (a -> bool) -> a -> a -> [a] -> a",
+    "id": "lib.lists.findSingle",
+    "line": 169,
+    "name": "findSingle",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Find the first element in the list matching the specified
+    predicate or return \`default\` if no such element exists.",
+    "example": "findFirst (x: x > 3) 7 [ 1 6 4 ]
+=> 6
+findFirst (x: x > 9) 7 [ 1 6 4 ]
+=> 7",
+    "fn_type": "findFirst :: (a -> bool) -> a -> [a] -> a",
+    "id": "lib.lists.findFirst",
+    "line": 194,
+    "name": "findFirst",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return true if function \`pred\` returns true for at least one
+    element of \`list\`.",
+    "example": "any isString [ 1 "a" { } ]
+=> true
+any isString [ 1 { } ]
+=> false",
+    "fn_type": "any :: (a -> bool) -> [a] -> bool",
+    "id": "lib.lists.any",
+    "line": 215,
+    "name": "any",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return true if function \`pred\` returns true for all elements of
+    \`list\`.",
+    "example": "all (x: x < 3) [ 1 2 ]
+=> true
+all (x: x < 3) [ 1 2 3 ]
+=> false",
+    "fn_type": "all :: (a -> bool) -> [a] -> bool",
+    "id": "lib.lists.all",
+    "line": 228,
+    "name": "all",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Count how many elements of \`list\` match the supplied predicate
+    function.",
+    "example": "count (x: x == 3) [ 3 2 3 4 6 ]
+=> 2",
+    "fn_type": "count :: (a -> bool) -> [a] -> int",
+    "id": "lib.lists.count",
+    "line": 240,
+    "name": "count",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return a singleton list or an empty list, depending on a boolean
+    value.  Useful when building lists with optional elements
+    (e.g. \`++ optional (system == "i686-linux") firefox\`).",
+    "example": "optional true "foo"
+=> [ "foo" ]
+optional false "foo"
+=> [ ]",
+    "fn_type": "optional :: bool -> a -> [a]",
+    "id": "lib.lists.optional",
+    "line": 255,
+    "name": "optional",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return a list or an empty list, depending on a boolean value.",
+    "example": "optionals true [ 2 3 ]
+=> [ 2 3 ]
+optionals false [ 2 3 ]
+=> [ ]",
+    "fn_type": "optionals :: bool -> [a] -> [a]",
+    "id": "lib.lists.optionals",
+    "line": 267,
+    "name": "optionals",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "If argument is a list, return it; else, wrap it in a singleton
+    list.  If you're using this, you should almost certainly
+    reconsider if there isn't a more "well-typed" approach.",
+    "example": "toList [ 1 2 ]
+=> [ 1 2 ]
+toList "hi"
+=> [ "hi "]",
+    "fn_type": null,
+    "id": "lib.lists.toList",
+    "line": 284,
+    "name": "toList",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return a list of integers from \`first\` up to and including \`last\`.",
+    "example": "range 2 4
+=> [ 2 3 4 ]
+range 3 2
+=> [ ]",
+    "fn_type": "range :: int -> int -> [int]",
+    "id": "lib.lists.range",
+    "line": 297,
+    "name": "range",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return a list with \`n\` copies of an element.",
+    "example": "replicate 3 "a"
+=> [ "a" "a" "a" ]
+replicate 2 true
+=> [ true true ]",
+    "fn_type": "replicate :: int -> a -> [a]",
+    "id": "lib.lists.replicate",
+    "line": 316,
+    "name": "replicate",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Splits the elements of a list in two lists, \`right\` and
+    \`wrong\`, depending on the evaluation of a predicate.",
+    "example": "partition (x: x > 2) [ 5 1 2 3 4 ]
+=> { right = [ 5 3 4 ]; wrong = [ 1 2 ]; }",
+    "fn_type": "(a -> bool) -> [a] -> { right :: [a]; wrong :: [a]; }",
+    "id": "lib.lists.partition",
+    "line": 327,
+    "name": "partition",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Splits the elements of a list into many lists, using the return value of a predicate.
+    Predicate should return a string which becomes keys of attrset \`groupBy\` returns.
+
+    \`groupBy'\` allows to customise the combining function and initial value",
+    "example": "groupBy (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
+=> { true = [ 5 3 4 ]; false = [ 1 2 ]; }
+groupBy (x: x.name) [ {name = "icewm"; script = "icewm &";}
+                      {name = "xfce";  script = "xfce4-session &";}
+                      {name = "icewm"; script = "icewmbg &";}
+                      {name = "mate";  script = "gnome-session &";}
+                    ]
+=> { icewm = [ { name = "icewm"; script = "icewm &"; }
+               { name = "icewm"; script = "icewmbg &"; } ];
+     mate  = [ { name = "mate";  script = "gnome-session &"; } ];
+     xfce  = [ { name = "xfce";  script = "xfce4-session &"; } ];
+   }
+
+groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
+=> { true = 12; false = 3; }",
+    "fn_type": null,
+    "id": "lib.lists.groupBy'",
+    "line": 356,
+    "name": "groupBy'",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Merges two lists of the same size together. If the sizes aren't the same
+    the merging stops at the shortest. How both lists are merged is defined
+    by the first argument.",
+    "example": "zipListsWith (a: b: a + b) ["h" "l"] ["e" "o"]
+=> ["he" "lo"]",
+    "fn_type": "zipListsWith :: (a -> b -> c) -> [a] -> [b] -> [c]",
+    "id": "lib.lists.zipListsWith",
+    "line": 376,
+    "name": "zipListsWith",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Merges two lists of the same size together. If the sizes aren't the same
+    the merging stops at the shortest.",
+    "example": "zipLists [ 1 2 ] [ "a" "b" ]
+=> [ { fst = 1; snd = "a"; } { fst = 2; snd = "b"; } ]",
+    "fn_type": "zipLists :: [a] -> [b] -> [{ fst :: a; snd :: b; }]",
+    "id": "lib.lists.zipLists",
+    "line": 395,
+    "name": "zipLists",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Reverse the order of the elements of a list.",
+    "example": "reverseList [ "b" "o" "j" ]
+=> [ "j" "o" "b" ]",
+    "fn_type": "reverseList :: [a] -> [a]",
+    "id": "lib.lists.reverseList",
+    "line": 406,
+    "name": "reverseList",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Depth-First Search (DFS) for lists \`list != []\`.
+
+    \`before a b == true\` means that \`b\` depends on \`a\` (there's an
+    edge from \`b\` to \`a\`).",
+    "example": "listDfs true hasPrefix [ "/home/user" "other" "/" "/home" ]
+  == { minimal = "/";                  # minimal element
+       visited = [ "/home/user" ];     # seen elements (in reverse order)
+       rest    = [ "/home" "other" ];  # everything else
+     }
+
+listDfs true hasPrefix [ "/home/user" "other" "/" "/home" "/" ]
+  == { cycle   = "/";                  # cycle encountered at this element
+       loops   = [ "/" ];              # and continues to these elements
+       visited = [ "/" "/home/user" ]; # elements leading to the cycle (in reverse order)
+       rest    = [ "/home" "other" ];  # everything else",
+    "fn_type": null,
+    "id": "lib.lists.listDfs",
+    "line": 428,
+    "name": "listDfs",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Sort a list based on a partial ordering using DFS. This
+    implementation is O(N^2), if your ordering is linear, use \`sort\`
+    instead.
+
+    \`before a b == true\` means that \`b\` should be after \`a\`
+    in the result.",
+    "example": "toposort hasPrefix [ "/home/user" "other" "/" "/home" ]
+  == { result = [ "/" "/home" "/home/user" "other" ]; }
+
+toposort hasPrefix [ "/home/user" "other" "/" "/home" "/" ]
+  == { cycle = [ "/home/user" "/" "/" ]; # path leading to a cycle
+       loops = [ "/" ]; }                # loops back to these elements
+
+toposort hasPrefix [ "other" "/home/user" "/home" "/" ]
+  == { result = [ "other" "/" "/home" "/home/user" ]; }
+
+toposort (a: b: a < b) [ 3 2 1 ] == { result = [ 1 2 3 ]; }",
+    "fn_type": null,
+    "id": "lib.lists.toposort",
+    "line": 467,
+    "name": "toposort",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Sort a list based on a comparator function which compares two
+    elements and returns true if the first argument is strictly below
+    the second argument.  The returned list is sorted in an increasing
+    order.  The implementation does a quick-sort.",
+    "example": "sort (a: b: a < b) [ 5 3 7 ]
+=> [ 3 5 7 ]",
+    "fn_type": null,
+    "id": "lib.lists.sort",
+    "line": 495,
+    "name": "sort",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Compare two lists element-by-element.",
+    "example": "compareLists compare [] []
+=> 0
+compareLists compare [] [ "a" ]
+=> -1
+compareLists compare [ "a" ] []
+=> 1
+compareLists compare [ "a" "b" ] [ "a" "c" ]
+=> -1",
+    "fn_type": null,
+    "id": "lib.lists.compareLists",
+    "line": 524,
+    "name": "compareLists",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Sort list using "Natural sorting".
+    Numeric portions of strings are sorted in numeric order.",
+    "example": "naturalSort ["disk11" "disk8" "disk100" "disk9"]
+=> ["disk8" "disk9" "disk11" "disk100"]
+naturalSort ["10.46.133.149" "10.5.16.62" "10.54.16.25"]
+=> ["10.5.16.62" "10.46.133.149" "10.54.16.25"]
+naturalSort ["v0.2" "v0.15" "v0.0.9"]
+=> [ "v0.0.9" "v0.2" "v0.15" ]",
+    "fn_type": null,
+    "id": "lib.lists.naturalSort",
+    "line": 547,
+    "name": "naturalSort",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return the first (at most) N elements of a list.",
+    "example": "take 2 [ "a" "b" "c" "d" ]
+=> [ "a" "b" ]
+take 2 [ ]
+=> [ ]",
+    "fn_type": "take :: int -> [a] -> [a]",
+    "id": "lib.lists.take",
+    "line": 566,
+    "name": "take",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Remove the first (at most) N elements of a list.",
+    "example": "drop 2 [ "a" "b" "c" "d" ]
+=> [ "c" "d" ]
+drop 2 [ ]
+=> [ ]",
+    "fn_type": "drop :: int -> [a] -> [a]",
+    "id": "lib.lists.drop",
+    "line": 580,
+    "name": "drop",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return a list consisting of at most \`count\` elements of \`list\`,
+    starting at index \`start\`.",
+    "example": "sublist 1 3 [ "a" "b" "c" "d" "e" ]
+=> [ "b" "c" "d" ]
+sublist 1 3 [ ]
+=> [ ]",
+    "fn_type": "sublist :: int -> int -> [a] -> [a]",
+    "id": "lib.lists.sublist",
+    "line": 596,
+    "name": "sublist",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return the last element of a list.
+
+    This function throws an error if the list is empty.",
+    "example": "last [ 1 2 3 ]
+=> 3",
+    "fn_type": "last :: [a] -> a",
+    "id": "lib.lists.last",
+    "line": 620,
+    "name": "last",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return all elements but the last.
+
+    This function throws an error if the list is empty.",
+    "example": "init [ 1 2 3 ]
+=> [ 1 2 ]",
+    "fn_type": "init :: [a] -> [a]",
+    "id": "lib.lists.init",
+    "line": 634,
+    "name": "init",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Return the image of the cross product of some lists by a function.",
+    "example": "crossLists (x:y: "\${toString x}\${toString y}") [[1 2] [3 4]]
+=> [ "13" "14" "23" "24" ]",
+    "fn_type": null,
+    "id": "lib.lists.crossLists",
+    "line": 645,
+    "name": "crossLists",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Remove duplicate elements from the list. O(n^2) complexity.",
+    "example": "unique [ 3 2 3 4 ]
+=> [ 3 2 4 ]",
+    "fn_type": "unique :: [a] -> [a]",
+    "id": "lib.lists.unique",
+    "line": 658,
+    "name": "unique",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Intersects list 'e' and another list. O(nm) complexity.",
+    "example": "intersectLists [ 1 2 3 ] [ 6 3 2 ]
+=> [ 3 2 ]",
+    "fn_type": null,
+    "id": "lib.lists.intersectLists",
+    "line": 666,
+    "name": "intersectLists",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Subtracts list 'e' from another list. O(nm) complexity.",
+    "example": "subtractLists [ 3 2 ] [ 1 2 3 4 5 3 ]
+=> [ 1 4 5 ]",
+    "fn_type": null,
+    "id": "lib.lists.subtractLists",
+    "line": 674,
+    "name": "subtractLists",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Test if two lists have no common element.
+    It should be slightly more efficient than (intersectLists a b == [])",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.lists.mutuallyExclusive",
+    "line": 679,
+    "name": "mutuallyExclusive",
+  },
+  {
+    "category": "./lib/licenses.nix",
+    "description": "License identifiers from spdx.org where possible.
+  * If you cannot find your license here, then look for a similar license or
+  * add it to this list. The URL mentioned above is a good source for inspiration.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.licenses.abstyles",
+    "line": 28,
+    "name": "abstyles",
+  },
+  {
+    "category": "./lib/kernel.nix",
+    "description": "Common patterns/legacy used in common-config/hardened/config.nix",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.kernel.whenHelpers",
+    "line": 19,
+    "name": "whenHelpers",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Convert a value to a sensible default string representation.
+  * The builtin \`toString\` function has some strange defaults,
+  * suitable for bash scripts but not much else.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.mkValueStringDefault",
+    "line": 33,
+    "name": "mkValueStringDefault",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generate a line of key k and value v, separated by
+  * character sep. If sep appears in k, it is escaped.
+  * Helper for synaxes with different separators.
+  *
+  * mkValueString specifies how values should be formatted.
+  *
+  * mkKeyValueDefault {} ":" "f:oo" "bar"
+  * > "f\\:oo:bar"",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.mkKeyValueDefault",
+    "line": 69,
+    "name": "mkKeyValueDefault",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generate a key-value-style config file from an attrset.
+  *
+  * mkKeyValue is the same as in toINI.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toKeyValue",
+    "line": 82,
+    "name": "toKeyValue",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generate an INI-style config file from an
+  * attrset of sections to an attrset of key-value pairs.
+  *
+  * generators.toINI {} {
+  *   foo = { hi = "\${pkgs.hello}"; ciao = "bar"; };
+  *   baz = { "also, integers" = 42; };
+  * }
+  *
+  *> [baz]
+  *> also, integers=42
+  *>
+  *> [foo]
+  *> ciao=bar
+  *> hi=/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
+  *
+  * The mk* configuration attributes can generically change
+  * the way sections and key-value strings are generated.
+  *
+  * For more examples see the test cases in ./tests/misc.nix.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toINI",
+    "line": 113,
+    "name": "toINI",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generate an INI-style config file from an attrset
+  * specifying the global section (no header), and an
+  * attrset of sections to an attrset of key-value pairs.
+  *
+  * generators.toINIWithGlobalSection {} {
+  *   globalSection = {
+  *     someGlobalKey = "hi";
+  *   };
+  *   sections = {
+  *     foo = { hi = "\${pkgs.hello}"; ciao = "bar"; };
+  *     baz = { "also, integers" = 42; };
+  * }
+  *
+  *> someGlobalKey=hi
+  *>
+  *> [baz]
+  *> also, integers=42
+  *>
+  *> [foo]
+  *> ciao=bar
+  *> hi=/nix/store/y93qql1p5ggfnaqjjqhxcw0vqw95rlz0-hello-2.10
+  *
+  * The mk* configuration attributes can generically change
+  * the way sections and key-value strings are generated.
+  *
+  * For more examples see the test cases in ./tests/misc.nix.
+  *
+  * If you don’t need a global section, you can also use
+  * \`generators.toINI\` directly, which only takes
+  * the part in \`sections\`.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toINIWithGlobalSection",
+    "line": 164,
+    "name": "toINIWithGlobalSection",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generate a git-config file from an attrset.
+  *
+  * It has two major differences from the regular INI format:
+  *
+  * 1. values are indented with tabs
+  * 2. sections can have sub-sections
+  *
+  * generators.toGitINI {
+  *   url."ssh://git@github.com/".insteadOf = "https://github.com";
+  *   user.name = "edolstra";
+  * }
+  *
+  *> [url "ssh://git@github.com/"]
+  *>   insteadOf = https://github.com/
+  *>
+  *> [user]
+  *>   name = edolstra",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toGitINI",
+    "line": 196,
+    "name": "toGitINI",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Generates JSON from an arbitrary (non-function) value.
+   * For more information see the documentation of the builtin.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toJSON",
+    "line": 235,
+    "name": "toJSON",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "YAML has been a strict superset of JSON since 1.2, so we
+   * use toJSON. Before it only had a few differences referring
+   * to implicit typing rules, so it should work with older
+   * parsers as well.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toYAML",
+    "line": 243,
+    "name": "toYAML",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Pretty print a value, akin to \`builtins.trace\`.
+  * Should probably be a builtin as well.
+  * The pretty-printed string should be suitable for rendering default values
+  * in the NixOS manual. In particular, it should be as close to a valid Nix expression
+  * as possible.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toPretty",
+    "line": 286,
+    "name": "toPretty",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Translate a simple Nix expression to Dhall notation.
+  * Note that integers are translated to Integer and never
+  * the Natural type.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.generators.toDhall",
+    "line": 409,
+    "name": "toDhall",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "A map of all haskell packages defined in the given path,
+identified by having a cabal file with the same name as the
+directory itself.",
+    "example": null,
+    "fn_type": "Path -> Map String Path",
+    "id": "lib.filesystem.haskellPathsInDir",
+    "line": 18,
+    "name": "haskellPathsInDir",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "Find the first directory containing a file matching 'pattern'
+upward from a given 'file'.
+Returns 'null' if no directories contain a file matching 'pattern'.",
+    "example": null,
+    "fn_type": "RegExp -> Path -> Nullable { path : Path; matches : [ MatchResults ]; }",
+    "id": "lib.filesystem.locateDominatingFile",
+    "line": 41,
+    "name": "locateDominatingFile",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "Given a directory, return a flattened list of all files within it recursively.",
+    "example": null,
+    "fn_type": "Path -> [ Path ]",
+    "id": "lib.filesystem.listFilesRecursive",
+    "line": 69,
+    "name": "listFilesRecursive",
+  },
+  {
+    "category": "./lib/derivations.nix",
+    "description": "Restrict a derivation to a predictable set of attribute names, so
+that the returned attrset is not strict in the actual derivation,
+saving a lot of computation when the derivation is non-trivial.
+
+This is useful in situations where a derivation might only be used for its
+passthru attributes, improving evaluation performance.
+
+The returned attribute set is lazy in \`derivation\`. Specifically, this
+means that the derivation will not be evaluated in at least the
+situations below.
+
+For illustration and/or testing, we define derivation such that its
+evaluation is very noticeable.
+
+    let derivation = throw "This won't be evaluated.";
+
+In the following expressions, \`derivation\` will _not_ be evaluated:
+
+    (lazyDerivation { inherit derivation; }).type
+
+    attrNames (lazyDerivation { inherit derivation; })
+
+    (lazyDerivation { inherit derivation; } // { foo = true; }).foo
+
+    (lazyDerivation { inherit derivation; meta.foo = true; }).meta
+
+In these expressions, it \`derivation\` _will_ be evaluated:
+
+    "\${lazyDerivation { inherit derivation }}"
+
+    (lazyDerivation { inherit derivation }).outPath
+
+    (lazyDerivation { inherit derivation }).meta
+
+And the following expressions are not valid, because the refer to
+implementation details and/or attributes that may not be present on
+some derivations:
+
+    (lazyDerivation { inherit derivation }).buildInputs
+
+    (lazyDerivation { inherit derivation }).passthru
+
+    (lazyDerivation { inherit derivation }).pythonPath",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.derivations.lazyDerivation",
+    "line": 53,
+    "name": "lazyDerivation",
+  },
+  {
+    "category": "./lib/deprecated.nix",
+    "description": "deprecated:
+
+    For historical reasons, imap has an index starting at 1.
+
+    But for consistency with the rest of the library we want an index
+    starting at zero.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.deprecated.imap",
+    "line": 301,
+    "name": "imap",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Conditionally trace the supplied message, based on a predicate.",
+    "example": "traceIf true "hello" 3
+trace: hello
+=> 3",
+    "fn_type": "traceIf :: bool -> string -> a -> a",
+    "id": "lib.debug.traceIf",
+    "line": 51,
+    "name": "traceIf",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Trace the supplied value after applying a function to it, and
+    return the original value.",
+    "example": "traceValFn (v: "mystring \${v}") "foo"
+trace: mystring foo
+=> "foo"",
+    "fn_type": "traceValFn :: (a -> b) -> a -> a",
+    "id": "lib.debug.traceValFn",
+    "line": 69,
+    "name": "traceValFn",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Trace the supplied value and return it.",
+    "example": "traceVal 42
+# trace: 42
+=> 42",
+    "fn_type": "traceVal :: a -> a",
+    "id": "lib.debug.traceVal",
+    "line": 84,
+    "name": "traceVal",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "\`builtins.trace\`, but the value is \`builtins.deepSeq\`ed first.",
+    "example": "trace { a.b.c = 3; } null
+trace: { a = <CODE>; }
+=> null
+traceSeq { a.b.c = 3; } null
+trace: { a = { b = { c = 3; }; }; }
+=> null",
+    "fn_type": "traceSeq :: a -> b -> b",
+    "id": "lib.debug.traceSeq",
+    "line": 98,
+    "name": "traceSeq",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Like \`traceSeq\`, but only evaluate down to depth n.
+    This is very useful because lots of \`traceSeq\` usages
+    lead to an infinite recursion.",
+    "example": "traceSeqN 2 { a.b.c = 3; } null
+trace: { a = { b = {…}; }; }
+=> null",
+    "fn_type": "traceSeqN :: Int -> a -> b -> b",
+    "id": "lib.debug.traceSeqN",
+    "line": 115,
+    "name": "traceSeqN",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "A combination of \`traceVal\` and \`traceSeq\` that applies a
+    provided function to the value to be traced after \`deepSeq\`ing
+    it.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.debug.traceValSeqFn",
+    "line": 132,
+    "name": "traceValSeqFn",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "A combination of \`traceVal\` and \`traceSeq\`.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.debug.traceValSeq",
+    "line": 139,
+    "name": "traceValSeq",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "A combination of \`traceVal\` and \`traceSeqN\` that applies a
+ provided function to the value to be traced.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.debug.traceValSeqNFn",
+    "line": 143,
+    "name": "traceValSeqNFn",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "A combination of \`traceVal\` and \`traceSeqN\`.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.debug.traceValSeqN",
+    "line": 151,
+    "name": "traceValSeqN",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Trace the input and output of a function \`f\` named \`name\`,
+ both down to \`depth\`.
+
+ This is useful for adding around a function call,
+ to see the before/after of values as they are transformed.",
+    "example": "traceFnSeqN 2 "id" (x: x) { a.b.c = 3; }
+trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
+=> { a.b.c = 3; }",
+    "fn_type": null,
+    "id": "lib.debug.traceFnSeqN",
+    "line": 164,
+    "name": "traceFnSeqN",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Evaluates a set of tests.
+
+    A test is an attribute set \`{expr, expected}\`,
+    denoting an expression and its expected result.
+
+    The result is a \`list\` of __failed tests__, each represented as
+    \`{name, expected, result}\`,
+
+    - expected
+      - What was passed as \`expected\`
+    - result
+      - The actual \`result\` of the test
+
+    Used for regression testing of the functions in lib; see
+    tests.nix for more examples.
+
+    Important: Only attributes that start with \`test\` are executed.
+
+    - If you want to run only a subset of the tests add the attribute \`tests = ["testName"];\`",
+    "example": "runTests {
+  testAndOk = {
+    expr = lib.and true false;
+    expected = false;
+  };
+  testAndFail = {
+    expr = lib.and true false;
+    expected = true;
+  };
+}
+->
+[
+  {
+    name = "testAndFail";
+    expected = true;
+    result = false;
+  }
+]",
+    "fn_type": "runTests :: {
+  tests = [ String ];
+  \${testName} :: {
+    expr :: a;
+    expected :: a;
+  };
+}
+->
+[
+  {
+    name :: String;
+    expected :: a;
+    result :: a;
+  }
+]",
+    "id": "lib.debug.runTests",
+    "line": 237,
+    "name": "runTests",
+  },
+  {
+    "category": "./lib/debug.nix",
+    "description": "Create a test assuming that list elements are \`true\`.",
+    "example": "{ testX = allTrue [ true ]; }",
+    "fn_type": null,
+    "id": "lib.debug.testAllTrue",
+    "line": 252,
+    "name": "testAllTrue",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "\`overrideDerivation drv f\` takes a derivation (i.e., the result
+    of a call to the builtin function \`derivation\`) and returns a new
+    derivation in which the attributes of the original are overridden
+    according to the function \`f\`.  The function \`f\` is called with
+    the original derivation attributes.
+
+    \`overrideDerivation\` allows certain "ad-hoc" customisation
+    scenarios (e.g. in ~/.config/nixpkgs/config.nix).  For instance,
+    if you want to "patch" the derivation returned by a package
+    function in Nixpkgs to build another version than what the
+    function itself provides, you can do something like this:
+
+      mySed = overrideDerivation pkgs.gnused (oldAttrs: {
+        name = "sed-4.2.2-pre";
+        src = fetchurl {
+          url = ftp://alpha.gnu.org/gnu/sed/sed-4.2.2-pre.tar.bz2;
+          sha256 = "11nq06d131y4wmf3drm0yk502d2xc6n5qy82cg88rb9nqd2lj41k";
+        };
+        patches = [];
+      });
+
+    For another application, see build-support/vm, where this
+    function is used to build arbitrary derivations inside a QEMU
+    virtual machine.
+
+    Note that in order to preserve evaluation errors, the new derivation's
+    outPath depends on the old one's, which means that this function cannot
+    be used in circular situations when the old derivation also depends on the
+    new one.
+
+    You should in general prefer \`drv.overrideAttrs\` over this function;
+    see the nixpkgs manual for more information on overriding.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.overrideDerivation",
+    "line": 39,
+    "name": "overrideDerivation",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "\`makeOverridable\` takes a function from attribute set to attribute set and
+    injects \`override\` attribute which can be used to override arguments of
+    the function.
+
+      nix-repl> x = {a, b}: { result = a + b; }
+
+      nix-repl> y = lib.makeOverridable x { a = 1; b = 2; }
+
+      nix-repl> y
+      { override = «lambda»; overrideDerivation = «lambda»; result = 3; }
+
+      nix-repl> y.override { a = 10; }
+      { override = «lambda»; overrideDerivation = «lambda»; result = 12; }
+
+    Please refer to "Nixpkgs Contributors Guide" section
+    "<pkg>.overrideDerivation" to learn about \`overrideDerivation\` and caveats
+    related to its use.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.makeOverridable",
+    "line": 78,
+    "name": "makeOverridable",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Call the package function in the file \`fn\` with the required
+   arguments automatically.  The function is called with the
+   arguments \`args\`, but any missing arguments are obtained from
+   \`autoArgs\`.  This function is intended to be partially
+   parameterised, e.g.,
+
+     callPackage = callPackageWith pkgs;
+     pkgs = {
+       libfoo = callPackage ./foo.nix { };
+       libbar = callPackage ./bar.nix { };
+     };
+
+   If the \`libbar\` function expects an argument named \`libfoo\`, it is
+   automatically passed as an argument.  Overrides or missing
+   arguments can be supplied in \`args\`, e.g.
+
+     libbar = callPackage ./bar.nix {
+       libfoo = null;
+       enableX11 = true;
+     };",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.callPackageWith",
+    "line": 128,
+    "name": "callPackageWith",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Like callPackage, but for a function that returns an attribute
+    set of derivations. The override function is added to the
+    individual attributes.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.callPackagesWith",
+    "line": 185,
+    "name": "callPackagesWith",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Add attributes to each output of a derivation without changing
+    the derivation itself and check a given condition when evaluating.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.extendDerivation",
+    "line": 202,
+    "name": "extendDerivation",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Strip a derivation of all non-essential attributes, returning
+    only those needed by hydra-eval-jobs. Also strictly evaluate the
+    result to ensure that there are no thunks kept alive to prevent
+    garbage collection.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.hydraJob",
+    "line": 229,
+    "name": "hydraJob",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Make a set of packages with a common scope. All packages called
+    with the provided \`callPackage\` will be evaluated with the same
+    arguments. Any package in the set may depend on any other. The
+    \`overrideScope'\` function allows subsequent modification of the package
+    set in a consistent way, i.e. all packages in the set will be
+    called with the overridden packages. The package sets may be
+    hierarchical: the packages in the set are called with the scope
+    provided by \`newScope\` and the set provides a \`newScope\` attribute
+    which can form the parent scope for later package sets.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.makeScope",
+    "line": 267,
+    "name": "makeScope",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Like the above, but aims to support cross compilation. It's still ugly, but
+    hopefully it helps a little bit.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.makeScopeWithSplicing",
+    "line": 281,
+    "name": "makeScopeWithSplicing",
+  },
+  {
+    "category": "./lib/cli.nix",
+    "description": "Automatically convert an attribute set to command-line options.
+
+    This helps protect against malformed command lines and also to reduce
+    boilerplate related to command-line construction for simple use cases.
+
+    \`toGNUCommandLine\` returns a list of nix strings.
+    \`toGNUCommandLineShell\` returns an escaped shell string.",
+    "example": "cli.toGNUCommandLine {} {
+  data = builtins.toJSON { id = 0; };
+  X = "PUT";
+  retry = 3;
+  retry-delay = null;
+  url = [ "https://example.com/foo" "https://example.com/bar" ];
+  silent = false;
+  verbose = true;
+}
+=> [
+  "-X" "PUT"
+  "--data" "{\\"id\\":0}"
+  "--retry" "3"
+  "--url" "https://example.com/foo"
+  "--url" "https://example.com/bar"
+  "--verbose"
+]
+
+cli.toGNUCommandLineShell {} {
+  data = builtins.toJSON { id = 0; };
+  X = "PUT";
+  retry = 3;
+  retry-delay = null;
+  url = [ "https://example.com/foo" "https://example.com/bar" ];
+  silent = false;
+  verbose = true;
+}
+=> "'-X' 'PUT' '--data' '{\\"id\\":0}' '--retry' '3' '--url' 'https://example.com/foo' '--url' 'https://example.com/bar' '--verbose'";",
+    "fn_type": null,
+    "id": "lib.cli.toGNUCommandLineShell",
+    "line": 42,
+    "name": "toGNUCommandLineShell",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Return an attribute from nested attribute sets.",
+    "example": "x = { a = { b = 3; }; }
+# ["a" "b"] is equivalent to x.a.b
+# 6 is a default value to return if the path does not exist in attrset
+attrByPath ["a" "b"] 6 x
+=> 3
+attrByPath ["z" "z"] 6 x
+=> 6",
+    "fn_type": "attrByPath :: [String] -> Any -> AttrSet -> Any",
+    "id": "lib.attrsets.attrByPath",
+    "line": 30,
+    "name": "attrByPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Return if an attribute from nested attribute set exists.",
+    "example": "x = { a = { b = 3; }; }
+hasAttrByPath ["a" "b"] x
+=> true
+hasAttrByPath ["z" "z"] x
+=> false",
+    "fn_type": "hasAttrByPath :: [String] -> AttrSet -> Bool",
+    "id": "lib.attrsets.hasAttrByPath",
+    "line": 56,
+    "name": "hasAttrByPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Create a new attribute set with \`value\` set at the nested attribute location specified in \`attrPath\`.",
+    "example": "setAttrByPath ["a" "b"] 3
+=> { a = { b = 3; }; }",
+    "fn_type": "setAttrByPath :: [String] -> Any -> AttrSet",
+    "id": "lib.attrsets.setAttrByPath",
+    "line": 78,
+    "name": "setAttrByPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Like \`attrByPath\`, but without a default value. If it doesn't find the
+    path it will throw an error.",
+    "example": "x = { a = { b = 3; }; }
+getAttrFromPath ["a" "b"] x
+=> 3
+getAttrFromPath ["z" "z"] x
+=> error: cannot find attribute \`z.z'",
+    "fn_type": "getAttrFromPath :: [String] -> AttrSet -> Any",
+    "id": "lib.attrsets.getAttrFromPath",
+    "line": 104,
+    "name": "getAttrFromPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Map each attribute in the given set and merge them into a new attribute set.",
+    "example": "concatMapAttrs
+  (name: value: {
+    \${name} = value;
+    \${name + value} = value;
+  })
+  { x = "a"; y = "b"; }
+=> { x = "a"; xa = "a"; y = "b"; yb = "b"; }",
+    "fn_type": "concatMapAttrs :: (String -> a -> AttrSet) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.concatMapAttrs",
+    "line": 126,
+    "name": "concatMapAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Update or set specific paths of an attribute set.
+
+    Takes a list of updates to apply and an attribute set to apply them to,
+    and returns the attribute set with the updates applied. Updates are
+    represented as \`{ path = ...; update = ...; }\` values, where \`path\` is a
+    list of strings representing the attribute path that should be updated,
+    and \`update\` is a function that takes the old value at that attribute path
+    as an argument and returns the new
+    value it should be.
+
+    Properties:
+
+    - Updates to deeper attribute paths are applied before updates to more
+      shallow attribute paths
+
+    - Multiple updates to the same attribute path are applied in the order
+      they appear in the update list
+
+    - If any but the last \`path\` element leads into a value that is not an
+      attribute set, an error is thrown
+
+    - If there is an update for an attribute path that doesn't exist,
+      accessing the argument in the update function causes an error, but
+      intermediate attribute sets are implicitly created as needed",
+    "example": "updateManyAttrsByPath [
+  {
+    path = [ "a" "b" ];
+    update = old: { d = old.c; };
+  }
+  {
+    path = [ "a" "b" "c" ];
+    update = old: old + 1;
+  }
+  {
+    path = [ "x" "y" ];
+    update = old: "xy";
+  }
+] { a.b.c = 0; }
+=> { a = { b = { d = 1; }; }; x = { y = "xy"; }; }",
+    "fn_type": "updateManyAttrsByPath :: [{ path :: [String]; update :: (Any -> Any); }] -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.updateManyAttrsByPath",
+    "line": 173,
+    "name": "updateManyAttrsByPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Return the specified attributes from a set.",
+    "example": "attrVals ["a" "b" "c"] as
+=> [as.a as.b as.c]",
+    "fn_type": "attrVals :: [String] -> AttrSet -> [Any]",
+    "id": "lib.attrsets.attrVals",
+    "line": 241,
+    "name": "attrVals",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Return the values of all attributes in the given set, sorted by
+    attribute name.",
+    "example": "attrValues {c = 3; a = 1; b = 2;}
+=> [1 2 3]",
+    "fn_type": "attrValues :: AttrSet -> [Any]",
+    "id": "lib.attrsets.attrValues",
+    "line": 258,
+    "name": "attrValues",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Given a set of attribute names, return the set of the corresponding
+    attributes from the given set.",
+    "example": "getAttrs [ "a" "b" ] { a = 1; b = 2; c = 3; }
+=> { a = 1; b = 2; }",
+    "fn_type": "getAttrs :: [String] -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.getAttrs",
+    "line": 271,
+    "name": "getAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Collect each attribute named \`attr\` from a list of attribute
+    sets.  Sets that don't contain the named attribute are ignored.",
+    "example": "catAttrs "a" [{a = 1;} {b = 0;} {a = 2;}]
+=> [1 2]",
+    "fn_type": "catAttrs :: String -> [AttrSet] -> [Any]",
+    "id": "lib.attrsets.catAttrs",
+    "line": 287,
+    "name": "catAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Filter an attribute set by removing all attributes for which the
+    given predicate return false.",
+    "example": "filterAttrs (n: v: n == "foo") { foo = 1; bar = 2; }
+=> { foo = 1; }",
+    "fn_type": "filterAttrs :: (String -> Any -> Bool) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.filterAttrs",
+    "line": 301,
+    "name": "filterAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Filter an attribute set recursively by removing all attributes for
+    which the given predicate return false.",
+    "example": "filterAttrsRecursive (n: v: v != null) { foo = { bar = null; }; }
+=> { foo = {}; }",
+    "fn_type": "filterAttrsRecursive :: (String -> Any -> Bool) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.filterAttrsRecursive",
+    "line": 319,
+    "name": "filterAttrsRecursive",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Apply fold functions to values grouped by key.",
+    "example": "foldAttrs (item: acc: [item] ++ acc) [] [{ a = 2; } { a = 3; }]
+=> { a = [ 2 3 ]; }",
+    "fn_type": "foldAttrs :: (Any -> Any -> Any) -> Any -> [AttrSets] -> Any",
+    "id": "lib.attrsets.foldAttrs",
+    "line": 346,
+    "name": "foldAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Recursively collect sets that verify a given predicate named \`pred\`
+    from the set \`attrs\`.  The recursion is stopped when the predicate is
+    verified.",
+    "example": "collect isList { a = { b = ["b"]; }; c = [1]; }
+=> [["b"] [1]]
+
+collect (x: x ? outPath)
+   { a = { outPath = "a/"; }; b = { outPath = "b/"; }; }
+=> [{ outPath = "a/"; } { outPath = "b/"; }]",
+    "fn_type": "collect :: (AttrSet -> Bool) -> AttrSet -> [x]",
+    "id": "lib.attrsets.collect",
+    "line": 375,
+    "name": "collect",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Return the cartesian product of attribute set value combinations.",
+    "example": "cartesianProductOfSets { a = [ 1 2 ]; b = [ 10 20 ]; }
+=> [
+     { a = 1; b = 10; }
+     { a = 1; b = 20; }
+     { a = 2; b = 10; }
+     { a = 2; b = 20; }
+   ]",
+    "fn_type": "cartesianProductOfSets :: AttrSet -> [AttrSet]",
+    "id": "lib.attrsets.cartesianProductOfSets",
+    "line": 400,
+    "name": "cartesianProductOfSets",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Utility function that creates a \`{name, value}\` pair as expected by \`builtins.listToAttrs\`.",
+    "example": "nameValuePair "some" 6
+=> { name = "some"; value = 6; }",
+    "fn_type": "nameValuePair :: String -> Any -> { name :: String; value :: Any; }",
+    "id": "lib.attrsets.nameValuePair",
+    "line": 419,
+    "name": "nameValuePair",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Apply a function to each element in an attribute set, creating a new attribute set.",
+    "example": "mapAttrs (name: value: name + "-" + value)
+   { x = "foo"; y = "bar"; }
+=> { x = "x-foo"; y = "y-bar"; }",
+    "fn_type": "mapAttrs :: (String -> Any -> Any) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.mapAttrs",
+    "line": 437,
+    "name": "mapAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Like \`mapAttrs\`, but allows the name of each attribute to be
+    changed in addition to the value.  The applied function should
+    return both the new name and value as a \`nameValuePair\`.",
+    "example": "mapAttrs' (name: value: nameValuePair ("foo_" + name) ("bar-" + value))
+   { x = "a"; y = "b"; }
+=> { foo_x = "bar-a"; foo_y = "bar-b"; }",
+    "fn_type": "mapAttrs' :: (String -> Any -> { name :: String; value :: Any; }) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.mapAttrs'",
+    "line": 454,
+    "name": "mapAttrs'",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Call a function for each attribute in the given set and return
+    the result in a list.",
+    "example": "mapAttrsToList (name: value: name + value)
+   { x = "a"; y = "b"; }
+=> [ "xa" "yb" ]",
+    "fn_type": "mapAttrsToList :: (String -> a -> b) -> AttrSet -> [b]",
+    "id": "lib.attrsets.mapAttrsToList",
+    "line": 474,
+    "name": "mapAttrsToList",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Like \`mapAttrs\`, except that it recursively applies itself to
+    the *leaf* attributes of a potentially-nested attribute set:
+    the second argument of the function will never be an attrset.
+    Also, the first argument of the argument function is a *list*
+    of the attribute names that form the path to the leaf attribute.
+
+    For a function that gives you control over what counts as a leaf,
+    see \`mapAttrsRecursiveCond\`.",
+    "example": "mapAttrsRecursive (path: value: concatStringsSep "-" (path ++ [value]))
+  { n = { a = "A"; m = { b = "B"; c = "C"; }; }; d = "D"; }
+=> { n = { a = "n-a-A"; m = { b = "n-m-b-B"; c = "n-m-c-C"; }; }; d = "d-D"; }",
+    "fn_type": "mapAttrsRecursive :: ([String] -> a -> b) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.mapAttrsRecursive",
+    "line": 499,
+    "name": "mapAttrsRecursive",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Like \`mapAttrsRecursive\`, but it takes an additional predicate
+    function that tells it whether to recurse into an attribute
+    set.  If it returns false, \`mapAttrsRecursiveCond\` does not
+    recurse, but does apply the map function.  If it returns true, it
+    does recurse, and does not apply the map function.",
+    "example": "# To prevent recursing into derivations (which are attribute
+# sets with the attribute "type" equal to "derivation"):
+mapAttrsRecursiveCond
+  (as: !(as ? "type" && as.type == "derivation"))
+  (x: ... do something ...)
+  attrs",
+    "fn_type": "mapAttrsRecursiveCond :: (AttrSet -> Bool) -> ([String] -> a -> b) -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.mapAttrsRecursiveCond",
+    "line": 524,
+    "name": "mapAttrsRecursiveCond",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Generate an attribute set by mapping a function over a list of
+    attribute names.",
+    "example": "genAttrs [ "foo" "bar" ] (name: "x_" + name)
+=> { foo = "x_foo"; bar = "x_bar"; }",
+    "fn_type": "genAttrs :: [ String ] -> (String -> Any) -> AttrSet",
+    "id": "lib.attrsets.genAttrs",
+    "line": 553,
+    "name": "genAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Check whether the argument is a derivation. Any set with
+    \`{ type = "derivation"; }\` counts as a derivation.",
+    "example": "nixpkgs = import <nixpkgs> {}
+isDerivation nixpkgs.ruby
+=> true
+isDerivation "foobar"
+=> false",
+    "fn_type": "isDerivation :: Any -> Bool",
+    "id": "lib.attrsets.isDerivation",
+    "line": 574,
+    "name": "isDerivation",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Converts a store path to a fake derivation.",
+    "example": null,
+    "fn_type": "toDerivation :: Path -> Derivation",
+    "id": "lib.attrsets.toDerivation",
+    "line": 583,
+    "name": "toDerivation",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "If \`cond\` is true, return the attribute set \`as\`,
+    otherwise an empty attribute set.",
+    "example": "optionalAttrs (true) { my = "set"; }
+=> { my = "set"; }
+optionalAttrs (false) { my = "set"; }
+=> { }",
+    "fn_type": "optionalAttrs :: Bool -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.optionalAttrs",
+    "line": 611,
+    "name": "optionalAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Merge sets of attributes and use the function \`f\` to merge attributes
+    values.",
+    "example": "zipAttrsWithNames ["a"] (name: vs: vs) [{a = "x";} {a = "y"; b = "z";}]
+=> { a = ["x" "y"]; }",
+    "fn_type": "zipAttrsWithNames :: [ String ] -> (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet",
+    "id": "lib.attrsets.zipAttrsWithNames",
+    "line": 629,
+    "name": "zipAttrsWithNames",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Merge sets of attributes and use the function f to merge attribute values.
+    Like \`lib.attrsets.zipAttrsWithNames\` with all key names are passed for \`names\`.
+
+    Implementation note: Common names appear multiple times in the list of
+    names, hopefully this does not affect the system because the maximal
+    laziness avoid computing twice the same expression and \`listToAttrs\` does
+    not care about duplicated attribute names.",
+    "example": "zipAttrsWith (name: values: values) [{a = "x";} {a = "y"; b = "z";}]
+=> { a = ["x" "y"]; b = ["z"]; }",
+    "fn_type": "zipAttrsWith :: (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet",
+    "id": "lib.attrsets.zipAttrsWith",
+    "line": 657,
+    "name": "zipAttrsWith",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Merge sets of attributes and combine each attribute value in to a list.
+
+    Like \`lib.attrsets.zipAttrsWith\` with \`(name: values: values)\` as the function.",
+    "example": "zipAttrs [{a = "x";} {a = "y"; b = "z";}]
+=> { a = ["x" "y"]; b = ["z"]; }",
+    "fn_type": "zipAttrs :: [ AttrSet ] -> AttrSet",
+    "id": "lib.attrsets.zipAttrs",
+    "line": 672,
+    "name": "zipAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Does the same as the update operator '//' except that attributes are
+    merged until the given predicate is verified.  The predicate should
+    accept 3 arguments which are the path to reach the attribute, a part of
+    the first attribute set and a part of the second attribute set.  When
+    the predicate is satisfied, the value of the first attribute set is
+    replaced by the value of the second attribute set.",
+    "example": "recursiveUpdateUntil (path: l: r: path == ["foo"]) {
+  # first attribute set
+  foo.bar = 1;
+  foo.baz = 2;
+  bar = 3;
+} {
+  #second attribute set
+  foo.bar = 1;
+  foo.quz = 2;
+  baz = 4;
+}
+
+=> {
+  foo.bar = 1; # 'foo.*' from the second set
+  foo.quz = 2; #
+  bar = 3;     # 'bar' from the first set
+  baz = 4;     # 'baz' from the second set
+}",
+    "fn_type": "recursiveUpdateUntil :: ( [ String ] -> AttrSet -> AttrSet -> Bool ) -> AttrSet -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.recursiveUpdateUntil",
+    "line": 708,
+    "name": "recursiveUpdateUntil",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "A recursive variant of the update operator ‘//’.  The recursion
+    stops when one of the attribute values is not an attribute set,
+    in which case the right hand side value takes precedence over the
+    left hand side value.",
+    "example": "recursiveUpdate {
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/hda";
+} {
+  boot.loader.grub.device = "";
+}
+
+returns: {
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "";
+}",
+    "fn_type": "recursiveUpdate :: AttrSet -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.recursiveUpdate",
+    "line": 748,
+    "name": "recursiveUpdate",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Returns true if the pattern is contained in the set. False otherwise.",
+    "example": "matchAttrs { cpu = {}; } { cpu = { bits = 64; }; }
+=> true",
+    "fn_type": "matchAttrs :: AttrSet -> AttrSet -> Bool",
+    "id": "lib.attrsets.matchAttrs",
+    "line": 765,
+    "name": "matchAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Override only the attributes that are already present in the old set
+   useful for deep-overriding.",
+    "example": "overrideExisting {} { a = 1; }
+=> {}
+overrideExisting { b = 2; } { a = 1; }
+=> { b = 2; }
+overrideExisting { a = 3; b = 2; } { a = 1; }
+=> { a = 1; b = 2; }",
+    "fn_type": "overrideExisting :: AttrSet -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.overrideExisting",
+    "line": 793,
+    "name": "overrideExisting",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Turns a list of strings into a human-readable description of those
+   strings represented as an attribute path. The result of this function is
+   not intended to be machine-readable.
+   Create a new attribute set with \`value\` set at the nested attribute location specified in \`attrPath\`.",
+    "example": "showAttrPath [ "foo" "10" "bar" ]
+=> "foo.\\"10\\".bar"
+showAttrPath []
+=> "<root attribute path>"",
+    "fn_type": "showAttrPath :: [String] -> String",
+    "id": "lib.attrsets.showAttrPath",
+    "line": 815,
+    "name": "showAttrPath",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Get a package output.
+    If no output is found, fallback to \`.out\` and then to the default.",
+    "example": "getOutput "dev" pkgs.openssl
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
+    "fn_type": "getOutput :: String -> Derivation -> String",
+    "id": "lib.attrsets.getOutput",
+    "line": 832,
+    "name": "getOutput",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Get a package's \`bin\` output.
+    If the output does not exist, fallback to \`.out\` and then to the default.",
+    "example": "getBin pkgs.openssl
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r"",
+    "fn_type": "getBin :: Derivation -> String",
+    "id": "lib.attrsets.getBin",
+    "line": 847,
+    "name": "getBin",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Get a package's \`lib\` output.
+    If the output does not exist, fallback to \`.out\` and then to the default.",
+    "example": "getLib pkgs.openssl
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib"",
+    "fn_type": "getLib :: Derivation -> String",
+    "id": "lib.attrsets.getLib",
+    "line": 860,
+    "name": "getLib",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Get a package's \`dev\` output.
+    If the output does not exist, fallback to \`.out\` and then to the default.",
+    "example": "getDev pkgs.openssl
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
+    "fn_type": "getDev :: Derivation -> String",
+    "id": "lib.attrsets.getDev",
+    "line": 873,
+    "name": "getDev",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Get a package's \`man\` output.
+    If the output does not exist, fallback to \`.out\` and then to the default.",
+    "example": "getMan pkgs.openssl
+=> "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man"",
+    "fn_type": "getMan :: Derivation -> String",
+    "id": "lib.attrsets.getMan",
+    "line": 886,
+    "name": "getMan",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Pick the outputs of packages to place in \`buildInputs\`",
+    "example": null,
+    "fn_type": "chooseDevOutputs :: [Derivation] -> [String]",
+    "id": "lib.attrsets.chooseDevOutputs",
+    "line": 893,
+    "name": "chooseDevOutputs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Make various Nix tools consider the contents of the resulting
+    attribute set when looking for what to build, find, etc.
+
+    This function only affects a single attribute set; it does not
+    apply itself recursively for nested attribute sets.",
+    "example": "{ pkgs ? import <nixpkgs> {} }:
+{
+  myTools = pkgs.lib.recurseIntoAttrs {
+    inherit (pkgs) hello figlet;
+  };
+}",
+    "fn_type": "recurseIntoAttrs :: AttrSet -> AttrSet",
+    "id": "lib.attrsets.recurseIntoAttrs",
+    "line": 916,
+    "name": "recurseIntoAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "Undo the effect of recurseIntoAttrs.",
+    "example": null,
+    "fn_type": "dontRecurseIntoAttrs :: AttrSet -> AttrSet",
+    "id": "lib.attrsets.dontRecurseIntoAttrs",
+    "line": 926,
+    "name": "dontRecurseIntoAttrs",
+  },
+  {
+    "category": "./lib/attrsets.nix",
+    "description": "\`unionOfDisjoint x y\` is equal to \`x // y // z\` where the
+    attrnames in \`z\` are the intersection of the attrnames in \`x\` and
+    \`y\`, and all values \`assert\` with an error message.  This
+     operator is commutative, unlike (//).",
+    "example": null,
+    "fn_type": "unionOfDisjoint :: AttrSet -> AttrSet -> AttrSet",
+    "id": "lib.attrsets.unionOfDisjoint",
+    "line": 938,
+    "name": "unionOfDisjoint",
+  },
+  {
+    "category": "./lib/asserts.nix",
+    "description": "Throw if pred is false, else return pred.
+    Intended to be used to augment asserts with helpful error messages.",
+    "example": "assertMsg false "nope"
+stderr> error: nope
+
+assert assertMsg ("foo" == "bar") "foo is not bar, silly"; ""
+stderr> error: foo is not bar, silly",
+    "fn_type": "assertMsg :: Bool -> String -> Bool",
+    "id": "lib.asserts.assertMsg",
+    "line": 19,
+    "name": "assertMsg",
+  },
+  {
+    "category": "./lib/asserts.nix",
+    "description": "Specialized \`assertMsg\` for checking if \`val\` is one of the elements
+    of the list \`xs\`. Useful for checking enums.",
+    "example": "let sslLibrary = "libressl";
+in assertOneOf "sslLibrary" sslLibrary [ "openssl" "bearssl" ]
+stderr> error: sslLibrary must be one of [
+stderr>   "openssl"
+stderr>   "bearssl"
+stderr> ], but is: "libressl"",
+    "fn_type": "assertOneOf :: String -> ComparableVal -> List ComparableVal -> Bool",
+    "id": "lib.asserts.assertOneOf",
+    "line": 40,
+    "name": "assertOneOf",
+  },
+]
+`;

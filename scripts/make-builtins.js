@@ -24,7 +24,7 @@ if (!DATA_PATH) {
       ],
     };
   });
-  fs.writeFile(`${DATA_PATH}/builtins.json`, JSON.stringify(info), (err) => {
+  fs.writeFile(`${DATA_PATH}/data.json`, JSON.stringify(info), (err) => {
     if (err) {
       console.error(err);
     }

@@ -1,4 +1,5 @@
 // simple script
+// test.json in generated with  "cargo run -- --dir ./test"
 const data = require("./test.json");
 const fs = require("fs");
 

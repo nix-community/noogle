@@ -15,12 +15,12 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       websiteName = (builtins.fromJSON (builtins.readFile ./website/package.json)).name;
-      inherit (self.packages.${system}) indexer nixpkgs-data;
+      inherit (self.packages.${system}) indexer nixpkgs-data builtins-data;
 
       prepareData = prefix: ''
-        cp -f ${nixpkgs-data.lib} ${prefix}./models/data/lib.json
-        cp -f ${nixpkgs-data.build_support} ${prefix}./models/data/trivial-builders.json
-        node ${prefix}./scripts/make-builtins.js ${prefix}./models/data      
+        cp -f ${nixpkgs-data.lib} ${prefix}/lib.json
+        cp -f ${nixpkgs-data.build_support} ${prefix}/trivial-builders.json
+        cp -f ${builtins-data}/lib/data.json ${prefix}/builtins.json
       '';
 
       dream2nixOutput = dream2nix.lib.makeFlakeOutputs {
@@ -31,7 +31,7 @@
 
         packageOverrides = {
           ${websiteName}.staticPage = {
-            preBuild = prepareData "";
+            preBuild = prepareData "models/data";
             installPhase = ''
               runHook preInstall
 
@@ -41,6 +41,20 @@
               cp -r ./ $lib         
 
               runHook postInstall
+            '';
+          };
+          tests.run = {
+            installPhase = "";
+            preBuild = ''
+              ls -la 
+              mkdir -p data
+              ${prepareData "data"}
+
+            '';
+            doCheck = true;
+            checkPhase = ''
+              ls -la 
+              npm run test -- --ci
             '';
           };
         };
@@ -84,7 +98,8 @@
         buildInputs = with pkgs; [ nodejs-18_x rustfmt rustc cargo clippy ];
         inputsFrom = [ indexer ];
         shellHook = ''
-          ${prepareData "./website/"}
+          ${prepareData "website/models/data"}
+          ${prepareData "tests/data"}
           ${self.checks.${system}.pre-commit-check.shellHook}
         '';
       };
@@ -96,9 +111,6 @@
             nixpkgs-fmt.enable = true;
             statix.enable = true;
             markdownlint.enable = true;
-
-
-
           };
           excludes = [ "indexer/test" ];
           settings = {

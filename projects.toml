@@ -32,3 +32,26 @@ workspaceMembers = []
 name = "indexer"
 relPath = "indexer"
 version = "0.1.0"
+
+[builtins-data]
+name = "builtins-data"
+relPath = "scripts"
+subsystem = "nodejs"
+translator = "package-lock"
+builder = "strict-builder"
+translators = ["package-lock", "package-json"]
+
+[builtins-data.subsystemInfo]
+nodejs = 18
+
+
+[tests]
+name = "tests"
+relPath = "tests"
+subsystem = "nodejs"
+translator = "package-lock"
+builder = "strict-builder"
+translators = ["package-lock", "package-json"]
+
+[tests.subsystemInfo]
+nodejs = 18
