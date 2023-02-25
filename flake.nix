@@ -112,7 +112,7 @@
             statix.enable = true;
             markdownlint.enable = true;
           };
-          excludes = [ "indexer/test" ];
+          excludes = [ "indexer/test" ".github" "scripts/data" ];
           settings = {
             statix.ignore = [ "indexer/test" ];
           };
