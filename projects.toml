@@ -1,0 +1,57 @@
+# projects.toml file describing inputs for dream2nix
+#
+# To re-generate this file, run:
+#   nix run .#detect-projects $source
+# ... where `$source` points to the source of your project.
+#
+# If the local flake is unavailable, alternatively execute the app from the
+# upstream dream2nix flake:
+#   nix run github:nix-community/dream2nix#detect-projects $source
+
+[noogle]
+name = "noogle"
+relPath = "website"
+subsystem = "nodejs"
+translator = "package-lock"
+builder = "strict-builder"
+translators = ["package-lock", "package-json"]
+
+[noogle.subsystemInfo]
+nodejs = 18
+
+[indexer]
+name = "indexer"
+relPath = "indexer"
+subsystem = "rust"
+translator = "cargo-lock"
+translators = ["cargo-lock", "cargo-toml"]
+
+[indexer.subsystemInfo]
+workspaceMembers = []
+[[indexer.subsystemInfo.crates]]
+name = "indexer"
+relPath = "indexer"
+version = "0.1.0"
+
+[builtins-data]
+name = "builtins-data"
+relPath = "scripts"
+subsystem = "nodejs"
+translator = "package-lock"
+builder = "strict-builder"
+translators = ["package-lock", "package-json"]
+
+[builtins-data.subsystemInfo]
+nodejs = 18
+
+
+[tests]
+name = "tests"
+relPath = "tests"
+subsystem = "nodejs"
+translator = "package-lock"
+builder = "strict-builder"
+translators = ["package-lock", "package-json"]
+
+[tests.subsystemInfo]
+nodejs = 18

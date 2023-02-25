@@ -15,10 +15,10 @@ export const CodeHighlight = (props: CodeHighlightProps) => {
   const { theme, code, lang, background } = props;
   useEffect(() => {
     if (theme === "dark") {
-      // @ts-ignore - dont check type of css module
+      // @ts-ignore - don't check type of css module
       import("highlight.js/styles/github-dark.css");
     } else {
-      // @ts-ignore - dont check type of css module
+      // @ts-ignore - don't check type of css module
       import("highlight.js/styles/github.css");
     }
   }, [theme]);

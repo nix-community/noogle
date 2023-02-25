@@ -108,5 +108,9 @@
   "typeOf": { "fn_type": "typeOf :: a -> String" },
   "zipAttrsWith": {
     "fn_type": "zipAttrsWith :: (String -> [a] ) -> [a] -> AttrSet"
+  },
+
+  "fromTOML": {
+    "fn_type": "fromTOML :: String -> { Any }"
   }
 }
