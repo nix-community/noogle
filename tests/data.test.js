@@ -1,9 +1,13 @@
 import libData from "./data/lib.json";
+import trivialBuilders from "./data/trivial-builders.json";
+import builtins from "./data/builtins.json";
 
-test("adds 1 + 2 to equal 3", () => {
-  expect(1 + 2).toBe(3);
-});
-
-it("confirm data update", () => {
+it("has not changed lib data", () => {
   expect(libData).toMatchSnapshot();
+});
+it("has not changed trivial-builders data", () => {
+  expect(trivialBuilders).toMatchSnapshot();
+});
+it("has not changed builtins data", () => {
+  expect(builtins).toMatchSnapshot();
 });

@@ -1,0 +1,47 @@
+{
+  "addErrorContext": {
+    "args": ["s", "c"],
+    "arity": 2,
+    "doc": ""
+  },
+  "appendContext": {
+    "args": ["s", "c"],
+    "arity": 2,
+    "doc": ""
+  },
+  "builtins": {
+    "args": [],
+    "arity": 0,
+    "doc": "The set `builtins` contains all the built-in functions and values.\nYou can use `builtins` to test for the availability of features in\nthe Nix installation, e.g.,\n\n```nix\nif builtins ? getEnv then builtins.getEnv \"PATH\" else \"\"\n```\n\nThis allows a Nix expression to fall back gracefully on older Nix\ninstallations that don’t have the desired built-in function."
+  },
+  "currentSystem": {
+    "args": [],
+    "arity": 0,
+    "doc": "The built-in value `currentSystem` evaluates to the Nix platform\nidentifier for the Nix installation on which the expression is being\nevaluated, such as `\"i686-linux\"` or `\"x86_64-darwin\"`."
+  },
+  "currentTime": {
+    "args": [],
+    "arity": 0,
+    "doc": "The built-in value `currentSystem` evaluates to the current seconds since Jan 01 1970. (UTC)."
+  },
+  "false": {
+    "args": [],
+    "arity": 0,
+    "doc": "The built-in boolean value `false`."
+  },
+  "true": {
+    "args": [],
+    "arity": 0,
+    "doc": "The built-in boolean value `true`."
+  },
+  "null": {
+    "args": [],
+    "arity": 0,
+    "doc": "The built-in value `null`."
+  },
+  "fromTOML": {
+    "args": ["s"],
+    "arity": 1,
+    "doc": "# Parse a TOML-configuration from String\n\n```\nbuiltins.fromTOML ''\n# Toplevel\nfoo = \"bar\"\n\n# Simple Attrset\n[set]\ninfo = \"foobar\"\n\n# Nested Attrset\n[set.nested]\nmeta = 42\n''\n-> \n{\n  foo = \"bar\";\n  set = {\n    info = \"foobar\";\n    nested = {\n      meta = 42;\n    };\n  };\n}\n```\n\nAlso works nicely with `readFile`:\n\n```\nbuiltins.fromTOML (builtins.readFile ./config.toml)\n```\n"
+  }
+}
