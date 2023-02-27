@@ -3810,7 +3810,7 @@ any suffix. The result of the example below will include files like
 isOption (mkOption {}) // => true",
     "fn_type": "isOption :: a -> bool",
     "id": "lib.options.isOption",
-    "line": 53,
+    "line": 56,
     "name": "isOption",
   },
   {
@@ -3822,7 +3822,7 @@ isOption (mkOption {}) // => true",
 mkOption { default = "foo"; } // => { _type = "option"; default = "foo"; }",
     "fn_type": null,
     "id": "lib.options.mkOption",
-    "line": 63,
+    "line": 66,
     "name": "mkOption",
   },
   {
@@ -3833,23 +3833,13 @@ mkOption { default = "foo"; } // => { _type = "option"; default = "foo"; }",
 => { _type = "option"; default = false; description = "Whether to enable foo."; example = true; type = { ... }; }",
     "fn_type": null,
     "id": "lib.options.mkEnableOption",
-    "line": 95,
+    "line": 98,
     "name": "mkEnableOption",
   },
   {
     "category": "./lib/options.nix",
     "description": "Creates an Option attribute set for an option that specifies the
-    package a module should use for some purpose.
-
-    The package is specified as a list of strings representing its attribute path in nixpkgs.
-
-    Because of this, you need to pass nixpkgs itself as the first argument.
-
-    The second argument is the name of the option, used in the description "The <name> package to use.".
-
-    You can also pass an example value, either a literal string or a package's attribute path.
-
-    You can omit the default path if the name of the option is also attribute path in nixpkgs.",
+    package a module should use for some purpose.",
     "example": "mkPackageOption pkgs "hello" { }
 => { _type = "option"; default = «derivation /nix/store/3r2vg51hlxj3cx5vscp0vkv60bqxkaq0-hello-2.10.drv»; defaultText = { ... }; description = "The hello package to use."; type = { ... }; }
 
@@ -3858,10 +3848,37 @@ mkPackageOption pkgs "GHC" {
   default = [ "ghc" ];
   example = "pkgs.haskell.packages.ghc92.ghc.withPackages (hkgs: [ hkgs.primes ])";
 }
-=> { _type = "option"; default = «derivation /nix/store/jxx55cxsjrf8kyh3fp2ya17q99w7541r-ghc-8.10.7.drv»; defaultText = { ... }; description = "The GHC package to use."; example = { ... }; type = { ... }; }",
-    "fn_type": "mkPackageOption :: pkgs -> string -> { default :: [string]; example :: null | string | [string]; } -> option",
+=> { _type = "option"; default = «derivation /nix/store/jxx55cxsjrf8kyh3fp2ya17q99w7541r-ghc-8.10.7.drv»; defaultText = { ... }; description = "The GHC package to use."; example = { ... }; type = { ... }; }
+
+
+mkPackageOption pkgs [ "python39Packages" "pytorch" ] {
+  extraDescription = "This is an example and doesn't actually do anything.";
+}
+=> { _type = "option"; default = «derivation /nix/store/gvqgsnc4fif9whvwd9ppa568yxbkmvk8-python3.9-pytorch-1.10.2.drv»; defaultText = { ... }; description = "The pytorch package to use. This is an example and doesn't actually do anything."; type = { ... }; }",
+    "fn_type": "mkPackageOption :: pkgs -> (string|[string]) ->
+     { default? :: [string], example? :: null|string|[string], extraDescription? :: string } ->
+     option
+
+    The package is specified in the third argument under \`default\` as a list of strings
+    representing its attribute path in nixpkgs (or another package set).
+    Because of this, you need to pass nixpkgs itself (or a subset) as the first argument.
+
+    The second argument may be either a string or a list of strings.
+    It provides the display name of the package in the description of the generated option
+    (using only the last element if the passed value is a list)
+    and serves as the fallback value for the \`default\` argument.
+
+    To include extra information in the description, pass \`extraDescription\` to
+    append arbitrary text to the generated description.
+    You can also pass an \`example\` value, either a literal string or an attribute path.
+
+    The default argument can be omitted if the provided name is
+    an attribute of pkgs (if name is a string) or a
+    valid attribute path in pkgs (if name is a list).
+
+    If you wish to explicitly provide no default, pass \`null\` as \`default\`.",
     "id": "lib.options.mkPackageOption",
-    "line": 133,
+    "line": 154,
     "name": "mkPackageOption",
   },
   {
@@ -3870,7 +3887,7 @@ mkPackageOption pkgs "GHC" {
     "example": null,
     "fn_type": null,
     "id": "lib.options.mkPackageOptionMD",
-    "line": 151,
+    "line": 184,
     "name": "mkPackageOptionMD",
   },
   {
@@ -3883,7 +3900,7 @@ mkPackageOption pkgs "GHC" {
     "example": null,
     "fn_type": null,
     "id": "lib.options.mkSinkUndeclaredOptions",
-    "line": 160,
+    "line": 193,
     "name": "mkSinkUndeclaredOptions",
   },
   {
@@ -3892,7 +3909,7 @@ mkPackageOption pkgs "GHC" {
     "example": null,
     "fn_type": null,
     "id": "lib.options.mergeEqualOption",
-    "line": 193,
+    "line": 226,
     "name": "mergeEqualOption",
   },
   {
@@ -3902,7 +3919,7 @@ mkPackageOption pkgs "GHC" {
 getValues [ ]                               // => [ ]",
     "fn_type": "getValues :: [ { value :: a; } ] -> [a]",
     "id": "lib.options.getValues",
-    "line": 213,
+    "line": 246,
     "name": "getValues",
   },
   {
@@ -3912,7 +3929,7 @@ getValues [ ]                               // => [ ]",
 getFiles [ ]                                         // => [ ]",
     "fn_type": "getFiles :: [ { file :: a; } ] -> [a]",
     "id": "lib.options.getFiles",
-    "line": 223,
+    "line": 256,
     "name": "getFiles",
   },
   {
@@ -3930,7 +3947,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.scrubOptionValue",
-    "line": 281,
+    "line": 314,
     "name": "scrubOptionValue",
   },
   {
@@ -3940,7 +3957,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.renderOptionValue",
-    "line": 292,
+    "line": 325,
     "name": "renderOptionValue",
   },
   {
@@ -3952,7 +3969,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.literalExpression",
-    "line": 305,
+    "line": 338,
     "name": "literalExpression",
   },
   {
@@ -3963,7 +3980,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.literalDocBook",
-    "line": 316,
+    "line": 349,
     "name": "literalDocBook",
   },
   {
@@ -3973,7 +3990,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.mdDoc",
-    "line": 326,
+    "line": 359,
     "name": "mdDoc",
   },
   {
@@ -3984,7 +4001,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.literalMD",
-    "line": 334,
+    "line": 367,
     "name": "literalMD",
   },
   {
@@ -4000,7 +4017,7 @@ getFiles [ ]                                         // => [ ]",
 (showOption ["foo" "<name>" "bar"]) == "foo.<name>.bar"",
     "fn_type": null,
     "id": "lib.options.showOption",
-    "line": 352,
+    "line": 385,
     "name": "showOption",
   },
   {
@@ -5735,7 +5752,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.hydraJob",
-    "line": 229,
+    "line": 236,
     "name": "hydraJob",
   },
   {
@@ -5752,7 +5769,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeScope",
-    "line": 267,
+    "line": 274,
     "name": "makeScope",
   },
   {
@@ -5762,7 +5779,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeScopeWithSplicing",
-    "line": 281,
+    "line": 288,
     "name": "makeScopeWithSplicing",
   },
   {
@@ -6767,47 +6784,13 @@ This creates a derivation with a directory structure like the following:
   },
   {
     "category": "./pkgs/build-support/trivial-builders.nix",
-    "description": "Make a package that just contains a setup hook with the given contents.
-This setup hook will be invoked by any package that includes this package
-as a buildInput. Optionally takes a list of substitutions that should be
-applied to the resulting script.
-
-Examples:
-# setup hook that depends on the hello package and runs ./myscript.sh
-myhellohook = makeSetupHook { deps = [ hello ]; } ./myscript.sh;
-
-# writes a Linux-exclusive setup hook where @bash@ myscript.sh is substituted for the
-# bash interpreter.
-myhellohookSub = makeSetupHook {
-               name = "myscript-hook";
-               deps = [ hello ];
-               substitutions = { bash = "\${pkgs.bash}/bin/bash"; };
-               meta.platforms = lib.platforms.linux;
-             } ./myscript.sh;
-
-# setup hook with a package test
-myhellohookTested = makeSetupHook {
-               name = "myscript-hook";
-               deps = [ hello ];
-               substitutions = { bash = "\${pkgs.bash}/bin/bash"; };
-               meta.platforms = lib.platforms.linux;
-               passthru.tests.greeting = callPackage ./test { };
-             } ./myscript.sh;",
-    "example": null,
-    "fn_type": null,
-    "id": "build-support.trivial-builders.makeSetupHook",
-    "line": 624,
-    "name": "makeSetupHook",
-  },
-  {
-    "category": "./pkgs/build-support/trivial-builders.nix",
     "description": "Write the set of references to a file, that is, their immediate dependencies.
 
 This produces the equivalent of \`nix-store -q --references\`.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.writeDirectReferencesToFile",
-    "line": 673,
+    "line": 655,
     "name": "writeDirectReferencesToFile",
   },
   {
@@ -6822,7 +6805,7 @@ Note that this only works as intended on Nix >= 2.3.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.writeStringReferencesToFile",
-    "line": 707,
+    "line": 689,
     "name": "writeStringReferencesToFile",
   },
   {
@@ -6839,7 +6822,7 @@ Note that this only works as intended on Nix >= 2.3.",
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.requireFile",
-    "line": 795,
+    "line": 777,
     "name": "requireFile",
   },
   {
@@ -6851,7 +6834,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.copyPathToStore",
-    "line": 846,
+    "line": 828,
     "name": "copyPathToStore",
   },
   {
@@ -6860,7 +6843,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.copyPathsToStore",
-    "line": 852,
+    "line": 834,
     "name": "copyPathsToStore",
   },
   {
@@ -6879,7 +6862,7 @@ applyPatches {
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.applyPatches",
-    "line": 871,
+    "line": 853,
     "name": "applyPatches",
   },
   {
@@ -6888,7 +6871,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.emptyFile",
-    "line": 891,
+    "line": 873,
     "name": "emptyFile",
   },
   {
@@ -6897,7 +6880,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.emptyDirectory",
-    "line": 899,
+    "line": 881,
     "name": "emptyDirectory",
   },
   {
