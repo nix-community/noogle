@@ -9,8 +9,23 @@ import NixFunctions from "../components/NixFunctions";
 
 import { NextRouter, useRouter } from "next/router";
 import { LinearProgress } from "@mui/material";
+import { GetStaticPropsContext } from "next";
 
-const getInitialProps = async (context: NextRouter) => {
+// import fs from "fs";
+// import matter from "gray-matter";
+import { MetaData } from "../models/nix";
+import { getMarkdownData } from "../initialData/getMarkdownData";
+import { mergeInitialData } from "../initialData/mergeInitialData";
+type InitialPageProps = {
+  markdownData: MetaData;
+};
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const markdownData = getMarkdownData();
+  const props: InitialPageProps = { markdownData };
+  return { props };
+}
+
+const getInitialProps = async (context: NextRouter, markdownData: MetaData) => {
   const { query } = context;
   const initialProps = { ...initialPageState };
 
@@ -33,21 +48,23 @@ const getInitialProps = async (context: NextRouter) => {
     }
   });
   const FOTD = Object.entries(query).length === 0;
-
+  const data = mergeInitialData(initialProps.data, markdownData);
   return {
     props: {
       ...initialProps,
+      data,
       FOTD,
     },
   };
 };
 
-export default function FunctionsPage() {
+export default function FunctionsPage(props: InitialPageProps) {
   const router = useRouter();
+  const { markdownData } = props;
   const [initialProps, setInitialProps] = useState<PageState | null>(null);
   useEffect(() => {
     if (router.isReady && initialProps === null) {
-      getInitialProps(router).then((r) => {
+      getInitialProps(router, markdownData).then((r) => {
         const { props } = r;
         console.info("Url Query changed\n\nUpdating pageState with delta:", {
           props,
@@ -55,7 +72,7 @@ export default function FunctionsPage() {
         setInitialProps((curr) => ({ ...curr, ...props }));
       });
     }
-  }, [router, initialProps]);
+  }, [router, initialProps, markdownData]);
   return (
     <>
       {!initialProps ? (

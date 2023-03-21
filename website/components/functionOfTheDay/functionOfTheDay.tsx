@@ -49,7 +49,13 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
     [data.length]
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
-  const selectedFunction = useMemo(() => data.at(idx) as DocItem, [idx, data]);
+
+  const id = "noogle.user.docs";
+  const selectedFunction = useMemo(
+    () => data.find((i) => i.id === id) as DocItem,
+    [id, data]
+  );
+  // const selectedFunction = useMemo(() => data.at(idx) as DocItem, [idx, data]);
 
   const setNext = () => {
     setIdx((curr) => {
