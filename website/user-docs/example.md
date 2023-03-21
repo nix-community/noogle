@@ -8,7 +8,7 @@ example: see above
 
 # Noogle now supports writing markdown documentation. Directly via Github! ✅🎁🍾
 
-## [Write first contribution](https://github.com/nix-community/noogle/new/main/user-docs?filename=newdoc.md&&value=Your%20first%20contribution&&view=preview)
+## [Write first contribution](https://github.com/nix-community/noogle/new/main/website/user-docs?filename=newdoc.md&&value=Your%20first%20contribution&&view=preview)
 
 > Learn how to contribute. This work can also help to improve the nix documentation
 

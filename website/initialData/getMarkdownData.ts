@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { DocItem, MetaData } from "../models/nix";
 
 export const getMarkdownData = () => {
-    const path = "../user-docs";
+    const path = "./user-docs";
     const files = fs.readdirSync(path);
     const markdownData: MetaData = files
     .map((file) => {
