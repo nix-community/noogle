@@ -80,7 +80,8 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
     if (Object.entries(router.query).length !== 0) {
       router.push({ query: undefined });
     }
-    setPageState((curr) => ({ ...curr, ...initialPageState }));
+    // do not modify data
+    setPageState((curr) => ({ ...curr, ...initialPageState, data: curr.data }));
   }
   return (
     <PageContext.Provider
