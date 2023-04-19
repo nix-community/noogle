@@ -16,7 +16,6 @@ jobs:
     - uses: actions/checkout@v3
     - uses: cachix/install-nix-action@v20
       with:
-        name: noogle
         nix_path: nixpkgs=channel:nixos-unstable
     - uses: cachix/cachix-action@v12
       with:
