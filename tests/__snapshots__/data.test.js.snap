@@ -2845,7 +2845,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "foobar"",
     "fn_type": "concatStrings :: [string] -> string",
     "id": "lib.strings.concatStrings",
-    "line": 47,
+    "line": 49,
     "name": "concatStrings",
   },
   {
@@ -2855,7 +2855,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "afooabar"",
     "fn_type": "concatMapStrings :: (a -> string) -> [a] -> string",
     "id": "lib.strings.concatMapStrings",
-    "line": 57,
+    "line": 59,
     "name": "concatMapStrings",
   },
   {
@@ -2866,7 +2866,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "1-foo2-bar"",
     "fn_type": "concatImapStrings :: (int -> a -> string) -> [a] -> string",
     "id": "lib.strings.concatImapStrings",
-    "line": 68,
+    "line": 70,
     "name": "concatImapStrings",
   },
   {
@@ -2876,7 +2876,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => ["usr" "/" "local" "/" "bin"].",
     "fn_type": "intersperse :: a -> [a] -> [a]",
     "id": "lib.strings.intersperse",
-    "line": 78,
+    "line": 80,
     "name": "intersperse",
   },
   {
@@ -2886,7 +2886,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "usr/local/bin"",
     "fn_type": "concatStringsSep :: string -> [string] -> string",
     "id": "lib.strings.concatStringsSep",
-    "line": 95,
+    "line": 97,
     "name": "concatStringsSep",
   },
   {
@@ -2898,7 +2898,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "FOO-BAR-BAZ"",
     "fn_type": "concatMapStringsSep :: string -> (a -> string) -> [a] -> string",
     "id": "lib.strings.concatMapStringsSep",
-    "line": 108,
+    "line": 110,
     "name": "concatMapStringsSep",
   },
   {
@@ -2909,7 +2909,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "6-3-2"",
     "fn_type": "concatIMapStringsSep :: string -> (int -> a -> string) -> [a] -> string",
     "id": "lib.strings.concatImapStringsSep",
-    "line": 125,
+    "line": 127,
     "name": "concatImapStringsSep",
   },
   {
@@ -2920,7 +2920,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "foo\\nbar\\n"",
     "fn_type": "concatLines :: [string] -> string",
     "id": "lib.strings.concatLines",
-    "line": 142,
+    "line": 144,
     "name": "concatLines",
   },
   {
@@ -2933,7 +2933,7 @@ makeSearchPath "bin" [""]
 => "/bin"",
     "fn_type": "makeSearchPath :: string -> [string] -> string",
     "id": "lib.strings.makeSearchPath",
-    "line": 155,
+    "line": 157,
     "name": "makeSearchPath",
   },
   {
@@ -2946,7 +2946,7 @@ makeSearchPath "bin" [""]
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/bin:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/bin"",
     "fn_type": "string -> string -> [package] -> string",
     "id": "lib.strings.makeSearchPathOutput",
-    "line": 173,
+    "line": 175,
     "name": "makeSearchPathOutput",
   },
   {
@@ -2960,7 +2960,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r/lib:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/lib"",
     "fn_type": null,
     "id": "lib.strings.makeLibraryPath",
-    "line": 191,
+    "line": 193,
     "name": "makeLibraryPath",
   },
   {
@@ -2971,7 +2971,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/root/bin:/usr/bin:/usr/local/bin"",
     "fn_type": null,
     "id": "lib.strings.makeBinPath",
-    "line": 200,
+    "line": 202,
     "name": "makeBinPath",
   },
   {
@@ -2981,7 +2981,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/a/b/c/"",
     "fn_type": "normalizePath :: string -> string",
     "id": "lib.strings.normalizePath",
-    "line": 210,
+    "line": 212,
     "name": "normalizePath",
   },
   {
@@ -2994,7 +2994,7 @@ optionalString false "some-string"
 => """,
     "fn_type": "optionalString :: bool -> string -> string",
     "id": "lib.strings.optionalString",
-    "line": 223,
+    "line": 238,
     "name": "optionalString",
   },
   {
@@ -3006,7 +3006,7 @@ hasPrefix "foo" "barfoo"
 => false",
     "fn_type": "hasPrefix :: string -> string -> bool",
     "id": "lib.strings.hasPrefix",
-    "line": 239,
+    "line": 254,
     "name": "hasPrefix",
   },
   {
@@ -3018,7 +3018,7 @@ hasSuffix "foo" "barfoo"
 => true",
     "fn_type": "hasSuffix :: string -> string -> bool",
     "id": "lib.strings.hasSuffix",
-    "line": 255,
+    "line": 280,
     "name": "hasSuffix",
   },
   {
@@ -3034,7 +3034,7 @@ hasInfix "foo" "abcd"
 => false",
     "fn_type": "hasInfix :: string -> string -> bool",
     "id": "lib.strings.hasInfix",
-    "line": 280,
+    "line": 317,
     "name": "hasInfix",
   },
   {
@@ -3054,7 +3054,7 @@ stringToCharacters "🦄"
 => [ "�" "�" "�" "�" ]",
     "fn_type": "stringToCharacters :: string -> [string]",
     "id": "lib.strings.stringToCharacters",
-    "line": 301,
+    "line": 347,
     "name": "stringToCharacters",
   },
   {
@@ -3065,7 +3065,7 @@ stringToCharacters "🦄"
 => "nix"",
     "fn_type": "stringAsChars :: (string -> string) -> string -> string",
     "id": "lib.strings.stringAsChars",
-    "line": 313,
+    "line": 359,
     "name": "stringAsChars",
   },
   {
@@ -3077,7 +3077,7 @@ charToInt "("
 => 40",
     "fn_type": "charToInt :: string -> int",
     "id": "lib.strings.charToInt",
-    "line": 332,
+    "line": 378,
     "name": "charToInt",
   },
   {
@@ -3088,7 +3088,7 @@ charToInt "("
 => "\\\\(foo\\\\)"",
     "fn_type": "escape :: [string] -> string -> string",
     "id": "lib.strings.escape",
-    "line": 343,
+    "line": 389,
     "name": "escape",
   },
   {
@@ -3100,7 +3100,7 @@ charToInt "("
 => "foo\\\\x20bar"",
     "fn_type": "escapeC = [string] -> string -> string",
     "id": "lib.strings.escapeC",
-    "line": 356,
+    "line": 402,
     "name": "escapeC",
   },
   {
@@ -3111,7 +3111,7 @@ charToInt "("
 => "foo%2Fbar%20baz"",
     "fn_type": "escapeURL :: string -> string",
     "id": "lib.strings.escapeURL",
-    "line": 367,
+    "line": 413,
     "name": "escapeURL",
   },
   {
@@ -3121,7 +3121,7 @@ charToInt "("
 => "'esc'\\\\''ape\\nme'"",
     "fn_type": "escapeShellArg :: string -> string",
     "id": "lib.strings.escapeShellArg",
-    "line": 381,
+    "line": 427,
     "name": "escapeShellArg",
   },
   {
@@ -3131,7 +3131,7 @@ charToInt "("
 => "'one' 'two three' 'four'\\\\''five'"",
     "fn_type": "escapeShellArgs :: [string] -> string",
     "id": "lib.strings.escapeShellArgs",
-    "line": 391,
+    "line": 437,
     "name": "escapeShellArgs",
   },
   {
@@ -3143,7 +3143,7 @@ isValidPosixName "0-bad.jpg"
 => false",
     "fn_type": "string -> bool",
     "id": "lib.strings.isValidPosixName",
-    "line": 403,
+    "line": 449,
     "name": "isValidPosixName",
   },
   {
@@ -3163,7 +3163,7 @@ isValidPosixName "0-bad.jpg"
 ''",
     "fn_type": "string -> (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVar",
-    "line": 423,
+    "line": 469,
     "name": "toShellVar",
   },
   {
@@ -3179,7 +3179,7 @@ in ''
 ''",
     "fn_type": "attrsOf (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVars",
-    "line": 451,
+    "line": 497,
     "name": "toShellVars",
   },
   {
@@ -3189,7 +3189,7 @@ in ''
 => "\\"hello\\\\\\\${}\\\\n\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixString",
-    "line": 461,
+    "line": 507,
     "name": "escapeNixString",
   },
   {
@@ -3199,7 +3199,7 @@ in ''
 => "\\\\[\\\\^a-z]\\\\*"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeRegex",
-    "line": 471,
+    "line": 517,
     "name": "escapeRegex",
   },
   {
@@ -3211,7 +3211,7 @@ escapeNixIdentifier "0abc"
 => "\\"0abc\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixIdentifier",
-    "line": 483,
+    "line": 529,
     "name": "escapeNixIdentifier",
   },
   {
@@ -3222,7 +3222,7 @@ escapeNixIdentifier "0abc"
 => "&quot;test&quot; &apos;test&apos; &lt; &amp; &gt;"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeXML",
-    "line": 497,
+    "line": 543,
     "name": "escapeXML",
   },
   {
@@ -3232,7 +3232,7 @@ escapeNixIdentifier "0abc"
 => "home"",
     "fn_type": "toLower :: string -> string",
     "id": "lib.strings.toLower",
-    "line": 516,
+    "line": 562,
     "name": "toLower",
   },
   {
@@ -3242,7 +3242,7 @@ escapeNixIdentifier "0abc"
 => "HOME"",
     "fn_type": "toUpper :: string -> string",
     "id": "lib.strings.toUpper",
-    "line": 526,
+    "line": 572,
     "name": "toUpper",
   },
   {
@@ -3259,7 +3259,7 @@ addContextFrom pkgs.coreutils "bar"
 => "bar"",
     "fn_type": null,
     "id": "lib.strings.addContextFrom",
-    "line": 541,
+    "line": 587,
     "name": "addContextFrom",
   },
   {
@@ -3272,7 +3272,7 @@ splitString "/" "/usr/local/bin"
 => [ "" "usr" "local" "bin" ]",
     "fn_type": null,
     "id": "lib.strings.splitString",
-    "line": 552,
+    "line": 598,
     "name": "splitString",
   },
   {
@@ -3284,7 +3284,7 @@ removePrefix "xxx" "foo.bar.baz"
 => "foo.bar.baz"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removePrefix",
-    "line": 568,
+    "line": 614,
     "name": "removePrefix",
   },
   {
@@ -3296,7 +3296,7 @@ removeSuffix "xxx" "homefront"
 => "homefront"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removeSuffix",
-    "line": 592,
+    "line": 647,
     "name": "removeSuffix",
   },
   {
@@ -3308,7 +3308,7 @@ versionOlder "1.1" "1.1"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionOlder",
-    "line": 614,
+    "line": 678,
     "name": "versionOlder",
   },
   {
@@ -3322,7 +3322,7 @@ versionAtLeast "1.1" "1.2"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionAtLeast",
-    "line": 626,
+    "line": 690,
     "name": "versionAtLeast",
   },
   {
@@ -3336,7 +3336,7 @@ getName pkgs.youtube-dl
 => "youtube-dl"",
     "fn_type": null,
     "id": "lib.strings.getName",
-    "line": 638,
+    "line": 702,
     "name": "getName",
   },
   {
@@ -3350,7 +3350,7 @@ getVersion pkgs.youtube-dl
 => "2016.01.01"",
     "fn_type": null,
     "id": "lib.strings.getVersion",
-    "line": 655,
+    "line": 719,
     "name": "getVersion",
   },
   {
@@ -3363,7 +3363,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
 => "nix-1.7-x86"",
     "fn_type": null,
     "id": "lib.strings.nameFromURL",
-    "line": 671,
+    "line": 735,
     "name": "nameFromURL",
   },
   {
@@ -3377,7 +3377,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
     @param feature The feature to be set
     @param value The desired value",
     "id": "lib.strings.mesonOption",
-    "line": 690,
+    "line": 754,
     "name": "mesonOption",
   },
   {
@@ -3393,7 +3393,7 @@ mesonBool "static" false
     @param condition The condition to be made true or false
     @param flag The controlling flag of the condition",
     "id": "lib.strings.mesonBool",
-    "line": 709,
+    "line": 773,
     "name": "mesonBool",
   },
   {
@@ -3409,7 +3409,7 @@ mesonEnable "savage" false
     @param feature The feature to be enabled or disabled
     @param flag The controlling flag",
     "id": "lib.strings.mesonEnable",
-    "line": 728,
+    "line": 792,
     "name": "mesonEnable",
   },
   {
@@ -3422,7 +3422,7 @@ enableFeature false "shared"
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeature",
-    "line": 742,
+    "line": 806,
     "name": "enableFeature",
   },
   {
@@ -3435,7 +3435,7 @@ enableFeatureAs false "shared" (throw "ignored")
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeatureAs",
-    "line": 755,
+    "line": 819,
     "name": "enableFeatureAs",
   },
   {
@@ -3448,7 +3448,7 @@ withFeature false "shared"
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeature",
-    "line": 766,
+    "line": 830,
     "name": "withFeature",
   },
   {
@@ -3461,7 +3461,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeatureAs",
-    "line": 779,
+    "line": 843,
     "name": "withFeatureAs",
   },
   {
@@ -3475,7 +3475,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": "fixedWidthString :: int -> string -> string -> string",
     "id": "lib.strings.fixedWidthString",
-    "line": 793,
+    "line": 857,
     "name": "fixedWidthString",
   },
   {
@@ -3485,7 +3485,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": null,
     "id": "lib.strings.fixedWidthNumber",
-    "line": 810,
+    "line": 874,
     "name": "fixedWidthNumber",
   },
   {
@@ -3499,7 +3499,7 @@ floatToString 0.0000001
    "0.000000"",
     "fn_type": null,
     "id": "lib.strings.floatToString",
-    "line": 822,
+    "line": 886,
     "name": "floatToString",
   },
   {
@@ -3509,7 +3509,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isCoercibleToString",
-    "line": 830,
+    "line": 894,
     "name": "isCoercibleToString",
   },
   {
@@ -3521,7 +3521,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isConvertibleWithToString",
-    "line": 839,
+    "line": 903,
     "name": "isConvertibleWithToString",
   },
   {
@@ -3534,7 +3534,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isStringLike",
-    "line": 850,
+    "line": 914,
     "name": "isStringLike",
   },
   {
@@ -3550,7 +3550,7 @@ isStorePath [] || isStorePath 42 || isStorePath {} || …
 => false",
     "fn_type": null,
     "id": "lib.strings.isStorePath",
-    "line": 868,
+    "line": 932,
     "name": "isStorePath",
   },
   {
@@ -3573,7 +3573,7 @@ toInt "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toInt",
-    "line": 899,
+    "line": 963,
     "name": "toInt",
   },
   {
@@ -3595,7 +3595,7 @@ toIntBase10 "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toIntBase10",
-    "line": 949,
+    "line": 1013,
     "name": "toIntBase10",
   },
   {
@@ -3614,7 +3614,7 @@ toIntBase10 "3.14"
      "/prefix/compose-search-path.patch" ]",
     "fn_type": null,
     "id": "lib.strings.readPathsFromFile",
-    "line": 992,
+    "line": 1056,
     "name": "readPathsFromFile",
   },
   {
@@ -3626,7 +3626,7 @@ fileContents ./version
 => "1.0"",
     "fn_type": "fileContents :: path -> string",
     "id": "lib.strings.fileContents",
-    "line": 1012,
+    "line": 1076,
     "name": "fileContents",
   },
   {
@@ -3640,7 +3640,7 @@ sanitizeDerivationName pkgs.hello
 => "-nix-store-2g75chlbpxlrqn15zlby2dfh8hr9qwbk-hello-2.10"",
     "fn_type": "sanitizeDerivationName :: String -> String",
     "id": "lib.strings.sanitizeDerivationName",
-    "line": 1027,
+    "line": 1091,
     "name": "sanitizeDerivationName",
   },
   {
@@ -3656,7 +3656,7 @@ levenshtein "hello" "Heyo"
 => 3",
     "fn_type": "levenshtein :: string -> string -> int",
     "id": "lib.strings.levenshtein",
-    "line": 1066,
+    "line": 1130,
     "name": "levenshtein",
   },
   {
@@ -3665,7 +3665,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonPrefixLength",
-    "line": 1087,
+    "line": 1151,
     "name": "commonPrefixLength",
   },
   {
@@ -3674,7 +3674,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonSuffixLength",
-    "line": 1095,
+    "line": 1159,
     "name": "commonSuffixLength",
   },
   {
@@ -3693,7 +3693,7 @@ levenshteinAtMost 3 "This is a sentence" "this is a sentense."
 => true",
     "fn_type": "levenshteinAtMost :: int -> string -> string -> bool",
     "id": "lib.strings.levenshteinAtMost",
-    "line": 1119,
+    "line": 1183,
     "name": "levenshteinAtMost",
   },
   {
@@ -4193,7 +4193,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mergeOptionDecls",
-    "line": 694,
+    "line": 698,
     "name": "mergeOptionDecls",
   },
   {
@@ -4203,7 +4203,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.evalOptionValue",
-    "line": 726,
+    "line": 730,
     "name": "evalOptionValue",
   },
   {
@@ -4225,7 +4225,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.pushDownProperties",
-    "line": 821,
+    "line": 825,
     "name": "pushDownProperties",
   },
   {
@@ -4242,7 +4242,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.dischargeProperties",
-    "line": 842,
+    "line": 846,
     "name": "dischargeProperties",
   },
   {
@@ -4268,7 +4268,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.filterOverrides",
-    "line": 876,
+    "line": 880,
     "name": "filterOverrides",
   },
   {
@@ -4279,7 +4279,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.sortProperties",
-    "line": 891,
+    "line": 895,
     "name": "sortProperties",
   },
   {
@@ -4288,7 +4288,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkIf",
-    "line": 913,
+    "line": 917,
     "name": "mkIf",
   },
   {
@@ -4297,7 +4297,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.fixMergeModules",
-    "line": 988,
+    "line": 992,
     "name": "fixMergeModules",
   },
   {
@@ -4316,7 +4316,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRemovedOptionModule",
-    "line": 1002,
+    "line": 1006,
     "name": "mkRemovedOptionModule",
   },
   {
@@ -4336,7 +4336,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRenamedOptionModule",
-    "line": 1033,
+    "line": 1037,
     "name": "mkRenamedOptionModule",
   },
   {
@@ -4371,7 +4371,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkMergedOptionModule",
-    "line": 1087,
+    "line": 1091,
     "name": "mkMergedOptionModule",
   },
   {
@@ -4401,7 +4401,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkChangedOptionModule",
-    "line": 1134,
+    "line": 1138,
     "name": "mkChangedOptionModule",
   },
   {
@@ -4410,7 +4410,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModule",
-    "line": 1142,
+    "line": 1146,
     "name": "mkAliasOptionModule",
   },
   {
@@ -4419,7 +4419,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModuleMD",
-    "line": 1148,
+    "line": 1152,
     "name": "mkAliasOptionModuleMD",
   },
   {
@@ -4435,7 +4435,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkDerivedConfig",
-    "line": 1171,
+    "line": 1175,
     "name": "mkDerivedConfig",
   },
   {
@@ -4446,7 +4446,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.importJSON",
-    "line": 1209,
+    "line": 1213,
     "name": "importJSON",
   },
   {
@@ -6588,7 +6588,7 @@ writeText "my-file"
   '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeText",
-    "line": 172,
+    "line": 173,
     "name": "writeText",
   },
   {
@@ -6602,7 +6602,7 @@ writeTextDir "share/my-file"
  '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeTextDir",
-    "line": 189,
+    "line": 190,
     "name": "writeTextDir",
   },
   {
@@ -6620,7 +6620,7 @@ writeScript "my-file"
   '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeScript",
-    "line": 214,
+    "line": 215,
     "name": "writeScript",
   },
   {
@@ -6634,7 +6634,7 @@ writeScriptBin "my-file"
   '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeScriptBin",
-    "line": 232,
+    "line": 233,
     "name": "writeScriptBin",
   },
   {
@@ -6648,7 +6648,7 @@ writeShellScript "my-file"
   '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeShellScript",
-    "line": 249,
+    "line": 250,
     "name": "writeShellScript",
   },
   {
@@ -6663,7 +6663,7 @@ writeShellScriptBin "my-file"
   '';",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeShellScriptBin",
-    "line": 278,
+    "line": 279,
     "name": "writeShellScriptBin",
   },
   {
@@ -6689,7 +6689,7 @@ writeShellApplication {
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.writeShellApplication",
-    "line": 317,
+    "line": 318,
     "name": "writeShellApplication",
   },
   {
@@ -6715,7 +6715,7 @@ concatTextFile {
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.concatTextFile",
-    "line": 399,
+    "line": 402,
     "name": "concatTextFile",
   },
   {
@@ -6725,7 +6725,7 @@ concatTextFile {
 concatText "my-file" [ file1 file2 ]",
     "fn_type": null,
     "id": "build-support.trivial-builders.concatText",
-    "line": 430,
+    "line": 436,
     "name": "concatText",
   },
   {
@@ -6735,7 +6735,7 @@ concatText "my-file" [ file1 file2 ]",
 concatScript "my-file" [ file1 file2 ]",
     "fn_type": null,
     "id": "build-support.trivial-builders.concatScript",
-    "line": 440,
+    "line": 446,
     "name": "concatScript",
   },
   {
@@ -6789,7 +6789,7 @@ other derivations.  A derivation created with linkFarm is often used in CI
 as a easy way to build multiple derivations at once.",
     "fn_type": null,
     "id": "build-support.trivial-builders.symlinkJoin",
-    "line": 496,
+    "line": 502,
     "name": "symlinkJoin",
   },
   {
@@ -6820,7 +6820,7 @@ This creates a derivation with a directory structure like the following:
 See the note on symlinkJoin for the difference between linkFarm and symlinkJoin.",
     "fn_type": null,
     "id": "build-support.trivial-builders.linkFarm",
-    "line": 549,
+    "line": 555,
     "name": "linkFarm",
   },
   {
@@ -6842,7 +6842,7 @@ This creates a derivation with a directory structure like the following:
 \`-- hello-2.10 -> /nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10",
     "fn_type": null,
     "id": "build-support.trivial-builders.linkFarmFromDrvs",
-    "line": 593,
+    "line": 599,
     "name": "linkFarmFromDrvs",
   },
   {
@@ -6853,7 +6853,7 @@ This produces the equivalent of \`nix-store -q --references\`.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.writeDirectReferencesToFile",
-    "line": 657,
+    "line": 663,
     "name": "writeDirectReferencesToFile",
   },
   {
@@ -6868,7 +6868,7 @@ Note that this only works as intended on Nix >= 2.3.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.writeStringReferencesToFile",
-    "line": 691,
+    "line": 697,
     "name": "writeStringReferencesToFile",
   },
   {
@@ -6885,7 +6885,7 @@ Note that this only works as intended on Nix >= 2.3.",
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.requireFile",
-    "line": 779,
+    "line": 785,
     "name": "requireFile",
   },
   {
@@ -6897,7 +6897,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.copyPathToStore",
-    "line": 830,
+    "line": 836,
     "name": "copyPathToStore",
   },
   {
@@ -6906,7 +6906,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.copyPathsToStore",
-    "line": 836,
+    "line": 842,
     "name": "copyPathsToStore",
   },
   {
@@ -6925,7 +6925,7 @@ applyPatches {
 }",
     "fn_type": null,
     "id": "build-support.trivial-builders.applyPatches",
-    "line": 855,
+    "line": 861,
     "name": "applyPatches",
   },
   {
@@ -6934,7 +6934,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.emptyFile",
-    "line": 875,
+    "line": 881,
     "name": "emptyFile",
   },
   {
@@ -6943,7 +6943,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "build-support.trivial-builders.emptyDirectory",
-    "line": 883,
+    "line": 889,
     "name": "emptyDirectory",
   },
   {
