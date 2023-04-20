@@ -24,11 +24,15 @@ const dayOfYear = (date: Date) => {
 
 const seed = dayOfYear(date).toString() + date.getFullYear().toString();
 const rng = seedrandom(seed);
-const randomNumber = rng();
+const FOTD_RND = rng();
 
-function getRandomIntInclusive(min: number, max: number) {
+type Config = {
+  init?: number;
+};
+function getRandomIntInclusive(min: number, max: number, config?: Config) {
   min = Math.ceil(min);
   max = Math.floor(max);
+  const randomNumber = config?.init || FOTD_RND;
   return Math.floor(randomNumber * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
@@ -67,7 +71,7 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
   };
 
   const setRandom = () => {
-    setIdx(getRandomIntInclusive(0, data.length - 1, Math.random));
+    setIdx(getRandomIntInclusive(0, data.length - 1, { init: Math.random() }));
   };
   const setFunctionOfTheDay = () => {
     setIdx(todaysIdx);
