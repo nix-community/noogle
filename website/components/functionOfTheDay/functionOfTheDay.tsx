@@ -24,15 +24,16 @@ const dayOfYear = (date: Date) => {
 
 const seed = dayOfYear(date).toString() + date.getFullYear().toString();
 const rng = seedrandom(seed);
+const FOTD_RND = rng();
 
-function getRandomIntInclusive(
-  min: number,
-  max: number,
-  generator: () => number
-) {
+type Config = {
+  init?: number;
+};
+function getRandomIntInclusive(min: number, max: number, config?: Config) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(generator() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  const randomNumber = config?.init || FOTD_RND;
+  return Math.floor(randomNumber * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
 interface FunctionOfTheDayProps {
@@ -44,8 +45,9 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
   const {
     palette: { info, error },
   } = useTheme();
+
   const todaysIdx = useMemo(
-    () => getRandomIntInclusive(0, data.length - 1, rng),
+    () => getRandomIntInclusive(0, data.length - 1),
     [data.length]
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
@@ -69,7 +71,7 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
   };
 
   const setRandom = () => {
-    setIdx(getRandomIntInclusive(0, data.length - 1, Math.random));
+    setIdx(getRandomIntInclusive(0, data.length - 1, { init: Math.random() }));
   };
   const setFunctionOfTheDay = () => {
     setIdx(todaysIdx);
