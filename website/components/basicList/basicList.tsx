@@ -8,6 +8,7 @@ import { usePageContext } from "../pageContext";
 import { useMobile } from "../layout/layout";
 import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
 import { FunctionOfTheDay } from "../functionOfTheDay";
+import { Query, SearchOptions } from "minisearch";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -15,12 +16,13 @@ export type BasicListItem = {
 };
 export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
+  search: (query: Query, options?: SearchOptions) => void;
 };
 
 type ViewMode = "explore" | "browse";
 
 export function BasicList(props: BasicListProps) {
-  const { items } = props;
+  const { items, search } = props;
   const { pageState, setPageStateVariable, resetQueries } = usePageContext();
   const isMobile = useMobile();
   const { page, itemsPerPage, filter, term, FOTD, data } = pageState;
@@ -60,6 +62,16 @@ export function BasicList(props: BasicListProps) {
 
   const handleSearch = (term: string) => {
     setTerm(term);
+    search(term, {
+      boost: {
+        id: 10,
+        name: 8,
+        category: 6,
+        example: 0.5,
+        fn_type: 3,
+        description: 1,
+      },
+    });
     setPage(1);
   };
 

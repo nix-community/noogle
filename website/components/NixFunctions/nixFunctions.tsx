@@ -1,11 +1,12 @@
 import { Box } from "@mui/system";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { PageState } from "../../models/internals";
 import { byQuery, byType, pipe } from "../../queries";
-import { DocItem } from "../../models/nix";
+import { DocItem, MetaData } from "../../models/nix";
 import { BasicList, BasicListItem } from "../basicList";
 import FunctionItem from "../functionItem/functionItem";
 import { SetPageStateVariable } from "../pageContext";
+import { useMiniSearch } from "react-minisearch";
 
 interface FunctionsProps {
   pageState: PageState;
@@ -18,11 +19,39 @@ export function NixFunctions(props: FunctionsProps) {
 
   const setSelected = setPageStateVariable<string | null>("selected");
 
-  const filteredData = useMemo(
-    () => pipe(byType(filter), byQuery(term))(data),
-    [filter, term, data]
-  );
+  const { search, searchResults, rawResults } = useMiniSearch<DocItem>(data, {
+    fields: ["id", "name", "category", "description", "example", "fn_type"],
+    searchOptions: {
+      // allow 25% levenshtein distance (e.g. 2.5 of 10 characters don't match)
+      fuzzy: 0.25,
+      // prefer to show builtins first
+      boostDocument: (id, term) => {
+        let boost = 1;
+        boost += id.includes("builtins") ? 1 : 0;
+        boost += id.includes(term) ? 10 : 0;
+        return boost;
+      },
+    },
+    tokenize: (text: string): string[] => {
+      const tokens = text.split(/\W|(?=[A-Z])/);
+      // console.log({ tokens });
+      return tokens;
+    },
+  });
 
+  //initial site-load is safe to call
+  useEffect(() => {
+    search(term);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const filteredData = useMemo(() => {
+    console.log({ filter, term, rawResults });
+    const dataForFilter = term ? searchResults || [] : data;
+    return pipe(byType(filter))(dataForFilter);
+  }, [filter, term, rawResults, searchResults, data]);
+
+  console.log({ filteredData, searchResults, data, rawResults });
   const preRenderedItems: BasicListItem[] = filteredData.map(
     (docItem: DocItem) => {
       const key = docItem.id;
@@ -50,7 +79,7 @@ export function NixFunctions(props: FunctionsProps) {
 
   return (
     <Box sx={{ ml: { xs: 0, md: 2 } }}>
-      <BasicList items={preRenderedItems} />
+      <BasicList items={preRenderedItems} search={search} />
     </Box>
   );
 }
