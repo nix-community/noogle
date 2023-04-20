@@ -24,15 +24,16 @@ const dayOfYear = (date: Date) => {
 
 const seed = dayOfYear(date).toString() + date.getFullYear().toString();
 const rng = seedrandom(seed);
+const randomNumber = rng();
 
 function getRandomIntInclusive(
   min: number,
-  max: number,
-  generator: () => number
+  max: number
+  // generator: () => number
 ) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(generator() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  return Math.floor(randomNumber * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
 interface FunctionOfTheDayProps {
@@ -44,12 +45,15 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
   const {
     palette: { info, error },
   } = useTheme();
+
   const todaysIdx = useMemo(
-    () => getRandomIntInclusive(0, data.length - 1, rng),
+    () => getRandomIntInclusive(0, data.length - 1),
     [data.length]
   );
+
   const [idx, setIdx] = useState<number>(todaysIdx);
   const selectedFunction = useMemo(() => data.at(idx) as DocItem, [idx, data]);
+  console.log({ todaysIdx, data });
 
   const setNext = () => {
     setIdx((curr) => {
