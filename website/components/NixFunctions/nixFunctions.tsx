@@ -1,8 +1,8 @@
 import { Box } from "@mui/system";
 import { useEffect, useMemo } from "react";
 import { PageState } from "../../models/internals";
-import { byQuery, byType, pipe } from "../../queries";
-import { DocItem, MetaData } from "../../models/nix";
+import { byType, pipe } from "../../queries";
+import { DocItem } from "../../models/nix";
 import { BasicList, BasicListItem } from "../basicList";
 import FunctionItem from "../functionItem/functionItem";
 import { SetPageStateVariable } from "../pageContext";
@@ -34,7 +34,6 @@ export function NixFunctions(props: FunctionsProps) {
     },
     tokenize: (text: string): string[] => {
       const tokens = text.split(/\W|(?=[A-Z])/);
-      // console.log({ tokens });
       return tokens;
     },
   });
@@ -46,12 +45,11 @@ export function NixFunctions(props: FunctionsProps) {
   }, []);
 
   const filteredData = useMemo(() => {
-    console.log({ filter, term, rawResults });
     const dataForFilter = term ? searchResults || [] : data;
+    console.debug({ filteredData, searchResults, data, rawResults });
     return pipe(byType(filter))(dataForFilter);
   }, [filter, term, rawResults, searchResults, data]);
 
-  console.log({ filteredData, searchResults, data, rawResults });
   const preRenderedItems: BasicListItem[] = filteredData.map(
     (docItem: DocItem) => {
       const key = docItem.id;
