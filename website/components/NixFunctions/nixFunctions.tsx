@@ -46,7 +46,7 @@ export function NixFunctions(props: FunctionsProps) {
 
   const filteredData = useMemo(() => {
     const dataForFilter = term ? searchResults || [] : data;
-    console.debug({ filteredData, searchResults, data, rawResults });
+    console.debug({ rawResults });
     return pipe(byType(filter))(dataForFilter);
   }, [filter, term, rawResults, searchResults, data]);
 
