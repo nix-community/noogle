@@ -62,16 +62,7 @@ export function BasicList(props: BasicListProps) {
 
   const handleSearch = (term: string) => {
     setTerm(term);
-    search(term, {
-      boost: {
-        id: 10,
-        name: 8,
-        category: 6,
-        example: 0.5,
-        fn_type: 3,
-        description: 1,
-      },
-    });
+    search(term);
     setPage(1);
   };
 
