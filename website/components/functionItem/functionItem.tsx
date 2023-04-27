@@ -7,22 +7,27 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { DocItem } from "../../models/nix";
 import { Preview } from "../preview/preview";
 import ShareIcon from "@mui/icons-material/Share";
 import { useSnackbar } from "notistack";
+import { Marker } from "react-mark.js";
+
+import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 
 interface FunctionItemProps {
   selected: boolean;
   name: String;
   docItem: DocItem;
   handleClose: () => void;
+  markWords: string[];
 }
 
 export default function FunctionItem(props: FunctionItemProps) {
-  const { docItem, selected, handleClose } = props;
+  const { docItem, selected, handleClose, markWords } = props;
   const { fn_type, category, description, id } = docItem;
+  const [mark, setMark] = useState<Boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
   const descriptionPreview = useMemo(() => {
     const getFirstWords = (s: string) => {
@@ -47,6 +52,7 @@ export default function FunctionItem(props: FunctionItemProps) {
     navigator.clipboard.writeText(handle);
     enqueueSnackbar("link copied to clipboard", { variant: "default" });
   };
+
   return (
     <Paper
       elevation={0}
@@ -84,15 +90,27 @@ export default function FunctionItem(props: FunctionItemProps) {
         )}
         {selected && (
           <>
-            <Preview docItem={docItem} handleClose={handleClose} />
+            <Marker
+              mark={mark ? markWords : []}
+              options={{ className: "noogle-marker" }}
+            >
+              <Preview docItem={docItem} handleClose={handleClose} />
+            </Marker>
             <Toolbar
               sx={{
                 justifyContent: "end",
               }}
             >
+              {Boolean(markWords.length) && (
+                <Tooltip title={`${mark ? "Hide" : "Show"} matches`}>
+                  <IconButton onClick={() => setMark((s) => !s)}>
+                    <ManageSearchIcon fontSize="inherit" />
+                  </IconButton>
+                </Tooltip>
+              )}
               <Tooltip title="Share">
                 <IconButton onClick={handleShare}>
-                  <ShareIcon />
+                  <ShareIcon fontSize="inherit" />
                 </IconButton>
               </Tooltip>
             </Toolbar>

@@ -18,3 +18,9 @@ a {
 .react-terminal-wrapper:before {
   background: unset !important;
 }
+
+mark.noogle-marker {
+  /* :rgb(106, 213, 65); */
+  color: inherit;
+  background-color: #88DD67;
+}
