@@ -55,6 +55,7 @@ export const Preview = (props: PreviewProps) => {
       >
         <Typography
           variant="h4"
+          color={"text.primary"}
           sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
         >
           {`${id}`}
