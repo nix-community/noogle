@@ -27,6 +27,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-highlight": "^0.15.0",
+    "react-mark.js": "^9.0.7",
     "react-markdown": "^8.0.4",
     "react-minisearch": "^6.0.2",
     "rehype-highlight": "^6.0.0",

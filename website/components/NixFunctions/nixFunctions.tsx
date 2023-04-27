@@ -77,6 +77,7 @@ export function NixFunctions(props: FunctionsProps) {
   const preRenderedItems: BasicListItem[] = filteredData.map(
     (docItem: DocItem) => {
       const key = docItem.id;
+      const matches = rawResults?.find((r) => r.id === docItem.id)?.terms || [];
       return {
         item: (
           <Box
@@ -87,6 +88,7 @@ export function NixFunctions(props: FunctionsProps) {
             onClick={!(selected === key) ? () => setSelected(key) : undefined}
           >
             <FunctionItem
+              markWords={matches}
               name={docItem.name}
               docItem={docItem}
               selected={selected === key}
