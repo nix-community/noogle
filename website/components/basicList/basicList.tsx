@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { Box, List, ListItem, Stack, TablePagination } from "@mui/material";
 import { BasicDataViewProps } from "../../types/basicDataView";
 import { SearchInput } from "../searchInput";
@@ -8,6 +8,7 @@ import { usePageContext } from "../pageContext";
 import { useMobile } from "../layout/layout";
 import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
 import { FunctionOfTheDay } from "../functionOfTheDay";
+import { ViewMode } from "../../models/internals";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -17,15 +18,13 @@ export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
 };
 
-type ViewMode = "explore" | "browse";
-
 export function BasicList(props: BasicListProps) {
   const { items } = props;
   const { pageState, setPageStateVariable, resetQueries } = usePageContext();
   const isMobile = useMobile();
-  const { page, itemsPerPage, filter, term, FOTD, data } = pageState;
-  const [mode, setMode] = useState<ViewMode>("explore");
+  const { page, itemsPerPage, FOTD: showFunctionOfTheDay, data } = pageState;
 
+  const setViewMode = setPageStateVariable<ViewMode>("viewMode");
   const setPage = setPageStateVariable<number>("page");
   const setTerm = setPageStateVariable<string>("term");
   const setFilter = setPageStateVariable<Filter>("filter");
@@ -63,12 +62,6 @@ export function BasicList(props: BasicListProps) {
     setPage(1);
   };
 
-  const showFunctionOfTheDay =
-    mode === "explore" &&
-    filter.to === "any" &&
-    filter.from === "any" &&
-    term === "" &&
-    FOTD === true;
   return (
     <Stack>
       <SearchInput
@@ -77,15 +70,16 @@ export function BasicList(props: BasicListProps) {
         placeholder="search nix functions"
         handleSearch={handleSearch}
       />
-
-      {showFunctionOfTheDay ? (
+      {showFunctionOfTheDay && (
         <FunctionOfTheDay
           data={data}
           handleClose={() => {
-            setMode("browse");
+            setViewMode("browse");
           }}
         />
-      ) : (
+      )}
+
+      {!showFunctionOfTheDay && (
         <List aria-label="basic-list" sx={{ pt: 0 }}>
           {items.length ? (
             pageItems.map(({ item, key }, idx) => (
