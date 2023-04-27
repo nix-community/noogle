@@ -1,9 +1,4 @@
 import { DocItem, MetaData } from "../models/nix";
-// import MiniSearch from 'minisearch'
-
-// export const byMinisearch = (term: string, miniSearch: MiniSearch<DocItem> ) => (data: MetaData): MetaData => {
-//    return miniSearch.search(term);
-// }
 
 export const byQuery =
 (rawTerm: string) =>

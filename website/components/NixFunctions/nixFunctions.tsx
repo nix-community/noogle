@@ -31,9 +31,33 @@ export function NixFunctions(props: FunctionsProps) {
         boost += id.includes(term) ? 10 : 0;
         return boost;
       },
+      boost: {
+        id: 10,
+        name: 8,
+        category: 6,
+        example: 0.5,
+        fn_type: 3,
+        description: 1,
+      },
     },
-    tokenize: (text: string): string[] => {
-      const tokens = text.split(/\W|(?=[A-Z])/);
+    tokenize: (text: string, fieldName): string[] => {
+      //split the text into words
+      const wordTokens = text.split(/\W/);
+      const containsUpper = (w: string) => Boolean(w.match(/[A-Z]/)?.length);
+      const tokens = [
+        // include the words itself if they contain upperCharacters
+        // mapAttrs -> mapAttrs
+        ...wordTokens.filter(containsUpper),
+        // but also split words that contain uppercase
+        // mapAttrs -> [map, Attrs]
+        ...wordTokens
+          .filter(containsUpper)
+          .map((t) => t.split(/(?=[A-Z])/))
+          .flat(),
+        // just include lowercase words without further tokenizing
+        // map -> map
+        ...wordTokens.filter((w) => !containsUpper(w)),
+      ];
       return tokens;
     },
   });
