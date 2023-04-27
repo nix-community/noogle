@@ -49,7 +49,7 @@ export default function FunctionsPage() {
     if (router.isReady && initialProps === null) {
       getInitialProps(router).then((r) => {
         const { props } = r;
-        console.info("Url Query changed\n\nUpdating pageState with delta:", {
+        console.debug("Url Query changed\n\nUpdating pageState with delta:", {
           props,
         });
         setInitialProps((curr) => ({ ...curr, ...props }));
