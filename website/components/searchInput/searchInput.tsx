@@ -37,8 +37,6 @@ export function SearchInput(props: SearchInputProps) {
   const _handleClear = () => {
     _setTerm("");
     handleClear();
-    // handleFilter(initialPageState.filter);
-    // handleSubmit("");
   };
   const handleType = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

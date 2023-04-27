@@ -15,6 +15,7 @@ import { lightThemeOptions, darkThemeOptions } from "../styles/theme";
 import "../styles/globals.css";
 import { Layout } from "../components/layout";
 import Head from "next/head";
+import { AppState } from "../components/appState";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -49,7 +50,12 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
         <meta />
         <meta name="robots" content="all" />
         <link rel="icon" href="/favicon.png" />
-        <link rel="search" type="application/opensearchdescription+xml" title="Search nix function on noogle" href="/search.xml"></link>
+        <link
+          rel="search"
+          type="application/opensearchdescription+xml"
+          title="Search nix function on noogle"
+          href="/search.xml"
+        ></link>
       </Head>
 
       <CacheProvider value={emotionCache}>
@@ -59,7 +65,7 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             maxSnack={1}
           >
-            {getContent()}
+            <AppState>{getContent()}</AppState>
           </SnackbarProvider>
         </ThemeProvider>
       </CacheProvider>

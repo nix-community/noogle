@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
 import {
   InitialPageState,
@@ -57,6 +57,7 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
   const router = useRouter();
   const { children, pageProps } = props;
   const [pageState, setPageState] = useState<PageState>(pageProps);
+  const { term, filter, viewMode } = pageState;
   function setPageStateVariable<T>(field: keyof InitialPageState) {
     return function (value: React.SetStateAction<T> | T) {
       if (typeof value !== "function") {
@@ -82,9 +83,25 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
     }
     setPageState((curr) => ({ ...curr, ...initialPageState }));
   }
+  useEffect(() => {
+    setPageState((c) => ({
+      ...c,
+      FOTD:
+        viewMode === "explore" &&
+        filter.to === "any" &&
+        filter.from === "any" &&
+        term === "",
+    }));
+  }, [viewMode, filter, term]);
+
   return (
     <PageContext.Provider
-      value={{ pageState, setPageState, setPageStateVariable, resetQueries }}
+      value={{
+        pageState,
+        setPageState,
+        setPageStateVariable,
+        resetQueries,
+      }}
     >
       {children}
     </PageContext.Provider>
