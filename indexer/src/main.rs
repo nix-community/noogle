@@ -268,7 +268,14 @@ fn main() {
                 .filter(|node| node.kind == ASTKind::SetEntry)
                 .filter_map(|node| collect_entry_information(&nix.arena, node))
                 .map(|d| ManualEntry {
-                    id: format!("{}.{}.{}", parent, filename, d.name),
+                    id: {
+                        if filename == "default" {
+                            //If filename is default.nix only use the parent directory as id
+                            format!("{}.{}", parent, d.name)
+                        } else {
+                            format!("{}.{}.{}", parent, filename, d.name)
+                        }
+                    },
                     line: Some(get_line(d.span, &src)).unwrap_or(None),
                     category: file.display().to_string(),
                     name: d.name,
