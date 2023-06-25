@@ -3018,7 +3018,7 @@ hasSuffix "foo" "barfoo"
 => true",
     "fn_type": "hasSuffix :: string -> string -> bool",
     "id": "lib.strings.hasSuffix",
-    "line": 280,
+    "line": 281,
     "name": "hasSuffix",
   },
   {
@@ -3034,7 +3034,7 @@ hasInfix "foo" "abcd"
 => false",
     "fn_type": "hasInfix :: string -> string -> bool",
     "id": "lib.strings.hasInfix",
-    "line": 317,
+    "line": 318,
     "name": "hasInfix",
   },
   {
@@ -3054,7 +3054,7 @@ stringToCharacters "🦄"
 => [ "�" "�" "�" "�" ]",
     "fn_type": "stringToCharacters :: string -> [string]",
     "id": "lib.strings.stringToCharacters",
-    "line": 347,
+    "line": 348,
     "name": "stringToCharacters",
   },
   {
@@ -3065,7 +3065,7 @@ stringToCharacters "🦄"
 => "nix"",
     "fn_type": "stringAsChars :: (string -> string) -> string -> string",
     "id": "lib.strings.stringAsChars",
-    "line": 359,
+    "line": 360,
     "name": "stringAsChars",
   },
   {
@@ -3077,7 +3077,7 @@ charToInt "("
 => 40",
     "fn_type": "charToInt :: string -> int",
     "id": "lib.strings.charToInt",
-    "line": 378,
+    "line": 379,
     "name": "charToInt",
   },
   {
@@ -3088,7 +3088,7 @@ charToInt "("
 => "\\\\(foo\\\\)"",
     "fn_type": "escape :: [string] -> string -> string",
     "id": "lib.strings.escape",
-    "line": 389,
+    "line": 390,
     "name": "escape",
   },
   {
@@ -3100,7 +3100,7 @@ charToInt "("
 => "foo\\\\x20bar"",
     "fn_type": "escapeC = [string] -> string -> string",
     "id": "lib.strings.escapeC",
-    "line": 402,
+    "line": 403,
     "name": "escapeC",
   },
   {
@@ -3111,7 +3111,7 @@ charToInt "("
 => "foo%2Fbar%20baz"",
     "fn_type": "escapeURL :: string -> string",
     "id": "lib.strings.escapeURL",
-    "line": 413,
+    "line": 414,
     "name": "escapeURL",
   },
   {
@@ -3121,7 +3121,7 @@ charToInt "("
 => "'esc'\\\\''ape\\nme'"",
     "fn_type": "escapeShellArg :: string -> string",
     "id": "lib.strings.escapeShellArg",
-    "line": 427,
+    "line": 428,
     "name": "escapeShellArg",
   },
   {
@@ -3131,7 +3131,7 @@ charToInt "("
 => "'one' 'two three' 'four'\\\\''five'"",
     "fn_type": "escapeShellArgs :: [string] -> string",
     "id": "lib.strings.escapeShellArgs",
-    "line": 437,
+    "line": 438,
     "name": "escapeShellArgs",
   },
   {
@@ -3143,7 +3143,7 @@ isValidPosixName "0-bad.jpg"
 => false",
     "fn_type": "string -> bool",
     "id": "lib.strings.isValidPosixName",
-    "line": 449,
+    "line": 450,
     "name": "isValidPosixName",
   },
   {
@@ -3163,7 +3163,7 @@ isValidPosixName "0-bad.jpg"
 ''",
     "fn_type": "string -> (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVar",
-    "line": 469,
+    "line": 470,
     "name": "toShellVar",
   },
   {
@@ -3179,7 +3179,7 @@ in ''
 ''",
     "fn_type": "attrsOf (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVars",
-    "line": 497,
+    "line": 498,
     "name": "toShellVars",
   },
   {
@@ -3189,7 +3189,7 @@ in ''
 => "\\"hello\\\\\\\${}\\\\n\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixString",
-    "line": 507,
+    "line": 508,
     "name": "escapeNixString",
   },
   {
@@ -3199,7 +3199,7 @@ in ''
 => "\\\\[\\\\^a-z]\\\\*"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeRegex",
-    "line": 517,
+    "line": 518,
     "name": "escapeRegex",
   },
   {
@@ -3211,7 +3211,7 @@ escapeNixIdentifier "0abc"
 => "\\"0abc\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixIdentifier",
-    "line": 529,
+    "line": 530,
     "name": "escapeNixIdentifier",
   },
   {
@@ -3222,7 +3222,7 @@ escapeNixIdentifier "0abc"
 => "&quot;test&quot; &apos;test&apos; &lt; &amp; &gt;"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeXML",
-    "line": 543,
+    "line": 544,
     "name": "escapeXML",
   },
   {
@@ -3232,7 +3232,7 @@ escapeNixIdentifier "0abc"
 => "home"",
     "fn_type": "toLower :: string -> string",
     "id": "lib.strings.toLower",
-    "line": 562,
+    "line": 563,
     "name": "toLower",
   },
   {
@@ -3242,7 +3242,7 @@ escapeNixIdentifier "0abc"
 => "HOME"",
     "fn_type": "toUpper :: string -> string",
     "id": "lib.strings.toUpper",
-    "line": 572,
+    "line": 573,
     "name": "toUpper",
   },
   {
@@ -3259,7 +3259,7 @@ addContextFrom pkgs.coreutils "bar"
 => "bar"",
     "fn_type": null,
     "id": "lib.strings.addContextFrom",
-    "line": 587,
+    "line": 588,
     "name": "addContextFrom",
   },
   {
@@ -3272,7 +3272,7 @@ splitString "/" "/usr/local/bin"
 => [ "" "usr" "local" "bin" ]",
     "fn_type": null,
     "id": "lib.strings.splitString",
-    "line": 598,
+    "line": 599,
     "name": "splitString",
   },
   {
@@ -3284,7 +3284,7 @@ removePrefix "xxx" "foo.bar.baz"
 => "foo.bar.baz"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removePrefix",
-    "line": 614,
+    "line": 615,
     "name": "removePrefix",
   },
   {
@@ -3296,7 +3296,7 @@ removeSuffix "xxx" "homefront"
 => "homefront"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removeSuffix",
-    "line": 647,
+    "line": 648,
     "name": "removeSuffix",
   },
   {
@@ -3308,7 +3308,7 @@ versionOlder "1.1" "1.1"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionOlder",
-    "line": 678,
+    "line": 679,
     "name": "versionOlder",
   },
   {
@@ -3322,7 +3322,7 @@ versionAtLeast "1.1" "1.2"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionAtLeast",
-    "line": 690,
+    "line": 691,
     "name": "versionAtLeast",
   },
   {
@@ -3336,7 +3336,7 @@ getName pkgs.youtube-dl
 => "youtube-dl"",
     "fn_type": null,
     "id": "lib.strings.getName",
-    "line": 702,
+    "line": 703,
     "name": "getName",
   },
   {
@@ -3350,7 +3350,7 @@ getVersion pkgs.youtube-dl
 => "2016.01.01"",
     "fn_type": null,
     "id": "lib.strings.getVersion",
-    "line": 719,
+    "line": 720,
     "name": "getVersion",
   },
   {
@@ -3363,7 +3363,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
 => "nix-1.7-x86"",
     "fn_type": null,
     "id": "lib.strings.nameFromURL",
-    "line": 735,
+    "line": 736,
     "name": "nameFromURL",
   },
   {
@@ -3377,7 +3377,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
     @param feature The feature to be set
     @param value The desired value",
     "id": "lib.strings.mesonOption",
-    "line": 754,
+    "line": 755,
     "name": "mesonOption",
   },
   {
@@ -3393,7 +3393,7 @@ mesonBool "static" false
     @param condition The condition to be made true or false
     @param flag The controlling flag of the condition",
     "id": "lib.strings.mesonBool",
-    "line": 773,
+    "line": 774,
     "name": "mesonBool",
   },
   {
@@ -3409,7 +3409,7 @@ mesonEnable "savage" false
     @param feature The feature to be enabled or disabled
     @param flag The controlling flag",
     "id": "lib.strings.mesonEnable",
-    "line": 792,
+    "line": 793,
     "name": "mesonEnable",
   },
   {
@@ -3422,7 +3422,7 @@ enableFeature false "shared"
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeature",
-    "line": 806,
+    "line": 807,
     "name": "enableFeature",
   },
   {
@@ -3435,7 +3435,7 @@ enableFeatureAs false "shared" (throw "ignored")
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeatureAs",
-    "line": 819,
+    "line": 820,
     "name": "enableFeatureAs",
   },
   {
@@ -3448,7 +3448,7 @@ withFeature false "shared"
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeature",
-    "line": 830,
+    "line": 831,
     "name": "withFeature",
   },
   {
@@ -3461,7 +3461,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeatureAs",
-    "line": 843,
+    "line": 844,
     "name": "withFeatureAs",
   },
   {
@@ -3475,7 +3475,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": "fixedWidthString :: int -> string -> string -> string",
     "id": "lib.strings.fixedWidthString",
-    "line": 857,
+    "line": 858,
     "name": "fixedWidthString",
   },
   {
@@ -3485,7 +3485,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": null,
     "id": "lib.strings.fixedWidthNumber",
-    "line": 874,
+    "line": 875,
     "name": "fixedWidthNumber",
   },
   {
@@ -3499,7 +3499,7 @@ floatToString 0.0000001
    "0.000000"",
     "fn_type": null,
     "id": "lib.strings.floatToString",
-    "line": 886,
+    "line": 887,
     "name": "floatToString",
   },
   {
@@ -3509,7 +3509,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isCoercibleToString",
-    "line": 894,
+    "line": 895,
     "name": "isCoercibleToString",
   },
   {
@@ -3521,7 +3521,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isConvertibleWithToString",
-    "line": 903,
+    "line": 904,
     "name": "isConvertibleWithToString",
   },
   {
@@ -3534,7 +3534,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isStringLike",
-    "line": 914,
+    "line": 915,
     "name": "isStringLike",
   },
   {
@@ -3550,7 +3550,7 @@ isStorePath [] || isStorePath 42 || isStorePath {} || …
 => false",
     "fn_type": null,
     "id": "lib.strings.isStorePath",
-    "line": 932,
+    "line": 933,
     "name": "isStorePath",
   },
   {
@@ -3573,7 +3573,7 @@ toInt "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toInt",
-    "line": 963,
+    "line": 964,
     "name": "toInt",
   },
   {
@@ -3595,7 +3595,7 @@ toIntBase10 "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toIntBase10",
-    "line": 1013,
+    "line": 1014,
     "name": "toIntBase10",
   },
   {
@@ -3614,7 +3614,7 @@ toIntBase10 "3.14"
      "/prefix/compose-search-path.patch" ]",
     "fn_type": null,
     "id": "lib.strings.readPathsFromFile",
-    "line": 1056,
+    "line": 1057,
     "name": "readPathsFromFile",
   },
   {
@@ -3626,7 +3626,7 @@ fileContents ./version
 => "1.0"",
     "fn_type": "fileContents :: path -> string",
     "id": "lib.strings.fileContents",
-    "line": 1076,
+    "line": 1077,
     "name": "fileContents",
   },
   {
@@ -3640,7 +3640,7 @@ sanitizeDerivationName pkgs.hello
 => "-nix-store-2g75chlbpxlrqn15zlby2dfh8hr9qwbk-hello-2.10"",
     "fn_type": "sanitizeDerivationName :: String -> String",
     "id": "lib.strings.sanitizeDerivationName",
-    "line": 1091,
+    "line": 1092,
     "name": "sanitizeDerivationName",
   },
   {
@@ -3656,7 +3656,7 @@ levenshtein "hello" "Heyo"
 => 3",
     "fn_type": "levenshtein :: string -> string -> int",
     "id": "lib.strings.levenshtein",
-    "line": 1130,
+    "line": 1131,
     "name": "levenshtein",
   },
   {
@@ -3665,7 +3665,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonPrefixLength",
-    "line": 1151,
+    "line": 1152,
     "name": "commonPrefixLength",
   },
   {
@@ -3674,7 +3674,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonSuffixLength",
-    "line": 1159,
+    "line": 1160,
     "name": "commonSuffixLength",
   },
   {
@@ -3693,7 +3693,7 @@ levenshteinAtMost 3 "This is a sentence" "this is a sentense."
 => true",
     "fn_type": "levenshteinAtMost :: int -> string -> string -> bool",
     "id": "lib.strings.levenshteinAtMost",
-    "line": 1183,
+    "line": 1184,
     "name": "levenshteinAtMost",
   },
   {
@@ -3709,40 +3709,13 @@ levenshteinAtMost 3 "This is a sentence" "this is a sentense."
   },
   {
     "category": "./lib/sources.nix",
-    "description": "Returns the type of a path: regular (for file), symlink, or directory.",
-    "example": null,
-    "fn_type": null,
-    "id": "lib.sources.pathType",
-    "line": 25,
-    "name": "pathType",
-  },
-  {
-    "category": "./lib/sources.nix",
-    "description": "Returns true if the path exists and is a directory, false otherwise.",
-    "example": null,
-    "fn_type": null,
-    "id": "lib.sources.pathIsDirectory",
-    "line": 30,
-    "name": "pathIsDirectory",
-  },
-  {
-    "category": "./lib/sources.nix",
-    "description": "Returns true if the path exists and is a regular file, false otherwise.",
-    "example": null,
-    "fn_type": null,
-    "id": "lib.sources.pathIsRegularFile",
-    "line": 35,
-    "name": "pathIsRegularFile",
-  },
-  {
-    "category": "./lib/sources.nix",
     "description": "A basic filter for \`cleanSourceWith\` that removes
 directories of version control system, backup files (*~)
 and some generated files.",
     "example": null,
     "fn_type": null,
     "id": "lib.sources.cleanSourceFilter",
-    "line": 42,
+    "line": 26,
     "name": "cleanSourceFilter",
   },
   {
@@ -3751,7 +3724,7 @@ and some generated files.",
     "example": "cleanSource ./.",
     "fn_type": null,
     "id": "lib.sources.cleanSource",
-    "line": 65,
+    "line": 49,
     "name": "cleanSource",
   },
   {
@@ -3772,7 +3745,7 @@ builtins.filterSource f (builtins.filterSource g ./.)
 # Fails!",
     "fn_type": null,
     "id": "lib.sources.cleanSourceWith",
-    "line": 86,
+    "line": 70,
     "name": "cleanSourceWith",
   },
   {
@@ -3781,7 +3754,7 @@ builtins.filterSource f (builtins.filterSource g ./.)
     "example": null,
     "fn_type": "sources.trace :: sourceLike -> Source",
     "id": "lib.sources.trace",
-    "line": 114,
+    "line": 98,
     "name": "trace",
   },
   {
@@ -3790,7 +3763,7 @@ builtins.filterSource f (builtins.filterSource g ./.)
     "example": "src = sourceByRegex ./my-subproject [".*\\.py$" "^database.sql$"]",
     "fn_type": null,
     "id": "lib.sources.sourceByRegex",
-    "line": 137,
+    "line": 121,
     "name": "sourceByRegex",
   },
   {
@@ -3802,7 +3775,7 @@ any suffix. The result of the example below will include files like
     "example": "sourceFilesBySuffices ./. [ ".xml" ".c" ]",
     "fn_type": "sourceLike -> [String] -> Source",
     "id": "lib.sources.sourceFilesBySuffices",
-    "line": 159,
+    "line": 143,
     "name": "sourceFilesBySuffices",
   },
   {
@@ -3811,7 +3784,7 @@ any suffix. The result of the example below will include files like
     "example": "commitIdFromGitRepo <nixpkgs/.git>",
     "fn_type": null,
     "id": "lib.sources.commitIdFromGitRepo",
-    "line": 176,
+    "line": 160,
     "name": "commitIdFromGitRepo",
   },
   {
@@ -3887,16 +3860,17 @@ mkPackageOption pkgs [ "python39Packages" "pytorch" ] {
 => { _type = "option"; default = «derivation /nix/store/gvqgsnc4fif9whvwd9ppa568yxbkmvk8-python3.9-pytorch-1.10.2.drv»; defaultText = { ... }; description = "The pytorch package to use. This is an example and doesn't actually do anything."; type = { ... }; }",
     "fn_type": "mkPackageOption :: pkgs -> (string|[string]) -> { default? :: [string], example? :: null|string|[string], extraDescription? :: string } -> option",
     "id": "lib.options.mkPackageOption",
-    "line": 152,
+    "line": 149,
     "name": "mkPackageOption",
   },
   {
     "category": "./lib/options.nix",
-    "description": "Like mkPackageOption, but emit an mdDoc description instead of DocBook.",
+    "description": "Alias of mkPackageOption. Previously used to create options with markdown
+    documentation, which is no longer required.",
     "example": null,
     "fn_type": null,
     "id": "lib.options.mkPackageOptionMD",
-    "line": 182,
+    "line": 188,
     "name": "mkPackageOptionMD",
   },
   {
@@ -3909,7 +3883,7 @@ mkPackageOption pkgs [ "python39Packages" "pytorch" ] {
     "example": null,
     "fn_type": null,
     "id": "lib.options.mkSinkUndeclaredOptions",
-    "line": 191,
+    "line": 195,
     "name": "mkSinkUndeclaredOptions",
   },
   {
@@ -3918,7 +3892,7 @@ mkPackageOption pkgs [ "python39Packages" "pytorch" ] {
     "example": null,
     "fn_type": null,
     "id": "lib.options.mergeEqualOption",
-    "line": 224,
+    "line": 228,
     "name": "mergeEqualOption",
   },
   {
@@ -3928,7 +3902,7 @@ mkPackageOption pkgs [ "python39Packages" "pytorch" ] {
 getValues [ ]                               // => [ ]",
     "fn_type": "getValues :: [ { value :: a; } ] -> [a]",
     "id": "lib.options.getValues",
-    "line": 244,
+    "line": 248,
     "name": "getValues",
   },
   {
@@ -3938,7 +3912,7 @@ getValues [ ]                               // => [ ]",
 getFiles [ ]                                         // => [ ]",
     "fn_type": "getFiles :: [ { file :: a; } ] -> [a]",
     "id": "lib.options.getFiles",
-    "line": 254,
+    "line": 258,
     "name": "getFiles",
   },
   {
@@ -3956,7 +3930,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.scrubOptionValue",
-    "line": 312,
+    "line": 316,
     "name": "scrubOptionValue",
   },
   {
@@ -3966,7 +3940,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.renderOptionValue",
-    "line": 323,
+    "line": 327,
     "name": "renderOptionValue",
   },
   {
@@ -3978,28 +3952,17 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.literalExpression",
-    "line": 336,
+    "line": 340,
     "name": "literalExpression",
   },
   {
     "category": "./lib/options.nix",
-    "description": "For use in the \`defaultText\` and \`example\` option attributes. Causes the
-    given DocBook text to be inserted verbatim in the documentation, for when
-    a \`literalExpression\` would be too hard to read.",
-    "example": null,
-    "fn_type": null,
-    "id": "lib.options.literalDocBook",
-    "line": 347,
-    "name": "literalDocBook",
-  },
-  {
-    "category": "./lib/options.nix",
     "description": "Transition marker for documentation that's already migrated to markdown
-    syntax.",
+    syntax. This is a no-op and no longer needed.",
     "example": null,
     "fn_type": null,
     "id": "lib.options.mdDoc",
-    "line": 357,
+    "line": 349,
     "name": "mdDoc",
   },
   {
@@ -4010,7 +3973,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.options.literalMD",
-    "line": 365,
+    "line": 355,
     "name": "literalMD",
   },
   {
@@ -4026,49 +3989,23 @@ getFiles [ ]                                         // => [ ]",
 (showOption ["foo" "<name>" "bar"]) == "foo.<name>.bar"",
     "fn_type": null,
     "id": "lib.options.showOption",
-    "line": 383,
+    "line": 373,
     "name": "showOption",
   },
   {
     "category": "./lib/modules.nix",
-    "description": "Evaluate a set of modules.  The result is a set with the attributes:
+    "description": "See https://nixos.org/manual/nixpkgs/unstable/#module-system-lib-evalModules
+    or file://./../doc/module-system/module-system.chapter.md
 
-  ‘options’: The nested set of all option declarations,
-
-  ‘config’: The nested set of all option values.
-
-  ‘type’: A module system type representing the module set as a submodule,
-        to be extended by configuration from the containing module set.
-
-        This is also available as the module argument ‘moduleType’.
-
-  ‘extendModules’: A function similar to ‘evalModules’ but building on top
-        of the module set. Its arguments, ‘modules’ and ‘specialArgs’ are
-        added to the existing values.
-
-        Using ‘extendModules’ a few times has no performance impact as long
-        as you only reference the final ‘options’ and ‘config’.
-        If you do reference multiple ‘config’ (or ‘options’) from before and
-        after ‘extendModules’, performance is the same as with multiple
-        ‘evalModules’ invocations, because the new modules' ability to
-        override existing configuration fundamentally requires a new
-        fixpoint to be constructed.
-
-        This is also available as a module argument.
-
-  ‘_module’: A portion of the configuration tree which is elided from
-        ‘config’. It contains some values that are mostly internal to the
-        module system implementation.
-
- !!! Please think twice before adding to this argument list! The more
- that is specified here instead of in the modules themselves the harder
- it is to transparently move a set of modules to be a submodule of another
- config (as the proper arguments need to be replicated at each call to
- evalModules) and the less declarative the module set is.",
+    !!! Please think twice before adding to this argument list! The more
+    that is specified here instead of in the modules themselves the harder
+    it is to transparently move a set of modules to be a submodule of another
+    config (as the proper arguments need to be replicated at each call to
+    evalModules) and the less declarative the module set is.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.evalModules",
-    "line": 107,
+    "line": 73,
     "name": "evalModules",
   },
   {
@@ -4099,7 +4036,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.collectStructuredModules",
-    "line": 398,
+    "line": 390,
     "name": "collectStructuredModules",
   },
   {
@@ -4108,7 +4045,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.setDefaultModuleLocation",
-    "line": 454,
+    "line": 447,
     "name": "setDefaultModuleLocation",
   },
   {
@@ -4118,7 +4055,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.unifyModuleSyntax",
-    "line": 461,
+    "line": 452,
     "name": "unifyModuleSyntax",
   },
   {
@@ -4146,7 +4083,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mergeModules",
-    "line": 541,
+    "line": 536,
     "name": "mergeModules",
   },
   {
@@ -4174,7 +4111,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.byName",
-    "line": 568,
+    "line": 563,
     "name": "byName",
   },
   {
@@ -4193,7 +4130,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mergeOptionDecls",
-    "line": 698,
+    "line": 693,
     "name": "mergeOptionDecls",
   },
   {
@@ -4203,7 +4140,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.evalOptionValue",
-    "line": 730,
+    "line": 725,
     "name": "evalOptionValue",
   },
   {
@@ -4225,7 +4162,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.pushDownProperties",
-    "line": 825,
+    "line": 821,
     "name": "pushDownProperties",
   },
   {
@@ -4242,7 +4179,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.dischargeProperties",
-    "line": 846,
+    "line": 841,
     "name": "dischargeProperties",
   },
   {
@@ -4268,7 +4205,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.filterOverrides",
-    "line": 880,
+    "line": 875,
     "name": "filterOverrides",
   },
   {
@@ -4279,8 +4216,20 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.sortProperties",
-    "line": 895,
+    "line": 891,
     "name": "sortProperties",
+  },
+  {
+    "category": "./lib/modules.nix",
+    "description": "Merge an option's definitions in a way that preserves the priority of the
+individual attributes in the option value.
+
+This does not account for all option semantics, such as readOnly.",
+    "example": null,
+    "fn_type": "option -> attrsOf { highestPrio, value }",
+    "id": "lib.modules.mergeAttrDefinitionsWithPrio",
+    "line": 918,
+    "name": "mergeAttrDefinitionsWithPrio",
   },
   {
     "category": "./lib/modules.nix",
@@ -4288,7 +4237,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkIf",
-    "line": 917,
+    "line": 945,
     "name": "mkIf",
   },
   {
@@ -4297,7 +4246,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.fixMergeModules",
-    "line": 992,
+    "line": 1020,
     "name": "fixMergeModules",
   },
   {
@@ -4316,7 +4265,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRemovedOptionModule",
-    "line": 1006,
+    "line": 1036,
     "name": "mkRemovedOptionModule",
   },
   {
@@ -4336,7 +4285,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRenamedOptionModule",
-    "line": 1037,
+    "line": 1065,
     "name": "mkRenamedOptionModule",
   },
   {
@@ -4371,7 +4320,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkMergedOptionModule",
-    "line": 1091,
+    "line": 1120,
     "name": "mkMergedOptionModule",
   },
   {
@@ -4401,7 +4350,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkChangedOptionModule",
-    "line": 1138,
+    "line": 1167,
     "name": "mkChangedOptionModule",
   },
   {
@@ -4410,16 +4359,18 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModule",
-    "line": 1146,
+    "line": 1172,
     "name": "mkAliasOptionModule",
   },
   {
     "category": "./lib/modules.nix",
-    "description": "Transitional version of mkAliasOptionModule that uses MD docs.",
+    "description": "Transitional version of mkAliasOptionModule that uses MD docs.
+
+    This function is no longer necessary and merely an alias of \`mkAliasOptionModule\`.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModuleMD",
-    "line": 1152,
+    "line": 1183,
     "name": "mkAliasOptionModuleMD",
   },
   {
@@ -4435,7 +4386,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkDerivedConfig",
-    "line": 1175,
+    "line": 1200,
     "name": "mkDerivedConfig",
   },
   {
@@ -4446,7 +4397,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.importJSON",
-    "line": 1213,
+    "line": 1236,
     "name": "importJSON",
   },
   {
@@ -4457,7 +4408,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.importTOML",
-    "line": null,
+    "line": 1245,
     "name": "importTOML",
   },
   {
@@ -4804,7 +4755,7 @@ any isString [ 1 { } ]
 => false",
     "fn_type": "any :: (a -> bool) -> [a] -> bool",
     "id": "lib.lists.any",
-    "line": 215,
+    "line": 245,
     "name": "any",
   },
   {
@@ -4817,7 +4768,7 @@ all (x: x < 3) [ 1 2 3 ]
 => false",
     "fn_type": "all :: (a -> bool) -> [a] -> bool",
     "id": "lib.lists.all",
-    "line": 228,
+    "line": 258,
     "name": "all",
   },
   {
@@ -4828,7 +4779,7 @@ all (x: x < 3) [ 1 2 3 ]
 => 2",
     "fn_type": "count :: (a -> bool) -> [a] -> int",
     "id": "lib.lists.count",
-    "line": 240,
+    "line": 270,
     "name": "count",
   },
   {
@@ -4842,7 +4793,7 @@ optional false "foo"
 => [ ]",
     "fn_type": "optional :: bool -> a -> [a]",
     "id": "lib.lists.optional",
-    "line": 255,
+    "line": 285,
     "name": "optional",
   },
   {
@@ -4854,7 +4805,7 @@ optionals false [ 2 3 ]
 => [ ]",
     "fn_type": "optionals :: bool -> [a] -> [a]",
     "id": "lib.lists.optionals",
-    "line": 267,
+    "line": 297,
     "name": "optionals",
   },
   {
@@ -4868,7 +4819,7 @@ toList "hi"
 => [ "hi "]",
     "fn_type": null,
     "id": "lib.lists.toList",
-    "line": 284,
+    "line": 314,
     "name": "toList",
   },
   {
@@ -4880,7 +4831,7 @@ range 3 2
 => [ ]",
     "fn_type": "range :: int -> int -> [int]",
     "id": "lib.lists.range",
-    "line": 297,
+    "line": 327,
     "name": "range",
   },
   {
@@ -4892,7 +4843,7 @@ replicate 2 true
 => [ true true ]",
     "fn_type": "replicate :: int -> a -> [a]",
     "id": "lib.lists.replicate",
-    "line": 316,
+    "line": 346,
     "name": "replicate",
   },
   {
@@ -4903,7 +4854,7 @@ replicate 2 true
 => { right = [ 5 3 4 ]; wrong = [ 1 2 ]; }",
     "fn_type": "(a -> bool) -> [a] -> { right :: [a]; wrong :: [a]; }",
     "id": "lib.lists.partition",
-    "line": 327,
+    "line": 357,
     "name": "partition",
   },
   {
@@ -4929,7 +4880,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => { true = 12; false = 3; }",
     "fn_type": null,
     "id": "lib.lists.groupBy'",
-    "line": 356,
+    "line": 386,
     "name": "groupBy'",
   },
   {
@@ -4941,7 +4892,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => ["he" "lo"]",
     "fn_type": "zipListsWith :: (a -> b -> c) -> [a] -> [b] -> [c]",
     "id": "lib.lists.zipListsWith",
-    "line": 376,
+    "line": 406,
     "name": "zipListsWith",
   },
   {
@@ -4952,7 +4903,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => [ { fst = 1; snd = "a"; } { fst = 2; snd = "b"; } ]",
     "fn_type": "zipLists :: [a] -> [b] -> [{ fst :: a; snd :: b; }]",
     "id": "lib.lists.zipLists",
-    "line": 395,
+    "line": 425,
     "name": "zipLists",
   },
   {
@@ -4962,7 +4913,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => [ "j" "o" "b" ]",
     "fn_type": "reverseList :: [a] -> [a]",
     "id": "lib.lists.reverseList",
-    "line": 406,
+    "line": 436,
     "name": "reverseList",
   },
   {
@@ -4984,7 +4935,7 @@ listDfs true hasPrefix [ "/home/user" "other" "/" "/home" "/" ]
        rest    = [ "/home" "other" ];  # everything else",
     "fn_type": null,
     "id": "lib.lists.listDfs",
-    "line": 428,
+    "line": 458,
     "name": "listDfs",
   },
   {
@@ -5008,7 +4959,7 @@ toposort hasPrefix [ "other" "/home/user" "/home" "/" ]
 toposort (a: b: a < b) [ 3 2 1 ] == { result = [ 1 2 3 ]; }",
     "fn_type": null,
     "id": "lib.lists.toposort",
-    "line": 467,
+    "line": 497,
     "name": "toposort",
   },
   {
@@ -5021,7 +4972,7 @@ toposort (a: b: a < b) [ 3 2 1 ] == { result = [ 1 2 3 ]; }",
 => [ 3 5 7 ]",
     "fn_type": null,
     "id": "lib.lists.sort",
-    "line": 495,
+    "line": 525,
     "name": "sort",
   },
   {
@@ -5037,7 +4988,7 @@ compareLists compare [ "a" "b" ] [ "a" "c" ]
 => -1",
     "fn_type": null,
     "id": "lib.lists.compareLists",
-    "line": 524,
+    "line": 554,
     "name": "compareLists",
   },
   {
@@ -5052,7 +5003,7 @@ naturalSort ["v0.2" "v0.15" "v0.0.9"]
 => [ "v0.0.9" "v0.2" "v0.15" ]",
     "fn_type": null,
     "id": "lib.lists.naturalSort",
-    "line": 547,
+    "line": 577,
     "name": "naturalSort",
   },
   {
@@ -5064,7 +5015,7 @@ take 2 [ ]
 => [ ]",
     "fn_type": "take :: int -> [a] -> [a]",
     "id": "lib.lists.take",
-    "line": 566,
+    "line": 596,
     "name": "take",
   },
   {
@@ -5076,7 +5027,7 @@ drop 2 [ ]
 => [ ]",
     "fn_type": "drop :: int -> [a] -> [a]",
     "id": "lib.lists.drop",
-    "line": 580,
+    "line": 610,
     "name": "drop",
   },
   {
@@ -5089,7 +5040,7 @@ sublist 1 3 [ ]
 => [ ]",
     "fn_type": "sublist :: int -> int -> [a] -> [a]",
     "id": "lib.lists.sublist",
-    "line": 596,
+    "line": 626,
     "name": "sublist",
   },
   {
@@ -5101,7 +5052,7 @@ sublist 1 3 [ ]
 => 3",
     "fn_type": "last :: [a] -> a",
     "id": "lib.lists.last",
-    "line": 620,
+    "line": 650,
     "name": "last",
   },
   {
@@ -5113,7 +5064,7 @@ sublist 1 3 [ ]
 => [ 1 2 ]",
     "fn_type": "init :: [a] -> [a]",
     "id": "lib.lists.init",
-    "line": 634,
+    "line": 664,
     "name": "init",
   },
   {
@@ -5123,7 +5074,7 @@ sublist 1 3 [ ]
 => [ "13" "14" "23" "24" ]",
     "fn_type": null,
     "id": "lib.lists.crossLists",
-    "line": 645,
+    "line": 675,
     "name": "crossLists",
   },
   {
@@ -5133,7 +5084,7 @@ sublist 1 3 [ ]
 => [ 3 2 4 ]",
     "fn_type": "unique :: [a] -> [a]",
     "id": "lib.lists.unique",
-    "line": 658,
+    "line": 688,
     "name": "unique",
   },
   {
@@ -5143,7 +5094,7 @@ sublist 1 3 [ ]
 => [ 3 2 ]",
     "fn_type": null,
     "id": "lib.lists.intersectLists",
-    "line": 666,
+    "line": 696,
     "name": "intersectLists",
   },
   {
@@ -5153,7 +5104,7 @@ sublist 1 3 [ ]
 => [ 1 4 5 ]",
     "fn_type": null,
     "id": "lib.lists.subtractLists",
-    "line": 674,
+    "line": 704,
     "name": "subtractLists",
   },
   {
@@ -5163,7 +5114,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.lists.mutuallyExclusive",
-    "line": 679,
+    "line": 709,
     "name": "mutuallyExclusive",
   },
   {
@@ -5183,7 +5134,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.kernel.whenHelpers",
-    "line": 19,
+    "line": 20,
     "name": "whenHelpers",
   },
   {
@@ -5357,8 +5308,97 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toDhall",
-    "line": 409,
+    "line": 411,
     "name": "toDhall",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Translate a simple Nix expression to Lua representation with occasional
+Lua-inlines that can be constructed by mkLuaInline function.
+
+Configuration:
+  * multiline - by default is true which results in indented block-like view.
+  * indent - initial indent.
+  * asBindings - by default generate single value, but with this use attrset to set global vars.
+
+Attention:
+  Regardless of multiline parameter there is no trailing newline.",
+    "example": "generators.toLua {}
+  {
+    cmd = [ "typescript-language-server" "--stdio" ];
+    settings.workspace.library = mkLuaInline ''vim.api.nvim_get_runtime_file("", true)'';
+  }
+->
+ {
+   ["cmd"] = {
+     "typescript-language-server",
+     "--stdio"
+   },
+   ["settings"] = {
+     ["workspace"] = {
+       ["library"] = (vim.api.nvim_get_runtime_file("", true))
+     }
+   }
+ }",
+    "fn_type": "toLua :: AttrSet -> Any -> String",
+    "id": "lib.generators.toLua",
+    "line": 467,
+    "name": "toLua",
+  },
+  {
+    "category": "./lib/generators.nix",
+    "description": "Mark string as Lua expression to be inlined when processed by toLua.",
+    "example": null,
+    "fn_type": "mkLuaInline :: String -> AttrSet",
+    "id": "lib.generators.mkLuaInline",
+    "line": 525,
+    "name": "mkLuaInline",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "The type of a path. The path needs to exist and be accessible.
+The result is either "directory" for a directory, "regular" for a regular file, "symlink" for a symlink, or "unknown" for anything else.",
+    "example": "pathType /.
+=> "directory"
+
+pathType /some/file.nix
+=> "regular"",
+    "fn_type": "pathType :: Path -> String",
+    "id": "lib.filesystem.pathType",
+    "line": 33,
+    "name": "pathType",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "Whether a path exists and is a directory.",
+    "example": "pathIsDirectory /.
+=> true
+
+pathIsDirectory /this/does/not/exist
+=> false
+
+pathIsDirectory /some/file.nix
+=> false",
+    "fn_type": "pathIsDirectory :: Path -> Bool",
+    "id": "lib.filesystem.pathIsDirectory",
+    "line": 65,
+    "name": "pathIsDirectory",
+  },
+  {
+    "category": "./lib/filesystem.nix",
+    "description": "Whether a path exists and is a regular file, meaning not a symlink or any other special file type.",
+    "example": "pathIsRegularFile /.
+=> false
+
+pathIsRegularFile /this/does/not/exist
+=> false
+
+pathIsRegularFile /some/file.nix
+=> true",
+    "fn_type": "pathIsRegularFile :: Path -> Bool",
+    "id": "lib.filesystem.pathIsRegularFile",
+    "line": 84,
+    "name": "pathIsRegularFile",
   },
   {
     "category": "./lib/filesystem.nix",
@@ -5368,7 +5408,7 @@ directory itself.",
     "example": null,
     "fn_type": "Path -> Map String Path",
     "id": "lib.filesystem.haskellPathsInDir",
-    "line": 18,
+    "line": 94,
     "name": "haskellPathsInDir",
   },
   {
@@ -5379,7 +5419,7 @@ Returns 'null' if no directories contain a file matching 'pattern'.",
     "example": null,
     "fn_type": "RegExp -> Path -> Nullable { path : Path; matches : [ MatchResults ]; }",
     "id": "lib.filesystem.locateDominatingFile",
-    "line": 41,
+    "line": 117,
     "name": "locateDominatingFile",
   },
   {
@@ -5388,7 +5428,7 @@ Returns 'null' if no directories contain a file matching 'pattern'.",
     "example": null,
     "fn_type": "Path -> [ Path ]",
     "id": "lib.filesystem.listFilesRecursive",
-    "line": 69,
+    "line": 145,
     "name": "listFilesRecursive",
   },
   {
@@ -5419,7 +5459,7 @@ In the following expressions, \`derivation\` will _not_ be evaluated:
 
     (lazyDerivation { inherit derivation; meta.foo = true; }).meta
 
-In these expressions, it \`derivation\` _will_ be evaluated:
+In these expressions, \`derivation\` _will_ be evaluated:
 
     "\${lazyDerivation { inherit derivation }}"
 
@@ -5464,7 +5504,7 @@ trace: hello
 => 3",
     "fn_type": "traceIf :: bool -> string -> a -> a",
     "id": "lib.debug.traceIf",
-    "line": 51,
+    "line": 44,
     "name": "traceIf",
   },
   {
@@ -5476,7 +5516,7 @@ trace: mystring foo
 => "foo"",
     "fn_type": "traceValFn :: (a -> b) -> a -> a",
     "id": "lib.debug.traceValFn",
-    "line": 69,
+    "line": 62,
     "name": "traceValFn",
   },
   {
@@ -5487,7 +5527,7 @@ trace: mystring foo
 => 42",
     "fn_type": "traceVal :: a -> a",
     "id": "lib.debug.traceVal",
-    "line": 84,
+    "line": 77,
     "name": "traceVal",
   },
   {
@@ -5501,7 +5541,7 @@ trace: { a = { b = { c = 3; }; }; }
 => null",
     "fn_type": "traceSeq :: a -> b -> b",
     "id": "lib.debug.traceSeq",
-    "line": 98,
+    "line": 91,
     "name": "traceSeq",
   },
   {
@@ -5514,7 +5554,7 @@ trace: { a = { b = {…}; }; }
 => null",
     "fn_type": "traceSeqN :: Int -> a -> b -> b",
     "id": "lib.debug.traceSeqN",
-    "line": 115,
+    "line": 108,
     "name": "traceSeqN",
   },
   {
@@ -5525,7 +5565,7 @@ trace: { a = { b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.debug.traceValSeqFn",
-    "line": 132,
+    "line": 125,
     "name": "traceValSeqFn",
   },
   {
@@ -5534,7 +5574,7 @@ trace: { a = { b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.debug.traceValSeq",
-    "line": 139,
+    "line": 132,
     "name": "traceValSeq",
   },
   {
@@ -5544,7 +5584,7 @@ trace: { a = { b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.debug.traceValSeqNFn",
-    "line": 143,
+    "line": 136,
     "name": "traceValSeqNFn",
   },
   {
@@ -5553,7 +5593,7 @@ trace: { a = { b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.debug.traceValSeqN",
-    "line": 151,
+    "line": 144,
     "name": "traceValSeqN",
   },
   {
@@ -5568,7 +5608,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
 => { a.b.c = 3; }",
     "fn_type": null,
     "id": "lib.debug.traceFnSeqN",
-    "line": 164,
+    "line": 157,
     "name": "traceFnSeqN",
   },
   {
@@ -5626,7 +5666,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
   }
 ]",
     "id": "lib.debug.runTests",
-    "line": 237,
+    "line": 230,
     "name": "runTests",
   },
   {
@@ -5635,7 +5675,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": "{ testX = allTrue [ true ]; }",
     "fn_type": null,
     "id": "lib.debug.testAllTrue",
-    "line": 252,
+    "line": 245,
     "name": "testAllTrue",
   },
   {
@@ -5700,7 +5740,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeOverridable",
-    "line": 78,
+    "line": 72,
     "name": "makeOverridable",
   },
   {
@@ -5728,7 +5768,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.callPackageWith",
-    "line": 128,
+    "line": 122,
     "name": "callPackageWith",
   },
   {
@@ -5739,7 +5779,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.callPackagesWith",
-    "line": 185,
+    "line": 179,
     "name": "callPackagesWith",
   },
   {
@@ -5749,7 +5789,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.extendDerivation",
-    "line": 202,
+    "line": 196,
     "name": "extendDerivation",
   },
   {
@@ -5761,7 +5801,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.hydraJob",
-    "line": 236,
+    "line": 230,
     "name": "hydraJob",
   },
   {
@@ -5778,7 +5818,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeScope",
-    "line": 274,
+    "line": 268,
     "name": "makeScope",
   },
   {
@@ -5788,7 +5828,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeScopeWithSplicing",
-    "line": 288,
+    "line": 282,
     "name": "makeScopeWithSplicing",
   },
   {
@@ -5943,7 +5983,7 @@ getAttrFromPath ["z" "z"] x
 => { a = { b = { d = 1; }; }; x = { y = "xy"; }; }",
     "fn_type": "updateManyAttrsByPath :: [{ path :: [String]; update :: (Any -> Any); }] -> AttrSet -> AttrSet",
     "id": "lib.attrsets.updateManyAttrsByPath",
-    "line": 173,
+    "line": 177,
     "name": "updateManyAttrsByPath",
   },
   {
@@ -5953,7 +5993,7 @@ getAttrFromPath ["z" "z"] x
 => [as.a as.b as.c]",
     "fn_type": "attrVals :: [String] -> AttrSet -> [Any]",
     "id": "lib.attrsets.attrVals",
-    "line": 241,
+    "line": 245,
     "name": "attrVals",
   },
   {
@@ -5964,7 +6004,7 @@ getAttrFromPath ["z" "z"] x
 => [1 2 3]",
     "fn_type": "attrValues :: AttrSet -> [Any]",
     "id": "lib.attrsets.attrValues",
-    "line": 258,
+    "line": 262,
     "name": "attrValues",
   },
   {
@@ -5975,7 +6015,7 @@ getAttrFromPath ["z" "z"] x
 => { a = 1; b = 2; }",
     "fn_type": "getAttrs :: [String] -> AttrSet -> AttrSet",
     "id": "lib.attrsets.getAttrs",
-    "line": 271,
+    "line": 275,
     "name": "getAttrs",
   },
   {
@@ -5986,7 +6026,7 @@ getAttrFromPath ["z" "z"] x
 => [1 2]",
     "fn_type": "catAttrs :: String -> [AttrSet] -> [Any]",
     "id": "lib.attrsets.catAttrs",
-    "line": 287,
+    "line": 291,
     "name": "catAttrs",
   },
   {
@@ -5997,7 +6037,7 @@ getAttrFromPath ["z" "z"] x
 => { foo = 1; }",
     "fn_type": "filterAttrs :: (String -> Any -> Bool) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.filterAttrs",
-    "line": 301,
+    "line": 305,
     "name": "filterAttrs",
   },
   {
@@ -6008,7 +6048,7 @@ getAttrFromPath ["z" "z"] x
 => { foo = {}; }",
     "fn_type": "filterAttrsRecursive :: (String -> Any -> Bool) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.filterAttrsRecursive",
-    "line": 319,
+    "line": 323,
     "name": "filterAttrsRecursive",
   },
   {
@@ -6062,7 +6102,7 @@ foldlAttrs
   121",
     "fn_type": "foldlAttrs :: ( a -> String -> b -> a ) -> a -> { ... :: b } -> a",
     "id": "lib.attrsets.foldlAttrs",
-    "line": 390,
+    "line": 394,
     "name": "foldlAttrs",
   },
   {
@@ -6072,7 +6112,7 @@ foldlAttrs
 => { a = [ 2 3 ]; }",
     "fn_type": "foldAttrs :: (Any -> Any -> Any) -> Any -> [AttrSets] -> Any",
     "id": "lib.attrsets.foldAttrs",
-    "line": 406,
+    "line": 410,
     "name": "foldAttrs",
   },
   {
@@ -6088,7 +6128,7 @@ collect (x: x ? outPath)
 => [{ outPath = "a/"; } { outPath = "b/"; }]",
     "fn_type": "collect :: (AttrSet -> Bool) -> AttrSet -> [x]",
     "id": "lib.attrsets.collect",
-    "line": 435,
+    "line": 439,
     "name": "collect",
   },
   {
@@ -6103,7 +6143,7 @@ collect (x: x ? outPath)
    ]",
     "fn_type": "cartesianProductOfSets :: AttrSet -> [AttrSet]",
     "id": "lib.attrsets.cartesianProductOfSets",
-    "line": 460,
+    "line": 464,
     "name": "cartesianProductOfSets",
   },
   {
@@ -6113,7 +6153,7 @@ collect (x: x ? outPath)
 => { name = "some"; value = 6; }",
     "fn_type": "nameValuePair :: String -> Any -> { name :: String; value :: Any; }",
     "id": "lib.attrsets.nameValuePair",
-    "line": 479,
+    "line": 483,
     "name": "nameValuePair",
   },
   {
@@ -6124,7 +6164,7 @@ collect (x: x ? outPath)
 => { x = "x-foo"; y = "y-bar"; }",
     "fn_type": "mapAttrs :: (String -> Any -> Any) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.mapAttrs",
-    "line": 497,
+    "line": 501,
     "name": "mapAttrs",
   },
   {
@@ -6137,7 +6177,7 @@ collect (x: x ? outPath)
 => { foo_x = "bar-a"; foo_y = "bar-b"; }",
     "fn_type": "mapAttrs' :: (String -> Any -> { name :: String; value :: Any; }) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.mapAttrs'",
-    "line": 514,
+    "line": 518,
     "name": "mapAttrs'",
   },
   {
@@ -6149,7 +6189,7 @@ collect (x: x ? outPath)
 => [ "xa" "yb" ]",
     "fn_type": "mapAttrsToList :: (String -> a -> b) -> AttrSet -> [b]",
     "id": "lib.attrsets.mapAttrsToList",
-    "line": 534,
+    "line": 538,
     "name": "mapAttrsToList",
   },
   {
@@ -6167,7 +6207,7 @@ collect (x: x ? outPath)
 => { n = { a = "n-a-A"; m = { b = "n-m-b-B"; c = "n-m-c-C"; }; }; d = "d-D"; }",
     "fn_type": "mapAttrsRecursive :: ([String] -> a -> b) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.mapAttrsRecursive",
-    "line": 559,
+    "line": 563,
     "name": "mapAttrsRecursive",
   },
   {
@@ -6185,7 +6225,7 @@ mapAttrsRecursiveCond
   attrs",
     "fn_type": "mapAttrsRecursiveCond :: (AttrSet -> Bool) -> ([String] -> a -> b) -> AttrSet -> AttrSet",
     "id": "lib.attrsets.mapAttrsRecursiveCond",
-    "line": 584,
+    "line": 588,
     "name": "mapAttrsRecursiveCond",
   },
   {
@@ -6196,7 +6236,7 @@ mapAttrsRecursiveCond
 => { foo = "x_foo"; bar = "x_bar"; }",
     "fn_type": "genAttrs :: [ String ] -> (String -> Any) -> AttrSet",
     "id": "lib.attrsets.genAttrs",
-    "line": 613,
+    "line": 617,
     "name": "genAttrs",
   },
   {
@@ -6210,7 +6250,7 @@ isDerivation "foobar"
 => false",
     "fn_type": "isDerivation :: Any -> Bool",
     "id": "lib.attrsets.isDerivation",
-    "line": 634,
+    "line": 638,
     "name": "isDerivation",
   },
   {
@@ -6219,7 +6259,7 @@ isDerivation "foobar"
     "example": null,
     "fn_type": "toDerivation :: Path -> Derivation",
     "id": "lib.attrsets.toDerivation",
-    "line": 643,
+    "line": 647,
     "name": "toDerivation",
   },
   {
@@ -6232,7 +6272,7 @@ optionalAttrs (false) { my = "set"; }
 => { }",
     "fn_type": "optionalAttrs :: Bool -> AttrSet -> AttrSet",
     "id": "lib.attrsets.optionalAttrs",
-    "line": 671,
+    "line": 675,
     "name": "optionalAttrs",
   },
   {
@@ -6243,7 +6283,7 @@ optionalAttrs (false) { my = "set"; }
 => { a = ["x" "y"]; }",
     "fn_type": "zipAttrsWithNames :: [ String ] -> (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet",
     "id": "lib.attrsets.zipAttrsWithNames",
-    "line": 689,
+    "line": 693,
     "name": "zipAttrsWithNames",
   },
   {
@@ -6259,7 +6299,7 @@ optionalAttrs (false) { my = "set"; }
 => { a = ["x" "y"]; b = ["z"]; }",
     "fn_type": "zipAttrsWith :: (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet",
     "id": "lib.attrsets.zipAttrsWith",
-    "line": 717,
+    "line": 721,
     "name": "zipAttrsWith",
   },
   {
@@ -6271,7 +6311,7 @@ optionalAttrs (false) { my = "set"; }
 => { a = ["x" "y"]; b = ["z"]; }",
     "fn_type": "zipAttrs :: [ AttrSet ] -> AttrSet",
     "id": "lib.attrsets.zipAttrs",
-    "line": 732,
+    "line": 736,
     "name": "zipAttrs",
   },
   {
@@ -6302,7 +6342,7 @@ optionalAttrs (false) { my = "set"; }
 }",
     "fn_type": "recursiveUpdateUntil :: ( [ String ] -> AttrSet -> AttrSet -> Bool ) -> AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.recursiveUpdateUntil",
-    "line": 768,
+    "line": 772,
     "name": "recursiveUpdateUntil",
   },
   {
@@ -6324,7 +6364,7 @@ returns: {
 }",
     "fn_type": "recursiveUpdate :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.recursiveUpdate",
-    "line": 808,
+    "line": 812,
     "name": "recursiveUpdate",
   },
   {
@@ -6334,7 +6374,7 @@ returns: {
 => true",
     "fn_type": "matchAttrs :: AttrSet -> AttrSet -> Bool",
     "id": "lib.attrsets.matchAttrs",
-    "line": 825,
+    "line": 829,
     "name": "matchAttrs",
   },
   {
@@ -6349,7 +6389,7 @@ overrideExisting { a = 3; b = 2; } { a = 1; }
 => { a = 1; b = 2; }",
     "fn_type": "overrideExisting :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.overrideExisting",
-    "line": 853,
+    "line": 857,
     "name": "overrideExisting",
   },
   {
@@ -6364,7 +6404,7 @@ showAttrPath []
 => "<root attribute path>"",
     "fn_type": "showAttrPath :: [String] -> String",
     "id": "lib.attrsets.showAttrPath",
-    "line": 875,
+    "line": 879,
     "name": "showAttrPath",
   },
   {
@@ -6375,7 +6415,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
     "fn_type": "getOutput :: String -> Derivation -> String",
     "id": "lib.attrsets.getOutput",
-    "line": 892,
+    "line": 896,
     "name": "getOutput",
   },
   {
@@ -6386,7 +6426,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r"",
     "fn_type": "getBin :: Derivation -> String",
     "id": "lib.attrsets.getBin",
-    "line": 907,
+    "line": 911,
     "name": "getBin",
   },
   {
@@ -6397,7 +6437,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib"",
     "fn_type": "getLib :: Derivation -> String",
     "id": "lib.attrsets.getLib",
-    "line": 920,
+    "line": 924,
     "name": "getLib",
   },
   {
@@ -6408,7 +6448,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
     "fn_type": "getDev :: Derivation -> String",
     "id": "lib.attrsets.getDev",
-    "line": 933,
+    "line": 937,
     "name": "getDev",
   },
   {
@@ -6419,7 +6459,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man"",
     "fn_type": "getMan :: Derivation -> String",
     "id": "lib.attrsets.getMan",
-    "line": 946,
+    "line": 950,
     "name": "getMan",
   },
   {
@@ -6428,7 +6468,7 @@ showAttrPath []
     "example": null,
     "fn_type": "chooseDevOutputs :: [Derivation] -> [String]",
     "id": "lib.attrsets.chooseDevOutputs",
-    "line": 953,
+    "line": 957,
     "name": "chooseDevOutputs",
   },
   {
@@ -6446,7 +6486,7 @@ showAttrPath []
 }",
     "fn_type": "recurseIntoAttrs :: AttrSet -> AttrSet",
     "id": "lib.attrsets.recurseIntoAttrs",
-    "line": 976,
+    "line": 980,
     "name": "recurseIntoAttrs",
   },
   {
@@ -6455,7 +6495,7 @@ showAttrPath []
     "example": null,
     "fn_type": "dontRecurseIntoAttrs :: AttrSet -> AttrSet",
     "id": "lib.attrsets.dontRecurseIntoAttrs",
-    "line": 986,
+    "line": 990,
     "name": "dontRecurseIntoAttrs",
   },
   {
@@ -6467,7 +6507,7 @@ showAttrPath []
     "example": null,
     "fn_type": "unionOfDisjoint :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.unionOfDisjoint",
-    "line": 998,
+    "line": 1002,
     "name": "unionOfDisjoint",
   },
   {
@@ -6505,7 +6545,7 @@ stderr> ], but is: "libressl"",
 exports[`has not changed trivial-builders data 1`] = `
 [
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Run the shell command \`buildCommand' to produce a store path named
   \`name'.  The attributes in \`env' are added to the environment
   prior to running the command. By default \`runCommand\` runs in a
@@ -6528,12 +6568,12 @@ It is the same as adding the special fields
 
 to a derivation’s attributes.",
     "fn_type": null,
-    "id": "build-support.trivial-builders.runCommand",
+    "id": "trivial-builders.runCommand",
     "line": 38,
     "name": "runCommand",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Generalized version of the \`runCommand\`-variants
    which does customized behavior via a single
    attribute set passed as the first argument
@@ -6544,12 +6584,12 @@ to a derivation’s attributes.",
    \`stdenv.mkDerivation\`.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.runCommandWith",
+    "id": "trivial-builders.runCommandWith",
     "line": 69,
     "name": "runCommandWith",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to the nix store.
    The contents of text is added to the file in the store.",
     "example": "# Writes my-file to /nix/store/<store path>
@@ -6574,12 +6614,12 @@ writeTextFile {
   destination = "/bin/my-file";
 }",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeTextFile",
-    "line": 128,
+    "id": "trivial-builders.writeTextFile",
+    "line": 132,
     "name": "writeTextFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to nix store with no optional parameters available.",
     "example": "# Writes contents of file to /nix/store/<store path>
 writeText "my-file"
@@ -6587,12 +6627,12 @@ writeText "my-file"
   Contents of File
   '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeText",
-    "line": 173,
+    "id": "trivial-builders.writeText",
+    "line": 183,
     "name": "writeText",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to nix store in a specific directory with no
 optional parameters available.",
     "example": "# Writes contents of file to /nix/store/<store path>/share/my-file
@@ -6601,12 +6641,12 @@ writeTextDir "share/my-file"
  Contents of File
  '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeTextDir",
-    "line": 190,
+    "id": "trivial-builders.writeTextDir",
+    "line": 200,
     "name": "writeTextDir",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to /nix/store/<store path> and marks the file as
 executable.
 
@@ -6619,12 +6659,12 @@ writeScript "my-file"
   Contents of File
   '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeScript",
-    "line": 215,
+    "id": "trivial-builders.writeScript",
+    "line": 225,
     "name": "writeScript",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to /nix/store/<store path>/bin/<name> and
 marks the file as executable.",
     "example": "# Writes my-file to /nix/store/<store path>/bin/my-file and makes executable.
@@ -6633,12 +6673,12 @@ writeScriptBin "my-file"
   Contents of File
   '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeScriptBin",
-    "line": 233,
+    "id": "trivial-builders.writeScriptBin",
+    "line": 243,
     "name": "writeScriptBin",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Similar to writeScript. Writes a Shell script and checks its syntax.
 Automatically includes interpreter above the contents passed.",
     "example": "# Writes my-file to /nix/store/<store path> and makes executable.
@@ -6647,12 +6687,12 @@ writeShellScript "my-file"
   Contents of File
   '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeShellScript",
-    "line": 250,
+    "id": "trivial-builders.writeShellScript",
+    "line": 260,
     "name": "writeShellScript",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Similar to writeShellScript and writeScriptBin.
 Writes an executable Shell script to /nix/store/<store path>/bin/<name> and checks its syntax.
 Automatically includes interpreter above the contents passed.",
@@ -6662,12 +6702,12 @@ writeShellScriptBin "my-file"
   Contents of File
   '';",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeShellScriptBin",
-    "line": 279,
+    "id": "trivial-builders.writeShellScriptBin",
+    "line": 289,
     "name": "writeShellScriptBin",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Similar to writeShellScriptBin and writeScriptBin.
 Writes an executable Shell script to /nix/store/<store path>/bin/<name> and
 checks its syntax with shellcheck and the shell's -n option.
@@ -6688,12 +6728,12 @@ writeShellApplication {
    '';
 }",
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeShellApplication",
-    "line": 318,
+    "id": "trivial-builders.writeShellApplication",
+    "line": 328,
     "name": "writeShellApplication",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "concat a list of files to the nix store.
    The contents of files are added to the file in the store.",
     "example": "# Writes my-file to /nix/store/<store path>
@@ -6714,32 +6754,32 @@ concatTextFile {
   destination = "/bin/my-file";
 }",
     "fn_type": null,
-    "id": "build-support.trivial-builders.concatTextFile",
-    "line": 402,
+    "id": "trivial-builders.concatTextFile",
+    "line": 410,
     "name": "concatTextFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to nix store with no optional parameters available.",
     "example": "# Writes contents of files to /nix/store/<store path>
 concatText "my-file" [ file1 file2 ]",
     "fn_type": null,
-    "id": "build-support.trivial-builders.concatText",
-    "line": 436,
+    "id": "trivial-builders.concatText",
+    "line": 444,
     "name": "concatText",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Writes a text file to nix store with and mark it as executable.",
     "example": "# Writes contents of files to /nix/store/<store path>
 concatScript "my-file" [ file1 file2 ]",
     "fn_type": null,
-    "id": "build-support.trivial-builders.concatScript",
-    "line": 446,
+    "id": "trivial-builders.concatScript",
+    "line": 454,
     "name": "concatScript",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Create a forest of symlinks to the files in \`paths'.
 
 This creates a single derivation that replicates the directory structure
@@ -6788,12 +6828,12 @@ linkFarm is instead used to create a simple derivation with symlinks to
 other derivations.  A derivation created with linkFarm is often used in CI
 as a easy way to build multiple derivations at once.",
     "fn_type": null,
-    "id": "build-support.trivial-builders.symlinkJoin",
-    "line": 502,
+    "id": "trivial-builders.symlinkJoin",
+    "line": 510,
     "name": "symlinkJoin",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Quickly create a set of symlinks to derivations.
 
 This creates a simple derivation with symlinks to all inputs.
@@ -6819,12 +6859,12 @@ This creates a derivation with a directory structure like the following:
 
 See the note on symlinkJoin for the difference between linkFarm and symlinkJoin.",
     "fn_type": null,
-    "id": "build-support.trivial-builders.linkFarm",
-    "line": 555,
+    "id": "trivial-builders.linkFarm",
+    "line": 563,
     "name": "linkFarm",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Easily create a linkFarm from a set of derivations.
 
 This calls linkFarm with a list of entries created from the list of input
@@ -6841,23 +6881,23 @@ This creates a derivation with a directory structure like the following:
 |-- ghc-8.6.5 -> /nix/store/gnf3s07bglhbbk4y6m76sbh42siym0s6-ghc-8.6.5
 \`-- hello-2.10 -> /nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10",
     "fn_type": null,
-    "id": "build-support.trivial-builders.linkFarmFromDrvs",
-    "line": 599,
+    "id": "trivial-builders.linkFarmFromDrvs",
+    "line": 607,
     "name": "linkFarmFromDrvs",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Write the set of references to a file, that is, their immediate dependencies.
 
 This produces the equivalent of \`nix-store -q --references\`.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeDirectReferencesToFile",
-    "line": 663,
+    "id": "trivial-builders.writeDirectReferencesToFile",
+    "line": 671,
     "name": "writeDirectReferencesToFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Extract a string's references to derivations and paths (its
 context) and write them to a text file, removing the input string
 itself from the dependency graph. This is useful when you want to
@@ -6867,12 +6907,12 @@ contents (to avoid unnecessary rebuilds, for example).
 Note that this only works as intended on Nix >= 2.3.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.writeStringReferencesToFile",
-    "line": 697,
+    "id": "trivial-builders.writeStringReferencesToFile",
+    "line": 705,
     "name": "writeStringReferencesToFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Print an error message if the file with the specified name and
    hash doesn't exist in the Nix store. This function should only
    be used by non-redistributable software with an unfree license
@@ -6884,33 +6924,33 @@ Note that this only works as intended on Nix >= 2.3.",
   sha256 = "ffffffffffffffffffffffffffffffffffffffffffffffffffff";
 }",
     "fn_type": null,
-    "id": "build-support.trivial-builders.requireFile",
-    "line": 785,
+    "id": "trivial-builders.requireFile",
+    "line": 793,
     "name": "requireFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Copy a path to the Nix store.
 Nix automatically copies files to the store before stringifying paths.
 If you need the store path of a file, \${copyPathToStore <path>} can be
 shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.copyPathToStore",
-    "line": 836,
+    "id": "trivial-builders.copyPathToStore",
+    "line": 849,
     "name": "copyPathToStore",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Copy a list of paths to the Nix store.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.copyPathsToStore",
-    "line": 842,
+    "id": "trivial-builders.copyPathsToStore",
+    "line": 855,
     "name": "copyPathsToStore",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "Applies a list of patches to a source directory.",
     "example": "# Patching nixpkgs:
 
@@ -6924,42 +6964,27 @@ applyPatches {
   ];
 }",
     "fn_type": null,
-    "id": "build-support.trivial-builders.applyPatches",
-    "line": 861,
+    "id": "trivial-builders.applyPatches",
+    "line": 874,
     "name": "applyPatches",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "An immutable file in the store with a length of 0 bytes.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.emptyFile",
-    "line": 881,
+    "id": "trivial-builders.emptyFile",
+    "line": 894,
     "name": "emptyFile",
   },
   {
-    "category": "./pkgs/build-support/trivial-builders.nix",
+    "category": "./pkgs/build-support/trivial-builders/default.nix",
     "description": "An immutable empty directory in the store.",
     "example": null,
     "fn_type": null,
-    "id": "build-support.trivial-builders.emptyDirectory",
-    "line": 889,
+    "id": "trivial-builders.emptyDirectory",
+    "line": 902,
     "name": "emptyDirectory",
-  },
-  {
-    "category": "./pkgs/build-support/plugins.nix",
-    "description": "Takes a list of expected plugin names
-  * and compares it to the found plugins given in the file,
-  * one plugin per line.
-  * If the lists differ, the build fails with a nice message.
-  *
-  * This is helpful to ensure maintainers don’t miss
-  * the addition or removal of a plugin.",
-    "example": null,
-    "fn_type": null,
-    "id": "build-support.plugins.diffPlugins",
-    "line": 13,
-    "name": "diffPlugins",
   },
 ]
 `;
