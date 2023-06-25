@@ -19,7 +19,7 @@
 
       prepareData = prefix: ''
         cp -f ${nixpkgs-data.lib} ${prefix}/lib.json
-        cp -f ${nixpkgs-data.build_support} ${prefix}/trivial-builders.json
+        cp -f ${nixpkgs-data.trivial_builders} ${prefix}/trivial-builders.json
         cp -f ${builtins-data}/lib/data.json ${prefix}/builtins.json
       '';
 
@@ -74,20 +74,20 @@
             currently this list is manually maintained below.
           '';
           src = nixpkgs-master;
-          outputs = [ "out" "lib" "build_support" ];
+          outputs = [ "out" "lib" "trivial_builders" ];
           nativeBuildInputs = [ indexer ];
           buildPhase = ''
             echo "running nix metadata collect in nixpkgs/lib"
             ${indexer}/bin/indexer --dir ./lib
-            ${indexer}/bin/indexer --dir ./pkgs/build-support
+            ${indexer}/bin/indexer --dir ./pkgs/build-support/trivial-builders
           '';
           installPhase = ''
             cat lib.json > $lib
-            cat build-support.json > $build_support
+            cat trivial-builders.json > $trivial_builders
 
             mkdir $out
             ln -s $lib $out/lib
-            ln -s $build_support $out/build_support
+            ln -s $trivial_builders $out/trivial_builders
           '';
         };
 
