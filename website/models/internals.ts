@@ -40,7 +40,6 @@ export const normalizePath = (id: string) => {
 
       const start = substr.slice(0, 1);
       const end = substr.slice(1);
-      console.log({ start, end });
       return start.toUpperCase() + end;
     })
     .join("");
