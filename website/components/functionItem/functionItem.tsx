@@ -15,6 +15,7 @@ import { useSnackbar } from "notistack";
 import { Marker } from "react-mark.js";
 
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
+import { normalizePath } from "../../models/internals";
 
 interface FunctionItemProps {
   selected: boolean;
@@ -53,6 +54,8 @@ export default function FunctionItem(props: FunctionItemProps) {
     enqueueSnackbar("link copied to clipboard", { variant: "default" });
   };
 
+  const normalId: string = useMemo(() => normalizePath(id), [id]);
+
   return (
     <Paper
       elevation={0}
@@ -77,7 +80,7 @@ export default function FunctionItem(props: FunctionItemProps) {
       <Stack sx={{ width: "100%" }}>
         {!selected && (
           <>
-            <ListItemText primary={`${id}`} secondary={category} />
+            <ListItemText primary={`${normalId}`} secondary={category} />
             <ListItemText secondary={descriptionPreview} />
             <Typography
               sx={{
