@@ -8,8 +8,9 @@ import { usePageContext } from "../pageContext";
 import { useMobile } from "../layout/layout";
 import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
 import { FunctionOfTheDay } from "../functionOfTheDay";
-import { Query, SearchOptions } from "minisearch";
 import { ViewMode } from "../../models/internals";
+import { UseMiniSearch } from "react-minisearch";
+import { DocItem } from "../../models/nix";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -17,11 +18,12 @@ export type BasicListItem = {
 };
 export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
-  search: (query: Query, options?: SearchOptions) => void;
+  minisearch: UseMiniSearch<DocItem>;
 };
 
 export function BasicList(props: BasicListProps) {
-  const { items, search } = props;
+  const { items, minisearch } = props;
+  const { search, suggestions, autoSuggest, clearSuggestions } = minisearch;
   const { pageState, setPageStateVariable, resetQueries } = usePageContext();
   const isMobile = useMobile();
   const { page, itemsPerPage, FOTD: showFunctionOfTheDay, data } = pageState;
@@ -72,6 +74,9 @@ export function BasicList(props: BasicListProps) {
         handleClear={handleClear}
         placeholder="search nix functions"
         handleSearch={handleSearch}
+        suggestions={suggestions || []}
+        autoSuggest={autoSuggest}
+        clearSuggestions={clearSuggestions}
       />
       {showFunctionOfTheDay && (
         <FunctionOfTheDay

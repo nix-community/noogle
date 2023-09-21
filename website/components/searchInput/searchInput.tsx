@@ -3,12 +3,13 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
-import { Box, debounce, Grid, Typography } from "@mui/material";
+import { Autocomplete, Box, debounce, Grid, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NixType, nixTypes } from "../../models/nix";
 import SearchIcon from "@mui/icons-material/Search";
 import { usePageContext } from "../pageContext";
 import { SelectOption } from "../selectOption";
+import { SearchOptions, Suggestion } from "minisearch";
 
 export type Filter = { from: NixType; to: NixType };
 
@@ -17,10 +18,21 @@ export interface SearchInputProps {
   handleClear: () => void;
   handleFilter: (filter: Filter | ((curr: Filter) => Filter)) => void;
   placeholder: string;
+  suggestions: Suggestion[];
+  autoSuggest: (query: string, options?: SearchOptions) => void;
+  clearSuggestions: () => void;
 }
 
 export function SearchInput(props: SearchInputProps) {
-  const { handleSearch, placeholder, handleFilter, handleClear } = props;
+  const {
+    handleSearch,
+    placeholder,
+    handleFilter,
+    handleClear,
+    suggestions,
+    autoSuggest,
+    clearSuggestions,
+  } = props;
   const { pageState } = usePageContext();
   const { filter, term } = pageState;
   const [_term, _setTerm] = useState(term);
@@ -37,13 +49,27 @@ export function SearchInput(props: SearchInputProps) {
   const _handleClear = () => {
     _setTerm("");
     handleClear();
+    clearSuggestions();
   };
   const handleType = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     _setTerm(e.target.value);
+    autoSuggest(e.target.value, {
+      fuzzy: 0.25,
+      fields: ["id", "name", "category"],
+    });
     debouncedSubmit(e.target.value);
   };
+
+  const autoCompleteOptions = useMemo(() => {
+    const options = suggestions
+      .slice(0, 5)
+      .map((s) => s.terms)
+      .flat();
+    const sorted = options.sort((a, b) => -b.localeCompare(a));
+    return [...new Set(sorted)];
+  }, [suggestions]);
 
   return (
     <>
@@ -65,19 +91,39 @@ export function SearchInput(props: SearchInputProps) {
         <IconButton aria-label="clear-button" onClick={_handleClear}>
           <ClearIcon />
         </IconButton>
-        <InputBase
-          autoFocus
-          sx={{
-            ml: 1,
-            flex: 1,
-            backgroundColor: "paper.main",
-            p: 1,
+
+        <Autocomplete
+          // disablePortal
+          // id="combo-box-demo"
+          options={autoCompleteOptions}
+          sx={{ width: "100%" }}
+          onChange={(e, value) => {
+            handleType({
+              target: { value: value || "" },
+            } as React.ChangeEvent<HTMLInputElement>);
           }}
-          placeholder={placeholder}
-          inputProps={{ "aria-label": "search-input" }}
           value={_term}
-          onChange={(e) => handleType(e)}
+          renderInput={(params) => (
+            // <InputBase {...params} {...params.InputProps} />
+            <InputBase
+              autoFocus
+              sx={{
+                ml: 1,
+                flex: 1,
+                backgroundColor: "paper.main",
+                p: 1,
+              }}
+              placeholder={placeholder}
+              // inputProps={{ "aria-label": "search-input" }}
+              value={_term}
+              onChange={(e) => handleType(e)}
+              {...params}
+              {...params.InputProps}
+              endAdornment={undefined}
+            />
+          )}
         />
+
         <IconButton
           sx={{
             p: 1,
