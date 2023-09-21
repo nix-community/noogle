@@ -58,6 +58,7 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
   const { children, pageProps } = props;
   const [pageState, setPageState] = useState<PageState>(pageProps);
   const { term, filter, viewMode } = pageState;
+
   function setPageStateVariable<T>(field: keyof InitialPageState) {
     return function (value: React.SetStateAction<T> | T) {
       if (typeof value !== "function") {
@@ -77,12 +78,14 @@ export const PageContextProvider = (props: PageContextProviderProps) => {
       }
     };
   }
+
   function resetQueries() {
     if (Object.entries(router.query).length !== 0) {
       router.push({ query: undefined });
     }
     setPageState((curr) => ({ ...curr, ...initialPageState }));
   }
+
   useEffect(() => {
     setPageState((c) => ({
       ...c,

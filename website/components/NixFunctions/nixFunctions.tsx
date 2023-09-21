@@ -22,21 +22,21 @@ export function NixFunctions(props: FunctionsProps) {
   const { search, searchResults, rawResults } = useMiniSearch<DocItem>(data, {
     fields: ["id", "name", "category", "description", "example", "fn_type"],
     searchOptions: {
-      // allow 25% levenshtein distance (e.g. 2.5 of 10 characters don't match)
-      fuzzy: 0.25,
+      // allow 22% levenshtein distance (e.g. 2.2 of 10 characters don't match)
+      fuzzy: 0.22,
       // prefer to show builtins first
       boostDocument: (id, term) => {
         let boost = 1;
-        boost += id.includes("builtins") ? 1 : 0;
-        boost += id.includes(term) ? 10 : 0;
+        boost *= id.includes("builtins") ? 10 : 1;
+        boost *= id.includes(term) ? 10 : 1;
         return boost;
       },
       boost: {
-        id: 10,
-        name: 8,
-        category: 6,
+        id: 1000,
+        name: 100,
+        category: 10,
         example: 0.5,
-        fn_type: 3,
+        fn_type: 10,
         description: 1,
       },
     },

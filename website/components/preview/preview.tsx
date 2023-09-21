@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   Box,
   Container,
@@ -19,6 +19,7 @@ import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 import InputIcon from "@mui/icons-material/Input";
 import { MarkdownPreview } from "../markdownPreview";
 import { CodeHighlight } from "../codeHighlight";
+import { normalizePath } from "../../models/internals";
 
 interface PreviewProps {
   docItem: DocItem;
@@ -30,6 +31,8 @@ export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose, closeComponent = undefined } = props;
   const { name, description, category, example, fn_type, id, line } = docItem;
   const theme = useTheme();
+
+  const normalId: string = useMemo(() => normalizePath(id), [id]);
 
   const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
   const libName = category
@@ -58,7 +61,7 @@ export const Preview = (props: PreviewProps) => {
           color={"text.primary"}
           sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
         >
-          {`${id}`}
+          {`${normalId}`}
         </Typography>
         {closeComponent || (
           <Tooltip title="close details">
