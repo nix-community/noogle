@@ -2660,22 +2660,18 @@ compare "fooa" "a" => 1",
   },
   {
     "category": "./lib/trivial.nix",
-    "description": "Reads a JSON file.
-
-    Type :: path -> any",
+    "description": "Reads a JSON file.",
     "example": null,
-    "fn_type": null,
+    "fn_type": "importJSON :: path -> any",
     "id": "lib.trivial.importJSON",
     "line": 313,
     "name": "importJSON",
   },
   {
     "category": "./lib/trivial.nix",
-    "description": "Reads a TOML file.
-
-    Type :: path -> any",
+    "description": "Reads a TOML file.",
     "example": null,
-    "fn_type": null,
+    "fn_type": "importTOML :: path -> any",
     "id": "lib.trivial.importTOML",
     "line": 320,
     "name": "importTOML",
@@ -2845,7 +2841,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "foobar"",
     "fn_type": "concatStrings :: [string] -> string",
     "id": "lib.strings.concatStrings",
-    "line": 49,
+    "line": 50,
     "name": "concatStrings",
   },
   {
@@ -2855,7 +2851,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "afooabar"",
     "fn_type": "concatMapStrings :: (a -> string) -> [a] -> string",
     "id": "lib.strings.concatMapStrings",
-    "line": 59,
+    "line": 60,
     "name": "concatMapStrings",
   },
   {
@@ -2866,7 +2862,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "1-foo2-bar"",
     "fn_type": "concatImapStrings :: (int -> a -> string) -> [a] -> string",
     "id": "lib.strings.concatImapStrings",
-    "line": 70,
+    "line": 71,
     "name": "concatImapStrings",
   },
   {
@@ -2876,7 +2872,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => ["usr" "/" "local" "/" "bin"].",
     "fn_type": "intersperse :: a -> [a] -> [a]",
     "id": "lib.strings.intersperse",
-    "line": 80,
+    "line": 81,
     "name": "intersperse",
   },
   {
@@ -2886,7 +2882,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "usr/local/bin"",
     "fn_type": "concatStringsSep :: string -> [string] -> string",
     "id": "lib.strings.concatStringsSep",
-    "line": 97,
+    "line": 98,
     "name": "concatStringsSep",
   },
   {
@@ -2898,7 +2894,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "FOO-BAR-BAZ"",
     "fn_type": "concatMapStringsSep :: string -> (a -> string) -> [a] -> string",
     "id": "lib.strings.concatMapStringsSep",
-    "line": 110,
+    "line": 111,
     "name": "concatMapStringsSep",
   },
   {
@@ -2909,7 +2905,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "6-3-2"",
     "fn_type": "concatIMapStringsSep :: string -> (int -> a -> string) -> [a] -> string",
     "id": "lib.strings.concatImapStringsSep",
-    "line": 127,
+    "line": 128,
     "name": "concatImapStringsSep",
   },
   {
@@ -2920,7 +2916,7 @@ nix-repl> lib.toFunction (x: x + 1) 2
 => "foo\\nbar\\n"",
     "fn_type": "concatLines :: [string] -> string",
     "id": "lib.strings.concatLines",
-    "line": 144,
+    "line": 145,
     "name": "concatLines",
   },
   {
@@ -2933,7 +2929,7 @@ makeSearchPath "bin" [""]
 => "/bin"",
     "fn_type": "makeSearchPath :: string -> [string] -> string",
     "id": "lib.strings.makeSearchPath",
-    "line": 157,
+    "line": 158,
     "name": "makeSearchPath",
   },
   {
@@ -2946,7 +2942,7 @@ makeSearchPath "bin" [""]
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev/bin:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/bin"",
     "fn_type": "string -> string -> [package] -> string",
     "id": "lib.strings.makeSearchPathOutput",
-    "line": 175,
+    "line": 176,
     "name": "makeSearchPathOutput",
   },
   {
@@ -2960,7 +2956,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r/lib:/nix/store/wwh7mhwh269sfjkm6k5665b5kgp7jrk2-zlib-1.2.8/lib"",
     "fn_type": null,
     "id": "lib.strings.makeLibraryPath",
-    "line": 193,
+    "line": 194,
     "name": "makeLibraryPath",
   },
   {
@@ -2971,7 +2967,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/root/bin:/usr/bin:/usr/local/bin"",
     "fn_type": null,
     "id": "lib.strings.makeBinPath",
-    "line": 202,
+    "line": 203,
     "name": "makeBinPath",
   },
   {
@@ -2981,7 +2977,7 @@ makeLibraryPath [ pkgs.openssl pkgs.zlib ]
 => "/a/b/c/"",
     "fn_type": "normalizePath :: string -> string",
     "id": "lib.strings.normalizePath",
-    "line": 212,
+    "line": 213,
     "name": "normalizePath",
   },
   {
@@ -2994,7 +2990,7 @@ optionalString false "some-string"
 => """,
     "fn_type": "optionalString :: bool -> string -> string",
     "id": "lib.strings.optionalString",
-    "line": 238,
+    "line": 239,
     "name": "optionalString",
   },
   {
@@ -3006,7 +3002,7 @@ hasPrefix "foo" "barfoo"
 => false",
     "fn_type": "hasPrefix :: string -> string -> bool",
     "id": "lib.strings.hasPrefix",
-    "line": 254,
+    "line": 255,
     "name": "hasPrefix",
   },
   {
@@ -3018,7 +3014,7 @@ hasSuffix "foo" "barfoo"
 => true",
     "fn_type": "hasSuffix :: string -> string -> bool",
     "id": "lib.strings.hasSuffix",
-    "line": 281,
+    "line": 282,
     "name": "hasSuffix",
   },
   {
@@ -3034,7 +3030,7 @@ hasInfix "foo" "abcd"
 => false",
     "fn_type": "hasInfix :: string -> string -> bool",
     "id": "lib.strings.hasInfix",
-    "line": 318,
+    "line": 319,
     "name": "hasInfix",
   },
   {
@@ -3054,7 +3050,7 @@ stringToCharacters "🦄"
 => [ "�" "�" "�" "�" ]",
     "fn_type": "stringToCharacters :: string -> [string]",
     "id": "lib.strings.stringToCharacters",
-    "line": 348,
+    "line": 349,
     "name": "stringToCharacters",
   },
   {
@@ -3065,7 +3061,7 @@ stringToCharacters "🦄"
 => "nix"",
     "fn_type": "stringAsChars :: (string -> string) -> string -> string",
     "id": "lib.strings.stringAsChars",
-    "line": 360,
+    "line": 361,
     "name": "stringAsChars",
   },
   {
@@ -3077,7 +3073,7 @@ charToInt "("
 => 40",
     "fn_type": "charToInt :: string -> int",
     "id": "lib.strings.charToInt",
-    "line": 379,
+    "line": 380,
     "name": "charToInt",
   },
   {
@@ -3088,7 +3084,7 @@ charToInt "("
 => "\\\\(foo\\\\)"",
     "fn_type": "escape :: [string] -> string -> string",
     "id": "lib.strings.escape",
-    "line": 390,
+    "line": 391,
     "name": "escape",
   },
   {
@@ -3100,7 +3096,7 @@ charToInt "("
 => "foo\\\\x20bar"",
     "fn_type": "escapeC = [string] -> string -> string",
     "id": "lib.strings.escapeC",
-    "line": 403,
+    "line": 404,
     "name": "escapeC",
   },
   {
@@ -3111,7 +3107,7 @@ charToInt "("
 => "foo%2Fbar%20baz"",
     "fn_type": "escapeURL :: string -> string",
     "id": "lib.strings.escapeURL",
-    "line": 414,
+    "line": 415,
     "name": "escapeURL",
   },
   {
@@ -3121,7 +3117,7 @@ charToInt "("
 => "'esc'\\\\''ape\\nme'"",
     "fn_type": "escapeShellArg :: string -> string",
     "id": "lib.strings.escapeShellArg",
-    "line": 428,
+    "line": 429,
     "name": "escapeShellArg",
   },
   {
@@ -3131,7 +3127,7 @@ charToInt "("
 => "'one' 'two three' 'four'\\\\''five'"",
     "fn_type": "escapeShellArgs :: [string] -> string",
     "id": "lib.strings.escapeShellArgs",
-    "line": 438,
+    "line": 439,
     "name": "escapeShellArgs",
   },
   {
@@ -3143,7 +3139,7 @@ isValidPosixName "0-bad.jpg"
 => false",
     "fn_type": "string -> bool",
     "id": "lib.strings.isValidPosixName",
-    "line": 450,
+    "line": 451,
     "name": "isValidPosixName",
   },
   {
@@ -3163,7 +3159,7 @@ isValidPosixName "0-bad.jpg"
 ''",
     "fn_type": "string -> (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVar",
-    "line": 470,
+    "line": 471,
     "name": "toShellVar",
   },
   {
@@ -3179,7 +3175,7 @@ in ''
 ''",
     "fn_type": "attrsOf (string | listOf string | attrsOf string) -> string",
     "id": "lib.strings.toShellVars",
-    "line": 498,
+    "line": 499,
     "name": "toShellVars",
   },
   {
@@ -3189,7 +3185,7 @@ in ''
 => "\\"hello\\\\\\\${}\\\\n\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixString",
-    "line": 508,
+    "line": 509,
     "name": "escapeNixString",
   },
   {
@@ -3199,7 +3195,7 @@ in ''
 => "\\\\[\\\\^a-z]\\\\*"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeRegex",
-    "line": 518,
+    "line": 519,
     "name": "escapeRegex",
   },
   {
@@ -3211,7 +3207,7 @@ escapeNixIdentifier "0abc"
 => "\\"0abc\\""",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeNixIdentifier",
-    "line": 530,
+    "line": 531,
     "name": "escapeNixIdentifier",
   },
   {
@@ -3222,7 +3218,7 @@ escapeNixIdentifier "0abc"
 => "&quot;test&quot; &apos;test&apos; &lt; &amp; &gt;"",
     "fn_type": "string -> string",
     "id": "lib.strings.escapeXML",
-    "line": 544,
+    "line": 545,
     "name": "escapeXML",
   },
   {
@@ -3232,7 +3228,7 @@ escapeNixIdentifier "0abc"
 => "home"",
     "fn_type": "toLower :: string -> string",
     "id": "lib.strings.toLower",
-    "line": 563,
+    "line": 564,
     "name": "toLower",
   },
   {
@@ -3242,7 +3238,7 @@ escapeNixIdentifier "0abc"
 => "HOME"",
     "fn_type": "toUpper :: string -> string",
     "id": "lib.strings.toUpper",
-    "line": 573,
+    "line": 574,
     "name": "toUpper",
   },
   {
@@ -3259,7 +3255,7 @@ addContextFrom pkgs.coreutils "bar"
 => "bar"",
     "fn_type": null,
     "id": "lib.strings.addContextFrom",
-    "line": 588,
+    "line": 589,
     "name": "addContextFrom",
   },
   {
@@ -3272,7 +3268,7 @@ splitString "/" "/usr/local/bin"
 => [ "" "usr" "local" "bin" ]",
     "fn_type": null,
     "id": "lib.strings.splitString",
-    "line": 599,
+    "line": 600,
     "name": "splitString",
   },
   {
@@ -3284,7 +3280,7 @@ removePrefix "xxx" "foo.bar.baz"
 => "foo.bar.baz"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removePrefix",
-    "line": 615,
+    "line": 616,
     "name": "removePrefix",
   },
   {
@@ -3296,7 +3292,7 @@ removeSuffix "xxx" "homefront"
 => "homefront"",
     "fn_type": "string -> string -> string",
     "id": "lib.strings.removeSuffix",
-    "line": 648,
+    "line": 649,
     "name": "removeSuffix",
   },
   {
@@ -3308,7 +3304,7 @@ versionOlder "1.1" "1.1"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionOlder",
-    "line": 679,
+    "line": 680,
     "name": "versionOlder",
   },
   {
@@ -3322,7 +3318,7 @@ versionAtLeast "1.1" "1.2"
 => false",
     "fn_type": null,
     "id": "lib.strings.versionAtLeast",
-    "line": 691,
+    "line": 692,
     "name": "versionAtLeast",
   },
   {
@@ -3336,7 +3332,7 @@ getName pkgs.youtube-dl
 => "youtube-dl"",
     "fn_type": null,
     "id": "lib.strings.getName",
-    "line": 703,
+    "line": 704,
     "name": "getName",
   },
   {
@@ -3350,7 +3346,7 @@ getVersion pkgs.youtube-dl
 => "2016.01.01"",
     "fn_type": null,
     "id": "lib.strings.getVersion",
-    "line": 720,
+    "line": 721,
     "name": "getVersion",
   },
   {
@@ -3363,7 +3359,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
 => "nix-1.7-x86"",
     "fn_type": null,
     "id": "lib.strings.nameFromURL",
-    "line": 736,
+    "line": 737,
     "name": "nameFromURL",
   },
   {
@@ -3377,7 +3373,7 @@ nameFromURL "https://nixos.org/releases/nix/nix-1.7/nix-1.7-x86_64-linux.tar.bz2
     @param feature The feature to be set
     @param value The desired value",
     "id": "lib.strings.mesonOption",
-    "line": 755,
+    "line": 756,
     "name": "mesonOption",
   },
   {
@@ -3393,7 +3389,7 @@ mesonBool "static" false
     @param condition The condition to be made true or false
     @param flag The controlling flag of the condition",
     "id": "lib.strings.mesonBool",
-    "line": 774,
+    "line": 775,
     "name": "mesonBool",
   },
   {
@@ -3409,7 +3405,7 @@ mesonEnable "savage" false
     @param feature The feature to be enabled or disabled
     @param flag The controlling flag",
     "id": "lib.strings.mesonEnable",
-    "line": 793,
+    "line": 794,
     "name": "mesonEnable",
   },
   {
@@ -3422,7 +3418,7 @@ enableFeature false "shared"
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeature",
-    "line": 807,
+    "line": 808,
     "name": "enableFeature",
   },
   {
@@ -3435,7 +3431,7 @@ enableFeatureAs false "shared" (throw "ignored")
 => "--disable-shared"",
     "fn_type": null,
     "id": "lib.strings.enableFeatureAs",
-    "line": 820,
+    "line": 821,
     "name": "enableFeatureAs",
   },
   {
@@ -3448,7 +3444,7 @@ withFeature false "shared"
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeature",
-    "line": 831,
+    "line": 832,
     "name": "withFeature",
   },
   {
@@ -3461,7 +3457,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "--without-shared"",
     "fn_type": null,
     "id": "lib.strings.withFeatureAs",
-    "line": 844,
+    "line": 845,
     "name": "withFeatureAs",
   },
   {
@@ -3475,7 +3471,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": "fixedWidthString :: int -> string -> string -> string",
     "id": "lib.strings.fixedWidthString",
-    "line": 858,
+    "line": 859,
     "name": "fixedWidthString",
   },
   {
@@ -3485,7 +3481,7 @@ withFeatureAs false "shared" (throw "ignored")
 => "00015"",
     "fn_type": null,
     "id": "lib.strings.fixedWidthNumber",
-    "line": 875,
+    "line": 876,
     "name": "fixedWidthNumber",
   },
   {
@@ -3499,7 +3495,7 @@ floatToString 0.0000001
    "0.000000"",
     "fn_type": null,
     "id": "lib.strings.floatToString",
-    "line": 887,
+    "line": 888,
     "name": "floatToString",
   },
   {
@@ -3509,7 +3505,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isCoercibleToString",
-    "line": 895,
+    "line": 896,
     "name": "isCoercibleToString",
   },
   {
@@ -3521,7 +3517,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isConvertibleWithToString",
-    "line": 904,
+    "line": 905,
     "name": "isConvertibleWithToString",
   },
   {
@@ -3534,7 +3530,7 @@ floatToString 0.0000001
     "example": null,
     "fn_type": null,
     "id": "lib.strings.isStringLike",
-    "line": 915,
+    "line": 916,
     "name": "isStringLike",
   },
   {
@@ -3550,7 +3546,7 @@ isStorePath [] || isStorePath 42 || isStorePath {} || …
 => false",
     "fn_type": null,
     "id": "lib.strings.isStorePath",
-    "line": 933,
+    "line": 934,
     "name": "isStorePath",
   },
   {
@@ -3573,7 +3569,7 @@ toInt "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toInt",
-    "line": 964,
+    "line": 965,
     "name": "toInt",
   },
   {
@@ -3595,7 +3591,7 @@ toIntBase10 "3.14"
 => error: floating point JSON numbers are not supported",
     "fn_type": "string -> int",
     "id": "lib.strings.toIntBase10",
-    "line": 1014,
+    "line": 1015,
     "name": "toIntBase10",
   },
   {
@@ -3614,7 +3610,7 @@ toIntBase10 "3.14"
      "/prefix/compose-search-path.patch" ]",
     "fn_type": null,
     "id": "lib.strings.readPathsFromFile",
-    "line": 1057,
+    "line": 1058,
     "name": "readPathsFromFile",
   },
   {
@@ -3626,7 +3622,7 @@ fileContents ./version
 => "1.0"",
     "fn_type": "fileContents :: path -> string",
     "id": "lib.strings.fileContents",
-    "line": 1077,
+    "line": 1078,
     "name": "fileContents",
   },
   {
@@ -3640,7 +3636,7 @@ sanitizeDerivationName pkgs.hello
 => "-nix-store-2g75chlbpxlrqn15zlby2dfh8hr9qwbk-hello-2.10"",
     "fn_type": "sanitizeDerivationName :: String -> String",
     "id": "lib.strings.sanitizeDerivationName",
-    "line": 1092,
+    "line": 1093,
     "name": "sanitizeDerivationName",
   },
   {
@@ -3656,7 +3652,7 @@ levenshtein "hello" "Heyo"
 => 3",
     "fn_type": "levenshtein :: string -> string -> int",
     "id": "lib.strings.levenshtein",
-    "line": 1131,
+    "line": 1132,
     "name": "levenshtein",
   },
   {
@@ -3665,7 +3661,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonPrefixLength",
-    "line": 1152,
+    "line": 1153,
     "name": "commonPrefixLength",
   },
   {
@@ -3674,7 +3670,7 @@ levenshtein "hello" "Heyo"
     "example": null,
     "fn_type": null,
     "id": "lib.strings.commonSuffixLength",
-    "line": 1160,
+    "line": 1161,
     "name": "commonSuffixLength",
   },
   {
@@ -3693,7 +3689,7 @@ levenshteinAtMost 3 "This is a sentence" "this is a sentense."
 => true",
     "fn_type": "levenshteinAtMost :: int -> string -> string -> bool",
     "id": "lib.strings.levenshteinAtMost",
-    "line": 1184,
+    "line": 1185,
     "name": "levenshteinAtMost",
   },
   {
@@ -4088,34 +4084,6 @@ getFiles [ ]                                         // => [ ]",
   },
   {
     "category": "./lib/modules.nix",
-    "description": "byName is like foldAttrs, but will look for attributes to merge in the
-       specified attribute name.
-
-       byName "foo" (module: value: ["module.hidden=\${module.hidden},value=\${value}"])
-       [
-         {
-           hidden="baz";
-           foo={qux="bar"; gla="flop";};
-         }
-         {
-           hidden="fli";
-           foo={qux="gne"; gli="flip";};
-         }
-       ]
-       ===>
-       {
-         gla = [ "module.hidden=baz,value=flop" ];
-         gli = [ "module.hidden=fli,value=flip" ];
-         qux = [ "module.hidden=baz,value=bar" "module.hidden=fli,value=gne" ];
-       }",
-    "example": null,
-    "fn_type": null,
-    "id": "lib.modules.byName",
-    "line": 563,
-    "name": "byName",
-  },
-  {
-    "category": "./lib/modules.nix",
     "description": "Merge multiple option declarations into a single declaration.  In
     general, there should be only one declaration of each option.
     The exception is the ‘options’ attribute, which specifies
@@ -4130,7 +4098,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mergeOptionDecls",
-    "line": 693,
+    "line": 740,
     "name": "mergeOptionDecls",
   },
   {
@@ -4140,7 +4108,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.evalOptionValue",
-    "line": 725,
+    "line": 779,
     "name": "evalOptionValue",
   },
   {
@@ -4162,7 +4130,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.pushDownProperties",
-    "line": 821,
+    "line": 875,
     "name": "pushDownProperties",
   },
   {
@@ -4179,7 +4147,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.dischargeProperties",
-    "line": 841,
+    "line": 895,
     "name": "dischargeProperties",
   },
   {
@@ -4205,7 +4173,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.filterOverrides",
-    "line": 875,
+    "line": 929,
     "name": "filterOverrides",
   },
   {
@@ -4216,7 +4184,7 @@ getFiles [ ]                                         // => [ ]",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.sortProperties",
-    "line": 891,
+    "line": 945,
     "name": "sortProperties",
   },
   {
@@ -4228,7 +4196,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": "option -> attrsOf { highestPrio, value }",
     "id": "lib.modules.mergeAttrDefinitionsWithPrio",
-    "line": 918,
+    "line": 972,
     "name": "mergeAttrDefinitionsWithPrio",
   },
   {
@@ -4237,7 +4205,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkIf",
-    "line": 945,
+    "line": 999,
     "name": "mkIf",
   },
   {
@@ -4246,7 +4214,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.fixMergeModules",
-    "line": 1020,
+    "line": 1074,
     "name": "fixMergeModules",
   },
   {
@@ -4265,7 +4233,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRemovedOptionModule",
-    "line": 1036,
+    "line": 1090,
     "name": "mkRemovedOptionModule",
   },
   {
@@ -4285,7 +4253,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkRenamedOptionModule",
-    "line": 1065,
+    "line": 1119,
     "name": "mkRenamedOptionModule",
   },
   {
@@ -4320,7 +4288,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkMergedOptionModule",
-    "line": 1120,
+    "line": 1174,
     "name": "mkMergedOptionModule",
   },
   {
@@ -4350,7 +4318,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkChangedOptionModule",
-    "line": 1167,
+    "line": 1221,
     "name": "mkChangedOptionModule",
   },
   {
@@ -4359,7 +4327,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModule",
-    "line": 1172,
+    "line": 1226,
     "name": "mkAliasOptionModule",
   },
   {
@@ -4370,7 +4338,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkAliasOptionModuleMD",
-    "line": 1183,
+    "line": 1237,
     "name": "mkAliasOptionModuleMD",
   },
   {
@@ -4386,7 +4354,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.mkDerivedConfig",
-    "line": 1200,
+    "line": 1254,
     "name": "mkDerivedConfig",
   },
   {
@@ -4397,7 +4365,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.importJSON",
-    "line": 1236,
+    "line": 1290,
     "name": "importJSON",
   },
   {
@@ -4408,7 +4376,7 @@ This does not account for all option semantics, such as readOnly.",
     "example": null,
     "fn_type": null,
     "id": "lib.modules.importTOML",
-    "line": 1245,
+    "line": 1299,
     "name": "importTOML",
   },
   {
@@ -4572,16 +4540,27 @@ lib.getLicenseFromSpdxId "MY LICENSE"
   },
   {
     "category": "./lib/meta.nix",
-    "description": "Get the path to the main program of a derivation with either
-    meta.mainProgram or pname or name",
+    "description": "Get the path to the main program of a package based on meta.mainProgram",
     "example": "getExe pkgs.hello
 => "/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
 getExe pkgs.mustache-go
 => "/nix/store/am9ml4f4ywvivxnkiaqwr0hyxka1xjsf-mustache-go-1.3.0/bin/mustache"",
-    "fn_type": "getExe :: derivation -> string",
+    "fn_type": "getExe :: package -> string",
     "id": "lib.meta.getExe",
-    "line": 146,
+    "line": 145,
     "name": "getExe",
+  },
+  {
+    "category": "./lib/meta.nix",
+    "description": "Get the path of a program of a derivation.",
+    "example": "getExe' pkgs.hello "hello"
+=> "/nix/store/g124820p9hlv4lj8qplzxw1c44dxaw1k-hello-2.12/bin/hello"
+getExe' pkgs.imagemagick "convert"
+=> "/nix/store/5rs48jamq7k6sal98ymj9l4k2bnwq515-imagemagick-7.1.1-15/bin/convert"",
+    "fn_type": "getExe' :: derivation -> string -> string",
+    "id": "lib.meta.getExe'",
+    "line": 165,
+    "name": "getExe'",
   },
   {
     "category": "./lib/lists.nix",
@@ -4734,6 +4713,19 @@ findSingle (x: x == 3) "none" "multiple" [ 1 9 ]
   },
   {
     "category": "./lib/lists.nix",
+    "description": "Find the first index in the list matching the specified
+    predicate or return \`default\` if no such element exists.",
+    "example": "findFirstIndex (x: x > 3) null [ 0 6 4 ]
+=> 1
+findFirstIndex (x: x > 9) null [ 0 6 4 ]
+=> null",
+    "fn_type": "findFirstIndex :: (a -> Bool) -> b -> [a] -> (Int | b)",
+    "id": "lib.lists.findFirstIndex",
+    "line": 194,
+    "name": "findFirstIndex",
+  },
+  {
+    "category": "./lib/lists.nix",
     "description": "Find the first element in the list matching the specified
     predicate or return \`default\` if no such element exists.",
     "example": "findFirst (x: x > 3) 7 [ 1 6 4 ]
@@ -4742,7 +4734,7 @@ findFirst (x: x > 9) 7 [ 1 6 4 ]
 => 7",
     "fn_type": "findFirst :: (a -> bool) -> a -> [a] -> a",
     "id": "lib.lists.findFirst",
-    "line": 194,
+    "line": 245,
     "name": "findFirst",
   },
   {
@@ -4755,7 +4747,7 @@ any isString [ 1 { } ]
 => false",
     "fn_type": "any :: (a -> bool) -> [a] -> bool",
     "id": "lib.lists.any",
-    "line": 245,
+    "line": 271,
     "name": "any",
   },
   {
@@ -4768,7 +4760,7 @@ all (x: x < 3) [ 1 2 3 ]
 => false",
     "fn_type": "all :: (a -> bool) -> [a] -> bool",
     "id": "lib.lists.all",
-    "line": 258,
+    "line": 284,
     "name": "all",
   },
   {
@@ -4779,7 +4771,7 @@ all (x: x < 3) [ 1 2 3 ]
 => 2",
     "fn_type": "count :: (a -> bool) -> [a] -> int",
     "id": "lib.lists.count",
-    "line": 270,
+    "line": 296,
     "name": "count",
   },
   {
@@ -4793,7 +4785,7 @@ optional false "foo"
 => [ ]",
     "fn_type": "optional :: bool -> a -> [a]",
     "id": "lib.lists.optional",
-    "line": 285,
+    "line": 311,
     "name": "optional",
   },
   {
@@ -4805,7 +4797,7 @@ optionals false [ 2 3 ]
 => [ ]",
     "fn_type": "optionals :: bool -> [a] -> [a]",
     "id": "lib.lists.optionals",
-    "line": 297,
+    "line": 323,
     "name": "optionals",
   },
   {
@@ -4819,7 +4811,7 @@ toList "hi"
 => [ "hi "]",
     "fn_type": null,
     "id": "lib.lists.toList",
-    "line": 314,
+    "line": 340,
     "name": "toList",
   },
   {
@@ -4831,7 +4823,7 @@ range 3 2
 => [ ]",
     "fn_type": "range :: int -> int -> [int]",
     "id": "lib.lists.range",
-    "line": 327,
+    "line": 353,
     "name": "range",
   },
   {
@@ -4843,7 +4835,7 @@ replicate 2 true
 => [ true true ]",
     "fn_type": "replicate :: int -> a -> [a]",
     "id": "lib.lists.replicate",
-    "line": 346,
+    "line": 372,
     "name": "replicate",
   },
   {
@@ -4854,7 +4846,7 @@ replicate 2 true
 => { right = [ 5 3 4 ]; wrong = [ 1 2 ]; }",
     "fn_type": "(a -> bool) -> [a] -> { right :: [a]; wrong :: [a]; }",
     "id": "lib.lists.partition",
-    "line": 357,
+    "line": 383,
     "name": "partition",
   },
   {
@@ -4880,7 +4872,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => { true = 12; false = 3; }",
     "fn_type": null,
     "id": "lib.lists.groupBy'",
-    "line": 386,
+    "line": 412,
     "name": "groupBy'",
   },
   {
@@ -4892,7 +4884,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => ["he" "lo"]",
     "fn_type": "zipListsWith :: (a -> b -> c) -> [a] -> [b] -> [c]",
     "id": "lib.lists.zipListsWith",
-    "line": 406,
+    "line": 432,
     "name": "zipListsWith",
   },
   {
@@ -4903,7 +4895,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => [ { fst = 1; snd = "a"; } { fst = 2; snd = "b"; } ]",
     "fn_type": "zipLists :: [a] -> [b] -> [{ fst :: a; snd :: b; }]",
     "id": "lib.lists.zipLists",
-    "line": 425,
+    "line": 451,
     "name": "zipLists",
   },
   {
@@ -4913,7 +4905,7 @@ groupBy' builtins.add 0 (x: boolToString (x > 2)) [ 5 1 2 3 4 ]
 => [ "j" "o" "b" ]",
     "fn_type": "reverseList :: [a] -> [a]",
     "id": "lib.lists.reverseList",
-    "line": 436,
+    "line": 462,
     "name": "reverseList",
   },
   {
@@ -4935,7 +4927,7 @@ listDfs true hasPrefix [ "/home/user" "other" "/" "/home" "/" ]
        rest    = [ "/home" "other" ];  # everything else",
     "fn_type": null,
     "id": "lib.lists.listDfs",
-    "line": 458,
+    "line": 484,
     "name": "listDfs",
   },
   {
@@ -4959,7 +4951,7 @@ toposort hasPrefix [ "other" "/home/user" "/home" "/" ]
 toposort (a: b: a < b) [ 3 2 1 ] == { result = [ 1 2 3 ]; }",
     "fn_type": null,
     "id": "lib.lists.toposort",
-    "line": 497,
+    "line": 523,
     "name": "toposort",
   },
   {
@@ -4972,7 +4964,7 @@ toposort (a: b: a < b) [ 3 2 1 ] == { result = [ 1 2 3 ]; }",
 => [ 3 5 7 ]",
     "fn_type": null,
     "id": "lib.lists.sort",
-    "line": 525,
+    "line": 551,
     "name": "sort",
   },
   {
@@ -4988,7 +4980,7 @@ compareLists compare [ "a" "b" ] [ "a" "c" ]
 => -1",
     "fn_type": null,
     "id": "lib.lists.compareLists",
-    "line": 554,
+    "line": 580,
     "name": "compareLists",
   },
   {
@@ -5003,7 +4995,7 @@ naturalSort ["v0.2" "v0.15" "v0.0.9"]
 => [ "v0.0.9" "v0.2" "v0.15" ]",
     "fn_type": null,
     "id": "lib.lists.naturalSort",
-    "line": 577,
+    "line": 603,
     "name": "naturalSort",
   },
   {
@@ -5015,7 +5007,7 @@ take 2 [ ]
 => [ ]",
     "fn_type": "take :: int -> [a] -> [a]",
     "id": "lib.lists.take",
-    "line": 596,
+    "line": 622,
     "name": "take",
   },
   {
@@ -5027,8 +5019,33 @@ drop 2 [ ]
 => [ ]",
     "fn_type": "drop :: int -> [a] -> [a]",
     "id": "lib.lists.drop",
-    "line": 610,
+    "line": 636,
     "name": "drop",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Whether the first list is a prefix of the second list.",
+    "example": "hasPrefix [ 1 2 ] [ 1 2 3 4 ]
+=> true
+hasPrefix [ 0 1 ] [ 1 2 3 4 ]
+=> false",
+    "fn_type": "hasPrefix :: [a] -> [a] -> bool",
+    "id": "lib.lists.hasPrefix",
+    "line": 651,
+    "name": "hasPrefix",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "Remove the first list as a prefix from the second list.
+ Error if the first list isn't a prefix of the second list.",
+    "example": "removePrefix [ 1 2 ] [ 1 2 3 4 ]
+=> [ 3 4 ]
+removePrefix [ 0 1 ] [ 1 2 3 4 ]
+=> <error>",
+    "fn_type": "removePrefix :: [a] -> [a] -> [a]",
+    "id": "lib.lists.removePrefix",
+    "line": 667,
+    "name": "removePrefix",
   },
   {
     "category": "./lib/lists.nix",
@@ -5040,8 +5057,22 @@ sublist 1 3 [ ]
 => [ ]",
     "fn_type": "sublist :: int -> int -> [a] -> [a]",
     "id": "lib.lists.sublist",
-    "line": 626,
+    "line": 686,
     "name": "sublist",
+  },
+  {
+    "category": "./lib/lists.nix",
+    "description": "The common prefix of two lists.",
+    "example": "commonPrefix [ 1 2 3 4 5 6 ] [ 1 2 4 8 ]
+=> [ 1 2 ]
+commonPrefix [ 1 2 3 ] [ 1 2 3 4 5 ]
+=> [ 1 2 3 ]
+commonPrefix [ 1 2 3 ] [ 4 5 6 ]
+=> [ ]",
+    "fn_type": "commonPrefix :: [a] -> [a] -> [a]",
+    "id": "lib.lists.commonPrefix",
+    "line": 712,
+    "name": "commonPrefix",
   },
   {
     "category": "./lib/lists.nix",
@@ -5052,7 +5083,7 @@ sublist 1 3 [ ]
 => 3",
     "fn_type": "last :: [a] -> a",
     "id": "lib.lists.last",
-    "line": 650,
+    "line": 736,
     "name": "last",
   },
   {
@@ -5064,7 +5095,7 @@ sublist 1 3 [ ]
 => [ 1 2 ]",
     "fn_type": "init :: [a] -> [a]",
     "id": "lib.lists.init",
-    "line": 664,
+    "line": 750,
     "name": "init",
   },
   {
@@ -5074,7 +5105,7 @@ sublist 1 3 [ ]
 => [ "13" "14" "23" "24" ]",
     "fn_type": null,
     "id": "lib.lists.crossLists",
-    "line": 675,
+    "line": 761,
     "name": "crossLists",
   },
   {
@@ -5084,7 +5115,7 @@ sublist 1 3 [ ]
 => [ 3 2 4 ]",
     "fn_type": "unique :: [a] -> [a]",
     "id": "lib.lists.unique",
-    "line": 688,
+    "line": 774,
     "name": "unique",
   },
   {
@@ -5094,7 +5125,7 @@ sublist 1 3 [ ]
 => [ 3 2 ]",
     "fn_type": null,
     "id": "lib.lists.intersectLists",
-    "line": 696,
+    "line": 782,
     "name": "intersectLists",
   },
   {
@@ -5104,7 +5135,7 @@ sublist 1 3 [ ]
 => [ 1 4 5 ]",
     "fn_type": null,
     "id": "lib.lists.subtractLists",
-    "line": 704,
+    "line": 790,
     "name": "subtractLists",
   },
   {
@@ -5114,7 +5145,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.lists.mutuallyExclusive",
-    "line": 709,
+    "line": 795,
     "name": "mutuallyExclusive",
   },
   {
@@ -5136,6 +5167,207 @@ sublist 1 3 [ ]
     "id": "lib.kernel.whenHelpers",
     "line": 20,
     "name": "whenHelpers",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Check if a value is a GVariant value",
+    "example": null,
+    "fn_type": "isGVariant :: Any -> Bool",
+    "id": "lib.gvariant.isGVariant",
+    "line": 48,
+    "name": "isGVariant",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant value that most closely matches the given Nix value.
+    If no GVariant value can be found unambiguously then error is thrown.",
+    "example": null,
+    "fn_type": "mkValue :: Any -> gvariant",
+    "id": "lib.gvariant.mkValue",
+    "line": 61,
+    "name": "mkValue",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant array from the given type of the elements and a Nix list.",
+    "example": "# Creating a string array
+lib.gvariant.mkArray [ "a" "b" "c" ]",
+    "fn_type": "mkArray :: [Any] -> gvariant",
+    "id": "lib.gvariant.mkArray",
+    "line": 84,
+    "name": "mkArray",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant array from the given empty Nix list.",
+    "example": "# Creating an empty string array
+lib.gvariant.mkEmptyArray (lib.gvariant.type.string)",
+    "fn_type": "mkEmptyArray :: gvariant.type -> gvariant",
+    "id": "lib.gvariant.mkEmptyArray",
+    "line": 105,
+    "name": "mkEmptyArray",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant variant from the given Nix value. Variants are containers
+    of different GVariant type.",
+    "example": "lib.gvariant.mkArray [
+  (lib.gvariant.mkVariant "a string")
+  (lib.gvariant.mkVariant (lib.gvariant.mkInt32 1))
+]",
+    "fn_type": "mkVariant :: Any -> gvariant",
+    "id": "lib.gvariant.mkVariant",
+    "line": 122,
+    "name": "mkVariant",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant dictionary entry from the given key and value.",
+    "example": "# A dictionary describing an Epiphany’s search provider
+[
+  (lib.gvariant.mkDictionaryEntry "url" (lib.gvariant.mkVariant "https://duckduckgo.com/?q=%s&t=epiphany"))
+  (lib.gvariant.mkDictionaryEntry "bang" (lib.gvariant.mkVariant "!d"))
+  (lib.gvariant.mkDictionaryEntry "name" (lib.gvariant.mkVariant "DuckDuckGo"))
+]",
+    "fn_type": "mkDictionaryEntry :: String -> Any -> gvariant",
+    "id": "lib.gvariant.mkDictionaryEntry",
+    "line": 141,
+    "name": "mkDictionaryEntry",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant maybe from the given element type.",
+    "example": null,
+    "fn_type": "mkMaybe :: gvariant.type -> Any -> gvariant",
+    "id": "lib.gvariant.mkMaybe",
+    "line": 160,
+    "name": "mkMaybe",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant nothing from the given element type.",
+    "example": null,
+    "fn_type": "mkNothing :: gvariant.type -> gvariant",
+    "id": "lib.gvariant.mkNothing",
+    "line": 174,
+    "name": "mkNothing",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant just from the given Nix value.",
+    "example": null,
+    "fn_type": "mkJust :: Any -> gvariant",
+    "id": "lib.gvariant.mkJust",
+    "line": 181,
+    "name": "mkJust",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant tuple from the given Nix list.",
+    "example": null,
+    "fn_type": "mkTuple :: [Any] -> gvariant",
+    "id": "lib.gvariant.mkTuple",
+    "line": 188,
+    "name": "mkTuple",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant boolean from the given Nix bool value.",
+    "example": null,
+    "fn_type": "mkBoolean :: Bool -> gvariant",
+    "id": "lib.gvariant.mkBoolean",
+    "line": 203,
+    "name": "mkBoolean",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant string from the given Nix string value.",
+    "example": null,
+    "fn_type": "mkString :: String -> gvariant",
+    "id": "lib.gvariant.mkString",
+    "line": 213,
+    "name": "mkString",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant object path from the given Nix string value.",
+    "example": null,
+    "fn_type": "mkObjectpath :: String -> gvariant",
+    "id": "lib.gvariant.mkObjectpath",
+    "line": 224,
+    "name": "mkObjectpath",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant uchar from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkUchar :: Int -> gvariant",
+    "id": "lib.gvariant.mkUchar",
+    "line": 234,
+    "name": "mkUchar",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant int16 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkInt16 :: Int -> gvariant",
+    "id": "lib.gvariant.mkInt16",
+    "line": 241,
+    "name": "mkInt16",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant uint16 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkUint16 :: Int -> gvariant",
+    "id": "lib.gvariant.mkUint16",
+    "line": 248,
+    "name": "mkUint16",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant int32 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkInt32 :: Int -> gvariant",
+    "id": "lib.gvariant.mkInt32",
+    "line": 255,
+    "name": "mkInt32",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant uint32 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkUint32 :: Int -> gvariant",
+    "id": "lib.gvariant.mkUint32",
+    "line": 265,
+    "name": "mkUint32",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant int64 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkInt64 :: Int -> gvariant",
+    "id": "lib.gvariant.mkInt64",
+    "line": 272,
+    "name": "mkInt64",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant uint64 from the given Nix int value.",
+    "example": null,
+    "fn_type": "mkUint64 :: Int -> gvariant",
+    "id": "lib.gvariant.mkUint64",
+    "line": 279,
+    "name": "mkUint64",
+  },
+  {
+    "category": "./lib/gvariant.nix",
+    "description": "Returns the GVariant double from the given Nix float value.",
+    "example": null,
+    "fn_type": "mkDouble :: Float -> gvariant",
+    "id": "lib.gvariant.mkDouble",
+    "line": 286,
+    "name": "mkDouble",
   },
   {
     "category": "./lib/generators.nix",
@@ -5199,7 +5431,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toINI",
-    "line": 113,
+    "line": 114,
     "name": "toINI",
   },
   {
@@ -5237,7 +5469,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toINIWithGlobalSection",
-    "line": 164,
+    "line": 165,
     "name": "toINIWithGlobalSection",
   },
   {
@@ -5255,14 +5487,14 @@ sublist 1 3 [ ]
   * }
   *
   *> [url "ssh://git@github.com/"]
-  *>   insteadOf = https://github.com/
+  *>   insteadOf = "https://github.com"
   *>
   *> [user]
-  *>   name = edolstra",
+  *>   name = "edolstra"",
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toGitINI",
-    "line": 196,
+    "line": 197,
     "name": "toGitINI",
   },
   {
@@ -5272,7 +5504,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toJSON",
-    "line": 235,
+    "line": 252,
     "name": "toJSON",
   },
   {
@@ -5284,7 +5516,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toYAML",
-    "line": 243,
+    "line": 260,
     "name": "toYAML",
   },
   {
@@ -5297,7 +5529,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toPretty",
-    "line": 286,
+    "line": 303,
     "name": "toPretty",
   },
   {
@@ -5308,7 +5540,7 @@ sublist 1 3 [ ]
     "example": null,
     "fn_type": null,
     "id": "lib.generators.toDhall",
-    "line": 411,
+    "line": 428,
     "name": "toDhall",
   },
   {
@@ -5342,7 +5574,7 @@ Attention:
  }",
     "fn_type": "toLua :: AttrSet -> Any -> String",
     "id": "lib.generators.toLua",
-    "line": 467,
+    "line": 484,
     "name": "toLua",
   },
   {
@@ -5351,8 +5583,167 @@ Attention:
     "example": null,
     "fn_type": "mkLuaInline :: String -> AttrSet",
     "id": "lib.generators.mkLuaInline",
-    "line": 525,
+    "line": 542,
     "name": "mkLuaInline",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Compute the fixed point of the given function \`f\`, which is usually an
+attribute set that expects its final, non-recursive representation as an
+argument:
+
+\`\`\`
+f = self: { foo = "foo"; bar = "bar"; foobar = self.foo + self.bar; }
+\`\`\`
+
+Nix evaluates this recursion until all references to \`self\` have been
+resolved. At that point, the final result is returned and \`f x = x\` holds:
+
+\`\`\`
+nix-repl> fix f
+{ bar = "bar"; foo = "foo"; foobar = "foobar"; }
+\`\`\`",
+    "example": null,
+    "fn_type": "fix :: (a -> a) -> a
+
+   See https://en.wikipedia.org/wiki/Fixed-point_combinator for further
+   details.",
+    "id": "lib.fixed-points.fix",
+    "line": 25,
+    "name": "fix",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "A variant of \`fix\` that records the original recursive attribute set in the
+result, in an attribute named \`__unfix__\`.
+
+This is useful in combination with the \`extends\` function to
+implement deep overriding.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.fix'",
+    "line": 34,
+    "name": "fix'",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Return the fixpoint that \`f\` converges to when called iteratively, starting
+with the input \`x\`.
+
+\`\`\`
+nix-repl> converge (x: x / 2) 16
+0
+\`\`\`",
+    "example": null,
+    "fn_type": "(a -> a) -> a -> a",
+    "id": "lib.fixed-points.converge",
+    "line": 47,
+    "name": "converge",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Modify the contents of an explicitly recursive attribute set in a way that
+honors \`self\`-references. This is accomplished with a function
+
+\`\`\`nix
+g = self: super: { foo = super.foo + " + "; }
+\`\`\`
+
+that has access to the unmodified input (\`super\`) as well as the final
+non-recursive representation of the attribute set (\`self\`). \`extends\`
+differs from the native \`//\` operator insofar as that it's applied *before*
+references to \`self\` are resolved:
+
+\`\`\`
+nix-repl> fix (extends g f)
+{ bar = "bar"; foo = "foo + "; foobar = "foo + bar"; }
+\`\`\`
+
+The name of the function is inspired by object-oriented inheritance, i.e.
+think of it as an infix operator \`g extends f\` that mimics the syntax from
+Java. It may seem counter-intuitive to have the "base class" as the second
+argument, but it's nice this way if several uses of \`extends\` are cascaded.
+
+To get a better understanding how \`extends\` turns a function with a fix
+point (the package set we start with) into a new function with a different fix
+point (the desired packages set) lets just see, how \`extends g f\`
+unfolds with \`g\` and \`f\` defined above:
+
+\`\`\`
+extends g f = self: let super = f self; in super // g self super;
+            = self: let super = { foo = "foo"; bar = "bar"; foobar = self.foo + self.bar; }; in super // g self super
+            = self: { foo = "foo"; bar = "bar"; foobar = self.foo + self.bar; } // g self { foo = "foo"; bar = "bar"; foobar = self.foo + self.bar; }
+            = self: { foo = "foo"; bar = "bar"; foobar = self.foo + self.bar; } // { foo = "foo" + " + "; }
+            = self: { foo = "foo + "; bar = "bar"; foobar = self.foo + self.bar; }
+\`\`\`",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.extends",
+    "line": 91,
+    "name": "extends",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Compose two extending functions of the type expected by 'extends'
+into one where changes made in the first are available in the
+'super' of the second",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.composeExtensions",
+    "line": 98,
+    "name": "composeExtensions",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Compose several extending functions of the type expected by 'extends' into
+one where changes made in preceding functions are made available to
+subsequent ones.
+
+\`\`\`
+composeManyExtensions : [packageSet -> packageSet -> packageSet] -> packageSet -> packageSet -> packageSet
+                          ^final        ^prev         ^overrides     ^final        ^prev         ^overrides
+\`\`\`",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.composeManyExtensions",
+    "line": 114,
+    "name": "composeManyExtensions",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Create an overridable, recursive attribute set. For example:
+
+\`\`\`
+nix-repl> obj = makeExtensible (self: { })
+
+nix-repl> obj
+{ __unfix__ = «lambda»; extend = «lambda»; }
+
+nix-repl> obj = obj.extend (self: super: { foo = "foo"; })
+
+nix-repl> obj
+{ __unfix__ = «lambda»; extend = «lambda»; foo = "foo"; }
+
+nix-repl> obj = obj.extend (self: super: { foo = super.foo + " + "; bar = "bar"; foobar = self.foo + self.bar; })
+
+nix-repl> obj
+{ __unfix__ = «lambda»; bar = "bar"; extend = «lambda»; foo = "foo + "; foobar = "foo + bar"; }
+\`\`\`",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.makeExtensible",
+    "line": 137,
+    "name": "makeExtensible",
+  },
+  {
+    "category": "./lib/fixed-points.nix",
+    "description": "Same as \`makeExtensible\` but the name of the extending attribute is
+customized.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.fixed-points.makeExtensibleWithCustomName",
+    "line": 143,
+    "name": "makeExtensibleWithCustomName",
   },
   {
     "category": "./lib/filesystem.nix",
@@ -5696,7 +6087,7 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
         name = "sed-4.2.2-pre";
         src = fetchurl {
           url = ftp://alpha.gnu.org/gnu/sed/sed-4.2.2-pre.tar.bz2;
-          sha256 = "11nq06d131y4wmf3drm0yk502d2xc6n5qy82cg88rb9nqd2lj41k";
+          hash = "sha256-MxBJRcM2rYzQYwJ5XKxhXTQByvSg5jZc5cSHEZoB2IY=";
         };
         patches = [];
       });
@@ -5823,13 +6214,22 @@ trace: { fn = "id"; from = { a.b = {…}; }; to = { a.b = {…}; }; }
   },
   {
     "category": "./lib/customisation.nix",
-    "description": "Like the above, but aims to support cross compilation. It's still ugly, but
-    hopefully it helps a little bit.",
+    "description": "backward compatibility with old uncurried form; deprecated",
     "example": null,
     "fn_type": null,
     "id": "lib.customisation.makeScopeWithSplicing",
     "line": 282,
     "name": "makeScopeWithSplicing",
+  },
+  {
+    "category": "./lib/customisation.nix",
+    "description": "Like makeScope, but aims to support cross compilation. It's still ugly, but
+    hopefully it helps a little bit.",
+    "example": null,
+    "fn_type": null,
+    "id": "lib.customisation.makeScopeWithSplicing'",
+    "line": 290,
+    "name": "makeScopeWithSplicing'",
   },
   {
     "category": "./lib/cli.nix",
@@ -6316,6 +6716,21 @@ optionalAttrs (false) { my = "set"; }
   },
   {
     "category": "./lib/attrsets.nix",
+    "description": "Merge a list of attribute sets together using the \`//\` operator.
+In case of duplicate attributes, values from later list elements take precedence over earlier ones.
+The result is the same as \`foldl mergeAttrs { }\`, but the performance is better for large inputs.
+For n list elements, each with an attribute set containing m unique attributes, the complexity of this operation is O(nm log n).",
+    "example": "mergeAttrsList [ { a = 0; b = 1; } { c = 2; d = 3; } ]
+=> { a = 0; b = 1; c = 2; d = 3; }
+mergeAttrsList [ { a = 0; } { a = 1; } ]
+=> { a = 1; }",
+    "fn_type": "mergeAttrsList :: [ Attrs ] -> Attrs",
+    "id": "lib.attrsets.mergeAttrsList",
+    "line": 756,
+    "name": "mergeAttrsList",
+  },
+  {
+    "category": "./lib/attrsets.nix",
     "description": "Does the same as the update operator '//' except that attributes are
     merged until the given predicate is verified.  The predicate should
     accept 3 arguments which are the path to reach the attribute, a part of
@@ -6342,7 +6757,7 @@ optionalAttrs (false) { my = "set"; }
 }",
     "fn_type": "recursiveUpdateUntil :: ( [ String ] -> AttrSet -> AttrSet -> Bool ) -> AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.recursiveUpdateUntil",
-    "line": 772,
+    "line": 808,
     "name": "recursiveUpdateUntil",
   },
   {
@@ -6364,7 +6779,7 @@ returns: {
 }",
     "fn_type": "recursiveUpdate :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.recursiveUpdate",
-    "line": 812,
+    "line": 848,
     "name": "recursiveUpdate",
   },
   {
@@ -6374,7 +6789,7 @@ returns: {
 => true",
     "fn_type": "matchAttrs :: AttrSet -> AttrSet -> Bool",
     "id": "lib.attrsets.matchAttrs",
-    "line": 829,
+    "line": 865,
     "name": "matchAttrs",
   },
   {
@@ -6389,7 +6804,7 @@ overrideExisting { a = 3; b = 2; } { a = 1; }
 => { a = 1; b = 2; }",
     "fn_type": "overrideExisting :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.overrideExisting",
-    "line": 857,
+    "line": 893,
     "name": "overrideExisting",
   },
   {
@@ -6404,7 +6819,7 @@ showAttrPath []
 => "<root attribute path>"",
     "fn_type": "showAttrPath :: [String] -> String",
     "id": "lib.attrsets.showAttrPath",
-    "line": 879,
+    "line": 915,
     "name": "showAttrPath",
   },
   {
@@ -6415,7 +6830,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
     "fn_type": "getOutput :: String -> Derivation -> String",
     "id": "lib.attrsets.getOutput",
-    "line": 896,
+    "line": 932,
     "name": "getOutput",
   },
   {
@@ -6426,7 +6841,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r"",
     "fn_type": "getBin :: Derivation -> String",
     "id": "lib.attrsets.getBin",
-    "line": 911,
+    "line": 947,
     "name": "getBin",
   },
   {
@@ -6437,7 +6852,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib"",
     "fn_type": "getLib :: Derivation -> String",
     "id": "lib.attrsets.getLib",
-    "line": 924,
+    "line": 960,
     "name": "getLib",
   },
   {
@@ -6448,7 +6863,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev"",
     "fn_type": "getDev :: Derivation -> String",
     "id": "lib.attrsets.getDev",
-    "line": 937,
+    "line": 973,
     "name": "getDev",
   },
   {
@@ -6459,7 +6874,7 @@ showAttrPath []
 => "/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man"",
     "fn_type": "getMan :: Derivation -> String",
     "id": "lib.attrsets.getMan",
-    "line": 950,
+    "line": 986,
     "name": "getMan",
   },
   {
@@ -6468,7 +6883,7 @@ showAttrPath []
     "example": null,
     "fn_type": "chooseDevOutputs :: [Derivation] -> [String]",
     "id": "lib.attrsets.chooseDevOutputs",
-    "line": 957,
+    "line": 993,
     "name": "chooseDevOutputs",
   },
   {
@@ -6486,7 +6901,7 @@ showAttrPath []
 }",
     "fn_type": "recurseIntoAttrs :: AttrSet -> AttrSet",
     "id": "lib.attrsets.recurseIntoAttrs",
-    "line": 980,
+    "line": 1016,
     "name": "recurseIntoAttrs",
   },
   {
@@ -6495,7 +6910,7 @@ showAttrPath []
     "example": null,
     "fn_type": "dontRecurseIntoAttrs :: AttrSet -> AttrSet",
     "id": "lib.attrsets.dontRecurseIntoAttrs",
-    "line": 990,
+    "line": 1026,
     "name": "dontRecurseIntoAttrs",
   },
   {
@@ -6507,7 +6922,7 @@ showAttrPath []
     "example": null,
     "fn_type": "unionOfDisjoint :: AttrSet -> AttrSet -> AttrSet",
     "id": "lib.attrsets.unionOfDisjoint",
-    "line": 1002,
+    "line": 1038,
     "name": "unionOfDisjoint",
   },
   {
@@ -6615,7 +7030,7 @@ writeTextFile {
 }",
     "fn_type": null,
     "id": "trivial-builders.writeTextFile",
-    "line": 132,
+    "line": 134,
     "name": "writeTextFile",
   },
   {
@@ -6628,7 +7043,7 @@ writeText "my-file"
   '';",
     "fn_type": null,
     "id": "trivial-builders.writeText",
-    "line": 183,
+    "line": 185,
     "name": "writeText",
   },
   {
@@ -6642,7 +7057,7 @@ writeTextDir "share/my-file"
  '';",
     "fn_type": null,
     "id": "trivial-builders.writeTextDir",
-    "line": 200,
+    "line": 202,
     "name": "writeTextDir",
   },
   {
@@ -6660,7 +7075,7 @@ writeScript "my-file"
   '';",
     "fn_type": null,
     "id": "trivial-builders.writeScript",
-    "line": 225,
+    "line": 227,
     "name": "writeScript",
   },
   {
@@ -6674,7 +7089,7 @@ writeScriptBin "my-file"
   '';",
     "fn_type": null,
     "id": "trivial-builders.writeScriptBin",
-    "line": 243,
+    "line": 245,
     "name": "writeScriptBin",
   },
   {
@@ -6688,7 +7103,7 @@ writeShellScript "my-file"
   '';",
     "fn_type": null,
     "id": "trivial-builders.writeShellScript",
-    "line": 260,
+    "line": 266,
     "name": "writeShellScript",
   },
   {
@@ -6703,7 +7118,7 @@ writeShellScriptBin "my-file"
   '';",
     "fn_type": null,
     "id": "trivial-builders.writeShellScriptBin",
-    "line": 289,
+    "line": 295,
     "name": "writeShellScriptBin",
   },
   {
@@ -6729,7 +7144,7 @@ writeShellApplication {
 }",
     "fn_type": null,
     "id": "trivial-builders.writeShellApplication",
-    "line": 328,
+    "line": 335,
     "name": "writeShellApplication",
   },
   {
@@ -6755,7 +7170,7 @@ concatTextFile {
 }",
     "fn_type": null,
     "id": "trivial-builders.concatTextFile",
-    "line": 410,
+    "line": 429,
     "name": "concatTextFile",
   },
   {
@@ -6765,7 +7180,7 @@ concatTextFile {
 concatText "my-file" [ file1 file2 ]",
     "fn_type": null,
     "id": "trivial-builders.concatText",
-    "line": 444,
+    "line": 463,
     "name": "concatText",
   },
   {
@@ -6775,7 +7190,7 @@ concatText "my-file" [ file1 file2 ]",
 concatScript "my-file" [ file1 file2 ]",
     "fn_type": null,
     "id": "trivial-builders.concatScript",
-    "line": 454,
+    "line": 473,
     "name": "concatScript",
   },
   {
@@ -6829,7 +7244,7 @@ other derivations.  A derivation created with linkFarm is often used in CI
 as a easy way to build multiple derivations at once.",
     "fn_type": null,
     "id": "trivial-builders.symlinkJoin",
-    "line": 510,
+    "line": 529,
     "name": "symlinkJoin",
   },
   {
@@ -6860,7 +7275,7 @@ This creates a derivation with a directory structure like the following:
 See the note on symlinkJoin for the difference between linkFarm and symlinkJoin.",
     "fn_type": null,
     "id": "trivial-builders.linkFarm",
-    "line": 563,
+    "line": 582,
     "name": "linkFarm",
   },
   {
@@ -6882,7 +7297,7 @@ This creates a derivation with a directory structure like the following:
 \`-- hello-2.10 -> /nix/store/k0ll91c4npk4lg8lqhx00glg2m735g74-hello-2.10",
     "fn_type": null,
     "id": "trivial-builders.linkFarmFromDrvs",
-    "line": 607,
+    "line": 626,
     "name": "linkFarmFromDrvs",
   },
   {
@@ -6893,7 +7308,7 @@ This produces the equivalent of \`nix-store -q --references\`.",
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.writeDirectReferencesToFile",
-    "line": 671,
+    "line": 694,
     "name": "writeDirectReferencesToFile",
   },
   {
@@ -6908,7 +7323,7 @@ Note that this only works as intended on Nix >= 2.3.",
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.writeStringReferencesToFile",
-    "line": 705,
+    "line": 728,
     "name": "writeStringReferencesToFile",
   },
   {
@@ -6925,7 +7340,7 @@ Note that this only works as intended on Nix >= 2.3.",
 }",
     "fn_type": null,
     "id": "trivial-builders.requireFile",
-    "line": 793,
+    "line": 816,
     "name": "requireFile",
   },
   {
@@ -6937,7 +7352,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.copyPathToStore",
-    "line": 849,
+    "line": 873,
     "name": "copyPathToStore",
   },
   {
@@ -6946,7 +7361,7 @@ shortened to \${<path>}.",
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.copyPathsToStore",
-    "line": 855,
+    "line": 879,
     "name": "copyPathsToStore",
   },
   {
@@ -6965,7 +7380,7 @@ applyPatches {
 }",
     "fn_type": null,
     "id": "trivial-builders.applyPatches",
-    "line": 874,
+    "line": 898,
     "name": "applyPatches",
   },
   {
@@ -6974,7 +7389,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.emptyFile",
-    "line": 894,
+    "line": 922,
     "name": "emptyFile",
   },
   {
@@ -6983,7 +7398,7 @@ applyPatches {
     "example": null,
     "fn_type": null,
     "id": "trivial-builders.emptyDirectory",
-    "line": 902,
+    "line": 930,
     "name": "emptyDirectory",
   },
 ]
