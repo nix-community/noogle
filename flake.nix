@@ -36,7 +36,6 @@
             installPhase = ''
               runHook preInstall
 
-              npm run export
               mkdir -p $out/static
               cp -r ./out/* $out/static/
               cp -r ./ $lib         
