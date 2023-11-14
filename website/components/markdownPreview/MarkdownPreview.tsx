@@ -1,6 +1,6 @@
+import nix from "highlight.js/lib/languages/nix";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
-import nix from "highlight.js/lib/languages/nix";
 
 interface MarkdownPreviewProps {
   description: string;
@@ -13,6 +13,7 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
         h1: "h3",
         h2: "h4",
         h3: "h5",
+        h4: "h6",
       }}
       rehypePlugins={[[rehypeHighlight, { languages: { nix } }]]}
     >
