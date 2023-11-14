@@ -2,6 +2,7 @@
 
 const nextConfig = (phase, { defaultConfig }) => {
   const config = {
+    output: "export",
     reactStrictMode: true,
     swcMinify: true,
     images: {
