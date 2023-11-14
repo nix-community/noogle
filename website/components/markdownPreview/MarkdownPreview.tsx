@@ -14,6 +14,8 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
         h2: "h4",
         h3: "h5",
         h4: "h6",
+        h5: "h6",
+        h6: "h6",
       }}
       rehypePlugins={[[rehypeHighlight, { languages: { nix } }]]}
     >
