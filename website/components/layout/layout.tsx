@@ -1,17 +1,17 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   Box,
-  Typography,
   Container,
-  Link,
   IconButton,
+  Link,
   Tooltip,
+  Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Image } from "../image";
 import nixSnowflake from "../../public/nix-snowflake.svg";
 import nixWhite from "../../public/white.svg";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Image } from "../image";
 export interface LayoutProps {
   children: React.ReactNode;
 }
@@ -86,7 +86,10 @@ export function Layout(props: LayoutProps) {
               />
             </Box>
             <Box sx={{ ml: 1 }} component="span">{`noog\u03BBe`}</Box>
-            <Link href="https://github.com/hsjobeki/noogle" target="_blank">
+            <Link
+              href="https://github.com/nix-community/noogle"
+              target="_blank"
+            >
               <Tooltip title="Contribute on Github">
                 <IconButton
                   sx={{ float: "right", top: "0.6rem", right: "1em", p: 0 }}
