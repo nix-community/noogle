@@ -17,6 +17,9 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    crane.url = "github:ipetkov/crane";
+    crane.inputs.nixpkgs.follows = "nixpkgs";
+
     floco.url = "github:aakropotkin/floco";
     floco.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -29,6 +32,7 @@
         ./preCommit.nix
         ./website/flake-module.nix
         ./pasta/flake-module.nix
+        ./pesto/flake-module.nix
       ];
     });
 }

@@ -1,0 +1,12 @@
+[
+  {
+    "file": "./test.nix",
+    "line": 5,
+    "column": 9
+  },
+  {
+    "file": "./test.nix",
+    "line": 5,
+    "column": 12
+  }
+]
