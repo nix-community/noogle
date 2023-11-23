@@ -4,6 +4,9 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-master.url = "nixpkgs/master";
 
+    # A custom nix verison, to introspect lambda values. 
+    nix.url = "github:hsjobeki/nix/?ref=feat/positions";
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +24,11 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
       systems = [ "x86_64-linux" ];
-      imports = [ ./devShell.nix ./preCommit.nix ./website/flake-module.nix ];
+      imports = [
+        ./devShell.nix
+        ./preCommit.nix
+        ./website/flake-module.nix
+        ./pasta/flake-module.nix
+      ];
     });
 }
