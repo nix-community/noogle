@@ -2,7 +2,7 @@
   description = "Noogle.dev | Discover the nix api surface";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "nixpkgs/master";
+    nixpkgs-master.url = "github:hsjobeki/nixpkgs/?ref=migrate-doc-comments";
 
     # A custom nix verison, to introspect lambda values. 
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
@@ -36,3 +36,4 @@
       ];
     });
 }
+

@@ -8,7 +8,10 @@
         # markdownlint.enable = true;
       };
       excludes = [ "indexer/test" ".github" "scripts/data" ];
-      settings = { statix.ignore = [ "indexer/test" ]; };
+      settings = {
+        statix.ignore = [ "indexer/test" ];
+        nixfmt.width = 80;
+      };
     };
   };
 }

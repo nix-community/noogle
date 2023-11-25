@@ -13,10 +13,10 @@
       pesto = craneLib.buildPackage commonArgs;
       checks = {
         inherit pesto;
-        pestoClippy = craneLib.cargoClippy (commonArgs // {
+        pesto-clippy = craneLib.cargoClippy (commonArgs // {
           cargoClippyExtraArgs = "--all-targets -- --deny warnings";
         });
-        pestoFmt = craneLib.cargoFmt { inherit src; };
+        pesto-fmt = craneLib.cargoFmt { inherit src; };
         pesto-nextest = craneLib.cargoNextest (commonArgs // {
           partitions = 1;
           partitionType = "count";

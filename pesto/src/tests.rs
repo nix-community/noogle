@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
 
-    use std::{ffi::OsStr, format, fs, path::PathBuf};
+    use std::{ffi::OsStr, format, fs, path::PathBuf, println};
 
     use crate::position::{DocComment, DocIndex, TextPosition};
 
@@ -40,9 +40,11 @@ mod tests {
     #[test]
     fn test_main() {
         dir_tests("atom", |path, (line, column)| {
-            let pos = DocIndex::new(path);
+            let pos = DocIndex::new(path, vec![(line, column)]);
 
-            format!("{:?}", pos.get_docs(line,column))
+            // let idx = pos.get_pos_idxs_buffer(vec![(line, column), (1, 1)]);
+            // println!("{:?}", idx);
+            format!("{:?}", pos.get_docs(line, column))
         })
     }
 }

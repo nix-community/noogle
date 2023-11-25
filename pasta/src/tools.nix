@@ -4,9 +4,27 @@ let
 
   dropBack = l: lib.reverseList (lib.drop 1 (lib.reverseList l));
 
+  /* *
+     # Returns
+
+     We use the rust notation, since a pasta struct is needed for pesto anyways.
+
+     struct {
+       lambda: {
+         position: Position
+         ...
+       }
+       attr: {
+         position: Position
+       }
+     }
+  */
   getDocs = parent: name:
     let
-      lambda = builtins.lambdaMeta parent.${name};
+      lambda = if lib.isFunction parent.${name} then
+        builtins.lambdaMeta parent.${name}
+      else
+        null;
       attr = { position = builtins.unsafeGetAttrPos name parent; };
     in { inherit lambda attr; };
 
@@ -16,7 +34,10 @@ let
   collectFns = set:
     { initialPath ? [ ], limit ? null, }:
     let
-      filterFns = builtins.filter (item: item.type == "lambda");
+      filterFns = builtins.filter (item:
+        item.docs != null
+        #  item.type == "lambda"
+      );
       getFnDocs = map (fn: {
         path = initialPath ++ fn.path;
         inherit (fn) docs;
@@ -52,7 +73,7 @@ let
               path = lib.unique (item.key ++ [ name ]);
             in if lib.isDerivation nextVal || name == "__functor"
             || (limit != null && item.depth >= limit) then
-            # skipping some values by
+            # skipping all more nested values by
             # returning the previous item
               item
             else {
