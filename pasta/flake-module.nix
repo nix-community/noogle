@@ -3,7 +3,8 @@
     let
       nix = inputs'.nix.packages.nix-clangStdenv;
       nixpkgs = inputs.nixpkgs-master;
-    in {
+    in
+    {
       packages = {
         pasta = pkgs.callPackage ./default.nix { inherit nixpkgs nix pkgs; };
       };

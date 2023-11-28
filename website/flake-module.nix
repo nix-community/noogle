@@ -6,7 +6,8 @@
         inherit floco;
         nooglePkgs = self'.packages;
       };
-    in {
+    in
+    {
       packages = { ui = base.pkg.global; };
       devShells.ui = pkgs.callPackage ./shell.nix {
         inherit pkgs;

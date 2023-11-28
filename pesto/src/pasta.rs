@@ -1,14 +1,14 @@
-use std::{fs, path::PathBuf};
+use std::{fs, path::PathBuf, rc::Rc};
 
 use serde::{Deserialize, Serialize};
 
 use crate::position::FilePosition;
 
 #[serde_with::skip_serializing_none]
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct LambdaMeta {
     #[allow(non_snake_case)]
-    pub isPrimop: Option<bool>,
+    pub isPrimop: bool,
     pub name: Option<String>,
     pub position: Option<FilePosition>,
     pub args: Option<Vec<String>>,
@@ -20,22 +20,23 @@ pub struct LambdaMeta {
     #[allow(non_snake_case)]
     pub countApplied: Option<usize>,
 }
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AttrMeta {
     pub position: Option<FilePosition>,
     /// I want to add this
     pub content: Option<String>,
 }
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct DocsMeta {
     pub lambda: Option<LambdaMeta>,
     pub attr: AttrMeta,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Docs {
     pub docs: DocsMeta,
-    pub path: Vec<String>,
+    pub aliases: Option<Vec<Rc<Vec<String>>>>,
+    pub path: Rc<Vec<String>>,
 }
 
 pub fn read_pasta(path: &PathBuf) -> Vec<Docs> {
@@ -46,7 +47,7 @@ pub fn read_pasta(path: &PathBuf) -> Vec<Docs> {
             data
         }
         Err(e) => {
-            panic!("error, {}", e)
+            panic!("Could not parse input data: {}", e)
         }
     }
 }

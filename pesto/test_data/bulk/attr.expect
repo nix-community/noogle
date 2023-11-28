@@ -1,0 +1,2473 @@
+["lib", "attrsets", "foldAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 566,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Apply fold functions to values grouped by key.\n\n    # Example\n\n    ```nix\n    foldAttrs (item: acc: [item] ++ acc) [] [{ a = 2; } { a = 3; }]\n    => { a = [ 2 3 ]; }\n    ```\n\n    # Type\n\n    ```\n    foldAttrs :: (Any -> Any -> Any) -> Any -> [AttrSets] -> Any\n    ```\n\n    # Arguments\n\n    - [op] A function, given a value and a collector combines the two.\n    - [nul] The starting value.\n    - [list_of_attrs] A list of attribute sets to fold together by key.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 564,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Apply fold functions to values grouped by key.\n\n    # Example\n\n    ```nix\n    foldAttrs (item: acc: [item] ++ acc) [] [{ a = 2; } { a = 3; }]\n    => { a = [ 2 3 ]; }\n    ```\n\n    # Type\n\n    ```\n    foldAttrs :: (Any -> Any -> Any) -> Any -> [AttrSets] -> Any\n    ```\n\n    # Arguments\n\n    - [op] A function, given a value and a collector combines the two.\n    - [nul] The starting value.\n    - [list_of_attrs] A list of attribute sets to fold together by key.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "foldAttrs",
+    ],
+}
+["lib", "attrsets", "getLib"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1379,
+                        column: 23,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1421,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Get a package's `lib` output.\n    If the output does not exist, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getLib pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-lib\"\n    ```\n\n    # Type\n\n    ```\n    getLib :: Derivation -> String\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getLib",
+    ],
+}
+["lib", "attrsets", "toDerivation"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 965,
+                        column: 6,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Converts a store path to a fake derivation.\n\n    # Type\n\n    ```\n    toDerivation :: Path -> Derivation\n    ```\n\n    # Arguments\n\n    - [path] A store path to convert to a derivation.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 963,
+                    column: 4,
+                },
+            ),
+            content: Some(
+                "\n    Converts a store path to a fake derivation.\n\n    # Type\n\n    ```\n    toDerivation :: Path -> Derivation\n    ```\n\n    # Arguments\n\n    - [path] A store path to convert to a derivation.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "toDerivation",
+    ],
+}
+["lib", "attrsets", "zipAttrsWithNames"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1038,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Merge sets of attributes and use the function `f` to merge attributes\n    values.\n\n    # Example\n\n    ```nix\n    zipAttrsWithNames [\"a\"] (name: vs: vs) [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrsWithNames :: [ String ] -> (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] List of attribute names to zip.\n    - [f] A function, accepts an attribute name, all the values, and returns a combined value.\n    - [sets] List of values from the list of attribute sets.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1036,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Merge sets of attributes and use the function `f` to merge attributes\n    values.\n\n    # Example\n\n    ```nix\n    zipAttrsWithNames [\"a\"] (name: vs: vs) [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrsWithNames :: [ String ] -> (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] List of attribute names to zip.\n    - [f] A function, accepts an attribute name, all the values, and returns a combined value.\n    - [sets] List of values from the list of attribute sets.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "attrsets",
+                "zipWithNames",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "zipAttrsWithNames",
+    ],
+}
+["lib", "attrsets", "getBin"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1379,
+                        column: 23,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1401,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Get a package's `bin` output.\n    If the output does not exist, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getBin pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r\"\n    ```\n\n    # Type\n\n    ```\n    getBin :: Derivation -> String\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getBin",
+    ],
+}
+["lib", "attrsets", "foldlAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 535,
+                        column: 16,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Like [`lib.lists.foldl'`](#function-library-lib.lists.foldl-prime) but for attribute sets.\n    Iterates over every name-value pair in the given attribute set.\n    The result of the callback function is often called `acc` for accumulator. It is passed between callbacks from left to right and the final `acc` is the return value of `foldlAttrs`.\n    Attention:\n    There is a completely different function\n    `lib.foldAttrs`\n    which has nothing to do with this function, despite the similar name.\n\n    # Example\n\n    ```nix\n    foldlAttrs\n      (acc: name: value: {\n        sum = acc.sum + value;\n        names = acc.names ++ [name];\n      })\n      { sum = 0; names = []; }\n      {\n        foo = 1;\n        bar = 10;\n      }\n    ->\n      {\n        sum = 11;\n        names = [\"bar\" \"foo\"];\n      }\n    foldlAttrs\n      (throw \"function not needed\")\n      123\n      {};\n    ->\n      123\n    foldlAttrs\n      (acc: _: _: acc)\n      3\n      { z = throw \"value not needed\"; a = throw \"value not needed\"; };\n    ->\n      3\n    The accumulator doesn't have to be an attrset.\n    It can be as simple as a number or string.\n    foldlAttrs\n      (acc: _: v: acc * 10 + v)\n      1\n      { z = 1; a = 2; };\n    ->\n      121\n    ```\n\n    # Type\n\n    ```\n    foldlAttrs :: ( a -> String -> b -> a ) -> a -> { ... :: b } -> a\n    ```\n\n    # Arguments\n\n    - [f] \n    - [init] \n    - [set] \n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 535,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Like [`lib.lists.foldl'`](#function-library-lib.lists.foldl-prime) but for attribute sets.\n    Iterates over every name-value pair in the given attribute set.\n    The result of the callback function is often called `acc` for accumulator. It is passed between callbacks from left to right and the final `acc` is the return value of `foldlAttrs`.\n    Attention:\n    There is a completely different function\n    `lib.foldAttrs`\n    which has nothing to do with this function, despite the similar name.\n\n    # Example\n\n    ```nix\n    foldlAttrs\n      (acc: name: value: {\n        sum = acc.sum + value;\n        names = acc.names ++ [name];\n      })\n      { sum = 0; names = []; }\n      {\n        foo = 1;\n        bar = 10;\n      }\n    ->\n      {\n        sum = 11;\n        names = [\"bar\" \"foo\"];\n      }\n    foldlAttrs\n      (throw \"function not needed\")\n      123\n      {};\n    ->\n      123\n    foldlAttrs\n      (acc: _: _: acc)\n      3\n      { z = throw \"value not needed\"; a = throw \"value not needed\"; };\n    ->\n      3\n    The accumulator doesn't have to be an attrset.\n    It can be as simple as a number or string.\n    foldlAttrs\n      (acc: _: v: acc * 10 + v)\n      1\n      { z = 1; a = 2; };\n    ->\n      121\n    ```\n\n    # Type\n\n    ```\n    foldlAttrs :: ( a -> String -> b -> a ) -> a -> { ... :: b } -> a\n    ```\n\n    # Arguments\n\n    - [f] \n    - [init] \n    - [set] \n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "foldlAttrs",
+    ],
+}
+["lib", "attrsets", "filterAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 427,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Filter an attribute set by removing all attributes for which the\n    given predicate return false.\n\n    # Example\n\n    ```nix\n    filterAttrs (n: v: n == \"foo\") { foo = 1; bar = 2; }\n    => { foo = 1; }\n    ```\n\n    # Type\n\n    ```\n    filterAttrs :: (String -> Any -> Bool) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate taking an attribute name and an attribute value, which returns `true` to include the attribute, or `false` to exclude the attribute.\n    - [set] The attribute set to filter\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 425,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Filter an attribute set by removing all attributes for which the\n    given predicate return false.\n\n    # Example\n\n    ```nix\n    filterAttrs (n: v: n == \"foo\") { foo = 1; bar = 2; }\n    => { foo = 1; }\n    ```\n\n    # Type\n\n    ```\n    filterAttrs :: (String -> Any -> Bool) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate taking an attribute name and an attribute value, which returns `true` to include the attribute, or `false` to exclude the attribute.\n    - [set] The attribute set to filter\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "filterAttrs",
+    ],
+}
+["lib", "attrsets", "mapAttrsRecursiveCond"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 872,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Like `mapAttrsRecursive`, but it takes an additional predicate\n    function that tells it whether to recurse into an attribute\n    set.  If it returns false, `mapAttrsRecursiveCond` does not\n    recurse, but does apply the map function.  If it returns true, it\n    does recurse, and does not apply the map function.\n\n    # Example\n\n    ```nix\n    # To prevent recursing into derivations (which are attribute\n    # sets with the attribute \"type\" equal to \"derivation\"):\n    mapAttrsRecursiveCond\n      (as: !(as ? \"type\" && as.type == \"derivation\"))\n      (x: ... do something ...)\n      attrs\n    ```\n\n    # Type\n\n    ```\n    mapAttrsRecursiveCond :: (AttrSet -> Bool) -> ([String] -> a -> b) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [cond] A function, given the attribute set the recursion is currently at, determine if to recurse deeper into that attribute set.\n    - [f] A function, given a list of attribute names and a value, returns a new value.\n    - [set] Attribute set to recursively map over.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 870,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Like `mapAttrsRecursive`, but it takes an additional predicate\n    function that tells it whether to recurse into an attribute\n    set.  If it returns false, `mapAttrsRecursiveCond` does not\n    recurse, but does apply the map function.  If it returns true, it\n    does recurse, and does not apply the map function.\n\n    # Example\n\n    ```nix\n    # To prevent recursing into derivations (which are attribute\n    # sets with the attribute \"type\" equal to \"derivation\"):\n    mapAttrsRecursiveCond\n      (as: !(as ? \"type\" && as.type == \"derivation\"))\n      (x: ... do something ...)\n      attrs\n    ```\n\n    # Type\n\n    ```\n    mapAttrsRecursiveCond :: (AttrSet -> Bool) -> ([String] -> a -> b) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [cond] A function, given the attribute set the recursion is currently at, determine if to recurse deeper into that attribute set.\n    - [f] A function, given a list of attribute names and a value, returns a new value.\n    - [set] Attribute set to recursively map over.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mapAttrsRecursiveCond",
+    ],
+}
+["lib", "attrsets", "listToAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "listToAttrs",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "e",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    1,
+                ),
+                content: Some(
+                    "\n      Construct a set from a list specifying the names and values of each\n      attribute. Each element of the list should be a set consisting of a\n      string-valued attribute `name` specifying the name of the attribute,\n      and an attribute `value` specifying its value.\n\n      In case of duplicate occurrences of the same name, the first\n      takes precedence.\n\n      Example:\n\n      ```nix\n      builtins.listToAttrs\n        [ { name = \"foo\"; value = 123; }\n          { name = \"bar\"; value = 456; }\n          { name = \"bar\"; value = 420; }\n        ]\n      ```\n\n      evaluates to\n\n      ```nix\n      { foo = 123; bar = 456; }\n      ```\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "listToAttrs",
+    ],
+}
+["lib", "attrsets", "setAttrByPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 119,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Create a new attribute set with `value` set at the nested attribute location specified in `attrPath`.\n\n    # Example\n\n    ```nix\n    setAttrByPath [\"a\" \"b\"] 3\n    => { a = { b = 3; }; }\n    ```\n\n    # Type\n\n    ```\n    setAttrByPath :: [String] -> Any -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to set\n    - [value] The value to set at the location described by `attrPath`\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 117,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Create a new attribute set with `value` set at the nested attribute location specified in `attrPath`.\n\n    # Example\n\n    ```nix\n    setAttrByPath [\"a\" \"b\"] 3\n    => { a = { b = 3; }; }\n    ```\n\n    # Type\n\n    ```\n    setAttrByPath :: [String] -> Any -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to set\n    - [value] The value to set at the location described by `attrPath`\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "setAttrByPath",
+    ],
+}
+["lib", "attrsets", "showAttrPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1351,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Turns a list of strings into a human-readable description of those\n    strings represented as an attribute path. The result of this function is\n    not intended to be machine-readable.\n    Create a new attribute set with `value` set at the nested attribute location specified in `attrPath`.\n\n    # Example\n\n    ```nix\n    showAttrPath [ \"foo\" \"10\" \"bar\" ]\n    => \"foo.\\\"10\\\".bar\"\n    showAttrPath []\n    => \"<root attribute path>\"\n    ```\n\n    # Type\n\n    ```\n    showAttrPath :: [String] -> String\n    ```\n\n    # Arguments\n\n    - [path] Attribute path to render to a string\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1349,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Turns a list of strings into a human-readable description of those\n    strings represented as an attribute path. The result of this function is\n    not intended to be machine-readable.\n    Create a new attribute set with `value` set at the nested attribute location specified in `attrPath`.\n\n    # Example\n\n    ```nix\n    showAttrPath [ \"foo\" \"10\" \"bar\" ]\n    => \"foo.\\\"10\\\".bar\"\n    showAttrPath []\n    => \"<root attribute path>\"\n    ```\n\n    # Type\n\n    ```\n    showAttrPath :: [String] -> String\n    ```\n\n    # Arguments\n\n    - [path] Attribute path to render to a string\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "showAttrPath",
+    ],
+}
+["lib", "attrsets", "attrsToList"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 766,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Call a function for each attribute in the given set and return\n    the result in a list.\n\n    # Example\n\n    ```nix\n    mapAttrsToList (name: value: name + value)\n       { x = \"a\"; y = \"b\"; }\n    => [ \"xa\" \"yb\" ]\n    ```\n\n    # Type\n\n    ```\n    mapAttrsToList :: (String -> a -> b) -> AttrSet -> [b]\n    ```\n\n    # Arguments\n\n    - [f] A function, given an attribute's name and value, returns a new value.\n    - [attrs] Attribute set to map over.\n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 799,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Deconstruct an attrset to a list of name-value pairs as expected by [`builtins.listToAttrs`](https://nixos.org/manual/nix/stable/language/builtins.html#builtins-listToAttrs).\n    Each element of the resulting list is an attribute set with these attributes:\n    - `name` (string): The name of the attribute\n    - `value` (any): The value of the attribute\n    The following is always true:\n    ```nix\n    builtins.listToAttrs (attrsToList attrs) == attrs\n    ```\n    :::{.warning}\n    The opposite is not always true. In general expect that\n    ```nix\n    attrsToList (builtins.listToAttrs list) != list\n    ```\n    This is because the `listToAttrs` removes duplicate names and doesn't preserve the order of the list.\n    :::\n\n    # Example\n\n    ```nix\n    attrsToList { foo = 1; bar = \"asdf\"; }\n    => [ { name = \"bar\"; value = \"asdf\"; } { name = \"foo\"; value = 1; } ]\n    ```\n\n    # Type\n\n    ```\n    attrsToList :: AttrSet -> [ { name :: String; value :: Any; } ]\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "attrsToList",
+    ],
+}
+["lib", "attrsets", "genAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 914,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Generate an attribute set by mapping a function over a list of\n    attribute names.\n\n    # Example\n\n    ```nix\n    genAttrs [ \"foo\" \"bar\" ] (name: \"x_\" + name)\n    => { foo = \"x_foo\"; bar = \"x_bar\"; }\n    ```\n\n    # Type\n\n    ```\n    genAttrs :: [ String ] -> (String -> Any) -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] Names of values in the resulting attribute set.\n    - [f] A function, given the name of the attribute, returns the attribute's value.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 912,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Generate an attribute set by mapping a function over a list of\n    attribute names.\n\n    # Example\n\n    ```nix\n    genAttrs [ \"foo\" \"bar\" ] (name: \"x_\" + name)\n    => { foo = \"x_foo\"; bar = \"x_bar\"; }\n    ```\n\n    # Type\n\n    ```\n    genAttrs :: [ String ] -> (String -> Any) -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] Names of values in the resulting attribute set.\n    - [f] A function, given the name of the attribute, returns the attribute's value.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "genAttrs",
+    ],
+}
+["lib", "attrsets", "cartesianProductOfSets"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 645,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Return the cartesian product of attribute set value combinations.\n\n    # Example\n\n    ```nix\n    cartesianProductOfSets { a = [ 1 2 ]; b = [ 10 20 ]; }\n    => [\n         { a = 1; b = 10; }\n         { a = 1; b = 20; }\n         { a = 2; b = 10; }\n         { a = 2; b = 20; }\n       ]\n    ```\n\n    # Type\n\n    ```\n    cartesianProductOfSets :: AttrSet -> [AttrSet]\n    ```\n\n    # Arguments\n\n    - [attrsOfLists] Attribute set with attributes that are lists of values\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 643,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Return the cartesian product of attribute set value combinations.\n\n    # Example\n\n    ```nix\n    cartesianProductOfSets { a = [ 1 2 ]; b = [ 10 20 ]; }\n    => [\n         { a = 1; b = 10; }\n         { a = 1; b = 20; }\n         { a = 2; b = 10; }\n         { a = 2; b = 20; }\n       ]\n    ```\n\n    # Type\n\n    ```\n    cartesianProductOfSets :: AttrSet -> [AttrSet]\n    ```\n\n    # Arguments\n\n    - [attrsOfLists] Attribute set with attributes that are lists of values\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "cartesianProductOfSets",
+    ],
+}
+["lib", "attrsets", "getOutput"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1379,
+                        column: 15,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1379,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getOutput",
+    ],
+}
+["lib", "attrsets", "recursiveUpdateUntil"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1194,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Does the same as the update operator '//' except that attributes are\n    merged until the given predicate is verified.  The predicate should\n    accept 3 arguments which are the path to reach the attribute, a part of\n    the first attribute set and a part of the second attribute set.  When\n    the predicate is satisfied, the value of the first attribute set is\n    replaced by the value of the second attribute set.\n\n    # Example\n\n    ```nix\n    recursiveUpdateUntil (path: l: r: path == [\"foo\"]) {\n      # first attribute set\n      foo.bar = 1;\n      foo.baz = 2;\n      bar = 3;\n    } {\n      #second attribute set\n      foo.bar = 1;\n      foo.quz = 2;\n      baz = 4;\n    }\n    => {\n      foo.bar = 1; # 'foo.*' from the second set\n      foo.quz = 2; #\n      bar = 3;     # 'bar' from the first set\n      baz = 4;     # 'baz' from the second set\n    }\n    ```\n\n    # Type\n\n    ```\n    recursiveUpdateUntil :: ( [ String ] -> AttrSet -> AttrSet -> Bool ) -> AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate, taking the path to the current attribute as a list of strings for attribute names, and the two values at that path from the original arguments.\n    - [lhs] Left attribute set of the merge.\n    - [rhs] Right attribute set of the merge.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1192,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Does the same as the update operator '//' except that attributes are\n    merged until the given predicate is verified.  The predicate should\n    accept 3 arguments which are the path to reach the attribute, a part of\n    the first attribute set and a part of the second attribute set.  When\n    the predicate is satisfied, the value of the first attribute set is\n    replaced by the value of the second attribute set.\n\n    # Example\n\n    ```nix\n    recursiveUpdateUntil (path: l: r: path == [\"foo\"]) {\n      # first attribute set\n      foo.bar = 1;\n      foo.baz = 2;\n      bar = 3;\n    } {\n      #second attribute set\n      foo.bar = 1;\n      foo.quz = 2;\n      baz = 4;\n    }\n    => {\n      foo.bar = 1; # 'foo.*' from the second set\n      foo.quz = 2; #\n      bar = 3;     # 'bar' from the first set\n      baz = 4;     # 'baz' from the second set\n    }\n    ```\n\n    # Type\n\n    ```\n    recursiveUpdateUntil :: ( [ String ] -> AttrSet -> AttrSet -> Bool ) -> AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate, taking the path to the current attribute as a list of strings for attribute names, and the two values at that path from the original arguments.\n    - [lhs] Left attribute set of the merge.\n    - [rhs] Right attribute set of the merge.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "recursiveUpdateUntil",
+    ],
+}
+["lib", "attrsets", "getDev"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1379,
+                        column: 23,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1441,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Get a package's `dev` output.\n    If the output does not exist, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getDev pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getDev :: Derivation -> String\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getDev",
+    ],
+}
+["lib", "attrsets", "getAttr"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "getAttr",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "s",
+                        "set",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      `getAttr` returns the attribute named *s* from *set*. Evaluation\n      aborts if the attribute doesn’t exist. This is a dynamic version of\n      the `.` operator, since *s* is an expression rather than an\n      identifier.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getAttr",
+    ],
+}
+["lib", "attrsets", "chooseDevOutputs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1479,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Pick the outputs of packages to place in `buildInputs`\n\n    # Type\n\n    ```\n    chooseDevOutputs :: [Derivation] -> [String]\n    ```\n\n    # Arguments\n\n    - [drvs] List of packages to pick `dev` outputs from\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1477,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Pick the outputs of packages to place in `buildInputs`\n\n    # Type\n\n    ```\n    chooseDevOutputs :: [Derivation] -> [String]\n    ```\n\n    # Arguments\n\n    - [drvs] List of packages to pick `dev` outputs from\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "chooseDevOutputs",
+    ],
+}
+["lib", "attrsets", "zip"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "zipAttrsWith",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "f",
+                        "list",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Transpose a list of attribute sets into an attribute set of lists,\n      then apply `mapAttrs`.\n\n      `f` receives two arguments: the attribute name and a non-empty\n      list of all values encountered for that attribute name.\n\n      The result is an attribute set where the attribute names are the\n      union of the attribute names in each element of `list`. The attribute\n      values are the return values of `f`.\n\n      ```nix\n      builtins.zipAttrsWith\n        (name: values: { inherit name values; })\n        [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n      ```\n\n      evaluates to\n\n      ```\n      {\n        a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n        b = { name = \"b\"; values = [ \"z\" ]; };\n      }\n      ```\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1566,
+                    column: 3,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "attrsets",
+                "zipAttrsWith",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "zip",
+    ],
+}
+["lib", "attrsets", "mapAttrsRecursive"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 833,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Like `mapAttrs`, except that it recursively applies itself to\n    the *leaf* attributes of a potentially-nested attribute set:\n    the second argument of the function will never be an attrset.\n    Also, the first argument of the argument function is a *list*\n    of the attribute names that form the path to the leaf attribute.\n    For a function that gives you control over what counts as a leaf,\n    see `mapAttrsRecursiveCond`.\n\n    # Example\n\n    ```nix\n    mapAttrsRecursive (path: value: concatStringsSep \"-\" (path ++ [value]))\n      { n = { a = \"A\"; m = { b = \"B\"; c = \"C\"; }; }; d = \"D\"; }\n    => { n = { a = \"n-a-A\"; m = { b = \"n-m-b-B\"; c = \"n-m-c-C\"; }; }; d = \"d-D\"; }\n    ```\n\n    # Type\n\n    ```\n    mapAttrsRecursive :: ([String] -> a -> b) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] A function, given a list of attribute names and a value, returns a new value.\n    - [set] Set to recursively map over.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 831,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Like `mapAttrs`, except that it recursively applies itself to\n    the *leaf* attributes of a potentially-nested attribute set:\n    the second argument of the function will never be an attrset.\n    Also, the first argument of the argument function is a *list*\n    of the attribute names that form the path to the leaf attribute.\n    For a function that gives you control over what counts as a leaf,\n    see `mapAttrsRecursiveCond`.\n\n    # Example\n\n    ```nix\n    mapAttrsRecursive (path: value: concatStringsSep \"-\" (path ++ [value]))\n      { n = { a = \"A\"; m = { b = \"B\"; c = \"C\"; }; }; d = \"D\"; }\n    => { n = { a = \"n-a-A\"; m = { b = \"n-m-b-B\"; c = \"n-m-c-C\"; }; }; d = \"d-D\"; }\n    ```\n\n    # Type\n\n    ```\n    mapAttrsRecursive :: ([String] -> a -> b) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] A function, given a list of attribute names and a value, returns a new value.\n    - [set] Set to recursively map over.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mapAttrsRecursive",
+    ],
+}
+["lib", "attrsets", "zipAttrsWith"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "zipAttrsWith",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "f",
+                        "list",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Transpose a list of attribute sets into an attribute set of lists,\n      then apply `mapAttrs`.\n\n      `f` receives two arguments: the attribute name and a non-empty\n      list of all values encountered for that attribute name.\n\n      The result is an attribute set where the attribute names are the\n      union of the attribute names in each element of `list`. The attribute\n      values are the return values of `f`.\n\n      ```nix\n      builtins.zipAttrsWith\n        (name: values: { inherit name values; })\n        [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n      ```\n\n      evaluates to\n\n      ```\n      {\n        a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n        b = { name = \"b\"; values = [ \"z\" ]; };\n      }\n      ```\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1070,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Merge sets of attributes and use the function f to merge attribute values.\n    Like `lib.attrsets.zipAttrsWithNames` with all key names are passed for `names`.\n    Implementation note: Common names appear multiple times in the list of\n    names, hopefully this does not affect the system because the maximal\n    laziness avoid computing twice the same expression and `listToAttrs` does\n    not care about duplicated attribute names.\n\n    # Example\n\n    ```nix\n    zipAttrsWith (name: values: values) [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; b = [\"z\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrsWith :: (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "attrsets",
+                "zip",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "zipAttrsWith",
+    ],
+}
+["lib", "attrsets", "zipWithNames"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1038,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Merge sets of attributes and use the function `f` to merge attributes\n    values.\n\n    # Example\n\n    ```nix\n    zipAttrsWithNames [\"a\"] (name: vs: vs) [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrsWithNames :: [ String ] -> (String -> [ Any ] -> Any) -> [ AttrSet ] -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] List of attribute names to zip.\n    - [f] A function, accepts an attribute name, all the values, and returns a combined value.\n    - [sets] List of values from the list of attribute sets.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1563,
+                    column: 3,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "attrsets",
+                "zipAttrsWithNames",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "zipWithNames",
+    ],
+}
+["lib", "attrsets", "getMan"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1379,
+                        column: 23,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Get a package output.\n    If no output is found, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getOutput \"dev\" pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-dev\"\n    ```\n\n    # Type\n\n    ```\n    getOutput :: String -> Derivation -> String\n    ```\n\n    # Arguments\n\n    - [output] \n    - [pkg] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1461,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Get a package's `man` output.\n    If the output does not exist, fallback to `.out` and then to the default.\n\n    # Example\n\n    ```nix\n    getMan pkgs.openssl\n    => \"/nix/store/9rz8gxhzf8sw4kf2j2f1grr49w8zx5vj-openssl-1.0.1r-man\"\n    ```\n\n    # Type\n\n    ```\n    getMan :: Derivation -> String\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getMan",
+    ],
+}
+["lib", "attrsets", "attrValues"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "attrValues",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "set",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    1,
+                ),
+                content: Some(
+                    "\n      Return the values of the attributes in the set *set* in the order\n      corresponding to the sorted attribute names.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 349,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Return the values of all attributes in the given set, sorted by\n    attribute name.\n\n    # Example\n\n    ```nix\n    attrValues {c = 3; a = 1; b = 2;}\n    => [1 2 3]\n    ```\n\n    # Type\n\n    ```\n    attrValues :: AttrSet -> [Any]\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "attrValues",
+    ],
+}
+["lib", "attrsets", "nameValuePair"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 677,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Utility function that creates a `{name, value}` pair as expected by `builtins.listToAttrs`.\n\n    # Example\n\n    ```nix\n    nameValuePair \"some\" 6\n    => { name = \"some\"; value = 6; }\n    ```\n\n    # Type\n\n    ```\n    nameValuePair :: String -> Any -> { name :: String; value :: Any; }\n    ```\n\n    # Arguments\n\n    - [name] Attribute name\n    - [value] Attribute value\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 675,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Utility function that creates a `{name, value}` pair as expected by `builtins.listToAttrs`.\n\n    # Example\n\n    ```nix\n    nameValuePair \"some\" 6\n    => { name = \"some\"; value = 6; }\n    ```\n\n    # Type\n\n    ```\n    nameValuePair :: String -> Any -> { name :: String; value :: Any; }\n    ```\n\n    # Arguments\n\n    - [name] Attribute name\n    - [value] Attribute value\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "nameValuePair",
+    ],
+}
+["lib", "attrsets", "updateManyAttrsByPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 301,
+                        column: 6,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: None,
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 244,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Update or set specific paths of an attribute set.\n    Takes a list of updates to apply and an attribute set to apply them to,\n    and returns the attribute set with the updates applied. Updates are\n    represented as `{ path = ...; update = ...; }` values, where `path` is a\n    list of strings representing the attribute path that should be updated,\n    and `update` is a function that takes the old value at that attribute path\n    as an argument and returns the new\n    value it should be.\n    Properties:\n    - Updates to deeper attribute paths are applied before updates to more\n    shallow attribute paths\n    - Multiple updates to the same attribute path are applied in the order\n    they appear in the update list\n    - If any but the last `path` element leads into a value that is not an\n    attribute set, an error is thrown\n    - If there is an update for an attribute path that doesn't exist,\n    accessing the argument in the update function causes an error, but\n    intermediate attribute sets are implicitly created as needed\n\n    # Example\n\n    ```nix\n    updateManyAttrsByPath [\n      {\n        path = [ \"a\" \"b\" ];\n        update = old: { d = old.c; };\n      }\n      {\n        path = [ \"a\" \"b\" \"c\" ];\n        update = old: old + 1;\n      }\n      {\n        path = [ \"x\" \"y\" ];\n        update = old: \"xy\";\n      }\n    ] { a.b.c = 0; }\n    => { a = { b = { d = 1; }; }; x = { y = \"xy\"; }; }\n    ```\n\n    # Type\n\n    ```\n    updateManyAttrsByPath :: [{ path :: [String]; update :: (Any -> Any); }] -> AttrSet -> AttrSet\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "updateManyAttrsByPath",
+    ],
+}
+["lib", "attrsets", "mapAttrsToList"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 764,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Call a function for each attribute in the given set and return\n    the result in a list.\n\n    # Example\n\n    ```nix\n    mapAttrsToList (name: value: name + value)\n       { x = \"a\"; y = \"b\"; }\n    => [ \"xa\" \"yb\" ]\n    ```\n\n    # Type\n\n    ```\n    mapAttrsToList :: (String -> a -> b) -> AttrSet -> [b]\n    ```\n\n    # Arguments\n\n    - [f] A function, given an attribute's name and value, returns a new value.\n    - [attrs] Attribute set to map over.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 762,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Call a function for each attribute in the given set and return\n    the result in a list.\n\n    # Example\n\n    ```nix\n    mapAttrsToList (name: value: name + value)\n       { x = \"a\"; y = \"b\"; }\n    => [ \"xa\" \"yb\" ]\n    ```\n\n    # Type\n\n    ```\n    mapAttrsToList :: (String -> a -> b) -> AttrSet -> [b]\n    ```\n\n    # Arguments\n\n    - [f] A function, given an attribute's name and value, returns a new value.\n    - [attrs] Attribute set to map over.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mapAttrsToList",
+    ],
+}
+["lib", "attrsets", "matchAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1276,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Returns true if the pattern is contained in the set. False otherwise.\n\n    # Example\n\n    ```nix\n    matchAttrs { cpu = {}; } { cpu = { bits = 64; }; }\n    => true\n    ```\n\n    # Type\n\n    ```\n    matchAttrs :: AttrSet -> AttrSet -> Bool\n    ```\n\n    # Arguments\n\n    - [pattern] Attribute set structure to match\n    - [attrs] Attribute set to find patterns in\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1274,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Returns true if the pattern is contained in the set. False otherwise.\n\n    # Example\n\n    ```nix\n    matchAttrs { cpu = {}; } { cpu = { bits = 64; }; }\n    => true\n    ```\n\n    # Type\n\n    ```\n    matchAttrs :: AttrSet -> AttrSet -> Bool\n    ```\n\n    # Arguments\n\n    - [pattern] Attribute set structure to match\n    - [attrs] Attribute set to find patterns in\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "matchAttrs",
+    ],
+}
+["lib", "attrsets", "overrideExisting"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1317,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Override only the attributes that are already present in the old set\n    useful for deep-overriding.\n\n    # Example\n\n    ```nix\n    overrideExisting {} { a = 1; }\n    => {}\n    overrideExisting { b = 2; } { a = 1; }\n    => { b = 2; }\n    overrideExisting { a = 3; b = 2; } { a = 1; }\n    => { a = 1; b = 2; }\n    ```\n\n    # Type\n\n    ```\n    overrideExisting :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [old] Original attribute set\n    - [new] Attribute set with attributes to override in `old`.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1315,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Override only the attributes that are already present in the old set\n    useful for deep-overriding.\n\n    # Example\n\n    ```nix\n    overrideExisting {} { a = 1; }\n    => {}\n    overrideExisting { b = 2; } { a = 1; }\n    => { b = 2; }\n    overrideExisting { a = 3; b = 2; } { a = 1; }\n    => { a = 1; b = 2; }\n    ```\n\n    # Type\n\n    ```\n    overrideExisting :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [old] Original attribute set\n    - [new] Attribute set with attributes to override in `old`.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "overrideExisting",
+    ],
+}
+["lib", "attrsets", "removeAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "removeAttrs",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "set",
+                        "list",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Remove the attributes listed in *list* from *set*. The attributes\n      don’t have to exist in *set*. For instance,\n\n      ```nix\n      removeAttrs { x = 1; y = 2; z = 3; } [ \"a\" \"x\" \"z\" ]\n      ```\n\n      evaluates to `{ y = 2; }`.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "removeAttrs",
+    ],
+}
+["lib", "attrsets", "recurseIntoAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1512,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Make various Nix tools consider the contents of the resulting\n    attribute set when looking for what to build, find, etc.\n    This function only affects a single attribute set; it does not\n    apply itself recursively for nested attribute sets.\n\n    # Example\n\n    ```nix\n    { pkgs ? import <nixpkgs> {} }:\n    {\n      myTools = pkgs.lib.recurseIntoAttrs {\n        inherit (pkgs) hello figlet;\n      };\n    }\n    ```\n\n    # Type\n\n    ```\n    recurseIntoAttrs :: AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrs] An attribute set to scan for derivations.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1510,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Make various Nix tools consider the contents of the resulting\n    attribute set when looking for what to build, find, etc.\n    This function only affects a single attribute set; it does not\n    apply itself recursively for nested attribute sets.\n\n    # Example\n\n    ```nix\n    { pkgs ? import <nixpkgs> {} }:\n    {\n      myTools = pkgs.lib.recurseIntoAttrs {\n        inherit (pkgs) hello figlet;\n      };\n    }\n    ```\n\n    # Type\n\n    ```\n    recurseIntoAttrs :: AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrs] An attribute set to scan for derivations.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "recurseIntoAttrs",
+    ],
+}
+["lib", "attrsets", "recursiveUpdate"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1246,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    A recursive variant of the update operator ‘//’.  The recursion\n    stops when one of the attribute values is not an attribute set,\n    in which case the right hand side value takes precedence over the\n    left hand side value.\n\n    # Example\n\n    ```nix\n    recursiveUpdate {\n      boot.loader.grub.enable = true;\n      boot.loader.grub.device = \"/dev/hda\";\n    } {\n      boot.loader.grub.device = \"\";\n    }\n    returns: {\n      boot.loader.grub.enable = true;\n      boot.loader.grub.device = \"\";\n    }\n    ```\n\n    # Type\n\n    ```\n    recursiveUpdate :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [lhs] Left attribute set of the merge.\n    - [rhs] Right attribute set of the merge.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1244,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    A recursive variant of the update operator ‘//’.  The recursion\n    stops when one of the attribute values is not an attribute set,\n    in which case the right hand side value takes precedence over the\n    left hand side value.\n\n    # Example\n\n    ```nix\n    recursiveUpdate {\n      boot.loader.grub.enable = true;\n      boot.loader.grub.device = \"/dev/hda\";\n    } {\n      boot.loader.grub.device = \"\";\n    }\n    returns: {\n      boot.loader.grub.enable = true;\n      boot.loader.grub.device = \"\";\n    }\n    ```\n\n    # Type\n\n    ```\n    recursiveUpdate :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [lhs] Left attribute set of the merge.\n    - [rhs] Right attribute set of the merge.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "recursiveUpdate",
+    ],
+}
+["lib", "attrsets", "attrByPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 45,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Return an attribute from nested attribute sets.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    # [\"a\" \"b\"] is equivalent to x.a.b\n    # 6 is a default value to return if the path does not exist in attrset\n    attrByPath [\"a\" \"b\"] 6 x\n    => 3\n    attrByPath [\"z\" \"z\"] 6 x\n    => 6\n    ```\n\n    # Type\n\n    ```\n    attrByPath :: [String] -> Any -> AttrSet -> Any\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to return from `set`\n    - [default] Default value if `attrPath` does not resolve to an existing value\n    - [set] The nested attribute set to select values from\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 43,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Return an attribute from nested attribute sets.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    # [\"a\" \"b\"] is equivalent to x.a.b\n    # 6 is a default value to return if the path does not exist in attrset\n    attrByPath [\"a\" \"b\"] 6 x\n    => 3\n    attrByPath [\"z\" \"z\"] 6 x\n    => 6\n    ```\n\n    # Type\n\n    ```\n    attrByPath :: [String] -> Any -> AttrSet -> Any\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to return from `set`\n    - [default] Default value if `attrPath` does not resolve to an existing value\n    - [set] The nested attribute set to select values from\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "attrByPath",
+    ],
+}
+["lib", "attrsets", "isDerivation"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 947,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Check whether the argument is a derivation. Any set with\n    `{ type = \"derivation\"; }` counts as a derivation.\n\n    # Example\n\n    ```nix\n    nixpkgs = import <nixpkgs> {}\n    isDerivation nixpkgs.ruby\n    => true\n    isDerivation \"foobar\"\n    => false\n    ```\n\n    # Type\n\n    ```\n    isDerivation :: Any -> Bool\n    ```\n\n    # Arguments\n\n    - [value] Value to check.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 945,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Check whether the argument is a derivation. Any set with\n    `{ type = \"derivation\"; }` counts as a derivation.\n\n    # Example\n\n    ```nix\n    nixpkgs = import <nixpkgs> {}\n    isDerivation nixpkgs.ruby\n    => true\n    isDerivation \"foobar\"\n    => false\n    ```\n\n    # Type\n\n    ```\n    isDerivation :: Any -> Bool\n    ```\n\n    # Arguments\n\n    - [value] Value to check.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "isDerivation",
+    ],
+}
+["lib", "attrsets", "optionalAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1006,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    If `cond` is true, return the attribute set `as`,\n    otherwise an empty attribute set.\n\n    # Example\n\n    ```nix\n    optionalAttrs (true) { my = \"set\"; }\n    => { my = \"set\"; }\n    optionalAttrs (false) { my = \"set\"; }\n    => { }\n    ```\n\n    # Type\n\n    ```\n    optionalAttrs :: Bool -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [cond] Condition under which the `as` attribute set is returned.\n    - [as] The attribute set to return if `cond` is `true`.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1004,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    If `cond` is true, return the attribute set `as`,\n    otherwise an empty attribute set.\n\n    # Example\n\n    ```nix\n    optionalAttrs (true) { my = \"set\"; }\n    => { my = \"set\"; }\n    optionalAttrs (false) { my = \"set\"; }\n    => { }\n    ```\n\n    # Type\n\n    ```\n    optionalAttrs :: Bool -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [cond] Condition under which the `as` attribute set is returned.\n    - [as] The attribute set to return if `cond` is `true`.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "optionalAttrs",
+    ],
+}
+["lib", "attrsets", "mergeAttrsList"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1127,
+                        column: 20,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Merge a list of attribute sets together using the `//` operator.\n    In case of duplicate attributes, values from later list elements take precedence over earlier ones.\n    The result is the same as `foldl mergeAttrs { }`, but the performance is better for large inputs.\n    For n list elements, each with an attribute set containing m unique attributes, the complexity of this operation is O(nm log n).\n\n    # Example\n\n    ```nix\n    mergeAttrsList [ { a = 0; b = 1; } { c = 2; d = 3; } ]\n    => { a = 0; b = 1; c = 2; d = 3; }\n    mergeAttrsList [ { a = 0; } { a = 1; } ]\n    => { a = 1; }\n    ```\n\n    # Type\n\n    ```\n    mergeAttrsList :: [ Attrs ] -> Attrs\n    ```\n\n    # Arguments\n\n    - [list] \n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1127,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Merge a list of attribute sets together using the `//` operator.\n    In case of duplicate attributes, values from later list elements take precedence over earlier ones.\n    The result is the same as `foldl mergeAttrs { }`, but the performance is better for large inputs.\n    For n list elements, each with an attribute set containing m unique attributes, the complexity of this operation is O(nm log n).\n\n    # Example\n\n    ```nix\n    mergeAttrsList [ { a = 0; b = 1; } { c = 2; d = 3; } ]\n    => { a = 0; b = 1; c = 2; d = 3; }\n    mergeAttrsList [ { a = 0; } { a = 1; } ]\n    => { a = 1; }\n    ```\n\n    # Type\n\n    ```\n    mergeAttrsList :: [ Attrs ] -> Attrs\n    ```\n\n    # Arguments\n\n    - [list] \n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mergeAttrsList",
+    ],
+}
+["lib", "attrsets", "attrNames"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "attrNames",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "set",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    1,
+                ),
+                content: Some(
+                    "\n      Return the names of the attributes in the set *set* in an\n      alphabetically sorted list. For instance, `builtins.attrNames { y\n      = 1; x = \"foo\"; }` evaluates to `[ \"x\" \"y\" ]`.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "attrNames",
+    ],
+}
+["lib", "attrsets", "filterAttrsRecursive"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 458,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Filter an attribute set recursively by removing all attributes for\n    which the given predicate return false.\n\n    # Example\n\n    ```nix\n    filterAttrsRecursive (n: v: v != null) { foo = { bar = null; }; }\n    => { foo = {}; }\n    ```\n\n    # Type\n\n    ```\n    filterAttrsRecursive :: (String -> Any -> Bool) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate taking an attribute name and an attribute value, which returns `true` to include the attribute, or `false` to exclude the attribute.\n    - [set] The attribute set to filter\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 456,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Filter an attribute set recursively by removing all attributes for\n    which the given predicate return false.\n\n    # Example\n\n    ```nix\n    filterAttrsRecursive (n: v: v != null) { foo = { bar = null; }; }\n    => { foo = {}; }\n    ```\n\n    # Type\n\n    ```\n    filterAttrsRecursive :: (String -> Any -> Bool) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [pred] Predicate taking an attribute name and an attribute value, which returns `true` to include the attribute, or `false` to exclude the attribute.\n    - [set] The attribute set to filter\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "filterAttrsRecursive",
+    ],
+}
+["lib", "attrsets", "hasAttrByPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 84,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Return if an attribute from nested attribute set exists.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    hasAttrByPath [\"a\" \"b\"] x\n    => true\n    hasAttrByPath [\"z\" \"z\"] x\n    => false\n    ```\n\n    # Type\n\n    ```\n    hasAttrByPath :: [String] -> AttrSet -> Bool\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to check from `set`\n    - [e] The nested attribute set to check\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 82,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Return if an attribute from nested attribute set exists.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    hasAttrByPath [\"a\" \"b\"] x\n    => true\n    hasAttrByPath [\"z\" \"z\"] x\n    => false\n    ```\n\n    # Type\n\n    ```\n    hasAttrByPath :: [String] -> AttrSet -> Bool\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to check from `set`\n    - [e] The nested attribute set to check\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "hasAttrByPath",
+    ],
+}
+["lib", "attrsets", "isAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "isAttrs",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "e",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    1,
+                ),
+                content: Some(
+                    "\n      Return `true` if *e* evaluates to a set, and `false` otherwise.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "isAttrs",
+    ],
+}
+["lib", "attrsets", "mapAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "mapAttrs",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "f",
+                        "attrset",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Apply function *f* to every element of *attrset*. For example,\n\n      ```nix\n      builtins.mapAttrs (name: value: value * 10) { a = 1; b = 2; }\n      ```\n\n      evaluates to `{ a = 10; b = 20; }`.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 700,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Apply a function to each element in an attribute set, creating a new attribute set.\n\n    # Example\n\n    ```nix\n    mapAttrs (name: value: name + \"-\" + value)\n       { x = \"foo\"; y = \"bar\"; }\n    => { x = \"x-foo\"; y = \"y-bar\"; }\n    ```\n\n    # Type\n\n    ```\n    mapAttrs :: (String -> Any -> Any) -> AttrSet -> AttrSet\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mapAttrs",
+    ],
+}
+["lib", "attrsets", "concatMapAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 191,
+                        column: 20,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Map each attribute in the given set and merge them into a new attribute set.\n\n    # Example\n\n    ```nix\n    concatMapAttrs\n      (name: value: {\n        ${name} = value;\n        ${name + value} = value;\n      })\n      { x = \"a\"; y = \"b\"; }\n    => { x = \"a\"; xa = \"a\"; y = \"b\"; yb = \"b\"; }\n    ```\n\n    # Type\n\n    ```\n    concatMapAttrs :: (String -> a -> AttrSet) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] \n    - [v] \n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 191,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Map each attribute in the given set and merge them into a new attribute set.\n\n    # Example\n\n    ```nix\n    concatMapAttrs\n      (name: value: {\n        ${name} = value;\n        ${name + value} = value;\n      })\n      { x = \"a\"; y = \"b\"; }\n    => { x = \"a\"; xa = \"a\"; y = \"b\"; yb = \"b\"; }\n    ```\n\n    # Type\n\n    ```\n    concatMapAttrs :: (String -> a -> AttrSet) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] \n    - [v] \n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "concatMapAttrs",
+    ],
+}
+["lib", "attrsets", "catAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "catAttrs",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "attr",
+                        "list",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Collect each attribute named *attr* from a list of attribute\n      sets.  Attrsets that don't contain the named attribute are\n      ignored. For example,\n\n      ```nix\n      builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n      ```\n\n      evaluates to `[1 2]`.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 398,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Collect each attribute named `attr` from a list of attribute\n    sets.  Sets that don't contain the named attribute are ignored.\n\n    # Example\n\n    ```nix\n    catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n    => [1 2]\n    ```\n\n    # Type\n\n    ```\n    catAttrs :: String -> [AttrSet] -> [Any]\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "catAttrs",
+    ],
+}
+["lib", "attrsets", "collect"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 607,
+                        column: 3,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Recursively collect sets that verify a given predicate named `pred`\n    from the set `attrs`.  The recursion is stopped when the predicate is\n    verified.\n\n    # Example\n\n    ```nix\n    collect isList { a = { b = [\"b\"]; }; c = [1]; }\n    => [[\"b\"] [1]]\n    collect (x: x ? outPath)\n       { a = { outPath = \"a/\"; }; b = { outPath = \"b/\"; }; }\n    => [{ outPath = \"a/\"; } { outPath = \"b/\"; }]\n    ```\n\n    # Type\n\n    ```\n    collect :: (AttrSet -> Bool) -> AttrSet -> [x]\n    ```\n\n    # Arguments\n\n    - [pred] Given an attribute's value, determine if recursion should stop.\n    - [attrs] The attribute set to recursively collect.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 605,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Recursively collect sets that verify a given predicate named `pred`\n    from the set `attrs`.  The recursion is stopped when the predicate is\n    verified.\n\n    # Example\n\n    ```nix\n    collect isList { a = { b = [\"b\"]; }; c = [1]; }\n    => [[\"b\"] [1]]\n    collect (x: x ? outPath)\n       { a = { outPath = \"a/\"; }; b = { outPath = \"b/\"; }; }\n    => [{ outPath = \"a/\"; } { outPath = \"b/\"; }]\n    ```\n\n    # Type\n\n    ```\n    collect :: (AttrSet -> Bool) -> AttrSet -> [x]\n    ```\n\n    # Arguments\n\n    - [pred] Given an attribute's value, determine if recursion should stop.\n    - [attrs] The attribute set to recursively collect.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "collect",
+    ],
+}
+["lib", "attrsets", "getAttrFromPath"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 158,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Like `attrByPath`, but without a default value. If it doesn't find the\n    path it will throw an error.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    getAttrFromPath [\"a\" \"b\"] x\n    => 3\n    getAttrFromPath [\"z\" \"z\"] x\n    => error: cannot find attribute `z.z'\n    ```\n\n    # Type\n\n    ```\n    getAttrFromPath :: [String] -> AttrSet -> Any\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to get from `set`\n    - [set] The nested attribute set to find the value in.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 156,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Like `attrByPath`, but without a default value. If it doesn't find the\n    path it will throw an error.\n\n    # Example\n\n    ```nix\n    x = { a = { b = 3; }; }\n    getAttrFromPath [\"a\" \"b\"] x\n    => 3\n    getAttrFromPath [\"z\" \"z\"] x\n    => error: cannot find attribute `z.z'\n    ```\n\n    # Type\n\n    ```\n    getAttrFromPath :: [String] -> AttrSet -> Any\n    ```\n\n    # Arguments\n\n    - [attrPath] A list of strings representing the attribute path to get from `set`\n    - [set] The nested attribute set to find the value in.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getAttrFromPath",
+    ],
+}
+["lib", "attrsets", "attrVals"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 327,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Return the specified attributes from a set.\n\n    # Example\n\n    ```nix\n    attrVals [\"a\" \"b\" \"c\"] as\n    => [as.a as.b as.c]\n    ```\n\n    # Type\n\n    ```\n    attrVals :: [String] -> AttrSet -> [Any]\n    ```\n\n    # Arguments\n\n    - [nameList] The list of attributes to fetch from `set`. Each attribute name must exist on the attrbitue set\n    - [set] The set to get attribute values from\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 325,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Return the specified attributes from a set.\n\n    # Example\n\n    ```nix\n    attrVals [\"a\" \"b\" \"c\"] as\n    => [as.a as.b as.c]\n    ```\n\n    # Type\n\n    ```\n    attrVals :: [String] -> AttrSet -> [Any]\n    ```\n\n    # Arguments\n\n    - [nameList] The list of attributes to fetch from `set`. Each attribute name must exist on the attrbitue set\n    - [set] The set to get attribute values from\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "attrVals",
+    ],
+}
+["lib", "attrsets", "mapAttrs'"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 732,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Like `mapAttrs`, but allows the name of each attribute to be\n    changed in addition to the value.  The applied function should\n    return both the new name and value as a `nameValuePair`.\n\n    # Example\n\n    ```nix\n    mapAttrs' (name: value: nameValuePair (\"foo_\" + name) (\"bar-\" + value))\n       { x = \"a\"; y = \"b\"; }\n    => { foo_x = \"bar-a\"; foo_y = \"bar-b\"; }\n    ```\n\n    # Type\n\n    ```\n    mapAttrs' :: (String -> Any -> { name :: String; value :: Any; }) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] A function, given an attribute's name and value, returns a new `nameValuePair`.\n    - [set] Attribute set to map over.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 730,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Like `mapAttrs`, but allows the name of each attribute to be\n    changed in addition to the value.  The applied function should\n    return both the new name and value as a `nameValuePair`.\n\n    # Example\n\n    ```nix\n    mapAttrs' (name: value: nameValuePair (\"foo_\" + name) (\"bar-\" + value))\n       { x = \"a\"; y = \"b\"; }\n    => { foo_x = \"bar-a\"; foo_y = \"bar-b\"; }\n    ```\n\n    # Type\n\n    ```\n    mapAttrs' :: (String -> Any -> { name :: String; value :: Any; }) -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [f] A function, given an attribute's name and value, returns a new `nameValuePair`.\n    - [set] Attribute set to map over.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "mapAttrs'",
+    ],
+}
+["lib", "attrsets", "getAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 377,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Given a set of attribute names, return the set of the corresponding\n    attributes from the given set.\n\n    # Example\n\n    ```nix\n    getAttrs [ \"a\" \"b\" ] { a = 1; b = 2; c = 3; }\n    => { a = 1; b = 2; }\n    ```\n\n    # Type\n\n    ```\n    getAttrs :: [String] -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] A list of attribute names to get out of `set`\n    - [attrs] The set to get the named attributes from\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 375,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Given a set of attribute names, return the set of the corresponding\n    attributes from the given set.\n\n    # Example\n\n    ```nix\n    getAttrs [ \"a\" \"b\" ] { a = 1; b = 2; c = 3; }\n    => { a = 1; b = 2; }\n    ```\n\n    # Type\n\n    ```\n    getAttrs :: [String] -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [names] A list of attribute names to get out of `set`\n    - [attrs] The set to get the named attributes from\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "getAttrs",
+    ],
+}
+["lib", "attrsets", "unionOfDisjoint"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1552,
+                        column: 21,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    `unionOfDisjoint x y` is equal to `x // y // z` where the\n    attrnames in `z` are the intersection of the attrnames in `x` and\n    `y`, and all values `assert` with an error message.  This\n    operator is commutative, unlike (//).\n\n    # Type\n\n    ```\n    unionOfDisjoint :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [x] \n    - [y] \n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1552,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    `unionOfDisjoint x y` is equal to `x // y // z` where the\n    attrnames in `z` are the intersection of the attrnames in `x` and\n    `y`, and all values `assert` with an error message.  This\n    operator is commutative, unlike (//).\n\n    # Type\n\n    ```\n    unionOfDisjoint :: AttrSet -> AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [x] \n    - [y] \n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "unionOfDisjoint",
+    ],
+}
+["lib", "attrsets", "zipAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1098,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Merge sets of attributes and combine each attribute value in to a list.\n    Like `lib.attrsets.zipAttrsWith` with `(name: values: values)` as the function.\n\n    # Example\n\n    ```nix\n    zipAttrs [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; b = [\"z\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrs :: [ AttrSet ] -> AttrSet\n    ```\n\n    # Arguments\n\n    - [sets] List of attribute sets to zip together.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1096,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Merge sets of attributes and combine each attribute value in to a list.\n    Like `lib.attrsets.zipAttrsWith` with `(name: values: values)` as the function.\n\n    # Example\n\n    ```nix\n    zipAttrs [{a = \"x\";} {a = \"y\"; b = \"z\";}]\n    => { a = [\"x\" \"y\"]; b = [\"z\"]; }\n    ```\n\n    # Type\n\n    ```\n    zipAttrs :: [ AttrSet ] -> AttrSet\n    ```\n\n    # Arguments\n\n    - [sets] List of attribute sets to zip together.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "zipAttrs",
+    ],
+}
+["lib", "attrsets", "dontRecurseIntoAttrs"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/attrsets.nix",
+                        line: 1531,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Undo the effect of recurseIntoAttrs.\n\n    # Type\n\n    ```\n    dontRecurseIntoAttrs :: AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrs] An attribute set to not scan for derivations.\n\n  ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 1529,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Undo the effect of recurseIntoAttrs.\n\n    # Type\n\n    ```\n    dontRecurseIntoAttrs :: AttrSet -> AttrSet\n    ```\n\n    # Arguments\n\n    - [attrs] An attribute set to not scan for derivations.\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "dontRecurseIntoAttrs",
+    ],
+}
+["lib", "attrsets", "hasAttr"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "hasAttr",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "s",
+                        "set",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      `hasAttr` returns `true` if *set* has an attribute named *s*, and\n      `false` otherwise. This is a dynamic version of the `?` operator,\n      since *s* is an expression rather than an identifier.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/attrsets.nix",
+                    line: 12,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "attrsets",
+        "hasAttr",
+    ],
+}

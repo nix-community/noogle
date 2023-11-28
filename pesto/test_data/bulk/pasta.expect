@@ -1,0 +1,344 @@
+["builtins", "add"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: None,
+                position: None,
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: None,
+            content: Some(
+                "",
+            ),
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "add",
+            ],
+            [
+                "lib",
+                "trivial",
+                "add",
+            ],
+        ],
+    ),
+    path: [
+        "builtins",
+        "add",
+    ],
+}
+["lib", "add"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "add",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "e1",
+                        "e2",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/default.nix",
+                    line: 68,
+                    column: 23,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "trivial",
+                "add",
+            ],
+            [
+                "builtins",
+                "add",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "add",
+    ],
+}
+["lib", "trivial", "add"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: true,
+                name: Some(
+                    "add",
+                ),
+                position: None,
+                args: Some(
+                    [
+                        "e1",
+                        "e2",
+                    ],
+                ),
+                experimental: Some(
+                    false,
+                ),
+                arity: Some(
+                    2,
+                ),
+                content: Some(
+                    "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
+                ),
+                countApplied: None,
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/trivial.nix",
+                    line: 269,
+                    column: 21,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "add",
+            ],
+            [
+                "builtins",
+                "add",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "trivial",
+        "add",
+    ],
+}
+["lib", "concatLines"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/strings.nix",
+                        line: 84,
+                        column: 25,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Map a function over a list and concatenate the resulting strings.\n\n    # Example\n\n    ```nix\n    concatMapStrings (x: \"a\" + x) [\"foo\" \"bar\"]\n    => \"afooabar\"\n    ```\n\n    # Type\n\n    ```\n    concatMapStrings :: (a -> string) -> [a] -> string\n    ```\n\n    # Arguments\n\n    - [f] \n    - [list] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/default.nix",
+                    line: 98,
+                    column: 27,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "concatLines",
+    ],
+}
+["lib", "strings", "concatLines"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/strings.nix",
+                        line: 84,
+                        column: 25,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n    Map a function over a list and concatenate the resulting strings.\n\n    # Example\n\n    ```nix\n    concatMapStrings (x: \"a\" + x) [\"foo\" \"bar\"]\n    => \"afooabar\"\n    ```\n\n    # Type\n\n    ```\n    concatMapStrings :: (a -> string) -> [a] -> string\n    ```\n\n    # Arguments\n\n    - [f] \n    - [list] \n\n  ",
+                ),
+                countApplied: Some(
+                    1,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/strings.nix",
+                    line: 243,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Concatenate a list of strings, adding a newline at the end of each one.\n    Defined as `concatMapStrings (s: s + \"\\n\")`.\n\n    # Example\n\n    ```nix\n    concatLines [ \"foo\" \"bar\" ]\n    => \"foo\\nbar\\n\"\n    ```\n\n    # Type\n\n    ```\n    concatLines :: [string] -> string\n    ```\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [],
+    ),
+    path: [
+        "lib",
+        "strings",
+        "concatLines",
+    ],
+}
+["lib", "foldl'"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/lists.nix",
+                        line: 204,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n      The binary operation to run, where the two arguments are:\n      1. `acc`: The current accumulator value: Either the initial one for the first iteration, or the result of the previous iteration\n      2. `x`: The corresponding list element for this iteration\n    ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/default.nix",
+                    line: 92,
+                    column: 25,
+                },
+            ),
+            content: None,
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "lists",
+                "foldl'",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "foldl'",
+    ],
+}
+["lib", "lists", "foldl'"] Docs {
+    docs: DocsMeta {
+        lambda: Some(
+            LambdaMeta {
+                isPrimop: false,
+                name: None,
+                position: Some(
+                    FilePosition {
+                        file: "test_data/assets/lists.nix",
+                        line: 204,
+                        column: 5,
+                    },
+                ),
+                args: None,
+                experimental: None,
+                arity: None,
+                content: Some(
+                    "\n      The binary operation to run, where the two arguments are:\n      1. `acc`: The current accumulator value: Either the initial one for the first iteration, or the result of the previous iteration\n      2. `x`: The corresponding list element for this iteration\n    ",
+                ),
+                countApplied: Some(
+                    0,
+                ),
+            },
+        ),
+        attr: AttrMeta {
+            position: Some(
+                FilePosition {
+                    file: "test_data/assets/lists.nix",
+                    line: 198,
+                    column: 3,
+                },
+            ),
+            content: Some(
+                "\n    Reduce a list by applying a binary operator from left to right,\n    starting with an initial accumulator.\n    Before each application of the operator, the accumulator value is evaluated.\n    This behavior makes this function stricter than [`foldl`](#function-library-lib.lists.foldl).\n    Unlike [`builtins.foldl'`](https://nixos.org/manual/nix/unstable/language/builtins.html#builtins-foldl'),\n    the initial accumulator argument is evaluated before the first iteration.\n    A call like\n    ```nix\n    foldl' op acc₀ [ x₀ x₁ x₂ ... xₙ₋₁ xₙ ]\n    ```\n    is (denotationally) equivalent to the following,\n    but with the added benefit that `foldl'` itself will never overflow the stack.\n    ```nix\n    let\n    acc₁   = builtins.seq acc₀   (op acc₀   x₀  );\n    acc₂   = builtins.seq acc₁   (op acc₁   x₁  );\n    acc₃   = builtins.seq acc₂   (op acc₂   x₂  );\n    ...\n    accₙ   = builtins.seq accₙ₋₁ (op accₙ₋₁ xₙ₋₁);\n    accₙ₊₁ = builtins.seq accₙ   (op accₙ   xₙ  );\n    in\n    accₙ₊₁\n    # Or ignoring builtins.seq\n    op (op (... (op (op (op acc₀ x₀) x₁) x₂) ...) xₙ₋₁) xₙ\n    ```\n\n    # Example\n\n    ```nix\n    foldl' (acc: x: acc + x) 0 [1 2 3]\n    => 6\n    ```\n\n    # Type\n\n    ```\n    foldl' :: (acc -> x -> acc) -> acc -> [x] -> acc\n    ```\n\n    # Arguments\n\n    - [op] The binary operation to run, where the two arguments are:\n\n1. `acc`: The current accumulator value: Either the initial one for the first iteration, or the result of the previous iteration\n2. `x`: The corresponding list element for this iteration\n    - [acc] The initial accumulator value\n    - [list] The list to fold\n\n  ",
+            ),
+        },
+    },
+    aliases: Some(
+        [
+            [
+                "lib",
+                "foldl'",
+            ],
+        ],
+    ),
+    path: [
+        "lib",
+        "lists",
+        "foldl'",
+    ],
+}

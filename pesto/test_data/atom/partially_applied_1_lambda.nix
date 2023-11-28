@@ -1,4 +1,4 @@
 let
-  # *Docs
+  /**Docs*/
   foo = x: y: z: b: x;
 in foo

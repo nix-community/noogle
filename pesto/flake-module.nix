@@ -22,7 +22,8 @@
           partitionType = "count";
         });
       };
-    in {
+    in
+    {
       packages = { inherit pesto; };
       inherit checks;
       devShells.pesto = craneLib.devShell {

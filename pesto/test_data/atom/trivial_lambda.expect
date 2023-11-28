@@ -1,1 +1,1 @@
-Some(LambdaDoc { content: None, count_applied: 0 })
+Some(NixDocComment { content: Some("Docs"), count_applied: Some(0) })

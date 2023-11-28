@@ -21,12 +21,14 @@ let
   */
   getDocs = parent: name:
     let
-      lambda = if lib.isFunction parent.${name} then
-        builtins.lambdaMeta parent.${name}
-      else
-        null;
+      lambda =
+        if lib.isFunction parent.${name} then
+          builtins.lambdaMeta parent.${name}
+        else
+          null;
       attr = { position = builtins.unsafeGetAttrPos name parent; };
-    in { inherit lambda attr; };
+    in
+    { inherit lambda attr; };
 
   /* *
      Recursively collect documentation for all values
@@ -42,7 +44,8 @@ let
         path = initialPath ++ fn.path;
         inherit (fn) docs;
       });
-    in getFnDocs (filterFns (builtins.genericClosure {
+    in
+    getFnDocs (filterFns (builtins.genericClosure {
       startSet = [{
         __initial = true;
         key = [ ];
@@ -60,35 +63,40 @@ let
         let
           currVal = force item.value;
           # Dont traverse into: "derivations", "option types"
-        in if lib.isDerivation currVal || lib.isOptionType currVal || currVal
-        == null then
+        in
+        if lib.isDerivation currVal || lib.isOptionType currVal || currVal
+          == null then
           [ ]
-          # Doc support for named key value pairs (sets)
+        # Doc support for named key value pairs (sets)
         else if builtins.typeOf currVal == "set" then
-          map (name:
-            # NEXT ITEM
-            let
-              nextVal = force item.value.${name};
-              # calling lib.unique prevents infinite recursion
-              path = lib.unique (item.key ++ [ name ]);
-            in if lib.isDerivation nextVal || name == "__functor"
-            || (limit != null && item.depth >= limit) then
-            # skipping all more nested values by
-            # returning the previous item
-              item
-            else {
-              key = path;
-              value = item.value.${name};
-              # Propagate some values.
-              type = if lib.isFunction nextVal then
-                "lambda"
-              else
-                builtins.typeOf nextVal;
-              docs = getDocs (lib.attrByPath (dropBack path) null set) name;
-              inherit name path;
-              parent = currVal;
-              depth = item.depth + 1;
-            }) (builtins.attrNames item.value)
+          map
+            (name:
+              # NEXT ITEM
+              let
+                nextVal = force item.value.${name};
+                # calling lib.unique prevents infinite recursion
+                path = lib.unique (item.key ++ [ name ]);
+              in
+              if lib.isDerivation nextVal || name == "__functor"
+                || (limit != null && item.depth >= limit) then
+              # skipping all more nested values by
+              # returning the previous item
+                item
+              else {
+                key = path;
+                value = item.value.${name};
+                # Propagate some values.
+                type =
+                  if lib.isFunction nextVal then
+                    "lambda"
+                  else
+                    builtins.typeOf nextVal;
+                docs = getDocs (lib.attrByPath (dropBack path) null set) name;
+                inherit name path;
+                parent = currVal;
+                depth = item.depth + 1;
+              })
+            (builtins.attrNames item.value)
         else
           [ ];
     }));
@@ -105,14 +113,17 @@ let
         # Call getDocs for each name value pair
         (lib.mapAttrs (n: v: getDocs s n))
       ];
-    in lib.pipe docs [
+    in
+    lib.pipe docs [
       # Transform into list
       builtins.attrNames
       # Collect all values
-      (builtins.foldl' (res: name:
-        res ++ [{
-          path = path ++ [ name ];
-          docs = docs.${name};
-        }]) [ ])
+      (builtins.foldl'
+        (res: name:
+          res ++ [{
+            path = path ++ [ name ];
+            docs = docs.${name};
+          }]) [ ])
     ];
-in { inherit toFile collectFns getDocsFromSet; }
+in
+{ inherit toFile collectFns getDocsFromSet; }

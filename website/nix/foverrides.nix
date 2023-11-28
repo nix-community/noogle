@@ -1,13 +1,15 @@
 { lib, config, ... }:
 let
-  pjs = let
-    msg = "foverrides.nix: Expected to find `package.json' to lookup "
-      + "package name/version, but no such file exists at: "
-      + (toString ../package.json);
-  in if builtins.pathExists ../package.json then
-    lib.importJSON ../package.json
-  else
-    throw msg;
+  pjs =
+    let
+      msg = "foverrides.nix: Expected to find `package.json' to lookup "
+        + "package name/version, but no such file exists at: "
+        + (toString ../package.json);
+    in
+    if builtins.pathExists ../package.json then
+      lib.importJSON ../package.json
+    else
+      throw msg;
   ident = pjs.name;
   inherit (pjs) version;
 
@@ -25,7 +27,8 @@ let
     "x86_64-darwin" = "@next/swc-darwin-x64";
     "aarch64-darwin" = "@next/swc-darwin-arm64";
   }.${config.floco.settings.system};
-in {
+in
+{
   config.floco.packages.${ident}.${version} =
     let cfg = config.floco.packages.${ident}.${version};
     in {
@@ -44,20 +47,22 @@ in {
           export HOME=./home
         '';
 
-        tree = let
-          customOverrides = cfg.trees.dev.overrideAttrs (prev: {
-            treeInfo = prev.treeInfo // {
-              "node_modules/${swcArch}" = {
-                key = "${swcArch}/${nextVersion}";
-                link = false;
-                optional = false;
-                dev = true;
+        tree =
+          let
+            customOverrides = cfg.trees.dev.overrideAttrs (prev: {
+              treeInfo = prev.treeInfo // {
+                "node_modules/${swcArch}" = {
+                  key = "${swcArch}/${nextVersion}";
+                  link = false;
+                  optional = false;
+                  dev = true;
+                };
+                # We can inject dependencies here
+                #
               };
-              # We can inject dependencies here
-              #
-            };
-          });
-        in lib.mkForce customOverrides;
+            });
+          in
+          lib.mkForce customOverrides;
       };
     };
 }

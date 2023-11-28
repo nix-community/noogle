@@ -1,0 +1,1073 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 43
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 45
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "attrByPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["set"],
+        "arity": 1,
+        "content": "\n      Return the names of the attributes in the set *set* in an\n      alphabetically sorted list. For instance, `builtins.attrNames { y\n      = 1; x = \"foo\"; }` evaluates to `[ \"x\" \"y\" ]`.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "attrNames",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "attrNames"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 325
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 327
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "attrVals"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 349
+        }
+      },
+      "lambda": {
+        "args": ["set"],
+        "arity": 1,
+        "content": "\n      Return the values of the attributes in the set *set* in the order\n      corresponding to the sorted attribute names.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "attrValues",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "attrValues"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 799
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 766
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "attrsToList"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 643
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 645
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "cartesianProductOfSets"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 398
+        }
+      },
+      "lambda": {
+        "args": ["attr", "list"],
+        "arity": 2,
+        "content": "\n      Collect each attribute named *attr* from a list of attribute\n      sets.  Attrsets that don't contain the named attribute are\n      ignored. For example,\n\n      ```nix\n      builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n      ```\n\n      evaluates to `[1 2]`.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "catAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "catAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1477
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1479
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "chooseDevOutputs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 605
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 607
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "collect"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 191
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 20,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 191
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "concatMapAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1529
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1531
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "dontRecurseIntoAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 425
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 427
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "filterAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 456
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 458
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "filterAttrsRecursive"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 564
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 566
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "foldAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 535
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 16,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 535
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "foldlAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 912
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 914
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "genAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["s", "set"],
+        "arity": 2,
+        "content": "\n      `getAttr` returns the attribute named *s* from *set*. Evaluation\n      aborts if the attribute doesn’t exist. This is a dynamic version of\n      the `.` operator, since *s* is an expression rather than an\n      identifier.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "getAttr",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "getAttr"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 156
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 158
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getAttrFromPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 375
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 377
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1401
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 23,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getBin"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1441
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 23,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getDev"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1421
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 23,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getLib"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1461
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 23,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getMan"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 15,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1379
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "getOutput"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["s", "set"],
+        "arity": 2,
+        "content": "\n      `hasAttr` returns `true` if *set* has an attribute named *s*, and\n      `false` otherwise. This is a dynamic version of the `?` operator,\n      since *s* is an expression rather than an identifier.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "hasAttr",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "hasAttr"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 82
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 84
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "hasAttrByPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["e"],
+        "arity": 1,
+        "content": "\n      Return `true` if *e* evaluates to a set, and `false` otherwise.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "isAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "isAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 945
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 947
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "isDerivation"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["e"],
+        "arity": 1,
+        "content": "\n      Construct a set from a list specifying the names and values of each\n      attribute. Each element of the list should be a set consisting of a\n      string-valued attribute `name` specifying the name of the attribute,\n      and an attribute `value` specifying its value.\n\n      In case of duplicate occurrences of the same name, the first\n      takes precedence.\n\n      Example:\n\n      ```nix\n      builtins.listToAttrs\n        [ { name = \"foo\"; value = 123; }\n          { name = \"bar\"; value = 456; }\n          { name = \"bar\"; value = 420; }\n        ]\n      ```\n\n      evaluates to\n\n      ```nix\n      { foo = 123; bar = 456; }\n      ```\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "listToAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "listToAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 700
+        }
+      },
+      "lambda": {
+        "args": ["f", "attrset"],
+        "arity": 2,
+        "content": "\n      Apply function *f* to every element of *attrset*. For example,\n\n      ```nix\n      builtins.mapAttrs (name: value: value * 10) { a = 1; b = 2; }\n      ```\n\n      evaluates to `{ a = 10; b = 20; }`.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "mapAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "mapAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 730
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 732
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "mapAttrs'"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 831
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 833
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "mapAttrsRecursive"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 870
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 872
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "mapAttrsRecursiveCond"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 762
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 764
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "mapAttrsToList"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1274
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1276
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "matchAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1127
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 20,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1127
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "mergeAttrsList"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 675
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 677
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "nameValuePair"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1004
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1006
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "optionalAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1315
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1317
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "overrideExisting"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1510
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1512
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "recurseIntoAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1244
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1246
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "recursiveUpdate"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1192
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1194
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "recursiveUpdateUntil"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 12
+        }
+      },
+      "lambda": {
+        "args": ["set", "list"],
+        "arity": 2,
+        "content": "\n      Remove the attributes listed in *list* from *set*. The attributes\n      don’t have to exist in *set*. For instance,\n\n      ```nix\n      removeAttrs { x = 1; y = 2; z = 3; } [ \"a\" \"x\" \"z\" ]\n      ```\n\n      evaluates to `{ y = 2; }`.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "removeAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "removeAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 117
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 119
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "setAttrByPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1349
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1351
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "showAttrPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 4,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 963
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 6,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 965
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "toDerivation"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1552
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 21,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1552
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "unionOfDisjoint"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 244
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 6,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 301
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "updateManyAttrsByPath"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1566
+        }
+      },
+      "lambda": {
+        "args": ["f", "list"],
+        "arity": 2,
+        "content": "\n      Transpose a list of attribute sets into an attribute set of lists,\n      then apply `mapAttrs`.\n\n      `f` receives two arguments: the attribute name and a non-empty\n      list of all values encountered for that attribute name.\n\n      The result is an attribute set where the attribute names are the\n      union of the attribute names in each element of `list`. The attribute\n      values are the return values of `f`.\n\n      ```nix\n      builtins.zipAttrsWith\n        (name: values: { inherit name values; })\n        [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n      ```\n\n      evaluates to\n\n      ```\n      {\n        a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n        b = { name = \"b\"; values = [ \"z\" ]; };\n      }\n      ```\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "zipAttrsWith",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "zip"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1096
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1098
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "zipAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1070
+        }
+      },
+      "lambda": {
+        "args": ["f", "list"],
+        "arity": 2,
+        "content": "\n      Transpose a list of attribute sets into an attribute set of lists,\n      then apply `mapAttrs`.\n\n      `f` receives two arguments: the attribute name and a non-empty\n      list of all values encountered for that attribute name.\n\n      The result is an attribute set where the attribute names are the\n      union of the attribute names in each element of `list`. The attribute\n      values are the return values of `f`.\n\n      ```nix\n      builtins.zipAttrsWith\n        (name: values: { inherit name values; })\n        [ { a = \"x\"; } { a = \"y\"; b = \"z\"; } ]\n      ```\n\n      evaluates to\n\n      ```\n      {\n        a = { name = \"a\"; values = [ \"x\" \"y\" ]; };\n        b = { name = \"b\"; values = [ \"z\" ]; };\n      }\n      ```\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "zipAttrsWith",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "zipAttrsWith"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1036
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1038
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "zipAttrsWithNames"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1563
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/attrsets.nix",
+          "line": 1038
+        }
+      }
+    },
+    "path": ["lib", "attrsets", "zipWithNames"]
+  }
+]

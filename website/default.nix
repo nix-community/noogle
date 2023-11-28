@@ -3,14 +3,16 @@ let
 
   inherit (floco) lib;
 
-  pjs = let
-    msg = "default.nix: Expected to find `package.json' to lookup "
-      + "package name/version, but no such file exists at: "
-      + (toString ./package.json);
-  in if builtins.pathExists ./package.json then
-    lib.importJSON ./package.json
-  else
-    throw msg;
+  pjs =
+    let
+      msg = "default.nix: Expected to find `package.json' to lookup "
+        + "package name/version, but no such file exists at: "
+        + (toString ./package.json);
+    in
+    if builtins.pathExists ./package.json then
+      lib.importJSON ./package.json
+    else
+      throw msg;
   ident = pjs.name;
   inherit (pjs) version;
 
@@ -32,4 +34,5 @@ let
   # We'll expose these below to the CLI.
   pkg = fmod.config.floco.packages.${ident}.${version};
 
-in { inherit pkg fmod; }
+in
+{ inherit pkg fmod; }

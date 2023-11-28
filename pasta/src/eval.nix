@@ -1,16 +1,19 @@
-{ pkgs ?
-# import (builtins.fetchTree {
-#   repo = "nixpkgs";
-#   ref = "migrate-doc-comments";
-#   owner = "hsjobeki";
-#   type = "github";
-# }) {},
-  import (builtins.fetchTree {
-    repo = "nixpkgs";
-    ref = "master";
-    owner = "nixos";
-    type = "github";
-  }) { }, }:
+{ pkgs ? # import (builtins.fetchTree {
+  #   repo = "nixpkgs";
+  #   ref = "migrate-doc-comments";
+  #   owner = "hsjobeki";
+  #   type = "github";
+  # }) {},
+  import
+    (builtins.fetchTree {
+      repo = "nixpkgs";
+      ref = "master";
+      owner = "nixos";
+      type = "github";
+    })
+    { }
+,
+}:
 let
   inherit pkgs;
   inherit (pkgs) lib;
@@ -34,4 +37,10 @@ let
       getDocsFromSet pkgs.pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
   };
 
-in { inherit tools pkgs docs toFile; }
+  # generate test_data for pesto
+  test_data = {
+    attrsets = getDocsFromSet lib.attrsets [ "lib" "attrsets" ];
+  };
+
+in
+{ inherit tools pkgs docs toFile test_data; }

@@ -8,8 +8,9 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::rc::Rc;
+use std::time::Instant;
 
-use std::{fs, path::PathBuf, println};
+use std::{format, fs, path::PathBuf, println};
 
 use crate::comment::get_expr_docs;
 
@@ -19,7 +20,7 @@ pub struct TextPosition {
     pub column: usize,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Eq, Hash, Clone)]
 pub struct FilePosition {
     pub file: PathBuf,
     pub line: usize,
@@ -29,82 +30,83 @@ pub struct FilePosition {
 #[derive(Debug)]
 pub struct DocIndex<'a> {
     file: &'a PathBuf,
-    src: Rc<String>,
-    ast: SyntaxNode,
     pos_idx: HashMap<(usize, usize), TextSize>,
     node_idx: HashMap<TextSize, Option<SyntaxNode>>,
 }
 
 pub trait DocComment<'a> {
-    fn new(file: &'a PathBuf, positions: Vec<(usize, usize)>) -> Self;
-    // Single item methods
-    fn get_pos_idx(&self, line: usize, column: usize) -> Option<TextSize>;
-    fn node_at_pos(&self, line: usize, column: usize) -> Option<SyntaxNode>;
-    fn get_docs(&self, line: usize, column: usize) -> Option<LambdaDoc>;
-
-    // fn nodes_at_pos(&self, pos: &Vec<TextSize>) -> HashMap<TextSize, Option<SyntaxNode>>;
-    // fn init_pos_idx(&self, positions: Vec<(usize, usize)>) -> HashMap<(usize, usize), TextSize>;
-    fn get_docs_list(&self, idx: Vec<TextSize>) -> HashMap<TextSize, Option<LambdaDoc>>;
+    fn new(file: &'a PathBuf, positions: HashMap<usize, Vec<usize>>) -> Self;
+    fn get_docs(&self, line: usize, column: usize) -> Option<NixDocComment>;
 }
 
-fn get_src(path: &PathBuf) -> Option<String> {
+fn get_src(path: &PathBuf) -> String {
     if let Ok(src) = fs::read_to_string(path) {
-        return Some(src);
+        return src;
     }
     panic!("could not read file");
 }
 
 /// Initializes a HashMap for lookup operation between L:C and absolute position.
+/// Returns both
+/// Position HashMap from l:c -> abs
+/// Reverse Position HashMap from abs -> l:c
 fn init_pos_idx(
     path: &PathBuf,
-    positions: Vec<(usize, usize)>,
-) -> HashMap<(usize, usize), TextSize> {
+    positions: HashMap<usize, Vec<usize>>,
+) -> (
+    HashMap<(usize, usize), TextSize>,
+    HashMap<TextSize, (usize, usize)>,
+) {
+    let mut res = HashMap::new();
+    let mut inverse: HashMap<TextSize, (usize, usize)> = HashMap::new();
+
     let file = File::open(path).unwrap();
     let reader = BufReader::new(file);
 
-    let mut res = HashMap::new();
-
-    let mut curr_line = 0;
     let mut curr_position = 0;
-    for line in reader.lines() {
-        positions.iter().for_each(|(line, col)| {
-            if *line == curr_line + 1 {
-                res.insert(
-                    (*line, *col),
-                    TextSize::from(u32::try_from(curr_position + col - 1).unwrap()),
-                );
+    for (curr_line, line) in reader.lines().enumerate() {
+        match line {
+            Ok(line) => {
+                if let Some(cols) = positions.get(&(curr_line + 1)) {
+                    cols.iter().for_each(|col| {
+                        let lc_tuple = (curr_line + 1, *col);
+                        let absolute =
+                            TextSize::from(u32::try_from(curr_position + col - 1).unwrap());
+                        res.insert(lc_tuple, absolute);
+                        inverse.insert(absolute, lc_tuple);
+                    });
+                }
+                curr_position += line.len() + 1;
             }
-        });
-
-        curr_line += 1;
-        curr_position += line.unwrap().chars().count() + 1;
+            _ => {}
+        }
     }
-    res
+    (res, inverse)
 }
 
 // Take a list of lookup operations
 // Since iterating over the AST can be expensive
-fn init_node_idx(ast: &SyntaxNode, pos: &Vec<TextSize>) -> HashMap<TextSize, Option<SyntaxNode>> {
-    let mut res = HashMap::new();
+fn init_node_idx(
+    ast: &SyntaxNode,
+    pos: &HashMap<TextSize, (usize, usize)>,
+) -> HashMap<TextSize, Option<SyntaxNode>> {
+    let mut res: HashMap<TextSize, Option<SyntaxNode>> = HashMap::new();
+
     for ev in ast.preorder() {
         match ev {
             WalkEvent::Enter(node) => {
-                if let Some(pos_key) = pos
-                    .iter()
-                    .find(|position| node.text_range().start() == **position)
-                {
-                    if res.get(pos_key).is_none() {
-                        res.insert(*pos_key, Some(node));
+                let cursor = node.text_range().start();
+                if let Some(_) = pos.get(&cursor) {
+                    if res.get(&cursor).is_none() {
+                        res.insert(cursor, Some(node));
                     }
                 }
             }
             WalkEvent::Leave(node) => {
-                if let Some(pos_key) = pos
-                    .iter()
-                    .find(|position| node.text_range().end() == **position)
-                {
-                    if res.get(pos_key).is_none() {
-                        res.insert(*pos_key, Some(node));
+                let cursor = node.text_range().end();
+                if let Some(_) = pos.get(&cursor) {
+                    if res.get(&cursor).is_none() {
+                        res.insert(cursor, Some(node));
                     }
                 }
             }
@@ -114,101 +116,79 @@ fn init_node_idx(ast: &SyntaxNode, pos: &Vec<TextSize>) -> HashMap<TextSize, Opt
 }
 
 impl<'a> DocComment<'a> for DocIndex<'a> {
-    fn new(file: &'a PathBuf, positions: Vec<(usize, usize)>) -> Self {
-        if let Some(src) = get_src(file) {
-            let rc: Rc<String> = Rc::new(src);
-            let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
-            let pos_idx = init_pos_idx(&file, positions);
-            let ast_positions: Vec<TextSize> = pos_idx.values().map(|t| *t).collect();
-            let node_idx = init_node_idx(&ast, &ast_positions);
+    fn new(file: &'a PathBuf, positions: HashMap<usize, Vec<usize>>) -> Self {
+        let src = get_src(file);
+        let rc: Rc<String> = Rc::new(src);
+        let mut start_time = Instant::now();
+        let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
+        let mut end_time = Instant::now();
+        // println!("{:?} - Parsed ast", end_time - start_time);
 
-            return Self {
-                file,
-                ast,
-                src: rc,
-                pos_idx,
-                node_idx,
-            };
-        } else {
-            panic!("cannot open file");
-        }
+        start_time = Instant::now();
+        let (pos_idx, inverse_pos_idx) = init_pos_idx(&file, positions);
+        end_time = Instant::now();
+        // println!(
+        //     "{:?} - Translated col,line into abs positions",
+        //     end_time - start_time
+        // );
+
+        // Call your function here
+        start_time = Instant::now();
+        let node_idx = init_node_idx(&ast, &inverse_pos_idx);
+        end_time = Instant::now();
+
+        // println!(
+        //     "{:?} - Find all ast nodes for positions",
+        //     end_time - start_time
+        // );
+
+        return Self {
+            file,
+            pos_idx,
+            node_idx,
+        };
     }
 
-    fn get_pos_idx(&self, l: usize, c: usize) -> Option<TextSize> {
-        let src = &self.src;
-        let mut result: usize = 0;
-        let mut pos: Option<usize> = None;
-        for (line, content) in src.lines().enumerate() {
-            if line + 1 == l {
-                pos = Some(result + c - 1);
-                break;
-            }
-            result += content.len() + 1;
+    fn get_docs(&self, line: usize, column: usize) -> Option<NixDocComment> {
+        let idx = self.pos_idx.get(&(line, column));
+        if idx.is_none() {
+            let msg = format!(
+                "Position {} {} may not exist in file {:?}",
+                line, column, self.file
+            );
+            panic!("{:?} @ {}", self.file, msg);
         }
-        return pos.map(|pos| TextSize::from(u32::try_from(pos).unwrap()));
-    }
-
-    fn node_at_pos(&self, line: usize, column: usize) -> Option<SyntaxNode> {
-        let pos_idx = &self.get_pos_idx(line, column).unwrap();
-        let mut expr = None;
-        for ev in self.ast.preorder() {
-            match ev {
-                WalkEvent::Enter(node) => {
-                    if node.text_range().start() == *pos_idx {
-                        expr = Some(node);
-                        break;
+        if let Some(idx) = idx {
+            let expr = self.node_idx.get(idx);
+            // println!("L{}:C{}, expr: {:?}", line, column, expr);
+            if let Some(Some(expr)) = expr {
+                let doc = match expr.kind() {
+                    rnix::SyntaxKind::NODE_LAMBDA => {
+                        let (outer_lambda, count_applied) = get_parent_lambda(&expr);
+                        NixDocComment {
+                            content: get_expr_docs(&outer_lambda),
+                            count_applied: Some(count_applied),
+                        }
                     }
-                }
-                WalkEvent::Leave(node) => {
-                    if node.text_range().end() == *pos_idx {
-                        expr = Some(node);
-                        break;
-                    }
-                }
-            }
-        }
-        return expr;
-    }
-
-    fn get_docs_list(&self, positions: Vec<TextSize>) -> HashMap<TextSize, Option<LambdaDoc>> {
-        let mut res = HashMap::new();
-        let ast_map = init_node_idx(&self.ast, &positions);
-        positions.iter().for_each(|position| {
-            if let Some(Some(expr)) = ast_map.get(position) {
-                let (outer_lambda, count_applied) = get_parent_lambda(&expr);
-                let doc = LambdaDoc {
-                    content: get_expr_docs(&outer_lambda),
-                    count_applied,
+                    _ => NixDocComment {
+                        content: get_expr_docs(&expr),
+                        count_applied: None,
+                    },
                 };
-                res.insert(*position, Some(doc));
+                return Some(doc);
             }
-        });
-
-        res
-    }
-
-    fn get_docs(&self, line: usize, column: usize) -> Option<LambdaDoc> {
-        let idx = self.pos_idx.get(&(line, column)).unwrap();
-        let expr = self.node_idx.get(idx);
-        println!("L{}:C{}, expr: {:?}", line, column, expr);
-        if let Some(Some(e)) = expr {
-            let (outer_lambda, count_applied) = get_parent_lambda(&e);
-            return Some(LambdaDoc {
-                content: get_expr_docs(&outer_lambda),
-                count_applied,
-            });
         }
         return None;
     }
 }
 
 #[derive(Debug)]
-pub struct LambdaDoc {
+pub struct NixDocComment {
     pub content: Option<String>,
-    pub count_applied: i32,
+    pub count_applied: Option<usize>,
 }
 
-fn get_parent_lambda(expr: &SyntaxNode) -> (SyntaxNode, i32) {
+fn get_parent_lambda(expr: &SyntaxNode) -> (SyntaxNode, usize) {
     let mut count_outer_lambda = 0;
     let mut lambda_parent = peek_parent_lambda(expr);
     let mut res = expr.to_owned();
