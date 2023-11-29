@@ -19,11 +19,10 @@
           treefmt.enable = true;
           statix.enable = true;
         };
-        excludes = [ "indexer/test" ".github" "scripts/data" ];
+        excludes = [ "indexer/test" ".github" "scripts/data" "test_data" ];
         settings = {
-          statix.ignore = [ "indexer/test" ];
+          statix.ignore = [ "indexer/test" "test_data" ];
           nixfmt.width = 80;
-
           treefmt.package = pkgs.writeShellApplication {
             name = "treefmt";
             runtimeInputs =

@@ -2,7 +2,8 @@
   description = "Noogle.dev | Discover the nix api surface";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:hsjobeki/nixpkgs/?ref=migrate-doc-comments";
+    nixpkgs-master.url = "nixpkgs/master";
+    nixpkgs-migrated.url = "github:hsjobeki/nixpkgs/?ref=migrate-doc-comments";
 
     # A custom nix verison, to introspect lambda values. 
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
@@ -33,6 +34,9 @@
         ./website/flake-module.nix
         ./pasta/flake-module.nix
         ./pesto/flake-module.nix
+        # Deprecated. Will be removed.
+        ./indexer/flake-module.nix
+        ./scripts/flake-module.nix
       ];
     });
 }

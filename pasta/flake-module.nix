@@ -2,7 +2,7 @@
   perSystem = { self', inputs', pkgs, ... }:
     let
       nix = inputs'.nix.packages.nix-clangStdenv;
-      nixpkgs = inputs.nixpkgs-master;
+      nixpkgs = inputs.nixpkgs-migrated;
     in
     {
       packages = {

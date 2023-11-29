@@ -1,7 +1,9 @@
-{ fmod, pkg, pkgs, ... }:
+{ fmod, pkg, pkgs, hooks, ... }:
 pkgs.mkShell {
   buildInputs = [ fmod.config.floco.settings.nodePackage ];
   shellHook = ''
+    ${hooks.prepare "models/data"}
+    
     ID=${pkg.built.tree}
     currID=$(cat .floco/.node_modules_id 2> /dev/null)
 

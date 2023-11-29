@@ -1,4 +1,4 @@
-{ floco, system, pkgs, nooglePkgs }:
+{ floco, system, pkgs, hooks }:
 let
 
   inherit (floco) lib;
@@ -27,7 +27,7 @@ let
       }
       ./nix/floco-cfg.nix
     ];
-    specialArgs = { inherit pkgs nooglePkgs; };
+    specialArgs = { inherit pkgs hooks; };
   };
 
   # This attrset holds a few derivations related to our package.

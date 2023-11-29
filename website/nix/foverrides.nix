@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, hooks, ... }:
 let
   pjs =
     let
@@ -30,8 +30,11 @@ let
 in
 {
   config.floco.packages.${ident}.${version} =
-    let cfg = config.floco.packages.${ident}.${version};
-    in {
+    let
+      cfg = config.floco.packages.${ident}.${version};
+      prefix = "models/data";
+    in
+    {
       # ---------------------------------------------------------------------------- #
 
       # Removes any `*.nix' files as well as `node_modules/' and
@@ -45,6 +48,10 @@ in
         # nextjs chaches some stuff in $HOME
         override.preBuild = ''
           export HOME=./home
+
+          ${hooks.prepare "models/data"}
+          
+          ls -la models/data
         '';
 
         tree =

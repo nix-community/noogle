@@ -1,4 +1,4 @@
 [formatter.nix]
 command = "nixpkgs-fmt"
 includes = ["*.nix"]
-excludes = ["pesto/test_data/*.nix"]
+excludes = ["*/test_data/*"]
