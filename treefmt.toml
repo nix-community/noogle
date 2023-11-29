@@ -1,0 +1,4 @@
+[formatter.nix]
+command = "nixpkgs-fmt"
+includes = ["*.nix"]
+excludes = ["*/test_data/*"]

@@ -1,127 +1,43 @@
 {
+  description = "Noogle.dev | Discover the nix api surface";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-master.url = "nixpkgs/master";
+    nixpkgs-migrated.url = "github:hsjobeki/nixpkgs/?ref=migrate-doc-comments";
 
-    dream2nix.url = "github:nix-community/dream2nix";
+    # A custom nix verison, to introspect lambda values. 
+    nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    crane.url = "github:ipetkov/crane";
+    crane.inputs.nixpkgs.follows = "nixpkgs";
+
+    floco.url = "github:aakropotkin/floco";
+    floco.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, pre-commit-hooks, dream2nix, nixpkgs-master }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      websiteName = (builtins.fromJSON (builtins.readFile ./website/package.json)).name;
-      inherit (self.packages.${system}) indexer nixpkgs-data builtins-data;
 
-      prepareData = prefix: ''
-        cp -f ${nixpkgs-data.lib} ${prefix}/lib.json
-        cp -f ${nixpkgs-data.trivial_builders} ${prefix}/trivial-builders.json
-        cp -f ${nixpkgs-data.build_support} ${prefix}/build_support.json
-        cp -f ${builtins-data}/lib/data.json ${prefix}/builtins.json
-      '';
-
-      dream2nixOutput = dream2nix.lib.makeFlakeOutputs {
-        systems = [ system ];
-        projects = ./projects.toml;
-        config.projectRoot = ./.;
-        source = ./.;
-
-        packageOverrides = {
-          ${websiteName}.staticPage = {
-            preBuild = prepareData "models/data";
-            installPhase = ''
-              runHook preInstall
-
-              mkdir -p $out/static
-              cp -r ./out/* $out/static/
-              cp -r ./ $lib         
-
-              runHook postInstall
-            '';
-          };
-          tests.run = {
-            installPhase = "";
-            preBuild = ''
-              ls -la 
-              mkdir -p data
-              ${prepareData "data"}
-
-            '';
-            doCheck = true;
-            checkPhase = ''
-              ls -la 
-              npm run test -- --ci
-            '';
-          };
-        };
-      };
-    in
-    {
-      packages.${system} = dream2nixOutput.packages.${system} // {
-        nixpkgs-data = pkgs.stdenv.mkDerivation {
-          pname = "data";
-          version = "0.1.0";
-          description = ''
-            wrapper around the indexer. 
-
-            Calls the indexer with '<nixpkgs>'/path.
-            and defines one output for every specified input path
-
-            currently this list is manually maintained below.
-          '';
-          src = nixpkgs-master;
-          outputs = [ "out" "lib" "trivial_builders" "build_support" ];
-          nativeBuildInputs = [ indexer ];
-          buildPhase = ''
-            echo "running nix metadata collect in nixpkgs/lib"
-            ${indexer}/bin/indexer --dir ./lib
-            ${indexer}/bin/indexer --dir ./pkgs/build-support/trivial-builders
-            ${indexer}/bin/indexer --dir ./pkgs/build-support
-          '';
-          installPhase = ''
-            cat lib.json > $lib
-            cat trivial-builders.json > $trivial_builders
-            cat build-support.json > $build_support
-
-            mkdir $out
-            ln -s $lib $out/lib
-            ln -s $trivial_builders $out/trivial_builders
-            ln -s $build_support $out/build_support
-          '';
-        };
-
-        default = self.packages.${system}.noogle;
-      };
-
-      devShells.${system}.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ nodejs-18_x rustfmt rustc cargo clippy ];
-        inputsFrom = [ indexer ];
-        shellHook = ''
-          ${prepareData "website/models/data"}
-          ${prepareData "tests/data"}
-          ${self.checks.${system}.pre-commit-check.shellHook}
-        '';
-      };
-
-      checks.${system} = {
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            nixpkgs-fmt.enable = true;
-            statix.enable = true;
-            markdownlint.enable = true;
-          };
-          excludes = [ "indexer/test" ".github" "scripts/data" ];
-          settings = {
-            statix.ignore = [ "indexer/test" ];
-          };
-
-        };
-      };
-    };
-
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
+      systems = [ "x86_64-linux" ];
+      imports = [
+        ./devShell.nix
+        ./preCommit.nix
+        ./website/flake-module.nix
+        ./pasta/flake-module.nix
+        ./pesto/flake-module.nix
+        # Deprecated. Will be removed.
+        ./indexer/flake-module.nix
+        ./scripts/flake-module.nix
+      ];
+    });
 }
+

@@ -1,18 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-
-
 # testing
 coverage
 
 # nix
+.floco
 .direnv/
 result
 result-*
 
 .pre-commit-config.yaml
-
-# dream2nix
-
-## dream2nix internal cache
-.dream2nix
