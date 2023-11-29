@@ -8,7 +8,8 @@ use clap::Parser;
 use std::{collections::HashMap, path::PathBuf, println};
 
 use crate::{
-    pasta::read_pasta,
+    bulk::BulkProcessing,
+    pasta::Pasta,
     position::{DocComment, DocIndex},
 };
 
@@ -32,22 +33,6 @@ struct Options {
     column: Option<usize>,
 }
 
-// fn populate_map<'a>(
-//     mut positions_by_file: HashMap<&'a PathBuf, Vec<&'a Docs>>,
-//     position: &'a FilePosition,
-//     docs: &'a Docs,
-// ) -> HashMap<&'a PathBuf, Vec<&'a Docs>> {
-//     match positions_by_file.get_mut(&position.file) {
-//         Some(list) => {
-//             list.push(docs);
-//         }
-//         None => {
-//             positions_by_file.insert(&position.file, vec![docs]);
-//         }
-//     };
-//     positions_by_file
-// }
-
 pub fn main() {
     // let mut output = io::stdout();
     let opts = Options::parse();
@@ -64,8 +49,6 @@ pub fn main() {
     }
 
     if let Some(pos_file) = opts.pos_file {
-        let data = read_pasta(&pos_file);
-        println!("data length: {}", data.len());
-        // println!("{:?}", data.get(10));
+        let data = Pasta::new(&pos_file);
     }
 }

@@ -1,17 +1,10 @@
-use std::{
-    collections::HashMap, fs::File, io::Write, path::PathBuf, println, rc::Rc, time::Instant,
-};
+use std::{collections::HashMap, path::PathBuf, println, rc::Rc, time::Instant, vec};
 
 use crate::{
-    pasta::{read_pasta, Docs, LambdaMeta},
+    pasta::{Docs, Files, LambdaMeta, Pasta},
     position::{DocComment, DocIndex, FilePosition, NixDocComment},
 };
 
-#[derive(Debug)]
-enum FieldType {
-    Attr,
-    Lambda,
-}
 #[derive(Debug)]
 struct LookupReason<'a> {
     // docs: &'a Docs,
@@ -19,11 +12,7 @@ struct LookupReason<'a> {
     // field: FieldType,
 }
 
-pub struct DocBulk {
-    pub docs: HashMap<Rc<Vec<String>>, Docs>,
-}
-
-pub trait Parse {
+pub trait BulkProcessing {
     fn new(path: &PathBuf) -> Self;
 }
 
@@ -163,11 +152,20 @@ fn init_alias_map(
     categories: (Vec<&Docs>, Vec<&Docs>, Vec<&Docs>),
 ) -> HashMap<Rc<Vec<String>>, Vec<Rc<Vec<String>>>> {
     let (primop_lambdas, non_primop_lambdas, partially_applieds) = categories;
+
+    let mut primops: Vec<&Docs> = vec![];
+    primops.extend(primop_lambdas.iter());
+    primops.extend(partially_applieds.iter());
+
+    let mut non_primops: Vec<&Docs> = vec![];
+    non_primops.extend(non_primop_lambdas.iter());
+    non_primops.extend(partially_applieds.iter());
+
     let mut alias_map: HashMap<Rc<Vec<String>>, Vec<Rc<Vec<String>>>> = HashMap::new();
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
             match lambda.countApplied {
-                Some(0) | None => {
+                Some(0) => {
                     if lambda.isPrimop {
                         alias_map.insert(item.path.clone(), find_aliases(&item, &primop_lambdas));
                     }
@@ -176,7 +174,15 @@ fn init_alias_map(
                             .insert(item.path.clone(), find_aliases(&item, &non_primop_lambdas));
                     }
                 }
-                _ => {
+                None => {
+                    if lambda.isPrimop {
+                        alias_map.insert(item.path.clone(), find_aliases(&item, &primops));
+                    }
+                    if !lambda.isPrimop {
+                        alias_map.insert(item.path.clone(), find_aliases(&item, &non_primops));
+                    }
+                }
+                Some(_) => {
                     alias_map.insert(item.path.clone(), find_aliases(&item, &partially_applieds));
                 }
             };
@@ -184,17 +190,21 @@ fn init_alias_map(
     }
     alias_map
 }
-impl Parse for DocBulk {
+impl<'a> BulkProcessing for Pasta {
     fn new(path: &PathBuf) -> Self {
         let start_time = Instant::now();
-        let data = read_pasta(path);
+        let data = Pasta::from_file(path);
 
         let file_map = build_file_map(&data);
 
         let mut pos_doc_map: HashMap<&FilePosition, Option<NixDocComment>> = HashMap::new();
         for (path, lookups) in file_map.iter() {
             let positions = collect_file_positions(lookups);
-            println!("File {:?}: Lookups {:?}", path.file_name(), positions.len());
+            println!(
+                "{:?}: Lookups {:?}",
+                path.file_name().unwrap(),
+                positions.len()
+            );
 
             let doc_index = DocIndex::new(path, positions);
 
@@ -210,20 +220,11 @@ impl Parse for DocBulk {
         let categories = categorize(&filled_docs);
         let alias_map = init_alias_map(&data, categories);
 
-        let mut docs: HashMap<Rc<Vec<String>>, Docs> = HashMap::new();
+        let mut doc_map: HashMap<Rc<Vec<String>>, Docs> = HashMap::new();
         for item in filled_docs.iter_mut() {
             item.aliases = alias_map.get(&item.path).map(|i| i.to_owned());
-            docs.insert(Rc::clone(&item.path), item.clone());
+            doc_map.insert(Rc::clone(&item.path), item.clone());
         }
-
-        let mut file = File::create("out.json").unwrap();
-
-        file.write_all(
-            serde_json::to_string_pretty(&filled_docs)
-                .unwrap()
-                .as_bytes(),
-        )
-        .unwrap();
 
         let end_time = Instant::now();
         println!(
@@ -233,7 +234,10 @@ impl Parse for DocBulk {
             end_time - start_time
         );
 
-        Self { docs }
+        Self {
+            docs: filled_docs,
+            doc_map,
+        }
     }
 }
 
@@ -249,6 +253,7 @@ impl Parse for DocBulk {
 ///  Match Non-Primop
 ///     Eq position
 fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> Vec<Rc<Vec<String>>> {
+    // println!("find aliases for {:?} \n\n in {:?}", item, list);
     let res: Vec<Rc<Vec<String>>> = list
         .iter()
         .filter_map(|other| {

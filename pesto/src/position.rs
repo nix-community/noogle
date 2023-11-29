@@ -1,4 +1,3 @@
-use core::panic;
 use rnix::ast::{self};
 use rnix::{match_ast, SyntaxNode};
 use rowan::TextSize;
@@ -7,6 +6,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
+use std::process::exit;
 use std::rc::Rc;
 use std::time::Instant;
 
@@ -43,7 +43,8 @@ fn get_src(path: &PathBuf) -> String {
     if let Ok(src) = fs::read_to_string(path) {
         return src;
     }
-    panic!("could not read file");
+    println!("could not read file: {}", path.to_str().unwrap());
+    exit(1);
 }
 
 /// Initializes a HashMap for lookup operation between L:C and absolute position.
@@ -156,7 +157,8 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                 "Position {} {} may not exist in file {:?}",
                 line, column, self.file
             );
-            panic!("{:?} @ {}", self.file, msg);
+            println!("{:?} @ {}", self.file, msg);
+            exit(1);
         }
         if let Some(idx) = idx {
             let expr = self.node_idx.get(idx);

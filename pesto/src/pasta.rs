@@ -1,4 +1,12 @@
-use std::{fs, path::PathBuf, rc::Rc};
+use std::{
+    collections::HashMap,
+    fs::{self, File},
+    io::Write,
+    path::PathBuf,
+    println,
+    process::exit,
+    rc::Rc,
+};
 
 use serde::{Deserialize, Serialize};
 
@@ -39,15 +47,37 @@ pub struct Docs {
     pub path: Rc<Vec<String>>,
 }
 
-pub fn read_pasta(path: &PathBuf) -> Vec<Docs> {
-    let raw = fs::read_to_string(&path);
-    match raw {
-        Ok(content) => {
-            let data: Vec<Docs> = serde_json::from_str(&content).unwrap();
-            data
+pub struct Pasta {
+    pub docs: Vec<Docs>,
+    pub doc_map: HashMap<Rc<Vec<String>>, Docs>,
+}
+
+pub trait Files {
+    fn from_file(path: &PathBuf) -> Vec<Docs>;
+    fn to_file(self, file_name: &str) -> Result<(), std::io::Error>;
+}
+
+impl<'a> Files for Pasta {
+    fn from_file(path: &PathBuf) -> Vec<Docs> {
+        let raw = fs::read_to_string(&path);
+        match raw {
+            Ok(content) => match serde_json::from_str(&content) {
+                Ok(data) => data,
+                Err(e) => {
+                    println!("Error could not parse data. {}", e.to_string());
+                    exit(1);
+                }
+            },
+            Err(e) => {
+                println!("Could not read input file: {}", e.to_string());
+                exit(1);
+            }
         }
-        Err(e) => {
-            panic!("Could not parse input data: {}", e)
-        }
+    }
+
+    fn to_file(self, file_name: &str) -> Result<(), std::io::Error> {
+        let mut file = File::create(file_name).unwrap();
+
+        file.write_all(serde_json::to_string_pretty(&self.docs).unwrap().as_bytes())
     }
 }

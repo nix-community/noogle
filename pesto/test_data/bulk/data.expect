@@ -1,0 +1,318 @@
+[
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/fixed-points.nix",
+          "line": 212,
+          "column": 11
+        },
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/fixed-points.nix",
+          "line": 85,
+          "column": 30
+        },
+        "content": null
+      }
+    },
+    "aliases": [],
+    "path": [
+      "lib",
+      "__unfix__"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": true,
+        "name": "add",
+        "args": [
+          "e1",
+          "e2"
+        ],
+        "experimental": false,
+        "arity": 2,
+        "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    "
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 68,
+          "column": 23
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "trivial",
+        "add"
+      ]
+    ],
+    "path": [
+      "lib",
+      "add"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/strings.nix",
+          "line": 991,
+          "column": 20
+        },
+        "content": "\n    Appends string context from another string.  This is an implementation\n    detail of Nix and should be used carefully.\n    Strings in Nix carry an invisible `context` which is a list of strings\n    representing store paths.  If the string is later used in a derivation\n    attribute, the derivation will properly populate the inputDrvs and\n    inputSrcs.\n\n    # Example\n\n    ```nix\n    pkgs = import <nixpkgs> { };\n    addContextFrom pkgs.coreutils \"bar\"\n    => \"bar\"\n    ```\n\n    # Arguments\n\n    - [a] \n    - [b] \n\n  ",
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 98,
+          "column": 27
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "strings",
+        "addContextFrom"
+      ]
+    ],
+    "path": [
+      "lib",
+      "addContextFrom"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": true,
+        "name": "addErrorContext",
+        "args": [],
+        "experimental": false,
+        "arity": 2
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 68,
+          "column": 23
+        },
+        "content": null
+      }
+    },
+    "aliases": [],
+    "path": [
+      "lib",
+      "addErrorContext"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/meta.nix",
+          "line": 27,
+          "column": 18
+        },
+        "content": "\n    Add to or override the meta attributes of the given\n    derivation.\n\n    # Example\n\n    ```nix\n    addMetaAttrs {description = \"Bla blah\";} somePkg\n    ```\n\n    # Arguments\n\n    - [newAttrs] \n    - [drv] \n\n  ",
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 121,
+          "column": 24
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "meta",
+        "addMetaAttrs"
+      ]
+    ],
+    "path": [
+      "lib",
+      "addMetaAttrs"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": true,
+        "name": "all",
+        "args": [
+          "pred",
+          "list"
+        ],
+        "experimental": false,
+        "arity": 2,
+        "content": "\n      Return `true` if the function *pred* returns `true` for all elements\n      of *list*, and `false` otherwise.\n    "
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 92,
+          "column": 25
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "lists",
+        "all"
+      ]
+    ],
+    "path": [
+      "lib",
+      "all"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/trivial.nix",
+          "line": 149,
+          "column": 9
+        },
+        "content": "\n    boolean “and”\n\n    # Arguments\n\n    - [x] \n    - [y] \n\n  ",
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 73,
+          "column": 27
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "trivial",
+        "and"
+      ]
+    ],
+    "path": [
+      "lib",
+      "and"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": true,
+        "name": "any",
+        "args": [
+          "pred",
+          "list"
+        ],
+        "experimental": false,
+        "arity": 2,
+        "content": "\n      Return `true` if the function *pred* returns `true` for at least one\n      element of *list*, and `false` otherwise.\n    "
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 92,
+          "column": 25
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "lists",
+        "any"
+      ]
+    ],
+    "path": [
+      "lib",
+      "any"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/meta.nix",
+          "line": 82,
+          "column": 18
+        },
+        "content": "\n    Append a suffix to the name of a package (before the version\n    part).\n\n    # Arguments\n\n    - [suffix] \n\n  ",
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 121,
+          "column": 24
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "meta",
+        "appendToName"
+      ]
+    ],
+    "path": [
+      "lib",
+      "appendToName"
+    ]
+  },
+  {
+    "docs": {
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "file": "test_data/assets/modules.nix",
+          "line": 507,
+          "column": 31
+        },
+        "countApplied": 0
+      },
+      "attr": {
+        "position": {
+          "file": "test_data/assets/default.nix",
+          "line": 129,
+          "column": 27
+        },
+        "content": null
+      }
+    },
+    "aliases": [
+      [
+        "lib",
+        "modules",
+        "applyModuleArgsIfFunction"
+      ]
+    ],
+    "path": [
+      "lib",
+      "applyModuleArgsIfFunction"
+    ]
+  }
+]

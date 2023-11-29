@@ -1,10 +1,11 @@
 #[cfg(test)]
 mod tests {
 
-    use std::{collections::HashMap, ffi::OsStr, format, fs, path::PathBuf, println};
+    use std::{collections::HashMap, ffi::OsStr, format, fs, path::PathBuf, println, rc::Rc};
 
     use crate::{
-        bulk::{DocBulk, Parse},
+        bulk::BulkProcessing,
+        pasta::Pasta,
         position::{DocComment, DocIndex, TextPosition},
     };
 
@@ -54,14 +55,19 @@ mod tests {
         })
     }
     #[test]
+    fn test_aliases() {
+        dir_tests("aliases", "json", |path| {
+            let data: Pasta = Pasta::new(&PathBuf::from(path));
+            serde_json::to_string_pretty(&data.docs).unwrap()
+        })
+    }
+
+    #[test]
     fn test_bulk() {
         dir_tests("bulk", "json", |path| {
-            let bulk = DocBulk::new(&PathBuf::from(path));
-            let mut res: String = String::new();
-            for (k, item) in bulk.docs.iter() {
-                res += &format!("{:?} {:#?}\n", k, item);
-            }
-            res
+            let data: Pasta = Pasta::new(&PathBuf::from(path));
+
+            serde_json::to_string_pretty(&data.docs[0..10]).unwrap()
         })
     }
 }
