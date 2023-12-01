@@ -7,8 +7,8 @@ node_modules
 
 # testing
 coverage
-/models/data/*
-!/models/data/index.ts
+src/models/data/*
+!src/models/data/index.ts
 
 # nix
 .direnv/
