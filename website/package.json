@@ -16,10 +16,10 @@
     "@mui/material": "^5.10.13",
     "highlight.js": "^11.7.0",
     "minisearch": "^6.0.1",
-    "next": "13.5.3",
+    "next": "^14.0.3",
     "notistack": "^3.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
     "react-mark.js": "^9.0.7",
     "react-markdown": "^9.0.0",
@@ -29,15 +29,15 @@
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
-    "eslint": "8.50.0",
-    "eslint-config-next": "13.5.3",
-    "typescript": "5.2.2",
     "@types/node": "18.18.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "18.2.8",
+    "@types/react-highlight": "^0.12.5",
+    "@types/seedrandom": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
-    "@types/react-highlight": "^0.12.5",
-    "@types/seedrandom": "^3.0.4"
+    "eslint": "8.50.0",
+    "eslint-config-next": "^14.0.3",
+    "typescript": "5.2.2"
   }
 }
