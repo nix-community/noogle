@@ -22,6 +22,7 @@ let
       {
         config.floco.settings = {
           inherit system;
+          nodePackage = pkgs.nodejs_20;
           basedir = ./.;
         };
       }
