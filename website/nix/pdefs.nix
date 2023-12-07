@@ -6,8 +6,7 @@
           fetchInfo = {
             narHash = "sha256-vxcOLRTxV2eOJ+ZE4wxnikfcXgDucSspwo0MlbctCHM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz";
+            url = "https://registry.npmjs.org/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz";
           };
           ident = "@aashutoshrathi/word-wrap";
           ltype = "file";
@@ -27,8 +26,7 @@
           fetchInfo = {
             narHash = "sha256-b/cq1rWfUNYTk9nGnFNgzIOpCj1MwRNZ4XiQflrV2kA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz";
+            url = "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.18.6.tgz";
           };
           ident = "@babel/code-frame";
           ltype = "file";
@@ -47,8 +45,7 @@
           fetchInfo = {
             narHash = "sha256-3CMILV0TMIdqwzWYmVN3VOpmPfRPbjyPbmIhcYXf4Fo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.22.15.tgz";
+            url = "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.22.15.tgz";
           };
           ident = "@babel/helper-module-imports";
           ltype = "file";
@@ -60,8 +57,7 @@
           fetchInfo = {
             narHash = "sha256-y/0Rkr/gxq9LKZTCgIy7cdlN/UnU+3GDYvOJS2YKtEQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.22.5.tgz";
+            url = "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.22.5.tgz";
           };
           ident = "@babel/helper-string-parser";
           ltype = "file";
@@ -74,8 +70,7 @@
           fetchInfo = {
             narHash = "sha256-Gp61aXsrzbY+0rMN2MAMAKBURJZTVzq09an7Tk5rDSU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.20.tgz";
+            url = "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.20.tgz";
           };
           ident = "@babel/helper-validator-identifier";
           ltype = "file";
@@ -105,8 +100,7 @@
           fetchInfo = {
             narHash = "sha256-8YM2ZQOKLzibv9H3Y5v4G7TsA5v4Sxz8wD7hsruTrVE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/highlight/-/highlight-7.18.6.tgz";
+            url = "https://registry.npmjs.org/@babel/highlight/-/highlight-7.18.6.tgz";
           };
           ident = "@babel/highlight";
           ltype = "file";
@@ -125,8 +119,7 @@
           fetchInfo = {
             narHash = "sha256-9cpE5simqTgMiGolwsaqShPSVjIjc4wiwhcgQDIcIq4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.1.tgz";
+            url = "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.1.tgz";
           };
           ident = "@babel/runtime";
           ltype = "file";
@@ -224,8 +217,7 @@
           fetchInfo = {
             narHash = "sha256-Ilo7GVRDjN2dnTTUq56yaE24jM28bNwvhpAcpERkwKc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.11.0.tgz";
+            url = "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.11.0.tgz";
           };
           ident = "@emotion/babel-plugin";
           ltype = "file";
@@ -264,8 +256,7 @@
           fetchInfo = {
             narHash = "sha256-k65/sP2bhz+nfO3GaRggfIjjOHjjQrFlCZxAyr2Jaug=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/cache/-/cache-11.11.0.tgz";
+            url = "https://registry.npmjs.org/@emotion/cache/-/cache-11.11.0.tgz";
           };
           ident = "@emotion/cache";
           ltype = "file";
@@ -297,8 +288,7 @@
           fetchInfo = {
             narHash = "sha256-We6aMrfU6pWiQ8jkB8+C4rm7kXUMrk77pg6iZSlxnz8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.1.tgz";
           };
           ident = "@emotion/is-prop-valid";
           ltype = "file";
@@ -310,8 +300,7 @@
           fetchInfo = {
             narHash = "sha256-+K3MxkAdKfq3r1/bvSWKm5T91pYtPRSwU3BxcP+UwbU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.8.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.8.1.tgz";
           };
           ident = "@emotion/memoize";
           ltype = "file";
@@ -366,8 +355,7 @@
           fetchInfo = {
             narHash = "sha256-ZvH518HQiG5oe8HqovFSq5tDszQ3II0LJuPhc1Vw3D4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/react/-/react-11.11.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/react/-/react-11.11.1.tgz";
           };
           ident = "@emotion/react";
           ltype = "file";
@@ -376,7 +364,9 @@
               descriptor = "*";
               optional = true;
             };
-            react = { descriptor = ">=16.8.0"; };
+            react = {
+              descriptor = ">=16.8.0";
+            };
           };
           version = "11.11.1";
         };
@@ -413,8 +403,7 @@
           fetchInfo = {
             narHash = "sha256-IquvCNrJ11jaPXqMWqVpyVIm3dbiHC2AgUEZ5Zu6kqw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.1.2.tgz";
+            url = "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.1.2.tgz";
           };
           ident = "@emotion/serialize";
           ltype = "file";
@@ -471,18 +460,21 @@
           fetchInfo = {
             narHash = "sha256-TGTWxQ9dt7yya8O8Dy+EOPtM8vWn+P2kVf2fX4dWwn0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/styled/-/styled-11.11.0.tgz";
+            url = "https://registry.npmjs.org/@emotion/styled/-/styled-11.11.0.tgz";
           };
           ident = "@emotion/styled";
           ltype = "file";
           peerInfo = {
-            "@emotion/react" = { descriptor = "^11.0.0-rc.0"; };
+            "@emotion/react" = {
+              descriptor = "^11.0.0-rc.0";
+            };
             "@types/react" = {
               descriptor = "*";
               optional = true;
             };
-            react = { descriptor = ">=16.8.0"; };
+            react = {
+              descriptor = ">=16.8.0";
+            };
           };
           version = "11.11.0";
         };
@@ -492,8 +484,7 @@
           fetchInfo = {
             narHash = "sha256-B2djXKZlVIEqf+5TAsGmbeniZgW8903trkistFmAXs4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.8.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.8.1.tgz";
           };
           ident = "@emotion/unitless";
           ltype = "file";
@@ -506,12 +497,15 @@
           fetchInfo = {
             narHash = "sha256-EUTtLsRTFBboZtLqzTVd2S8BPlUide0xLLi1JbwR1nk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.0.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.0.1.tgz";
           };
           ident = "@emotion/use-insertion-effect-with-fallbacks";
           ltype = "file";
-          peerInfo = { react = { descriptor = ">=16.8.0"; }; };
+          peerInfo = {
+            react = {
+              descriptor = ">=16.8.0";
+            };
+          };
           treeInfo = { };
           version = "1.0.1";
         };
@@ -534,8 +528,7 @@
           fetchInfo = {
             narHash = "sha256-cH/YHQ7TsSbX34aywA+fYK0JbTisNMPqqYkt7t7JFI4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.3.1.tgz";
+            url = "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.3.1.tgz";
           };
           ident = "@emotion/weak-memoize";
           ltype = "file";
@@ -555,13 +548,14 @@
           fetchInfo = {
             narHash = "sha256-CrSmqKzWpfViCs3gWz0ZqRC27bfw4wUxnM3OZ9T5e1g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz";
+            url = "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz";
           };
           ident = "@eslint-community/eslint-utils";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^6.0.0 || ^7.0.0 || >=8.0.0"; };
+            eslint = {
+              descriptor = "^6.0.0 || ^7.0.0 || >=8.0.0";
+            };
           };
           version = "4.4.0";
         };
@@ -571,8 +565,7 @@
           fetchInfo = {
             narHash = "sha256-0kKiqhldeqyT+yc9Vl7QvqZS8fHdRMdohyBJqtS7qTs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.9.0.tgz";
+            url = "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.9.0.tgz";
           };
           ident = "@eslint-community/regexpp";
           ltype = "file";
@@ -632,8 +625,7 @@
           fetchInfo = {
             narHash = "sha256-ZxaswEEtIF8dV71nd95lW2dwm8ao6HvfX9mMdxUqW0M=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-2.1.2.tgz";
+            url = "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-2.1.2.tgz";
           };
           ident = "@eslint/eslintrc";
           ltype = "file";
@@ -665,8 +657,7 @@
           fetchInfo = {
             narHash = "sha256-+s8ahY7BgIsWjzbAEMefToW1X0u6T24tFwRLGfDpX8E=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@floating-ui/core/-/core-1.5.0.tgz";
+            url = "https://registry.npmjs.org/@floating-ui/core/-/core-1.5.0.tgz";
           };
           ident = "@floating-ui/core";
           ltype = "file";
@@ -709,14 +700,17 @@
           fetchInfo = {
             narHash = "sha256-/J03FeebGYuUC6eNMlw29FnC7W5sw/dOkX4gdbuW2yc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.0.2.tgz";
+            url = "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.0.2.tgz";
           };
           ident = "@floating-ui/react-dom";
           ltype = "file";
           peerInfo = {
-            react = { descriptor = ">=16.8.0"; };
-            react-dom = { descriptor = ">=16.8.0"; };
+            react = {
+              descriptor = ">=16.8.0";
+            };
+            react-dom = {
+              descriptor = ">=16.8.0";
+            };
           };
           version = "2.0.2";
         };
@@ -726,8 +720,7 @@
           fetchInfo = {
             narHash = "sha256-x4ARByERFo1qPEErZ0dTLA+s42HVXxQLluPO3E7bd2I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.4.tgz";
+            url = "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.4.tgz";
           };
           ident = "@floating-ui/utils";
           ltype = "file";
@@ -740,8 +733,7 @@
           fetchInfo = {
             narHash = "sha256-KE44vZCRCtNZDZCaRLtZvapWxOYAaNH+IqAY5jxHgZs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.0.8.tgz";
+            url = "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.0.8.tgz";
           };
           ident = "@fontsource/roboto";
           ltype = "file";
@@ -771,8 +763,7 @@
           fetchInfo = {
             narHash = "sha256-qkXQ8QlFGuytwFGLNdYJt32rtVn9VK7lekOGRdA8DnI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.11.tgz";
+            url = "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.11.tgz";
           };
           ident = "@humanwhocodes/config-array";
           ltype = "file";
@@ -784,8 +775,7 @@
           fetchInfo = {
             narHash = "sha256-Nb94n00/pTJV4WS5mfDfrZZ8nM1AISYpZdus3DdqhCk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@humanwhocodes/module-importer/-/module-importer-1.0.1.tgz";
+            url = "https://registry.npmjs.org/@humanwhocodes/module-importer/-/module-importer-1.0.1.tgz";
           };
           ident = "@humanwhocodes/module-importer";
           ltype = "file";
@@ -798,13 +788,450 @@
           fetchInfo = {
             narHash = "sha256-Wam8yUjM3QV6WEffbCtEyyUDqU+A4kG9AziFwcdQdyg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz";
+            url = "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz";
           };
           ident = "@humanwhocodes/object-schema";
           ltype = "file";
           treeInfo = { };
           version = "1.2.1";
+        };
+      };
+      "@jridgewell/gen-mapping" = {
+        "0.3.3" = {
+          depInfo = {
+            "@jridgewell/set-array" = {
+              descriptor = "^1.0.1";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            "@jridgewell/sourcemap-codec" = {
+              descriptor = "^1.4.10";
+              pin = "1.4.15";
+              runtime = true;
+            };
+            "@jridgewell/trace-mapping" = {
+              descriptor = "^0.3.9";
+              pin = "0.3.20";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-xPrSOTDF2y6CUZYfgGD7G8fPfeuEPHX5u6yI0zGyXm8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz";
+          };
+          ident = "@jridgewell/gen-mapping";
+          ltype = "file";
+          version = "0.3.3";
+        };
+      };
+      "@jridgewell/resolve-uri" = {
+        "3.1.1" = {
+          fetchInfo = {
+            narHash = "sha256-kaOy0d71N7ei+GkyUOOne6CPpMEEbo2hFQsvnSd7N/Y=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.1.tgz";
+          };
+          ident = "@jridgewell/resolve-uri";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.1.1";
+        };
+      };
+      "@jridgewell/set-array" = {
+        "1.1.2" = {
+          fetchInfo = {
+            narHash = "sha256-lIY9Ar8hajSi/s4DAlqWj/PD75pWG2HDxJ6x3S3t9bE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.1.2.tgz";
+          };
+          ident = "@jridgewell/set-array";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.2";
+        };
+      };
+      "@jridgewell/source-map" = {
+        "0.3.5" = {
+          depInfo = {
+            "@jridgewell/gen-mapping" = {
+              descriptor = "^0.3.0";
+              pin = "0.3.3";
+              runtime = true;
+            };
+            "@jridgewell/trace-mapping" = {
+              descriptor = "^0.3.9";
+              pin = "0.3.20";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+zYhWJ8HFjS0+3A9QHlgGmGYTVYTQB3DNZKgf7yCE1Y=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/source-map/-/source-map-0.3.5.tgz";
+          };
+          ident = "@jridgewell/source-map";
+          ltype = "file";
+          version = "0.3.5";
+        };
+      };
+      "@jridgewell/sourcemap-codec" = {
+        "1.4.15" = {
+          fetchInfo = {
+            narHash = "sha256-+ICJJxqNi20xwMu9zCiG5DebMb/42EJfv3UfDYAyJ5k=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz";
+          };
+          ident = "@jridgewell/sourcemap-codec";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.4.15";
+        };
+      };
+      "@jridgewell/trace-mapping" = {
+        "0.3.20" = {
+          depInfo = {
+            "@jridgewell/resolve-uri" = {
+              descriptor = "^3.1.0";
+              pin = "3.1.1";
+              runtime = true;
+            };
+            "@jridgewell/sourcemap-codec" = {
+              descriptor = "^1.4.14";
+              pin = "1.4.15";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-UJtA+4N6HIVwZSVyDRIsAO12mcGHWXqYgWmg9IHq5Xs=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.20.tgz";
+          };
+          ident = "@jridgewell/trace-mapping";
+          ltype = "file";
+          version = "0.3.20";
+        };
+      };
+      "@jsdevtools/rehype-toc" = {
+        "3.0.2" = {
+          fetchInfo = {
+            narHash = "sha256-8a8Et6Nt3MexYawwfT3+ehHTvG24MSMIVKT8jHLZo+w=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz";
+          };
+          ident = "@jsdevtools/rehype-toc";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.2";
+        };
+      };
+      "@mdx-js/loader" = {
+        "3.0.0" = {
+          depInfo = {
+            "@mdx-js/mdx" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            source-map = {
+              descriptor = "^0.7.0";
+              pin = "0.7.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-qo6bgxB0ohe06g3IU+K7B07LasnSewxFCtuy0VaKdFo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mdx-js/loader/-/loader-3.0.0.tgz";
+          };
+          ident = "@mdx-js/loader";
+          ltype = "file";
+          peerInfo = {
+            webpack = {
+              descriptor = ">=5";
+            };
+          };
+          version = "3.0.0";
+        };
+      };
+      "@mdx-js/mdx" = {
+        "2.3.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/mdx" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            estree-util-build-jsx = {
+              descriptor = "^2.0.0";
+              pin = "2.2.2";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            estree-util-to-js = {
+              descriptor = "^1.1.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            estree-walker = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            hast-util-to-estree = {
+              descriptor = "^2.0.0";
+              pin = "2.3.3";
+              runtime = true;
+            };
+            markdown-extensions = {
+              descriptor = "^1.0.0";
+              pin = "1.1.1";
+              runtime = true;
+            };
+            periscopic = {
+              descriptor = "^3.0.0";
+              pin = "3.1.0";
+              runtime = true;
+            };
+            remark-mdx = {
+              descriptor = "^2.0.0";
+              pin = "2.3.0";
+              runtime = true;
+            };
+            remark-parse = {
+              descriptor = "^10.0.0";
+              pin = "10.0.2";
+              runtime = true;
+            };
+            remark-rehype = {
+              descriptor = "^10.0.0";
+              pin = "10.1.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^10.0.0";
+              pin = "10.1.2";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^1.0.0";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^5.0.0";
+              pin = "5.3.7";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-N7tdukf5RaN53bVXZ4DH/fb6LL4ue8RmX2xr5PnalZU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-2.3.0.tgz";
+          };
+          ident = "@mdx-js/mdx";
+          ltype = "file";
+          version = "2.3.0";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdx" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            collapse-white-space = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            estree-util-build-jsx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            estree-util-to-js = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            estree-walker = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            hast-util-to-estree = {
+              descriptor = "^3.0.0";
+              pin = "3.1.0";
+              runtime = true;
+            };
+            hast-util-to-jsx-runtime = {
+              descriptor = "^2.0.0";
+              pin = "2.2.0";
+              runtime = true;
+            };
+            markdown-extensions = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            periscopic = {
+              descriptor = "^3.0.0";
+              pin = "3.1.0";
+              runtime = true;
+            };
+            remark-mdx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            remark-parse = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            remark-rehype = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            source-map = {
+              descriptor = "^0.7.0";
+              pin = "0.7.4";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-/QWwGj6lY4oENOb0E2QfdOUs8sh6mjFkwYrixjkO4hc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-3.0.0.tgz";
+          };
+          ident = "@mdx-js/mdx";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      "@mdx-js/react" = {
+        "2.3.0" = {
+          depInfo = {
+            "@types/mdx" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            "@types/react" = {
+              descriptor = ">=16";
+              pin = "18.2.24";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-TlGbWtaKcNqg30k8cJmE7YWYzX5fLuRrK3xZM0d4l+o=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mdx-js/react/-/react-2.3.0.tgz";
+          };
+          ident = "@mdx-js/react";
+          ltype = "file";
+          peerInfo = {
+            react = {
+              descriptor = ">=16";
+            };
+          };
+          version = "2.3.0";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/mdx" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-azA2/eDavBpdtgKdJuM5ofkAbGbBuTJxcCiS7QeFJ9o=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mdx-js/react/-/react-3.0.0.tgz";
+          };
+          ident = "@mdx-js/react";
+          ltype = "file";
+          peerInfo = {
+            "@types/react" = {
+              descriptor = ">=16";
+            };
+            react = {
+              descriptor = ">=16";
+            };
+          };
+          version = "3.0.0";
         };
       };
       "@mui/base" = {
@@ -849,8 +1276,7 @@
           fetchInfo = {
             narHash = "sha256-eghwH/fnkD8v6w7t7y6vYKPK3dS1LTIdeWrzepfrymQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.17.tgz";
+            url = "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.17.tgz";
           };
           ident = "@mui/base";
           ltype = "file";
@@ -859,8 +1285,12 @@
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
-            react-dom = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
+            react-dom = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.0.0-beta.17";
         };
@@ -870,8 +1300,7 @@
           fetchInfo = {
             narHash = "sha256-+1EEuck4MTH1ZKmqROsOkxrYiEmyH3+wkO+DgzFcV8A=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.11.tgz";
+            url = "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.11.tgz";
           };
           ident = "@mui/core-downloads-tracker";
           ltype = "file";
@@ -891,18 +1320,21 @@
           fetchInfo = {
             narHash = "sha256-8zGq1TueBpiNHLbZg562B8+SmoSQjivaPWN9cVoWFj4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.11.tgz";
+            url = "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.11.tgz";
           };
           ident = "@mui/icons-material";
           ltype = "file";
           peerInfo = {
-            "@mui/material" = { descriptor = "^5.0.0"; };
+            "@mui/material" = {
+              descriptor = "^5.0.0";
+            };
             "@types/react" = {
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
@@ -974,8 +1406,7 @@
           fetchInfo = {
             narHash = "sha256-tckSHn+Zy2TOKlNobtubK+HzlUWmQy/dlNT8uF5eFEk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/material/-/material-5.14.11.tgz";
+            url = "https://registry.npmjs.org/@mui/material/-/material-5.14.11.tgz";
           };
           ident = "@mui/material";
           ltype = "file";
@@ -992,8 +1423,12 @@
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
-            react-dom = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
+            react-dom = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
@@ -1020,8 +1455,7 @@
           fetchInfo = {
             narHash = "sha256-gNaHZEXNfryILHQxXhY99T2lQJZRoTxi3L+AEcgHkJg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/private-theming/-/private-theming-5.14.11.tgz";
+            url = "https://registry.npmjs.org/@mui/private-theming/-/private-theming-5.14.11.tgz";
           };
           ident = "@mui/private-theming";
           ltype = "file";
@@ -1030,7 +1464,9 @@
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
@@ -1062,8 +1498,7 @@
           fetchInfo = {
             narHash = "sha256-gVHHXoIdPd9SJJCgB74gqoC8msTrINTNicIsZZnd4O8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.14.11.tgz";
+            url = "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.14.11.tgz";
           };
           ident = "@mui/styled-engine";
           ltype = "file";
@@ -1076,7 +1511,9 @@
               descriptor = "^11.3.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
@@ -1145,7 +1582,9 @@
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
@@ -1205,26 +1644,28 @@
               descriptor = "^17.0.0 || ^18.0.0";
               optional = true;
             };
-            react = { descriptor = "^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
           };
           version = "5.14.11";
         };
       };
       "@next/env" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-rpgReC7Ciw8V7KCdE52UQxOOmPyopng/0wU6/Auttic=";
+            narHash = "sha256-ek4Om3Y3BOkIV3SWNCIyObHTfreim7liNDDEfJuLf3E=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/env/-/env-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/env/-/env-14.0.3.tgz";
           };
           ident = "@next/env";
           ltype = "file";
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/eslint-plugin-next" = {
-        "13.5.3" = {
+        "14.0.3" = {
           depInfo = {
             glob = {
               descriptor = "7.1.7";
@@ -1233,176 +1674,231 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-jRox6xBTF8QOnfZyCGZ92Bj+shPcbEQa+AiZnPwdPqk=";
+            narHash = "sha256-trKQQGH7HbETBGUakfq9fjEXUF2UQDRooAzZEhZF5tE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-14.0.3.tgz";
           };
           ident = "@next/eslint-plugin-next";
           ltype = "file";
-          version = "13.5.3";
+          version = "14.0.3";
+        };
+      };
+      "@next/mdx" = {
+        "14.0.3" = {
+          depInfo = {
+            source-map = {
+              descriptor = "^0.7.0";
+              pin = "0.7.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-0KyyFnLAzbkRdPsULZwz6xayMbV8qKIBmiGhfDPgBg4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@next/mdx/-/mdx-14.0.3.tgz";
+          };
+          ident = "@next/mdx";
+          ltype = "file";
+          peerInfo = {
+            "@mdx-js/loader" = {
+              descriptor = ">=0.15.0";
+              optional = true;
+            };
+            "@mdx-js/react" = {
+              descriptor = ">=0.15.0";
+              optional = true;
+            };
+          };
+          version = "14.0.3";
         };
       };
       "@next/swc-darwin-arm64" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-9KTvQ3wRDM5zino3zGQzl/U4vMJHJ2hGUeIlJ1nI2+g=";
+            narHash = "sha256-Sr4QnFjmaWO+V74I9w8xJJSgxjMbcrhjBXzih3dKUng=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.0.3.tgz";
           };
           ident = "@next/swc-darwin-arm64";
           ltype = "file";
           sysInfo = {
-            cpu = [ "aarch64" ];
-            os = [ "darwin" ];
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "darwin"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-darwin-x64" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-RgpqdwUrnlCtawrhQ2qMty+knseXdBybLDNFXY47vCU=";
+            narHash = "sha256-xjHt9wejiXRPxYP+GxGXYrxF3QmZ16eRbcrMTleMq6o=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.0.3.tgz";
           };
           ident = "@next/swc-darwin-x64";
           ltype = "file";
           sysInfo = {
-            cpu = [ "x86_64" ];
-            os = [ "darwin" ];
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "darwin"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-linux-arm64-gnu" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-WksJ0Js45CEPk5lJqSjAOv2DX/bSbmeCxqeqhSJh+jQ=";
+            narHash = "sha256-tOhQcwJwsmdOeOxo4mXzGd5puh0w9GY0AH+PkPZ3aqw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-14.0.3.tgz";
           };
           ident = "@next/swc-linux-arm64-gnu";
           ltype = "file";
           sysInfo = {
-            cpu = [ "aarch64" ];
-            os = [ "linux" ];
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "linux"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-linux-arm64-musl" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-wbuXIE11zZfcPVWElg20uvA0TXFJZmvix+F5RtWAFkw=";
+            narHash = "sha256-y25pXcg+OnSEyj7D517ZNGlq3luHqjRqIhZ093+kGwU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-14.0.3.tgz";
           };
           ident = "@next/swc-linux-arm64-musl";
           ltype = "file";
           sysInfo = {
-            cpu = [ "aarch64" ];
-            os = [ "linux" ];
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "linux"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-linux-x64-gnu" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-y3G4BMRCCXGhtywwhbidpfl79WrrTMfxKK3d0GTmhTU=";
+            narHash = "sha256-dUTPPjzGKPN7Z/KVjaIc3rDN4FZ+oY1BUPGpX2AACWo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.0.3.tgz";
           };
           ident = "@next/swc-linux-x64-gnu";
           ltype = "file";
           sysInfo = {
-            cpu = [ "x86_64" ];
-            os = [ "linux" ];
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "linux"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-linux-x64-musl" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-0t10R9+igbHUIazzMqlhBnVdak0yJN/aC6KzCUl8Xco=";
+            narHash = "sha256-BkgsaiTrIsjCDp3RoTpB6nhUoZoZMH/LcoGZ50OTPDs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.0.3.tgz";
           };
           ident = "@next/swc-linux-x64-musl";
           ltype = "file";
           sysInfo = {
-            cpu = [ "x86_64" ];
-            os = [ "linux" ];
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "linux"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-win32-arm64-msvc" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-v6a5mgsgteddfQ0FyldM6haoH9Hg8t53pV/3hSvEhFw=";
+            narHash = "sha256-drbw0ZbEfkx6RpoPMLe3u5dqk5u6qnMG1FBVAkYATY8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-14.0.3.tgz";
           };
           ident = "@next/swc-win32-arm64-msvc";
           ltype = "file";
           sysInfo = {
-            cpu = [ "aarch64" ];
-            os = [ "win32" ];
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "win32"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-win32-ia32-msvc" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-3vFSbW080i8c7B8EWS2V5RHohAXBtT638x+mlqBjeJw=";
+            narHash = "sha256-Hd6yfuK8Ugej5GJ5eMdSa4IvWSOd/abGoF2kHCK/S+M=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.0.3.tgz";
           };
           ident = "@next/swc-win32-ia32-msvc";
           ltype = "file";
           sysInfo = {
-            cpu = [ "i686" ];
-            os = [ "win32" ];
+            cpu = [
+              "i686"
+            ];
+            os = [
+              "win32"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@next/swc-win32-x64-msvc" = {
-        "13.5.3" = {
+        "14.0.3" = {
           fetchInfo = {
-            narHash = "sha256-Xne2uaJewnkwmF0TLsFpV1++ArvCzXmYM+o/fTUtn3s=";
+            narHash = "sha256-S+4Q8vZ5E3a5U0k8YvJvJN71k+VUy11TVgWW7SY2u6I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.5.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.3.tgz";
           };
           ident = "@next/swc-win32-x64-msvc";
           ltype = "file";
           sysInfo = {
-            cpu = [ "x86_64" ];
-            os = [ "win32" ];
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "win32"
+            ];
           };
           treeInfo = { };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       "@nodelib/fs.scandir" = {
@@ -1422,8 +1918,7 @@
           fetchInfo = {
             narHash = "sha256-XkaO6o9trImz7QHxNe8P0l09Kmn8rsFIP5W/s1+HV7w=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz";
+            url = "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz";
           };
           ident = "@nodelib/fs.scandir";
           ltype = "file";
@@ -1435,8 +1930,7 @@
           fetchInfo = {
             narHash = "sha256-9D6qDZ0i0QJCngfEgCsDkX1/BFc1UpQ7Yy8b3jMLDCk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz";
+            url = "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz";
           };
           ident = "@nodelib/fs.stat";
           ltype = "file";
@@ -1461,12 +1955,116 @@
           fetchInfo = {
             narHash = "sha256-kB5uDfcwF+SIjAkm1mY/corry0eyTrSmQsacQjtgf5U=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz";
+            url = "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz";
           };
           ident = "@nodelib/fs.walk";
           ltype = "file";
           version = "1.2.8";
+        };
+      };
+      "@pagefind/darwin-arm64" = {
+        "1.0.4" = {
+          fetchInfo = {
+            narHash = "sha256-o/oMMAYsCf+PmG09RpgAqjnLT7Lu0CH3BZ6Z17aBxpw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@pagefind/darwin-arm64/-/darwin-arm64-1.0.4.tgz";
+          };
+          ident = "@pagefind/darwin-arm64";
+          ltype = "file";
+          sysInfo = {
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "darwin"
+            ];
+          };
+          treeInfo = { };
+          version = "1.0.4";
+        };
+      };
+      "@pagefind/darwin-x64" = {
+        "1.0.4" = {
+          fetchInfo = {
+            narHash = "sha256-l40TrcY7HP+CODILTSkBGgTjik7mvDqWnXeClSdjyCI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@pagefind/darwin-x64/-/darwin-x64-1.0.4.tgz";
+          };
+          ident = "@pagefind/darwin-x64";
+          ltype = "file";
+          sysInfo = {
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "darwin"
+            ];
+          };
+          treeInfo = { };
+          version = "1.0.4";
+        };
+      };
+      "@pagefind/linux-arm64" = {
+        "1.0.4" = {
+          fetchInfo = {
+            narHash = "sha256-GBM6/zgBcOuvShPJMLns2ZdeJYXoRV8lGFNm79V8z+s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@pagefind/linux-arm64/-/linux-arm64-1.0.4.tgz";
+          };
+          ident = "@pagefind/linux-arm64";
+          ltype = "file";
+          sysInfo = {
+            cpu = [
+              "aarch64"
+            ];
+            os = [
+              "linux"
+            ];
+          };
+          treeInfo = { };
+          version = "1.0.4";
+        };
+      };
+      "@pagefind/linux-x64" = {
+        "1.0.4" = {
+          fetchInfo = {
+            narHash = "sha256-JgjSyGXVxBn+HuLg4rROB4Jn8uiQEgmIRwYpdPA3OZE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@pagefind/linux-x64/-/linux-x64-1.0.4.tgz";
+          };
+          ident = "@pagefind/linux-x64";
+          ltype = "file";
+          sysInfo = {
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "linux"
+            ];
+          };
+          treeInfo = { };
+          version = "1.0.4";
+        };
+      };
+      "@pagefind/windows-x64" = {
+        "1.0.4" = {
+          fetchInfo = {
+            narHash = "sha256-eBFUQEDyMn7EOYlCTV4HdWi4l7iN/CnKemyPbA96kKg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@pagefind/windows-x64/-/windows-x64-1.0.4.tgz";
+          };
+          ident = "@pagefind/windows-x64";
+          ltype = "file";
+          sysInfo = {
+            cpu = [
+              "x86_64"
+            ];
+            os = [
+              "win32"
+            ];
+          };
+          treeInfo = { };
+          version = "1.0.4";
         };
       };
       "@popperjs/core" = {
@@ -1487,8 +2085,7 @@
           fetchInfo = {
             narHash = "sha256-RegZjrP1x2RIAVmu10+UC2U7MJiizasVfsiRtC9t9KE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.5.1.tgz";
+            url = "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.5.1.tgz";
           };
           ident = "@rushstack/eslint-patch";
           ltype = "file";
@@ -1515,6 +2112,25 @@
           version = "0.5.2";
         };
       };
+      "@types/acorn" = {
+        "4.0.6" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "*";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-A19OhC9NpNQNBAQnyAXazU5AhlpqmqJqJss0+mZD1AU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/acorn/-/acorn-4.0.6.tgz";
+          };
+          ident = "@types/acorn";
+          ltype = "file";
+          version = "4.0.6";
+        };
+      };
       "@types/debug" = {
         "4.1.9" = {
           depInfo = {
@@ -1534,7 +2150,104 @@
           version = "4.1.9";
         };
       };
+      "@types/eslint" = {
+        "8.44.8" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "*";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/json-schema" = {
+              descriptor = "*";
+              pin = "7.0.13";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Ierbz4XpJy33fIlzeVr86RSNnMEvFNBrcLjz72ToZ9s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/eslint/-/eslint-8.44.8.tgz";
+          };
+          ident = "@types/eslint";
+          ltype = "file";
+          version = "8.44.8";
+        };
+      };
+      "@types/eslint-scope" = {
+        "3.7.7" = {
+          depInfo = {
+            "@types/eslint" = {
+              descriptor = "*";
+              pin = "8.44.8";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "*";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-01oBaE3SUeVx9G2YcsabAykBOy5uR5ElW84bM1qwSiM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-3.7.7.tgz";
+          };
+          ident = "@types/eslint-scope";
+          ltype = "file";
+          version = "3.7.7";
+        };
+      };
+      "@types/estree" = {
+        "1.0.5" = {
+          fetchInfo = {
+            narHash = "sha256-wbjeywoSej6QHCC/WU1ut2v65OkDlLyB0jSGIE65k7k=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/estree/-/estree-1.0.5.tgz";
+          };
+          ident = "@types/estree";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.0.5";
+        };
+      };
+      "@types/estree-jsx" = {
+        "1.0.3" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "*";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-37nTlOeSCmlH0Mu+lyBCADMYTuVNOYPUeLtzg7d/rGQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/estree-jsx/-/estree-jsx-1.0.3.tgz";
+          };
+          ident = "@types/estree-jsx";
+          ltype = "file";
+          version = "1.0.3";
+        };
+      };
       "@types/hast" = {
+        "2.3.8" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-N54z0Sc4ykIV97depJP4uADwo1MmFinwxvLGfEb/xB0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/hast/-/hast-2.3.8.tgz";
+          };
+          ident = "@types/hast";
+          ltype = "file";
+          version = "2.3.8";
+        };
         "3.0.1" = {
           depInfo = {
             "@types/unist" = {
@@ -1553,13 +2266,25 @@
           version = "3.0.1";
         };
       };
+      "@types/js-yaml" = {
+        "4.0.9" = {
+          fetchInfo = {
+            narHash = "sha256-WjKB36BuF4eiOSaHjVjAz0a9kxBQCKyCuJZakpVYtaI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/js-yaml/-/js-yaml-4.0.9.tgz";
+          };
+          ident = "@types/js-yaml";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.0.9";
+        };
+      };
       "@types/json-schema" = {
         "7.0.13" = {
           fetchInfo = {
             narHash = "sha256-hk7S6sDpUn6z0hSZpVO3Yp6dlHrDlfduZvI77UKb/H8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.13.tgz";
+            url = "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.13.tgz";
           };
           ident = "@types/json-schema";
           ltype = "file";
@@ -1581,6 +2306,23 @@
         };
       };
       "@types/mdast" = {
+        "3.0.15" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-XCi9mTmLhmbuda5mfZKitBeqpivm3siWo7c0io48I6w=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/mdast/-/mdast-3.0.15.tgz";
+          };
+          ident = "@types/mdast";
+          ltype = "file";
+          version = "3.0.15";
+        };
         "4.0.1" = {
           depInfo = {
             "@types/unist" = {
@@ -1597,6 +2339,19 @@
           ident = "@types/mdast";
           ltype = "file";
           version = "4.0.1";
+        };
+      };
+      "@types/mdx" = {
+        "2.0.10" = {
+          fetchInfo = {
+            narHash = "sha256-WkOgsOMAO1hxMWxoSRWQl2YHn45WZtDQu2HUqfdwraI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.10.tgz";
+          };
+          ident = "@types/mdx";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.10";
         };
       };
       "@types/ms" = {
@@ -1630,8 +2385,7 @@
           fetchInfo = {
             narHash = "sha256-xZ8I656yZfg8U8CJFzcyJ1vRoa3zUsB/xti1O/x8fPU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz";
+            url = "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz";
           };
           ident = "@types/parse-json";
           ltype = "file";
@@ -1644,8 +2398,7 @@
           fetchInfo = {
             narHash = "sha256-IIwBpZ3ztJ6m80W2eTuNe8LLkxICa2AL0kbAZoLyMEA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz";
+            url = "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz";
           };
           ident = "@types/prop-types";
           ltype = "file";
@@ -1694,8 +2447,7 @@
           fetchInfo = {
             narHash = "sha256-VNNg0qISUjg+p+NlY/VbVybvDXcyPC4Czje+QKGkB3s=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.8.tgz";
+            url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.8.tgz";
           };
           ident = "@types/react-dom";
           ltype = "file";
@@ -1714,8 +2466,7 @@
           fetchInfo = {
             narHash = "sha256-NQVNinZ6h4UHfpTEnXDri74ySG7FQ2nP0JXGxsHEb2M=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/react-highlight/-/react-highlight-0.12.6.tgz";
+            url = "https://registry.npmjs.org/@types/react-highlight/-/react-highlight-0.12.6.tgz";
           };
           ident = "@types/react-highlight";
           ltype = "file";
@@ -1734,8 +2485,7 @@
           fetchInfo = {
             narHash = "sha256-/TcCq9tfMlX1LU8hiU+c8soJp6/k8shmoyIeBoLgxtE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.7.tgz";
+            url = "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.7.tgz";
           };
           ident = "@types/react-transition-group";
           ltype = "file";
@@ -1747,8 +2497,7 @@
           fetchInfo = {
             narHash = "sha256-8QGoLK1Nijc5HQDWKNnEyaaSJ6RRv65Im5DKJZOHLyk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz";
+            url = "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz";
           };
           ident = "@types/scheduler";
           ltype = "file";
@@ -1761,8 +2510,7 @@
           fetchInfo = {
             narHash = "sha256-LfQ/qUhFkTDjLM9Tt6qYEafsk2m0zsvlgYBY2lh9+D8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@types/seedrandom/-/seedrandom-3.0.6.tgz";
+            url = "https://registry.npmjs.org/@types/seedrandom/-/seedrandom-3.0.6.tgz";
           };
           ident = "@types/seedrandom";
           ltype = "file";
@@ -1784,6 +2532,17 @@
         };
       };
       "@types/unist" = {
+        "2.0.10" = {
+          fetchInfo = {
+            narHash = "sha256-7ODjtCH0mqwhV9pDfAYR76QrIB5uCjuZI2R6Z4iSU3g=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@types/unist/-/unist-2.0.10.tgz";
+          };
+          ident = "@types/unist";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.10";
+        };
         "3.0.0" = {
           fetchInfo = {
             narHash = "sha256-QwSQHx5Awp9lMAuadgXZRgDx1+euAzOg+Gx8+Nu7aok=";
@@ -1858,8 +2617,7 @@
           fetchInfo = {
             narHash = "sha256-sid46gI8TAVL1rJJ4RIy/tcTXWxm2YWFj9Tn04ZP/MU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.7.3.tgz";
           };
           ident = "@typescript-eslint/eslint-plugin";
           ltype = "file";
@@ -1867,7 +2625,9 @@
             "@typescript-eslint/parser" = {
               descriptor = "^6.0.0 || ^6.0.0-alpha";
             };
-            eslint = { descriptor = "^7.0.0 || ^8.0.0"; };
+            eslint = {
+              descriptor = "^7.0.0 || ^8.0.0";
+            };
             typescript = {
               descriptor = "*";
               optional = true;
@@ -1908,13 +2668,14 @@
           fetchInfo = {
             narHash = "sha256-l5Rl8EEjeCtWK1ys0TYibJLinlyCuoLL6MXzWSfWkH0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-6.7.3.tgz";
           };
           ident = "@typescript-eslint/parser";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^7.0.0 || ^8.0.0"; };
+            eslint = {
+              descriptor = "^7.0.0 || ^8.0.0";
+            };
             typescript = {
               descriptor = "*";
               optional = true;
@@ -1940,8 +2701,7 @@
           fetchInfo = {
             narHash = "sha256-edbiwNh1guPqbjfhn+Az3SntL0rlNXJNSrsEc4KUiTA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-6.7.3.tgz";
           };
           ident = "@typescript-eslint/scope-manager";
           ltype = "file";
@@ -1975,13 +2735,14 @@
           fetchInfo = {
             narHash = "sha256-CFZyi/iJe0BUECjQisIK1821gRszIJuOUn+vjcGDnwE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-6.7.3.tgz";
           };
           ident = "@typescript-eslint/type-utils";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^7.0.0 || ^8.0.0"; };
+            eslint = {
+              descriptor = "^7.0.0 || ^8.0.0";
+            };
             typescript = {
               descriptor = "*";
               optional = true;
@@ -1995,8 +2756,7 @@
           fetchInfo = {
             narHash = "sha256-7Z37KPON9kUnOPTSiC46wZ7JFIEe6XISVi3ldNGmIm0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/types/-/types-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/types/-/types-6.7.3.tgz";
           };
           ident = "@typescript-eslint/types";
           ltype = "file";
@@ -2046,8 +2806,7 @@
           fetchInfo = {
             narHash = "sha256-hvCd+2Jtp7W8HNxIemlH6XPVWrdMXh9x2/2mqk552/g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-6.7.3.tgz";
           };
           ident = "@typescript-eslint/typescript-estree";
           ltype = "file";
@@ -2102,12 +2861,15 @@
           fetchInfo = {
             narHash = "sha256-+7DyFoeUGjm7JLhMnjs6W+HW0p82s4czuW+T7pfsOgE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-6.7.3.tgz";
           };
           ident = "@typescript-eslint/utils";
           ltype = "file";
-          peerInfo = { eslint = { descriptor = "^7.0.0 || ^8.0.0"; }; };
+          peerInfo = {
+            eslint = {
+              descriptor = "^7.0.0 || ^8.0.0";
+            };
+          };
           version = "6.7.3";
         };
       };
@@ -2128,8 +2890,7 @@
           fetchInfo = {
             narHash = "sha256-BvYDap5e1Unm4JQnuYPXQvzGfWY+GhHTiT66jjfQUTg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-6.7.3.tgz";
+            url = "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-6.7.3.tgz";
           };
           ident = "@typescript-eslint/visitor-keys";
           ltype = "file";
@@ -2141,8 +2902,7 @@
           fetchInfo = {
             narHash = "sha256-4UIXElv7wCnuVlBrO5TLtuvs6reg2FVdxZ3DrGoDZ6s=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz";
+            url = "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz";
           };
           ident = "@ungap/structured-clone";
           ltype = "file";
@@ -2150,9 +2910,448 @@
           version = "1.2.0";
         };
       };
+      "@vcarl/remark-headings" = {
+        "0.1.0" = {
+          depInfo = {
+            mdast-util-to-string = {
+              descriptor = "^3.1.0";
+              pin = "3.2.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-APyvNgpyfdtSWfe6wLFKm+emKsQMslahLj+HmADdh38=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@vcarl/remark-headings/-/remark-headings-0.1.0.tgz";
+          };
+          ident = "@vcarl/remark-headings";
+          ltype = "file";
+          version = "0.1.0";
+        };
+      };
+      "@webassemblyjs/ast" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/helper-numbers" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-bytecode" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-5NDWtD0bJMsO1qHk+Go5jCCuEnxbw0wrPVuyRITaqUU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/ast";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/floating-point-hex-parser" = {
+        "1.11.6" = {
+          fetchInfo = {
+            narHash = "sha256-VLFFzju5TYiQ825lWQiaVTGhFJr8QNgjddjFety8EI0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/floating-point-hex-parser";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/helper-api-error" = {
+        "1.11.6" = {
+          fetchInfo = {
+            narHash = "sha256-CIVwB9LhhKKWVoCgF6GTUTVaAYEF4PeBwsM7bnOTkdg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/helper-api-error/-/helper-api-error-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/helper-api-error";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/helper-buffer" = {
+        "1.11.6" = {
+          fetchInfo = {
+            narHash = "sha256-s5WLTV1xZnWV3N7Bc2FLhNJtIgseVs74ENncKIZDQRY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/helper-buffer";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/helper-numbers" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/floating-point-hex-parser" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-api-error" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@xtuc/long" = {
+              descriptor = "4.2.2";
+              pin = "4.2.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-hi1QEM+9rG7fjSaN9ChbJ4KkoqWR3U+sUCBZ86Fadho=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/helper-numbers/-/helper-numbers-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/helper-numbers";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/helper-wasm-bytecode" = {
+        "1.11.6" = {
+          fetchInfo = {
+            narHash = "sha256-2cVHtm66D5xd0e2Y6QZBmPQKX91yQb0QvU0/540JA7w=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/helper-wasm-bytecode";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/helper-wasm-section" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-buffer" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-bytecode" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-gen" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-tqBuFL5m5LUPFF9yBLeCMbZWRyRHm3o2j3MxDUIw380=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/helper-wasm-section";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/ieee754" = {
+        "1.11.6" = {
+          depInfo = {
+            "@xtuc/ieee754" = {
+              descriptor = "^1.2.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-JXEtqxyQvOVZV3hZw/06JCWrsQwCNCD33v8Wik2i+bk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/ieee754/-/ieee754-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/ieee754";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/leb128" = {
+        "1.11.6" = {
+          depInfo = {
+            "@xtuc/long" = {
+              descriptor = "4.2.2";
+              pin = "4.2.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-qezB3UClo5V1MIWIJW70BhlRqURJlQ5XxXTSwQAMbY0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/leb128/-/leb128-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/leb128";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/utf8" = {
+        "1.11.6" = {
+          fetchInfo = {
+            narHash = "sha256-FIlVeTbTDsoK70XJQWk6z35SyHzyBtaEF6XVGhnbzj8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/utf8/-/utf8-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/utf8";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/wasm-edit" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-buffer" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-bytecode" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-section" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-gen" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-opt" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-parser" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wast-printer" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-VaHEGMSFZKf6okUZmT2dTqAAsAAz/uuDi/41c1ezBn0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/wasm-edit";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/wasm-gen" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-bytecode" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/ieee754" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/leb128" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/utf8" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-jHIdmfstcZQ9q4Bd2fKjX9Ob5mQ0XScigrvRkXeIVmo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/wasm-gen/-/wasm-gen-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/wasm-gen";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/wasm-opt" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-buffer" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-gen" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-parser" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-BwCEqkQE7J0C9iCSa+4RwA6d2HIqCNyJtQTd9sDrv10=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/wasm-opt";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/wasm-parser" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-api-error" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/helper-wasm-bytecode" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/ieee754" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/leb128" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/utf8" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-yQX7ijcIR/j8eZs4SyQcyYtvh1uexb1/rmVbckNqtW4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/wasm-parser/-/wasm-parser-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/wasm-parser";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@webassemblyjs/wast-printer" = {
+        "1.11.6" = {
+          depInfo = {
+            "@webassemblyjs/ast" = {
+              descriptor = "1.11.6";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@xtuc/long" = {
+              descriptor = "4.2.2";
+              pin = "4.2.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-08Hc0J9WmChsjm4fov3zvUxhHcyf1GFFSo1oiEGPtow=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.11.6.tgz";
+          };
+          ident = "@webassemblyjs/wast-printer";
+          ltype = "file";
+          version = "1.11.6";
+        };
+      };
+      "@xtuc/ieee754" = {
+        "1.2.0" = {
+          fetchInfo = {
+            narHash = "sha256-Yt8ZF8eXBXzygW9YljgZ+PMQqxW5S4qIUwrSPj5MZjU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@xtuc/ieee754/-/ieee754-1.2.0.tgz";
+          };
+          ident = "@xtuc/ieee754";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.2.0";
+        };
+      };
+      "@xtuc/long" = {
+        "4.2.2" = {
+          fetchInfo = {
+            narHash = "sha256-vHExajnTeupP2HOcy4djS3gGA+9wJg6McK8dad3Y//8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@xtuc/long/-/long-4.2.2.tgz";
+          };
+          ident = "@xtuc/long";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.2.2";
+        };
+      };
       acorn = {
         "8.10.0" = {
-          binInfo = { binPairs = { acorn = "bin/acorn"; }; };
+          binInfo = {
+            binPairs = {
+              acorn = "bin/acorn";
+            };
+          };
           fetchInfo = {
             narHash = "sha256-vmLiR0CeNXcvOY/qgxmfBWzUOTxz6rXJcp5EMe7rR3o=";
             type = "tarball";
@@ -2162,6 +3361,24 @@
           ltype = "file";
           treeInfo = { };
           version = "8.10.0";
+        };
+      };
+      acorn-import-assertions = {
+        "1.9.0" = {
+          fetchInfo = {
+            narHash = "sha256-jFmP3/kAsYouBzA85Xrzef/dhsYyG3jry48w6FF/snQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz";
+          };
+          ident = "acorn-import-assertions";
+          ltype = "file";
+          peerInfo = {
+            acorn = {
+              descriptor = "^8";
+            };
+          };
+          treeInfo = { };
+          version = "1.9.0";
         };
       };
       acorn-jsx = {
@@ -2174,7 +3391,9 @@
           ident = "acorn-jsx";
           ltype = "file";
           peerInfo = {
-            acorn = { descriptor = "^6.0.0 || ^7.0.0 || ^8.0.0"; };
+            acorn = {
+              descriptor = "^6.0.0 || ^7.0.0 || ^8.0.0";
+            };
           };
           treeInfo = { };
           version = "5.3.2";
@@ -2214,13 +3433,30 @@
           version = "6.12.6";
         };
       };
+      ajv-keywords = {
+        "3.5.2" = {
+          fetchInfo = {
+            narHash = "sha256-ZO+DRbAK9Ji2muXlfGLzBYidi9tf85m8CJnUJ0yjCtU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.5.2.tgz";
+          };
+          ident = "ajv-keywords";
+          ltype = "file";
+          peerInfo = {
+            ajv = {
+              descriptor = "^6.9.1";
+            };
+          };
+          treeInfo = { };
+          version = "3.5.2";
+        };
+      };
       ansi-regex = {
         "5.0.1" = {
           fetchInfo = {
             narHash = "sha256-8FjueDq8OfpA4/cbcsda1vVcNseZPDYf+YqM56zD03Y=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz";
+            url = "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz";
           };
           ident = "ansi-regex";
           ltype = "file";
@@ -2240,8 +3476,7 @@
           fetchInfo = {
             narHash = "sha256-3VeRGkKqu2VUHvybLgjuzuTVZIYL6b4bwCEAhRF/Fzw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz";
+            url = "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz";
           };
           ident = "ansi-styles";
           ltype = "file";
@@ -2258,8 +3493,7 @@
           fetchInfo = {
             narHash = "sha256-Kqu6XFQU9/7zx/Nryl7Asi5QsyP1By7Ig4Sn1HbFfdc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz";
+            url = "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz";
           };
           ident = "ansi-styles";
           ltype = "file";
@@ -2291,8 +3525,7 @@
           fetchInfo = {
             narHash = "sha256-TkGqLMLh6DwC+zg7RUaNyf6b3SgK+0ylZy4v3n0tgAQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/aria-query/-/aria-query-5.3.0.tgz";
+            url = "https://registry.npmjs.org/aria-query/-/aria-query-5.3.0.tgz";
           };
           ident = "aria-query";
           ltype = "file";
@@ -2316,8 +3549,7 @@
           fetchInfo = {
             narHash = "sha256-zRY5ti2uSzFiExmvZ4msX/ze2+WOLm4HCO3RrbQOJaE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array-buffer-byte-length/-/array-buffer-byte-length-1.0.0.tgz";
+            url = "https://registry.npmjs.org/array-buffer-byte-length/-/array-buffer-byte-length-1.0.0.tgz";
           };
           ident = "array-buffer-byte-length";
           ltype = "file";
@@ -2356,8 +3588,7 @@
           fetchInfo = {
             narHash = "sha256-dUWv9Vpkm9Q+bTJmKzlqI+YMYLoRdPikvELz3IiPjWY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array-includes/-/array-includes-3.1.6.tgz";
+            url = "https://registry.npmjs.org/array-includes/-/array-includes-3.1.6.tgz";
           };
           ident = "array-includes";
           ltype = "file";
@@ -2369,8 +3600,7 @@
           fetchInfo = {
             narHash = "sha256-bmQXg345RYsXeeq7IwVxYDrzUr9rWTXu9b8usPViYkk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array-union/-/array-union-2.1.0.tgz";
+            url = "https://registry.npmjs.org/array-union/-/array-union-2.1.0.tgz";
           };
           ident = "array-union";
           ltype = "file";
@@ -2410,8 +3640,7 @@
           fetchInfo = {
             narHash = "sha256-PuR+7b7loi1pfrvvvnPZYkYRBZy8I2pjSB99c7LReYI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array.prototype.findlastindex/-/array.prototype.findlastindex-1.2.3.tgz";
+            url = "https://registry.npmjs.org/array.prototype.findlastindex/-/array.prototype.findlastindex-1.2.3.tgz";
           };
           ident = "array.prototype.findlastindex";
           ltype = "file";
@@ -2445,8 +3674,7 @@
           fetchInfo = {
             narHash = "sha256-WOXmh1ZNKurEfwLXMLzB2GZksE06eMGV1GlGY9hC2n8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array.prototype.flat/-/array.prototype.flat-1.3.1.tgz";
+            url = "https://registry.npmjs.org/array.prototype.flat/-/array.prototype.flat-1.3.1.tgz";
           };
           ident = "array.prototype.flat";
           ltype = "file";
@@ -2480,8 +3708,7 @@
           fetchInfo = {
             narHash = "sha256-ZwXYyM+OQO61VKBHaokjjwr9dXaGO3lHfoSE+AzqxUU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array.prototype.flatmap/-/array.prototype.flatmap-1.3.1.tgz";
+            url = "https://registry.npmjs.org/array.prototype.flatmap/-/array.prototype.flatmap-1.3.1.tgz";
           };
           ident = "array.prototype.flatmap";
           ltype = "file";
@@ -2520,8 +3747,7 @@
           fetchInfo = {
             narHash = "sha256-8RTkXn0xmEdLJg7p35+EmNXizkgo1Ula5LxyacoZ8Yk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/array.prototype.tosorted/-/array.prototype.tosorted-1.1.2.tgz";
+            url = "https://registry.npmjs.org/array.prototype.tosorted/-/array.prototype.tosorted-1.1.2.tgz";
           };
           ident = "array.prototype.tosorted";
           ltype = "file";
@@ -2570,8 +3796,7 @@
           fetchInfo = {
             narHash = "sha256-8+5hudY1lGd60Uj+jGGx4M8DXXvCLzpZKZ3uL9Ny0w8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/arraybuffer.prototype.slice/-/arraybuffer.prototype.slice-1.0.2.tgz";
+            url = "https://registry.npmjs.org/arraybuffer.prototype.slice/-/arraybuffer.prototype.slice-1.0.2.tgz";
           };
           ident = "arraybuffer.prototype.slice";
           ltype = "file";
@@ -2583,13 +3808,30 @@
           fetchInfo = {
             narHash = "sha256-UcLvjFpq+yr7zoyF1RcMr8cip2SZz+AumqFtZATN3aA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz";
+            url = "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz";
           };
           ident = "ast-types-flow";
           ltype = "file";
           treeInfo = { };
           version = "0.0.7";
+        };
+      };
+      astring = {
+        "1.8.6" = {
+          binInfo = {
+            binPairs = {
+              astring = "bin/astring";
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-J/rRNKLX2+0MK/WSuh3rmiZ6l8a0TSQ1dntlvTICWhM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/astring/-/astring-1.8.6.tgz";
+          };
+          ident = "astring";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.8.6";
         };
       };
       "asynciterator.prototype" = {
@@ -2604,8 +3846,7 @@
           fetchInfo = {
             narHash = "sha256-ch7QTvU4Mg/svxE4R95MND938HOTEbClJGZ7eg0Dnrc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/asynciterator.prototype/-/asynciterator.prototype-1.0.0.tgz";
+            url = "https://registry.npmjs.org/asynciterator.prototype/-/asynciterator.prototype-1.0.0.tgz";
           };
           ident = "asynciterator.prototype";
           ltype = "file";
@@ -2617,8 +3858,7 @@
           fetchInfo = {
             narHash = "sha256-2Mhjdq/W76GxYD8IyzTn23Co5WQrIDa0uXHar7RMu0s=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz";
+            url = "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz";
           };
           ident = "available-typed-arrays";
           ltype = "file";
@@ -2651,8 +3891,7 @@
           fetchInfo = {
             narHash = "sha256-26bT+62Cse7aRF6ttHjrTVo270PRZwJLQrYVG83TeGE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/axobject-query/-/axobject-query-3.2.1.tgz";
+            url = "https://registry.npmjs.org/axobject-query/-/axobject-query-3.2.1.tgz";
           };
           ident = "axobject-query";
           ltype = "file";
@@ -2681,8 +3920,7 @@
           fetchInfo = {
             narHash = "sha256-iQ2TOwutifOLnyoUkOPUwHtd4Wq79eGpyFUqJZ2GUNY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/babel-plugin-macros/-/babel-plugin-macros-3.1.0.tgz";
+            url = "https://registry.npmjs.org/babel-plugin-macros/-/babel-plugin-macros-3.1.0.tgz";
           };
           ident = "babel-plugin-macros";
           ltype = "file";
@@ -2707,8 +3945,7 @@
           fetchInfo = {
             narHash = "sha256-YH1+osaAiJvWUUR4VCe/Hh4eHhXS0gN3Lnr+Xd3cCzg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz";
+            url = "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz";
           };
           ident = "balanced-match";
           ltype = "file";
@@ -2733,8 +3970,7 @@
           fetchInfo = {
             narHash = "sha256-3iQ502QjW10IEFOh3qnkAIivIbQ1TO1pgQTi7p9eado=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz";
+            url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz";
           };
           ident = "brace-expansion";
           ltype = "file";
@@ -2758,6 +3994,58 @@
           ident = "braces";
           ltype = "file";
           version = "3.0.2";
+        };
+      };
+      browserslist = {
+        "4.22.2" = {
+          binInfo = {
+            binPairs = {
+              browserslist = "cli.js";
+            };
+          };
+          depInfo = {
+            caniuse-lite = {
+              descriptor = "^1.0.30001565";
+              pin = "1.0.30001566";
+              runtime = true;
+            };
+            electron-to-chromium = {
+              descriptor = "^1.4.601";
+              pin = "1.4.603";
+              runtime = true;
+            };
+            node-releases = {
+              descriptor = "^2.0.14";
+              pin = "2.0.14";
+              runtime = true;
+            };
+            update-browserslist-db = {
+              descriptor = "^1.0.13";
+              pin = "1.0.13";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-m9D/Md+rUoP8LhY+CHYvVabhx7YhW+NIyajnk9lPMrM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/browserslist/-/browserslist-4.22.2.tgz";
+          };
+          ident = "browserslist";
+          ltype = "file";
+          version = "4.22.2";
+        };
+      };
+      buffer-from = {
+        "1.1.2" = {
+          fetchInfo = {
+            narHash = "sha256-8dpJi5qu37MruotYJ6QBjTJbgWOO4eDu3gOoJ6Mi9H0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz";
+          };
+          ident = "buffer-from";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.2";
         };
       };
       busboy = {
@@ -2817,17 +4105,29 @@
         };
       };
       caniuse-lite = {
-        "1.0.30001431" = {
+        "1.0.30001566" = {
           fetchInfo = {
-            narHash = "sha256-BDLVT+pLsdObuaooQUAYGsFLzaCu4I1rBqUAU5QJI8I=";
+            narHash = "sha256-bDfkT255+HIToCugIDcT9Ht0uCUGI2PkYuMv7TrTnNc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001431.tgz";
+            url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001566.tgz";
           };
           ident = "caniuse-lite";
           ltype = "file";
           treeInfo = { };
-          version = "1.0.30001431";
+          version = "1.0.30001566";
+        };
+      };
+      ccount = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-Oc2cfDUEXrPNWag23ih+2yA7mtS2NtFDZRMpFpjANFk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/ccount/-/ccount-2.0.1.tgz";
+          };
+          ident = "ccount";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
         };
       };
       chalk = {
@@ -2886,8 +4186,7 @@
           fetchInfo = {
             narHash = "sha256-jK/EpyIGEf7fXiNp+OFMxvoAh76A9pel+NS4ZUXDNJY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/character-entities/-/character-entities-2.0.2.tgz";
+            url = "https://registry.npmjs.org/character-entities/-/character-entities-2.0.2.tgz";
           };
           ident = "character-entities";
           ltype = "file";
@@ -2895,13 +4194,64 @@
           version = "2.0.2";
         };
       };
+      character-entities-html4 = {
+        "2.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-DhpXWE7m0xBHAIujCy3Bp1jjUqwks79lMJ767t8RPQ8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/character-entities-html4/-/character-entities-html4-2.1.0.tgz";
+          };
+          ident = "character-entities-html4";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.1.0";
+        };
+      };
+      character-entities-legacy = {
+        "3.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-n/jJxn9GASGq0I+SqFB9Vlm0rwqa6l1GwThDX+1Rb64=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/character-entities-legacy/-/character-entities-legacy-3.0.0.tgz";
+          };
+          ident = "character-entities-legacy";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.0";
+        };
+      };
+      character-reference-invalid = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-4oajzbVpCHoMhQziClxOx3WKgvw8460/8QYKpDKM+E0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/character-reference-invalid/-/character-reference-invalid-2.0.1.tgz";
+          };
+          ident = "character-reference-invalid";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
+      };
+      chrome-trace-event = {
+        "1.0.3" = {
+          fetchInfo = {
+            narHash = "sha256-PmxLk7mgt1635onxVIWccdrdSpBOFGa7MsoMag5lt/c=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/chrome-trace-event/-/chrome-trace-event-1.0.3.tgz";
+          };
+          ident = "chrome-trace-event";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.0.3";
+        };
+      };
       client-only = {
         "0.0.1" = {
           fetchInfo = {
             narHash = "sha256-3KQxAPiD7OwuAQLV0+nIKTdzdufYucw4OT1mcv2lhUA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz";
+            url = "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz";
           };
           ident = "client-only";
           ltype = "file";
@@ -2933,6 +4283,19 @@
           version = "2.0.0";
         };
       };
+      collapse-white-space = {
+        "2.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-OpaGEMLzcLvh61gHrqNFToMynIZENO820Sdy990+n9g=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/collapse-white-space/-/collapse-white-space-2.1.0.tgz";
+          };
+          ident = "collapse-white-space";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.1.0";
+        };
+      };
       color-convert = {
         "1.9.3" = {
           depInfo = {
@@ -2945,8 +4308,7 @@
           fetchInfo = {
             narHash = "sha256-o/p0tqrXMvGg2VduYwUNx05gEWI11GuHgyq9nrd6khM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz";
+            url = "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz";
           };
           ident = "color-convert";
           ltype = "file";
@@ -2963,8 +4325,7 @@
           fetchInfo = {
             narHash = "sha256-EU7d3q55UXpfbMmk+wu8nYaxXGBK3Pwu2pIe5TVZiwc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz";
+            url = "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz";
           };
           ident = "color-convert";
           ltype = "file";
@@ -2976,8 +4337,7 @@
           fetchInfo = {
             narHash = "sha256-Z7+qlowBfxZNeitMCENEfKBRnaxqLWi4+ms5SIKafc0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz";
+            url = "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz";
           };
           ident = "color-name";
           ltype = "file";
@@ -2988,8 +4348,7 @@
           fetchInfo = {
             narHash = "sha256-mAOvtcDAZ05q6KP5tRgaO5D4jeb+/AcbIE1Z2nBG1uk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz";
+            url = "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz";
           };
           ident = "color-name";
           ltype = "file";
@@ -3002,8 +4361,7 @@
           fetchInfo = {
             narHash = "sha256-FEp1Fhre0gZUo/o525N6RFrrsdFButHHUAdmS4ZY4Wo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/comma-separated-tokens/-/comma-separated-tokens-2.0.3.tgz";
+            url = "https://registry.npmjs.org/comma-separated-tokens/-/comma-separated-tokens-2.0.3.tgz";
           };
           ident = "comma-separated-tokens";
           ltype = "file";
@@ -3011,13 +4369,25 @@
           version = "2.0.3";
         };
       };
+      commander = {
+        "2.20.3" = {
+          fetchInfo = {
+            narHash = "sha256-Lhil45v7SD12GmCv/klyoXGnkisKbobmN4XYw1g8l54=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz";
+          };
+          ident = "commander";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.20.3";
+        };
+      };
       concat-map = {
         "0.0.1" = {
           fetchInfo = {
             narHash = "sha256-ZY5/rMtzNK56p81EGaPcoIRr+J9j7yWh4szGxIOFYFA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz";
+            url = "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz";
           };
           ident = "concat-map";
           ltype = "file";
@@ -3030,8 +4400,7 @@
           fetchInfo = {
             narHash = "sha256-9zjFbAgTFN8PnaoIBuarc6354vYjJomgtng2vak3ERQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.9.0.tgz";
+            url = "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.9.0.tgz";
           };
           ident = "convert-source-map";
           ltype = "file";
@@ -3071,8 +4440,7 @@
           fetchInfo = {
             narHash = "sha256-dGJQtN3vsSsmxi7O8GN7IO27TjiN//ZpPEnPVhsCTUg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-7.0.1.tgz";
+            url = "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-7.0.1.tgz";
           };
           ident = "cosmiconfig";
           ltype = "file";
@@ -3101,8 +4469,7 @@
           fetchInfo = {
             narHash = "sha256-JZEEsKxB3BAGF+e9rlh4d9UUa8JEz4dSjfAvIXrerzY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz";
+            url = "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz";
           };
           ident = "cross-spawn";
           ltype = "file";
@@ -3127,8 +4494,7 @@
           fetchInfo = {
             narHash = "sha256-ztLc9UYtOBIyFKSJ7WnN2JwOWKNgfPO4AQC+mkEE3rY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz";
+            url = "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz";
           };
           ident = "damerau-levenshtein";
           ltype = "file";
@@ -3190,8 +4556,7 @@
           fetchInfo = {
             narHash = "sha256-p7iDUqcfz+axnu9v3pYM0YWVeudS4ffys4X8LROb3/I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/decode-named-character-reference/-/decode-named-character-reference-1.0.2.tgz";
+            url = "https://registry.npmjs.org/decode-named-character-reference/-/decode-named-character-reference-1.0.2.tgz";
           };
           ident = "decode-named-character-reference";
           ltype = "file";
@@ -3233,8 +4598,7 @@
           fetchInfo = {
             narHash = "sha256-7WakClIeZlz8KA0k7TgnDz5L/Ku7JffIRylF+bFPFxQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.0.tgz";
+            url = "https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.0.tgz";
           };
           ident = "define-data-property";
           ltype = "file";
@@ -3263,8 +4627,7 @@
           fetchInfo = {
             narHash = "sha256-/h9DtDPtMtpjeRGz7lmpBXiptU5rIIYVG5tqMtKRhHE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/define-properties/-/define-properties-1.2.1.tgz";
+            url = "https://registry.npmjs.org/define-properties/-/define-properties-1.2.1.tgz";
           };
           ident = "define-properties";
           ltype = "file";
@@ -3301,6 +4664,19 @@
           ident = "devlop";
           ltype = "file";
           version = "1.1.0";
+        };
+      };
+      diff = {
+        "5.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-yNDIwajXaEerClmryFlqMOWvNJjdON2mIORdvEuu2iA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/diff/-/diff-5.1.0.tgz";
+          };
+          ident = "diff";
+          ltype = "file";
+          treeInfo = { };
+          version = "5.1.0";
         };
       };
       dir-glob = {
@@ -3375,12 +4751,24 @@
           fetchInfo = {
             narHash = "sha256-DkzZGz1U902BcMC2nssAs+hULM4tJ17H+3dVUzwMopg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz";
+            url = "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz";
           };
           ident = "dom-helpers";
           ltype = "file";
           version = "5.2.1";
+        };
+      };
+      electron-to-chromium = {
+        "1.4.603" = {
+          fetchInfo = {
+            narHash = "sha256-oHBTzAndW/5KD1FbxiwfSze8iW7iChTkodbhTI9GF8k=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.603.tgz";
+          };
+          ident = "electron-to-chromium";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.4.603";
         };
       };
       emoji-regex = {
@@ -3388,8 +4776,7 @@
           fetchInfo = {
             narHash = "sha256-xe6KVH2H1EXdHa5Y6sUeVZkWIZ4UESKkgS8f+/ZRNB4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz";
+            url = "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz";
           };
           ident = "emoji-regex";
           ltype = "file";
@@ -3414,12 +4801,24 @@
           fetchInfo = {
             narHash = "sha256-tzy2nj3A/cTD+7OyLXCa5jI9Q17uPski3MiPA1adNJA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz";
+            url = "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz";
           };
           ident = "enhanced-resolve";
           ltype = "file";
           version = "5.15.0";
+        };
+      };
+      entities = {
+        "4.5.0" = {
+          fetchInfo = {
+            narHash = "sha256-FRBvf+mPKHQu5H1bjJ1+DdlCx54TUNx89/GH7z8F5Ik=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz";
+          };
+          ident = "entities";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.5.0";
         };
       };
       error-ex = {
@@ -3643,8 +5042,7 @@
           fetchInfo = {
             narHash = "sha256-1oUG4jpXb/fPjZgYZwc96FeP3eUhbf1R+uwfZAOuJCk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/es-abstract/-/es-abstract-1.22.2.tgz";
+            url = "https://registry.npmjs.org/es-abstract/-/es-abstract-1.22.2.tgz";
           };
           ident = "es-abstract";
           ltype = "file";
@@ -3728,12 +5126,24 @@
           fetchInfo = {
             narHash = "sha256-dTcRk4yIfwTn2Fkyuhre4eKvby9b6g3X1/jPpE9KfVE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/es-iterator-helpers/-/es-iterator-helpers-1.0.15.tgz";
+            url = "https://registry.npmjs.org/es-iterator-helpers/-/es-iterator-helpers-1.0.15.tgz";
           };
           ident = "es-iterator-helpers";
           ltype = "file";
           version = "1.0.15";
+        };
+      };
+      es-module-lexer = {
+        "1.4.1" = {
+          fetchInfo = {
+            narHash = "sha256-QsLxJN9LfNQlt7SnzBP8nJdjlzd1ruVYfhfyHoXcUSs=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.4.1.tgz";
+          };
+          ident = "es-module-lexer";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.4.1";
         };
       };
       es-set-tostringtag = {
@@ -3758,8 +5168,7 @@
           fetchInfo = {
             narHash = "sha256-oHVOAUcBNvm2jp6ZOAqrqqv8FIyjU3akaUjhjiuAVbg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.0.1.tgz";
+            url = "https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.0.1.tgz";
           };
           ident = "es-set-tostringtag";
           ltype = "file";
@@ -3778,8 +5187,7 @@
           fetchInfo = {
             narHash = "sha256-p1PtxubOfdj79colMq6VF+9oAdvtCb4eGb9X7tuymn8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/es-shim-unscopables/-/es-shim-unscopables-1.0.0.tgz";
+            url = "https://registry.npmjs.org/es-shim-unscopables/-/es-shim-unscopables-1.0.0.tgz";
           };
           ident = "es-shim-unscopables";
           ltype = "file";
@@ -3808,12 +5216,24 @@
           fetchInfo = {
             narHash = "sha256-J2bNBFeEP8hzunktaqsjfxzXlnzq9qNVtOBWm7bAXMk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/es-to-primitive/-/es-to-primitive-1.2.1.tgz";
+            url = "https://registry.npmjs.org/es-to-primitive/-/es-to-primitive-1.2.1.tgz";
           };
           ident = "es-to-primitive";
           ltype = "file";
           version = "1.2.1";
+        };
+      };
+      escalade = {
+        "3.1.1" = {
+          fetchInfo = {
+            narHash = "sha256-5BSRjy0hMk0+ydgMP5t57Y4ea7VnLGGH3YIkNT9a11E=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz";
+          };
+          ident = "escalade";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.1.1";
         };
       };
       escape-string-regexp = {
@@ -3821,8 +5241,7 @@
           fetchInfo = {
             narHash = "sha256-jI2WTcziWydQXDepnqeq9ZLmmJeODhVO2w1qLvZc90Q=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz";
+            url = "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz";
           };
           ident = "escape-string-regexp";
           ltype = "file";
@@ -3833,18 +5252,32 @@
           fetchInfo = {
             narHash = "sha256-d7WCjjMj36VTWLhrU8YwNOQ0ed2OBaAQBxvuLKvsONc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz";
+            url = "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz";
           };
           ident = "escape-string-regexp";
           ltype = "file";
           treeInfo = { };
           version = "4.0.0";
         };
+        "5.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-xzzlpQuOkm2zURrzzeXxR/GYWEPS5veyXzS6sOzK3gw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz";
+          };
+          ident = "escape-string-regexp";
+          ltype = "file";
+          treeInfo = { };
+          version = "5.0.0";
+        };
       };
       eslint = {
         "8.50.0" = {
-          binInfo = { binPairs = { eslint = "bin/eslint.js"; }; };
+          binInfo = {
+            binPairs = {
+              eslint = "bin/eslint.js";
+            };
+          };
           depInfo = {
             "@eslint-community/eslint-utils" = {
               descriptor = "^4.2.0";
@@ -4043,11 +5476,11 @@
         };
       };
       eslint-config-next = {
-        "13.5.3" = {
+        "14.0.3" = {
           depInfo = {
             "@next/eslint-plugin-next" = {
-              descriptor = "13.5.3";
-              pin = "13.5.3";
+              descriptor = "14.0.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@rushstack/eslint-patch" = {
@@ -4092,21 +5525,22 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-5zXmdVonhBtLnCw6e6QpWrSmP29dpXQXvXM7BUv8Vjc=";
+            narHash = "sha256-7KPSjvD1ge1LBLC8JoTePiM9FO0O3RaCxLyy1bUJ0uY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-13.5.3.tgz";
+            url = "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-14.0.3.tgz";
           };
           ident = "eslint-config-next";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^7.23.0 || ^8.0.0"; };
+            eslint = {
+              descriptor = "^7.23.0 || ^8.0.0";
+            };
             typescript = {
               descriptor = ">=3.3.1";
               optional = true;
             };
           };
-          version = "13.5.3";
+          version = "14.0.3";
         };
       };
       eslint-import-resolver-node = {
@@ -4131,8 +5565,7 @@
           fetchInfo = {
             narHash = "sha256-ooMgMmq3zJ+rHArFE+eoC7w34g0YPO/RsEkPdGlSwiY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz";
+            url = "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz";
           };
           ident = "eslint-import-resolver-node";
           ltype = "file";
@@ -4181,14 +5614,17 @@
           fetchInfo = {
             narHash = "sha256-Q8Jei1m1bxYoXXQTz/I8GIYU+Jttj6can+0QPH3fRCY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.6.1.tgz";
+            url = "https://registry.npmjs.org/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.6.1.tgz";
           };
           ident = "eslint-import-resolver-typescript";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "*"; };
-            eslint-plugin-import = { descriptor = "*"; };
+            eslint = {
+              descriptor = "*";
+            };
+            eslint-plugin-import = {
+              descriptor = "*";
+            };
           };
           version = "3.6.1";
         };
@@ -4205,8 +5641,7 @@
           fetchInfo = {
             narHash = "sha256-gALdH2ZFeHchXffpyUaS47byHnmq8/+RnuTuJjL6fVU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-module-utils/-/eslint-module-utils-2.8.0.tgz";
+            url = "https://registry.npmjs.org/eslint-module-utils/-/eslint-module-utils-2.8.0.tgz";
           };
           ident = "eslint-module-utils";
           ltype = "file";
@@ -4311,8 +5746,7 @@
           fetchInfo = {
             narHash = "sha256-8vIUFQPPnFM5du7k4UYIdHZURqv7mce2V3+VTafLilk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.28.1.tgz";
+            url = "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.28.1.tgz";
           };
           ident = "eslint-plugin-import";
           ltype = "file";
@@ -4411,13 +5845,14 @@
           fetchInfo = {
             narHash = "sha256-Q9S6Zx3k3uHus3GXEUSfQM9oetRrNHIwUCMi6tU9hRA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.7.1.tgz";
+            url = "https://registry.npmjs.org/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.7.1.tgz";
           };
           ident = "eslint-plugin-jsx-a11y";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^3 || ^4 || ^5 || ^6 || ^7 || ^8"; };
+            eslint = {
+              descriptor = "^3 || ^4 || ^5 || ^6 || ^7 || ^8";
+            };
           };
           version = "6.7.1";
         };
@@ -4509,13 +5944,14 @@
           fetchInfo = {
             narHash = "sha256-z3Rpvr+PpF7D2tBkwIe7mtytyz3+GeG3RcDec5k6xcU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.33.2.tgz";
+            url = "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.33.2.tgz";
           };
           ident = "eslint-plugin-react";
           ltype = "file";
           peerInfo = {
-            eslint = { descriptor = "^3 || ^4 || ^5 || ^6 || ^7 || ^8"; };
+            eslint = {
+              descriptor = "^3 || ^4 || ^5 || ^6 || ^7 || ^8";
+            };
           };
           version = "7.33.2";
         };
@@ -4525,15 +5961,13 @@
           fetchInfo = {
             narHash = "sha256-R4ajERUfJ6QKydepzEYJebcUG8Wi3RFso+iyBm+b6zc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz";
+            url = "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz";
           };
           ident = "eslint-plugin-react-hooks";
           ltype = "file";
           peerInfo = {
             eslint = {
-              descriptor =
-                "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0";
+              descriptor = "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0";
             };
           };
           treeInfo = { };
@@ -4541,6 +5975,28 @@
         };
       };
       eslint-scope = {
+        "5.1.1" = {
+          depInfo = {
+            esrecurse = {
+              descriptor = "^4.3.0";
+              pin = "4.3.0";
+              runtime = true;
+            };
+            estraverse = {
+              descriptor = "^4.1.1";
+              pin = "4.3.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-CgRo1pE7/MbHG++8ScYxF7FOxqJW+C5DDER02bSG7FM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/eslint-scope/-/eslint-scope-5.1.1.tgz";
+          };
+          ident = "eslint-scope";
+          ltype = "file";
+          version = "5.1.1";
+        };
         "7.2.2" = {
           depInfo = {
             esrecurse = {
@@ -4557,8 +6013,7 @@
           fetchInfo = {
             narHash = "sha256-t93ep+f1vmtCw+/t5EJxSBx0pgSNk7RcZppk5poBQWc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-scope/-/eslint-scope-7.2.2.tgz";
+            url = "https://registry.npmjs.org/eslint-scope/-/eslint-scope-7.2.2.tgz";
           };
           ident = "eslint-scope";
           ltype = "file";
@@ -4570,8 +6025,7 @@
           fetchInfo = {
             narHash = "sha256-kZy6Qi4xSU1uHD4vzFgn8MC4DaNQPLVqA6/O8VhmTzk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz";
+            url = "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz";
           };
           ident = "eslint-visitor-keys";
           ltype = "file";
@@ -4647,17 +6101,269 @@
         };
       };
       estraverse = {
+        "4.3.0" = {
+          fetchInfo = {
+            narHash = "sha256-ekB0YUgzdakntluHF3FoHv9+GZr7QJEua1FF32TYBaQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estraverse/-/estraverse-4.3.0.tgz";
+          };
+          ident = "estraverse";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.3.0";
+        };
         "5.3.0" = {
           fetchInfo = {
             narHash = "sha256-Vb6OEwicNHaYjRSLyES24y4OJtyPPb/7ecZpH6ZOGFg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/estraverse/-/estraverse-5.3.0.tgz";
+            url = "https://registry.npmjs.org/estraverse/-/estraverse-5.3.0.tgz";
           };
           ident = "estraverse";
           ltype = "file";
           treeInfo = { };
           version = "5.3.0";
+        };
+      };
+      estree-util-attach-comments = {
+        "2.1.1" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-rjw35K1HS7qwEpW4ud0VfbX/X7Mmecd29UaH2+/h2/c=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-attach-comments/-/estree-util-attach-comments-2.1.1.tgz";
+          };
+          ident = "estree-util-attach-comments";
+          ltype = "file";
+          version = "2.1.1";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-yfIbIdbs6m6dSqXLevb13dd9w8j9DXJ+2Np2gdb7Koo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-attach-comments/-/estree-util-attach-comments-3.0.0.tgz";
+          };
+          ident = "estree-util-attach-comments";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      estree-util-build-jsx = {
+        "2.2.2" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            estree-walker = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-3b3Nxwu6U9fE3iFYdipVYHmPZogn4rAwBxJ5FNNeaKc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-build-jsx/-/estree-util-build-jsx-2.2.2.tgz";
+          };
+          ident = "estree-util-build-jsx";
+          ltype = "file";
+          version = "2.2.2";
+        };
+        "3.0.1" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            estree-walker = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-vIFhuju0jr4BbRYhwkz1qUO3hszBYx+2EOerkOIE7Sk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-build-jsx/-/estree-util-build-jsx-3.0.1.tgz";
+          };
+          ident = "estree-util-build-jsx";
+          ltype = "file";
+          version = "3.0.1";
+        };
+      };
+      estree-util-is-identifier-name = {
+        "2.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-vxlaQsA5ly1EOk4wjuhdM0Uo6fYH/1MN1fGbLBmZgKA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-is-identifier-name/-/estree-util-is-identifier-name-2.1.0.tgz";
+          };
+          ident = "estree-util-is-identifier-name";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.1.0";
+        };
+        "3.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-0R7FLdYyXYSScZpFVPi9UnUS9GqsSiFJzP+im8g1n+s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-is-identifier-name/-/estree-util-is-identifier-name-3.0.0.tgz";
+          };
+          ident = "estree-util-is-identifier-name";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.0";
+        };
+      };
+      estree-util-to-js = {
+        "1.2.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            astring = {
+              descriptor = "^1.8.0";
+              pin = "1.8.6";
+              runtime = true;
+            };
+            source-map = {
+              descriptor = "^0.7.0";
+              pin = "0.7.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-OhpBhngDq3Sm8d6NTNIt0eC3P/izadx83qs8kV8FZ7c=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-to-js/-/estree-util-to-js-1.2.0.tgz";
+          };
+          ident = "estree-util-to-js";
+          ltype = "file";
+          version = "1.2.0";
+        };
+        "2.0.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            astring = {
+              descriptor = "^1.8.0";
+              pin = "1.8.6";
+              runtime = true;
+            };
+            source-map = {
+              descriptor = "^0.7.0";
+              pin = "0.7.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-I20WZojq62NV+MOOtej5/87IfX5yMTmu0R2Z031y0E4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-to-js/-/estree-util-to-js-2.0.0.tgz";
+          };
+          ident = "estree-util-to-js";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      estree-util-visit = {
+        "1.2.1" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-LMzENDCrPywL0HgcRgkgHXN6Yp8e/DNVsdNMKUDqeZ4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-visit/-/estree-util-visit-1.2.1.tgz";
+          };
+          ident = "estree-util-visit";
+          ltype = "file";
+          version = "1.2.1";
+        };
+        "2.0.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-9LDAYe835TnKYjxTGxPiW0u3/iUG98S4yzKmBQMwj70=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-util-visit/-/estree-util-visit-2.0.0.tgz";
+          };
+          ident = "estree-util-visit";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      estree-walker = {
+        "3.0.3" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-p+WRNa42ZBLhwYWGLsuPdynJNITZuUfEqd/2pL2LrTo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/estree-walker/-/estree-walker-3.0.3.tgz";
+          };
+          ident = "estree-walker";
+          ltype = "file";
+          version = "3.0.3";
         };
       };
       esutils = {
@@ -4671,6 +6377,19 @@
           ltype = "file";
           treeInfo = { };
           version = "2.0.3";
+        };
+      };
+      events = {
+        "3.3.0" = {
+          fetchInfo = {
+            narHash = "sha256-vyCUI7EY87lECH1RNaWXgIceirsdiolbBOIkW4MREp8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/events/-/events-3.3.0.tgz";
+          };
+          ident = "events";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.3.0";
         };
       };
       extend = {
@@ -4691,8 +6410,7 @@
           fetchInfo = {
             narHash = "sha256-KpUhRWsLDBdqgjClgxbRoAtbWsUvY7JhVil6+dMUqwE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz";
+            url = "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz";
           };
           ident = "fast-deep-equal";
           ltype = "file";
@@ -4744,8 +6462,7 @@
           fetchInfo = {
             narHash = "sha256-nvrcRKamdCbRlzJK0Bh6NkK5zpCoFhkizKEov4yK2oI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz";
+            url = "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz";
           };
           ident = "fast-json-stable-stringify";
           ltype = "file";
@@ -4758,8 +6475,7 @@
           fetchInfo = {
             narHash = "sha256-ecbIyMHylbbr7yuhLAsB/amPAPjjzF0rZw6qZDni7b8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz";
+            url = "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz";
           };
           ident = "fast-levenshtein";
           ltype = "file";
@@ -4786,6 +6502,25 @@
           version = "1.13.0";
         };
       };
+      fault = {
+        "2.0.1" = {
+          depInfo = {
+            format = {
+              descriptor = "^0.2.0";
+              pin = "0.2.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-4wxcR3hPD5MlJlFPefQ0Pz315pCfIjivxqUApVAbUbI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/fault/-/fault-2.0.1.tgz";
+          };
+          ident = "fault";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
       file-entry-cache = {
         "6.0.1" = {
           depInfo = {
@@ -4798,8 +6533,7 @@
           fetchInfo = {
             narHash = "sha256-MwVItPdMFD5YC4DfaF68o699xdGokviC2VW6Z0rw1Hs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz";
+            url = "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz";
           };
           ident = "file-entry-cache";
           ltype = "file";
@@ -4818,8 +6552,7 @@
           fetchInfo = {
             narHash = "sha256-1Cy9dyWlI0TnadlFR9TSryNYjR27SRRWtTT6oDiUHps=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz";
+            url = "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz";
           };
           ident = "fill-range";
           ltype = "file";
@@ -4880,8 +6613,7 @@
           fetchInfo = {
             narHash = "sha256-AQ5bUXhq/Y5gpPJWh2PcKocLZ4KPYGtJ0iLVrr6Rxn8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/flat-cache/-/flat-cache-3.0.4.tgz";
+            url = "https://registry.npmjs.org/flat-cache/-/flat-cache-3.0.4.tgz";
           };
           ident = "flat-cache";
           ltype = "file";
@@ -4920,13 +6652,25 @@
           version = "0.3.3";
         };
       };
+      format = {
+        "0.2.2" = {
+          fetchInfo = {
+            narHash = "sha256-FjeJUHKpyK0utVzBFwtdIYEUQoPK8rYjAglQVUzz2XQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/format/-/format-0.2.2.tgz";
+          };
+          ident = "format";
+          ltype = "file";
+          treeInfo = { };
+          version = "0.2.2";
+        };
+      };
       "fs.realpath" = {
         "1.0.0" = {
           fetchInfo = {
             narHash = "sha256-oPk2F5VP+ECdKr8qs3h0dziW0mK71uwTUrbgulLI/ks=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz";
+            url = "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz";
           };
           ident = "fs.realpath";
           ltype = "file";
@@ -4939,8 +6683,7 @@
           fetchInfo = {
             narHash = "sha256-9SZTeDBJ87ogdiEHyC3b2/wr1Bv8qb8rCJeD+OYvf9A=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz";
+            url = "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz";
           };
           ident = "function-bind";
           ltype = "file";
@@ -4975,8 +6718,7 @@
           fetchInfo = {
             narHash = "sha256-HqA13yz3gEd4qt+aeHBJUvhzyBg6zpoz1c1GaHov/Go=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/function.prototype.name/-/function.prototype.name-1.1.6.tgz";
+            url = "https://registry.npmjs.org/function.prototype.name/-/function.prototype.name-1.1.6.tgz";
           };
           ident = "function.prototype.name";
           ltype = "file";
@@ -4988,8 +6730,7 @@
           fetchInfo = {
             narHash = "sha256-dVfHQ/TWDvhFrCqSX2JEBlW2wJ3THV0pbZ0zt7I0Olk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz";
+            url = "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz";
           };
           ident = "functions-have-names";
           ltype = "file";
@@ -5024,8 +6765,7 @@
           fetchInfo = {
             narHash = "sha256-9no1EKud/J4wr6WSN//rpyQqByB0HGgY/jmykJNpyvU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.1.tgz";
+            url = "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.1.tgz";
           };
           ident = "get-intrinsic";
           ltype = "file";
@@ -5049,8 +6789,7 @@
           fetchInfo = {
             narHash = "sha256-bp4YseOAXEN7IU9lE2OGbqZeZUYyPwtPftsSD3ZyTsk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/get-symbol-description/-/get-symbol-description-1.0.0.tgz";
+            url = "https://registry.npmjs.org/get-symbol-description/-/get-symbol-description-1.0.0.tgz";
           };
           ident = "get-symbol-description";
           ltype = "file";
@@ -5069,12 +6808,24 @@
           fetchInfo = {
             narHash = "sha256-TgllxJ3mDHuDTeeG8Lj5wraa2qaocTutbnU4CaDwd/U=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.7.2.tgz";
+            url = "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.7.2.tgz";
           };
           ident = "get-tsconfig";
           ltype = "file";
           version = "4.7.2";
+        };
+      };
+      github-slugger = {
+        "2.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-pYFvgrCdJwK0cDSvTfOdiFCsaVHcg2g+S0RCxe+KD4E=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/github-slugger/-/github-slugger-2.0.0.tgz";
+          };
+          ident = "github-slugger";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.0";
         };
       };
       glob = {
@@ -5175,8 +6926,7 @@
           fetchInfo = {
             narHash = "sha256-mBzP81bqsUi8ynclBz+RKWEXbDPwkIyeOayR4oTzrsI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz";
+            url = "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz";
           };
           ident = "glob-parent";
           ltype = "file";
@@ -5193,8 +6943,7 @@
           fetchInfo = {
             narHash = "sha256-vvuqFaFPDyQ16dP8E52w8+seROdq79wwdXAV/g2BLPo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz";
+            url = "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz";
           };
           ident = "glob-parent";
           ltype = "file";
@@ -5206,8 +6955,7 @@
           fetchInfo = {
             narHash = "sha256-PPP4pb8uF1bYQXXMlu0YHg/8v61VEvxwqlv8HFvF1vQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz";
+            url = "https://registry.npmjs.org/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz";
           };
           ident = "glob-to-regexp";
           ltype = "file";
@@ -5246,8 +6994,7 @@
           fetchInfo = {
             narHash = "sha256-1IG9q5XPzjamsW5fTagVpUVQtVhpqqKn2SrQFtEtCF0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/globalthis/-/globalthis-1.0.3.tgz";
+            url = "https://registry.npmjs.org/globalthis/-/globalthis-1.0.3.tgz";
           };
           ident = "globalthis";
           ltype = "file";
@@ -5307,7 +7054,11 @@
           };
           ident = "goober";
           ltype = "file";
-          peerInfo = { csstype = { descriptor = "^3.0.10"; }; };
+          peerInfo = {
+            csstype = {
+              descriptor = "^3.0.10";
+            };
+          };
           treeInfo = { };
           version = "2.1.13";
         };
@@ -5336,8 +7087,7 @@
           fetchInfo = {
             narHash = "sha256-fH5Hc6M2zHaGeId+SmUwYBdGE4mmjA/Sg/Jj5Jh+P8g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz";
+            url = "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz";
           };
           ident = "graceful-fs";
           ltype = "file";
@@ -5382,8 +7132,7 @@
           fetchInfo = {
             narHash = "sha256-LbPq15+J8usV8bCOrccIRtzh4ZyiUjLqzaflRX9w4bo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/has-bigints/-/has-bigints-1.0.2.tgz";
+            url = "https://registry.npmjs.org/has-bigints/-/has-bigints-1.0.2.tgz";
           };
           ident = "has-bigints";
           ltype = "file";
@@ -5427,8 +7176,7 @@
           fetchInfo = {
             narHash = "sha256-4ifPgOoeFgucRb9lxIJmJo2IZdx4Agfb6/y7EBR2f0U=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.0.tgz";
+            url = "https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.0.tgz";
           };
           ident = "has-property-descriptors";
           ltype = "file";
@@ -5453,8 +7201,7 @@
           fetchInfo = {
             narHash = "sha256-UwYczbYNNKbZcyCkiLt8e3ASAghJIM72pdCV7DH0XQk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz";
+            url = "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz";
           };
           ident = "has-symbols";
           ltype = "file";
@@ -5474,12 +7221,128 @@
           fetchInfo = {
             narHash = "sha256-EjwjgT5bnHi8aoxdUvSdR4A0YWGKRF5K2VfwACp5VPQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.0.tgz";
+            url = "https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.0.tgz";
           };
           ident = "has-tostringtag";
           ltype = "file";
           version = "1.0.0";
+        };
+      };
+      hast-util-from-html = {
+        "2.0.1" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.1.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            hast-util-from-parse5 = {
+              descriptor = "^8.0.0";
+              pin = "8.0.1";
+              runtime = true;
+            };
+            parse5 = {
+              descriptor = "^7.0.0";
+              pin = "7.1.2";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-JTt/KbfZwGN1Pth4OogjoHXsNwDLrwwRX1UTlro43UY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-from-html/-/hast-util-from-html-2.0.1.tgz";
+          };
+          ident = "hast-util-from-html";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
+      hast-util-from-parse5 = {
+        "8.0.1" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            hastscript = {
+              descriptor = "^8.0.0";
+              pin = "8.0.0";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+            vfile-location = {
+              descriptor = "^5.0.0";
+              pin = "5.0.2";
+              runtime = true;
+            };
+            web-namespaces = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-NBUYxbmSTkmzp8MIMk1jspgol6jb3T7RiYdy/6loz7I=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-from-parse5/-/hast-util-from-parse5-8.0.1.tgz";
+          };
+          ident = "hast-util-from-parse5";
+          ltype = "file";
+          version = "8.0.1";
+        };
+      };
+      hast-util-heading-rank = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-u7tHU8cgRDFs2pcRWrPDmMtpzPyCjjkQOg2o8au54AM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-heading-rank/-/hast-util-heading-rank-3.0.0.tgz";
+          };
+          ident = "hast-util-heading-rank";
+          ltype = "file";
+          version = "3.0.0";
         };
       };
       hast-util-is-element = {
@@ -5494,12 +7357,364 @@
           fetchInfo = {
             narHash = "sha256-JZXIETcruDB4CWj+hO+RH/Pf6qRccLl0NDIJQPgpbKk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/hast-util-is-element/-/hast-util-is-element-3.0.0.tgz";
+            url = "https://registry.npmjs.org/hast-util-is-element/-/hast-util-is-element-3.0.0.tgz";
           };
           ident = "hast-util-is-element";
           ltype = "file";
           version = "3.0.0";
+        };
+      };
+      hast-util-parse-selector = {
+        "4.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-8nSQUEPalxD5eb/5L7TjVyK/B+ma1eafXzZNJ5RqxG4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-parse-selector/-/hast-util-parse-selector-4.0.0.tgz";
+          };
+          ident = "hast-util-parse-selector";
+          ltype = "file";
+          version = "4.0.0";
+        };
+      };
+      hast-util-raw = {
+        "9.0.1" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            "@ungap/structured-clone" = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            hast-util-from-parse5 = {
+              descriptor = "^8.0.0";
+              pin = "8.0.1";
+              runtime = true;
+            };
+            hast-util-to-parse5 = {
+              descriptor = "^8.0.0";
+              pin = "8.0.0";
+              runtime = true;
+            };
+            html-void-elements = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-to-hast = {
+              descriptor = "^13.0.0";
+              pin = "13.0.2";
+              runtime = true;
+            };
+            parse5 = {
+              descriptor = "^7.0.0";
+              pin = "7.1.2";
+              runtime = true;
+            };
+            unist-util-position = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+            web-namespaces = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-HMOkgksb6fnlF6d88qgkDf5Te0L/oBwJ/gkeuKaX23c=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-raw/-/hast-util-raw-9.0.1.tgz";
+          };
+          ident = "hast-util-raw";
+          ltype = "file";
+          version = "9.0.1";
+        };
+      };
+      hast-util-to-estree = {
+        "2.3.3" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            comma-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            estree-util-attach-comments = {
+              descriptor = "^2.0.0";
+              pin = "2.1.1";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            hast-util-whitespace = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            mdast-util-mdx-expression = {
+              descriptor = "^1.0.0";
+              pin = "1.3.2";
+              runtime = true;
+            };
+            mdast-util-mdxjs-esm = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            space-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            style-to-object = {
+              descriptor = "^0.4.1";
+              pin = "0.4.2";
+              runtime = true;
+            };
+            unist-util-position = {
+              descriptor = "^4.0.0";
+              pin = "4.0.4";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-mgUa3ylnfubSoESwA9qW7zhcqt/O+JyfKN2i9PQ8AGI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-estree/-/hast-util-to-estree-2.3.3.tgz";
+          };
+          ident = "hast-util-to-estree";
+          ltype = "file";
+          version = "2.3.3";
+        };
+        "3.1.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            comma-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            estree-util-attach-comments = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-whitespace = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-mdx-expression = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-mdx-jsx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-mdxjs-esm = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            space-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            style-to-object = {
+              descriptor = "^0.4.0";
+              pin = "0.4.2";
+              runtime = true;
+            };
+            unist-util-position = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-nrz867kieBVFVCGiQylN7Lgu5tvNlOU9wNhfVanqUvM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-estree/-/hast-util-to-estree-3.1.0.tgz";
+          };
+          ident = "hast-util-to-estree";
+          ltype = "file";
+          version = "3.1.0";
+        };
+      };
+      hast-util-to-html = {
+        "9.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            ccount = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            comma-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            hast-util-raw = {
+              descriptor = "^9.0.0";
+              pin = "9.0.1";
+              runtime = true;
+            };
+            hast-util-whitespace = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            html-void-elements = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-to-hast = {
+              descriptor = "^13.0.0";
+              pin = "13.0.2";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            space-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            stringify-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.3";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.4";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-dDmRK9kdRCuAxGYuXsok/uwoZ21wpjS6NQo1j0INXEI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-html/-/hast-util-to-html-9.0.0.tgz";
+          };
+          ident = "hast-util-to-html";
+          ltype = "file";
+          version = "9.0.0";
         };
       };
       hast-util-to-jsx-runtime = {
@@ -5554,12 +7769,79 @@
           fetchInfo = {
             narHash = "sha256-mb58nY5YHd27yVonl/lv4s7ERCvVymXmuzCzdtMWCpY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/hast-util-to-jsx-runtime/-/hast-util-to-jsx-runtime-2.2.0.tgz";
+            url = "https://registry.npmjs.org/hast-util-to-jsx-runtime/-/hast-util-to-jsx-runtime-2.2.0.tgz";
           };
           ident = "hast-util-to-jsx-runtime";
           ltype = "file";
           version = "2.2.0";
+        };
+      };
+      hast-util-to-parse5 = {
+        "8.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            comma-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            space-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            web-namespaces = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-L25HiP3j+O65rcJlIwezl589ToD6qIx4S6hpcgywEps=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-parse5/-/hast-util-to-parse5-8.0.0.tgz";
+          };
+          ident = "hast-util-to-parse5";
+          ltype = "file";
+          version = "8.0.0";
+        };
+      };
+      hast-util-to-string = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+lHIr2OwQ/mLzk5oosegfNmHCAMooQr4X1Egn3j4qP0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-string/-/hast-util-to-string-3.0.0.tgz";
+          };
+          ident = "hast-util-to-string";
+          ltype = "file";
+          version = "3.0.0";
         };
       };
       hast-util-to-text = {
@@ -5589,8 +7871,7 @@
           fetchInfo = {
             narHash = "sha256-6pPSvbpRN88OwQI8bG4iO0BOl6LTFY4vgbVZ9Gmtjq0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/hast-util-to-text/-/hast-util-to-text-4.0.0.tgz";
+            url = "https://registry.npmjs.org/hast-util-to-text/-/hast-util-to-text-4.0.0.tgz";
           };
           ident = "hast-util-to-text";
           ltype = "file";
@@ -5598,6 +7879,17 @@
         };
       };
       hast-util-whitespace = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-IMXj72QQONxwpW1DafxoHk8EL74aHxtmIuDiZ77yPmA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-whitespace/-/hast-util-whitespace-2.0.1.tgz";
+          };
+          ident = "hast-util-whitespace";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
         "3.0.0" = {
           depInfo = {
             "@types/hast" = {
@@ -5609,12 +7901,50 @@
           fetchInfo = {
             narHash = "sha256-7HQ72QhykyxGREoyqSiydKAeQvx5YPC3eBz+6HsgXYk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/hast-util-whitespace/-/hast-util-whitespace-3.0.0.tgz";
+            url = "https://registry.npmjs.org/hast-util-whitespace/-/hast-util-whitespace-3.0.0.tgz";
           };
           ident = "hast-util-whitespace";
           ltype = "file";
           version = "3.0.0";
+        };
+      };
+      hastscript = {
+        "8.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            comma-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            hast-util-parse-selector = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            property-information = {
+              descriptor = "^6.0.0";
+              pin = "6.2.0";
+              runtime = true;
+            };
+            space-separated-tokens = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-FIJFgintusoayxHdzWrkpD8BPdl454axrxL2HXZ0f0Y=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hastscript/-/hastscript-8.0.0.tgz";
+          };
+          ident = "hastscript";
+          ltype = "file";
+          version = "8.0.0";
         };
       };
       "highlight.js" = {
@@ -5622,8 +7952,7 @@
           fetchInfo = {
             narHash = "sha256-BVVIUGojuqLer6FC+cQRtgzhsS0F3FtMhOow5HQ3jHI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz";
+            url = "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz";
           };
           ident = "highlight.js";
           ltype = "file";
@@ -5634,8 +7963,7 @@
           fetchInfo = {
             narHash = "sha256-Fe/CBHUC9bxyoJlhwKyJCYz2FyDIuq8aRM9XXI7jOyI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/highlight.js/-/highlight.js-11.8.0.tgz";
+            url = "https://registry.npmjs.org/highlight.js/-/highlight.js-11.8.0.tgz";
           };
           ident = "highlight.js";
           ltype = "file";
@@ -5655,8 +7983,7 @@
           fetchInfo = {
             narHash = "sha256-eZiFEkmy/HthIpyyfuVH6yWBrq2Ot6tD5yRndqHMoUM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz";
+            url = "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz";
           };
           ident = "hoist-non-react-statics";
           ltype = "file";
@@ -5668,10 +7995,22 @@
           fetchInfo = {
             narHash = "sha256-ZqGTDHWHxlk6SBGkP2D1dhtrIsnoWRhtVQAwh3mjNmw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/html-url-attributes/-/html-url-attributes-3.0.0.tgz";
+            url = "https://registry.npmjs.org/html-url-attributes/-/html-url-attributes-3.0.0.tgz";
           };
           ident = "html-url-attributes";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.0";
+        };
+      };
+      html-void-elements = {
+        "3.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-TKT0uHIAWsN4eScViazQsgtkvQaqkioraKAIXNDCQXM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/html-void-elements/-/html-void-elements-3.0.0.tgz";
+          };
+          ident = "html-void-elements";
           ltype = "file";
           treeInfo = { };
           version = "3.0.0";
@@ -5707,8 +8046,7 @@
           fetchInfo = {
             narHash = "sha256-wgIxG44lNfa7v7fwdcEEDXWhWkzNo8I850QRuK0jGj0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz";
+            url = "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz";
           };
           ident = "import-fresh";
           ltype = "file";
@@ -5720,8 +8058,7 @@
           fetchInfo = {
             narHash = "sha256-kQg6DzTfAqCJNsP9gs1WygIi03+4/AGeF43p9h4LH30=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz";
+            url = "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz";
           };
           ident = "imurmurhash";
           ltype = "file";
@@ -5771,8 +8108,7 @@
           fetchInfo = {
             narHash = "sha256-EHSgWowrw3811A8QCveFTYNpl6si0RqlShbKAycUupc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.1.1.tgz";
+            url = "https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.1.1.tgz";
           };
           ident = "inline-style-parser";
           ltype = "file";
@@ -5802,12 +8138,48 @@
           fetchInfo = {
             narHash = "sha256-eK9f78pfeMH3KsgSG/xJfY9Dwkyj+ODRoiyIvgaaK4A=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/internal-slot/-/internal-slot-1.0.5.tgz";
+            url = "https://registry.npmjs.org/internal-slot/-/internal-slot-1.0.5.tgz";
           };
           ident = "internal-slot";
           ltype = "file";
           version = "1.0.5";
+        };
+      };
+      is-alphabetical = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-6sHxK2AL9yMAnyVFSrFg1uw7ZwyrxxCxLl85lROjMUQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-alphabetical/-/is-alphabetical-2.0.1.tgz";
+          };
+          ident = "is-alphabetical";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
+      };
+      is-alphanumerical = {
+        "2.0.1" = {
+          depInfo = {
+            is-alphabetical = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            is-decimal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-iwiQlJTP5eN5hu8Hnh48sMubtt2huOktLlMFiLhe5sg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-alphanumerical/-/is-alphanumerical-2.0.1.tgz";
+          };
+          ident = "is-alphanumerical";
+          ltype = "file";
+          version = "2.0.1";
         };
       };
       is-array-buffer = {
@@ -5832,8 +8204,7 @@
           fetchInfo = {
             narHash = "sha256-cente5TFioP5ObySfy4+ktghDmCgFGicBJxZhbjBpNg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-array-buffer/-/is-array-buffer-3.0.2.tgz";
+            url = "https://registry.npmjs.org/is-array-buffer/-/is-array-buffer-3.0.2.tgz";
           };
           ident = "is-array-buffer";
           ltype = "file";
@@ -5845,8 +8216,7 @@
           fetchInfo = {
             narHash = "sha256-wvuJg92GZxDL9IffjN5ttz8DRki65ZgZoM3Mr1V9IyM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz";
+            url = "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz";
           };
           ident = "is-arrayish";
           ltype = "file";
@@ -5866,8 +8236,7 @@
           fetchInfo = {
             narHash = "sha256-DtwPfSNZPHzW5Ji9Z+M0YDm9/3Lk3nq0f6OePaWiJ+8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-async-function/-/is-async-function-2.0.0.tgz";
+            url = "https://registry.npmjs.org/is-async-function/-/is-async-function-2.0.0.tgz";
           };
           ident = "is-async-function";
           ltype = "file";
@@ -5910,12 +8279,24 @@
           fetchInfo = {
             narHash = "sha256-/cvTh9+AMWF6iMMXCngaxj+LnPNCxatQFp/pSrgs74k=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.1.2.tgz";
+            url = "https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.1.2.tgz";
           };
           ident = "is-boolean-object";
           ltype = "file";
           version = "1.1.2";
+        };
+      };
+      is-buffer = {
+        "2.0.5" = {
+          fetchInfo = {
+            narHash = "sha256-t6PaOWkQDhJ5FpSNVhXO5P+BurY9F8QaRtuEOwLbBK8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-buffer/-/is-buffer-2.0.5.tgz";
+          };
+          ident = "is-buffer";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.5";
         };
       };
       is-callable = {
@@ -5923,8 +8304,7 @@
           fetchInfo = {
             narHash = "sha256-7h/ZjgrSnEtMqP8EQvVCNjfvNS7ZQ03uQIqtAG7afmw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-callable/-/is-callable-1.2.7.tgz";
+            url = "https://registry.npmjs.org/is-callable/-/is-callable-1.2.7.tgz";
           };
           ident = "is-callable";
           ltype = "file";
@@ -5944,8 +8324,7 @@
           fetchInfo = {
             narHash = "sha256-Zfs85iR40drNuBag9ZL90jcygps8dljkurXcCiQo3Do=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-core-module/-/is-core-module-2.13.0.tgz";
+            url = "https://registry.npmjs.org/is-core-module/-/is-core-module-2.13.0.tgz";
           };
           ident = "is-core-module";
           ltype = "file";
@@ -5964,12 +8343,24 @@
           fetchInfo = {
             narHash = "sha256-DOoOg9XTnjmck7pSLUl5chkS5FDZHmbwlkiIWi2ESwg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-date-object/-/is-date-object-1.0.5.tgz";
+            url = "https://registry.npmjs.org/is-date-object/-/is-date-object-1.0.5.tgz";
           };
           ident = "is-date-object";
           ltype = "file";
           version = "1.0.5";
+        };
+      };
+      is-decimal = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-qHZBUnsZ9zrgwN0esk/ysEDZbfsMYB+CfmXsD8QNHzU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-decimal/-/is-decimal-2.0.1.tgz";
+          };
+          ident = "is-decimal";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
         };
       };
       is-extglob = {
@@ -5977,8 +8368,7 @@
           fetchInfo = {
             narHash = "sha256-vY1Bx1tKKhqfbF3itxnDzWl3wA8dMl1GiNL93Bdb+1A=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz";
+            url = "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz";
           };
           ident = "is-extglob";
           ltype = "file";
@@ -5998,8 +8388,7 @@
           fetchInfo = {
             narHash = "sha256-7Gj2nbsEyCRTvIWbyERh3+YbwC34dOQvp60SVmfHAog=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-finalizationregistry/-/is-finalizationregistry-1.0.2.tgz";
+            url = "https://registry.npmjs.org/is-finalizationregistry/-/is-finalizationregistry-1.0.2.tgz";
           };
           ident = "is-finalizationregistry";
           ltype = "file";
@@ -6018,8 +8407,7 @@
           fetchInfo = {
             narHash = "sha256-zLoxBhopznS0XogJLUYboDPVzrbzZwfdlhoG2FF+GUw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.0.10.tgz";
+            url = "https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.0.10.tgz";
           };
           ident = "is-generator-function";
           ltype = "file";
@@ -6045,6 +8433,19 @@
           version = "4.0.3";
         };
       };
+      is-hexadecimal = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-TscDjujBrCb/oeAul/uYd7A/X5JtrJ6GmMD6wTQbbhI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-hexadecimal/-/is-hexadecimal-2.0.1.tgz";
+          };
+          ident = "is-hexadecimal";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
+      };
       is-map = {
         "2.0.2" = {
           fetchInfo = {
@@ -6063,8 +8464,7 @@
           fetchInfo = {
             narHash = "sha256-df2CjgfWqs/rALktCOr77RPoyjtKAReBT0yFXLDqFAo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-2.0.2.tgz";
+            url = "https://registry.npmjs.org/is-negative-zero/-/is-negative-zero-2.0.2.tgz";
           };
           ident = "is-negative-zero";
           ltype = "file";
@@ -6097,8 +8497,7 @@
           fetchInfo = {
             narHash = "sha256-MLgeeh0r1+/h/F32pDU8xH/pnSoFw6JtTM9y6GF2ne8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-number-object/-/is-number-object-1.0.7.tgz";
+            url = "https://registry.npmjs.org/is-number-object/-/is-number-object-1.0.7.tgz";
           };
           ident = "is-number-object";
           ltype = "file";
@@ -6110,8 +8509,7 @@
           fetchInfo = {
             narHash = "sha256-LKpocwZBiRKJz6FreaEet7sFz8yCqtLeibCW5Os5m2Q=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.3.tgz";
+            url = "https://registry.npmjs.org/is-path-inside/-/is-path-inside-3.0.3.tgz";
           };
           ident = "is-path-inside";
           ltype = "file";
@@ -6124,13 +8522,31 @@
           fetchInfo = {
             narHash = "sha256-0BUSxtQOguybk3imCXRgzQWWgHmlVKR746VJsMsCZQI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-4.1.0.tgz";
+            url = "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-4.1.0.tgz";
           };
           ident = "is-plain-obj";
           ltype = "file";
           treeInfo = { };
           version = "4.1.0";
+        };
+      };
+      is-reference = {
+        "3.0.2" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "*";
+              pin = "1.0.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-19B6hnG2NztARmixp8v32HvGNZS7T3h5f9bzEwZNXAc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-reference/-/is-reference-3.0.2.tgz";
+          };
+          ident = "is-reference";
+          ltype = "file";
+          version = "3.0.2";
         };
       };
       is-regex = {
@@ -6182,8 +8598,7 @@
           fetchInfo = {
             narHash = "sha256-rebNppBowg+u/Gx3TI07QGZD0v26y5CxwdQ05B2Ei8k=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-shared-array-buffer/-/is-shared-array-buffer-1.0.2.tgz";
+            url = "https://registry.npmjs.org/is-shared-array-buffer/-/is-shared-array-buffer-1.0.2.tgz";
           };
           ident = "is-shared-array-buffer";
           ltype = "file";
@@ -6240,8 +8655,7 @@
           fetchInfo = {
             narHash = "sha256-STk0gB5cPrWs3P+ODY2g97ZtA6IOOtloNUAj0jy99bY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.12.tgz";
+            url = "https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.12.tgz";
           };
           ident = "is-typed-array";
           ltype = "file";
@@ -6253,8 +8667,7 @@
           fetchInfo = {
             narHash = "sha256-brEWHBdrf8G8Yo/4pGYcsvqmu0CuR9tPEVUbJdJVhww=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-weakmap/-/is-weakmap-2.0.1.tgz";
+            url = "https://registry.npmjs.org/is-weakmap/-/is-weakmap-2.0.1.tgz";
           };
           ident = "is-weakmap";
           ltype = "file";
@@ -6274,8 +8687,7 @@
           fetchInfo = {
             narHash = "sha256-OIz4DKzypaeD/AYOhAgijzNIbaNnSDnLg9sCVXTbiN4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-weakref/-/is-weakref-1.0.2.tgz";
+            url = "https://registry.npmjs.org/is-weakref/-/is-weakref-1.0.2.tgz";
           };
           ident = "is-weakref";
           ltype = "file";
@@ -6299,8 +8711,7 @@
           fetchInfo = {
             narHash = "sha256-vTr6/ImEweEGITEJIvMuNVNoFooez6FLmQrcN14NVj8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/is-weakset/-/is-weakset-2.0.2.tgz";
+            url = "https://registry.npmjs.org/is-weakset/-/is-weakset-2.0.2.tgz";
           };
           ident = "is-weakset";
           ltype = "file";
@@ -6365,12 +8776,40 @@
           fetchInfo = {
             narHash = "sha256-dt7Cy83tjJiRdPeHAkE2oNiT/MDwLIweO4pNN/GLOVw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/iterator.prototype/-/iterator.prototype-1.1.2.tgz";
+            url = "https://registry.npmjs.org/iterator.prototype/-/iterator.prototype-1.1.2.tgz";
           };
           ident = "iterator.prototype";
           ltype = "file";
           version = "1.1.2";
+        };
+      };
+      jest-worker = {
+        "27.5.1" = {
+          depInfo = {
+            "@types/node" = {
+              descriptor = "*";
+              pin = "18.18.1";
+              runtime = true;
+            };
+            merge-stream = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            supports-color = {
+              descriptor = "^8.0.0";
+              pin = "8.1.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-kG1ZGTmDBgLIVVuSymjIVO+oSg3hm1QQmGTrTC4Ct0k=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/jest-worker/-/jest-worker-27.5.1.tgz";
+          };
+          ident = "jest-worker";
+          ltype = "file";
+          version = "27.5.1";
         };
       };
       js-tokens = {
@@ -6388,7 +8827,11 @@
       };
       js-yaml = {
         "4.1.0" = {
-          binInfo = { binPairs = { js-yaml = "bin/js-yaml.js"; }; };
+          binInfo = {
+            binPairs = {
+              js-yaml = "bin/js-yaml.js";
+            };
+          };
           depInfo = {
             argparse = {
               descriptor = "^2.0.1";
@@ -6411,8 +8854,7 @@
           fetchInfo = {
             narHash = "sha256-JLmbiGbR2cXNIiFjyKZj8WvbNwUEVpADUgztOocgA1s=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz";
+            url = "https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz";
           };
           ident = "json-parse-even-better-errors";
           ltype = "file";
@@ -6425,8 +8867,7 @@
           fetchInfo = {
             narHash = "sha256-6yxGXpY70Yc8jAAxR3YYhEXUc0SHZ3Peg+laVwXK9nQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz";
+            url = "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz";
           };
           ident = "json-schema-traverse";
           ltype = "file";
@@ -6439,8 +8880,7 @@
           fetchInfo = {
             narHash = "sha256-cxsnkpGiO9yUbm8LuBVJrbV2c3Pflghlra6EO35WgdM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz";
+            url = "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz";
           };
           ident = "json-stable-stringify-without-jsonify";
           ltype = "file";
@@ -6450,7 +8890,11 @@
       };
       json5 = {
         "1.0.2" = {
-          binInfo = { binPairs = { json5 = "lib/cli.js"; }; };
+          binInfo = {
+            binPairs = {
+              json5 = "lib/cli.js";
+            };
+          };
           depInfo = {
             minimist = {
               descriptor = "^1.2.0";
@@ -6485,12 +8929,24 @@
           fetchInfo = {
             narHash = "sha256-iRHxhACoLAG9HZtq1KO6lnXq4ehWREnkaghR1CYSPuI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/jsx-ast-utils/-/jsx-ast-utils-3.3.3.tgz";
+            url = "https://registry.npmjs.org/jsx-ast-utils/-/jsx-ast-utils-3.3.3.tgz";
           };
           ident = "jsx-ast-utils";
           ltype = "file";
           version = "3.3.3";
+        };
+      };
+      kleur = {
+        "4.1.5" = {
+          fetchInfo = {
+            narHash = "sha256-GfBnO6v505JHnsIcZv5iA+DxVSVnUHYAk/fX/eKR6u8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz";
+          };
+          ident = "kleur";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.1.5";
         };
       };
       language-subtag-registry = {
@@ -6498,8 +8954,7 @@
           fetchInfo = {
             narHash = "sha256-t6o6KNRUVs+U/IJbZH6ctsJFr90Czezi5LAR7CjppQY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz";
+            url = "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz";
           };
           ident = "language-subtag-registry";
           ltype = "file";
@@ -6519,8 +8974,7 @@
           fetchInfo = {
             narHash = "sha256-7LVx9miRFYOI8+O086LCWuB541C+p2hfR+v54YPGUgs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/language-tags/-/language-tags-1.0.5.tgz";
+            url = "https://registry.npmjs.org/language-tags/-/language-tags-1.0.5.tgz";
           };
           ident = "language-tags";
           ltype = "file";
@@ -6556,13 +9010,25 @@
           fetchInfo = {
             narHash = "sha256-WUoaqN7ad2gwBKftukjtNRrFw19fcS7dRRog0pp4OHE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz";
+            url = "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz";
           };
           ident = "lines-and-columns";
           ltype = "file";
           treeInfo = { };
           version = "1.2.4";
+        };
+      };
+      loader-runner = {
+        "4.3.0" = {
+          fetchInfo = {
+            narHash = "sha256-+qUYWtvIQHdnKZALz7KCrdP7r53J/WobXvMTP3la0Co=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/loader-runner/-/loader-runner-4.3.0.tgz";
+          };
+          ident = "loader-runner";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.3.0";
         };
       };
       locate-path = {
@@ -6577,12 +9043,24 @@
           fetchInfo = {
             narHash = "sha256-bqbrOtZJVUwbqlw3MeIhr30gfcn1Unv2jM3LYAXal9Q=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz";
+            url = "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz";
           };
           ident = "locate-path";
           ltype = "file";
           version = "6.0.0";
+        };
+      };
+      lodash = {
+        "4.17.21" = {
+          fetchInfo = {
+            narHash = "sha256-amyN064Yh6psvOfLgcpktd5dRNQStUYHHoIqiI6DMek=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz";
+          };
+          ident = "lodash";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.17.21";
         };
       };
       "lodash.merge" = {
@@ -6590,8 +9068,7 @@
           fetchInfo = {
             narHash = "sha256-AnfgvzyOFLIADkPCDfsDKkaKULahu8+mA2KlIMIAg14=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz";
+            url = "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz";
           };
           ident = "lodash.merge";
           ltype = "file";
@@ -6599,9 +9076,26 @@
           version = "4.6.2";
         };
       };
+      longest-streak = {
+        "3.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-CSHnysz1Cem8VmbOXSPO3sYqMsFwtRmOIwQKbUM0pbY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/longest-streak/-/longest-streak-3.1.0.tgz";
+          };
+          ident = "longest-streak";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.1.0";
+        };
+      };
       loose-envify = {
         "1.4.0" = {
-          binInfo = { binPairs = { loose-envify = "cli.js"; }; };
+          binInfo = {
+            binPairs = {
+              loose-envify = "cli.js";
+            };
+          };
           depInfo = {
             js-tokens = {
               descriptor = "^3.0.0 || ^4.0.0";
@@ -6612,8 +9106,7 @@
           fetchInfo = {
             narHash = "sha256-abQxb8UZImSEBRMsA9wep5NK2rpyd9JG0YeTGqz+jDk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz";
+            url = "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz";
           };
           ident = "loose-envify";
           ltype = "file";
@@ -6681,7 +9174,132 @@
           version = "8.11.1";
         };
       };
+      markdown-extensions = {
+        "1.1.1" = {
+          fetchInfo = {
+            narHash = "sha256-ObB7XbdwnLWFsRXQGIocCF19jH+2RqMw3NvonKOG7nQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/markdown-extensions/-/markdown-extensions-1.1.1.tgz";
+          };
+          ident = "markdown-extensions";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.1";
+        };
+        "2.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-Y+aPpti7K5uoizcmX6eXp0urn932uPOQW6++1P55r0Q=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/markdown-extensions/-/markdown-extensions-2.0.0.tgz";
+          };
+          ident = "markdown-extensions";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.0";
+        };
+      };
+      mdast-util-definitions = {
+        "5.1.2" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-W3flV5zoLX6/DnXq1iCP+O1MLHvlp/21pCW0/QLzXFw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-definitions/-/mdast-util-definitions-5.1.2.tgz";
+          };
+          ident = "mdast-util-definitions";
+          ltype = "file";
+          version = "5.1.2";
+        };
+      };
       mdast-util-from-markdown = {
+        "1.3.1" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            decode-named-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.0.2";
+              runtime = true;
+            };
+            mdast-util-to-string = {
+              descriptor = "^3.1.0";
+              pin = "3.2.0";
+              runtime = true;
+            };
+            micromark = {
+              descriptor = "^3.0.0";
+              pin = "3.2.0";
+              runtime = true;
+            };
+            micromark-util-decode-numeric-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-decode-string = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-normalize-identifier = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-IEAnDY+UinxS1rtvqqHko3vkmWR2wrar1Kefl1ws4jk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-from-markdown/-/mdast-util-from-markdown-1.3.1.tgz";
+          };
+          ident = "mdast-util-from-markdown";
+          ltype = "file";
+          version = "1.3.1";
+        };
         "2.0.0" = {
           depInfo = {
             "@types/mdast" = {
@@ -6748,15 +9366,545 @@
           fetchInfo = {
             narHash = "sha256-sIaYdvQ+XU+Yy6p7J8acPx79dN4Uapis0Jo0YQMtyyw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/mdast-util-from-markdown/-/mdast-util-from-markdown-2.0.0.tgz";
+            url = "https://registry.npmjs.org/mdast-util-from-markdown/-/mdast-util-from-markdown-2.0.0.tgz";
           };
           ident = "mdast-util-from-markdown";
           ltype = "file";
           version = "2.0.0";
         };
       };
+      mdast-util-frontmatter = {
+        "2.0.1" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            escape-string-regexp = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            micromark-extension-frontmatter = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-p59P3Lbc3olXIK8R0/qHWQH2Y0JhRg6QQl+tDCmUk+s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-frontmatter/-/mdast-util-frontmatter-2.0.1.tgz";
+          };
+          ident = "mdast-util-frontmatter";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
+      mdast-util-mdx = {
+        "2.0.1" = {
+          depInfo = {
+            mdast-util-from-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            mdast-util-mdx-expression = {
+              descriptor = "^1.0.0";
+              pin = "1.3.2";
+              runtime = true;
+            };
+            mdast-util-mdx-jsx = {
+              descriptor = "^2.0.0";
+              pin = "2.1.4";
+              runtime = true;
+            };
+            mdast-util-mdxjs-esm = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.5.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-2DJciqTG6byJn9vXy5JfhxjjMJzZG9vZf6EZw2QPI7s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx/-/mdast-util-mdx-2.0.1.tgz";
+          };
+          ident = "mdast-util-mdx";
+          ltype = "file";
+          version = "2.0.1";
+        };
+        "3.0.0" = {
+          depInfo = {
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-mdx-expression = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-mdx-jsx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-mdxjs-esm = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-fSselYNjtVnADle/cN+lY8UGn5EoDO2ZWRMltiwfl4Q=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx/-/mdast-util-mdx-3.0.0.tgz";
+          };
+          ident = "mdast-util-mdx";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      mdast-util-mdx-expression = {
+        "1.3.2" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.5.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-9f/BMIHbhEToJ0t66vsfn5mY2ipygT5kTWwhHws3Isw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx-expression/-/mdast-util-mdx-expression-1.3.2.tgz";
+          };
+          ident = "mdast-util-mdx-expression";
+          ltype = "file";
+          version = "1.3.2";
+        };
+        "2.0.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-/37vn9yOwnctBEJjl49nFcKzc7iEQaAl32PMTLWl77Q=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx-expression/-/mdast-util-mdx-expression-2.0.0.tgz";
+          };
+          ident = "mdast-util-mdx-expression";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      mdast-util-mdx-jsx = {
+        "2.1.4" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            ccount = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^1.1.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^1.3.0";
+              pin = "1.5.0";
+              runtime = true;
+            };
+            parse-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            stringify-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.3";
+              runtime = true;
+            };
+            unist-util-remove-position = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-O4Ihl0p4N9Qq/NcJBkeh5RLBjlrfJNg9voWdl/5Ga7s=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx-jsx/-/mdast-util-mdx-jsx-2.1.4.tgz";
+          };
+          ident = "mdast-util-mdx-jsx";
+          ltype = "file";
+          version = "2.1.4";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            ccount = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.1.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            parse-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            stringify-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.3";
+              runtime = true;
+            };
+            unist-util-remove-position = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-846vYOxyxbOaaRHBwHbruYEjfJ5aiZ67nsAsKj7pfZo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdx-jsx/-/mdast-util-mdx-jsx-3.0.0.tgz";
+          };
+          ident = "mdast-util-mdx-jsx";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      mdast-util-mdxjs-esm = {
+        "1.3.1" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.5.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-ttTJbmeRVgfZGDLOMuYZy2Kyqqk/87a+H6hZRz12RUw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdxjs-esm/-/mdast-util-mdxjs-esm-1.3.1.tgz";
+          };
+          ident = "mdast-util-mdxjs-esm";
+          ltype = "file";
+          version = "1.3.1";
+        };
+        "2.0.1" = {
+          depInfo = {
+            "@types/estree-jsx" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-23RXR2lNiqiD8t3Xm/IMJxPp5V1gIlgFVNXkJCsa8XI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-mdxjs-esm/-/mdast-util-mdxjs-esm-2.0.1.tgz";
+          };
+          ident = "mdast-util-mdxjs-esm";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
+      mdast-util-phrasing = {
+        "3.0.1" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^5.0.0";
+              pin = "5.2.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-XoCi/Wrf0SyfrGMr3rZPLm6U5sdsuMNE6jFLCd3+IAw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-phrasing/-/mdast-util-phrasing-3.0.1.tgz";
+          };
+          ident = "mdast-util-phrasing";
+          ltype = "file";
+          version = "3.0.1";
+        };
+        "4.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-aOnm/nwC8o1YYvbckjVU8VtPuFOZEf8xSeDqMX4ZBrU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-phrasing/-/mdast-util-phrasing-4.0.0.tgz";
+          };
+          ident = "mdast-util-phrasing";
+          ltype = "file";
+          version = "4.0.0";
+        };
+      };
       mdast-util-to-hast = {
+        "12.3.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            mdast-util-definitions = {
+              descriptor = "^5.0.0";
+              pin = "5.1.2";
+              runtime = true;
+            };
+            micromark-util-sanitize-uri = {
+              descriptor = "^1.1.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            trim-lines = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            unist-util-generated = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            unist-util-position = {
+              descriptor = "^4.0.0";
+              pin = "4.0.4";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-GmzQq8c8aat+1JrOE9sf8V9OjW8JoXKgmFc7P02INys=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-to-hast/-/mdast-util-to-hast-12.3.0.tgz";
+          };
+          ident = "mdast-util-to-hast";
+          ltype = "file";
+          version = "12.3.0";
+        };
         "13.0.2" = {
           depInfo = {
             "@types/hast" = {
@@ -6803,15 +9951,137 @@
           fetchInfo = {
             narHash = "sha256-49nj4Ii2RAMu23ku0gbhXnpLaR/XSAs1Z18RZR6kZ+g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/mdast-util-to-hast/-/mdast-util-to-hast-13.0.2.tgz";
+            url = "https://registry.npmjs.org/mdast-util-to-hast/-/mdast-util-to-hast-13.0.2.tgz";
           };
           ident = "mdast-util-to-hast";
           ltype = "file";
           version = "13.0.2";
         };
       };
+      mdast-util-to-markdown = {
+        "1.5.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            longest-streak = {
+              descriptor = "^3.0.0";
+              pin = "3.1.0";
+              runtime = true;
+            };
+            mdast-util-phrasing = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            mdast-util-to-string = {
+              descriptor = "^3.0.0";
+              pin = "3.2.0";
+              runtime = true;
+            };
+            micromark-util-decode-string = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-tGcuMw1PNQVn0d3HiEeJNNN3T2CkRIE9C/CjadOALwY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-1.5.0.tgz";
+          };
+          ident = "mdast-util-to-markdown";
+          ltype = "file";
+          version = "1.5.0";
+        };
+        "2.1.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            longest-streak = {
+              descriptor = "^3.0.0";
+              pin = "3.1.0";
+              runtime = true;
+            };
+            mdast-util-phrasing = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            mdast-util-to-string = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            micromark-util-decode-string = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            zwitch = {
+              descriptor = "^2.0.0";
+              pin = "2.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-lV9YYYEeXaHHacOuHUpZfAAZ5vR6MjceLBVnT51vW48=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-2.1.0.tgz";
+          };
+          ident = "mdast-util-to-markdown";
+          ltype = "file";
+          version = "2.1.0";
+        };
+      };
       mdast-util-to-string = {
+        "3.2.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-cQtDpY3UJ2fohMneCCinjHd++s7s/BIfM/WrzExsWqc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-3.2.0.tgz";
+          };
+          ident = "mdast-util-to-string";
+          ltype = "file";
+          version = "3.2.0";
+        };
         "4.0.0" = {
           depInfo = {
             "@types/mdast" = {
@@ -6823,12 +10093,24 @@
           fetchInfo = {
             narHash = "sha256-u9h5a7fRIs3EUZZP51ynp0nSXtMnelPWpieEqgMaUXY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-4.0.0.tgz";
+            url = "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-4.0.0.tgz";
           };
           ident = "mdast-util-to-string";
           ltype = "file";
           version = "4.0.0";
+        };
+      };
+      merge-stream = {
+        "2.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-0ZC11XNq6TaUxEXOV9bwaS71Qd3wQoqZAkFRvtnab5I=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/merge-stream/-/merge-stream-2.0.0.tgz";
+          };
+          ident = "merge-stream";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.0";
         };
       };
       merge2 = {
@@ -6845,6 +10127,103 @@
         };
       };
       micromark = {
+        "3.2.0" = {
+          depInfo = {
+            "@types/debug" = {
+              descriptor = "^4.0.0";
+              pin = "4.1.9";
+              runtime = true;
+            };
+            debug = {
+              descriptor = "^4.0.0";
+              pin = "4.3.4";
+              runtime = true;
+            };
+            decode-named-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.0.2";
+              runtime = true;
+            };
+            micromark-core-commonmark = {
+              descriptor = "^1.0.1";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-chunked = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-combine-extensions = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-decode-numeric-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-encode = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-normalize-identifier = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-resolve-all = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-sanitize-uri = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-subtokenize = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.1";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-MMvznzuXSwZoY2rdlJwDzXTonybRU0YsBliUCEJQTv4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark/-/micromark-3.2.0.tgz";
+          };
+          ident = "micromark";
+          ltype = "file";
+          version = "3.2.0";
+        };
         "4.0.0" = {
           depInfo = {
             "@types/debug" = {
@@ -6944,6 +10323,98 @@
         };
       };
       micromark-core-commonmark = {
+        "1.1.0" = {
+          depInfo = {
+            decode-named-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.0.2";
+              runtime = true;
+            };
+            micromark-factory-destination = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-label = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-title = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-whitespace = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-chunked = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-classify-character = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-html-tag-name = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-normalize-identifier = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-resolve-all = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-subtokenize = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.1";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-JkJnPediE8cC2Apx5FIT35EgaFZe9zhOoNOgLftD6Fo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-1.1.0.tgz";
+          };
+          ident = "micromark-core-commonmark";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             decode-named-character-reference = {
@@ -7030,15 +10501,565 @@
           fetchInfo = {
             narHash = "sha256-W5vWeyQNRJzbOvghDut9n1+ybVpcijazyfmpIY7QD9o=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-2.0.0.tgz";
           };
           ident = "micromark-core-commonmark";
           ltype = "file";
           version = "2.0.0";
         };
       };
+      micromark-extension-frontmatter = {
+        "2.0.0" = {
+          depInfo = {
+            fault = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-sFMHEo84bfB0kqI0gmWWOVp/NvFVH24k+cHx5g2velE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-frontmatter/-/micromark-extension-frontmatter-2.0.0.tgz";
+          };
+          ident = "micromark-extension-frontmatter";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-mdx-expression = {
+        "1.0.8" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            micromark-factory-mdx-expression = {
+              descriptor = "^1.0.0";
+              pin = "1.0.9";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^1.0.0";
+              pin = "1.2.3";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Dox+lzzNyyH20Xm04h+Vy1/ETlJLnzjVVjVPDbIYT64=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-expression/-/micromark-extension-mdx-expression-1.0.8.tgz";
+          };
+          ident = "micromark-extension-mdx-expression";
+          ltype = "file";
+          version = "1.0.8";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-mdx-expression = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-/YAmMkoE+Jhk//EoVVQ9qVmdeqR6hw9/GlVFcCNUCCk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-expression/-/micromark-extension-mdx-expression-3.0.0.tgz";
+          };
+          ident = "micromark-extension-mdx-expression";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      micromark-extension-mdx-jsx = {
+        "1.0.5" = {
+          depInfo = {
+            "@types/acorn" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.6";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            micromark-factory-mdx-expression = {
+              descriptor = "^1.0.0";
+              pin = "1.0.9";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-tJKDoXbMGtwhgxXQWRsUut0uS7Bv/eHo9u1ys8fllIk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-jsx/-/micromark-extension-mdx-jsx-1.0.5.tgz";
+          };
+          ident = "micromark-extension-mdx-jsx";
+          ltype = "file";
+          version = "1.0.5";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/acorn" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.6";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            estree-util-is-identifier-name = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-factory-mdx-expression = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Z6YgFAzzEamesnl1HPM54PpCZ+CCbiYqkDn+3PSKlng=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-jsx/-/micromark-extension-mdx-jsx-3.0.0.tgz";
+          };
+          ident = "micromark-extension-mdx-jsx";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      micromark-extension-mdx-md = {
+        "1.0.1" = {
+          depInfo = {
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Bs2nCwSr8VuzzxXMX0tc5xRbfdSOXG2FhbK1bXf9n3M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-md/-/micromark-extension-mdx-md-1.0.1.tgz";
+          };
+          ident = "micromark-extension-mdx-md";
+          ltype = "file";
+          version = "1.0.1";
+        };
+        "2.0.0" = {
+          depInfo = {
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-E4TJMhfet/Opz4c4nxA/JCN2xILUX32OZ7IdOKpkpbE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdx-md/-/micromark-extension-mdx-md-2.0.0.tgz";
+          };
+          ident = "micromark-extension-mdx-md";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-mdxjs = {
+        "1.0.1" = {
+          depInfo = {
+            acorn = {
+              descriptor = "^8.0.0";
+              pin = "8.10.0";
+              runtime = true;
+            };
+            acorn-jsx = {
+              descriptor = "^5.0.0";
+              pin = "5.3.2";
+              runtime = true;
+            };
+            micromark-extension-mdx-expression = {
+              descriptor = "^1.0.0";
+              pin = "1.0.8";
+              runtime = true;
+            };
+            micromark-extension-mdx-jsx = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            micromark-extension-mdx-md = {
+              descriptor = "^1.0.0";
+              pin = "1.0.1";
+              runtime = true;
+            };
+            micromark-extension-mdxjs-esm = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            micromark-util-combine-extensions = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-RFHkWbC+vqQ1GquqAi7Ga2TNRPGy+CzlXAy1MOqRBHo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdxjs/-/micromark-extension-mdxjs-1.0.1.tgz";
+          };
+          ident = "micromark-extension-mdxjs";
+          ltype = "file";
+          version = "1.0.1";
+        };
+        "3.0.0" = {
+          depInfo = {
+            acorn = {
+              descriptor = "^8.0.0";
+              pin = "8.10.0";
+              runtime = true;
+            };
+            acorn-jsx = {
+              descriptor = "^5.0.0";
+              pin = "5.3.2";
+              runtime = true;
+            };
+            micromark-extension-mdx-expression = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-extension-mdx-jsx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-extension-mdx-md = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-mdxjs-esm = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-util-combine-extensions = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-errS1VfSRlpc325HJLvgGuRRr5D3rYrEyGez8N7LOiU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdxjs/-/micromark-extension-mdxjs-3.0.0.tgz";
+          };
+          ident = "micromark-extension-mdxjs";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      micromark-extension-mdxjs-esm = {
+        "1.0.5" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            micromark-core-commonmark = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^1.0.0";
+              pin = "1.2.3";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^1.1.0";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-XRd5lSj39b2t7WvSj9FQjHFoClHY+0QeEX+fP4fAAdg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdxjs-esm/-/micromark-extension-mdxjs-esm-1.0.5.tgz";
+          };
+          ident = "micromark-extension-mdxjs-esm";
+          ltype = "file";
+          version = "1.0.5";
+        };
+        "3.0.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-core-commonmark = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-ODY+KoVYfx4veJvYlC4pwePuzMXT7BlN49SRYwn5/Sg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-mdxjs-esm/-/micromark-extension-mdxjs-esm-3.0.0.tgz";
+          };
+          ident = "micromark-extension-mdxjs-esm";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
       micromark-factory-destination = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-SBI0XUyGKl9X758zaE/Qs2XSk/LuLdbHKJL52XLeNtU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-destination/-/micromark-factory-destination-1.1.0.tgz";
+          };
+          ident = "micromark-factory-destination";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-character = {
@@ -7060,8 +11081,7 @@
           fetchInfo = {
             narHash = "sha256-AQPSL2huwGf9tZ8p5Z4KCa6eOeD5/TxyWvSGW8ZaycQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-factory-destination/-/micromark-factory-destination-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-factory-destination/-/micromark-factory-destination-2.0.0.tgz";
           };
           ident = "micromark-factory-destination";
           ltype = "file";
@@ -7069,6 +11089,38 @@
         };
       };
       micromark-factory-label = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-VZWsqxakHNN+kanAjSCrNAPI/gRR9cf3ZmIgJIaq9Ew=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-label/-/micromark-factory-label-1.1.0.tgz";
+          };
+          ident = "micromark-factory-label";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             devlop = {
@@ -7095,15 +11147,142 @@
           fetchInfo = {
             narHash = "sha256-Emma/13/P95bZMXhE62FRY6/Y8KiYH8Y0lzSHcyrXZM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-factory-label/-/micromark-factory-label-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-factory-label/-/micromark-factory-label-2.0.0.tgz";
           };
           ident = "micromark-factory-label";
           ltype = "file";
           version = "2.0.0";
         };
       };
+      micromark-factory-mdx-expression = {
+        "1.0.9" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^1.0.0";
+              pin = "1.2.3";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^1.0.0";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-9mEp9wyzIIxh7PFS+NefMyDyn8FKagksA9h7T4h6t+M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-mdx-expression/-/micromark-factory-mdx-expression-1.0.9.tgz";
+          };
+          ident = "micromark-factory-mdx-expression";
+          ltype = "file";
+          version = "1.0.9";
+        };
+        "2.0.1" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-events-to-acorn = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unist-util-position-from-estree = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-rOOnEwlUx6CUzapxcePJX8bwZ/TCIXMi3OTvFHl3fmE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-mdx-expression/-/micromark-factory-mdx-expression-2.0.1.tgz";
+          };
+          ident = "micromark-factory-mdx-expression";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
       micromark-factory-space = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Y9guDX5nBzov2qZwlGVfWwSoVSpOpJNY1LazVSnAkS0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-space/-/micromark-factory-space-1.1.0.tgz";
+          };
+          ident = "micromark-factory-space";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-character = {
@@ -7120,8 +11299,7 @@
           fetchInfo = {
             narHash = "sha256-za0ZiTA2dHaNtKG3JCVjNjPk3lPHuI2+k7A3ALXcos8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-factory-space/-/micromark-factory-space-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-factory-space/-/micromark-factory-space-2.0.0.tgz";
           };
           ident = "micromark-factory-space";
           ltype = "file";
@@ -7129,6 +11307,38 @@
         };
       };
       micromark-factory-title = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-0mPR7skhiGxZwxJdpkQRc6i02cVolSl1vRlWjd72L7M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-title/-/micromark-factory-title-1.1.0.tgz";
+          };
+          ident = "micromark-factory-title";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-factory-space = {
@@ -7155,8 +11365,7 @@
           fetchInfo = {
             narHash = "sha256-AsASQQjB1ugUsxBlhxMM67XblhfdxZX8L8SulSNMu/A=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-factory-title/-/micromark-factory-title-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-factory-title/-/micromark-factory-title-2.0.0.tgz";
           };
           ident = "micromark-factory-title";
           ltype = "file";
@@ -7164,6 +11373,38 @@
         };
       };
       micromark-factory-whitespace = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-factory-space = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-7yVwgFnHzKPfBie1G2dfe++i+jBC07/yLX5eS0NK9Xo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-factory-whitespace/-/micromark-factory-whitespace-1.1.0.tgz";
+          };
+          ident = "micromark-factory-whitespace";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-factory-space = {
@@ -7190,8 +11431,7 @@
           fetchInfo = {
             narHash = "sha256-VNhoD26xOzfQGejAW0HAVGTPp4JC7WHk8A+URHtOA+I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-factory-whitespace/-/micromark-factory-whitespace-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-factory-whitespace/-/micromark-factory-whitespace-2.0.0.tgz";
           };
           ident = "micromark-factory-whitespace";
           ltype = "file";
@@ -7199,6 +11439,28 @@
         };
       };
       micromark-util-character = {
+        "1.2.0" = {
+          depInfo = {
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-tTZdAQOY+luXrIS5nWYY2I6yhdjWvL5HEkoKP4uWxio=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-character/-/micromark-util-character-1.2.0.tgz";
+          };
+          ident = "micromark-util-character";
+          ltype = "file";
+          version = "1.2.0";
+        };
         "2.0.1" = {
           depInfo = {
             micromark-util-symbol = {
@@ -7215,8 +11477,7 @@
           fetchInfo = {
             narHash = "sha256-4jqjbL5qXalqo9WPjnu6QX3Zn79jHAtFhXF+gOCGAog=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-character/-/micromark-util-character-2.0.1.tgz";
+            url = "https://registry.npmjs.org/micromark-util-character/-/micromark-util-character-2.0.1.tgz";
           };
           ident = "micromark-util-character";
           ltype = "file";
@@ -7224,6 +11485,23 @@
         };
       };
       micromark-util-chunked = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-UJBNxWcn50IskzS+wemUnq+h9eq0G4WgmqTeFo4oRyY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-chunked/-/micromark-util-chunked-1.1.0.tgz";
+          };
+          ident = "micromark-util-chunked";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-symbol = {
@@ -7235,8 +11513,7 @@
           fetchInfo = {
             narHash = "sha256-Cl5L/U6HOU4NwMI2bKHKp1UAoduWpKmBFCOf+Qqj+iU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-chunked/-/micromark-util-chunked-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-chunked/-/micromark-util-chunked-2.0.0.tgz";
           };
           ident = "micromark-util-chunked";
           ltype = "file";
@@ -7244,6 +11521,33 @@
         };
       };
       micromark-util-classify-character = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-xYfUtre9jlHj37+uA4geiK1RCJr86CIBGBmBmkcQj20=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-classify-character/-/micromark-util-classify-character-1.1.0.tgz";
+          };
+          ident = "micromark-util-classify-character";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-character = {
@@ -7265,8 +11569,7 @@
           fetchInfo = {
             narHash = "sha256-dniotpxxj3k8Rc8Vwuo8X+K7afz4+yYwzovl8nyIJAI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-classify-character/-/micromark-util-classify-character-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-classify-character/-/micromark-util-classify-character-2.0.0.tgz";
           };
           ident = "micromark-util-classify-character";
           ltype = "file";
@@ -7274,6 +11577,28 @@
         };
       };
       micromark-util-combine-extensions = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-chunked = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-g19DgHX2F1peqfRy8dHk+T/PQ5fC6wgHBJaMUJFK6QU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-combine-extensions/-/micromark-util-combine-extensions-1.1.0.tgz";
+          };
+          ident = "micromark-util-combine-extensions";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-chunked = {
@@ -7290,8 +11615,7 @@
           fetchInfo = {
             narHash = "sha256-D121dbmzo6YBDHu/sXPJodm2tCZZ/Y2nIbKfZqlGaDY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-combine-extensions/-/micromark-util-combine-extensions-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-combine-extensions/-/micromark-util-combine-extensions-2.0.0.tgz";
           };
           ident = "micromark-util-combine-extensions";
           ltype = "file";
@@ -7299,6 +11623,23 @@
         };
       };
       micromark-util-decode-numeric-character-reference = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Pt/ojyrp7tNk7gCeDgqAbp25uNYS2Hchhgcbk6uWiqg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-decode-numeric-character-reference/-/micromark-util-decode-numeric-character-reference-1.1.0.tgz";
+          };
+          ident = "micromark-util-decode-numeric-character-reference";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-symbol = {
@@ -7310,8 +11651,7 @@
           fetchInfo = {
             narHash = "sha256-fDq6vHrXPAo3bNk0v3i6Ra5t0p3NOsoW5U3HbFmuMRA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-decode-numeric-character-reference/-/micromark-util-decode-numeric-character-reference-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-decode-numeric-character-reference/-/micromark-util-decode-numeric-character-reference-2.0.0.tgz";
           };
           ident = "micromark-util-decode-numeric-character-reference";
           ltype = "file";
@@ -7319,6 +11659,38 @@
         };
       };
       micromark-util-decode-string = {
+        "1.1.0" = {
+          depInfo = {
+            decode-named-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.0.2";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-decode-numeric-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-yuh+fGP8SnkCfUVwmlh5bBveHwh0ATDdYpZ60TtWcMA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-1.1.0.tgz";
+          };
+          ident = "micromark-util-decode-string";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             decode-named-character-reference = {
@@ -7345,8 +11717,7 @@
           fetchInfo = {
             narHash = "sha256-kGMYIWxbVJ04lgyMSpSxHOlzTOarMI6NccAzWm/B0o8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-2.0.0.tgz";
           };
           ident = "micromark-util-decode-string";
           ltype = "file";
@@ -7354,12 +11725,22 @@
         };
       };
       micromark-util-encode = {
+        "1.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-3o5yywNuGP7E0Jo6j/lmQ2q0Qq1VyndbMcFVuULZIgk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-encode/-/micromark-util-encode-1.1.0.tgz";
+          };
+          ident = "micromark-util-encode";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.0";
+        };
         "2.0.0" = {
           fetchInfo = {
             narHash = "sha256-OkPyukkwDjQogvfaUPLmJFiGqnMA/Dv/3KBxjaO0Klc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-encode/-/micromark-util-encode-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-encode/-/micromark-util-encode-2.0.0.tgz";
           };
           ident = "micromark-util-encode";
           ltype = "file";
@@ -7367,13 +11748,129 @@
           version = "2.0.0";
         };
       };
+      micromark-util-events-to-acorn = {
+        "1.2.3" = {
+          depInfo = {
+            "@types/acorn" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.6";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            estree-util-visit = {
+              descriptor = "^1.0.0";
+              pin = "1.2.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-AnilvBTBUqn+C9SFMAwNczn4HFDl6y03nKLXbtxFCyk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-events-to-acorn/-/micromark-util-events-to-acorn-1.2.3.tgz";
+          };
+          ident = "micromark-util-events-to-acorn";
+          ltype = "file";
+          version = "1.2.3";
+        };
+        "2.0.2" = {
+          depInfo = {
+            "@types/acorn" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.6";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            estree-util-visit = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^4.0.0";
+              pin = "4.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-1TOjpBDZrqkVrVlE/NRpnA0N32HwKSjEIquSwoS7NEM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-events-to-acorn/-/micromark-util-events-to-acorn-2.0.2.tgz";
+          };
+          ident = "micromark-util-events-to-acorn";
+          ltype = "file";
+          version = "2.0.2";
+        };
+      };
       micromark-util-html-tag-name = {
+        "1.2.0" = {
+          fetchInfo = {
+            narHash = "sha256-VLu8mBpF7mgrkh0jqTpMDGYhcoJPzXypgDI7G3ylOHE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-html-tag-name/-/micromark-util-html-tag-name-1.2.0.tgz";
+          };
+          ident = "micromark-util-html-tag-name";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.2.0";
+        };
         "2.0.0" = {
           fetchInfo = {
             narHash = "sha256-aTd3KNqJVOI786WEJXn1jas1ltkEgomeXzvhj5AZkdc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-html-tag-name/-/micromark-util-html-tag-name-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-html-tag-name/-/micromark-util-html-tag-name-2.0.0.tgz";
           };
           ident = "micromark-util-html-tag-name";
           ltype = "file";
@@ -7382,6 +11879,23 @@
         };
       };
       micromark-util-normalize-identifier = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-dxeP5sWg9/z7lNsD7MNgUQmUlOrriK15fUe5zENRq4U=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-normalize-identifier/-/micromark-util-normalize-identifier-1.1.0.tgz";
+          };
+          ident = "micromark-util-normalize-identifier";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-symbol = {
@@ -7393,8 +11907,7 @@
           fetchInfo = {
             narHash = "sha256-/swe1J6fFXALUUssqiPoE15ACLwG1nKVKvCWxQ8O3XE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-normalize-identifier/-/micromark-util-normalize-identifier-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-normalize-identifier/-/micromark-util-normalize-identifier-2.0.0.tgz";
           };
           ident = "micromark-util-normalize-identifier";
           ltype = "file";
@@ -7402,6 +11915,23 @@
         };
       };
       micromark-util-resolve-all = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-vlnTU07tbL+5AqQ+JxinGIZ7w7H12nijEzAI/nQlQ0c=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-resolve-all/-/micromark-util-resolve-all-1.1.0.tgz";
+          };
+          ident = "micromark-util-resolve-all";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-types = {
@@ -7413,8 +11943,7 @@
           fetchInfo = {
             narHash = "sha256-amOToIua0eZx9DYFMPR4FyidpJ8k/yCBRu7aTVWznHg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-resolve-all/-/micromark-util-resolve-all-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-resolve-all/-/micromark-util-resolve-all-2.0.0.tgz";
           };
           ident = "micromark-util-resolve-all";
           ltype = "file";
@@ -7422,6 +11951,33 @@
         };
       };
       micromark-util-sanitize-uri = {
+        "1.2.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            micromark-util-encode = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-/Vi6KhiBlNWGods/Y1EL0tlp0X0kLZFWwa53gTIf+F8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-sanitize-uri/-/micromark-util-sanitize-uri-1.2.0.tgz";
+          };
+          ident = "micromark-util-sanitize-uri";
+          ltype = "file";
+          version = "1.2.0";
+        };
         "2.0.0" = {
           depInfo = {
             micromark-util-character = {
@@ -7443,8 +11999,7 @@
           fetchInfo = {
             narHash = "sha256-uecRyzQVbY8hUlYljHxim8XSQTjG3Xtfl+2e73KJblU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-sanitize-uri/-/micromark-util-sanitize-uri-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-sanitize-uri/-/micromark-util-sanitize-uri-2.0.0.tgz";
           };
           ident = "micromark-util-sanitize-uri";
           ltype = "file";
@@ -7452,6 +12007,38 @@
         };
       };
       micromark-util-subtokenize = {
+        "1.1.0" = {
+          depInfo = {
+            micromark-util-chunked = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            uvu = {
+              descriptor = "^0.5.0";
+              pin = "0.5.6";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-yM2jeNqEdp8xh/hgpHntjJLZS1VRvbIItNUp3DAkyVg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-subtokenize/-/micromark-util-subtokenize-1.1.0.tgz";
+          };
+          ident = "micromark-util-subtokenize";
+          ltype = "file";
+          version = "1.1.0";
+        };
         "2.0.0" = {
           depInfo = {
             devlop = {
@@ -7478,8 +12065,7 @@
           fetchInfo = {
             narHash = "sha256-ryk3bsA5YiqvA0fZ89BNhShLQ7v8XS3MZ3rnVYB5fPc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-subtokenize/-/micromark-util-subtokenize-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-subtokenize/-/micromark-util-subtokenize-2.0.0.tgz";
           };
           ident = "micromark-util-subtokenize";
           ltype = "file";
@@ -7487,12 +12073,22 @@
         };
       };
       micromark-util-symbol = {
+        "1.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-lnwNm9jRcA82gd+ZiuYHEWxdpIYbAmpPCPUifChRqGo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-symbol/-/micromark-util-symbol-1.1.0.tgz";
+          };
+          ident = "micromark-util-symbol";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.0";
+        };
         "2.0.0" = {
           fetchInfo = {
             narHash = "sha256-Cq4HbSGkwt1M0rp1OnWBTDWPSInPWOlWP4hKESR87BM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-symbol/-/micromark-util-symbol-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-symbol/-/micromark-util-symbol-2.0.0.tgz";
           };
           ident = "micromark-util-symbol";
           ltype = "file";
@@ -7501,12 +12097,22 @@
         };
       };
       micromark-util-types = {
+        "1.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-szZG8UEBG7GtHmyazmincewEA9M9y6oy0dfTxz2Rj/8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-1.1.0.tgz";
+          };
+          ident = "micromark-util-types";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.0";
+        };
         "2.0.0" = {
           fetchInfo = {
             narHash = "sha256-XaayupWeH0IyHSLkvNOwz8TqzWSfVgdqKqZdkzQmhD8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-2.0.0.tgz";
+            url = "https://registry.npmjs.org/micromark-util-types/-/micromark-util-types-2.0.0.tgz";
           };
           ident = "micromark-util-types";
           ltype = "file";
@@ -7531,12 +12137,43 @@
           fetchInfo = {
             narHash = "sha256-5sy/ExTbi9X3zWFTVMx8cfbQCpl3Kyqc7RVqcpj11gg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz";
+            url = "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz";
           };
           ident = "micromatch";
           ltype = "file";
           version = "4.0.5";
+        };
+      };
+      mime-db = {
+        "1.52.0" = {
+          fetchInfo = {
+            narHash = "sha256-NWkhw5USnQpCVdzynhDEG/VbDLOdjy0JtGgopd89jr8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz";
+          };
+          ident = "mime-db";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.52.0";
+        };
+      };
+      mime-types = {
+        "2.1.35" = {
+          depInfo = {
+            mime-db = {
+              descriptor = "1.52.0";
+              pin = "1.52.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-OT0LH+QO5JfJrh7X0Lzsv3l/WurbpxPx/nztSX7DeI8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz";
+          };
+          ident = "mime-types";
+          ltype = "file";
+          version = "2.1.35";
         };
       };
       minimatch = {
@@ -7576,13 +12213,25 @@
           fetchInfo = {
             narHash = "sha256-Yi/7KSMw1sSOI+H6Q2yoBUVj34gLq424e3Mxq522qD0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/minisearch/-/minisearch-6.1.0.tgz";
+            url = "https://registry.npmjs.org/minisearch/-/minisearch-6.1.0.tgz";
           };
           ident = "minisearch";
           ltype = "file";
           treeInfo = { };
           version = "6.1.0";
+        };
+      };
+      mri = {
+        "1.2.0" = {
+          fetchInfo = {
+            narHash = "sha256-W2D0+TF+nUcdPWPlGRgJF1l0BatRq1V7Vc7o+Dwubh8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mri/-/mri-1.2.0.tgz";
+          };
+          ident = "mri";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.2.0";
         };
       };
       ms = {
@@ -7599,17 +12248,21 @@
         };
       };
       nanoid = {
-        "3.3.4" = {
-          binInfo = { binPairs = { nanoid = "bin/nanoid.cjs"; }; };
+        "3.3.7" = {
+          binInfo = {
+            binPairs = {
+              nanoid = "bin/nanoid.cjs";
+            };
+          };
           fetchInfo = {
-            narHash = "sha256-q8Rx1pKRf+wyWrGFM6CJLAb7Rn+P2Z8zLSx3mdGqAR0=";
+            narHash = "sha256-OgkQf25fLOqMiNpiS8XAynjbZ42xl2RTQKJoIy8bZCE=";
             type = "tarball";
-            url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz";
+            url = "https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz";
           };
           ident = "nanoid";
           ltype = "file";
           treeInfo = { };
-          version = "3.3.4";
+          version = "3.3.7";
         };
       };
       natural-compare = {
@@ -7617,8 +12270,7 @@
           fetchInfo = {
             narHash = "sha256-wx+m763bR0Auq7WpVJREb2xXTIHcZMYL9T/G+Y0FQlY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz";
+            url = "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz";
           };
           ident = "natural-compare";
           ltype = "file";
@@ -7626,67 +12278,84 @@
           version = "1.4.0";
         };
       };
+      neo-async = {
+        "2.6.2" = {
+          fetchInfo = {
+            narHash = "sha256-QFng9dwYIorbPusgMvQVI19ueJFRIHJnhszio3IykAY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz";
+          };
+          ident = "neo-async";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.6.2";
+        };
+      };
       next = {
-        "13.5.3" = {
-          binInfo = { binPairs = { next = "dist/bin/next"; }; };
+        "14.0.3" = {
+          binInfo = {
+            binPairs = {
+              next = "dist/bin/next";
+            };
+          };
           depInfo = {
             "@next/env" = {
-              descriptor = "13.5.3";
-              pin = "13.5.3";
+              descriptor = "14.0.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-darwin-arm64" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-darwin-x64" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-linux-arm64-gnu" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-linux-arm64-musl" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-linux-x64-gnu" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-linux-x64-musl" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-win32-arm64-msvc" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-win32-ia32-msvc" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@next/swc-win32-x64-msvc" = {
-              descriptor = "13.5.3";
+              descriptor = "14.0.3";
               optional = true;
-              pin = "13.5.3";
+              pin = "14.0.3";
               runtime = true;
             };
             "@swc/helpers" = {
@@ -7701,12 +12370,12 @@
             };
             caniuse-lite = {
               descriptor = "^1.0.30001406";
-              pin = "1.0.30001431";
+              pin = "1.0.30001566";
               runtime = true;
             };
             postcss = {
-              descriptor = "8.4.14";
-              pin = "8.4.14";
+              descriptor = "8.4.31";
+              pin = "8.4.31";
               runtime = true;
             };
             styled-jsx = {
@@ -7719,16 +12388,11 @@
               pin = "2.4.0";
               runtime = true;
             };
-            zod = {
-              descriptor = "3.21.4";
-              pin = "3.21.4";
-              runtime = true;
-            };
           };
           fetchInfo = {
-            narHash = "sha256-NDgNcYGwNbOJjchuom2p6J9gvMkzouubspuw4idN4aA=";
+            narHash = "sha256-RkR/xWxox5r0fScsjEboCN2xuNxpzOmImGwm7C4cZHs=";
             type = "tarball";
-            url = "https://registry.npmjs.org/next/-/next-13.5.3.tgz";
+            url = "https://registry.npmjs.org/next/-/next-14.0.3.tgz";
           };
           ident = "next";
           ltype = "file";
@@ -7737,14 +12401,73 @@
               descriptor = "^1.1.0";
               optional = true;
             };
-            react = { descriptor = "^18.2.0"; };
-            react-dom = { descriptor = "^18.2.0"; };
+            react = {
+              descriptor = "^18.2.0";
+            };
+            react-dom = {
+              descriptor = "^18.2.0";
+            };
             sass = {
               descriptor = "^1.3.0";
               optional = true;
             };
           };
-          version = "13.5.3";
+          version = "14.0.3";
+        };
+      };
+      next-mdx-remote = {
+        "4.4.1" = {
+          depInfo = {
+            "@mdx-js/mdx" = {
+              descriptor = "^2.2.1";
+              pin = "2.3.0";
+              runtime = true;
+            };
+            "@mdx-js/react" = {
+              descriptor = "^2.2.1";
+              pin = "2.3.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^5.3.0";
+              pin = "5.3.7";
+              runtime = true;
+            };
+            vfile-matter = {
+              descriptor = "^3.0.1";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-H+xeK0y2RLIhH5vYNCQwGXrY3hZ1qa7Qxo2GWAUKgwo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/next-mdx-remote/-/next-mdx-remote-4.4.1.tgz";
+          };
+          ident = "next-mdx-remote";
+          ltype = "file";
+          peerInfo = {
+            react = {
+              descriptor = ">=16.x <=18.x";
+            };
+            react-dom = {
+              descriptor = ">=16.x <=18.x";
+            };
+          };
+          version = "4.4.1";
+        };
+      };
+      node-releases = {
+        "2.0.14" = {
+          fetchInfo = {
+            narHash = "sha256-izX/kw6TVOfvZatHs4Iydr87NTxtBTYxpcWdc6+NxWE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/node-releases/-/node-releases-2.0.14.tgz";
+          };
+          ident = "node-releases";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.14";
         };
       };
       noogle = {
@@ -7765,6 +12488,21 @@
               pin = "5.0.8";
               runtime = true;
             };
+            "@jsdevtools/rehype-toc" = {
+              descriptor = "^3.0.2";
+              pin = "3.0.2";
+              runtime = true;
+            };
+            "@mdx-js/loader" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            "@mdx-js/react" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
             "@mui/icons-material" = {
               descriptor = "^5.10.9";
               pin = "5.14.11";
@@ -7773,6 +12511,16 @@
             "@mui/material" = {
               descriptor = "^5.10.13";
               pin = "5.14.11";
+              runtime = true;
+            };
+            "@next/mdx" = {
+              descriptor = "^14.0.3";
+              pin = "14.0.3";
+              runtime = true;
+            };
+            "@types/mdx" = {
+              descriptor = "^2.0.10";
+              pin = "2.0.10";
               runtime = true;
             };
             "@types/node" = {
@@ -7803,13 +12551,18 @@
               descriptor = "^6.7.3";
               pin = "6.7.3";
             };
+            "@vcarl/remark-headings" = {
+              descriptor = "^0.1.0";
+              pin = "0.1.0";
+              runtime = true;
+            };
             eslint = {
               descriptor = "8.50.0";
               pin = "8.50.0";
             };
             eslint-config-next = {
-              descriptor = "13.5.3";
-              pin = "13.5.3";
+              descriptor = "^14.0.3";
+              pin = "14.0.3";
             };
             "highlight.js" = {
               descriptor = "^11.7.0";
@@ -7822,8 +12575,13 @@
               runtime = true;
             };
             next = {
-              descriptor = "13.5.3";
-              pin = "13.5.3";
+              descriptor = "^14.0.3";
+              pin = "14.0.3";
+              runtime = true;
+            };
+            next-mdx-remote = {
+              descriptor = "^4.4.1";
+              pin = "4.4.1";
               runtime = true;
             };
             notistack = {
@@ -7831,13 +12589,23 @@
               pin = "3.0.1";
               runtime = true;
             };
+            pagefind = {
+              descriptor = "^1.0.4";
+              pin = "1.0.4";
+              runtime = true;
+            };
+            parse5 = {
+              descriptor = "^7.1.2";
+              pin = "7.1.2";
+              runtime = true;
+            };
             react = {
-              descriptor = "18.2.0";
+              descriptor = "^18.2.0";
               pin = "18.2.0";
               runtime = true;
             };
             react-dom = {
-              descriptor = "18.2.0";
+              descriptor = "^18.2.0";
               pin = "18.2.0";
               runtime = true;
             };
@@ -7861,9 +12629,54 @@
               pin = "6.0.4";
               runtime = true;
             };
+            rehype = {
+              descriptor = "^13.0.1";
+              pin = "13.0.1";
+              runtime = true;
+            };
+            rehype-autolink-headings = {
+              descriptor = "^7.1.0";
+              pin = "7.1.0";
+              runtime = true;
+            };
             rehype-highlight = {
               descriptor = "^7.0.0";
               pin = "7.0.0";
+              runtime = true;
+            };
+            rehype-slug = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+            rehype-stringify = {
+              descriptor = "^10.0.0";
+              pin = "10.0.0";
+              runtime = true;
+            };
+            remark-frontmatter = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            remark-heading-id = {
+              descriptor = "^1.0.1";
+              pin = "1.0.1";
+              runtime = true;
+            };
+            remark-parse = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            remark-rehype = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            remark-stringify = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
               runtime = true;
             };
             seedrandom = {
@@ -7871,9 +12684,10 @@
               pin = "3.0.5";
               runtime = true;
             };
-            typescript = {
-              descriptor = "5.2.2";
-              pin = "5.2.2";
+            unified = {
+              descriptor = "^11.0.4";
+              pin = "11.0.4";
+              runtime = true;
             };
             usehooks-ts = {
               descriptor = "^2.9.1";
@@ -7883,7 +12697,9 @@
           };
           fetchInfo = "path:..";
           ident = "noogle";
-          lifecycle = { build = true; };
+          lifecycle = {
+            build = true;
+          };
           ltype = "dir";
           treeInfo = {
             "node_modules/@aashutoshrathi/word-wrap" = {
@@ -7917,37 +12733,48 @@
             "node_modules/@babel/highlight/node_modules/color-name" = {
               key = "color-name/1.1.3";
             };
-            "node_modules/@babel/highlight/node_modules/escape-string-regexp" =
-              {
-                key = "escape-string-regexp/1.0.5";
-              };
+            "node_modules/@babel/highlight/node_modules/escape-string-regexp" = {
+              key = "escape-string-regexp/1.0.5";
+            };
             "node_modules/@babel/highlight/node_modules/has-flag" = {
               key = "has-flag/3.0.0";
             };
             "node_modules/@babel/highlight/node_modules/supports-color" = {
               key = "supports-color/5.5.0";
             };
-            "node_modules/@babel/runtime" = { key = "@babel/runtime/7.23.1"; };
+            "node_modules/@babel/runtime" = {
+              key = "@babel/runtime/7.23.1";
+            };
             "node_modules/@babel/runtime/node_modules/regenerator-runtime" = {
               key = "regenerator-runtime/0.14.0";
             };
-            "node_modules/@babel/types" = { key = "@babel/types/7.23.0"; };
+            "node_modules/@babel/types" = {
+              key = "@babel/types/7.23.0";
+            };
             "node_modules/@emotion/babel-plugin" = {
               key = "@emotion/babel-plugin/11.11.0";
             };
-            "node_modules/@emotion/cache" = { key = "@emotion/cache/11.11.0"; };
-            "node_modules/@emotion/hash" = { key = "@emotion/hash/0.9.1"; };
+            "node_modules/@emotion/cache" = {
+              key = "@emotion/cache/11.11.0";
+            };
+            "node_modules/@emotion/hash" = {
+              key = "@emotion/hash/0.9.1";
+            };
             "node_modules/@emotion/is-prop-valid" = {
               key = "@emotion/is-prop-valid/1.2.1";
             };
             "node_modules/@emotion/memoize" = {
               key = "@emotion/memoize/0.8.1";
             };
-            "node_modules/@emotion/react" = { key = "@emotion/react/11.11.1"; };
+            "node_modules/@emotion/react" = {
+              key = "@emotion/react/11.11.1";
+            };
             "node_modules/@emotion/serialize" = {
               key = "@emotion/serialize/1.1.2";
             };
-            "node_modules/@emotion/sheet" = { key = "@emotion/sheet/1.2.2"; };
+            "node_modules/@emotion/sheet" = {
+              key = "@emotion/sheet/1.2.2";
+            };
             "node_modules/@emotion/styled" = {
               key = "@emotion/styled/11.11.0";
             };
@@ -7957,7 +12784,9 @@
             "node_modules/@emotion/use-insertion-effect-with-fallbacks" = {
               key = "@emotion/use-insertion-effect-with-fallbacks/1.0.1";
             };
-            "node_modules/@emotion/utils" = { key = "@emotion/utils/1.2.1"; };
+            "node_modules/@emotion/utils" = {
+              key = "@emotion/utils/1.2.1";
+            };
             "node_modules/@emotion/weak-memoize" = {
               key = "@emotion/weak-memoize/0.3.1";
             };
@@ -8004,7 +12833,225 @@
               dev = true;
               key = "@humanwhocodes/object-schema/1.2.1";
             };
-            "node_modules/@mui/base" = { key = "@mui/base/5.0.0-beta.17"; };
+            "node_modules/@jridgewell/gen-mapping" = {
+              key = "@jridgewell/gen-mapping/0.3.3";
+            };
+            "node_modules/@jridgewell/resolve-uri" = {
+              key = "@jridgewell/resolve-uri/3.1.1";
+            };
+            "node_modules/@jridgewell/set-array" = {
+              key = "@jridgewell/set-array/1.1.2";
+            };
+            "node_modules/@jridgewell/source-map" = {
+              key = "@jridgewell/source-map/0.3.5";
+            };
+            "node_modules/@jridgewell/sourcemap-codec" = {
+              key = "@jridgewell/sourcemap-codec/1.4.15";
+            };
+            "node_modules/@jridgewell/trace-mapping" = {
+              key = "@jridgewell/trace-mapping/0.3.20";
+            };
+            "node_modules/@jsdevtools/rehype-toc" = {
+              key = "@jsdevtools/rehype-toc/3.0.2";
+            };
+            "node_modules/@mdx-js/loader" = {
+              key = "@mdx-js/loader/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/@mdx-js/mdx" = {
+              key = "@mdx-js/mdx/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/estree-util-attach-comments" = {
+              key = "estree-util-attach-comments/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/estree-util-build-jsx" = {
+              key = "estree-util-build-jsx/3.0.1";
+            };
+            "node_modules/@mdx-js/loader/node_modules/estree-util-is-identifier-name" = {
+              key = "estree-util-is-identifier-name/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/estree-util-to-js" = {
+              key = "estree-util-to-js/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/estree-util-visit" = {
+              key = "estree-util-visit/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/hast-util-to-estree" = {
+              key = "hast-util-to-estree/3.1.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/markdown-extensions" = {
+              key = "markdown-extensions/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-mdx" = {
+              key = "mdast-util-mdx/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-mdx-expression" = {
+              key = "mdast-util-mdx-expression/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-mdx-jsx" = {
+              key = "mdast-util-mdx-jsx/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-mdxjs-esm" = {
+              key = "mdast-util-mdxjs-esm/2.0.1";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdx-expression" = {
+              key = "micromark-extension-mdx-expression/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdx-jsx" = {
+              key = "micromark-extension-mdx-jsx/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdx-md" = {
+              key = "micromark-extension-mdx-md/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdxjs" = {
+              key = "micromark-extension-mdxjs/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdxjs-esm" = {
+              key = "micromark-extension-mdxjs-esm/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-factory-mdx-expression" = {
+              key = "micromark-factory-mdx-expression/2.0.1";
+            };
+            "node_modules/@mdx-js/loader/node_modules/micromark-util-events-to-acorn" = {
+              key = "micromark-util-events-to-acorn/2.0.2";
+            };
+            "node_modules/@mdx-js/loader/node_modules/remark-mdx" = {
+              key = "remark-mdx/3.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/source-map" = {
+              key = "source-map/0.7.4";
+            };
+            "node_modules/@mdx-js/loader/node_modules/unist-util-position-from-estree" = {
+              key = "unist-util-position-from-estree/2.0.0";
+            };
+            "node_modules/@mdx-js/loader/node_modules/unist-util-remove-position" = {
+              key = "unist-util-remove-position/5.0.0";
+            };
+            "node_modules/@mdx-js/mdx" = {
+              key = "@mdx-js/mdx/2.3.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/@types/hast" = {
+              key = "@types/hast/2.3.8";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/mdast-util-from-markdown" = {
+              key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/mdast-util-to-hast" = {
+              key = "mdast-util-to-hast/12.3.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark" = {
+              key = "micromark/3.2.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-encode" = {
+              key = "micromark-util-encode/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-sanitize-uri" = {
+              key = "micromark-util-sanitize-uri/1.2.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/remark-parse" = {
+              key = "remark-parse/10.0.2";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/remark-rehype" = {
+              key = "remark-rehype/10.1.0";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unified" = {
+              key = "unified/10.1.2";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unist-util-position" = {
+              key = "unist-util-position/4.0.4";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/vfile" = {
+              key = "vfile/5.3.7";
+            };
+            "node_modules/@mdx-js/mdx/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
+            "node_modules/@mdx-js/react" = {
+              key = "@mdx-js/react/3.0.0";
+            };
+            "node_modules/@mui/base" = {
+              key = "@mui/base/5.0.0-beta.17";
+            };
             "node_modules/@mui/base/node_modules/clsx" = {
               key = "clsx/2.0.0";
             };
@@ -8014,7 +13061,9 @@
             "node_modules/@mui/icons-material" = {
               key = "@mui/icons-material/5.14.11";
             };
-            "node_modules/@mui/material" = { key = "@mui/material/5.14.11"; };
+            "node_modules/@mui/material" = {
+              key = "@mui/material/5.14.11";
+            };
             "node_modules/@mui/material/node_modules/clsx" = {
               key = "clsx/2.0.0";
             };
@@ -8027,58 +13076,72 @@
             "node_modules/@mui/styled-engine" = {
               key = "@mui/styled-engine/5.14.11";
             };
-            "node_modules/@mui/system" = { key = "@mui/system/5.14.11"; };
+            "node_modules/@mui/system" = {
+              key = "@mui/system/5.14.11";
+            };
             "node_modules/@mui/system/node_modules/clsx" = {
               key = "clsx/2.0.0";
             };
-            "node_modules/@mui/types" = { key = "@mui/types/7.2.4"; };
-            "node_modules/@mui/utils" = { key = "@mui/utils/5.14.11"; };
+            "node_modules/@mui/types" = {
+              key = "@mui/types/7.2.4";
+            };
+            "node_modules/@mui/utils" = {
+              key = "@mui/utils/5.14.11";
+            };
             "node_modules/@mui/utils/node_modules/react-is" = {
               key = "react-is/18.2.0";
             };
-            "node_modules/@next/env" = { key = "@next/env/13.5.3"; };
+            "node_modules/@next/env" = {
+              key = "@next/env/14.0.3";
+            };
             "node_modules/@next/eslint-plugin-next" = {
               dev = true;
-              key = "@next/eslint-plugin-next/13.5.3";
+              key = "@next/eslint-plugin-next/14.0.3";
             };
             "node_modules/@next/eslint-plugin-next/node_modules/glob" = {
               dev = true;
               key = "glob/7.1.7";
             };
+            "node_modules/@next/mdx" = {
+              key = "@next/mdx/14.0.3";
+            };
+            "node_modules/@next/mdx/node_modules/source-map" = {
+              key = "source-map/0.7.4";
+            };
             "node_modules/@next/swc-darwin-arm64" = {
-              key = "@next/swc-darwin-arm64/13.5.3";
+              key = "@next/swc-darwin-arm64/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-darwin-x64" = {
-              key = "@next/swc-darwin-x64/13.5.3";
+              key = "@next/swc-darwin-x64/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-linux-arm64-gnu" = {
-              key = "@next/swc-linux-arm64-gnu/13.5.3";
+              key = "@next/swc-linux-arm64-gnu/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-linux-arm64-musl" = {
-              key = "@next/swc-linux-arm64-musl/13.5.3";
+              key = "@next/swc-linux-arm64-musl/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-linux-x64-gnu" = {
-              key = "@next/swc-linux-x64-gnu/13.5.3";
+              key = "@next/swc-linux-x64-gnu/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-linux-x64-musl" = {
-              key = "@next/swc-linux-x64-musl/13.5.3";
+              key = "@next/swc-linux-x64-musl/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-win32-arm64-msvc" = {
-              key = "@next/swc-win32-arm64-msvc/13.5.3";
+              key = "@next/swc-win32-arm64-msvc/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-win32-ia32-msvc" = {
-              key = "@next/swc-win32-ia32-msvc/13.5.3";
+              key = "@next/swc-win32-ia32-msvc/14.0.3";
               optional = true;
             };
             "node_modules/@next/swc-win32-x64-msvc" = {
-              key = "@next/swc-win32-x64-msvc/13.5.3";
+              key = "@next/swc-win32-x64-msvc/14.0.3";
               optional = true;
             };
             "node_modules/@nodelib/fs.scandir" = {
@@ -8093,29 +13156,80 @@
               dev = true;
               key = "@nodelib/fs.walk/1.2.8";
             };
-            "node_modules/@popperjs/core" = { key = "@popperjs/core/2.11.8"; };
+            "node_modules/@pagefind/darwin-arm64" = {
+              key = "@pagefind/darwin-arm64/1.0.4";
+              optional = true;
+            };
+            "node_modules/@pagefind/darwin-x64" = {
+              key = "@pagefind/darwin-x64/1.0.4";
+              optional = true;
+            };
+            "node_modules/@pagefind/linux-arm64" = {
+              key = "@pagefind/linux-arm64/1.0.4";
+              optional = true;
+            };
+            "node_modules/@pagefind/linux-x64" = {
+              key = "@pagefind/linux-x64/1.0.4";
+              optional = true;
+            };
+            "node_modules/@pagefind/windows-x64" = {
+              key = "@pagefind/windows-x64/1.0.4";
+              optional = true;
+            };
+            "node_modules/@popperjs/core" = {
+              key = "@popperjs/core/2.11.8";
+            };
             "node_modules/@rushstack/eslint-patch" = {
               dev = true;
               key = "@rushstack/eslint-patch/1.5.1";
             };
-            "node_modules/@swc/helpers" = { key = "@swc/helpers/0.5.2"; };
+            "node_modules/@swc/helpers" = {
+              key = "@swc/helpers/0.5.2";
+            };
             "node_modules/@swc/helpers/node_modules/tslib" = {
               key = "tslib/2.4.1";
             };
-            "node_modules/@types/debug" = { key = "@types/debug/4.1.9"; };
-            "node_modules/@types/hast" = { key = "@types/hast/3.0.1"; };
+            "node_modules/@types/acorn" = {
+              key = "@types/acorn/4.0.6";
+            };
+            "node_modules/@types/debug" = {
+              key = "@types/debug/4.1.9";
+            };
+            "node_modules/@types/eslint" = {
+              key = "@types/eslint/8.44.8";
+            };
+            "node_modules/@types/eslint-scope" = {
+              key = "@types/eslint-scope/3.7.7";
+            };
+            "node_modules/@types/estree" = {
+              key = "@types/estree/1.0.5";
+            };
+            "node_modules/@types/estree-jsx" = {
+              key = "@types/estree-jsx/1.0.3";
+            };
+            "node_modules/@types/hast" = {
+              key = "@types/hast/3.0.1";
+            };
+            "node_modules/@types/js-yaml" = {
+              key = "@types/js-yaml/4.0.9";
+            };
             "node_modules/@types/json-schema" = {
-              dev = true;
               key = "@types/json-schema/7.0.13";
             };
             "node_modules/@types/json5" = {
               dev = true;
               key = "@types/json5/0.0.29";
             };
-            "node_modules/@types/mdast" = { key = "@types/mdast/4.0.1"; };
-            "node_modules/@types/ms" = { key = "@types/ms/0.7.32"; };
+            "node_modules/@types/mdast" = {
+              key = "@types/mdast/4.0.1";
+            };
+            "node_modules/@types/mdx" = {
+              key = "@types/mdx/2.0.10";
+            };
+            "node_modules/@types/ms" = {
+              key = "@types/ms/0.7.32";
+            };
             "node_modules/@types/node" = {
-              dev = true;
               key = "@types/node/18.18.1";
             };
             "node_modules/@types/parse-json" = {
@@ -8124,7 +13238,9 @@
             "node_modules/@types/prop-types" = {
               key = "@types/prop-types/15.7.5";
             };
-            "node_modules/@types/react" = { key = "@types/react/18.2.24"; };
+            "node_modules/@types/react" = {
+              key = "@types/react/18.2.24";
+            };
             "node_modules/@types/react-dom" = {
               dev = true;
               key = "@types/react-dom/18.2.8";
@@ -8147,7 +13263,9 @@
               dev = true;
               key = "@types/semver/7.5.3";
             };
-            "node_modules/@types/unist" = { key = "@types/unist/3.0.0"; };
+            "node_modules/@types/unist" = {
+              key = "@types/unist/3.0.0";
+            };
             "node_modules/@typescript-eslint/eslint-plugin" = {
               dev = true;
               key = "@typescript-eslint/eslint-plugin/6.7.3";
@@ -8183,17 +13301,92 @@
             "node_modules/@ungap/structured-clone" = {
               key = "@ungap/structured-clone/1.2.0";
             };
+            "node_modules/@vcarl/remark-headings" = {
+              key = "@vcarl/remark-headings/0.1.0";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/@vcarl/remark-headings/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
+            };
+            "node_modules/@webassemblyjs/ast" = {
+              key = "@webassemblyjs/ast/1.11.6";
+            };
+            "node_modules/@webassemblyjs/floating-point-hex-parser" = {
+              key = "@webassemblyjs/floating-point-hex-parser/1.11.6";
+            };
+            "node_modules/@webassemblyjs/helper-api-error" = {
+              key = "@webassemblyjs/helper-api-error/1.11.6";
+            };
+            "node_modules/@webassemblyjs/helper-buffer" = {
+              key = "@webassemblyjs/helper-buffer/1.11.6";
+            };
+            "node_modules/@webassemblyjs/helper-numbers" = {
+              key = "@webassemblyjs/helper-numbers/1.11.6";
+            };
+            "node_modules/@webassemblyjs/helper-wasm-bytecode" = {
+              key = "@webassemblyjs/helper-wasm-bytecode/1.11.6";
+            };
+            "node_modules/@webassemblyjs/helper-wasm-section" = {
+              key = "@webassemblyjs/helper-wasm-section/1.11.6";
+            };
+            "node_modules/@webassemblyjs/ieee754" = {
+              key = "@webassemblyjs/ieee754/1.11.6";
+            };
+            "node_modules/@webassemblyjs/leb128" = {
+              key = "@webassemblyjs/leb128/1.11.6";
+            };
+            "node_modules/@webassemblyjs/utf8" = {
+              key = "@webassemblyjs/utf8/1.11.6";
+            };
+            "node_modules/@webassemblyjs/wasm-edit" = {
+              key = "@webassemblyjs/wasm-edit/1.11.6";
+            };
+            "node_modules/@webassemblyjs/wasm-gen" = {
+              key = "@webassemblyjs/wasm-gen/1.11.6";
+            };
+            "node_modules/@webassemblyjs/wasm-opt" = {
+              key = "@webassemblyjs/wasm-opt/1.11.6";
+            };
+            "node_modules/@webassemblyjs/wasm-parser" = {
+              key = "@webassemblyjs/wasm-parser/1.11.6";
+            };
+            "node_modules/@webassemblyjs/wast-printer" = {
+              key = "@webassemblyjs/wast-printer/1.11.6";
+            };
+            "node_modules/@xtuc/ieee754" = {
+              key = "@xtuc/ieee754/1.2.0";
+            };
+            "node_modules/@xtuc/long" = {
+              key = "@xtuc/long/4.2.2";
+            };
             "node_modules/acorn" = {
-              dev = true;
               key = "acorn/8.10.0";
             };
+            "node_modules/acorn-import-assertions" = {
+              key = "acorn-import-assertions/1.9.0";
+            };
             "node_modules/acorn-jsx" = {
-              dev = true;
               key = "acorn-jsx/5.3.2";
             };
             "node_modules/ajv" = {
-              dev = true;
               key = "ajv/6.12.6";
+            };
+            "node_modules/ajv-keywords" = {
+              key = "ajv-keywords/3.5.2";
             };
             "node_modules/ansi-regex" = {
               dev = true;
@@ -8204,7 +13397,6 @@
               key = "ansi-styles/4.3.0";
             };
             "node_modules/argparse" = {
-              dev = true;
               key = "argparse/2.0.1";
             };
             "node_modules/aria-query" = {
@@ -8247,6 +13439,9 @@
               dev = true;
               key = "ast-types-flow/0.0.7";
             };
+            "node_modules/astring" = {
+              key = "astring/1.8.6";
+            };
             "node_modules/asynciterator.prototype" = {
               dev = true;
               key = "asynciterator.prototype/1.0.0";
@@ -8266,7 +13461,9 @@
             "node_modules/babel-plugin-macros" = {
               key = "babel-plugin-macros/3.1.0";
             };
-            "node_modules/bail" = { key = "bail/2.0.2"; };
+            "node_modules/bail" = {
+              key = "bail/2.0.2";
+            };
             "node_modules/balanced-match" = {
               dev = true;
               key = "balanced-match/1.0.2";
@@ -8279,14 +13476,27 @@
               dev = true;
               key = "braces/3.0.2";
             };
-            "node_modules/busboy" = { key = "busboy/1.6.0"; };
+            "node_modules/browserslist" = {
+              key = "browserslist/4.22.2";
+            };
+            "node_modules/buffer-from" = {
+              key = "buffer-from/1.1.2";
+            };
+            "node_modules/busboy" = {
+              key = "busboy/1.6.0";
+            };
             "node_modules/call-bind" = {
               dev = true;
               key = "call-bind/1.0.2";
             };
-            "node_modules/callsites" = { key = "callsites/3.1.0"; };
+            "node_modules/callsites" = {
+              key = "callsites/3.1.0";
+            };
             "node_modules/caniuse-lite" = {
-              key = "caniuse-lite/1.0.30001431";
+              key = "caniuse-lite/1.0.30001566";
+            };
+            "node_modules/ccount" = {
+              key = "ccount/2.0.1";
             };
             "node_modules/chalk" = {
               dev = true;
@@ -8295,8 +13505,27 @@
             "node_modules/character-entities" = {
               key = "character-entities/2.0.2";
             };
-            "node_modules/client-only" = { key = "client-only/0.0.1"; };
-            "node_modules/clsx" = { key = "clsx/1.2.1"; };
+            "node_modules/character-entities-html4" = {
+              key = "character-entities-html4/2.1.0";
+            };
+            "node_modules/character-entities-legacy" = {
+              key = "character-entities-legacy/3.0.0";
+            };
+            "node_modules/character-reference-invalid" = {
+              key = "character-reference-invalid/2.0.1";
+            };
+            "node_modules/chrome-trace-event" = {
+              key = "chrome-trace-event/1.0.3";
+            };
+            "node_modules/client-only" = {
+              key = "client-only/0.0.1";
+            };
+            "node_modules/clsx" = {
+              key = "clsx/1.2.1";
+            };
+            "node_modules/collapse-white-space" = {
+              key = "collapse-white-space/2.1.0";
+            };
             "node_modules/color-convert" = {
               dev = true;
               key = "color-convert/2.0.1";
@@ -8308,6 +13537,9 @@
             "node_modules/comma-separated-tokens" = {
               key = "comma-separated-tokens/2.0.3";
             };
+            "node_modules/commander" = {
+              key = "commander/2.20.3";
+            };
             "node_modules/concat-map" = {
               dev = true;
               key = "concat-map/0.0.1";
@@ -8315,17 +13547,23 @@
             "node_modules/convert-source-map" = {
               key = "convert-source-map/1.9.0";
             };
-            "node_modules/cosmiconfig" = { key = "cosmiconfig/7.0.1"; };
+            "node_modules/cosmiconfig" = {
+              key = "cosmiconfig/7.0.1";
+            };
             "node_modules/cross-spawn" = {
               dev = true;
               key = "cross-spawn/7.0.3";
             };
-            "node_modules/csstype" = { key = "csstype/3.1.2"; };
+            "node_modules/csstype" = {
+              key = "csstype/3.1.2";
+            };
             "node_modules/damerau-levenshtein" = {
               dev = true;
               key = "damerau-levenshtein/1.0.8";
             };
-            "node_modules/debug" = { key = "debug/4.3.4"; };
+            "node_modules/debug" = {
+              key = "debug/4.3.4";
+            };
             "node_modules/decode-named-character-reference" = {
               key = "decode-named-character-reference/1.0.2";
             };
@@ -8341,8 +13579,15 @@
               dev = true;
               key = "define-properties/1.2.1";
             };
-            "node_modules/dequal" = { key = "dequal/2.0.3"; };
-            "node_modules/devlop" = { key = "devlop/1.1.0"; };
+            "node_modules/dequal" = {
+              key = "dequal/2.0.3";
+            };
+            "node_modules/devlop" = {
+              key = "devlop/1.1.0";
+            };
+            "node_modules/diff" = {
+              key = "diff/5.1.0";
+            };
             "node_modules/dir-glob" = {
               dev = true;
               key = "dir-glob/3.0.1";
@@ -8351,16 +13596,25 @@
               dev = true;
               key = "doctrine/3.0.0";
             };
-            "node_modules/dom-helpers" = { key = "dom-helpers/5.2.1"; };
+            "node_modules/dom-helpers" = {
+              key = "dom-helpers/5.2.1";
+            };
+            "node_modules/electron-to-chromium" = {
+              key = "electron-to-chromium/1.4.603";
+            };
             "node_modules/emoji-regex" = {
               dev = true;
               key = "emoji-regex/9.2.2";
             };
             "node_modules/enhanced-resolve" = {
-              dev = true;
               key = "enhanced-resolve/5.15.0";
             };
-            "node_modules/error-ex" = { key = "error-ex/1.3.2"; };
+            "node_modules/entities" = {
+              key = "entities/4.5.0";
+            };
+            "node_modules/error-ex" = {
+              key = "error-ex/1.3.2";
+            };
             "node_modules/es-abstract" = {
               dev = true;
               key = "es-abstract/1.22.2";
@@ -8368,6 +13622,9 @@
             "node_modules/es-iterator-helpers" = {
               dev = true;
               key = "es-iterator-helpers/1.0.15";
+            };
+            "node_modules/es-module-lexer" = {
+              key = "es-module-lexer/1.4.1";
             };
             "node_modules/es-set-tostringtag" = {
               dev = true;
@@ -8381,6 +13638,9 @@
               dev = true;
               key = "es-to-primitive/1.2.1";
             };
+            "node_modules/escalade" = {
+              key = "escalade/3.1.1";
+            };
             "node_modules/escape-string-regexp" = {
               key = "escape-string-regexp/4.0.0";
             };
@@ -8390,7 +13650,7 @@
             };
             "node_modules/eslint-config-next" = {
               dev = true;
-              key = "eslint-config-next/13.5.3";
+              key = "eslint-config-next/14.0.3";
             };
             "node_modules/eslint-import-resolver-node" = {
               dev = true;
@@ -8473,20 +13733,46 @@
               key = "esquery/1.5.0";
             };
             "node_modules/esrecurse" = {
-              dev = true;
               key = "esrecurse/4.3.0";
             };
             "node_modules/estraverse" = {
-              dev = true;
               key = "estraverse/5.3.0";
+            };
+            "node_modules/estree-util-attach-comments" = {
+              key = "estree-util-attach-comments/2.1.1";
+            };
+            "node_modules/estree-util-build-jsx" = {
+              key = "estree-util-build-jsx/2.2.2";
+            };
+            "node_modules/estree-util-is-identifier-name" = {
+              key = "estree-util-is-identifier-name/2.1.0";
+            };
+            "node_modules/estree-util-to-js" = {
+              key = "estree-util-to-js/1.2.0";
+            };
+            "node_modules/estree-util-to-js/node_modules/source-map" = {
+              key = "source-map/0.7.4";
+            };
+            "node_modules/estree-util-visit" = {
+              key = "estree-util-visit/1.2.1";
+            };
+            "node_modules/estree-util-visit/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/estree-walker" = {
+              key = "estree-walker/3.0.3";
             };
             "node_modules/esutils" = {
               dev = true;
               key = "esutils/2.0.3";
             };
-            "node_modules/extend" = { key = "extend/3.0.2"; };
+            "node_modules/events" = {
+              key = "events/3.3.0";
+            };
+            "node_modules/extend" = {
+              key = "extend/3.0.2";
+            };
             "node_modules/fast-deep-equal" = {
-              dev = true;
               key = "fast-deep-equal/3.1.3";
             };
             "node_modules/fast-glob" = {
@@ -8498,7 +13784,6 @@
               key = "glob-parent/5.1.2";
             };
             "node_modules/fast-json-stable-stringify" = {
-              dev = true;
               key = "fast-json-stable-stringify/2.1.0";
             };
             "node_modules/fast-levenshtein" = {
@@ -8509,6 +13794,9 @@
               dev = true;
               key = "fastq/1.13.0";
             };
+            "node_modules/fault" = {
+              key = "fault/2.0.1";
+            };
             "node_modules/file-entry-cache" = {
               dev = true;
               key = "file-entry-cache/6.0.1";
@@ -8517,7 +13805,9 @@
               dev = true;
               key = "fill-range/7.0.1";
             };
-            "node_modules/find-root" = { key = "find-root/1.1.0"; };
+            "node_modules/find-root" = {
+              key = "find-root/1.1.0";
+            };
             "node_modules/find-up" = {
               dev = true;
               key = "find-up/5.0.0";
@@ -8534,11 +13824,16 @@
               dev = true;
               key = "for-each/0.3.3";
             };
+            "node_modules/format" = {
+              key = "format/0.2.2";
+            };
             "node_modules/fs.realpath" = {
               dev = true;
               key = "fs.realpath/1.0.0";
             };
-            "node_modules/function-bind" = { key = "function-bind/1.1.1"; };
+            "node_modules/function-bind" = {
+              key = "function-bind/1.1.1";
+            };
             "node_modules/function.prototype.name" = {
               dev = true;
               key = "function.prototype.name/1.1.6";
@@ -8567,7 +13862,9 @@
               dev = true;
               key = "glob-parent/6.0.2";
             };
-            "node_modules/glob-to-regexp" = { key = "glob-to-regexp/0.4.1"; };
+            "node_modules/glob-to-regexp" = {
+              key = "glob-to-regexp/0.4.1";
+            };
             "node_modules/globals" = {
               dev = true;
               key = "globals/13.22.0";
@@ -8580,23 +13877,28 @@
               dev = true;
               key = "globby/11.1.0";
             };
-            "node_modules/goober" = { key = "goober/2.1.13"; };
+            "node_modules/goober" = {
+              key = "goober/2.1.13";
+            };
             "node_modules/gopd" = {
               dev = true;
               key = "gopd/1.0.1";
             };
-            "node_modules/graceful-fs" = { key = "graceful-fs/4.2.11"; };
+            "node_modules/graceful-fs" = {
+              key = "graceful-fs/4.2.11";
+            };
             "node_modules/graphemer" = {
               dev = true;
               key = "graphemer/1.4.0";
             };
-            "node_modules/has" = { key = "has/1.0.3"; };
+            "node_modules/has" = {
+              key = "has/1.0.3";
+            };
             "node_modules/has-bigints" = {
               dev = true;
               key = "has-bigints/1.0.2";
             };
             "node_modules/has-flag" = {
-              dev = true;
               key = "has-flag/4.0.0";
             };
             "node_modules/has-property-descriptors" = {
@@ -8615,11 +13917,50 @@
               dev = true;
               key = "has-tostringtag/1.0.0";
             };
+            "node_modules/hast-util-from-html" = {
+              key = "hast-util-from-html/2.0.1";
+            };
+            "node_modules/hast-util-from-parse5" = {
+              key = "hast-util-from-parse5/8.0.1";
+            };
+            "node_modules/hast-util-heading-rank" = {
+              key = "hast-util-heading-rank/3.0.0";
+            };
             "node_modules/hast-util-is-element" = {
               key = "hast-util-is-element/3.0.0";
             };
+            "node_modules/hast-util-parse-selector" = {
+              key = "hast-util-parse-selector/4.0.0";
+            };
+            "node_modules/hast-util-raw" = {
+              key = "hast-util-raw/9.0.1";
+            };
+            "node_modules/hast-util-to-estree" = {
+              key = "hast-util-to-estree/2.3.3";
+            };
+            "node_modules/hast-util-to-estree/node_modules/@types/hast" = {
+              key = "@types/hast/2.3.8";
+            };
+            "node_modules/hast-util-to-estree/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/hast-util-to-estree/node_modules/hast-util-whitespace" = {
+              key = "hast-util-whitespace/2.0.1";
+            };
+            "node_modules/hast-util-to-estree/node_modules/unist-util-position" = {
+              key = "unist-util-position/4.0.4";
+            };
+            "node_modules/hast-util-to-html" = {
+              key = "hast-util-to-html/9.0.0";
+            };
             "node_modules/hast-util-to-jsx-runtime" = {
               key = "hast-util-to-jsx-runtime/2.2.0";
+            };
+            "node_modules/hast-util-to-parse5" = {
+              key = "hast-util-to-parse5/8.0.0";
+            };
+            "node_modules/hast-util-to-string" = {
+              key = "hast-util-to-string/3.0.0";
             };
             "node_modules/hast-util-to-text" = {
               key = "hast-util-to-text/4.0.0";
@@ -8627,18 +13968,28 @@
             "node_modules/hast-util-whitespace" = {
               key = "hast-util-whitespace/3.0.0";
             };
-            "node_modules/highlight.js" = { key = "highlight.js/11.8.0"; };
+            "node_modules/hastscript" = {
+              key = "hastscript/8.0.0";
+            };
+            "node_modules/highlight.js" = {
+              key = "highlight.js/11.8.0";
+            };
             "node_modules/hoist-non-react-statics" = {
               key = "hoist-non-react-statics/3.3.2";
             };
             "node_modules/html-url-attributes" = {
               key = "html-url-attributes/3.0.0";
             };
+            "node_modules/html-void-elements" = {
+              key = "html-void-elements/3.0.0";
+            };
             "node_modules/ignore" = {
               dev = true;
               key = "ignore/5.2.4";
             };
-            "node_modules/import-fresh" = { key = "import-fresh/3.3.0"; };
+            "node_modules/import-fresh" = {
+              key = "import-fresh/3.3.0";
+            };
             "node_modules/imurmurhash" = {
               dev = true;
               key = "imurmurhash/0.1.4";
@@ -8658,11 +14009,19 @@
               dev = true;
               key = "internal-slot/1.0.5";
             };
+            "node_modules/is-alphabetical" = {
+              key = "is-alphabetical/2.0.1";
+            };
+            "node_modules/is-alphanumerical" = {
+              key = "is-alphanumerical/2.0.1";
+            };
             "node_modules/is-array-buffer" = {
               dev = true;
               key = "is-array-buffer/3.0.2";
             };
-            "node_modules/is-arrayish" = { key = "is-arrayish/0.2.1"; };
+            "node_modules/is-arrayish" = {
+              key = "is-arrayish/0.2.1";
+            };
             "node_modules/is-async-function" = {
               dev = true;
               key = "is-async-function/2.0.0";
@@ -8675,14 +14034,22 @@
               dev = true;
               key = "is-boolean-object/1.1.2";
             };
+            "node_modules/is-buffer" = {
+              key = "is-buffer/2.0.5";
+            };
             "node_modules/is-callable" = {
               dev = true;
               key = "is-callable/1.2.7";
             };
-            "node_modules/is-core-module" = { key = "is-core-module/2.13.0"; };
+            "node_modules/is-core-module" = {
+              key = "is-core-module/2.13.0";
+            };
             "node_modules/is-date-object" = {
               dev = true;
               key = "is-date-object/1.0.5";
+            };
+            "node_modules/is-decimal" = {
+              key = "is-decimal/2.0.1";
             };
             "node_modules/is-extglob" = {
               dev = true;
@@ -8699,6 +14066,9 @@
             "node_modules/is-glob" = {
               dev = true;
               key = "is-glob/4.0.3";
+            };
+            "node_modules/is-hexadecimal" = {
+              key = "is-hexadecimal/2.0.1";
             };
             "node_modules/is-map" = {
               dev = true;
@@ -8720,7 +14090,12 @@
               dev = true;
               key = "is-path-inside/3.0.3";
             };
-            "node_modules/is-plain-obj" = { key = "is-plain-obj/4.1.0"; };
+            "node_modules/is-plain-obj" = {
+              key = "is-plain-obj/4.1.0";
+            };
+            "node_modules/is-reference" = {
+              key = "is-reference/3.0.2";
+            };
             "node_modules/is-regex" = {
               dev = true;
               key = "is-regex/1.1.4";
@@ -8769,16 +14144,22 @@
               dev = true;
               key = "iterator.prototype/1.1.2";
             };
-            "node_modules/js-tokens" = { key = "js-tokens/4.0.0"; };
+            "node_modules/jest-worker" = {
+              key = "jest-worker/27.5.1";
+            };
+            "node_modules/jest-worker/node_modules/supports-color" = {
+              key = "supports-color/8.1.1";
+            };
+            "node_modules/js-tokens" = {
+              key = "js-tokens/4.0.0";
+            };
             "node_modules/js-yaml" = {
-              dev = true;
               key = "js-yaml/4.1.0";
             };
             "node_modules/json-parse-even-better-errors" = {
               key = "json-parse-even-better-errors/2.3.1";
             };
             "node_modules/json-schema-traverse" = {
-              dev = true;
               key = "json-schema-traverse/0.4.1";
             };
             "node_modules/json-stable-stringify-without-jsonify" = {
@@ -8792,6 +14173,9 @@
             "node_modules/jsx-ast-utils" = {
               dev = true;
               key = "jsx-ast-utils/3.3.3";
+            };
+            "node_modules/kleur" = {
+              key = "kleur/4.1.5";
             };
             "node_modules/language-subtag-registry" = {
               dev = true;
@@ -8808,43 +14192,621 @@
             "node_modules/lines-and-columns" = {
               key = "lines-and-columns/1.2.4";
             };
+            "node_modules/loader-runner" = {
+              key = "loader-runner/4.3.0";
+            };
             "node_modules/locate-path" = {
               dev = true;
               key = "locate-path/6.0.0";
+            };
+            "node_modules/lodash" = {
+              key = "lodash/4.17.21";
             };
             "node_modules/lodash.merge" = {
               dev = true;
               key = "lodash.merge/4.6.2";
             };
-            "node_modules/loose-envify" = { key = "loose-envify/1.4.0"; };
-            "node_modules/lowlight" = { key = "lowlight/3.0.0"; };
+            "node_modules/longest-streak" = {
+              key = "longest-streak/3.1.0";
+            };
+            "node_modules/loose-envify" = {
+              key = "loose-envify/1.4.0";
+            };
+            "node_modules/lowlight" = {
+              key = "lowlight/3.0.0";
+            };
             "node_modules/lru-cache" = {
               dev = true;
               key = "lru-cache/6.0.0";
             };
-            "node_modules/mark.js" = { key = "mark.js/8.11.1"; };
+            "node_modules/mark.js" = {
+              key = "mark.js/8.11.1";
+            };
+            "node_modules/markdown-extensions" = {
+              key = "markdown-extensions/1.1.1";
+            };
+            "node_modules/mdast-util-definitions" = {
+              key = "mdast-util-definitions/5.1.2";
+            };
+            "node_modules/mdast-util-definitions/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-definitions/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-definitions/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
+            "node_modules/mdast-util-definitions/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-definitions/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
+            };
             "node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/2.0.0";
+            };
+            "node_modules/mdast-util-frontmatter" = {
+              key = "mdast-util-frontmatter/2.0.1";
+            };
+            "node_modules/mdast-util-frontmatter/node_modules/escape-string-regexp" = {
+              key = "escape-string-regexp/5.0.0";
+            };
+            "node_modules/mdast-util-frontmatter/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-frontmatter/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-mdx" = {
+              key = "mdast-util-mdx/2.0.1";
+            };
+            "node_modules/mdast-util-mdx-expression" = {
+              key = "mdast-util-mdx-expression/1.3.2";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/@types/hast" = {
+              key = "@types/hast/2.3.8";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-from-markdown" = {
+              key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark" = {
+              key = "micromark/3.2.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-encode" = {
+              key = "micromark-util-encode/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-sanitize-uri" = {
+              key = "micromark-util-sanitize-uri/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdx-jsx" = {
+              key = "mdast-util-mdx-jsx/2.1.4";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/@types/hast" = {
+              key = "@types/hast/2.3.8";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-from-markdown" = {
+              key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark" = {
+              key = "micromark/3.2.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-encode" = {
+              key = "micromark-util-encode/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-sanitize-uri" = {
+              key = "micromark-util-sanitize-uri/1.2.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
+            "node_modules/mdast-util-mdx/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-mdx/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-mdx/node_modules/mdast-util-from-markdown" = {
+              key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark" = {
+              key = "micromark/3.2.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-encode" = {
+              key = "micromark-util-encode/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-sanitize-uri" = {
+              key = "micromark-util-sanitize-uri/1.2.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/mdast-util-mdx/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdxjs-esm" = {
+              key = "mdast-util-mdxjs-esm/1.3.1";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/@types/hast" = {
+              key = "@types/hast/2.3.8";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-from-markdown" = {
+              key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark" = {
+              key = "micromark/3.2.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-encode" = {
+              key = "micromark-util-encode/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-sanitize-uri" = {
+              key = "micromark-util-sanitize-uri/1.2.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/3.0.1";
+            };
+            "node_modules/mdast-util-phrasing/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-phrasing/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-phrasing/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
             };
             "node_modules/mdast-util-to-hast" = {
               key = "mdast-util-to-hast/13.0.2";
             };
+            "node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/1.5.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/@types/mdast" = {
+              key = "@types/mdast/3.0.15";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/mdast-util-to-string" = {
+              key = "mdast-util-to-string/3.2.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-decode-numeric-character-reference" = {
+              key = "micromark-util-decode-numeric-character-reference/1.1.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-decode-string" = {
+              key = "micromark-util-decode-string/1.1.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-to-markdown/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
+            };
             "node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/4.0.0";
+            };
+            "node_modules/merge-stream" = {
+              key = "merge-stream/2.0.0";
             };
             "node_modules/merge2" = {
               dev = true;
               key = "merge2/1.4.1";
             };
-            "node_modules/micromark" = { key = "micromark/4.0.0"; };
+            "node_modules/micromark" = {
+              key = "micromark/4.0.0";
+            };
             "node_modules/micromark-core-commonmark" = {
               key = "micromark-core-commonmark/2.0.0";
+            };
+            "node_modules/micromark-extension-frontmatter" = {
+              key = "micromark-extension-frontmatter/2.0.0";
+            };
+            "node_modules/micromark-extension-mdx-expression" = {
+              key = "micromark-extension-mdx-expression/1.0.8";
+            };
+            "node_modules/micromark-extension-mdx-expression/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-expression/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/micromark-extension-mdx-expression/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-expression/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-jsx" = {
+              key = "micromark-extension-mdx-jsx/1.0.5";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/micromark-extension-mdx-jsx/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
+            "node_modules/micromark-extension-mdx-md" = {
+              key = "micromark-extension-mdx-md/1.0.1";
+            };
+            "node_modules/micromark-extension-mdx-md/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs" = {
+              key = "micromark-extension-mdxjs/1.0.1";
+            };
+            "node_modules/micromark-extension-mdxjs-esm" = {
+              key = "micromark-extension-mdxjs-esm/1.0.5";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-core-commonmark" = {
+              key = "micromark-core-commonmark/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-factory-destination" = {
+              key = "micromark-factory-destination/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-factory-label" = {
+              key = "micromark-factory-label/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-factory-space" = {
+              key = "micromark-factory-space/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-factory-title" = {
+              key = "micromark-factory-title/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-factory-whitespace" = {
+              key = "micromark-factory-whitespace/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-classify-character" = {
+              key = "micromark-util-classify-character/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-html-tag-name" = {
+              key = "micromark-util-html-tag-name/1.2.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-normalize-identifier" = {
+              key = "micromark-util-normalize-identifier/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-resolve-all" = {
+              key = "micromark-util-resolve-all/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-subtokenize" = {
+              key = "micromark-util-subtokenize/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/micromark-extension-mdxjs-esm/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
+            "node_modules/micromark-extension-mdxjs/node_modules/micromark-util-chunked" = {
+              key = "micromark-util-chunked/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs/node_modules/micromark-util-combine-extensions" = {
+              key = "micromark-util-combine-extensions/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-extension-mdxjs/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
             };
             "node_modules/micromark-factory-destination" = {
               key = "micromark-factory-destination/2.0.0";
             };
             "node_modules/micromark-factory-label" = {
               key = "micromark-factory-label/2.0.0";
+            };
+            "node_modules/micromark-factory-mdx-expression" = {
+              key = "micromark-factory-mdx-expression/1.0.9";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/micromark-util-character" = {
+              key = "micromark-util-character/1.2.0";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/micromark-factory-mdx-expression/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
             };
             "node_modules/micromark-factory-space" = {
               key = "micromark-factory-space/2.0.0";
@@ -8876,6 +14838,24 @@
             "node_modules/micromark-util-encode" = {
               key = "micromark-util-encode/2.0.0";
             };
+            "node_modules/micromark-util-events-to-acorn" = {
+              key = "micromark-util-events-to-acorn/1.2.3";
+            };
+            "node_modules/micromark-util-events-to-acorn/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/micromark-util-events-to-acorn/node_modules/micromark-util-symbol" = {
+              key = "micromark-util-symbol/1.1.0";
+            };
+            "node_modules/micromark-util-events-to-acorn/node_modules/micromark-util-types" = {
+              key = "micromark-util-types/1.1.0";
+            };
+            "node_modules/micromark-util-events-to-acorn/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/micromark-util-events-to-acorn/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
             "node_modules/micromark-util-html-tag-name" = {
               key = "micromark-util-html-tag-name/2.0.0";
             };
@@ -8901,6 +14881,12 @@
               dev = true;
               key = "micromatch/4.0.5";
             };
+            "node_modules/mime-db" = {
+              key = "mime-db/1.52.0";
+            };
+            "node_modules/mime-types" = {
+              key = "mime-types/2.1.35";
+            };
             "node_modules/minimatch" = {
               dev = true;
               key = "minimatch/3.1.2";
@@ -8909,16 +14895,55 @@
               dev = true;
               key = "minimist/1.2.8";
             };
-            "node_modules/minisearch" = { key = "minisearch/6.1.0"; };
-            "node_modules/ms" = { key = "ms/2.1.2"; };
-            "node_modules/nanoid" = { key = "nanoid/3.3.4"; };
+            "node_modules/minisearch" = {
+              key = "minisearch/6.1.0";
+            };
+            "node_modules/mri" = {
+              key = "mri/1.2.0";
+            };
+            "node_modules/ms" = {
+              key = "ms/2.1.2";
+            };
+            "node_modules/nanoid" = {
+              key = "nanoid/3.3.7";
+            };
             "node_modules/natural-compare" = {
               dev = true;
               key = "natural-compare/1.4.0";
             };
-            "node_modules/next" = { key = "next/13.5.3"; };
-            "node_modules/notistack" = { key = "notistack/3.0.1"; };
-            "node_modules/object-assign" = { key = "object-assign/4.1.1"; };
+            "node_modules/neo-async" = {
+              key = "neo-async/2.6.2";
+            };
+            "node_modules/next" = {
+              key = "next/14.0.3";
+            };
+            "node_modules/next-mdx-remote" = {
+              key = "next-mdx-remote/4.4.1";
+            };
+            "node_modules/next-mdx-remote/node_modules/@mdx-js/react" = {
+              key = "@mdx-js/react/2.3.0";
+            };
+            "node_modules/next-mdx-remote/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/next-mdx-remote/node_modules/unist-util-stringify-position" = {
+              key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/next-mdx-remote/node_modules/vfile" = {
+              key = "vfile/5.3.7";
+            };
+            "node_modules/next-mdx-remote/node_modules/vfile-message" = {
+              key = "vfile-message/3.1.4";
+            };
+            "node_modules/node-releases" = {
+              key = "node-releases/2.0.14";
+            };
+            "node_modules/notistack" = {
+              key = "notistack/3.0.1";
+            };
+            "node_modules/object-assign" = {
+              key = "object-assign/4.1.1";
+            };
             "node_modules/object-inspect" = {
               dev = true;
               key = "object-inspect/1.12.3";
@@ -8967,8 +14992,24 @@
               dev = true;
               key = "p-locate/5.0.0";
             };
-            "node_modules/parent-module" = { key = "parent-module/1.0.1"; };
-            "node_modules/parse-json" = { key = "parse-json/5.2.0"; };
+            "node_modules/pagefind" = {
+              key = "pagefind/1.0.4";
+            };
+            "node_modules/parent-module" = {
+              key = "parent-module/1.0.1";
+            };
+            "node_modules/parse-entities" = {
+              key = "parse-entities/4.0.1";
+            };
+            "node_modules/parse-entities/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/parse-json" = {
+              key = "parse-json/5.2.0";
+            };
+            "node_modules/parse5" = {
+              key = "parse5/7.1.2";
+            };
             "node_modules/path-exists" = {
               dev = true;
               key = "path-exists/4.0.0";
@@ -8981,41 +15022,66 @@
               dev = true;
               key = "path-key/3.1.1";
             };
-            "node_modules/path-parse" = { key = "path-parse/1.0.7"; };
-            "node_modules/path-type" = { key = "path-type/4.0.0"; };
-            "node_modules/picocolors" = { key = "picocolors/1.0.0"; };
+            "node_modules/path-parse" = {
+              key = "path-parse/1.0.7";
+            };
+            "node_modules/path-type" = {
+              key = "path-type/4.0.0";
+            };
+            "node_modules/periscopic" = {
+              key = "periscopic/3.1.0";
+            };
+            "node_modules/picocolors" = {
+              key = "picocolors/1.0.0";
+            };
             "node_modules/picomatch" = {
               dev = true;
               key = "picomatch/2.3.1";
             };
-            "node_modules/postcss" = { key = "postcss/8.4.14"; };
+            "node_modules/postcss" = {
+              key = "postcss/8.4.31";
+            };
             "node_modules/prelude-ls" = {
               dev = true;
               key = "prelude-ls/1.2.1";
             };
-            "node_modules/prop-types" = { key = "prop-types/15.8.1"; };
+            "node_modules/prop-types" = {
+              key = "prop-types/15.8.1";
+            };
             "node_modules/property-information" = {
               key = "property-information/6.2.0";
             };
             "node_modules/punycode" = {
-              dev = true;
               key = "punycode/2.1.1";
             };
             "node_modules/queue-microtask" = {
               dev = true;
               key = "queue-microtask/1.2.3";
             };
-            "node_modules/react" = { key = "react/18.2.0"; };
-            "node_modules/react-dom" = { key = "react-dom/18.2.0"; };
+            "node_modules/randombytes" = {
+              key = "randombytes/2.1.0";
+            };
+            "node_modules/react" = {
+              key = "react/18.2.0";
+            };
+            "node_modules/react-dom" = {
+              key = "react-dom/18.2.0";
+            };
             "node_modules/react-highlight" = {
               key = "react-highlight/0.15.0";
             };
             "node_modules/react-highlight/node_modules/highlight.js" = {
               key = "highlight.js/10.7.3";
             };
-            "node_modules/react-is" = { key = "react-is/16.13.1"; };
-            "node_modules/react-mark.js" = { key = "react-mark.js/9.0.7"; };
-            "node_modules/react-markdown" = { key = "react-markdown/9.0.0"; };
+            "node_modules/react-is" = {
+              key = "react-is/16.13.1";
+            };
+            "node_modules/react-mark.js" = {
+              key = "react-mark.js/9.0.7";
+            };
+            "node_modules/react-markdown" = {
+              key = "react-markdown/9.0.0";
+            };
             "node_modules/react-minisearch" = {
               key = "react-minisearch/6.0.4";
             };
@@ -9030,13 +15096,66 @@
               dev = true;
               key = "regexp.prototype.flags/1.5.1";
             };
+            "node_modules/rehype" = {
+              key = "rehype/13.0.1";
+            };
+            "node_modules/rehype-autolink-headings" = {
+              key = "rehype-autolink-headings/7.1.0";
+            };
             "node_modules/rehype-highlight" = {
               key = "rehype-highlight/7.0.0";
             };
-            "node_modules/remark-parse" = { key = "remark-parse/11.0.0"; };
-            "node_modules/remark-rehype" = { key = "remark-rehype/11.0.0"; };
-            "node_modules/resolve" = { key = "resolve/1.22.6"; };
-            "node_modules/resolve-from" = { key = "resolve-from/4.0.0"; };
+            "node_modules/rehype-parse" = {
+              key = "rehype-parse/9.0.0";
+            };
+            "node_modules/rehype-slug" = {
+              key = "rehype-slug/6.0.0";
+            };
+            "node_modules/rehype-slug/node_modules/github-slugger" = {
+              key = "github-slugger/2.0.0";
+            };
+            "node_modules/rehype-stringify" = {
+              key = "rehype-stringify/10.0.0";
+            };
+            "node_modules/remark-frontmatter" = {
+              key = "remark-frontmatter/5.0.0";
+            };
+            "node_modules/remark-heading-id" = {
+              key = "remark-heading-id/1.0.1";
+            };
+            "node_modules/remark-heading-id/node_modules/unist-util-is" = {
+              key = "unist-util-is/3.0.0";
+            };
+            "node_modules/remark-heading-id/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/1.4.1";
+            };
+            "node_modules/remark-heading-id/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/2.1.2";
+            };
+            "node_modules/remark-mdx" = {
+              key = "remark-mdx/2.3.0";
+            };
+            "node_modules/remark-parse" = {
+              key = "remark-parse/11.0.0";
+            };
+            "node_modules/remark-rehype" = {
+              key = "remark-rehype/11.0.0";
+            };
+            "node_modules/remark-stringify" = {
+              key = "remark-stringify/11.0.0";
+            };
+            "node_modules/remark-stringify/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/remark-stringify/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/resolve" = {
+              key = "resolve/1.22.6";
+            };
+            "node_modules/resolve-from" = {
+              key = "resolve-from/4.0.0";
+            };
             "node_modules/resolve-pkg-maps" = {
               dev = true;
               key = "resolve-pkg-maps/1.0.0";
@@ -9053,19 +15172,35 @@
               dev = true;
               key = "run-parallel/1.2.0";
             };
+            "node_modules/sade" = {
+              key = "sade/1.8.1";
+            };
             "node_modules/safe-array-concat" = {
               dev = true;
               key = "safe-array-concat/1.0.1";
+            };
+            "node_modules/safe-buffer" = {
+              key = "safe-buffer/5.2.1";
             };
             "node_modules/safe-regex-test" = {
               dev = true;
               key = "safe-regex-test/1.0.0";
             };
-            "node_modules/scheduler" = { key = "scheduler/0.23.0"; };
-            "node_modules/seedrandom" = { key = "seedrandom/3.0.5"; };
+            "node_modules/scheduler" = {
+              key = "scheduler/0.23.0";
+            };
+            "node_modules/schema-utils" = {
+              key = "schema-utils/3.3.0";
+            };
+            "node_modules/seedrandom" = {
+              key = "seedrandom/3.0.5";
+            };
             "node_modules/semver" = {
               dev = true;
               key = "semver/7.5.4";
+            };
+            "node_modules/serialize-javascript" = {
+              key = "serialize-javascript/6.0.1";
             };
             "node_modules/set-function-name" = {
               dev = true;
@@ -9087,12 +15222,24 @@
               dev = true;
               key = "slash/3.0.0";
             };
-            "node_modules/source-map" = { key = "source-map/0.5.7"; };
-            "node_modules/source-map-js" = { key = "source-map-js/1.0.2"; };
+            "node_modules/source-map" = {
+              key = "source-map/0.5.7";
+            };
+            "node_modules/source-map-js" = {
+              key = "source-map-js/1.0.2";
+            };
+            "node_modules/source-map-support" = {
+              key = "source-map-support/0.5.21";
+            };
+            "node_modules/source-map-support/node_modules/source-map" = {
+              key = "source-map/0.6.1";
+            };
             "node_modules/space-separated-tokens" = {
               key = "space-separated-tokens/2.0.2";
             };
-            "node_modules/streamsearch" = { key = "streamsearch/1.1.0"; };
+            "node_modules/streamsearch" = {
+              key = "streamsearch/1.1.0";
+            };
             "node_modules/string.prototype.matchall" = {
               dev = true;
               key = "string.prototype.matchall/4.0.8";
@@ -9109,6 +15256,9 @@
               dev = true;
               key = "string.prototype.trimstart/1.0.7";
             };
+            "node_modules/stringify-entities" = {
+              key = "stringify-entities/4.0.3";
+            };
             "node_modules/strip-ansi" = {
               dev = true;
               key = "strip-ansi/6.0.1";
@@ -9121,9 +15271,15 @@
               dev = true;
               key = "strip-json-comments/3.1.1";
             };
-            "node_modules/style-to-object" = { key = "style-to-object/0.4.2"; };
-            "node_modules/styled-jsx" = { key = "styled-jsx/5.1.1"; };
-            "node_modules/stylis" = { key = "stylis/4.2.0"; };
+            "node_modules/style-to-object" = {
+              key = "style-to-object/0.4.2";
+            };
+            "node_modules/styled-jsx" = {
+              key = "styled-jsx/5.1.1";
+            };
+            "node_modules/stylis" = {
+              key = "stylis/4.2.0";
+            };
             "node_modules/supports-color" = {
               dev = true;
               key = "supports-color/7.2.0";
@@ -9132,8 +15288,13 @@
               key = "supports-preserve-symlinks-flag/1.0.0";
             };
             "node_modules/tapable" = {
-              dev = true;
               key = "tapable/2.2.1";
+            };
+            "node_modules/terser" = {
+              key = "terser/5.25.0";
+            };
+            "node_modules/terser-webpack-plugin" = {
+              key = "terser-webpack-plugin/5.3.9";
             };
             "node_modules/text-table" = {
               dev = true;
@@ -9146,8 +15307,12 @@
               dev = true;
               key = "to-regex-range/5.0.1";
             };
-            "node_modules/trim-lines" = { key = "trim-lines/3.0.1"; };
-            "node_modules/trough" = { key = "trough/2.1.0"; };
+            "node_modules/trim-lines" = {
+              key = "trim-lines/3.0.1";
+            };
+            "node_modules/trough" = {
+              key = "trough/2.1.0";
+            };
             "node_modules/ts-api-utils" = {
               dev = true;
               key = "ts-api-utils/1.0.3";
@@ -9188,13 +15353,41 @@
               dev = true;
               key = "unbox-primitive/1.0.2";
             };
-            "node_modules/unified" = { key = "unified/11.0.3"; };
+            "node_modules/unified" = {
+              key = "unified/11.0.4";
+            };
             "node_modules/unist-util-find-after" = {
               key = "unist-util-find-after/5.0.0";
             };
-            "node_modules/unist-util-is" = { key = "unist-util-is/6.0.0"; };
+            "node_modules/unist-util-generated" = {
+              key = "unist-util-generated/2.0.1";
+            };
+            "node_modules/unist-util-is" = {
+              key = "unist-util-is/6.0.0";
+            };
             "node_modules/unist-util-position" = {
               key = "unist-util-position/5.0.0";
+            };
+            "node_modules/unist-util-position-from-estree" = {
+              key = "unist-util-position-from-estree/1.1.2";
+            };
+            "node_modules/unist-util-position-from-estree/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/unist-util-remove-position" = {
+              key = "unist-util-remove-position/4.0.2";
+            };
+            "node_modules/unist-util-remove-position/node_modules/@types/unist" = {
+              key = "@types/unist/2.0.10";
+            };
+            "node_modules/unist-util-remove-position/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
+            "node_modules/unist-util-remove-position/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/unist-util-remove-position/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
             };
             "node_modules/unist-util-stringify-position" = {
               key = "unist-util-stringify-position/4.0.0";
@@ -9205,14 +15398,48 @@
             "node_modules/unist-util-visit-parents" = {
               key = "unist-util-visit-parents/6.0.1";
             };
+            "node_modules/update-browserslist-db" = {
+              key = "update-browserslist-db/1.0.13";
+            };
             "node_modules/uri-js" = {
-              dev = true;
               key = "uri-js/4.4.1";
             };
-            "node_modules/usehooks-ts" = { key = "usehooks-ts/2.9.1"; };
-            "node_modules/vfile" = { key = "vfile/6.0.1"; };
-            "node_modules/vfile-message" = { key = "vfile-message/4.0.2"; };
-            "node_modules/watchpack" = { key = "watchpack/2.4.0"; };
+            "node_modules/usehooks-ts" = {
+              key = "usehooks-ts/2.9.1";
+            };
+            "node_modules/uvu" = {
+              key = "uvu/0.5.6";
+            };
+            "node_modules/vfile" = {
+              key = "vfile/6.0.1";
+            };
+            "node_modules/vfile-location" = {
+              key = "vfile-location/5.0.2";
+            };
+            "node_modules/vfile-matter" = {
+              key = "vfile-matter/3.0.1";
+            };
+            "node_modules/vfile-message" = {
+              key = "vfile-message/4.0.2";
+            };
+            "node_modules/watchpack" = {
+              key = "watchpack/2.4.0";
+            };
+            "node_modules/web-namespaces" = {
+              key = "web-namespaces/2.0.1";
+            };
+            "node_modules/webpack" = {
+              key = "webpack/5.89.0";
+            };
+            "node_modules/webpack-sources" = {
+              key = "webpack-sources/3.2.3";
+            };
+            "node_modules/webpack/node_modules/eslint-scope" = {
+              key = "eslint-scope/5.1.1";
+            };
+            "node_modules/webpack/node_modules/estraverse" = {
+              key = "estraverse/4.3.0";
+            };
             "node_modules/which" = {
               dev = true;
               key = "which/2.0.2";
@@ -9241,12 +15468,16 @@
               dev = true;
               key = "yallist/4.0.0";
             };
-            "node_modules/yaml" = { key = "yaml/1.10.2"; };
+            "node_modules/yaml" = {
+              key = "yaml/1.10.2";
+            };
             "node_modules/yocto-queue" = {
               dev = true;
               key = "yocto-queue/0.1.0";
             };
-            "node_modules/zod" = { key = "zod/3.21.4"; };
+            "node_modules/zwitch" = {
+              key = "zwitch/2.0.4";
+            };
           };
           version = "0.1.0";
         };
@@ -9273,8 +15504,12 @@
           ident = "notistack";
           ltype = "file";
           peerInfo = {
-            react = { descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0"; };
-            react-dom = { descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0";
+            };
+            react-dom = {
+              descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0";
+            };
           };
           version = "3.0.1";
         };
@@ -9284,8 +15519,7 @@
           fetchInfo = {
             narHash = "sha256-fy4mKEXjhbY13vj3gcgJUn+6sWqwAFywEe9ioQJAia4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz";
+            url = "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz";
           };
           ident = "object-assign";
           ltype = "file";
@@ -9298,8 +15532,7 @@
           fetchInfo = {
             narHash = "sha256-wu/RyTeITWU9Ra2bspc4D6tdV4jdFcHbXJgXNwFC+xg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.3.tgz";
+            url = "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.3.tgz";
           };
           ident = "object-inspect";
           ltype = "file";
@@ -9312,8 +15545,7 @@
           fetchInfo = {
             narHash = "sha256-+dy1F/wtvIQTjofLf3Di9Rn3vSDAWUPsn0YG2KMj0Is=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object-keys/-/object-keys-1.1.1.tgz";
+            url = "https://registry.npmjs.org/object-keys/-/object-keys-1.1.1.tgz";
           };
           ident = "object-keys";
           ltype = "file";
@@ -9348,8 +15580,7 @@
           fetchInfo = {
             narHash = "sha256-LRPf0GUtnnskbRHcm5RoTjwHW3WBHhusmHgapO1xJlY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.assign/-/object.assign-4.1.4.tgz";
+            url = "https://registry.npmjs.org/object.assign/-/object.assign-4.1.4.tgz";
           };
           ident = "object.assign";
           ltype = "file";
@@ -9378,8 +15609,7 @@
           fetchInfo = {
             narHash = "sha256-U4vEuu0EODNo4Wxqh3TdDfGXFtVvPtMuDu555fYuwAE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.entries/-/object.entries-1.1.6.tgz";
+            url = "https://registry.npmjs.org/object.entries/-/object.entries-1.1.6.tgz";
           };
           ident = "object.entries";
           ltype = "file";
@@ -9408,8 +15638,7 @@
           fetchInfo = {
             narHash = "sha256-qomWdBftnIM/0AVC78wy3ODaQSJPz0GAt6IRZoUDO00=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.fromentries/-/object.fromentries-2.0.6.tgz";
+            url = "https://registry.npmjs.org/object.fromentries/-/object.fromentries-2.0.6.tgz";
           };
           ident = "object.fromentries";
           ltype = "file";
@@ -9443,8 +15672,7 @@
           fetchInfo = {
             narHash = "sha256-UIwk3tUkCg66EU6wLov7v0woQsgz8KsFkItCPd0gKXM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.groupby/-/object.groupby-1.0.1.tgz";
+            url = "https://registry.npmjs.org/object.groupby/-/object.groupby-1.0.1.tgz";
           };
           ident = "object.groupby";
           ltype = "file";
@@ -9468,8 +15696,7 @@
           fetchInfo = {
             narHash = "sha256-AFJRnavAkYUjVW+1ZDvq0JeFuXCmSrABAm75TuVCZSU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.hasown/-/object.hasown-1.1.2.tgz";
+            url = "https://registry.npmjs.org/object.hasown/-/object.hasown-1.1.2.tgz";
           };
           ident = "object.hasown";
           ltype = "file";
@@ -9498,8 +15725,7 @@
           fetchInfo = {
             narHash = "sha256-dcKYzLvyFIzr4YpeMQGUmS5azmLAusP6dLPnl0uhzww=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/object.values/-/object.values-1.1.6.tgz";
+            url = "https://registry.npmjs.org/object.values/-/object.values-1.1.6.tgz";
           };
           ident = "object.values";
           ltype = "file";
@@ -9562,8 +15788,7 @@
           fetchInfo = {
             narHash = "sha256-KIkFMXhW+cbxs1mcsFmLoTB9x8M4ZWxwz+TB7Kgd2s4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/optionator/-/optionator-0.9.3.tgz";
+            url = "https://registry.npmjs.org/optionator/-/optionator-0.9.3.tgz";
           };
           ident = "optionator";
           ltype = "file";
@@ -9608,6 +15833,55 @@
           version = "5.0.0";
         };
       };
+      pagefind = {
+        "1.0.4" = {
+          binInfo = {
+            binPairs = {
+              pagefind = "lib/runner/bin.cjs";
+            };
+          };
+          depInfo = {
+            "@pagefind/darwin-arm64" = {
+              descriptor = "1.0.4";
+              optional = true;
+              pin = "1.0.4";
+              runtime = true;
+            };
+            "@pagefind/darwin-x64" = {
+              descriptor = "1.0.4";
+              optional = true;
+              pin = "1.0.4";
+              runtime = true;
+            };
+            "@pagefind/linux-arm64" = {
+              descriptor = "1.0.4";
+              optional = true;
+              pin = "1.0.4";
+              runtime = true;
+            };
+            "@pagefind/linux-x64" = {
+              descriptor = "1.0.4";
+              optional = true;
+              pin = "1.0.4";
+              runtime = true;
+            };
+            "@pagefind/windows-x64" = {
+              descriptor = "1.0.4";
+              optional = true;
+              pin = "1.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-qZKXfJAtERnzvC7ItpRDxzvmOocaJ1vkk524l+e47Bw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/pagefind/-/pagefind-1.0.4.tgz";
+          };
+          ident = "pagefind";
+          ltype = "file";
+          version = "1.0.4";
+        };
+      };
       parent-module = {
         "1.0.1" = {
           depInfo = {
@@ -9620,12 +15894,65 @@
           fetchInfo = {
             narHash = "sha256-di+kefBp4+PYz6izBuMghrrb7tOQQfrW/7tMfibKBI8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz";
+            url = "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz";
           };
           ident = "parent-module";
           ltype = "file";
           version = "1.0.1";
+        };
+      };
+      parse-entities = {
+        "4.0.1" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            character-entities = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            character-entities-legacy = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            character-reference-invalid = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            decode-named-character-reference = {
+              descriptor = "^1.0.0";
+              pin = "1.0.2";
+              runtime = true;
+            };
+            is-alphanumerical = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            is-decimal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            is-hexadecimal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-cPoZKIybqHGR7UorILRpWLytQsbIO0X2rIJ21b9F9K0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/parse-entities/-/parse-entities-4.0.1.tgz";
+          };
+          ident = "parse-entities";
+          ltype = "file";
+          version = "4.0.1";
         };
       };
       parse-json = {
@@ -9655,12 +15982,30 @@
           fetchInfo = {
             narHash = "sha256-hxVxyGV3iUu2t/nGE+bdgp9C38FU/lZU2iPbtazHLy4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/parse-json/-/parse-json-5.2.0.tgz";
+            url = "https://registry.npmjs.org/parse-json/-/parse-json-5.2.0.tgz";
           };
           ident = "parse-json";
           ltype = "file";
           version = "5.2.0";
+        };
+      };
+      parse5 = {
+        "7.1.2" = {
+          depInfo = {
+            entities = {
+              descriptor = "^4.4.0";
+              pin = "4.5.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-QuHdVii1mE/QnT45OlvPRvAnz/Uoys6yRQ/Em6+WwC0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/parse5/-/parse5-7.1.2.tgz";
+          };
+          ident = "parse5";
+          ltype = "file";
+          version = "7.1.2";
         };
       };
       path-exists = {
@@ -9668,8 +16013,7 @@
           fetchInfo = {
             narHash = "sha256-QmsShSY8p68eX9bNeinv/8VO0/+P2c+Rv82mtPqtpjE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz";
+            url = "https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz";
           };
           ident = "path-exists";
           ltype = "file";
@@ -9682,8 +16026,7 @@
           fetchInfo = {
             narHash = "sha256-+DjPlEsONpIJ3kBveAhTRCV2aRZt3KN8RNLsgoC+jXk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz";
+            url = "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz";
           };
           ident = "path-is-absolute";
           ltype = "file";
@@ -9709,8 +16052,7 @@
           fetchInfo = {
             narHash = "sha256-IO0Y8yjZA6xJ63eLG/nFzWTGjI5tREyNKttz4DXoKYo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz";
+            url = "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz";
           };
           ident = "path-parse";
           ltype = "file";
@@ -9731,13 +16073,41 @@
           version = "4.0.0";
         };
       };
+      periscopic = {
+        "3.1.0" = {
+          depInfo = {
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            estree-walker = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            is-reference = {
+              descriptor = "^3.0.0";
+              pin = "3.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-/2E+WvOcFyzAtiEpZIR/eQ/vCIgjkjVoAbjFPsWRkXQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/periscopic/-/periscopic-3.1.0.tgz";
+          };
+          ident = "periscopic";
+          ltype = "file";
+          version = "3.1.0";
+        };
+      };
       picocolors = {
         "1.0.0" = {
           fetchInfo = {
             narHash = "sha256-zo0dDKQASSCpixflPOwG61jzA9IqjZMBN8dwojRu+l8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz";
+            url = "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz";
           };
           ident = "picocolors";
           ltype = "file";
@@ -9759,11 +16129,11 @@
         };
       };
       postcss = {
-        "8.4.14" = {
+        "8.4.31" = {
           depInfo = {
             nanoid = {
-              descriptor = "^3.3.4";
-              pin = "3.3.4";
+              descriptor = "^3.3.6";
+              pin = "3.3.7";
               runtime = true;
             };
             picocolors = {
@@ -9778,13 +16148,13 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-Bf4PY1yCabPcvyfgY8lSN6uqK7E27LwlsJWDlpcbWGM=";
+            narHash = "sha256-KGBmtVUlkuhNqRif4SBaADibVPmQLJuzKXOkqEQepdc=";
             type = "tarball";
-            url = "https://registry.npmjs.org/postcss/-/postcss-8.4.14.tgz";
+            url = "https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz";
           };
           ident = "postcss";
           ltype = "file";
-          version = "8.4.14";
+          version = "8.4.31";
         };
       };
       prelude-ls = {
@@ -9792,8 +16162,7 @@
           fetchInfo = {
             narHash = "sha256-jC9FXbfy9euuL95bO+VZT03+rR3CqpwVKxBmj5hSYls=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz";
+            url = "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz";
           };
           ident = "prelude-ls";
           ltype = "file";
@@ -9823,8 +16192,7 @@
           fetchInfo = {
             narHash = "sha256-LfGJAVpvlP48OlCxprPHi3B88Wczi+luuJ9wEQmtqWs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz";
+            url = "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz";
           };
           ident = "prop-types";
           ltype = "file";
@@ -9836,8 +16204,7 @@
           fetchInfo = {
             narHash = "sha256-207YWDYPS5Se83hPNqm5Qf8lxKxvOxtDl05Qo0TCf0M=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/property-information/-/property-information-6.2.0.tgz";
+            url = "https://registry.npmjs.org/property-information/-/property-information-6.2.0.tgz";
           };
           ident = "property-information";
           ltype = "file";
@@ -9863,13 +16230,31 @@
           fetchInfo = {
             narHash = "sha256-toA5eXCuEXuopI11sr2erVOgFPTNlS3krZO/l7Ob2CQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz";
+            url = "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz";
           };
           ident = "queue-microtask";
           ltype = "file";
           treeInfo = { };
           version = "1.2.3";
+        };
+      };
+      randombytes = {
+        "2.1.0" = {
+          depInfo = {
+            safe-buffer = {
+              descriptor = "^5.1.0";
+              pin = "5.2.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Abr0ohEDpcB9XXrFyNIPNqFVeANanb4rkCQR5B2MXjY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/randombytes/-/randombytes-2.1.0.tgz";
+          };
+          ident = "randombytes";
+          ltype = "file";
+          version = "2.1.0";
         };
       };
       react = {
@@ -9912,7 +16297,11 @@
           };
           ident = "react-dom";
           ltype = "file";
-          peerInfo = { react = { descriptor = "^18.2.0"; }; };
+          peerInfo = {
+            react = {
+              descriptor = "^18.2.0";
+            };
+          };
           version = "18.2.0";
         };
       };
@@ -9928,8 +16317,7 @@
           fetchInfo = {
             narHash = "sha256-3JZAT5rXAcs31Y8XkPDYUnH1FKFzyhWM8X69ULQFCV8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/react-highlight/-/react-highlight-0.15.0.tgz";
+            url = "https://registry.npmjs.org/react-highlight/-/react-highlight-0.15.0.tgz";
           };
           ident = "react-highlight";
           ltype = "file";
@@ -9965,14 +16353,17 @@
           fetchInfo = {
             narHash = "sha256-RRP/n4t+PZAkZwIU714NDlvk1qO4oysrGUrabWig2N4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/react-mark.js/-/react-mark.js-9.0.7.tgz";
+            url = "https://registry.npmjs.org/react-mark.js/-/react-mark.js-9.0.7.tgz";
           };
           ident = "react-mark.js";
           ltype = "file";
           peerInfo = {
-            "mark.js" = { descriptor = "~8.11.1"; };
-            react = { descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0"; };
+            "mark.js" = {
+              descriptor = "~8.11.1";
+            };
+            react = {
+              descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0";
+            };
           };
           treeInfo = { };
           version = "9.0.7";
@@ -10023,7 +16414,7 @@
             };
             unified = {
               descriptor = "^11.0.0";
-              pin = "11.0.3";
+              pin = "11.0.4";
               runtime = true;
             };
             unist-util-visit = {
@@ -10040,14 +16431,17 @@
           fetchInfo = {
             narHash = "sha256-0FtAdiHaLZC0K/M3Owg3VAMMXA/pEZRJlD4aXkg4vyA=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/react-markdown/-/react-markdown-9.0.0.tgz";
+            url = "https://registry.npmjs.org/react-markdown/-/react-markdown-9.0.0.tgz";
           };
           ident = "react-markdown";
           ltype = "file";
           peerInfo = {
-            "@types/react" = { descriptor = ">=18"; };
-            react = { descriptor = ">=18"; };
+            "@types/react" = {
+              descriptor = ">=18";
+            };
+            react = {
+              descriptor = ">=18";
+            };
           };
           version = "9.0.0";
         };
@@ -10057,14 +16451,17 @@
           fetchInfo = {
             narHash = "sha256-9P2/CjsF1zlJGDwFoI8ldF8E5N8uGcSUXdQ2eHtbxGM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/react-minisearch/-/react-minisearch-6.0.4.tgz";
+            url = "https://registry.npmjs.org/react-minisearch/-/react-minisearch-6.0.4.tgz";
           };
           ident = "react-minisearch";
           ltype = "file";
           peerInfo = {
-            minisearch = { descriptor = "^6.0.0"; };
-            react = { descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0"; };
+            minisearch = {
+              descriptor = "^6.0.0";
+            };
+            react = {
+              descriptor = "^16.8.0 || ^17.0.0 || ^18.0.0";
+            };
           };
           treeInfo = { };
           version = "6.0.4";
@@ -10097,14 +16494,17 @@
           fetchInfo = {
             narHash = "sha256-rxK890I79kcB9FwueWOWluR5hIg7XFq0nvxWwRA30e0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz";
+            url = "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz";
           };
           ident = "react-transition-group";
           ltype = "file";
           peerInfo = {
-            react = { descriptor = ">=16.6.0"; };
-            react-dom = { descriptor = ">=16.6.0"; };
+            react = {
+              descriptor = ">=16.6.0";
+            };
+            react-dom = {
+              descriptor = ">=16.6.0";
+            };
           };
           version = "4.4.5";
         };
@@ -10146,8 +16546,7 @@
           fetchInfo = {
             narHash = "sha256-jVLqqZ5uIUa7Cp3bQ1nED+kD+peLsp0f5FslefNzAXo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/reflect.getprototypeof/-/reflect.getprototypeof-1.0.4.tgz";
+            url = "https://registry.npmjs.org/reflect.getprototypeof/-/reflect.getprototypeof-1.0.4.tgz";
           };
           ident = "reflect.getprototypeof";
           ltype = "file";
@@ -10159,8 +16558,7 @@
           fetchInfo = {
             narHash = "sha256-dQQ+7V/uRRNdQZb5XniSHWCfY5VIwOrYFC1iUFBjEh4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.14.0.tgz";
+            url = "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.14.0.tgz";
           };
           ident = "regenerator-runtime";
           ltype = "file";
@@ -10190,12 +16588,89 @@
           fetchInfo = {
             narHash = "sha256-PjpuKpmNVEkKrqkM1ihQH5rDd1zcjqL5P0ZMVHh6KDk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/regexp.prototype.flags/-/regexp.prototype.flags-1.5.1.tgz";
+            url = "https://registry.npmjs.org/regexp.prototype.flags/-/regexp.prototype.flags-1.5.1.tgz";
           };
           ident = "regexp.prototype.flags";
           ltype = "file";
           version = "1.5.1";
+        };
+      };
+      rehype = {
+        "13.0.1" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            rehype-parse = {
+              descriptor = "^9.0.0";
+              pin = "9.0.0";
+              runtime = true;
+            };
+            rehype-stringify = {
+              descriptor = "^10.0.0";
+              pin = "10.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-5kLryCSv/q5lV/ZJaGRjGMnbBGSzOBxAG31kkYbVU9A=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype/-/rehype-13.0.1.tgz";
+          };
+          ident = "rehype";
+          ltype = "file";
+          version = "13.0.1";
+        };
+      };
+      rehype-autolink-headings = {
+        "7.1.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@ungap/structured-clone" = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            hast-util-heading-rank = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-is-element = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Hk9DMXdBLbD6tyQ4iXKFs3gLIwgYIXge5Gxyppcjt48=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype-autolink-headings/-/rehype-autolink-headings-7.1.0.tgz";
+          };
+          ident = "rehype-autolink-headings";
+          ltype = "file";
+          version = "7.1.0";
         };
       };
       rehype-highlight = {
@@ -10230,15 +16705,242 @@
           fetchInfo = {
             narHash = "sha256-m8Qpdn0DOdBbaH4++KskfEFekekqrPtGJtn8a7QCRkE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/rehype-highlight/-/rehype-highlight-7.0.0.tgz";
+            url = "https://registry.npmjs.org/rehype-highlight/-/rehype-highlight-7.0.0.tgz";
           };
           ident = "rehype-highlight";
           ltype = "file";
           version = "7.0.0";
         };
       };
+      rehype-parse = {
+        "9.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-from-html = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-XKwCrdAOmOTfSwInY7el7bCSYkh7gDWHj+FYiVnIGA0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype-parse/-/rehype-parse-9.0.0.tgz";
+          };
+          ident = "rehype-parse";
+          ltype = "file";
+          version = "9.0.0";
+        };
+      };
+      rehype-slug = {
+        "6.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            github-slugger = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            hast-util-heading-rank = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-to-string = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Wbl/TjtSHJWieP5KljUl4W1qdU5Gf6UK8blbiRB3XtQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype-slug/-/rehype-slug-6.0.0.tgz";
+          };
+          ident = "rehype-slug";
+          ltype = "file";
+          version = "6.0.0";
+        };
+      };
+      rehype-stringify = {
+        "10.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-to-html = {
+              descriptor = "^9.0.0";
+              pin = "9.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-KbbUKz5Bxn64l9+rS+mAO5LUBJpffqgdGtLCsgo9N68=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype-stringify/-/rehype-stringify-10.0.0.tgz";
+          };
+          ident = "rehype-stringify";
+          ltype = "file";
+          version = "10.0.0";
+        };
+      };
+      remark-frontmatter = {
+        "5.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-util-frontmatter = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-extension-frontmatter = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-r5ss55Eq6VXOibN3JrVMAR2w/cBSedbW0QrKJL2keTk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-frontmatter/-/remark-frontmatter-5.0.0.tgz";
+          };
+          ident = "remark-frontmatter";
+          ltype = "file";
+          version = "5.0.0";
+        };
+      };
+      remark-heading-id = {
+        "1.0.1" = {
+          depInfo = {
+            lodash = {
+              descriptor = "^4.17.21";
+              pin = "4.17.21";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^1.4.0";
+              pin = "1.4.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-oaKVDfxnvgpN4cI1lYZwMQfuVOYoQoWz5McPZ50BwFc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-heading-id/-/remark-heading-id-1.0.1.tgz";
+          };
+          ident = "remark-heading-id";
+          ltype = "file";
+          version = "1.0.1";
+        };
+      };
+      remark-mdx = {
+        "2.3.0" = {
+          depInfo = {
+            mdast-util-mdx = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-extension-mdxjs = {
+              descriptor = "^1.0.0";
+              pin = "1.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-H8OaaoulzBGlFs/lkvH4e+/8izI0hGjhIgJJTS2dV2Q=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-mdx/-/remark-mdx-2.3.0.tgz";
+          };
+          ident = "remark-mdx";
+          ltype = "file";
+          version = "2.3.0";
+        };
+        "3.0.0" = {
+          depInfo = {
+            mdast-util-mdx = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-extension-mdxjs = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-5Chj7IBUfD52NvbMekJ51MjxJNKhMBxrGnV3JMEd2Mk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-mdx/-/remark-mdx-3.0.0.tgz";
+          };
+          ident = "remark-mdx";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
       remark-parse = {
+        "10.0.2" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^1.0.0";
+              pin = "1.3.1";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^10.0.0";
+              pin = "10.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-SCqXbq6Es7amOBhZJauFJn+xPMX3t9Y+NXoDhNXBs3A=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-parse/-/remark-parse-10.0.2.tgz";
+          };
+          ident = "remark-parse";
+          ltype = "file";
+          version = "10.0.2";
+        };
         "11.0.0" = {
           depInfo = {
             "@types/mdast" = {
@@ -10258,15 +16960,14 @@
             };
             unified = {
               descriptor = "^11.0.0";
-              pin = "11.0.3";
+              pin = "11.0.4";
               runtime = true;
             };
           };
           fetchInfo = {
             narHash = "sha256-/anhgeKIp/ZZrcIe3F+HlqBdbMA0Zy9V6SqNuJ+qmAk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/remark-parse/-/remark-parse-11.0.0.tgz";
+            url = "https://registry.npmjs.org/remark-parse/-/remark-parse-11.0.0.tgz";
           };
           ident = "remark-parse";
           ltype = "file";
@@ -10274,6 +16975,38 @@
         };
       };
       remark-rehype = {
+        "10.1.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^2.0.0";
+              pin = "2.3.8";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.15";
+              runtime = true;
+            };
+            mdast-util-to-hast = {
+              descriptor = "^12.1.0";
+              pin = "12.3.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^10.0.0";
+              pin = "10.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-f7DjRM7yBCifPnYHvZyUQYhExTLP/jguDRa1aV8muwM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-rehype/-/remark-rehype-10.1.0.tgz";
+          };
+          ident = "remark-rehype";
+          ltype = "file";
+          version = "10.1.0";
+        };
         "11.0.0" = {
           depInfo = {
             "@types/hast" = {
@@ -10293,7 +17026,7 @@
             };
             unified = {
               descriptor = "^11.0.0";
-              pin = "11.0.3";
+              pin = "11.0.4";
               runtime = true;
             };
             vfile = {
@@ -10305,17 +17038,49 @@
           fetchInfo = {
             narHash = "sha256-qI+w1SafDM278xiXt/5+YaD1txmCeoSfnjcd5aRJbO4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/remark-rehype/-/remark-rehype-11.0.0.tgz";
+            url = "https://registry.npmjs.org/remark-rehype/-/remark-rehype-11.0.0.tgz";
           };
           ident = "remark-rehype";
           ltype = "file";
           version = "11.0.0";
         };
       };
+      remark-stringify = {
+        "11.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-nHl5Q29S48/PUnXt8mTiRnSWZt2SRK6AyxAf4bEH4pU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-stringify/-/remark-stringify-11.0.0.tgz";
+          };
+          ident = "remark-stringify";
+          ltype = "file";
+          version = "11.0.0";
+        };
+      };
       resolve = {
         "1.22.6" = {
-          binInfo = { binPairs = { resolve = "bin/resolve"; }; };
+          binInfo = {
+            binPairs = {
+              resolve = "bin/resolve";
+            };
+          };
           depInfo = {
             is-core-module = {
               descriptor = "^2.13.0";
@@ -10343,7 +17108,11 @@
           version = "1.22.6";
         };
         "2.0.0-next.4" = {
-          binInfo = { binPairs = { resolve = "bin/resolve"; }; };
+          binInfo = {
+            binPairs = {
+              resolve = "bin/resolve";
+            };
+          };
           depInfo = {
             is-core-module = {
               descriptor = "^2.9.0";
@@ -10364,8 +17133,7 @@
           fetchInfo = {
             narHash = "sha256-Ljjrw8eKPK1aGtqcxFQfwccOIRJTP68XIgR38vkPunc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/resolve/-/resolve-2.0.0-next.4.tgz";
+            url = "https://registry.npmjs.org/resolve/-/resolve-2.0.0-next.4.tgz";
           };
           ident = "resolve";
           ltype = "file";
@@ -10377,8 +17145,7 @@
           fetchInfo = {
             narHash = "sha256-nD9AJZmCaf+wEw0JYsv2/4VWsD1nFdSK+pwFWFiRf5M=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz";
+            url = "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz";
           };
           ident = "resolve-from";
           ltype = "file";
@@ -10391,8 +17158,7 @@
           fetchInfo = {
             narHash = "sha256-WhDCNuft7AEjoatAOEQOHp17eYsaft0BFCkgDRPRwNQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz";
+            url = "https://registry.npmjs.org/resolve-pkg-maps/-/resolve-pkg-maps-1.0.0.tgz";
           };
           ident = "resolve-pkg-maps";
           ltype = "file";
@@ -10415,7 +17181,11 @@
       };
       rimraf = {
         "3.0.2" = {
-          binInfo = { binPairs = { rimraf = "bin.js"; }; };
+          binInfo = {
+            binPairs = {
+              rimraf = "bin.js";
+            };
+          };
           depInfo = {
             glob = {
               descriptor = "^7.1.3";
@@ -10445,12 +17215,30 @@
           fetchInfo = {
             narHash = "sha256-u5XLCbdOHvL+vVMeQBK5Ha1Y/ZkdCSQM9X8KZL4EvsM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz";
+            url = "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz";
           };
           ident = "run-parallel";
           ltype = "file";
           version = "1.2.0";
+        };
+      };
+      sade = {
+        "1.8.1" = {
+          depInfo = {
+            mri = {
+              descriptor = "^1.1.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Yboqi3els68hdZTMx0T14DdOzu31DQ0mRmJaYZMwWM4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/sade/-/sade-1.8.1.tgz";
+          };
+          ident = "sade";
+          ltype = "file";
+          version = "1.8.1";
         };
       };
       safe-array-concat = {
@@ -10480,12 +17268,24 @@
           fetchInfo = {
             narHash = "sha256-MrhFrFVATd6u8sKcz3lUX8Apiu4vh7yK9HBjEuelRno=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/safe-array-concat/-/safe-array-concat-1.0.1.tgz";
+            url = "https://registry.npmjs.org/safe-array-concat/-/safe-array-concat-1.0.1.tgz";
           };
           ident = "safe-array-concat";
           ltype = "file";
           version = "1.0.1";
+        };
+      };
+      safe-buffer = {
+        "5.2.1" = {
+          fetchInfo = {
+            narHash = "sha256-wXBrp88QpZPUzawZ33OaWsjCtWTVMsflFJRBg2/U4y8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz";
+          };
+          ident = "safe-buffer";
+          ltype = "file";
+          treeInfo = { };
+          version = "5.2.1";
         };
       };
       safe-regex-test = {
@@ -10510,8 +17310,7 @@
           fetchInfo = {
             narHash = "sha256-t4WUzmIn1J/dQmvCgstUBe2IhPGsjPJ6puiyNHFDwE0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/safe-regex-test/-/safe-regex-test-1.0.0.tgz";
+            url = "https://registry.npmjs.org/safe-regex-test/-/safe-regex-test-1.0.0.tgz";
           };
           ident = "safe-regex-test";
           ltype = "file";
@@ -10537,13 +17336,41 @@
           version = "0.23.0";
         };
       };
+      schema-utils = {
+        "3.3.0" = {
+          depInfo = {
+            "@types/json-schema" = {
+              descriptor = "^7.0.8";
+              pin = "7.0.13";
+              runtime = true;
+            };
+            ajv = {
+              descriptor = "^6.12.5";
+              pin = "6.12.6";
+              runtime = true;
+            };
+            ajv-keywords = {
+              descriptor = "^3.5.2";
+              pin = "3.5.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-JVh1OnZ13s5htyIRx3qohuKCwIZV6cBFe+/JYO3O+eA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/schema-utils/-/schema-utils-3.3.0.tgz";
+          };
+          ident = "schema-utils";
+          ltype = "file";
+          version = "3.3.0";
+        };
+      };
       seedrandom = {
         "3.0.5" = {
           fetchInfo = {
             narHash = "sha256-Wjed4yuZUIrWsW64fpMn+8mUqCQu9jC7zi4DJfpTQnw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/seedrandom/-/seedrandom-3.0.5.tgz";
+            url = "https://registry.npmjs.org/seedrandom/-/seedrandom-3.0.5.tgz";
           };
           ident = "seedrandom";
           ltype = "file";
@@ -10553,7 +17380,11 @@
       };
       semver = {
         "6.3.0" = {
-          binInfo = { binPairs = { semver = "bin/semver.js"; }; };
+          binInfo = {
+            binPairs = {
+              semver = "bin/semver.js";
+            };
+          };
           fetchInfo = {
             narHash = "sha256-43shFLKGOi7rl5FbrvggFEm+CYJJASgy3GvSXCJf00I=";
             type = "tarball";
@@ -10565,7 +17396,11 @@
           version = "6.3.0";
         };
         "6.3.1" = {
-          binInfo = { binPairs = { semver = "bin/semver.js"; }; };
+          binInfo = {
+            binPairs = {
+              semver = "bin/semver.js";
+            };
+          };
           fetchInfo = {
             narHash = "sha256-MQRm3hmLzbMAUnG+ciAtmx+grQjBQwAMQTdD3jGqUKU=";
             type = "tarball";
@@ -10577,7 +17412,11 @@
           version = "6.3.1";
         };
         "7.5.4" = {
-          binInfo = { binPairs = { semver = "bin/semver.js"; }; };
+          binInfo = {
+            binPairs = {
+              semver = "bin/semver.js";
+            };
+          };
           depInfo = {
             lru-cache = {
               descriptor = "^6.0.0";
@@ -10593,6 +17432,25 @@
           ident = "semver";
           ltype = "file";
           version = "7.5.4";
+        };
+      };
+      serialize-javascript = {
+        "6.0.1" = {
+          depInfo = {
+            randombytes = {
+              descriptor = "^2.1.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-T75c8jMt3EfaoAa7P90WxbljRSzs3s1Kj8kzBdBoPew=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/serialize-javascript/-/serialize-javascript-6.0.1.tgz";
+          };
+          ident = "serialize-javascript";
+          ltype = "file";
+          version = "6.0.1";
         };
       };
       set-function-name = {
@@ -10617,8 +17475,7 @@
           fetchInfo = {
             narHash = "sha256-j9n29yrXWaHozxKt9IGBdFVe84yfxm3qjb4a4031gEk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/set-function-name/-/set-function-name-2.0.1.tgz";
+            url = "https://registry.npmjs.org/set-function-name/-/set-function-name-2.0.1.tgz";
           };
           ident = "set-function-name";
           ltype = "file";
@@ -10637,8 +17494,7 @@
           fetchInfo = {
             narHash = "sha256-hQ8ZmBxEUTBeAoFsrXtJSMXkxZPNJhOEvKatEpvbpaE=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz";
+            url = "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz";
           };
           ident = "shebang-command";
           ltype = "file";
@@ -10650,8 +17506,7 @@
           fetchInfo = {
             narHash = "sha256-20gU7k4uzL2AgOQ9iw2L1KH8sC6GaQCZtjyUBY5ayQ0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz";
+            url = "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz";
           };
           ident = "shebang-regex";
           ltype = "file";
@@ -10681,8 +17536,7 @@
           fetchInfo = {
             narHash = "sha256-wbIXp1Q7Ui1ZcUXO3B1Oa24PZlezJx6cYM/33GtpVu8=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz";
+            url = "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz";
           };
           ident = "side-channel";
           ltype = "file";
@@ -10707,13 +17561,34 @@
           fetchInfo = {
             narHash = "sha256-TfLkcoel84umresRhkiSAJkWIZ9bCfn9ZA9cZk8qGRU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz";
+            url = "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz";
           };
           ident = "source-map";
           ltype = "file";
           treeInfo = { };
           version = "0.5.7";
+        };
+        "0.6.1" = {
+          fetchInfo = {
+            narHash = "sha256-kOXyuKVrD3Fzez65GwPnNC615Ju17D00wsIgKcCWTJk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz";
+          };
+          ident = "source-map";
+          ltype = "file";
+          treeInfo = { };
+          version = "0.6.1";
+        };
+        "0.7.4" = {
+          fetchInfo = {
+            narHash = "sha256-+R9N+tdaTWgvTQ2lV6OQGeEb7FQlRTOmObCpjuH8Dtg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/source-map/-/source-map-0.7.4.tgz";
+          };
+          ident = "source-map";
+          ltype = "file";
+          treeInfo = { };
+          version = "0.7.4";
         };
       };
       source-map-js = {
@@ -10721,8 +17596,7 @@
           fetchInfo = {
             narHash = "sha256-gT4AthiqS/fwwos9E1ub0GC3sX14QIkJxiByo5/2IGc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz";
+            url = "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz";
           };
           ident = "source-map-js";
           ltype = "file";
@@ -10730,13 +17604,36 @@
           version = "1.0.2";
         };
       };
+      source-map-support = {
+        "0.5.21" = {
+          depInfo = {
+            buffer-from = {
+              descriptor = "^1.0.0";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            source-map = {
+              descriptor = "^0.6.0";
+              pin = "0.6.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-jq9veAxl7soqheG69ft6ac42qP61CrHG9kGOfaPGzmg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz";
+          };
+          ident = "source-map-support";
+          ltype = "file";
+          version = "0.5.21";
+        };
+      };
       space-separated-tokens = {
         "2.0.2" = {
           fetchInfo = {
             narHash = "sha256-uV5C4+PNg790ZOnQ67vLmBy0PW49fnHm6KOD7OryeCk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz";
+            url = "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz";
           };
           ident = "space-separated-tokens";
           ltype = "file";
@@ -10749,8 +17646,7 @@
           fetchInfo = {
             narHash = "sha256-79vktBOYiUIv4NTm8wdH6icmGjNB4Znf9d6zJLXFuHs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz";
+            url = "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz";
           };
           ident = "streamsearch";
           ltype = "file";
@@ -10805,8 +17701,7 @@
           fetchInfo = {
             narHash = "sha256-VweNCSKCGx++CMO9cztKGoIiQs6MCxYYcvrW9qdJEy4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/string.prototype.matchall/-/string.prototype.matchall-4.0.8.tgz";
+            url = "https://registry.npmjs.org/string.prototype.matchall/-/string.prototype.matchall-4.0.8.tgz";
           };
           ident = "string.prototype.matchall";
           ltype = "file";
@@ -10835,8 +17730,7 @@
           fetchInfo = {
             narHash = "sha256-jAl71pvCXaEOWOrgwJa9nYn6ryIkbW2CZuWfthw+y3I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/string.prototype.trim/-/string.prototype.trim-1.2.8.tgz";
+            url = "https://registry.npmjs.org/string.prototype.trim/-/string.prototype.trim-1.2.8.tgz";
           };
           ident = "string.prototype.trim";
           ltype = "file";
@@ -10865,8 +17759,7 @@
           fetchInfo = {
             narHash = "sha256-K6r5MSoMFDRjevtU7YNwooL+VfHzAMQVgf8pocgfX+Y=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-1.0.7.tgz";
+            url = "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-1.0.7.tgz";
           };
           ident = "string.prototype.trimend";
           ltype = "file";
@@ -10895,12 +17788,35 @@
           fetchInfo = {
             narHash = "sha256-iU2ue6P/DEb6/lQSOp2GXdTVScZecsvBfcm9lcuPpf0=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/string.prototype.trimstart/-/string.prototype.trimstart-1.0.7.tgz";
+            url = "https://registry.npmjs.org/string.prototype.trimstart/-/string.prototype.trimstart-1.0.7.tgz";
           };
           ident = "string.prototype.trimstart";
           ltype = "file";
           version = "1.0.7";
+        };
+      };
+      stringify-entities = {
+        "4.0.3" = {
+          depInfo = {
+            character-entities-html4 = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            character-entities-legacy = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-wJ92y4BCV8baffTf3nDNztZyDbURriflLJYYqq+ioXY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/stringify-entities/-/stringify-entities-4.0.3.tgz";
+          };
+          ident = "stringify-entities";
+          ltype = "file";
+          version = "4.0.3";
         };
       };
       strip-ansi = {
@@ -10915,8 +17831,7 @@
           fetchInfo = {
             narHash = "sha256-mMRzEL6fWJXYmQ2ZhRAhnYMcjdNCfvGF3Y7NekoLgXc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz";
+            url = "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz";
           };
           ident = "strip-ansi";
           ltype = "file";
@@ -10941,8 +17856,7 @@
           fetchInfo = {
             narHash = "sha256-kG9XiGtBCKfDljwOWaSI7pZbk5I7uywJFm4jNdBERYw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz";
+            url = "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz";
           };
           ident = "strip-json-comments";
           ltype = "file";
@@ -10962,8 +17876,7 @@
           fetchInfo = {
             narHash = "sha256-SfCyBYNyHKXy38cfUbZ49zLnuW7SEieLnxQa6L0y69c=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/style-to-object/-/style-to-object-0.4.2.tgz";
+            url = "https://registry.npmjs.org/style-to-object/-/style-to-object-0.4.2.tgz";
           };
           ident = "style-to-object";
           ltype = "file";
@@ -10982,8 +17895,7 @@
           fetchInfo = {
             narHash = "sha256-I5qv/D8y+LC3HmTDCvCEqB3TnWnuk1e+Z0u/0D31Ix4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz";
+            url = "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.1.tgz";
           };
           ident = "styled-jsx";
           ltype = "file";
@@ -10996,7 +17908,9 @@
               descriptor = "*";
               optional = true;
             };
-            react = { descriptor = ">= 16.8.0 || 17.x.x || ^18.0.0-0"; };
+            react = {
+              descriptor = ">= 16.8.0 || 17.x.x || ^18.0.0-0";
+            };
           };
           version = "5.1.1";
         };
@@ -11026,8 +17940,7 @@
           fetchInfo = {
             narHash = "sha256-CFEl8ukJUaXQ4RzTSFYfqd09tqgYfgJuU/Kem/DkKe4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz";
+            url = "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz";
           };
           ident = "supports-color";
           ltype = "file";
@@ -11044,12 +17957,28 @@
           fetchInfo = {
             narHash = "sha256-ALfHRAgnkUrOOyywhxLVllKKtKkFQZ3IvetXiR72flk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz";
+            url = "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz";
           };
           ident = "supports-color";
           ltype = "file";
           version = "7.2.0";
+        };
+        "8.1.1" = {
+          depInfo = {
+            has-flag = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-uzKM/4dI5vQi51VxaCyT2y3S33POKUM/FxldHV9HD1E=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz";
+          };
+          ident = "supports-color";
+          ltype = "file";
+          version = "8.1.1";
         };
       };
       supports-preserve-symlinks-flag = {
@@ -11057,8 +17986,7 @@
           fetchInfo = {
             narHash = "sha256-Gwf/IHn+m17+KsKxcOrhCxAjvH8uxQx8Bud+qeCNwKg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz";
+            url = "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz";
           };
           ident = "supports-preserve-symlinks-flag";
           ltype = "file";
@@ -11079,13 +18007,107 @@
           version = "2.2.1";
         };
       };
+      terser = {
+        "5.25.0" = {
+          binInfo = {
+            binPairs = {
+              terser = "bin/terser";
+            };
+          };
+          depInfo = {
+            "@jridgewell/source-map" = {
+              descriptor = "^0.3.3";
+              pin = "0.3.5";
+              runtime = true;
+            };
+            acorn = {
+              descriptor = "^8.8.2";
+              pin = "8.10.0";
+              runtime = true;
+            };
+            commander = {
+              descriptor = "^2.20.0";
+              pin = "2.20.3";
+              runtime = true;
+            };
+            source-map-support = {
+              descriptor = "~0.5.20";
+              pin = "0.5.21";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-aZ39us126waiVIyIvfacInegfNdbDdLsHpFXKj0DFh8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/terser/-/terser-5.25.0.tgz";
+          };
+          ident = "terser";
+          ltype = "file";
+          version = "5.25.0";
+        };
+      };
+      terser-webpack-plugin = {
+        "5.3.9" = {
+          depInfo = {
+            "@jridgewell/trace-mapping" = {
+              descriptor = "^0.3.17";
+              pin = "0.3.20";
+              runtime = true;
+            };
+            jest-worker = {
+              descriptor = "^27.4.5";
+              pin = "27.5.1";
+              runtime = true;
+            };
+            schema-utils = {
+              descriptor = "^3.1.1";
+              pin = "3.3.0";
+              runtime = true;
+            };
+            serialize-javascript = {
+              descriptor = "^6.0.1";
+              pin = "6.0.1";
+              runtime = true;
+            };
+            terser = {
+              descriptor = "^5.16.8";
+              pin = "5.25.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-l2ccvYJdlbINs2ZqCcNprfn/unhuvK9mEUITA3jLEak=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-5.3.9.tgz";
+          };
+          ident = "terser-webpack-plugin";
+          ltype = "file";
+          peerInfo = {
+            "@swc/core" = {
+              descriptor = "*";
+              optional = true;
+            };
+            esbuild = {
+              descriptor = "*";
+              optional = true;
+            };
+            uglify-js = {
+              descriptor = "*";
+              optional = true;
+            };
+            webpack = {
+              descriptor = "^5.1.0";
+            };
+          };
+          version = "5.3.9";
+        };
+      };
       text-table = {
         "0.2.0" = {
           fetchInfo = {
             narHash = "sha256-5aLlgyS88H30N4WzcI5Qz3o1o65EGaNt8BaYxKkTzF4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz";
+            url = "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz";
           };
           ident = "text-table";
           ltype = "file";
@@ -11098,8 +18120,7 @@
           fetchInfo = {
             narHash = "sha256-REHa011PYD77WKQpm3pDqs8+640POdK6iqwfEhljtzk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz";
+            url = "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz";
           };
           ident = "to-fast-properties";
           ltype = "file";
@@ -11119,8 +18140,7 @@
           fetchInfo = {
             narHash = "sha256-+vtC2A5vM5ixOFrv1pRteDxoFLswFln/YcK09AmMbQM=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz";
+            url = "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz";
           };
           ident = "to-regex-range";
           ltype = "file";
@@ -11132,8 +18152,7 @@
           fetchInfo = {
             narHash = "sha256-9slUoyasV4PYG9imld3Gml054glINSZ6+1xPf0w/QOo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/trim-lines/-/trim-lines-3.0.1.tgz";
+            url = "https://registry.npmjs.org/trim-lines/-/trim-lines-3.0.1.tgz";
           };
           ident = "trim-lines";
           ltype = "file";
@@ -11159,12 +18178,15 @@
           fetchInfo = {
             narHash = "sha256-dN5CaRLy5GWTI+Gi4ziXD6kzd08NHX97sZOWLSmr+8k=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/ts-api-utils/-/ts-api-utils-1.0.3.tgz";
+            url = "https://registry.npmjs.org/ts-api-utils/-/ts-api-utils-1.0.3.tgz";
           };
           ident = "ts-api-utils";
           ltype = "file";
-          peerInfo = { typescript = { descriptor = ">=4.2.0"; }; };
+          peerInfo = {
+            typescript = {
+              descriptor = ">=4.2.0";
+            };
+          };
           treeInfo = { };
           version = "1.0.3";
         };
@@ -11196,8 +18218,7 @@
           fetchInfo = {
             narHash = "sha256-Mye/YqIaz7tmXjZK4nJ5SBbjMZHak3AvaPKDwZDGH08=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.14.2.tgz";
+            url = "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.14.2.tgz";
           };
           ident = "tsconfig-paths";
           ltype = "file";
@@ -11229,8 +18250,7 @@
           fetchInfo = {
             narHash = "sha256-c7oK/LdUUDXwdCUbkbLmNDixyLJR9avZVfBbfOupE8g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz";
+            url = "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz";
           };
           ident = "type-check";
           ltype = "file";
@@ -11272,8 +18292,7 @@
           fetchInfo = {
             narHash = "sha256-DMT/eFKOFASX3vNdE0CCYbgxZW9sAXUG99DrYCFDgRs=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/typed-array-buffer/-/typed-array-buffer-1.0.0.tgz";
+            url = "https://registry.npmjs.org/typed-array-buffer/-/typed-array-buffer-1.0.0.tgz";
           };
           ident = "typed-array-buffer";
           ltype = "file";
@@ -11307,8 +18326,7 @@
           fetchInfo = {
             narHash = "sha256-2u5lw/X7CvIx4xAbfoQR44zv7zGvzHGVwjyOL53phrk=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/typed-array-byte-length/-/typed-array-byte-length-1.0.0.tgz";
+            url = "https://registry.npmjs.org/typed-array-byte-length/-/typed-array-byte-length-1.0.0.tgz";
           };
           ident = "typed-array-byte-length";
           ltype = "file";
@@ -11347,8 +18365,7 @@
           fetchInfo = {
             narHash = "sha256-bmP70ZRmIe43OHm3dxN9khqyiQOATrvLK8ANZOc5h2U=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/typed-array-byte-offset/-/typed-array-byte-offset-1.0.0.tgz";
+            url = "https://registry.npmjs.org/typed-array-byte-offset/-/typed-array-byte-offset-1.0.0.tgz";
           };
           ident = "typed-array-byte-offset";
           ltype = "file";
@@ -11377,8 +18394,7 @@
           fetchInfo = {
             narHash = "sha256-dDukA6EG+m1cYtGjkSPo0oJA3Vb5ov5wBKIoQ0hCd5I=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/typed-array-length/-/typed-array-length-1.0.4.tgz";
+            url = "https://registry.npmjs.org/typed-array-length/-/typed-array-length-1.0.4.tgz";
           };
           ident = "typed-array-length";
           ltype = "file";
@@ -11396,8 +18412,7 @@
           fetchInfo = {
             narHash = "sha256-io9rXH9RLRLB0484ZdvcqblLQquLFUBGxDuwSixWxus=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz";
+            url = "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz";
           };
           ident = "typescript";
           ltype = "file";
@@ -11432,8 +18447,7 @@
           fetchInfo = {
             narHash = "sha256-p4Tro2Ta5HLZQn/OcrTelo8hf9gSAtUJIoUDlhhVY84=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unbox-primitive/-/unbox-primitive-1.0.2.tgz";
+            url = "https://registry.npmjs.org/unbox-primitive/-/unbox-primitive-1.0.2.tgz";
           };
           ident = "unbox-primitive";
           ltype = "file";
@@ -11441,7 +18455,54 @@
         };
       };
       unified = {
-        "11.0.3" = {
+        "10.1.2" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            bail = {
+              descriptor = "^2.0.0";
+              pin = "2.0.2";
+              runtime = true;
+            };
+            extend = {
+              descriptor = "^3.0.0";
+              pin = "3.0.2";
+              runtime = true;
+            };
+            is-buffer = {
+              descriptor = "^2.0.0";
+              pin = "2.0.5";
+              runtime = true;
+            };
+            is-plain-obj = {
+              descriptor = "^4.0.0";
+              pin = "4.1.0";
+              runtime = true;
+            };
+            trough = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^5.0.0";
+              pin = "5.3.7";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-pI6MBzzhm6RX26Qv1HBpK1cqAKi8rVN9glsYY1ytvJE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unified/-/unified-10.1.2.tgz";
+          };
+          ident = "unified";
+          ltype = "file";
+          version = "10.1.2";
+        };
+        "11.0.4" = {
           depInfo = {
             "@types/unist" = {
               descriptor = "^3.0.0";
@@ -11480,13 +18541,13 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-3N5l93RbhA3IDhcJsig+ZmucmKJWZ6ReoJXSBQh7b7A=";
+            narHash = "sha256-vp6G4Zh2CKyP827t0R7yYq5AyzbP3jpa33zMuVvoFPQ=";
             type = "tarball";
-            url = "https://registry.npmjs.org/unified/-/unified-11.0.3.tgz";
+            url = "https://registry.npmjs.org/unified/-/unified-11.0.4.tgz";
           };
           ident = "unified";
           ltype = "file";
-          version = "11.0.3";
+          version = "11.0.4";
         };
       };
       unist-util-find-after = {
@@ -11506,15 +18567,55 @@
           fetchInfo = {
             narHash = "sha256-KMxG+65RkPxysi/0yhVucnizcHEF8QZR3dQAxwn/DhU=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-find-after/-/unist-util-find-after-5.0.0.tgz";
+            url = "https://registry.npmjs.org/unist-util-find-after/-/unist-util-find-after-5.0.0.tgz";
           };
           ident = "unist-util-find-after";
           ltype = "file";
           version = "5.0.0";
         };
       };
+      unist-util-generated = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-G97rV6DumxO+sWfPLEz05/NWh6+5eViby2F4PSQsqzc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-generated/-/unist-util-generated-2.0.1.tgz";
+          };
+          ident = "unist-util-generated";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
+      };
       unist-util-is = {
+        "3.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-tMyrqoRPpVd6K6z9XGaIUCGI7ELiNaFu0dhvdOWLVBQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-is/-/unist-util-is-3.0.0.tgz";
+          };
+          ident = "unist-util-is";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.0";
+        };
+        "5.2.1" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-1RlofHKaUdtBApjhjQnhMF8e+qkifMJZ5hLBuMQ1oak=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-is/-/unist-util-is-5.2.1.tgz";
+          };
+          ident = "unist-util-is";
+          ltype = "file";
+          version = "5.2.1";
+        };
         "6.0.0" = {
           depInfo = {
             "@types/unist" = {
@@ -11526,8 +18627,7 @@
           fetchInfo = {
             narHash = "sha256-f2EkcL3n6Fyzmu7U2Sf9QPjT8ZkDPTelTOisuyXLoGI=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-is/-/unist-util-is-6.0.0.tgz";
+            url = "https://registry.npmjs.org/unist-util-is/-/unist-util-is-6.0.0.tgz";
           };
           ident = "unist-util-is";
           ltype = "file";
@@ -11535,6 +18635,23 @@
         };
       };
       unist-util-position = {
+        "4.0.4" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-0AO2xYGrGXj2GwouFpzTJ2qKZocUdCI6YijGNGVOgFM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-position/-/unist-util-position-4.0.4.tgz";
+          };
+          ident = "unist-util-position";
+          ltype = "file";
+          version = "4.0.4";
+        };
         "5.0.0" = {
           depInfo = {
             "@types/unist" = {
@@ -11546,15 +18663,113 @@
           fetchInfo = {
             narHash = "sha256-/z/amW1GCanEeMYjBy0OAEZJw4bsvN2LzON3MMIv+mg=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-position/-/unist-util-position-5.0.0.tgz";
+            url = "https://registry.npmjs.org/unist-util-position/-/unist-util-position-5.0.0.tgz";
           };
           ident = "unist-util-position";
           ltype = "file";
           version = "5.0.0";
         };
       };
+      unist-util-position-from-estree = {
+        "1.1.2" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-bdYXSYjoz2JyFR2J1k7xrGyMmUKEYOuUhmCC5Vf9iN0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-position-from-estree/-/unist-util-position-from-estree-1.1.2.tgz";
+          };
+          ident = "unist-util-position-from-estree";
+          ltype = "file";
+          version = "1.1.2";
+        };
+        "2.0.0" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-ZxOdH/c1dQ5EuSKPoFv72tKQeSBGDnPr5Ss/zDEsqrE=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-position-from-estree/-/unist-util-position-from-estree-2.0.0.tgz";
+          };
+          ident = "unist-util-position-from-estree";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      unist-util-remove-position = {
+        "4.0.2" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^4.0.0";
+              pin = "4.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+hXEKasbCuT2I2vo3vECdMTlgfuFPirzUOIy1U+VFek=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-remove-position/-/unist-util-remove-position-4.0.2.tgz";
+          };
+          ident = "unist-util-remove-position";
+          ltype = "file";
+          version = "4.0.2";
+        };
+        "5.0.0" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-1psMxhJGVYkoI3Vo2no4XEFlZNvE2gP3X7lN07jHLSw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-remove-position/-/unist-util-remove-position-5.0.0.tgz";
+          };
+          ident = "unist-util-remove-position";
+          ltype = "file";
+          version = "5.0.0";
+        };
+      };
       unist-util-stringify-position = {
+        "3.0.3" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+qU+mgTnGjDtwgxK0Ct5CoKNCxSGfVsuDG54sGonm1o=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-stringify-position/-/unist-util-stringify-position-3.0.3.tgz";
+          };
+          ident = "unist-util-stringify-position";
+          ltype = "file";
+          version = "3.0.3";
+        };
         "4.0.0" = {
           depInfo = {
             "@types/unist" = {
@@ -11566,8 +18781,7 @@
           fetchInfo = {
             narHash = "sha256-KgTBiasuSs4dAFkddau6tQsEd6Oko7N6RioJ32Iu0ik=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-stringify-position/-/unist-util-stringify-position-4.0.0.tgz";
+            url = "https://registry.npmjs.org/unist-util-stringify-position/-/unist-util-stringify-position-4.0.0.tgz";
           };
           ident = "unist-util-stringify-position";
           ltype = "file";
@@ -11575,6 +18789,50 @@
         };
       };
       unist-util-visit = {
+        "1.4.1" = {
+          depInfo = {
+            unist-util-visit-parents = {
+              descriptor = "^2.0.0";
+              pin = "2.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-SdQNzZ09XCw1IPFkgT2mFKkGKMptrO1Gv89My7YGz7M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-1.4.1.tgz";
+          };
+          ident = "unist-util-visit";
+          ltype = "file";
+          version = "1.4.1";
+        };
+        "4.1.2" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^5.0.0";
+              pin = "5.2.1";
+              runtime = true;
+            };
+            unist-util-visit-parents = {
+              descriptor = "^5.1.1";
+              pin = "5.1.3";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Yu2x6XFW2Dc5HM24nTxKVFscCYYq+31nOHl2YnYW2L4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-4.1.2.tgz";
+          };
+          ident = "unist-util-visit";
+          ltype = "file";
+          version = "4.1.2";
+        };
         "5.0.0" = {
           depInfo = {
             "@types/unist" = {
@@ -11596,8 +18854,7 @@
           fetchInfo = {
             narHash = "sha256-K2qI38TCg33RJURfjHWEXDtu9z+QHoHfIaVYuVSYvL4=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-5.0.0.tgz";
+            url = "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-5.0.0.tgz";
           };
           ident = "unist-util-visit";
           ltype = "file";
@@ -11605,6 +18862,45 @@
         };
       };
       unist-util-visit-parents = {
+        "2.1.2" = {
+          depInfo = {
+            unist-util-is = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-A9Nn1HxknpYcqC1QunY0Fg9ec9UT3CG0ZgXYj8QegqY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-2.1.2.tgz";
+          };
+          ident = "unist-util-visit-parents";
+          ltype = "file";
+          version = "2.1.2";
+        };
+        "5.1.3" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^5.0.0";
+              pin = "5.2.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-h7i1yp61vte9Jh0H6Xr7kL6eUZ9EI7zDYmybMNC83Lw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-5.1.3.tgz";
+          };
+          ident = "unist-util-visit-parents";
+          ltype = "file";
+          version = "5.1.3";
+        };
         "6.0.1" = {
           depInfo = {
             "@types/unist" = {
@@ -11621,12 +18917,45 @@
           fetchInfo = {
             narHash = "sha256-J2qOBZnosqeNobGzWY1nZ23AXOu5kWAcujrmdlO+KkQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-6.0.1.tgz";
+            url = "https://registry.npmjs.org/unist-util-visit-parents/-/unist-util-visit-parents-6.0.1.tgz";
           };
           ident = "unist-util-visit-parents";
           ltype = "file";
           version = "6.0.1";
+        };
+      };
+      update-browserslist-db = {
+        "1.0.13" = {
+          binInfo = {
+            binPairs = {
+              update-browserslist-db = "cli.js";
+            };
+          };
+          depInfo = {
+            escalade = {
+              descriptor = "^3.1.1";
+              pin = "3.1.1";
+              runtime = true;
+            };
+            picocolors = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-RrIO29t4oOh91UGTr5vkM4fApmSjbYTgiCvLg2p/kRw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.0.13.tgz";
+          };
+          ident = "update-browserslist-db";
+          ltype = "file";
+          peerInfo = {
+            browserslist = {
+              descriptor = ">= 4.21.0";
+            };
+          };
+          version = "1.0.13";
         };
       };
       uri-js = {
@@ -11653,20 +18982,94 @@
           fetchInfo = {
             narHash = "sha256-Jl0PYN5pvgqPMvWKcHKp/JWxbmEegUcNfVyWuHxskmw=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/usehooks-ts/-/usehooks-ts-2.9.1.tgz";
+            url = "https://registry.npmjs.org/usehooks-ts/-/usehooks-ts-2.9.1.tgz";
           };
           ident = "usehooks-ts";
           ltype = "file";
           peerInfo = {
-            react = { descriptor = "^16.8.0  || ^17.0.0 || ^18.0.0"; };
-            react-dom = { descriptor = "^16.8.0  || ^17.0.0 || ^18.0.0"; };
+            react = {
+              descriptor = "^16.8.0  || ^17.0.0 || ^18.0.0";
+            };
+            react-dom = {
+              descriptor = "^16.8.0  || ^17.0.0 || ^18.0.0";
+            };
           };
           treeInfo = { };
           version = "2.9.1";
         };
       };
+      uvu = {
+        "0.5.6" = {
+          binInfo = {
+            binPairs = {
+              uvu = "bin.js";
+            };
+          };
+          depInfo = {
+            dequal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.3";
+              runtime = true;
+            };
+            diff = {
+              descriptor = "^5.0.0";
+              pin = "5.1.0";
+              runtime = true;
+            };
+            kleur = {
+              descriptor = "^4.0.3";
+              pin = "4.1.5";
+              runtime = true;
+            };
+            sade = {
+              descriptor = "^1.7.3";
+              pin = "1.8.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-j9T9lBid8XTaend58vuJAx7tc2QdOYxqyz3UE8igd6w=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/uvu/-/uvu-0.5.6.tgz";
+          };
+          ident = "uvu";
+          ltype = "file";
+          version = "0.5.6";
+        };
+      };
       vfile = {
+        "5.3.7" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            is-buffer = {
+              descriptor = "^2.0.0";
+              pin = "2.0.5";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            vfile-message = {
+              descriptor = "^3.0.0";
+              pin = "3.1.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-7CMBInUFBgyeNUWtIUz9oLl82QzuVylsE5N5n1/eoa0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/vfile/-/vfile-5.3.7.tgz";
+          };
+          ident = "vfile";
+          ltype = "file";
+          version = "5.3.7";
+        };
         "6.0.1" = {
           depInfo = {
             "@types/unist" = {
@@ -11695,7 +19098,82 @@
           version = "6.0.1";
         };
       };
+      vfile-location = {
+        "5.0.2" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            vfile = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-aM50oqqAK0vzPbr4yoW7NTGYGh2BWuVtdtrP0hqscOg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/vfile-location/-/vfile-location-5.0.2.tgz";
+          };
+          ident = "vfile-location";
+          ltype = "file";
+          version = "5.0.2";
+        };
+      };
+      vfile-matter = {
+        "3.0.1" = {
+          depInfo = {
+            "@types/js-yaml" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.9";
+              runtime = true;
+            };
+            is-buffer = {
+              descriptor = "^2.0.0";
+              pin = "2.0.5";
+              runtime = true;
+            };
+            js-yaml = {
+              descriptor = "^4.0.0";
+              pin = "4.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-DUf/PEFD0pH4zx2Smo5aAf7PRK1TVuhDTwHSi9VOOkU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/vfile-matter/-/vfile-matter-3.0.1.tgz";
+          };
+          ident = "vfile-matter";
+          ltype = "file";
+          version = "3.0.1";
+        };
+      };
       vfile-message = {
+        "3.1.4" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^2.0.0";
+              pin = "2.0.10";
+              runtime = true;
+            };
+            unist-util-stringify-position = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Dkc7I3fAOKYKhLlS1BzITHbRFSxhP+yaKmUu4MfrXik=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/vfile-message/-/vfile-message-3.1.4.tgz";
+          };
+          ident = "vfile-message";
+          ltype = "file";
+          version = "3.1.4";
+        };
         "4.0.2" = {
           depInfo = {
             "@types/unist" = {
@@ -11712,8 +19190,7 @@
           fetchInfo = {
             narHash = "sha256-54lGHktHCzPDe5fToID2Q+2H6K9MNnqqXX4aTDbkQ+g=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/vfile-message/-/vfile-message-4.0.2.tgz";
+            url = "https://registry.npmjs.org/vfile-message/-/vfile-message-4.0.2.tgz";
           };
           ident = "vfile-message";
           ltype = "file";
@@ -11744,9 +19221,184 @@
           version = "2.4.0";
         };
       };
+      web-namespaces = {
+        "2.0.1" = {
+          fetchInfo = {
+            narHash = "sha256-IhCbLbq2YI8EQz1CnV4al5IwckFwHWl8woeg/yEM3Oc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/web-namespaces/-/web-namespaces-2.0.1.tgz";
+          };
+          ident = "web-namespaces";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.0.1";
+        };
+      };
+      webpack = {
+        "5.89.0" = {
+          binInfo = {
+            binPairs = {
+              webpack = "bin/webpack.js";
+            };
+          };
+          depInfo = {
+            "@types/eslint-scope" = {
+              descriptor = "^3.7.3";
+              pin = "3.7.7";
+              runtime = true;
+            };
+            "@types/estree" = {
+              descriptor = "^1.0.0";
+              pin = "1.0.5";
+              runtime = true;
+            };
+            "@webassemblyjs/ast" = {
+              descriptor = "^1.11.5";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-edit" = {
+              descriptor = "^1.11.5";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            "@webassemblyjs/wasm-parser" = {
+              descriptor = "^1.11.5";
+              pin = "1.11.6";
+              runtime = true;
+            };
+            acorn = {
+              descriptor = "^8.7.1";
+              pin = "8.10.0";
+              runtime = true;
+            };
+            acorn-import-assertions = {
+              descriptor = "^1.9.0";
+              pin = "1.9.0";
+              runtime = true;
+            };
+            browserslist = {
+              descriptor = "^4.14.5";
+              pin = "4.22.2";
+              runtime = true;
+            };
+            chrome-trace-event = {
+              descriptor = "^1.0.2";
+              pin = "1.0.3";
+              runtime = true;
+            };
+            enhanced-resolve = {
+              descriptor = "^5.15.0";
+              pin = "5.15.0";
+              runtime = true;
+            };
+            es-module-lexer = {
+              descriptor = "^1.2.1";
+              pin = "1.4.1";
+              runtime = true;
+            };
+            eslint-scope = {
+              descriptor = "5.1.1";
+              pin = "5.1.1";
+              runtime = true;
+            };
+            events = {
+              descriptor = "^3.2.0";
+              pin = "3.3.0";
+              runtime = true;
+            };
+            glob-to-regexp = {
+              descriptor = "^0.4.1";
+              pin = "0.4.1";
+              runtime = true;
+            };
+            graceful-fs = {
+              descriptor = "^4.2.9";
+              pin = "4.2.11";
+              runtime = true;
+            };
+            json-parse-even-better-errors = {
+              descriptor = "^2.3.1";
+              pin = "2.3.1";
+              runtime = true;
+            };
+            loader-runner = {
+              descriptor = "^4.2.0";
+              pin = "4.3.0";
+              runtime = true;
+            };
+            mime-types = {
+              descriptor = "^2.1.27";
+              pin = "2.1.35";
+              runtime = true;
+            };
+            neo-async = {
+              descriptor = "^2.6.2";
+              pin = "2.6.2";
+              runtime = true;
+            };
+            schema-utils = {
+              descriptor = "^3.2.0";
+              pin = "3.3.0";
+              runtime = true;
+            };
+            tapable = {
+              descriptor = "^2.1.1";
+              pin = "2.2.1";
+              runtime = true;
+            };
+            terser-webpack-plugin = {
+              descriptor = "^5.3.7";
+              pin = "5.3.9";
+              runtime = true;
+            };
+            watchpack = {
+              descriptor = "^2.4.0";
+              pin = "2.4.0";
+              runtime = true;
+            };
+            webpack-sources = {
+              descriptor = "^3.2.3";
+              pin = "3.2.3";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-9Jh/tW0d1D2VqLFKIYKY/JD0o7FASxKvByk8LxbHpE4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/webpack/-/webpack-5.89.0.tgz";
+          };
+          ident = "webpack";
+          ltype = "file";
+          peerInfo = {
+            webpack-cli = {
+              descriptor = "*";
+              optional = true;
+            };
+          };
+          version = "5.89.0";
+        };
+      };
+      webpack-sources = {
+        "3.2.3" = {
+          fetchInfo = {
+            narHash = "sha256-Js7pcQ0EGbwnwbrjD1IqHcu5nWzEOcjnC1mTfJL3iCw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz";
+          };
+          ident = "webpack-sources";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.2.3";
+        };
+      };
       which = {
         "2.0.2" = {
-          binInfo = { binPairs = { node-which = "bin/node-which"; }; };
+          binInfo = {
+            binPairs = {
+              node-which = "bin/node-which";
+            };
+          };
           depInfo = {
             isexe = {
               descriptor = "^2.0.0";
@@ -11796,8 +19448,7 @@
           fetchInfo = {
             narHash = "sha256-5HiYamQ407qG7OtGSNwZSpYIUeWwcT+B54zHUJ5zk5U=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz";
+            url = "https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz";
           };
           ident = "which-boxed-primitive";
           ltype = "file";
@@ -11871,8 +19522,7 @@
           fetchInfo = {
             narHash = "sha256-z3he7fyzoWiGoL7Dwp2M377VkbBb4fgB7ENQNqBVrKc=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.1.3.tgz";
+            url = "https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.1.3.tgz";
           };
           ident = "which-builtin-type";
           ltype = "file";
@@ -11906,8 +19556,7 @@
           fetchInfo = {
             narHash = "sha256-rRvM0EkRNEYAthcfx8ILiHX+dP6jQUHCwh/6+OF+mnQ=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/which-collection/-/which-collection-1.0.1.tgz";
+            url = "https://registry.npmjs.org/which-collection/-/which-collection-1.0.1.tgz";
           };
           ident = "which-collection";
           ltype = "file";
@@ -11946,8 +19595,7 @@
           fetchInfo = {
             narHash = "sha256-EGELA1/ELVvjyXq2YrCoNU6Sar/u6UVVwAT9y1iMiBo=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.11.tgz";
+            url = "https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.11.tgz";
           };
           ident = "which-typed-array";
           ltype = "file";
@@ -11998,8 +19646,7 @@
           fetchInfo = {
             narHash = "sha256-DpbkBR6X0fZcRRdqavXuN5z2r2EfhSO5pbc2PuZwDFY=";
             type = "tarball";
-            url =
-              "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz";
+            url = "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz";
           };
           ident = "yocto-queue";
           ltype = "file";
@@ -12007,17 +19654,17 @@
           version = "0.1.0";
         };
       };
-      zod = {
-        "3.21.4" = {
+      zwitch = {
+        "2.0.4" = {
           fetchInfo = {
-            narHash = "sha256-xyP+/+1G4HB94Z6Hmcb/5MRRr9FmUzWRprObG5AJD6U=";
+            narHash = "sha256-1YB5sa7Bgll2SIIqSVZP7UQe1wuWj8eJu2saUalphXE=";
             type = "tarball";
-            url = "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz";
+            url = "https://registry.npmjs.org/zwitch/-/zwitch-2.0.4.tgz";
           };
-          ident = "zod";
+          ident = "zwitch";
           ltype = "file";
           treeInfo = { };
-          version = "3.21.4";
+          version = "2.0.4";
         };
       };
     };
