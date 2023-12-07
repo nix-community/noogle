@@ -1,3 +1,4 @@
+"use client";
 import { PageState, normalizePath } from "@/models/internals";
 import { DocItem } from "@/models/nix";
 import { byType, pipe } from "@/queries";

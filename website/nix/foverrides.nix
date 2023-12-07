@@ -32,7 +32,6 @@ in
   config.floco.packages.${ident}.${version} =
     let
       cfg = config.floco.packages.${ident}.${version};
-      prefix = "models/data";
     in
     {
       # ---------------------------------------------------------------------------- #
@@ -49,9 +48,9 @@ in
         override.preBuild = ''
           export HOME=./home
 
-          ${hooks.prepare "models/data"}
+          ${hooks.prepare "src/models/data"}
           
-          ls -la models/data
+          ls -la src/models/data
         '';
 
         tree =

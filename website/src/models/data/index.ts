@@ -1,19 +1,9 @@
 import { MetaData } from "../nix";
-import nixBuiltins from "./builtins.json";
-import nixLibs from "./lib.json";
-import nixTrivialBuilders from "./trivial-builders.json";
-// const mock = {
-//   id: "mock",
-//   category: "mock",
-//   name: "mock",
-//   fn_type: null,
-//   description: "No data yet in dev mode",
-//   example: null,
-//   line: null,
-// };
+import nixTrivialBuilders from "./build_support.json" assert { type: "json" };
+import nixBuiltins from "./builtins.json" assert { type: "json" };
+import nixLibs from "./lib.json" assert { type: "json" };
 
 export const data: MetaData = [
-  // mock,
   ...(nixLibs as MetaData),
   ...(nixBuiltins as MetaData),
   ...(nixTrivialBuilders as MetaData),
