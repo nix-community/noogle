@@ -165,7 +165,7 @@ impl<'a> Files for Pasta {
                 }
             },
             Err(e) => {
-                println!("Could not read input file: {}", e.to_string());
+                println!("Could not read input file: {:?} {}", path, e.to_string());
                 exit(1);
             }
         }
