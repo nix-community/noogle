@@ -1,0 +1,42 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/strings.nix",
+          "line": 243
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 25,
+          "file": "test_data/assets/strings.nix",
+          "line": 84
+        }
+      }
+    },
+    "path": ["lib", "strings", "concatLines"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 27,
+          "file": "test_data/assets/default.nix",
+          "line": 98
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 25,
+          "file": "test_data/assets/strings.nix",
+          "line": 84
+        }
+      }
+    },
+    "path": ["lib", "concatLines"]
+  }
+]

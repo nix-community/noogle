@@ -11,6 +11,17 @@ Return an attribute from nested attribute sets.
 
 # Example
 
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+
 ```nix
 x = { a = { b = 3; }; }
 # ["a" "b"] is equivalent to x.a.b

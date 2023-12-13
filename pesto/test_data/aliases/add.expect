@@ -1,26 +1,5 @@
 [
   {
-    "docs": {
-      "lambda": {
-        "isPrimop": true,
-        "name": "add",
-        "args": [
-          "e1",
-          "e2"
-        ],
-        "experimental": false,
-        "arity": 2,
-        "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    "
-      },
-      "attr": {
-        "position": {
-          "file": "test_data/assets/default.nix",
-          "line": 68,
-          "column": 23
-        },
-        "content": null
-      }
-    },
     "aliases": [
       [
         "lib",
@@ -38,27 +17,6 @@
     ]
   },
   {
-    "docs": {
-      "lambda": {
-        "isPrimop": true,
-        "name": "add",
-        "args": [
-          "e1",
-          "e2"
-        ],
-        "experimental": false,
-        "arity": 2,
-        "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    "
-      },
-      "attr": {
-        "position": {
-          "file": "test_data/assets/trivial.nix",
-          "line": 269,
-          "column": 21
-        },
-        "content": null
-      }
-    },
     "aliases": [
       [
         "lib",
@@ -76,17 +34,6 @@
     ]
   },
   {
-    "docs": {
-      "lambda": {
-        "isPrimop": true,
-        "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
-        "countApplied": 0
-      },
-      "attr": {
-        "position": null,
-        "content": ""
-      }
-    },
     "aliases": [
       [
         "lib",

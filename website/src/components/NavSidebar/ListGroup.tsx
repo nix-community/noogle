@@ -17,6 +17,7 @@ export const ListGroup = async (props: ListGroupProps) => {
   return sorted.map(async ([name, entry], idx) => {
     if (Array.isArray(entry)) {
       const matter = await getMdxMeta(entry);
+      const { frontmatter } = matter.compiled;
       return (
         <Link key={`${idx}`} href={`/ref/${entry.join("/")}`}>
           <ListItem
@@ -31,7 +32,13 @@ export const ListGroup = async (props: ListGroupProps) => {
             }}
           >
             <ListEntry currentPath={`/ref/${entry.join("/")}`}>
-              <ListItemText primary={matter.compiled.frontmatter.title} />
+              <ListItemText
+                primary={
+                  frontmatter.path
+                    ? frontmatter.path.join(".")
+                    : frontmatter.title
+                }
+              />
             </ListEntry>
           </ListItem>
         </Link>

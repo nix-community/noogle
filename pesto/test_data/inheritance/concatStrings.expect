@@ -1,0 +1,7 @@
+[
+  {
+    "name": "pkgs.lib.strings.concatStrings",
+    "content": "\n    Concatenate a list of strings.\n\n    # Example\n\n    ```nix\n    concatStrings [\"foo\" \"bar\"]\n    => \"foobar\"\n    ```\n\n    # Type\n\n    ```\n    concatStrings :: [string] -> string\n    ```\n  ",
+    "source": "pkgs.lib.strings.concatStrings"
+  }
+]

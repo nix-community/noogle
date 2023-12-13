@@ -25,17 +25,20 @@ let
   docs = {
     ############# Recusive analysis sets
     lib = collectFns lib { initialPath = [ "lib" ]; };
-    rustTools = collectFns pkgs.pkgs.rustPackages {
+    rustTools = collectFns pkgs.rustPackages {
       initialPath = [ "pkgs" "rustPackages" ];
     };
     stdenvTools = getDocsFromSet pkgs.stdenv [ "pkgs" "stdenv" ];
 
     ############# Non-recursive analysis sets
     pkgs = getDocsFromSet pkgs [ "pkgs" ];
-    dockerTools = getDocsFromSet pkgs.pkgs.dockerTools [ "pkgs" "dockerTools" ];
+    dockerTools = getDocsFromSet pkgs.dockerTools [ "pkgs" "dockerTools" ];
     pythonTools =
-      getDocsFromSet pkgs.pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
+      getDocsFromSet pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
+    builtins =
+      getDocsFromSet builtins [ "builtins" ];
   };
+  all = builtins.foldl' (acc: name: acc ++ docs.${name}) [ ] (builtins.attrNames docs);
 
   # generate test_data for pesto
   test_data = {
@@ -43,4 +46,4 @@ let
   };
 
 in
-{ inherit tools pkgs docs toFile test_data; }
+{ inherit tools pkgs docs toFile getDocsFromSet collectFns all test_data; }

@@ -40,16 +40,112 @@ pub struct DocsMeta {
     pub attr: AttrMeta,
 }
 
+pub type ValuePath = Vec<String>;
+pub type AliasList = Vec<Rc<ValuePath>>;
+
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Docs {
     pub docs: DocsMeta,
-    pub aliases: Option<Vec<Rc<Vec<String>>>>,
-    pub path: Rc<Vec<String>>,
+    pub aliases: Option<AliasList>,
+    pub path: Rc<ValuePath>,
+}
+
+#[derive(Serialize, Debug, Clone)]
+pub struct ContentSource<'a> {
+    pub content: Option<&'a String>,
+    pub source: Option<SourceOrigin<'a>>,
+}
+
+#[derive(Serialize, Debug, Clone)]
+pub struct SourceOrigin<'a> {
+    pub position: Option<&'a FilePosition>,
+    pub path: Option<&'a Rc<ValuePath>>,
+    pub pos_type: Option<PositionType>,
+}
+
+#[derive(Serialize, Debug, Clone)]
+pub enum PositionType {
+    Attribute,
+    Lambda,
+}
+
+pub trait Lookups<'a> {
+    /// Returns the Lambda ContentSource.
+    ///
+    /// If there is a correct [ContentSource] return it.
+    ///
+    /// Partially applied functions still cary the underlying documentation which is wrong.
+    /// This inherited (but wrong) documentation is discarded
+    fn lambda_content(self: &'a Self) -> Option<ContentSource<'a>>;
+
+    /// Return the docs of the first alias with docs.
+    ///
+    /// Only look at the aliases with content in the following order.
+    /// Return content from an alias with (1) attribute content, or (2) lambda content.
+    fn fst_alias_content(
+        self: &'a Self,
+        data: &'a HashMap<Rc<ValuePath>, Docs>,
+    ) -> Option<ContentSource<'a>>;
+}
+
+impl<'a> Lookups<'a> for Docs {
+    fn lambda_content(self: &'a Self) -> Option<ContentSource<'a>> {
+        self.docs
+            .lambda
+            .as_ref()
+            .map(|i| {
+                if i.countApplied == Some(0) || (i.countApplied == None && i.isPrimop) {
+                    Some(ContentSource {
+                        content: i.content.as_ref(),
+                        source: Some(SourceOrigin {
+                            position: i.position.as_ref(),
+                            path: Some(&self.path),
+                            pos_type: Some(PositionType::Lambda),
+                        }),
+                    })
+                } else {
+                    None
+                }
+            })
+            .flatten()
+    }
+
+    fn fst_alias_content(
+        self: &'a Self,
+        data: &'a HashMap<Rc<ValuePath>, Docs>,
+    ) -> Option<ContentSource<'a>> {
+        match &self.aliases {
+            Some(aliases) => {
+                let x = aliases
+                    .iter()
+                    .find_map(|alias_path| {
+                        data.get(alias_path).map(|i| {
+                            if i.docs.attr.content.is_some() {
+                                Some(ContentSource {
+                                    content: i.docs.attr.content.as_ref(),
+                                    source: Some(SourceOrigin {
+                                        position: i.docs.attr.position.as_ref(),
+                                        path: Some(&i.path),
+                                        pos_type: Some(PositionType::Attribute),
+                                    }),
+                                })
+                            } else {
+                                // i.lambda_content()
+                                None
+                            }
+                        })
+                    })
+                    .flatten();
+                x
+            }
+            _ => None,
+        }
+    }
 }
 
 pub struct Pasta {
     pub docs: Vec<Docs>,
-    pub doc_map: HashMap<Rc<Vec<String>>, Docs>,
+    pub doc_map: HashMap<Rc<ValuePath>, Docs>,
 }
 
 pub trait Files {

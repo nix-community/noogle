@@ -67,7 +67,7 @@ export async function generateStaticSidebarEntries() {
   return paths;
 }
 
-export type DocsFrontmatter = { title: String };
+export type DocsFrontmatter = { title: String; path?: string[] };
 
 export const getMdxMeta = async (
   parts: string[]

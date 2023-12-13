@@ -1,7 +1,7 @@
-// import { DocsFrontmatter, getMdxMeta } from "@/components/ListGroup";
 import {
   docsDir,
   extractHeadings,
+  getMdxMeta,
   getMdxSource,
   mdxRenderOptions,
 } from "@/utils";
@@ -39,20 +39,22 @@ interface TocProps {
 const Toc = async (props: TocProps) => {
   const { mdxSource } = props;
   const headings = await extractHeadings(mdxSource);
+
   return (
     <Box
       sx={{
+        top: 70,
+        right: 0,
+        position: "absolute",
         order: 2,
         width: "19rem",
-        py: 4,
         px: 2,
+        mr: 8,
       }}
       component={"aside"}
     >
       <Box
         sx={{
-          position: "fixed",
-          top: 0,
           pt: 4,
           pl: 2,
         }}
@@ -85,20 +87,52 @@ const Toc = async (props: TocProps) => {
 // using the `params` returned by `generateStaticParams`
 export default async function Page(props: { params: { id: string[] } }) {
   const { mdxSource } = await getMdxSource(props.params.id);
+  const meta = await getMdxMeta(props.params.id);
+  console.log("matter", meta.compiled.frontmatter);
+  const { frontmatter } = meta.compiled;
   return (
     <>
+      <Toc mdxSource={mdxSource} />
       <Box sx={{ display: "flex" }}>
-        <Toc mdxSource={mdxSource} />
         <Box sx={{ order: 1, width: "60rem", marginInline: "auto", py: 2 }}>
+          <Typography variant="h2" component={"h1"}>
+            {frontmatter.path ? frontmatter.path.join(".") : frontmatter.title}
+          </Typography>
           <MDXRemote
             options={{
               parseFrontmatter: true,
               mdxOptions: mdxRenderOptions,
             }}
             source={mdxSource}
+            components={{
+              h1: (p) => (
+                // @ts-ignore
+                <Typography variant="h3" component={"h2"} {...p} />
+              ),
+              h2: (p) => (
+                // @ts-ignore
+                <Typography variant="h4" component={"h3"} {...p} />
+              ),
+              h3: (p) => (
+                // @ts-ignore
+                <Typography variant="h5" component={"h4"} {...p} />
+              ),
+              h4: (p) => (
+                // @ts-ignore
+                <Typography variant="h6" component={"h5"} {...p} />
+              ),
+              h5: (p) => (
+                // @ts-ignore
+                <Typography variant="subtitle1" component={"h6"} {...p} />
+              ),
+              h6: (p) => (
+                // @ts-ignore
+                <Typography variant="subtitle2" component={"h6"} {...p} />
+              ),
+            }}
           />
-          <Button sx={{ textTransform: "none", my: 4 }} startIcon={<Edit />}>
-            Edit source
+          <Button sx={{ textTransform: "none", my: 4 }} startIcon={<Edit />} >
+            Edit source {frontmatter.}
           </Button>
         </Box>
       </Box>
