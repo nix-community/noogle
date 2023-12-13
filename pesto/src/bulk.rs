@@ -1,7 +1,8 @@
 use std::{collections::HashMap, path::PathBuf, println, rc::Rc, time::Instant, vec};
 
 use crate::{
-    pasta::{Docs, Files, LambdaMeta, Pasta},
+    alias::{categorize, init_alias_map},
+    pasta::{Docs, Files, Pasta},
     position::{DocComment, DocIndex, FilePosition, NixDocComment},
 };
 
@@ -103,93 +104,6 @@ fn fill_docs(
     filled_docs
 }
 
-/// Build categories for efficiently finding aliases. (This is very expensive O(n^2). )
-/// Aliases can only exist within one subgroup, iterating over other items is a waste of time.
-/// With the current value introspection, any value that is an alias of a builtin, also inherits the builtins docs and the isPrimop flag set.
-///
-/// Group docs into the following subgroups
-/// 1. primop_lambdas
-/// e.g, lib.add, builtins.add
-///
-/// 2.non_primop_lambdas
-/// e.g, lib.attrByPath
-///
-/// 3.partially_applied lambdas
-/// e.g., concatLines (is concatMapStrings applied with f := Lambda<(s: s + "\n");>)
-/// This is a special case, it is very hard, to properly detect aliases at this level. Although the alias must also be found in this subgroup.
-///
-fn categorize(data: &Vec<Docs>) -> (Vec<&Docs>, Vec<&Docs>, Vec<&Docs>) {
-    // For finding aliases.
-    // Group docs into these subgroups.
-    // Aliases can only exist within one subgroup, iterating over other items is a waste of time.
-    let mut primop_lambdas: Vec<&Docs> = vec![];
-    let mut non_primop_lambdas: Vec<&Docs> = vec![];
-    let mut partially_applieds: Vec<&Docs> = vec![];
-
-    for item in data.iter() {
-        if let Some(lambda) = &item.docs.lambda {
-            match lambda.countApplied {
-                Some(0) | None => {
-                    if lambda.isPrimop {
-                        primop_lambdas.push(&item);
-                    }
-                    if !lambda.isPrimop {
-                        non_primop_lambdas.push(&item);
-                    }
-                }
-                _ => {
-                    // #
-                    partially_applieds.push(&item);
-                }
-            }
-        }
-    }
-    (primop_lambdas, non_primop_lambdas, partially_applieds)
-}
-
-fn init_alias_map(
-    data: &Vec<Docs>,
-    categories: (Vec<&Docs>, Vec<&Docs>, Vec<&Docs>),
-) -> HashMap<Rc<Vec<String>>, Vec<Rc<Vec<String>>>> {
-    let (primop_lambdas, non_primop_lambdas, partially_applieds) = categories;
-
-    let mut primops: Vec<&Docs> = vec![];
-    primops.extend(primop_lambdas.iter());
-    primops.extend(partially_applieds.iter());
-
-    let mut non_primops: Vec<&Docs> = vec![];
-    non_primops.extend(non_primop_lambdas.iter());
-    non_primops.extend(partially_applieds.iter());
-
-    let mut alias_map: HashMap<Rc<Vec<String>>, Vec<Rc<Vec<String>>>> = HashMap::new();
-    for item in data.iter() {
-        if let Some(lambda) = &item.docs.lambda {
-            match lambda.countApplied {
-                Some(0) => {
-                    if lambda.isPrimop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &primop_lambdas));
-                    }
-                    if !lambda.isPrimop {
-                        alias_map
-                            .insert(item.path.clone(), find_aliases(&item, &non_primop_lambdas));
-                    }
-                }
-                None => {
-                    if lambda.isPrimop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &primops));
-                    }
-                    if !lambda.isPrimop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &non_primops));
-                    }
-                }
-                Some(_) => {
-                    alias_map.insert(item.path.clone(), find_aliases(&item, &partially_applieds));
-                }
-            };
-        }
-    }
-    alias_map
-}
 impl<'a> BulkProcessing for Pasta {
     fn new(path: &PathBuf) -> Self {
         let start_time = Instant::now();
@@ -199,7 +113,13 @@ impl<'a> BulkProcessing for Pasta {
 
         let mut pos_doc_map: HashMap<&FilePosition, Option<NixDocComment>> = HashMap::new();
         for (path, lookups) in file_map.iter() {
+            if !path.exists() {
+                println!("file does not exist: {:?} Skipping.", path);
+                continue;
+            }
+
             let positions = collect_file_positions(lookups);
+
             println!(
                 "{:?}: Lookups {:?}",
                 path.file_name().unwrap(),
@@ -239,71 +159,4 @@ impl<'a> BulkProcessing for Pasta {
             doc_map,
         }
     }
-}
-
-/// How to find aliases:
-/// Match
-/// partially applied functions -> special case, don't know how it is "correct". Would need access to the upvalues?
-/// Simple lambdas (not partially applied)
-///   Match primop: (Doesnt have source position)
-///      Eq countApplied,
-///      Eq content
-///      Other isPrimop,
-///      Content not empty
-///  Match Non-Primop
-///     Eq position
-fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> Vec<Rc<Vec<String>>> {
-    // println!("find aliases for {:?} \n\n in {:?}", item, list);
-    let res: Vec<Rc<Vec<String>>> = list
-        .iter()
-        .filter_map(|other| {
-            if let (Some(s_meta), Some(o_meta)) = (&item.docs.lambda, &other.docs.lambda) {
-                // Avoid creating an alias for the same item.
-                if item.path == other.path {
-                    return None;
-                }
-                if count_applied(s_meta) != 0
-                    // Use less accurate name aliases. This can lead to false positives
-                    // TODO: figure out the proper way
-                    && count_applied(o_meta) == count_applied(s_meta)
-                    && item.path.last().unwrap() == other.path.last().unwrap()
-                {
-                    return Some(other.path.clone());
-                }
-                return match s_meta.isPrimop {
-                    true => {
-                        let is_empty = match &s_meta.content {
-                            Some(c) => c.is_empty(),
-                            None => true,
-                        };
-
-                        if o_meta.isPrimop
-                            && o_meta.content == s_meta.content
-                            && !is_empty
-                            && count_applied(s_meta) == 0
-                            && count_applied(o_meta) == 0
-                        {
-                            return Some(other.path.clone());
-                        }
-                        None
-                    }
-                    false => {
-                        if s_meta.position == o_meta.position
-                            && count_applied(s_meta) == 0
-                            && count_applied(o_meta) == 0
-                        {
-                            return Some(other.path.clone());
-                        }
-                        None
-                    }
-                };
-            }
-            None
-        })
-        .collect();
-    res
-}
-
-fn count_applied(meta: &LambdaMeta) -> usize {
-    meta.countApplied.unwrap_or(0)
 }

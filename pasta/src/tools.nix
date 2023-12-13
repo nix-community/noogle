@@ -37,8 +37,8 @@ let
     { initialPath ? [ ], limit ? null, }:
     let
       filterFns = builtins.filter (item:
-        item.docs != null
-        #  item.type == "lambda"
+        item.docs != null &&
+        item.type == "lambda"
       );
       getFnDocs = map (fn: {
         path = initialPath ++ fn.path;

@@ -1,0 +1,20 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/strings.nix",
+          "line": 60
+        }
+      },
+      "lambda": {
+        "content": "\n      Concatenate a list of strings with a separator between each\n      element, e.g. `concatStringsSep \"/\" [\"usr\" \"local\" \"bin\"] ==\n      \"usr/local/bin\"`.\n    ",
+        "countApplied": 1,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["pkgs", "lib", "strings", "concatStrings"]
+  }
+]

@@ -8,7 +8,6 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::process::exit;
 use std::rc::Rc;
-use std::time::Instant;
 
 use std::{format, fs, path::PathBuf, println};
 
@@ -120,28 +119,12 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
     fn new(file: &'a PathBuf, positions: HashMap<usize, Vec<usize>>) -> Self {
         let src = get_src(file);
         let rc: Rc<String> = Rc::new(src);
-        let mut start_time = Instant::now();
+
         let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
-        let mut end_time = Instant::now();
-        // println!("{:?} - Parsed ast", end_time - start_time);
 
-        start_time = Instant::now();
         let (pos_idx, inverse_pos_idx) = init_pos_idx(&file, positions);
-        end_time = Instant::now();
-        // println!(
-        //     "{:?} - Translated col,line into abs positions",
-        //     end_time - start_time
-        // );
 
-        // Call your function here
-        start_time = Instant::now();
         let node_idx = init_node_idx(&ast, &inverse_pos_idx);
-        end_time = Instant::now();
-
-        // println!(
-        //     "{:?} - Find all ast nodes for positions",
-        //     end_time - start_time
-        // );
 
         return Self {
             file,
@@ -162,7 +145,6 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
         }
         if let Some(idx) = idx {
             let expr = self.node_idx.get(idx);
-            // println!("L{}:C{}, expr: {:?}", line, column, expr);
             if let Some(Some(expr)) = expr {
                 let doc = match expr.kind() {
                     rnix::SyntaxKind::NODE_LAMBDA => {

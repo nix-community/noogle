@@ -1,0 +1,57 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 25,
+          "file": "test_data/assets/default.nix",
+          "line": 92
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/lists.nix",
+          "line": 204
+        }
+      }
+    },
+    "path": ["lib", "foldl'"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/lists.nix",
+          "line": 198
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "test_data/assets/lists.nix",
+          "line": 204
+        }
+      }
+    },
+    "path": ["lib", "lists", "foldl'"]
+  },
+  {
+    "docs": {
+      "attr": { "position": null },
+      "lambda": {
+        "args": ["op", "nul", "list"],
+        "arity": 3,
+        "content": "\n      Reduce a list by applying a binary operator, from left to right,\n      e.g. `foldl' op nul [x0 x1 x2 ...] : op (op (op nul x0) x1) x2)\n      ...`. For example, `foldl' (x: y: x + y) 0 [1 2 3]` evaluates to 6.\n      The return value of each application of `op` is evaluated immediately,\n      even for intermediate values.\n    ",
+        "experimental": false,
+        "isPrimop": true,
+        "name": "foldl'",
+        "position": null
+      }
+    },
+    "path": ["builtins", "foldl'"]
+  }
+]

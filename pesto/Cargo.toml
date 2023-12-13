@@ -1,5 +1,6 @@
 [package]
 name = "pesto"
+description = "Gien a list of positions extract doc-comment into markdown and frontmatter."
 version = "0.1.0"
 edition = "2021"
 
@@ -20,6 +21,7 @@ serde = { version = "1.0", features = ["derive", "rc"] }
 serde_json = "1.0"
 expect-test = "1.4.0"
 serde_with = "3.4.0"
+serde_yaml = "0.9.27"
 
 
 # [dev-dependencies]
