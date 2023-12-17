@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-import { DocItem, MetaData } from "@/models/nix";
+import { MetaData } from "@/models/nix";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
@@ -52,7 +52,7 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
     [data.length]
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
-  const selectedFunction = useMemo(() => data.at(idx) as DocItem, [idx, data]);
+  const selectedFunction = useMemo(() => data.at(idx) as Doc, [idx, data]);
 
   const setNext = () => {
     setIdx((curr) => {
