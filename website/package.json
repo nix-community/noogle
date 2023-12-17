@@ -21,7 +21,7 @@
     "@types/mdx": "^2.0.10",
     "@vcarl/remark-headings": "^0.1.0",
     "highlight.js": "^11.7.0",
-    "minisearch": "^6.0.1",
+    "minisearch": "^6.3.0",
     "next": "^14.0.3",
     "next-mdx-remote": "^4.4.1",
     "notistack": "^3.0.0",
