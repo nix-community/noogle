@@ -1,0 +1,64 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": null
+      },
+      "lambda": {
+        "args": ["attr", "list"],
+        "arity": 2,
+        "content": "\n      Collect each attribute named *attr* from a list of attribute\n      sets.  Attrsets that don't contain the named attribute are\n      ignored. For example,\n\n      ```nix\n      builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n      ```\n\n      evaluates to `[1 2]`.\n    ",
+        "countApplied": 0,
+        "experimental": false,
+        "isPrimop": true,
+        "name": "catAttrs",
+        "position": null
+      }
+    },
+    "path": ["builtins", "catAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 28,
+          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/default.nix",
+          "line": 82
+        }
+      },
+      "lambda": {
+        "args": ["attr", "list"],
+        "arity": 2,
+        "content": "\n      Collect each attribute named *attr* from a list of attribute\n      sets.  Attrsets that don't contain the named attribute are\n      ignored. For example,\n\n      ```nix\n      builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n      ```\n\n      evaluates to `[1 2]`.\n    ",
+        "countApplied": 0,
+        "experimental": false,
+        "isPrimop": true,
+        "name": "catAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "catAttrs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/attrsets.nix",
+          "line": 398
+        }
+      },
+      "lambda": {
+        "args": ["attr", "list"],
+        "arity": 2,
+        "content": "\n      Collect each attribute named *attr* from a list of attribute\n      sets.  Attrsets that don't contain the named attribute are\n      ignored. For example,\n\n      ```nix\n      builtins.catAttrs \"a\" [{a = 1;} {b = 0;} {a = 2;}]\n      ```\n\n      evaluates to `[1 2]`.\n    ",
+        "countApplied": 0,
+        "experimental": false,
+        "isPrimop": true,
+        "name": "catAttrs",
+        "position": null
+      }
+    },
+    "path": ["lib", "attrsets", "catAttrs"]
+  }
+]

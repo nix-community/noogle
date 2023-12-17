@@ -9,6 +9,7 @@ use std::{
 };
 
 use serde::{Deserialize, Serialize};
+use textwrap::dedent;
 
 use crate::position::FilePosition;
 
@@ -52,7 +53,7 @@ pub struct Docs {
 
 #[derive(Serialize, Debug, Clone)]
 pub struct ContentSource<'a> {
-    pub content: Option<&'a String>,
+    pub content: Option<String>,
     pub source: Option<SourceOrigin<'a>>,
 }
 
@@ -96,7 +97,7 @@ impl<'a> Lookups<'a> for Docs {
             .map(|i| {
                 if i.countApplied == Some(0) || (i.countApplied == None && i.isPrimop) {
                     Some(ContentSource {
-                        content: i.content.as_ref(),
+                        content: i.content.as_ref().map(|inner| dedent(inner)),
                         source: Some(SourceOrigin {
                             position: i.position.as_ref(),
                             path: Some(&self.path),
@@ -116,13 +117,20 @@ impl<'a> Lookups<'a> for Docs {
     ) -> Option<ContentSource<'a>> {
         match &self.aliases {
             Some(aliases) => {
-                let x = aliases
-                    .iter()
-                    .find_map(|alias_path| {
-                        data.get(alias_path).map(|i| {
-                            if i.docs.attr.content.is_some() {
+                let x = aliases.iter().find_map(|alias_path| {
+                    let alias_docs = data
+                        .get(alias_path)
+                        .map(|i| {
+                            if i.docs.attr.content.is_some()
+                                && !i.docs.attr.content.as_ref().unwrap().is_empty()
+                            {
                                 Some(ContentSource {
-                                    content: i.docs.attr.content.as_ref(),
+                                    content: i
+                                        .docs
+                                        .attr
+                                        .content
+                                        .as_ref()
+                                        .map(|inner| dedent(inner)),
                                     source: Some(SourceOrigin {
                                         position: i.docs.attr.position.as_ref(),
                                         path: Some(&i.path),
@@ -134,8 +142,9 @@ impl<'a> Lookups<'a> for Docs {
                                 None
                             }
                         })
-                    })
-                    .flatten();
+                        .flatten();
+                    alias_docs
+                });
                 x
             }
             _ => None,

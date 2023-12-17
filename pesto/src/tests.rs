@@ -38,6 +38,49 @@ mod tests {
         }
     }
 
+    fn docs_to_test_content(data: &Pasta) -> Vec<TestContent> {
+        let contents: Vec<TestContent> = data
+            .docs
+            .iter()
+            .map(|ref i| {
+                let document = &Document::new(i, &data.doc_map);
+                return TestContent {
+                    name: document.meta.path.join("."),
+                    content: document
+                        .content
+                        .as_ref()
+                        .map(|inner| inner.content.as_ref().map(|i| i.clone()))
+                        .flatten(),
+                };
+            })
+            .collect();
+        return contents;
+    }
+    fn docs_to_test_source(data: &Pasta) -> Vec<TestSource> {
+        let contents: Vec<TestSource> = data
+            .docs
+            .iter()
+            .map(|ref i| {
+                let document = &Document::new(i, &data.doc_map);
+                return TestSource {
+                    name: document.meta.path.join("."),
+                    source: document
+                        .content
+                        .as_ref()
+                        .map(|inner| {
+                            inner
+                                .source
+                                .as_ref()
+                                .map(|i| i.path.map(|p| p.join(".")))
+                                .flatten()
+                        })
+                        .flatten(),
+                };
+            })
+            .collect();
+        return contents;
+    }
+
     #[test]
     fn test_atoms() {
         dir_tests("atom", "nix", |path| {
@@ -78,42 +121,31 @@ mod tests {
     }
 
     #[derive(Serialize, Debug)]
-    struct TestContent {
+    struct TestSource {
         name: String,
-        content: Option<String>,
         source: Option<String>,
     }
+
     #[test]
     fn test_content_inheritance() {
         dir_tests("inheritance", "json", |path| {
             let data: Pasta = Pasta::new(&PathBuf::from(path));
-            let contents: Vec<TestContent> = data
-                .docs
-                .into_iter()
-                .map(|ref i| {
-                    let document = &Document::new(i, &data.doc_map);
-                    return TestContent {
-                        name: document.meta.path.join("."),
-                        content: document
-                            .content
-                            .as_ref()
-                            .map(|inner| inner.content.map(|i| i.clone()))
-                            .flatten(),
-                        source: document
-                            .content
-                            .as_ref()
-                            .map(|inner| {
-                                inner
-                                    .source
-                                    .as_ref()
-                                    .map(|i| i.path.map(|p| p.join(".")))
-                                    .flatten()
-                            })
-                            .flatten(),
-                    };
-                })
-                .collect();
+            let sources = docs_to_test_source(&data);
 
+            serde_json::to_string_pretty(&sources).unwrap()
+        })
+    }
+
+    #[derive(Serialize, Debug)]
+    struct TestContent {
+        name: String,
+        content: Option<String>,
+    }
+    #[test]
+    fn test_content_format() {
+        dir_tests("content_format", "json", |path| {
+            let data: Pasta = Pasta::new(&PathBuf::from(path));
+            let contents = docs_to_test_content(&data);
             serde_json::to_string_pretty(&contents).unwrap()
         })
     }
@@ -122,7 +154,6 @@ mod tests {
     fn test_bulk() {
         dir_tests("bulk", "json", |path| {
             let data: Pasta = Pasta::new(&PathBuf::from(path));
-
             serde_json::to_string_pretty(&data.docs[0..10]).unwrap()
         })
     }

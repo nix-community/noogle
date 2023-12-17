@@ -1,0 +1,14 @@
+[
+  {
+    "name": "builtins.catAttrs",
+    "source": "lib.attrsets.catAttrs"
+  },
+  {
+    "name": "lib.catAttrs",
+    "source": "lib.attrsets.catAttrs"
+  },
+  {
+    "name": "lib.attrsets.catAttrs",
+    "source": "lib.attrsets.catAttrs"
+  }
+]
