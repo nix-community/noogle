@@ -80,16 +80,20 @@ pub fn main() {
         let data = Pasta::new(&pos_file);
         // data.doc_map
 
-        let mut json_list: Vec<CompressedDocument> = vec![];
+        let mut json_list: Vec<Document> = vec![];
         for item in data.docs.iter() {
             let document = Document::new(&item, &data.doc_map);
-            let matter = document.meta;
-            let content = document.content;
+            let matter = &document.meta;
+            let content = &document.content;
             match opts.format {
                 Format::DIR => {
                     if let Some((_, dir)) = item.path.split_last() {
                         let dir_dest = format!("{}/{}", opts.out, dir.join("/"));
-                        let file_dest = format!("{}/{}.md", opts.out, item.path.join("/"));
+                        let file_dest = format!(
+                            "{}/{}.md",
+                            opts.out,
+                            item.path.join("/").replace("'", "' (Prime)")
+                        );
                         create_dir_all(dir_dest).unwrap();
                         let mut file = File::create(file_dest).unwrap();
 
@@ -98,23 +102,15 @@ pub fn main() {
                             .unwrap();
                         file.write_all("---\n".as_bytes()).unwrap();
 
-                        if let Some(content) = content.as_ref().map(|ref i| i.content).flatten() {
-                            file.write_all(dedent(content).as_bytes()).unwrap();
+                        if let Some(content) =
+                            content.as_ref().map(|ref i| i.content.as_ref()).flatten()
+                        {
+                            // let fmt = dedent(content.strip_prefix("\n").unwrap_or(&content));
+                            file.write_all(content.as_bytes()).unwrap();
                         }
                     }
                 }
-                Format::JSON => json_list.push(CompressedDocument {
-                    m: CompressedDocumentFrontmatter {
-                        al: matter.aliases,
-                        ip: matter.is_primop,
-                        pm: matter.primop_meta.map(|m| CompressedPrimopMatter {
-                            ar: m.args,
-                            ay: m.arity,
-                        }),
-                        pa: matter.path,
-                    },
-                    c: content.map(|c| c.clone()),
-                }),
+                Format::JSON => json_list.push(document.clone()),
             }
         }
         if opts.format == Format::JSON {
@@ -134,20 +130,22 @@ fn find_document_content<'a>(
     item: &'a Docs,
     all: &'a HashMap<Rc<ValuePath>, Docs>,
 ) -> Option<ContentSource<'a>> {
-    match &item.docs.attr.content {
+    let content = match &item.docs.attr.content {
         Some(ref c) if !c.is_empty() => Some(ContentSource {
-            content: Some(c),
+            content: Some(dedent(c)),
             source: Some(SourceOrigin {
                 position: item.docs.attr.position.as_ref(),
                 path: Some(&item.path),
                 pos_type: Some(PositionType::Attribute),
             }),
         }),
+        // _ if item. item.lambda_content().is_some() => item.lambda_content(),
         _ => match item.fst_alias_content(&all) {
             Some(d) => Some(d),
             None => item.lambda_content(),
         },
-    }
+    };
+    return content;
 }
 
 #[derive(Serialize, Debug, Clone)]
@@ -158,6 +156,7 @@ struct Document<'a> {
 
 #[derive(Serialize, Debug, Clone)]
 struct DocumentFrontmatter<'a> {
+    title: String,
     path: &'a Rc<ValuePath>,
     aliases: Option<&'a AliasList>,
     /// If an item is primop then it should have the PrimopMeta field.
@@ -182,11 +181,8 @@ impl<'a> FromDocs<'a> for Document<'a> {
         let content = find_document_content(item, &data);
         Self {
             meta: DocumentFrontmatter {
-                // content_position: content
-                //     .as_ref()
-                //     .map(|t| t.source.as_ref().map(|s| s.position).flatten())
-                //     .flatten(),
                 content_meta: content.as_ref().map(|inner| inner.source.clone()).flatten(),
+                title: item.path.join(".").replace("'", "' (Prime)"),
                 path: &item.path,
                 aliases: item.aliases.as_ref(),
                 attr_position: item.docs.attr.position.as_ref(),

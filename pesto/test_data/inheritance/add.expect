@@ -1,17 +1,14 @@
 [
   {
     "name": "lib.add",
-    "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
     "source": "lib.add"
   },
   {
     "name": "lib.trivial.add",
-    "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
     "source": "lib.trivial.add"
   },
   {
     "name": "builtins.add",
-    "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
     "source": "builtins.add"
   }
 ]

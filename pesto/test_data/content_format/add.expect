@@ -1,0 +1,14 @@
+[
+  {
+    "name": "lib.add",
+    "content": "\nReturn the sum of the numbers *e1* and *e2*.\n"
+  },
+  {
+    "name": "lib.trivial.add",
+    "content": "\nReturn the sum of the numbers *e1* and *e2*.\n"
+  },
+  {
+    "name": "builtins.add",
+    "content": "\nReturn the sum of the numbers *e1* and *e2*.\n"
+  }
+]

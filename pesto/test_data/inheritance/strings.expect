@@ -1,12 +1,10 @@
 [
   {
     "name": "lib.strings.concatLines",
-    "content": "\n    Concatenate a list of strings, adding a newline at the end of each one.\n    Defined as `concatMapStrings (s: s + \"\\n\")`.\n\n    # Example\n\n    ```nix\n    concatLines [ \"foo\" \"bar\" ]\n    => \"foo\\nbar\\n\"\n    ```\n\n    # Type\n\n    ```\n    concatLines :: [string] -> string\n    ```\n  ",
     "source": "lib.strings.concatLines"
   },
   {
     "name": "lib.concatLines",
-    "content": "\n    Concatenate a list of strings, adding a newline at the end of each one.\n    Defined as `concatMapStrings (s: s + \"\\n\")`.\n\n    # Example\n\n    ```nix\n    concatLines [ \"foo\" \"bar\" ]\n    => \"foo\\nbar\\n\"\n    ```\n\n    # Type\n\n    ```\n    concatLines :: [string] -> string\n    ```\n  ",
     "source": "lib.strings.concatLines"
   }
 ]
