@@ -1,7 +1,7 @@
 import nix from "highlight.js/lib/languages/nix";
+import "highlight.js/styles/github-dark.css";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
-
 interface MarkdownPreviewProps {
   description: string;
 }

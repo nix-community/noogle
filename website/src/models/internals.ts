@@ -1,5 +1,5 @@
-import { data } from "./data";
-import { MetaData, NixType } from "./nix";
+import { Doc, data } from "./data";
+import { NixType } from "./nix";
 
 export type ViewMode = "explore" | "browse";
 
@@ -8,7 +8,7 @@ export type ComputedState = {
 };
 
 export type PageState = {
-  data: MetaData;
+  data: Doc[];
   selected: string | null;
   term: string;
   filter: Filter;

@@ -1,4 +1,5 @@
-import { DocItem } from "@/models/nix";
+import { Doc } from "@/models/data";
+import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import ShareIcon from "@mui/icons-material/Share";
 import {
   IconButton,
@@ -14,22 +15,21 @@ import { useMemo, useState } from "react";
 import { Marker } from "react-mark.js";
 import { Preview } from "../preview/preview";
 
-import { normalizePath } from "@/models/internals";
-import ManageSearchIcon from "@mui/icons-material/ManageSearch";
-
 interface FunctionItemProps {
   selected: boolean;
   name: String;
-  docItem: DocItem;
+  docItem: Doc;
   handleClose: () => void;
   markWords: string[];
 }
 
 export default function FunctionItem(props: FunctionItemProps) {
   const { docItem, selected, handleClose, markWords } = props;
-  const { fn_type, category, description, id } = docItem;
+  // const { fn_type, category, description, id } = docItem;
+  const { content, meta } = docItem;
   const [mark, setMark] = useState<Boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
+
   const descriptionPreview = useMemo(() => {
     const getFirstWords = (s: string) => {
       const indexOfDot = s.indexOf(".");
@@ -38,15 +38,11 @@ export default function FunctionItem(props: FunctionItemProps) {
       }
       return s.split(" ").filter(Boolean).slice(0, 10).join(" ");
     };
-    if (typeof description === "object") {
-      const singleString = description?.join("") || "";
-      return getFirstWords(singleString);
-    } else if (description) {
-      return getFirstWords(description);
-    } else {
-      return "";
+    if (content?.content) {
+      return getFirstWords(content?.content);
     }
-  }, [description]);
+    return "";
+  }, [content]);
 
   const handleShare = () => {
     const handle = window.location.href;
@@ -54,7 +50,7 @@ export default function FunctionItem(props: FunctionItemProps) {
     enqueueSnackbar("link copied to clipboard", { variant: "default" });
   };
 
-  const normalId: string = useMemo(() => normalizePath(id), [id]);
+  // const normalId: string = useMemo(() => id, [id]);
 
   return (
     <Paper
@@ -80,14 +76,14 @@ export default function FunctionItem(props: FunctionItemProps) {
       <Stack sx={{ width: "100%" }}>
         {!selected && (
           <>
-            <ListItemText primary={`${normalId}`} secondary={category} />
+            <ListItemText primary={`${meta.title}`} secondary={meta.title} />
             <ListItemText secondary={descriptionPreview} />
             <Typography
               sx={{
-                color: !fn_type ? "text.secondary" : "text.primary",
+                color: "text.secondary",
               }}
             >
-              {`${fn_type || "No type provided yet."} `}
+              {`Types cannot be detected yet. Work with us on migrating this feature.`}
             </Typography>
           </>
         )}

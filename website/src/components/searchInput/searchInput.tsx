@@ -1,5 +1,4 @@
-import { NixType, nixTypes } from "@/models/nix";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { NixType } from "@/models/nix";
 import ClearIcon from "@mui/icons-material/Clear";
 import SearchIcon from "@mui/icons-material/Search";
 import {
@@ -15,7 +14,6 @@ import Paper from "@mui/material/Paper";
 import { SearchOptions, Suggestion } from "minisearch";
 import React, { useMemo, useState } from "react";
 import { usePageContext } from "../pageContext";
-import { SelectOption } from "../selectOption";
 
 export type Filter = { from: NixType; to: NixType };
 
@@ -63,7 +61,7 @@ export function SearchInput(props: SearchInputProps) {
     _setTerm(e.target.value);
     autoSuggest(e.target.value, {
       fuzzy: 0.25,
-      fields: ["id", "name", "category"],
+      fields: ["meta.title", "content.content"],
     });
     debouncedSubmit(e.target.value);
   };
@@ -149,6 +147,12 @@ export function SearchInput(props: SearchInputProps) {
       <Box>
         <Grid container>
           <Grid item xs={12} md={5}>
+            <Typography variant="subtitle2" color="text.secondary">
+              Type search is temporarily unavailable. Due to ongoing RFC-145
+              integration
+            </Typography>
+          </Grid>
+          {/* <Grid item xs={12} md={5}>
             <SelectOption
               value={filter.from}
               label="from type"
@@ -183,7 +187,7 @@ export function SearchInput(props: SearchInputProps) {
               }}
               options={nixTypes.map((v) => ({ value: v, label: v }))}
             />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Box>
     </>

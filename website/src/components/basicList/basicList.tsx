@@ -4,13 +4,13 @@ import React, { useMemo } from "react";
 import { SearchInput } from "../searchInput";
 
 import { ViewMode } from "@/models/internals";
-import { DocItem } from "@/models/nix";
 import { UseMiniSearch } from "react-minisearch";
 import { EmptyRecordsPlaceholder } from "../emptyRecordsPlaceholder";
 import { FunctionOfTheDay } from "../functionOfTheDay";
 import { useMobile } from "../layout/layout";
 import { usePageContext } from "../pageContext";
 import { Filter } from "../searchInput/searchInput";
+import { Doc } from "@/models/data";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -18,7 +18,7 @@ export type BasicListItem = {
 };
 export type BasicListProps = BasicDataViewProps & {
   selected?: string | null;
-  minisearch: UseMiniSearch<DocItem>;
+  minisearch: UseMiniSearch<Doc>;
 };
 
 export function BasicList(props: BasicListProps) {

@@ -1,6 +1,4 @@
-import { normalizePath } from "@/models/internals";
-import { DocItem } from "@/models/nix";
-import CodeIcon from "@mui/icons-material/Code";
+import { Doc } from "@/models/data";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import InputIcon from "@mui/icons-material/Input";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
@@ -17,30 +15,35 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import React, { useMemo } from "react";
-import { CodeHighlight } from "../codeHighlight";
+import React from "react";
 import { MarkdownPreview } from "../markdownPreview";
 
 interface PreviewProps {
-  docItem: DocItem;
+  docItem: Doc;
   closeComponent?: React.ReactNode;
   handleClose?: () => void;
 }
 
 export const Preview = (props: PreviewProps) => {
   const { docItem, handleClose, closeComponent = undefined } = props;
-  const { name, description, category, example, fn_type, id, line } = docItem;
+  // const { name, description, category, example, fn_type, id, line } = docItem;
+  const { content, meta } = docItem;
   const theme = useTheme();
 
-  const normalId: string = useMemo(() => normalizePath(id), [id]);
+  // const normalId: string = useMemo(() => id, [id]);
 
-  const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
-  const libName = category
-    .match(/(?:[a-zA-Z]*)\.nix/gm)?.[0]
-    ?.replace(".nix", "");
-  const sanitizedName = name.replace("'", "-prime");
-  const libDocsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${sanitizedName}`;
-  const builtinsDocsRef = `https://nixos.org/manual/nix/stable/language/builtins.html#builtins-${name}`;
+  // const prefix = category.split(/([\/.])/gm).at(4) || "builtins";
+  // const libName = category
+  //   .match(/(?:[a-zA-Z]*)\.nix/gm)?.[0]
+  //   ?.replace(".nix", "");
+  // const sanitizedName = name.replace("'", "-prime");
+  // const libDocsRef = `https://nixos.org/manual/nixpkgs/stable/#function-library-lib.${libName}.${sanitizedName}`;
+  // const builtinsDocsRef = `https://nixos.org/manual/nix/stable/language/builtins.html#builtins-${name}`;
+  const getPrimopDescription = (meta: Doc["meta"]["primop_meta"]) => {
+    const args = meta?.args?.map((a) => `__${a}__`) || [];
+    return `takes ${meta?.arity} arguments: ${args.join(", ")} \n`;
+  };
+
   return (
     <Box
       sx={{
@@ -61,7 +64,7 @@ export const Preview = (props: PreviewProps) => {
           color={"text.primary"}
           sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
         >
-          {`${normalId}`}
+          {`${meta.title}`}
         </Typography>
         {closeComponent || (
           <Tooltip title="close details">
@@ -79,13 +82,13 @@ export const Preview = (props: PreviewProps) => {
           </Tooltip>
         )}
       </Box>
-      {prefix !== "builtins" && id.includes("lib.") && (
+      {/* {prefix !== "builtins" && id.includes("lib.") && (
         <Box sx={{ my: 1 }}>
           <Typography variant="subtitle1">
             {`short form: lib.${name}`}
           </Typography>
         </Box>
-      )}
+      )} */}
       <List sx={{ width: "100%" }} disablePadding>
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
@@ -93,7 +96,7 @@ export const Preview = (props: PreviewProps) => {
               <MuiLink
                 sx={{ m: "auto", color: "primary.light" }}
                 target="_blank"
-                href={!id.includes("builtins") ? libDocsRef : builtinsDocsRef}
+                href={content?.source?.position?.file || "#"}
               >
                 <LocalLibraryIcon sx={{ m: "auto" }} />
               </MuiLink>
@@ -116,23 +119,23 @@ export const Preview = (props: PreviewProps) => {
               fontSize: "1rem",
               component: "div",
             }}
-            primary={
-              !id.includes("builtins") ? (
-                <Tooltip title={"browse source code"}>
-                  <MuiLink
-                    target={"_blank"}
-                    href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
-                      "./",
-                      ""
-                    )}#L${line}`}
-                  >
-                    {"github:NixOS/nixpkgs/" + category.replace("./", "")}
-                  </MuiLink>
-                </Tooltip>
-              ) : (
-                "github:NixOS/nix/" + category.replace("./", "")
-              )
-            }
+            // primary={
+            //   !id.includes("builtins") ? (
+            //     <Tooltip title={"browse source code"}>
+            //       <MuiLink
+            //         target={"_blank"}
+            //         href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
+            //           "./",
+            //           ""
+            //         )}#L${line}`}
+            //       >
+            //         {"github:NixOS/nixpkgs/" + category.replace("./", "")}
+            //       </MuiLink>
+            //     </Tooltip>
+            //   ) : (
+            //     "github:NixOS/nix/" + category.replace("./", "")
+            //   )
+            // }
             secondary={
               <Container
                 component={"div"}
@@ -143,13 +146,14 @@ export const Preview = (props: PreviewProps) => {
                 }}
                 maxWidth="md"
               >
-                {Array.isArray(description)
-                  ? description.map((d, idx) => (
-                      <MarkdownPreview key={idx} description={d} />
-                    ))
-                  : description && (
-                      <MarkdownPreview description={description} />
-                    )}
+                {meta?.is_primop && (
+                  <MarkdownPreview
+                    description={getPrimopDescription(meta.primop_meta)}
+                  />
+                )}
+                {!!content?.content && (
+                  <MarkdownPreview description={content.content} />
+                )}
               </Container>
             }
           />
@@ -157,16 +161,16 @@ export const Preview = (props: PreviewProps) => {
         <ListItem sx={{ flexDirection: { xs: "column", sm: "row" }, px: 0 }}>
           <ListItemIcon>
             <Tooltip title={"browse source code"}>
-              <MuiLink
+              {/* <MuiLink
                 sx={{ m: "auto", color: "primary.light" }}
                 target="_blank"
                 href={`https://github.com/NixOS/nixpkgs/blob/master/${category.replace(
                   "./",
                   ""
                 )}`}
-              >
-                <InputIcon sx={{ m: "auto" }} />
-              </MuiLink>
+              > */}
+              <InputIcon sx={{ m: "auto" }} />
+              {/* </MuiLink> */}
             </Tooltip>
           </ListItemIcon>
           <ListItemText
@@ -186,57 +190,20 @@ export const Preview = (props: PreviewProps) => {
               fontSize: theme.typography.fontSize + 4,
             }}
             secondary={
-              fn_type ? (
-                <CodeHighlight
-                  code={fn_type}
-                  theme={theme.palette.mode}
-                  lang={"Haskell"}
-                />
-              ) : (
-                "no type provided yet."
-              )
+              "Types cannot be detected yet. Work with us on migrating this feature."
+              // fn_type ? (
+              // <CodeHighlight
+              //   code={fn_type}
+              //   theme={theme.palette.mode}
+              //   lang={"Haskell"}
+              // />
+              // ) : (
+              //   "no type provided yet."
+              // )
             }
             primary="function signature "
           />
         </ListItem>
-        {example && (
-          <ListItem
-            sx={{
-              backgroundColor: "background.paper",
-              flexDirection: { xs: "column", sm: "row" },
-              px: 0,
-            }}
-          >
-            <ListItemIcon>
-              <CodeIcon sx={{ m: "auto" }} />
-            </ListItemIcon>
-
-            <ListItemText
-              sx={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                alignSelf: "flex-start",
-                width: "100%",
-                px: 0,
-              }}
-              disableTypography
-              primary={
-                <Typography sx={{ color: "text.secondary" }}>
-                  Example
-                </Typography>
-              }
-              secondary={
-                <CodeHighlight
-                  code={example}
-                  theme={theme.palette.mode}
-                  background={
-                    theme.palette.mode === "light" ? "action.hover" : undefined
-                  }
-                />
-              }
-            />
-          </ListItem>
-        )}
       </List>
     </Box>
   );
