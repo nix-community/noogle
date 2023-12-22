@@ -31,6 +31,7 @@
         ./devShell.nix
         ./preCommit.nix
         ./website/flake-module.nix
+        ./salt/flake-module.nix
         ./pasta/flake-module.nix
         ./pesto/flake-module.nix
         # Deprecated. Will be removed.

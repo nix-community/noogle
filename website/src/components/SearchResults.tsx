@@ -13,7 +13,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 
 import { useMiniSearch } from "react-minisearch";
 
@@ -42,7 +42,6 @@ export function SearchResults() {
 
   const isMobile = useMobile();
 
-  const [isLoading, setLoading] = useState<boolean>(true);
   const { search, searchResults } = useMiniSearch<Doc>(data, {
     idField: "meta.title",
     fields: ["meta.title", "content.content", "bla.bu"],
@@ -68,13 +67,6 @@ export function SearchResults() {
     query.set("page", "1");
     router.push(`?${query.toString()}`);
   };
-  // useEffect(() => {
-  //   if (searchResults !== null) {
-  //     setLoading(false);
-  //   }
-  //   console.log({ searchResults });
-  // }, [searchResults]);
-  // console.log({ isLoading });
 
   const pageItems = useMemo(() => {
     const items = searchResults || [];

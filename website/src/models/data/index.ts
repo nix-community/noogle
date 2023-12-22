@@ -2,7 +2,7 @@
 // import nixBuiltins from "./builtins.json" assert { type: "json" };
 // import nixLibs from "./lib.json" assert { type: "json" };
 import all from "./data.json" assert { type: "json" };
-import builtinTypes from "./builtins.types.json" assert { type: "json" };
+import types from "./builtins.types.json" assert { type: "json" };
 
 export type FilePosition = {
   file: string;
@@ -46,10 +46,11 @@ export type Doc = {
   content?: ContentSource;
 };
 
-// export const data = all.sort((a, b) =>
-//   a.meta.title.localeCompare(b.meta.title)
-// ) as Doc[];
-
 export const data: Doc[] = all as unknown as Doc[];
-export { builtinTypes };
 
+export type BuiltinType = { fn_type: string };
+export type BuiltinTypes = {
+  [fn_name: string]: BuiltinType;
+};
+
+export const builtinTypes = types as BuiltinTypes;

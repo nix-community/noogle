@@ -3,11 +3,22 @@
     let
       inherit (self.inputs) floco;
       hooks = {
-        prepare = prefix: ''
-          cp -f ${self'.packages.nixpkgs-data.lib} ${prefix}/lib.json
-          cp -f ${self'.packages.nixpkgs-data.trivial_builders} ${prefix}/trivial-builders.json
-          cp -f ${self'.packages.nixpkgs-data.build_support} ${prefix}/build_support.json
-          cp -f ${self'.packages.builtins-data} ${prefix}/builtins.json
+        prepare =
+          let
+            data_path = "src/models/data";
+            fonts_path = "src/fonts";
+          in
+          ''          
+          # New data
+          cp -f ${self'.packages.data-json} ${data_path}/data.json
+          cp -f ${self'.packages.pasta-meta} ${data_path}/meta.json
+          cp -rf ${self'.packages.salt}/* ${data_path}
+          chmod -R +w ${data_path}
+
+          # Website fonts
+          cp -rf ${pkgs.inter}/share/fonts/opentype/* ${fonts_path}
+          cp -rf ${pkgs.fira-code}/share/fonts/truetype/* ${fonts_path}
+          chmod -R +w ${fonts_path}
         '';
       };
       base = pkgs.callPackage ./default.nix {
