@@ -48,7 +48,7 @@ in
         override.preBuild = ''
           export HOME=./home
 
-          ${hooks.prepare "src/models/data"}
+          ${hooks.prepare}
           
           ls -la src/models/data
         '';

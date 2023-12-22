@@ -1,0 +1,116 @@
+{
+  "abort": { "fn_type": "abort :: String" },
+  "add": { "fn_type": "add :: Number -> Number -> Number" },
+  "all": { "fn_type": "all :: (a -> Bool) -> [a] -> Bool" },
+  "Any": { "fn_type": "Any :: (a -> Bool) -> [a] -> Bool" },
+  "attrNames": { "fn_type": "attrNames :: AttrSet -> [a]" },
+  "attrValues": { "fn_type": "attrValues :: AttrSet -> [a]" },
+  "baseNameOf": { "fn_type": "baseNameOf :: String -> String" },
+  "bitAnd": { "fn_type": "bitAnd :: Int -> Int -> Int" },
+  "bitOr": { "fn_type": "bitOr :: Int -> Int -> Int" },
+  "bitXor": { "fn_type": "bitXor :: Int -> Int -> Int" },
+  "break": { "fn_type": "break :: a -> a" },
+  "catAttrs": {
+    "fn_type": "cattAtrs :: String -> [ { ${name} :: a } ] -> [a]"
+  },
+  "ceil": { "fn_type": "ceil :: Float -> Int" },
+  "compareVersions": {
+    "fn_type": "compareVersions :: String -> String -> Int"
+  },
+  "concatLists": { "fn_type": "concatLists :: [List] -> []" },
+  "concatMap": { "fn_type": "concatMap :: (a -> b) -> [a] -> [b]" },
+  "concatStringsSep": {
+    "fn_type": "concatStringsSep :: String -> [String] -> String"
+  },
+  "deepSeq": { "fn_type": "deepSeq :: a -> b -> b" },
+  "derivation": {
+    "fn_type": "let \n    Derivation :: {\n        all :: [ Derivation ];\n        builder :: String;\n        drvAttrs :: {\n            builder = String; \n            name = String;\n            outputs = [ output :: String ]; \n            system = String;\n            ${additionalArgs} :: String;\n        }\n        drvPath :: String;\n        name :: String;\n        outPath :: String;\n        outputName :: String;\n        outputs :: [ output :: String ];\n        system :: String;\n        type :: \"derivation\";\n        ${output} :: Derivation;\n        ${additionalArgs} :: String;\n    };\nin\n    builtins.derivation :: {\n        name :: String;\n        outputs :: [ output :: String ] ? [ \"out\" ];\n        builder :: String;\n        system :: String;\n        ${additionalArgs} :: String;\n    } -> Derivation"
+  },
+  "dirOf": { "fn_type": "dirOf :: String -> String" },
+  "div": { "fn_type": "div :: Number -> Number -> Number" },
+  "elem": { "fn_type": "elem :: a -> [b] -> Bool" },
+  "elemAt": { "fn_type": "elemAt :: [a] -> Int -> b" },
+  "fetchClosure": { "fn_type": "fetchClosure :: AttrSet -> AttrSet" },
+  "fetchGit": { "fn_type": "fetchgit :: AttrSet -> AttrSet" },
+  "fetchTarball": { "fn_type": "fetchTarball :: AttrSet -> AttrSet" },
+  "fetchurl": { "fn_type": "fetchurl :: String -> AttrSet" },
+  "filter": { "fn_type": "filter :: (a -> Bool) -> [a] -> [b]" },
+  "filterSource": {
+    "fn_type": "filterSource :: (Path -> String -> Bool) -> Path -> StorePath"
+  },
+  "floor": { "fn_type": "floor :: Float -> Int" },
+  "foldl'": {
+    "fn_type": "foldl' :: (a -> b -> c) -> a -> [b] -> c"
+  },
+  "fromJSON": { "fn_type": "fromJSON :: String -> a" },
+  "functionArgs": { "fn_type": "functionArgs :: (a) -> AttrSet" },
+  "genList": { "fn_type": "genList :: (a -> b) -> a -> [b]" },
+  "genericClosure": { "fn_type": "genericClosure :: AttrSet -> [AttrSet]" },
+  "getAttr": { "fn_type": "getAttr :: String -> AttrSet -> a" },
+  "getEnv": { "fn_type": "getEnv :: String -> String" },
+  "getFlake": { "fn_type": "getFlake :: AttrSet -> AttrSet" },
+  "groupBy": { "fn_type": "groupBy :: (a -> b) -> [a] -> AttrSet" },
+  "hasAttr": { "fn_type": "hasAttr :: String -> AttrSet -> Bool" },
+  "hashFile": { "fn_type": "hashFile :: String -> Path -> String" },
+  "hashString": { "fn_type": "hashString :: String -> String -> String" },
+  "head": { "fn_type": "head :: [a] -> a" },
+  "import": { "fn_type": "import :: Path -> a" },
+  "intersectAttrs": {
+    "fn_type": "intersectAttrs :: AttrSet -> AttrSet -> AttrSet"
+  },
+  "isAttrs": { "fn_type": "isAttrs :: a -> Bool" },
+  "isBool": { "fn_type": "isBool :: a -> Bool" },
+  "isFloat": { "fn_type": "isFloat :: a -> Bool" },
+  "isFunction": { "fn_type": "isFunction :: a -> Bool" },
+  "isInt": { "fn_type": "isInt :: a -> Bool" },
+  "isList": { "fn_type": "isList :: a -> Bool" },
+  "isNull": { "fn_type": "isNull :: a -> Bool" },
+  "isPath": { "fn_type": "isPath :: a -> Bool" },
+  "isString": { "fn_type": "isString :: a -> Bool" },
+  "length": { "fn_type": "length :: [a] -> Int" },
+  "lessThan": { "fn_type": "lessThan :: Number -> Number -> Bool" },
+  "listToAttrs": {
+    "fn_type": "listToAttrs :: [{name :: String; value :: a}] -> AttrSet"
+  },
+  "map": { "fn_type": "map :: (a -> b) -> [a] -> [b]" },
+  "mapAttrs": { "fn_type": "mapAttrs :: (a -> b -> c) -> AttrSet -> AttrSet" },
+  "match": { "fn_type": "match :: String -> String -> Bool" },
+  "mul": { "fn_type": "mul :: Number -> Number -> Number" },
+  "parseDrvName": { "fn_type": "parseDrvName :: String -> AttrSet" },
+  "partition": { "fn_type": "partition :: (a -> Bool) -> [a] -> AttrSet" },
+  "Path": { "fn_type": "Path :: AttrSet -> StorePath" },
+  "pathExists": { "fn_type": "pathExists :: Path -> Bool" },
+  "placeholder": { "fn_type": "placeholder :: String -> String" },
+  "readDir": { "fn_type": "readDir :: Path -> AttrSet" },
+  "readFile": { "fn_type": "readFile :: Path -> String" },
+  "removeAttrs": { "fn_type": "removeAttrs :: AttrSet -> [a] -> AttrSet" },
+  "replaceStrings": {
+    "fn_type": "replaceStrings :: [String] -> [String] -> String -> String"
+  },
+  "seq": { "fn_type": "seq :: a -> b -> b" },
+  "sort": { "fn_type": "sort :: (a -> b -> Bool) -> [a] -> [b]" },
+  "split": { "fn_type": "split :: String -> String -> [String]" },
+  "splitVersion": { "fn_type": "splitVersion :: String -> [String]" },
+  "StorePath": { "fn_type": "StorePath :: StorePath -> StorePath" },
+  "stringLength": { "fn_type": "stringLength :: String -> Int" },
+  "sub": { "fn_type": "sub :: Number -> Number -> Number" },
+  "substring": { "fn_type": "substring :: Int -> Int -> String -> String" },
+  "tail": { "fn_type": "tail :: [a] -> a" },
+  "throw": { "fn_type": "throw :: String" },
+  "toFile": { "fn_type": "toFile :: Path -> String -> StorePath " },
+  "toJSON": { "fn_type": "toJSON :: a -> String" },
+  "toPath": { "fn_type": "toPath :: String -> Path" },
+  "toString": { "fn_type": "toString :: a -> String" },
+  "toXML": { "fn_type": "toXML :: a -> String" },
+  "trace": { "fn_type": "trace :: a -> b -> b" },
+  "traceVerbose": { "fn_type": "traceVerbose :: a -> b -> b" },
+  "tryEval": { "fn_type": "tryEval :: a" },
+  "typeOf": { "fn_type": "typeOf :: a -> String" },
+  "zipAttrsWith": {
+    "fn_type": "zipAttrsWith :: (String -> [a] ) -> [a] -> AttrSet"
+  },
+
+  "fromTOML": {
+    "fn_type": "fromTOML :: String -> { Any }"
+  }
+}
