@@ -125,12 +125,10 @@ impl<'a> Lookups<'a> for Docs {
                                 && !i.docs.attr.content.as_ref().unwrap().is_empty()
                             {
                                 Some(ContentSource {
-                                    content: i
-                                        .docs
-                                        .attr
-                                        .content
-                                        .as_ref()
-                                        .map(|inner| dedent(inner)),
+                                    content: i.docs.attr.content.as_ref().map(|inner| {
+                                        let fmt = dedent(inner);
+                                        fmt
+                                    }),
                                     source: Some(SourceOrigin {
                                         position: i.docs.attr.position.as_ref(),
                                         path: Some(&i.path),
@@ -138,7 +136,6 @@ impl<'a> Lookups<'a> for Docs {
                                     }),
                                 })
                             } else {
-                                // i.lambda_content()
                                 None
                             }
                         })

@@ -1,0 +1,54 @@
+[
+  {
+    "aliases": [
+      [
+        "lib",
+        "escapeURL"
+      ]
+    ],
+    "path": [
+      "lib",
+      "strings",
+      "escapeURL"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "strings",
+        "escapeURL"
+      ]
+    ],
+    "path": [
+      "lib",
+      "escapeURL"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "escapeRegex"
+      ]
+    ],
+    "path": [
+      "lib",
+      "strings",
+      "escapeRegex"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "strings",
+        "escapeRegex"
+      ]
+    ],
+    "path": [
+      "lib",
+      "escapeRegex"
+    ]
+  }
+]

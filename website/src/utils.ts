@@ -2,7 +2,6 @@ import fs from "fs";
 import bash from "highlight.js/lib/languages/bash";
 import haskell from "highlight.js/lib/languages/haskell";
 import nix from "highlight.js/lib/languages/nix";
-import "highlight.js/styles/github-dark-dimmed.css";
 import { SerializeOptions } from "next-mdx-remote/dist/types";
 import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import { parse, serialize } from "parse5";
@@ -15,6 +14,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkHeadingId from "remark-heading-id";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+
 import { unified } from "unified";
 
 /**
@@ -111,7 +111,7 @@ type Heading = {
   id: string;
 };
 
-export const extractHeadings = async (content: Buffer): Promise<Heading[]> => {
+export const extractHeadings = async (content: string): Promise<Heading[]> => {
   const processor = unified()
     .use(remarkParse)
     .use(remarkHeadingId)

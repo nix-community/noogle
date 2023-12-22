@@ -200,22 +200,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-migrated": {
-      "locked": {
-        "lastModified": 1699884649,
-        "narHash": "sha256-HF1iNm+SqZJtUgoi57Mk21jDsgeybIcopDwaNFLqexc=",
-        "owner": "hsjobeki",
-        "repo": "nixpkgs",
-        "rev": "047dce513a20231fde99b1e9b950ab6b562b27b0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hsjobeki",
-        "ref": "migrate-doc-comments",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-regression": {
       "locked": {
         "lastModified": 1643052045,
@@ -295,7 +279,6 @@
         "nix": "nix",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-migrated": "nixpkgs-migrated",
         "pre-commit-hooks": "pre-commit-hooks",
         "treefmt-nix": "treefmt-nix"
       }

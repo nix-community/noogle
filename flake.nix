@@ -3,9 +3,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-master.url = "nixpkgs/master";
-    nixpkgs-migrated.url = "github:hsjobeki/nixpkgs/?ref=migrate-doc-comments";
 
-    # A custom nix verison, to introspect lambda values. 
+    # A custom nix version, to introspect lambda values. 
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 
     pre-commit-hooks = {
@@ -35,6 +34,7 @@
         ./pasta/flake-module.nix
         ./pesto/flake-module.nix
         # Deprecated. Will be removed.
+        ./codemod/flake-module.nix
         ./indexer/flake-module.nix
         ./scripts/flake-module.nix
       ];

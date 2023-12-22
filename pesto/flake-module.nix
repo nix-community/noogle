@@ -11,6 +11,16 @@
       };
 
       pesto = craneLib.buildPackage commonArgs;
+
+      data-json = pkgs.stdenv.mkDerivation {
+        name = "nixpkgs-migrated";
+        src = inputs.nixpkgs;
+        buildPhase = ''
+          ${pesto}/bin/pesto --pos-file ${self'.packages.pasta} --format json $out
+        '';
+      };
+
+
       checks = {
         inherit pesto;
         pesto-clippy = craneLib.cargoClippy (commonArgs // {
@@ -24,7 +34,7 @@
       };
     in
     {
-      packages = { inherit pesto; };
+      packages = { inherit pesto data-json; };
       inherit checks;
       devShells.pesto = craneLib.devShell {
         # Inherit inputs from checks.

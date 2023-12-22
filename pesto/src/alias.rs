@@ -31,30 +31,35 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                 if item.path == other.path {
                     return None;
                 }
-                // We cannot safely compare using the current value introspection if countApplied not eq 0.
-                if (s_meta.countApplied != Some(0))
-                    // Use less accurate name (only) aliases. This can lead to potentially false positives.
-                    // e.g. lib.lists.last <=> lib.last
-                    // comparing only the "last" string. Don't use any introspection
-                    // TODO: find out how to compare partially applied values.
-                    // A correct solution would include comparing the upValues ?
-                    && item.path.last() == other.path.last()
-                {
-                    return Some(other.path.clone());
-                }
-                return match s_meta.isPrimop {
-                    true => {
+
+                return match (o_meta.isPrimop, s_meta.isPrimop) {
+                    (true, true) => {
                         let is_empty = match &s_meta.content {
                             Some(c) => c.is_empty(),
                             None => true,
                         };
+                        if s_meta.countApplied != Some(0)
+                            && s_meta.countApplied == o_meta.countApplied
+                        {
+                            if item.path.last() == other.path.last() {
+                                return Some(other.path.clone());
+                            } else {
+                                return None;
+                            }
+                        }
 
-                        if o_meta.isPrimop && o_meta.content == s_meta.content && !is_empty {
+                        if o_meta.content == s_meta.content && !is_empty {
                             return Some(other.path.clone());
                         }
                         None
                     }
-                    false => {
+                    (false, false) => {
+                        if s_meta.countApplied != Some(0) {
+                            if item.path.last() == other.path.last() {
+                                return Some(other.path.clone());
+                            }
+                        }
+
                         if s_meta.position == o_meta.position
                             && s_meta.countApplied == Some(0)
                             && s_meta.countApplied == o_meta.countApplied
@@ -63,6 +68,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         }
                         None
                     }
+                    _ => None,
                 };
             }
             None
@@ -101,7 +107,8 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
             match lambda.countApplied {
-                Some(0) | None => {
+                // Some(0) | None => {
+                Some(0) => {
                     if lambda.isPrimop {
                         primop_lambdas.push(&item);
                     }
@@ -110,7 +117,6 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
                     }
                 }
                 _ => {
-                    // #
                     partially_applieds.push(&item);
                 }
             }

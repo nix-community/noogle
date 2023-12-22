@@ -28,11 +28,15 @@ let
     rustTools = collectFns pkgs.rustPackages {
       initialPath = [ "pkgs" "rustPackages" ];
     };
-    stdenvTools = getDocsFromSet pkgs.stdenv [ "pkgs" "stdenv" ];
 
-    ############# Non-recursive analysis sets
+    ############# Non-recursive analysis sets (pkgs.<nested>)
+    # pkgs cannot be analysed recursively
+    # nested documentation items must be configured specifically
+    stdenvTools = getDocsFromSet pkgs.stdenv [ "pkgs" "stdenv" ];
     pkgs = getDocsFromSet pkgs [ "pkgs" ];
     dockerTools = getDocsFromSet pkgs.dockerTools [ "pkgs" "dockerTools" ];
+    writers = getDocsFromSet pkgs.writers [ "pkgs" "writers" ];
+    haskellLib = getDocsFromSet pkgs.haskell.lib [ "pkgs" "haskell" "lib" ];
     pythonTools =
       getDocsFromSet pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
     builtins =

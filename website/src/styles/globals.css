@@ -2,14 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
+  scroll-behavior: smooth;
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -23,4 +23,29 @@ mark.noogle-marker {
   /* :rgb(106, 213, 65); */
   color: inherit;
   background-color: #88DD67;
+}
+
+
+code  {
+  /* padding: 0.3rem; */
+  background-color: #f0f1f2;
+}
+pre {
+  /* padding: 0.3rem; */
+  background-color: #f0f1f2;
+}
+code.hljs  {
+  background-color: #f0f1f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  code  {
+    background-color: #0d1117;
+  }
+  pre {
+    background-color: #0d1117;
+  }
+  code.hljs  {
+    background-color: #0d1117;
+  } 
 }

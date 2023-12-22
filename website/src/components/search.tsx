@@ -37,7 +37,6 @@ export default function SearchPage() {
     }
   }
 
-  console.log("result", { results, query });
   return (
     <div>
       <input

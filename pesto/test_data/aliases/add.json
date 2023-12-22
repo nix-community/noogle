@@ -13,6 +13,7 @@
         "arity": 2,
         "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
         "experimental": false,
+        "countApplied": 0,
         "isPrimop": true,
         "name": "add",
         "position": null
@@ -34,6 +35,7 @@
         "arity": 2,
         "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
         "experimental": false,
+        "countApplied": 0,
         "isPrimop": true,
         "name": "add",
         "position": null
