@@ -1,59 +1,57 @@
-"use client";
-import { AppState } from "@/components/appState";
-import { Layout } from "@/components/layout";
-import { CacheProvider, ThemeProvider } from "@emotion/react";
-import { CssBaseline, createTheme, useMediaQuery } from "@mui/material";
-import Head from "next/head";
-import { SnackbarProvider } from "notistack";
-import createEmotionCache from "../../createEmotionCache";
+import { CssBaseline } from "@mui/material";
 import "../styles/globals.css";
-import { darkThemeOptions, lightThemeOptions } from "../styles/theme";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import localFont from "next/font/local";
+import { ClientSideLayoutContext } from "@/components/ClientSideLayoutContext";
+import { Metadata } from "next";
 
-const clientSideEmotionCache = createEmotionCache();
-const lightTheme = createTheme(lightThemeOptions);
-const darkTheme = createTheme(darkThemeOptions);
+export const metadata: Metadata = {
+  title: "Noogle",
+  creator: "@hsjobeki",
+  abstract: "Nix and NixOS API Documentation",
+  robots: { index: true, notranslate: true, nocache: true },
+  icons: "/favicon.png",
+};
+
+const inter = localFont({
+  src: "../fonts/Inter-Regular.otf",
+  display: "swap",
+});
+// /* <title>noogle</title>
+// <meta charSet="utf-8" />
+// <meta
+// name="description"
+// content="Search nix functions. Search functions within the nix ecosystem based on type, name, description, example, category and more."
+// />
+// <meta /> */
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const userPrefersDarkmode = useMediaQuery("(prefers-color-scheme: dark)");
   return (
-    <html lang="en">
-      <Head>
-        <title>noogle</title>
-        <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="Search nix functions. Search functions within the nix ecosystem based on type, name, description, example, category and more."
-        />
-        <meta />
-        <meta name="robots" content="all" />
-        <link rel="icon" href="/favicon.png" />
+    <html lang="en" className={inter.className}>
+      <head>
+        {/* <link rel="icon" href="/favicon.png" /> */}
         <link
           rel="search"
           type="application/opensearchdescription+xml"
           title="Search nix function on noogle"
           href="/search.xml"
         ></link>
-      </Head>
+      </head>
       <body>
-        <CacheProvider value={clientSideEmotionCache}>
-          <ThemeProvider theme={userPrefersDarkmode ? darkTheme : lightTheme}>
+        <AppRouterCacheProvider
+          options={{
+            enableCssLayer: true,
+          }}
+        >
+          <ClientSideLayoutContext>
             <CssBaseline />
-            <SnackbarProvider
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-              maxSnack={1}
-            >
-              <AppState>
-                <Layout>{children}</Layout>
-              </AppState>
-            </SnackbarProvider>
-          </ThemeProvider>
-        </CacheProvider>
+            {children}
+          </ClientSideLayoutContext>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

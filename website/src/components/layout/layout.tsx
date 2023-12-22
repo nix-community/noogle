@@ -1,6 +1,3 @@
-import nixSnowflake from "@/assets/nix-snowflake.svg";
-import nixWhite from "@/assets/white.svg";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   Box,
   Container,
@@ -8,130 +5,87 @@ import {
   Link,
   Tooltip,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
-import { Image } from "../image";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PublicIcon from "@mui/icons-material/Public";
+import { Background } from "./Background";
+
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const useMobile = () => useMediaQuery(useTheme().breakpoints.down("md"));
+const SocialIcons = () => {
+  return (
+    <Box sx={{ width: "100vw", textAlign: "end", px: 2, py: 1 }}>
+      <Link
+        href="https://github.com/nix-community/noogle"
+        target="_blank"
+        sx={{ color: "text.primary" }}
+      >
+        <Tooltip title="Github">
+          <IconButton color="inherit">
+            <GitHubIcon />
+          </IconButton>
+        </Tooltip>
+      </Link>
+      <Link
+        href="https://nixos.org"
+        target="_blank"
+        sx={{ color: "text.primary" }}
+      >
+        <Tooltip title="NixOS">
+          <IconButton color="inherit">
+            <PublicIcon />
+          </IconButton>
+        </Tooltip>
+      </Link>
+    </Box>
+  );
+};
 
-export function Layout(props: LayoutProps) {
+export function LandingPageLayout(props: LayoutProps) {
   const { children } = props;
-  const theme = useTheme();
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        overflow: "scroll",
-        bgcolor:
-          theme.palette.mode === "light" ? "rgb(242, 248, 253)" : "#070c16",
-      }}
-    >
-      <header>
-        <Box
-          sx={{
-            height: "100%",
-            width: "100%",
-            zIndex: 0,
-            opacity: 0.1,
-            backgroundImage: `url(${nixSnowflake.src})`,
-            backgroundPositionX: "50%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-
-        <Box
-          sx={{
-            width: "100%",
-            p: 1,
-            zIndex: 1,
-            borderBottomRightRadius: 16,
-            borderBottomLeftRadius: 16,
-            backgroundColor:
-              theme.palette.mode === "light"
-                ? "primary.main"
-                : "background.paper",
-          }}
-        >
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              textAlign: "center",
-              color: "#fff",
-              fontSize: "30pt",
-              lineHeight: 1.2,
-            }}
-          >
-            <Box
-              sx={{
-                display: {
-                  xs: "none",
-                  md: "inline-block",
-                },
-              }}
-              component="span"
-            >
-              <Image
-                src={nixWhite}
-                alt="nix-logo"
-                height={25}
-                style={{
-                  marginBottom: "0rem",
-                }}
-              />
-            </Box>
-            <Box sx={{ ml: 1 }} component="span">{`noog\u03BBe`}</Box>
-            <Link
-              href="https://github.com/nix-community/noogle"
-              target="_blank"
-            >
-              <Tooltip title="Contribute on Github">
-                <IconButton
-                  sx={{ float: "right", top: "0.6rem", right: "1em", p: 0 }}
-                >
-                  <GitHubIcon
-                    sx={{
-                      display: {
-                        xs: "none",
-                        md: "inline-block",
-                      },
-                    }}
-                  />
-                </IconButton>
-              </Tooltip>
-            </Link>
-          </Typography>
-        </Box>
-      </header>
+    <Background>
+      <SocialIcons />
       <main
         style={{
-          marginTop: "1rem",
+          marginTop: "4.8rem",
+          marginBottom: "auto",
         }}
       >
-        <Container sx={{ pt: 0, px: { xs: 0, md: 2 } }} maxWidth="xl">
+        <Container fixed sx={{ px: 0 }}>
           {children}
         </Container>
       </main>
       <footer
         style={{
-          position: "fixed",
-          bottom: 0,
+          fontSize: "0.8rem",
           display: "flex",
+          flexDirection: "column",
+          placeItems: "center",
           justifyContent: "center",
           width: "100%",
+          paddingBottom: 8,
         }}
       >
         Powered by{" "}
         <Link sx={{ ml: 1 }} href="https://oceansprint.org/">
           {" "}
           OceanSprint
-        </Link>
+        </Link>{" "}
+        © 2023 Noogle. All rights reserved.
+        <Typography
+          variant="subtitle2"
+          sx={{ maxWidth: "100rem", fontSize: "0.7rem" }}
+        >
+          Noogle is an independent website and is not affiliated with or
+          endorsed by Google Inc. The use of the term Noogle is solely for the
+          purpose of branding and does not imply any connection with Google or
+          its products.
+        </Typography>
       </footer>
-    </Box>
+    </Background>
   );
 }

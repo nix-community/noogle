@@ -10,6 +10,10 @@ coverage
 src/models/data/*
 !src/models/data/index.ts
 
+src/fonts/*
+!src/fonts/index
+
+
 # nix
 .direnv/
 

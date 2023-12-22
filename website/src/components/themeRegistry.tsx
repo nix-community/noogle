@@ -1,4 +1,3 @@
-// app/ThemeRegistry.tsx
 "use client";
 import { darkThemeOptions, lightThemeOptions } from "@/styles/theme";
 import createCache from "@emotion/cache";

@@ -1433,6 +1433,42 @@
           version = "5.14.11";
         };
       };
+      "@mui/material-nextjs" = {
+        "5.15.0" = {
+          fetchInfo = {
+            narHash = "sha256-4RvxiZFF+bL+mlttOzR5F/B4H7676KS2OOrNVVOqfVM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@mui/material-nextjs/-/material-nextjs-5.15.0.tgz";
+          };
+          ident = "@mui/material-nextjs";
+          ltype = "file";
+          peerInfo = {
+            "@emotion/cache" = {
+              descriptor = "^11.11.0";
+              optional = true;
+            };
+            "@emotion/server" = {
+              descriptor = "^11.11.0";
+              optional = true;
+            };
+            "@mui/material" = {
+              descriptor = "^5.0.0";
+            };
+            "@types/react" = {
+              descriptor = "^17.0.0 || ^18.0.0";
+              optional = true;
+            };
+            next = {
+              descriptor = "^13.0.0 || ^14.0.0";
+            };
+            react = {
+              descriptor = "^17.0.0 || ^18.0.0";
+            };
+          };
+          treeInfo = { };
+          version = "5.15.0";
+        };
+      };
       "@mui/private-theming" = {
         "5.14.11" = {
           depInfo = {
@@ -7228,6 +7264,19 @@
           version = "1.0.0";
         };
       };
+      hast = {
+        "1.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-S+LfJO+BjiJg8xoRb0vjrWMDUuKxkdDGTS+251kcIaU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast/-/hast-1.0.0.tgz";
+          };
+          ident = "hast";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.0.0";
+        };
+      };
       hast-util-from-html = {
         "2.0.1" = {
           depInfo = {
@@ -12209,16 +12258,16 @@
         };
       };
       minisearch = {
-        "6.1.0" = {
+        "6.3.0" = {
           fetchInfo = {
-            narHash = "sha256-Yi/7KSMw1sSOI+H6Q2yoBUVj34gLq424e3Mxq522qD0=";
+            narHash = "sha256-/moYKxcAusTBnTb+oLc7lgDMjMLcnPFB9zwbzhRBM9U=";
             type = "tarball";
-            url = "https://registry.npmjs.org/minisearch/-/minisearch-6.1.0.tgz";
+            url = "https://registry.npmjs.org/minisearch/-/minisearch-6.3.0.tgz";
           };
           ident = "minisearch";
           ltype = "file";
           treeInfo = { };
-          version = "6.1.0";
+          version = "6.3.0";
         };
       };
       mri = {
@@ -12473,6 +12522,11 @@
       noogle = {
         "0.1.0" = {
           depInfo = {
+            "@emotion/cache" = {
+              descriptor = "^11.11.0";
+              pin = "11.11.0";
+              runtime = true;
+            };
             "@emotion/react" = {
               descriptor = "^11.10.5";
               pin = "11.11.1";
@@ -12511,6 +12565,11 @@
             "@mui/material" = {
               descriptor = "^5.10.13";
               pin = "5.14.11";
+              runtime = true;
+            };
+            "@mui/material-nextjs" = {
+              descriptor = "^5.15.0";
+              pin = "5.15.0";
               runtime = true;
             };
             "@next/mdx" = {
@@ -12564,14 +12623,24 @@
               descriptor = "^14.0.3";
               pin = "14.0.3";
             };
+            hast = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+            hast-util-to-string = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
             "highlight.js" = {
               descriptor = "^11.7.0";
               pin = "11.8.0";
               runtime = true;
             };
             minisearch = {
-              descriptor = "^6.0.1";
-              pin = "6.1.0";
+              descriptor = "^6.3.0";
+              pin = "6.3.0";
               runtime = true;
             };
             next = {
@@ -12612,6 +12681,11 @@
             react-highlight = {
               descriptor = "^0.15.0";
               pin = "0.15.0";
+              runtime = true;
+            };
+            react-hot-toast = {
+              descriptor = "^2.4.1";
+              pin = "2.4.1";
               runtime = true;
             };
             "react-mark.js" = {
@@ -12687,6 +12761,11 @@
             unified = {
               descriptor = "^11.0.4";
               pin = "11.0.4";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
               runtime = true;
             };
             usehooks-ts = {
@@ -13063,6 +13142,9 @@
             };
             "node_modules/@mui/material" = {
               key = "@mui/material/5.14.11";
+            };
+            "node_modules/@mui/material-nextjs" = {
+              key = "@mui/material-nextjs/5.15.0";
             };
             "node_modules/@mui/material/node_modules/clsx" = {
               key = "clsx/2.0.0";
@@ -13916,6 +13998,9 @@
             "node_modules/has-tostringtag" = {
               dev = true;
               key = "has-tostringtag/1.0.0";
+            };
+            "node_modules/hast" = {
+              key = "hast/1.0.0";
             };
             "node_modules/hast-util-from-html" = {
               key = "hast-util-from-html/2.0.1";
@@ -14896,7 +14981,7 @@
               key = "minimist/1.2.8";
             };
             "node_modules/minisearch" = {
-              key = "minisearch/6.1.0";
+              key = "minisearch/6.3.0";
             };
             "node_modules/mri" = {
               key = "mri/1.2.0";
@@ -15072,6 +15157,9 @@
             };
             "node_modules/react-highlight/node_modules/highlight.js" = {
               key = "highlight.js/10.7.3";
+            };
+            "node_modules/react-hot-toast" = {
+              key = "react-hot-toast/2.4.1";
             };
             "node_modules/react-is" = {
               key = "react-is/16.13.1";
@@ -16322,6 +16410,33 @@
           ident = "react-highlight";
           ltype = "file";
           version = "0.15.0";
+        };
+      };
+      react-hot-toast = {
+        "2.4.1" = {
+          depInfo = {
+            goober = {
+              descriptor = "^2.1.10";
+              pin = "2.1.13";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-seRTGGyQWjwU+PNqAU71f8sLus509310whSQ4xNKs4Q=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.4.1.tgz";
+          };
+          ident = "react-hot-toast";
+          ltype = "file";
+          peerInfo = {
+            react = {
+              descriptor = ">=16";
+            };
+            react-dom = {
+              descriptor = ">=16";
+            };
+          };
+          version = "2.4.1";
         };
       };
       react-is = {

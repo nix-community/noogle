@@ -19,6 +19,7 @@
       devShells.ui = pkgs.callPackage ./shell.nix {
         inherit pkgs hooks;
         inherit (base) fmod pkg;
+        inherit (self'.packages) data-json pasta-meta;
       };
     };
 }

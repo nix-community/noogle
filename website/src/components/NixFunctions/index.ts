@@ -1,1 +1,0 @@
-export {NixFunctions as default} from "./nixFunctions";

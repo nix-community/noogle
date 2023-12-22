@@ -6,15 +6,12 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  IconButton,
   useTheme,
 } from "@mui/material";
-
-import { MetaData } from "@/models/nix";
-import ClearIcon from "@mui/icons-material/Clear";
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
 import { Preview } from "../preview/preview";
+import { Doc, data } from "@/models/data";
 
 const date = new Date();
 
@@ -37,22 +34,17 @@ function getRandomIntInclusive(min: number, max: number, config?: Config) {
   return Math.floor(randomNumber * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
-interface FunctionOfTheDayProps {
-  handleClose: () => void;
-  data: MetaData;
-}
-export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
-  const { handleClose, data } = props;
+export const FunctionOfTheDay = () => {
   const {
     palette: { info, error },
   } = useTheme();
 
   const todaysIdx = useMemo(
     () => getRandomIntInclusive(0, data.length - 1),
-    [data.length]
+    []
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
-  const selectedFunction = useMemo(() => data.at(idx) as Doc, [idx, data]);
+  const selectedFunction = useMemo(() => data.at(idx) as Doc, [idx]);
 
   const setNext = () => {
     setIdx((curr) => {
@@ -79,65 +71,59 @@ export const FunctionOfTheDay = (props: FunctionOfTheDayProps) => {
   };
 
   return (
-    <>
-      <Card
-        elevation={0}
+    <Card
+      elevation={0}
+      sx={{
+        width: "100%",
+        my: 5,
+        borderImageSlice: 1,
+        borderImageSource:
+          idx === todaysIdx
+            ? `linear-gradient(to left, ${info.light},${error.main})`
+            : `linear-gradient(to left, ${info.light},${info.dark})`,
+        borderWidth: 4,
+        borderStyle: "solid",
+      }}
+    >
+      <CardHeader
+        title={
+          idx === todaysIdx
+            ? "Function of the day"
+            : "Did you know the function?"
+        }
+      />
+      <CardContent>
+        <Preview docItem={selectedFunction} />
+      </CardContent>
+      <CardActions
         sx={{
-          my: 5,
-          borderImageSlice: 1,
-          borderImageSource:
-            idx === todaysIdx
-              ? `linear-gradient(to left, ${info.light},${error.main})`
-              : `linear-gradient(to left, ${info.light},${info.dark})`,
-          borderWidth: 4,
-          borderStyle: "solid",
+          display: "flex",
+          justifyContent: "space-evenly",
         }}
       >
-        <CardHeader
-          title={
-            idx === todaysIdx
-              ? "Function of the day"
-              : "Did you know the function?"
-          }
-          action={
-            <IconButton onClick={() => handleClose()}>
-              <ClearIcon fontSize="large" />
-            </IconButton>
-          }
-        />
-        <CardContent>
-          <Preview docItem={selectedFunction} closeComponent={<></>} />
-        </CardContent>
-        <CardActions
-          sx={{
-            display: "flex",
-            justifyContent: "space-evenly",
-          }}
+        <Button
+          onClick={() => setPrev()}
+          disabled={idx === 0}
+          sx={{ width: "100%" }}
         >
-          <Button
-            onClick={() => setPrev()}
-            disabled={idx === 0}
-            sx={{ width: "100%" }}
-          >
-            Prev
-          </Button>
-          <Divider flexItem orientation="vertical" />
-          <Button sx={{ width: "100%" }} onClick={() => setRandom()}>
-            Random
-          </Button>
-          <Button sx={{ width: "100%" }} onClick={() => setFunctionOfTheDay()}>
-            Todays function
-          </Button>
-          <Divider flexItem orientation="vertical" />
-          <Button
-            sx={{ width: "100%" }}
-            onClick={() => setNext()}
-            disabled={idx === data.length - 1}
-          >
-            Next
-          </Button>
-        </CardActions>
-      </Card>
-    </>
+          Prev
+        </Button>
+        <Divider flexItem orientation="vertical" />
+        <Button sx={{ width: "100%" }} onClick={() => setRandom()}>
+          Random
+        </Button>
+        <Button sx={{ width: "100%" }} onClick={() => setFunctionOfTheDay()}>
+          Todays function
+        </Button>
+        <Divider flexItem orientation="vertical" />
+        <Button
+          sx={{ width: "100%" }}
+          onClick={() => setNext()}
+          disabled={idx === data.length - 1}
+        >
+          Next
+        </Button>
+      </CardActions>
+    </Card>
   );
 };

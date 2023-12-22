@@ -1,0 +1,74 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/mdy5n400sl4dn12kjkrkwnxqfbzahpld-nixpkgs-migrated/lib/strings.nix",
+          "line": 718
+        }
+      },
+      "lambda": {
+        "content": "\n      Given string *s*, replace every occurrence of the strings in *from*\n      with the corresponding string in *to*.\n\n      The argument *to* is lazy, that is, it is only evaluated when its corresponding pattern in *from* is matched in the string *s*\n\n      Example:\n\n      ```nix\n      builtins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n      ```\n\n      evaluates to `\"fabir\"`.\n    ",
+        "countApplied": 2,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "strings", "escapeURL"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 27,
+          "file": "/nix/store/mdy5n400sl4dn12kjkrkwnxqfbzahpld-nixpkgs-migrated/lib/default.nix",
+          "line": 98
+        }
+      },
+      "lambda": {
+        "content": "\n      Given string *s*, replace every occurrence of the strings in *from*\n      with the corresponding string in *to*.\n\n      The argument *to* is lazy, that is, it is only evaluated when its corresponding pattern in *from* is matched in the string *s*\n\n      Example:\n\n      ```nix\n      builtins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n      ```\n\n      evaluates to `\"fabir\"`.\n    ",
+        "countApplied": 2,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "escapeURL"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/mdy5n400sl4dn12kjkrkwnxqfbzahpld-nixpkgs-migrated/lib/strings.nix",
+          "line": 902
+        }
+      },
+      "lambda": {
+        "content": "\n      Given string *s*, replace every occurrence of the strings in *from*\n      with the corresponding string in *to*.\n\n      The argument *to* is lazy, that is, it is only evaluated when its corresponding pattern in *from* is matched in the string *s*\n\n      Example:\n\n      ```nix\n      builtins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n      ```\n\n      evaluates to `\"fabir\"`.\n    ",
+        "countApplied": 2,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "strings", "escapeRegex"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 27,
+          "file": "/nix/store/mdy5n400sl4dn12kjkrkwnxqfbzahpld-nixpkgs-migrated/lib/default.nix",
+          "line": 98
+        }
+      },
+      "lambda": {
+        "content": "\n      Given string *s*, replace every occurrence of the strings in *from*\n      with the corresponding string in *to*.\n\n      The argument *to* is lazy, that is, it is only evaluated when its corresponding pattern in *from* is matched in the string *s*\n\n      Example:\n\n      ```nix\n      builtins.replaceStrings [\"oo\" \"a\"] [\"a\" \"i\"] \"foobar\"\n      ```\n\n      evaluates to `\"fabir\"`.\n    ",
+        "countApplied": 2,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "escapeRegex"]
+  }
+]

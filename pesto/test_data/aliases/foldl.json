@@ -45,6 +45,7 @@
       "lambda": {
         "args": ["op", "nul", "list"],
         "arity": 3,
+        "countApplied": 0,
         "content": "\n      Reduce a list by applying a binary operator, from left to right,\n      e.g. `foldl' op nul [x0 x1 x2 ...] : op (op (op nul x0) x1) x2)\n      ...`. For example, `foldl' (x: y: x + y) 0 [1 2 3]` evaluates to 6.\n      The return value of each application of `op` is evaluated immediately,\n      even for intermediate values.\n    ",
         "experimental": false,
         "isPrimop": true,
