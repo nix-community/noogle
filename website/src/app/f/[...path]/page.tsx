@@ -1,6 +1,6 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
-import { BackButton } from "@/components/back";
+import { BackButton } from "@/components/BackButton";
 import { Doc, FilePosition, data } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractHeadings, mdxRenderOptions } from "@/utils";
@@ -39,6 +39,7 @@ const Toc = async (props: TocProps) => {
 
   return (
     <Box
+      data-pagefind-ignore="all"
       sx={{
         display: {
           xs: "none",
@@ -97,34 +98,37 @@ export default async function Page(props: { params: { path: string[] } }) {
         <HighlightBaseline />
         <Box>
           <Box sx={{ display: "flex" }}>
+            <BackButton />
             <Typography
               variant="h2"
               component={"h1"}
               sx={{ marginRight: "auto" }}
             >
-              <BackButton /> {item?.meta.title}
-              {meta?.is_primop && meta.count_applied == 0 && (
-                <>
+              {item?.meta.title}
+            </Typography>
+            {meta?.is_primop && meta.count_applied == 0 && (
+              <>
+                <Chip
+                  label="Primop"
+                  color="primary"
+                  sx={{ ml: 2, maxWidth: "10rem" }}
+                />
+                {meta?.primop_meta?.experimental && (
                   <Chip
-                    label="Primop"
-                    color="primary"
+                    label={"Experimental"}
+                    color="warning"
                     sx={{ ml: 2, maxWidth: "10rem" }}
                   />
-                  {meta?.primop_meta?.experimental && (
-                    <Chip
-                      label={"Experimental"}
-                      color="warning"
-                      sx={{ ml: 2, maxWidth: "10rem" }}
-                    />
-                  )}
-                </>
-              )}
-            </Typography>
+                )}
+              </>
+            )}
             <ShareButton />
           </Box>
-
           <Divider flexItem sx={{ mt: 2 }} />
-
+          <Box sx={{ display: "none" }}>
+            <span data-pagefind-filter={`type-from:Any`} />
+            <span data-pagefind-filter={`type-to:Any`} />
+          </Box>
           <MDXRemote
             options={{
               parseFrontmatter: true,
@@ -181,6 +185,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                   )}
                 >
                   <Button
+                    data-pagefind-ignore="all"
                     variant="text"
                     sx={{ textTransform: "none", my: 1, placeSelf: "start" }}
                     startIcon={<Edit />}
@@ -212,12 +217,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               <ul>
                 {meta?.aliases?.map((a) => (
                   <li key={a.join(".")}>
-                    <Link
-                      href={`/f/${a.join("/")}`}
-                      // sx={{ color: "primary.main" }}
-                    >
-                      {a.join(".")}
-                    </Link>
+                    <Link href={`/f/${a.join("/")}`}>{a.join(".")}</Link>
                   </li>
                 ))}
               </ul>

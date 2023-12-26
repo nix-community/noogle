@@ -5,6 +5,7 @@ mod tests {
 
     use crate::{
         bulk::BulkProcessing,
+        markdown::find_type,
         pasta::{AliasList, Pasta, ValuePath},
         position::{DocComment, DocIndex, TextPosition},
         Document, FromDocs,
@@ -147,6 +148,15 @@ mod tests {
             let data: Pasta = Pasta::new(&PathBuf::from(path));
             let contents = docs_to_test_content(&data);
             serde_json::to_string_pretty(&contents).unwrap()
+        })
+    }
+
+    #[test]
+    fn test_type_from_markdown() {
+        dir_tests("types", "md", |path| {
+            let markdown = fs::read_to_string(&path).unwrap();
+            let signature = find_type(&markdown);
+            format!("{:#?}", signature)
         })
     }
 

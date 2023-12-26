@@ -27,6 +27,19 @@ let
     "x86_64-darwin" = "@next/swc-darwin-x64";
     "aarch64-darwin" = "@next/swc-darwin-arm64";
   }.${config.floco.settings.system};
+
+  # example: "13.4.2"
+  pagefindVersion = builtins.head (builtins.attrNames
+    (lib.filterAttrs (name: _attrs: name == "pagefind") config.floco.pdefs).pagefind);
+
+  # we must change the precompiled swc binary depending on the curerent system.
+  # example: "@next/swc-linux-x64-gnu"
+  pagefindArch = {
+    "x86_64-linux" = "@pagefind/linux-x64";
+    "aarch64-linux" = "@pagefind/linux-arm64";
+    "x86_64-darwin" = "@pagefind/darwin-x64";
+    "aarch64-darwin" = "@pagefind/darwin-arm64";
+  }.${config.floco.settings.system};
 in
 {
   config.floco.packages.${ident}.${version} =
@@ -59,6 +72,12 @@ in
               treeInfo = prev.treeInfo // {
                 "node_modules/${swcArch}" = {
                   key = "${swcArch}/${nextVersion}";
+                  link = false;
+                  optional = false;
+                  dev = true;
+                };
+                "node_modules/${pagefindArch}" = {
+                  key = "${pagefindArch}/${pagefindVersion}";
                   link = false;
                   optional = false;
                   dev = true;
