@@ -5,7 +5,7 @@ import { Box, Typography, Link } from "@mui/material";
 
 import localFont from "next/font/local";
 
-const orbitron = localFont({
+const fira = localFont({
   src: "../fonts/FiraCode-VF.ttf",
   display: "swap",
 });
@@ -24,7 +24,7 @@ export default function Home() {
         <Link href="/" underline="none">
           <Typography
             variant="h1"
-            className={orbitron.className}
+            className={fira.className}
             sx={{
               mt: 10,
               mb: 4,

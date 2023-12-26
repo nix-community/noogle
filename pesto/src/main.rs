@@ -1,11 +1,13 @@
 mod alias;
 mod bulk;
 mod comment;
+mod markdown;
 mod pasta;
 mod position;
 mod tests;
 
 use clap::{Parser, ValueEnum};
+use markdown::find_type;
 use pasta::{AliasList, ContentSource, Docs, Lookups, PositionType, SourceOrigin, ValuePath};
 use position::FilePosition;
 use serde::Serialize;
@@ -85,6 +87,12 @@ pub fn main() {
             let document = Document::new(&item, &data.doc_map);
             let matter = &document.meta;
             let content = &document.content;
+
+            let signature = content
+                .as_ref()
+                .map(|c| c.content.as_ref().map(|s| find_type(&s)))
+                .flatten();
+
             match opts.format {
                 Format::DIR => {
                     if let Some((_, dir)) = item.path.split_last() {
@@ -159,6 +167,7 @@ struct DocumentFrontmatter<'a> {
     title: String,
     path: &'a Rc<ValuePath>,
     aliases: Option<&'a AliasList>,
+    signature: Option<String>,
     /// If an item is primop then it should have the PrimopMeta field.
     is_primop: Option<bool>,
     primop_meta: Option<PrimopMatter<'a>>,
@@ -181,6 +190,11 @@ impl<'a> FromDocs<'a> for Document<'a> {
         let content = find_document_content(item, &data);
         Self {
             meta: DocumentFrontmatter {
+                signature: content
+                    .as_ref()
+                    .map(|c| c.content.as_ref().map(|s| find_type(s)))
+                    .flatten()
+                    .flatten(),
                 content_meta: content.as_ref().map(|inner| inner.source.clone()).flatten(),
                 title: item.path.join(".").replace("'", "' (Prime)"),
                 path: &item.path,

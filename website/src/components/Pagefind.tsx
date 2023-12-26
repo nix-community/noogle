@@ -1,0 +1,94 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export type Filters = {
+  [name: string]: string[];
+};
+
+export type RawResult = {
+  data: () => Promise<PagefindResult>;
+  id: string;
+  score: number;
+};
+export type PagefindResult = {
+  url: string;
+  content: string;
+  word_count: number;
+  filters: Filters;
+  meta: {
+    title: string;
+  };
+  anchors: string[];
+  raw_content: string;
+  raw_url: string;
+  excerpt: string;
+  sub_results: any[];
+};
+
+type PagefindHooks = {
+  search: (
+    term: string,
+    options?: {
+      filters?: Filters;
+    }
+  ) =>
+    | Promise<{
+        results: RawResult[];
+      }>
+    | undefined;
+  pagefind: any | undefined;
+};
+
+export const usePagefindSearch = (): PagefindHooks => {
+  const [pagefind, setPagefind] = useState();
+  useEffect(() => {
+    const init = async () => {
+      // @ts-ignore
+      if (!window?.pagefind) {
+        const pagefind = await import(
+          // @ts-ignore
+          /* webpackIgnore: true */ "/pagefind/pagefind.js"
+        );
+        // @ts-ignore
+        window.pagefind = pagefind;
+      }
+      // @ts-ignore
+      setPagefind(window.pagefind);
+    };
+    init();
+  }, []);
+
+  // @ts-ignore
+  console.log("usePagefind", { pagefind });
+  return {
+    // @ts-ignore
+    search: pagefind?.search,
+    // @ts-ignore
+    pagefind,
+  };
+};
+
+// {
+//     "url": "/f/builtins/dirOf.html",
+//     "content": "builtins.dirOf Primop. Takes 1 arguments. s. Return the directory part of the string s, that is, everything before the final slash in the string. This is similar to the GNU dirname command.",
+//     "word_count": 32,
+//     "filters": {
+//       "type-to": [
+//         "Any"
+//       ],
+//       "type-from": [
+//         "Any"
+//       ]
+//     },
+//     "meta": {
+//       "title": "builtins.dirOf Primop."
+//     },
+//     "anchors": [],
+//     "weighted_locations": [],
+//     "locations": [],
+//     "raw_content": "builtins.dirOf Primop. Takes 1 arguments. s. Return the directory part of the string s, that is, everything before the final slash in the string. This is similar to the GNU dirname command.",
+//     "raw_url": "/f/builtins/dirOf.html",
+//     "excerpt": "builtins.dirOf Primop. Takes 1 arguments. s. Return the directory part of the string s, that is, everything before the final slash in the string. This is similar to the GNU",
+//     "sub_results": []
+//   }
