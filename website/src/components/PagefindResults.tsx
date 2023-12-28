@@ -42,7 +42,9 @@ export function PagefindResults() {
 
   const page = +params.get("page")! || 1;
   const itemsPerPage = +params.get("limit")! || 10;
-  const term = params.get("term") || "";
+  const term = params.get("term") || null;
+  const from = params.get("from");
+  const to = params.get("to");
 
   const isMobile = useMobile();
 
@@ -55,12 +57,12 @@ export function PagefindResults() {
     const init = async () => {
       console.log({ search });
       if (search) {
-        let raw = await search(term);
+        let raw = await search(term, { filters: { from, to } });
         setSearchResults(raw?.results || []);
       }
     };
     init();
-  }, [term, search]);
+  }, [term, from, to, search]);
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -108,10 +110,26 @@ export function PagefindResults() {
         ) : (
           <>
             <Typography
+              component="span"
               variant="subtitle1"
-              sx={{ color: "text.secondary", p: 1 }}
+              sx={{
+                color: "text.secondary",
+                p: 1,
+                textTransform: "capitalize",
+              }}
             >
-              {searchResults?.length} Results
+              {searchResults?.length || "0"} Results
+            </Typography>
+            <Typography
+              component="span"
+              variant="subtitle1"
+              sx={{
+                color: "text.secondary",
+                p: 1,
+                textTransform: "capitalize",
+              }}
+            >
+              {`f: ${from || "any"} -> ${to || "any"}`}
             </Typography>
             <List aria-label="basic-list" sx={{ pt: 0, width: "100%" }}>
               {items.length ? (

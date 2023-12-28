@@ -7,6 +7,8 @@ import { extractHeadings, mdxRenderOptions } from "@/utils";
 import { Edit } from "@mui/icons-material";
 import { Box, Button, Divider, Typography, Link, Chip } from "@mui/material";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { findType, interpretType } from "@/models/nix";
+import LinkIcon from "@mui/icons-material/Link";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -84,10 +86,34 @@ export default async function Page(props: { params: { path: string[] } }) {
   const mdxSource = item?.content?.content || "";
   const meta = item?.meta;
 
+  const { args: argTypes, returns: retTypes } = interpretType(
+    meta?.path[meta?.path?.length - 1],
+    meta?.signature || (item && findType(item)) || ""
+  );
+
+  console.log(meta);
+
+  const position =
+    meta?.content_meta?.position ||
+    meta?.attr_position ||
+    (meta?.count_applied == 0 && meta?.lambda_position);
+
+  const raw_position =
+    meta?.content_meta?.position ||
+    meta?.attr_position ||
+    meta?.lambda_position;
+
+  const source =
+    meta?.is_primop && meta?.primop_meta
+      ? getPrimopDescription(meta.primop_meta) + mdxSource
+      : mdxSource;
+
   return (
     <>
       <Toc mdxSource={mdxSource} />
       <Box
+        component="main"
+        data-pagefind-body
         sx={{
           maxWidth: "100vw",
           overflow: "hidden",
@@ -125,20 +151,73 @@ export default async function Page(props: { params: { path: string[] } }) {
             <ShareButton />
           </Box>
           <Divider flexItem sx={{ mt: 2 }} />
-          <Box sx={{ display: "none" }}>
-            <span data-pagefind-filter={`type-from:Any`} />
-            <span data-pagefind-filter={`type-to:Any`} />
+          <Box sx={{ display: "block" }}>
+            {argTypes.map((t, i) => (
+              <meta key={i} data-pagefind-filter={`from:${t}`} />
+            ))}
+            {retTypes.map((t, i) => (
+              <meta key={i} data-pagefind-filter={`to:${t}`} />
+            ))}
           </Box>
+
+          {!source && (
+            <Box data-pagefind-ignore="all">
+              <Typography
+                variant="body1"
+                sx={{ color: "text.secondary", py: 2 }}
+              >
+                No documentation found yet.
+              </Typography>
+              {!position && (
+                <div data-pagefind-ignore="all">
+                  <Typography variant="h5" sx={{ pt: 2 }}>
+                    Noogle's tip
+                  </Typography>
+                  <Typography variant="body1" gutterBottom sx={{ py: 2 }}>
+                    <p>
+                      Position of the source could not be detected
+                      automatically.
+                    </p>
+                    <p>
+                      Sometimes the documentation is missing or the extraction
+                      of the documentation fails. In these cases, it is
+                      advisable to look for the recognized position in the
+                      source code
+                    </p>
+                    {raw_position && (
+                      <Link
+                        target="_blank"
+                        href={getSourcePosition(
+                          "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                          raw_position
+                        )}
+                      >
+                        <Button
+                          data-pagefind-ignore="all"
+                          variant="text"
+                          sx={{
+                            textTransform: "none",
+                            my: 1,
+                            placeSelf: "start",
+                          }}
+                          startIcon={<LinkIcon />}
+                        >
+                          Original/underlying function
+                        </Button>
+                      </Link>
+                    )}
+                    <p>You may find further instructions there</p>
+                  </Typography>
+                </div>
+              )}
+            </Box>
+          )}
           <MDXRemote
             options={{
               parseFrontmatter: true,
               mdxOptions: mdxRenderOptions,
             }}
-            source={
-              meta?.is_primop && meta?.primop_meta
-                ? getPrimopDescription(meta.primop_meta) + mdxSource
-                : mdxSource
-            }
+            source={source}
             components={{
               a: (p) => (
                 // @ts-ignore
@@ -174,18 +253,25 @@ export default async function Page(props: { params: { path: string[] } }) {
               ),
             }}
           />
-          {meta?.content_meta?.position && (
-            <>
+          {position && (
+            <div data-pagefind-ignore="all">
+              {!source && (
+                <Typography
+                  variant="body1"
+                  sx={{ color: "text.secondary", py: 2 }}
+                >
+                  Contribute now!
+                </Typography>
+              )}
               <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
                 <Link
                   target="_blank"
                   href={getSourcePosition(
                     "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
-                    meta.content_meta.position
+                    position
                   )}
                 >
                   <Button
-                    data-pagefind-ignore="all"
                     variant="text"
                     sx={{ textTransform: "none", my: 1, placeSelf: "start" }}
                     startIcon={<Edit />}
@@ -194,10 +280,10 @@ export default async function Page(props: { params: { path: string[] } }) {
                   </Button>
                 </Link>
               </Typography>
-            </>
+            </div>
           )}
           {!!meta?.aliases?.length && (
-            <>
+            <div data-pagefind-ignore="all">
               <Divider flexItem />
               <Typography
                 variant="subtitle1"
@@ -221,7 +307,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                   </li>
                 ))}
               </ul>
-            </>
+            </div>
           )}
         </Box>
       </Box>

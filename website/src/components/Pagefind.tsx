@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export type Filters = {
-  [name: string]: string[];
+  [name: string]: string | null;
 };
 
 export type RawResult = {
@@ -28,7 +28,7 @@ export type PagefindResult = {
 
 type PagefindHooks = {
   search: (
-    term: string,
+    term: string | null,
     options?: {
       filters?: Filters;
     }
@@ -46,12 +46,16 @@ export const usePagefindSearch = (): PagefindHooks => {
     const init = async () => {
       // @ts-ignore
       if (!window?.pagefind) {
-        const pagefind = await import(
+        try {
+          const pagefind = await import(
+            // @ts-ignore
+            /* webpackIgnore: true */ "/pagefind/pagefind.js"
+          );
           // @ts-ignore
-          /* webpackIgnore: true */ "/pagefind/pagefind.js"
-        );
-        // @ts-ignore
-        window.pagefind = pagefind;
+          window.pagefind = pagefind;
+        } catch (e) {
+          console.log({ e });
+        }
       }
       // @ts-ignore
       setPagefind(window.pagefind);

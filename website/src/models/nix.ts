@@ -1,10 +1,13 @@
+import { Doc, builtinTypes } from "./data";
+
 export type NixType =
   | "function"
   | "attrset"
   | "list"
   | "string"
-  | "int"
+  | "number"
   | "bool"
+  | "never"
   | "any";
 
 export const nixTypes: NixType[] = [
@@ -13,5 +16,68 @@ export const nixTypes: NixType[] = [
   "list",
   "string",
   "bool",
-  "int",
+  "never",
+  "number",
 ];
+
+const interpretToken = (token: string): NixType | undefined => {
+  if (token === "[" || token === "]") {
+    return "list";
+  } else if (token === "{" || token === "}") {
+    return "attrset";
+  } else if (nixTypes.includes(token as NixType)) {
+    return token as NixType;
+  } else if (["int", "float", "double"].includes(token)) {
+    return "number";
+  } else if (["a", "b", "c", "d", "e"].includes(token)) {
+    return "any";
+  } else {
+    return undefined;
+  }
+};
+
+export function interpretType(
+  fnName?: string,
+  fnType?: string
+): { args: NixType[]; returns: NixType[] } {
+  if (fnType) {
+    let cleanType = fnType
+      .replace(/\s/m, "")
+      .replace(/([a-zA-Z'\d].*?::)/m, "");
+
+    const tokens = cleanType
+      .split(/(::|->|\[|\]|\{|\}|\(|\))/gm)
+      .filter(Boolean)
+      .map((s) => s.toLowerCase().trim());
+
+    const lastArrowIdx = tokens.lastIndexOf("->");
+
+    if (lastArrowIdx) {
+      // Function has at least on return value
+
+      const returnValueTokens = tokens.slice(lastArrowIdx + 1);
+      const argsValueTokens = tokens.slice(0, lastArrowIdx);
+
+      const returns = returnValueTokens
+        .map(interpretToken)
+        .filter(Boolean)
+        .filter((e, i, s) => s.indexOf(e) === i) as NixType[];
+
+      const args = argsValueTokens
+        .map(interpretToken)
+        .filter(Boolean)
+        .filter((e, i, s) => s.indexOf(e) === i) as NixType[];
+
+      return { args: [...args, "any"], returns: [...returns, "any"] };
+    }
+  }
+  return { args: ["any"], returns: ["any"] };
+}
+
+export function findType(item: Doc): string | undefined {
+  if (item.meta.path.length === 2 && item.meta.path[0] === "builtins") {
+    const fallbackType = builtinTypes[item.meta.path[1]];
+    return fallbackType?.fn_type;
+  }
+  return undefined;
+}

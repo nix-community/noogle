@@ -1,9 +1,12 @@
+import { Filter } from "@/components/filter";
 import { FunctionOfTheDay } from "@/components/functionOfTheDay";
 import { LandingPageLayout } from "@/components/layout";
+import { FilterProvider } from "@/components/layout/filterContext";
 import { SearchInput } from "@/components/searchInput";
 import { Box, Typography, Link } from "@mui/material";
 
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 const fira = localFont({
   src: "../fonts/FiraCode-VF.ttf",
@@ -32,7 +35,7 @@ export default function Home() {
               fontVariantLigatures: "normal",
             }}
           >
-            <Box component="span">N::</Box>
+            <Box component="span">N</Box>
 
             <Box component="span" sx={{ color: "error.main" }}>
               o
@@ -50,9 +53,6 @@ export default function Home() {
             <Box component="span" sx={{ color: "error.main" }}>
               e
             </Box>
-            <Box component="span" sx={{ color: "error.main" }}>
-              {` |>`}
-            </Box>
           </Typography>
         </Link>
 
@@ -69,7 +69,12 @@ export default function Home() {
             borderStyle: "solid",
           }}
         >
-          <SearchInput placeholder="search nix functions" />
+          <Suspense fallback="search input ">
+            <FilterProvider>
+              <SearchInput placeholder="search nix functions" />
+              <Filter disableChevron disableSubmit showDivider />
+            </FilterProvider>
+          </Suspense>
         </Box>
         <FunctionOfTheDay />
       </Box>

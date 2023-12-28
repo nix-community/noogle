@@ -1,11 +1,21 @@
 "use client";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Box, IconButton, Link, Tooltip, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  LinearProgress,
+  Link,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
 import { SearchInput } from "../searchInput";
 import { Menu } from "@mui/icons-material";
+import { Filter } from "../filter";
+import { Suspense } from "react";
 
 export const Header = () => {
   const theme = useTheme();
+
   return (
     <>
       <Box
@@ -44,7 +54,9 @@ export const Header = () => {
             overflow: "hidden",
           }}
         >
-          <SearchInput placeholder="search nix functions" />
+          <Suspense fallback="search input ">
+            <SearchInput placeholder="search nix functions" />
+          </Suspense>
         </Box>
         <Box sx={{ justifySelf: "end", mr: 2 }}>
           <Link
@@ -66,6 +78,12 @@ export const Header = () => {
       </Box>
 
       <Box sx={{ width: "100%", height: "4rem" }} />
+
+      <Suspense fallback={<LinearProgress />}>
+        <Box sx={{ bgcolor: "background.paper", px: 2 }}>
+          <Filter disableChevron />
+        </Box>
+      </Suspense>
     </>
   );
 };
