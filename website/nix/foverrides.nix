@@ -55,16 +55,23 @@ in
 
       # nextjs writes in node_mdules
       built = {
-        override.copyTree = true;
+        override = {
 
-        # nextjs chaches some stuff in $HOME
-        override.preBuild = ''
-          export HOME=./home
+          copyTree = true;
 
-          ${hooks.prepare}
+          # nextjs chaches some stuff in $HOME
+          preBuild = ''
+            export HOME=./home
+
+            ${hooks.prepare}
           
-          ls -la src/models/data
-        '';
+            ls -la src/models/data
+          '';
+          postBuild = ''
+            npx pagefind --site ./out
+            ls -la out
+          '';
+        };
 
         tree =
           let

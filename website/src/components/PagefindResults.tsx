@@ -55,7 +55,7 @@ export function PagefindResults() {
   const { search } = usePagefindSearch();
   useEffect(() => {
     const init = async () => {
-      console.log({ search });
+      console.log({ search, term, filters: { from, to } });
       if (search) {
         let raw = await search(term, { filters: { from, to } });
         setSearchResults(raw?.results || []);
