@@ -1,5 +1,5 @@
 {
-  "abort": { "fn_type": "abort :: String" },
+  "abort": { "fn_type": "abort :: String -> Never" },
   "add": { "fn_type": "add :: Number -> Number -> Number" },
   "all": { "fn_type": "all :: (a -> Bool) -> [a] -> Bool" },
   "Any": { "fn_type": "Any :: (a -> Bool) -> [a] -> Bool" },

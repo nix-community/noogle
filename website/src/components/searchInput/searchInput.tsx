@@ -1,15 +1,13 @@
 "use client";
-import { NixType } from "@/models/nix";
 import ClearIcon from "@mui/icons-material/Clear";
 import SearchIcon from "@mui/icons-material/Search";
-import { Autocomplete, Divider, Input } from "@mui/material";
+import { Autocomplete, Badge, Divider, Input } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Paper from "@mui/material/Paper";
-import React, { useState } from "react";
+import React from "react";
 import { data } from "@/models/data";
-import { useRouter } from "next/navigation";
-
-export type Filter = { from: NixType; to: NixType };
+import TuneIcon from "@mui/icons-material/Tune";
+import { useFilter } from "../layout/filterContext";
 
 export interface SearchInputProps {
   placeholder: string;
@@ -17,37 +15,36 @@ export interface SearchInputProps {
 
 export function SearchInput(props: SearchInputProps) {
   const { placeholder } = props;
-  const router = useRouter();
+  const {
+    setShowFilter,
+    to,
+    from,
+    submit: submitFilters,
+    term,
+    setTerm,
+    setFrom,
+    setTo,
+  } = useFilter();
 
-  const [term, setTerm] = useState<string>("");
+  const handleSubmit = (input: string | null) => {
+    submitFilters(input!);
+    setShowFilter(false);
+  };
 
-  const handleSubmit = (input: string) => {
-    router.push(`/q?term=${input}`);
+  const handleToggleFilter = () => {
+    setShowFilter((s) => !s);
   };
 
   const _handleClear = () => {
     setTerm("");
-    // clearSuggestions();
+    setFrom("any");
+    setTo("any");
   };
   const handleType = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setTerm(e.target.value);
-    // autoSuggest(e.target.value, {
-    //   fuzzy: 0.25,
-    //   fields: ["meta.title", "content.content"],
-    // });
   };
-
-  // @ts-ignore
-  // const autoCompleteOptions = useMemo(() => {
-  //   const options = suggestions
-  //     .slice(0, 5)
-  //     .map((s) => s.terms)
-  //     .flat();
-  //   const sorted = options.sort((a, b) => -b.localeCompare(a));
-  //   return [...new Set(sorted)];
-  // }, [suggestions]);
 
   return (
     <Paper
@@ -106,6 +103,16 @@ export function SearchInput(props: SearchInputProps) {
           );
         }}
       />
+      <IconButton aria-haspopup="true" onClick={handleToggleFilter}>
+        {to !== "any" || from !== "any" ? (
+          <Badge variant="dot" color="warning">
+            <TuneIcon />
+          </Badge>
+        ) : (
+          <TuneIcon />
+        )}
+      </IconButton>
+
       <IconButton aria-label="clear-button" onClick={_handleClear} size="small">
         <ClearIcon />
       </IconButton>

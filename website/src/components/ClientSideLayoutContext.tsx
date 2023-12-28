@@ -21,7 +21,6 @@ export const ClientSideLayoutContext = ({
     <ThemeProvider theme={userPrefersDarkmode ? darkTheme : lightTheme}>
       <CssBaseline />
       <Toaster />
-
       {children}
     </ThemeProvider>
   );

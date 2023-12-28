@@ -35,6 +35,7 @@ export type DocMeta = {
   lambda_position?: FilePosition;
   count_applied?: number;
   content_meta?: SourceOrigin;
+  signature?: string;
 };
 export type ContentSource = {
   content?: string;
