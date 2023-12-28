@@ -91,8 +91,6 @@ export default async function Page(props: { params: { path: string[] } }) {
     meta?.signature || (item && findType(item)) || ""
   );
 
-  console.log(meta);
-
   const position =
     meta?.content_meta?.position ||
     meta?.attr_position ||
@@ -171,7 +169,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               {!position && (
                 <div data-pagefind-ignore="all">
                   <Typography variant="h5" sx={{ pt: 2 }}>
-                    Noogle's tip
+                    {"Noogle's tip"}
                   </Typography>
                   <Typography variant="body1" gutterBottom sx={{ py: 2 }}>
                     <p>

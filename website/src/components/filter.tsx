@@ -77,7 +77,6 @@ export const Filter = (props: FilterProps) => {
       try {
         const f = await pagefind.filters();
         setFilters(f);
-        console.log({ f });
       } catch (e) {
         console.log(e);
       }
