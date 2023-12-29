@@ -36,6 +36,7 @@ export const Preview = (props: PreviewProps) => {
       >
         <Link href={`/f/${meta.path.join("/")}`}>
           <Typography
+            component="h3"
             variant="h4"
             sx={{ wordWrap: "normal", lineBreak: "anywhere" }}
           >

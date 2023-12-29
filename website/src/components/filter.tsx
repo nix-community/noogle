@@ -85,7 +85,7 @@ export const Filter = (props: FilterProps) => {
   }, [pagefind]);
 
   const handleSubmit = () => {
-    submitFilters();
+    submitFilters({});
     setShowFilter(false);
   };
 
@@ -198,9 +198,6 @@ export const Filter = (props: FilterProps) => {
           </FormControl>
           {!disableSubmit && (
             <>
-              <Button variant="outlined" sx={{ width: "100%" }}>
-                Reset
-              </Button>
               <Button variant="outlined" type="submit" sx={{ width: "100%" }}>
                 Apply
               </Button>

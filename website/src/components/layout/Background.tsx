@@ -10,7 +10,8 @@ export const Background = ({ children }: { children: ReactNode }) => {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        overflow: "scroll",
+        overflowX: "hidden",
+        overflowY: "scroll",
         bgcolor:
           theme.palette.mode === "light" ? "rgb(242, 248, 253)" : "#070c16",
       }}

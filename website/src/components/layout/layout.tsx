@@ -14,9 +14,9 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-const SocialIcons = () => {
+export const SocialIcons = () => {
   return (
-    <Box sx={{ width: "100vw", textAlign: "end", px: 2, py: 1 }}>
+    <>
       <Link
         href="https://github.com/nix-community/noogle"
         target="_blank"
@@ -39,7 +39,7 @@ const SocialIcons = () => {
           </IconButton>
         </Tooltip>
       </Link>
-    </Box>
+    </>
   );
 };
 
@@ -48,7 +48,9 @@ export function LandingPageLayout(props: LayoutProps) {
 
   return (
     <Background>
-      <SocialIcons />
+      <Box sx={{ textAlign: "end", px: 2, py: 1 }}>
+        <SocialIcons />
+      </Box>
       <main
         style={{
           marginTop: "4.8rem",
@@ -77,6 +79,7 @@ export function LandingPageLayout(props: LayoutProps) {
         </Link>{" "}
         © 2023 Noogle. All rights reserved.
         <Typography
+          component={"div"}
           variant="subtitle2"
           sx={{ maxWidth: "100rem", fontSize: "0.7rem" }}
         >

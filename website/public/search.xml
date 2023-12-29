@@ -5,6 +5,6 @@
     <Description>Search for nix functions by name.</Description>
     <InputEncoding>UTF-8</InputEncoding>
     <Image width="16" height="16" type="image/png">https://noogle.dev/favicon.png</Image>
-    <Url type="text/html" template="https://noogle.dev/?term=%22{searchTerms}%22"/>
+    <Url type="text/html" template="https://noogle.dev/q?term={searchTerms}"/>
     <moz:SearchForm>https://noogle.dev</moz:SearchForm>
 </OpenSearchDescription>
