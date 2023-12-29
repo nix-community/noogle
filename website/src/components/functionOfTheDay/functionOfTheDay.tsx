@@ -86,6 +86,8 @@ export const FunctionOfTheDay = () => {
       }}
     >
       <CardHeader
+        component="h2"
+        sx={{ py: 0 }}
         title={
           idx === todaysIdx
             ? "Function of the day"

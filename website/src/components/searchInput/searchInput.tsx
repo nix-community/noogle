@@ -26,8 +26,8 @@ export function SearchInput(props: SearchInputProps) {
     setTo,
   } = useFilter();
 
-  const handleSubmit = (input: string | null) => {
-    submitFilters(input!);
+  const handleSubmit = (input: string) => {
+    submitFilters({ input });
     setShowFilter(false);
   };
 
@@ -103,7 +103,12 @@ export function SearchInput(props: SearchInputProps) {
           );
         }}
       />
-      <IconButton aria-haspopup="true" onClick={handleToggleFilter}>
+      <IconButton
+        aria-haspopup="true"
+        id="filter"
+        aria-label="filter"
+        onClick={handleToggleFilter}
+      >
         {to !== "any" || from !== "any" ? (
           <Badge variant="dot" color="warning">
             <TuneIcon />
@@ -113,7 +118,7 @@ export function SearchInput(props: SearchInputProps) {
         )}
       </IconButton>
 
-      <IconButton aria-label="clear-button" onClick={_handleClear} size="small">
+      <IconButton aria-label="clear" onClick={_handleClear} size="small">
         <ClearIcon />
       </IconButton>
       <Divider flexItem orientation="vertical" sx={{ mx: 1 }} />
@@ -123,7 +128,7 @@ export function SearchInput(props: SearchInputProps) {
         sx={{
           p: 1,
         }}
-        aria-label="search-button"
+        aria-label="search"
       >
         <SearchIcon fontSize="inherit" />
       </IconButton>

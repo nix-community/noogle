@@ -155,6 +155,19 @@
           version = "7.23.0";
         };
       };
+      "@corex/deepmerge" = {
+        "4.0.43" = {
+          fetchInfo = {
+            narHash = "sha256-GlUW2/0Z1wRF1RyrT/La9POas+bv9x+TbbCQy9V3bW8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@corex/deepmerge/-/deepmerge-4.0.43.tgz";
+          };
+          ident = "@corex/deepmerge";
+          ltype = "file";
+          treeInfo = { };
+          version = "4.0.43";
+        };
+      };
       "@emotion/babel-plugin" = {
         "11.11.0" = {
           depInfo = {
@@ -1688,6 +1701,17 @@
         };
       };
       "@next/env" = {
+        "13.5.6" = {
+          fetchInfo = {
+            narHash = "sha256-cnPBR7oxytxWT2UpNiAkLp59z3ZQFnfbvWKY1r1kUyk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/@next/env/-/env-13.5.6.tgz";
+          };
+          ident = "@next/env";
+          ltype = "file";
+          treeInfo = { };
+          version = "13.5.6";
+        };
         "14.0.3" = {
           fetchInfo = {
             narHash = "sha256-ek4Om3Y3BOkIV3SWNCIyObHTfreim7liNDDEfJuLf3E=";
@@ -1720,7 +1744,7 @@
         };
       };
       "@next/mdx" = {
-        "14.0.3" = {
+        "14.0.4" = {
           depInfo = {
             source-map = {
               descriptor = "^0.7.0";
@@ -1729,9 +1753,9 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-0KyyFnLAzbkRdPsULZwz6xayMbV8qKIBmiGhfDPgBg4=";
+            narHash = "sha256-LEVT1pkXbeTPkrmoLjJFW0P1Oy8Z33AImSDFLhjj+2o=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/mdx/-/mdx-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/mdx/-/mdx-14.0.4.tgz";
           };
           ident = "@next/mdx";
           ltype = "file";
@@ -1745,7 +1769,7 @@
               optional = true;
             };
           };
-          version = "14.0.3";
+          version = "14.0.4";
         };
       };
       "@next/swc-darwin-arm64" = {
@@ -12506,6 +12530,51 @@
           version = "4.4.1";
         };
       };
+      next-sitemap = {
+        "4.2.3" = {
+          binInfo = {
+            binPairs = {
+              next-sitemap = "bin/next-sitemap.mjs";
+              next-sitemap-cjs = "bin/next-sitemap.cjs";
+            };
+          };
+          depInfo = {
+            "@corex/deepmerge" = {
+              descriptor = "^4.0.43";
+              pin = "4.0.43";
+              runtime = true;
+            };
+            "@next/env" = {
+              descriptor = "^13.4.3";
+              pin = "13.5.6";
+              runtime = true;
+            };
+            fast-glob = {
+              descriptor = "^3.2.12";
+              pin = "3.3.1";
+              runtime = true;
+            };
+            minimist = {
+              descriptor = "^1.2.8";
+              pin = "1.2.8";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-qRUd/vkfxWVQER+sA0NwlYyP9uP1xNDthbmWSXl3in8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/next-sitemap/-/next-sitemap-4.2.3.tgz";
+          };
+          ident = "next-sitemap";
+          ltype = "file";
+          peerInfo = {
+            next = {
+              descriptor = "*";
+            };
+          };
+          version = "4.2.3";
+        };
+      };
       node-releases = {
         "2.0.14" = {
           fetchInfo = {
@@ -12573,8 +12642,8 @@
               runtime = true;
             };
             "@next/mdx" = {
-              descriptor = "^14.0.3";
-              pin = "14.0.3";
+              descriptor = "^14.0.4";
+              pin = "14.0.4";
               runtime = true;
             };
             "@types/mdx" = {
@@ -12651,6 +12720,11 @@
             next-mdx-remote = {
               descriptor = "^4.4.1";
               pin = "4.4.1";
+              runtime = true;
+            };
+            next-sitemap = {
+              descriptor = "^4.2.3";
+              pin = "4.2.3";
               runtime = true;
             };
             notistack = {
@@ -12829,6 +12903,9 @@
             };
             "node_modules/@babel/types" = {
               key = "@babel/types/7.23.0";
+            };
+            "node_modules/@corex/deepmerge" = {
+              key = "@corex/deepmerge/4.0.43";
             };
             "node_modules/@emotion/babel-plugin" = {
               key = "@emotion/babel-plugin/11.11.0";
@@ -13185,7 +13262,7 @@
               key = "glob/7.1.7";
             };
             "node_modules/@next/mdx" = {
-              key = "@next/mdx/14.0.3";
+              key = "@next/mdx/14.0.4";
             };
             "node_modules/@next/mdx/node_modules/source-map" = {
               key = "source-map/0.7.4";
@@ -13227,15 +13304,12 @@
               optional = true;
             };
             "node_modules/@nodelib/fs.scandir" = {
-              dev = true;
               key = "@nodelib/fs.scandir/2.1.5";
             };
             "node_modules/@nodelib/fs.stat" = {
-              dev = true;
               key = "@nodelib/fs.stat/2.0.5";
             };
             "node_modules/@nodelib/fs.walk" = {
-              dev = true;
               key = "@nodelib/fs.walk/1.2.8";
             };
             "node_modules/@pagefind/darwin-arm64" = {
@@ -13555,7 +13629,6 @@
               key = "brace-expansion/1.1.11";
             };
             "node_modules/braces" = {
-              dev = true;
               key = "braces/3.0.2";
             };
             "node_modules/browserslist" = {
@@ -13858,11 +13931,9 @@
               key = "fast-deep-equal/3.1.3";
             };
             "node_modules/fast-glob" = {
-              dev = true;
               key = "fast-glob/3.3.1";
             };
             "node_modules/fast-glob/node_modules/glob-parent" = {
-              dev = true;
               key = "glob-parent/5.1.2";
             };
             "node_modules/fast-json-stable-stringify" = {
@@ -13873,7 +13944,6 @@
               key = "fast-levenshtein/2.0.6";
             };
             "node_modules/fastq" = {
-              dev = true;
               key = "fastq/1.13.0";
             };
             "node_modules/fault" = {
@@ -13884,7 +13954,6 @@
               key = "file-entry-cache/6.0.1";
             };
             "node_modules/fill-range" = {
-              dev = true;
               key = "fill-range/7.0.1";
             };
             "node_modules/find-root" = {
@@ -14137,7 +14206,6 @@
               key = "is-decimal/2.0.1";
             };
             "node_modules/is-extglob" = {
-              dev = true;
               key = "is-extglob/2.1.1";
             };
             "node_modules/is-finalizationregistry" = {
@@ -14149,7 +14217,6 @@
               key = "is-generator-function/1.0.10";
             };
             "node_modules/is-glob" = {
-              dev = true;
               key = "is-glob/4.0.3";
             };
             "node_modules/is-hexadecimal" = {
@@ -14164,7 +14231,6 @@
               key = "is-negative-zero/2.0.2";
             };
             "node_modules/is-number" = {
-              dev = true;
               key = "is-number/7.0.0";
             };
             "node_modules/is-number-object" = {
@@ -14737,7 +14803,6 @@
               key = "merge-stream/2.0.0";
             };
             "node_modules/merge2" = {
-              dev = true;
               key = "merge2/1.4.1";
             };
             "node_modules/micromark" = {
@@ -14963,7 +15028,6 @@
               key = "micromark-util-types/2.0.0";
             };
             "node_modules/micromatch" = {
-              dev = true;
               key = "micromatch/4.0.5";
             };
             "node_modules/mime-db" = {
@@ -14977,7 +15041,6 @@
               key = "minimatch/3.1.2";
             };
             "node_modules/minimist" = {
-              dev = true;
               key = "minimist/1.2.8";
             };
             "node_modules/minisearch" = {
@@ -15019,6 +15082,12 @@
             };
             "node_modules/next-mdx-remote/node_modules/vfile-message" = {
               key = "vfile-message/3.1.4";
+            };
+            "node_modules/next-sitemap" = {
+              key = "next-sitemap/4.2.3";
+            };
+            "node_modules/next-sitemap/node_modules/@next/env" = {
+              key = "@next/env/13.5.6";
             };
             "node_modules/node-releases" = {
               key = "node-releases/2.0.14";
@@ -15120,7 +15189,6 @@
               key = "picocolors/1.0.0";
             };
             "node_modules/picomatch" = {
-              dev = true;
               key = "picomatch/2.3.1";
             };
             "node_modules/postcss" = {
@@ -15140,7 +15208,6 @@
               key = "punycode/2.1.1";
             };
             "node_modules/queue-microtask" = {
-              dev = true;
               key = "queue-microtask/1.2.3";
             };
             "node_modules/randombytes" = {
@@ -15249,7 +15316,6 @@
               key = "resolve-pkg-maps/1.0.0";
             };
             "node_modules/reusify" = {
-              dev = true;
               key = "reusify/1.0.4";
             };
             "node_modules/rimraf" = {
@@ -15257,7 +15323,6 @@
               key = "rimraf/3.0.2";
             };
             "node_modules/run-parallel" = {
-              dev = true;
               key = "run-parallel/1.2.0";
             };
             "node_modules/sade" = {
@@ -15392,7 +15457,6 @@
               key = "to-fast-properties/2.0.0";
             };
             "node_modules/to-regex-range" = {
-              dev = true;
               key = "to-regex-range/5.0.1";
             };
             "node_modules/trim-lines" = {

@@ -9,6 +9,8 @@ import { Box, Button, Divider, Typography, Link, Chip } from "@mui/material";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { findType, interpretType } from "@/models/nix";
 import LinkIcon from "@mui/icons-material/Link";
+import { FilterProvider } from "@/components/layout/filterContext";
+import { Suspense } from "react";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -114,6 +116,7 @@ export default async function Page(props: { params: { path: string[] } }) {
         data-pagefind-body
         sx={{
           maxWidth: "100vw",
+          minHeight: "calc(100vh - 3.7rem)",
           overflow: "hidden",
           p: { xs: 1, md: 2 },
           bgcolor: "background.paper",
@@ -121,8 +124,19 @@ export default async function Page(props: { params: { path: string[] } }) {
       >
         <HighlightBaseline />
         <Box>
-          <Box sx={{ display: "flex" }}>
-            <BackButton />
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              wordBreak: "break-word",
+              flexWrap: "wrap",
+            }}
+          >
+            <Suspense fallback={<BackButton />}>
+              <FilterProvider>
+                <BackButton />
+              </FilterProvider>
+            </Suspense>
             <Typography
               variant="h2"
               component={"h1"}
@@ -135,13 +149,13 @@ export default async function Page(props: { params: { path: string[] } }) {
                 <Chip
                   label="Primop"
                   color="primary"
-                  sx={{ ml: 2, maxWidth: "10rem" }}
+                  sx={{ ml: "auto", maxWidth: "10rem" }}
                 />
                 {meta?.primop_meta?.experimental && (
                   <Chip
                     label={"Experimental"}
                     color="warning"
-                    sx={{ ml: 2, maxWidth: "10rem" }}
+                    sx={{ ml: "auto", maxWidth: "10rem" }}
                   />
                 )}
               </>
@@ -171,17 +185,22 @@ export default async function Page(props: { params: { path: string[] } }) {
                   <Typography variant="h5" sx={{ pt: 2 }}>
                     {"Noogle's tip"}
                   </Typography>
-                  <Typography variant="body1" gutterBottom sx={{ py: 2 }}>
-                    <p>
+                  <Typography
+                    variant="body1"
+                    component={"span"}
+                    gutterBottom
+                    sx={{ py: 2 }}
+                  >
+                    <div>
                       Position of the source could not be detected
                       automatically.
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                       Sometimes the documentation is missing or the extraction
                       of the documentation fails. In these cases, it is
                       advisable to look for the recognized position in the
                       source code
-                    </p>
+                    </div>
                     {raw_position && (
                       <Link
                         target="_blank"
@@ -204,7 +223,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                         </Button>
                       </Link>
                     )}
-                    <p>You may find further instructions there</p>
+                    <div>You may find further instructions there</div>
                   </Typography>
                 </div>
               )}
@@ -308,6 +327,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             </div>
           )}
         </Box>
+        <Divider flexItem sx={{ mt: 2 }} />
       </Box>
     </>
   );

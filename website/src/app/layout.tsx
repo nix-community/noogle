@@ -7,6 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Noogle",
+  description: "nix api reference. Including nix, nixpkgs and nixos",
   creator: "@hsjobeki",
   abstract: "Nix and NixOS API Documentation",
   robots: { index: true, notranslate: true, nocache: true },

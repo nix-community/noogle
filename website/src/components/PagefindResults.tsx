@@ -1,8 +1,10 @@
 "use client";
 import {
   Box,
+  Chip,
   Container,
   Divider,
+  IconButton,
   LinearProgress,
   Link,
   List,
@@ -23,6 +25,8 @@ import { useSearchParams } from "next/navigation";
 // import { Excerpt } from "./Excerpt";
 import { useRouter } from "next/navigation";
 import { PagefindResult, RawResult, usePagefindSearch } from "./Pagefind";
+import { Clear } from "@mui/icons-material";
+import { useFilter } from "./layout/filterContext";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -95,6 +99,21 @@ export function PagefindResults() {
     router.push(`?${query.toString()}`);
   };
 
+  const { setFrom, setTo, setTerm, submit } = useFilter();
+
+  const handleReset = (target: "filter" | "term") => {
+    if (target === "filter") {
+      setFrom("any");
+      setTo("any");
+      submit({ filter: { from: "any", to: "any" } });
+    }
+    if (target === "term") {
+      console.log("reset term");
+      setTerm("");
+      submit({ input: "" });
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -104,7 +123,7 @@ export function PagefindResults() {
         alignItems: "center",
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mt: 2 }}>
         {items === null ? (
           <LinearProgress sx={{ my: 2 }} />
         ) : (
@@ -118,19 +137,66 @@ export function PagefindResults() {
                 textTransform: "capitalize",
               }}
             >
-              {searchResults?.length || "0"} Results
+              <Chip
+                label={`${searchResults?.length || "0"} Results`}
+                color="primary"
+                sx={{ color: "primary.contrastText" }}
+              />
             </Typography>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              sx={{
-                color: "text.secondary",
-                p: 1,
-                textTransform: "capitalize",
-              }}
-            >
-              {`f: ${from || "any"} -> ${to || "any"}`}
-            </Typography>
+            {(from || to) && (
+              <Typography
+                component="span"
+                variant="subtitle1"
+                sx={{
+                  color: "text.secondary",
+                  p: 1,
+                  textTransform: "capitalize",
+                }}
+              >
+                <Chip
+                  label={
+                    <>
+                      {`${from || "any"} -> ${to || "any"}`}
+                      <IconButton
+                        size="small"
+                        onClick={() => handleReset("filter")}
+                      >
+                        <Clear fontSize="inherit" />
+                      </IconButton>
+                    </>
+                  }
+                  color="secondary"
+                  sx={{ color: "secondary.contrastText" }}
+                />
+              </Typography>
+            )}
+            {term && (
+              <Typography
+                component="span"
+                variant="subtitle1"
+                sx={{
+                  color: "text.secondary",
+                  p: 1,
+                  textTransform: "capitalize",
+                }}
+              >
+                <Chip
+                  label={
+                    <>
+                      {`${term}`}
+                      <IconButton
+                        size="small"
+                        onClick={() => handleReset("term")}
+                      >
+                        <Clear fontSize="inherit" />
+                      </IconButton>
+                    </>
+                  }
+                  color="secondary"
+                  sx={{ color: "secondary.contrastText" }}
+                />
+              </Typography>
+            )}
             <List aria-label="basic-list" sx={{ pt: 0, width: "100%" }}>
               {items.length ? (
                 items.map(({ meta, excerpt, url }, idx) => (

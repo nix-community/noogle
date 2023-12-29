@@ -68,6 +68,7 @@ in
             ls -la src/models/data
           '';
           postBuild = ''
+            npx next-sitemap
             npx pagefind --site ./out
             ls -la out
           '';

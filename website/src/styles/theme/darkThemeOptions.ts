@@ -6,13 +6,15 @@ const darkThemeOptions: ThemeOptions = {
   palette: {
     mode: "dark",
     background: {
-      paper: "#0f192c",
+      // default: "#0f192c",
+      default: "#1b1d22",
+      paper: "#17181c",
     },
     primary: {
       main: "#6586c8",
     },
     secondary: {
-      main: "#6ad541",
+      main: "#40224e",
     },
   },
 };
