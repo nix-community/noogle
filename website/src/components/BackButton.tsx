@@ -21,7 +21,7 @@ export const BackButton = () => {
     }
   };
   return (
-    <IconButton onClick={() => handleBack()}>
+    <IconButton onClick={() => handleBack()} aria-label="Back">
       <ChevronLeft />
     </IconButton>
   );

@@ -3,7 +3,6 @@ import {
   Box,
   Chip,
   Container,
-  Divider,
   IconButton,
   LinearProgress,
   Link,
@@ -17,16 +16,14 @@ import {
 } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
 
-// import { useMiniSearch } from "react-minisearch";
-
-// import { Doc, data } from "@/models/data";
 import { EmptyRecordsPlaceholder } from "./emptyRecordsPlaceholder";
 import { useSearchParams } from "next/navigation";
-// import { Excerpt } from "./Excerpt";
 import { useRouter } from "next/navigation";
 import { PagefindResult, RawResult, usePagefindSearch } from "./Pagefind";
 import { Clear } from "@mui/icons-material";
 import { useFilter } from "./layout/filterContext";
+
+// import d from "./example.json";
 
 export type BasicListItem = {
   item: React.ReactNode;
@@ -35,9 +32,6 @@ export type BasicListItem = {
 
 const useMobile = () => useMediaQuery(useTheme().breakpoints.down("md"));
 
-// interface SearchResultsProps {
-//   pageItems: PagefindResult[];
-// }
 export function PagefindResults() {
   const params = useSearchParams();
   const router = useRouter();
@@ -87,6 +81,7 @@ export function PagefindResults() {
     const loadData = async () => {
       let items = await Promise.all(pageItems.map(async (r) => await r.data()));
       setItems(items);
+      // setItems(d);
     };
     loadData();
   }, [pageItems]);
@@ -132,7 +127,6 @@ export function PagefindResults() {
               component="span"
               variant="subtitle1"
               sx={{
-                color: "text.secondary",
                 p: 1,
                 textTransform: "capitalize",
               }}
@@ -148,7 +142,6 @@ export function PagefindResults() {
                 component="span"
                 variant="subtitle1"
                 sx={{
-                  color: "text.secondary",
                   p: 1,
                   textTransform: "capitalize",
                 }}
@@ -160,6 +153,7 @@ export function PagefindResults() {
                       <IconButton
                         size="small"
                         onClick={() => handleReset("filter")}
+                        aria-label="clear filter"
                       >
                         <Clear fontSize="inherit" />
                       </IconButton>
@@ -175,9 +169,8 @@ export function PagefindResults() {
                 component="span"
                 variant="subtitle1"
                 sx={{
-                  color: "text.secondary",
                   p: 1,
-                  textTransform: "capitalize",
+                  textTransform: "none",
                 }}
               >
                 <Chip
@@ -187,6 +180,7 @@ export function PagefindResults() {
                       <IconButton
                         size="small"
                         onClick={() => handleReset("term")}
+                        aria-label="clear term"
                       >
                         <Clear fontSize="inherit" />
                       </IconButton>
@@ -197,11 +191,11 @@ export function PagefindResults() {
                 />
               </Typography>
             )}
-            <List aria-label="basic-list" sx={{ pt: 0, width: "100%" }}>
+            <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
               {items.length ? (
                 items.map(({ meta, excerpt, url }, idx) => (
-                  <Box key={`${idx}`}>
-                    <ListItem sx={{ px: 0 }} aria-label={`item-${idx}`}>
+                  <React.Fragment key={`${idx}`}>
+                    <ListItem sx={{ px: 0, py: 1 }} aria-label={`item-${idx}`}>
                       <ListItemText
                         primaryTypographyProps={{
                           variant: "h5",
@@ -216,15 +210,10 @@ export function PagefindResults() {
                         }
                       />
                     </ListItem>
-                    <Divider
-                      flexItem
-                      orientation="horizontal"
-                      sx={{ p: 1, mx: 1 }}
-                    />
-                  </Box>
+                  </React.Fragment>
                 ))
               ) : (
-                <Box sx={{ mt: 3 }}>
+                <Box component="li" sx={{ mt: 3 }}>
                   <EmptyRecordsPlaceholder
                     CardProps={{
                       sx: { backgroundColor: "inherit" },

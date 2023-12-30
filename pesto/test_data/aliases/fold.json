@@ -1,0 +1,42 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/lists.nix",
+          "line": 108
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 11,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/lists.nix",
+          "line": 95
+        }
+      }
+    },
+    "path": ["lib", "lists", "fold"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/lists.nix",
+          "line": 95
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 11,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/lists.nix",
+          "line": 95
+        }
+      }
+    },
+    "path": ["lib", "lists", "foldr"]
+  }
+]

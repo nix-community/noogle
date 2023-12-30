@@ -1,0 +1,30 @@
+[
+  {
+    "aliases": [
+      [
+        "lib",
+        "lists",
+        "foldr"
+      ]
+    ],
+    "path": [
+      "lib",
+      "lists",
+      "fold"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "lists",
+        "fold"
+      ]
+    ],
+    "path": [
+      "lib",
+      "lists",
+      "foldr"
+    ]
+  }
+]

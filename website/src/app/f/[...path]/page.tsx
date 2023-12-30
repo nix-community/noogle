@@ -47,15 +47,16 @@ const Toc = async (props: TocProps) => {
       sx={{
         display: {
           xs: "none",
-          lg: "block",
+          md: "block",
         },
-        position: "fixed",
-        top: "6rem",
-        right: "1.8em",
+        position: "sticky",
+        top: "3.7rem",
+        p: 1,
+        order: 3,
         whiteSpace: "nowrap",
       }}
     >
-      <Typography variant="subtitle1">Table of Contents</Typography>
+      <Typography variant="subtitle1">On this page</Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         {headings.map((h, idx) => (
           <Link key={idx} href={`#${h.id}`}>
@@ -88,9 +89,10 @@ export default async function Page(props: { params: { path: string[] } }) {
   const mdxSource = item?.content?.content || "";
   const meta = item?.meta;
 
+  const signature = meta?.signature || (item && findType(item)) || "";
   const { args: argTypes, returns: retTypes } = interpretType(
     meta?.path[meta?.path?.length - 1],
-    meta?.signature || (item && findType(item)) || ""
+    signature
   );
 
   const position =
@@ -107,6 +109,11 @@ export default async function Page(props: { params: { path: string[] } }) {
     meta?.is_primop && meta?.primop_meta
       ? getPrimopDescription(meta.primop_meta) + mdxSource
       : mdxSource;
+  // Skip generating this builtin.
+  // It is internal information of noogle.
+  if (meta?.title === "builtins.lambdaMeta") {
+    return undefined;
+  }
 
   return (
     <>
@@ -118,11 +125,18 @@ export default async function Page(props: { params: { path: string[] } }) {
           maxWidth: "100vw",
           minHeight: "calc(100vh - 3.7rem)",
           overflow: "hidden",
+          gridColumnStart: 2,
           p: { xs: 1, md: 2 },
           bgcolor: "background.paper",
         }}
       >
         <HighlightBaseline />
+        {meta?.path &&
+          meta.path.map((attr, idx) => (
+            <Box sx={{ display: "none" }} key={`${idx}`}>
+              {attr}
+            </Box>
+          ))}
         <Box>
           <Box
             sx={{
@@ -180,6 +194,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               >
                 No documentation found yet.
               </Typography>
+
               {!position && (
                 <div data-pagefind-ignore="all">
                   <Typography variant="h5" sx={{ pt: 2 }}>
@@ -226,6 +241,28 @@ export default async function Page(props: { params: { path: string[] } }) {
                     <div>You may find further instructions there</div>
                   </Typography>
                 </div>
+              )}
+              {position && (
+                <Link
+                  target="_blank"
+                  href={getSourcePosition(
+                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                    position
+                  )}
+                >
+                  <Button
+                    data-pagefind-ignore="all"
+                    variant="text"
+                    sx={{
+                      textTransform: "none",
+                      my: 1,
+                      placeSelf: "start",
+                    }}
+                    startIcon={<LinkIcon />}
+                  >
+                    Original/underlying function
+                  </Button>
+                </Link>
               )}
             </Box>
           )}
@@ -299,33 +336,59 @@ export default async function Page(props: { params: { path: string[] } }) {
               </Typography>
             </div>
           )}
-          {!!meta?.aliases?.length && (
-            <div data-pagefind-ignore="all">
-              <Divider flexItem />
-              <Typography
-                variant="subtitle1"
-                component={"h3"}
-                sx={{
-                  color: "text.secondary",
-                  alignSelf: "center",
-                  pb: 2,
-                }}
-              >
-                Noogle also knows
-              </Typography>
-
-              <Typography variant="h5" component={"h3"}>
-                Aliases
-              </Typography>
-              <ul>
-                {meta?.aliases?.map((a) => (
-                  <li key={a.join(".")}>
-                    <Link href={`/f/${a.join("/")}`}>{a.join(".")}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div data-pagefind-ignore="all">
+            {(!!meta?.aliases?.length || !!signature) && (
+              <>
+                <Divider flexItem />
+                <Typography
+                  variant="subtitle1"
+                  component={"h3"}
+                  sx={{
+                    color: "text.secondary",
+                    alignSelf: "center",
+                    pb: 2,
+                  }}
+                >
+                  Noogle also knows
+                </Typography>
+              </>
+            )}
+            {!!meta?.aliases?.length && (
+              <>
+                <Typography
+                  variant="h5"
+                  component={"div"}
+                  sx={{ color: "text.secondary" }}
+                >
+                  Aliases
+                </Typography>
+                <ul>
+                  {meta?.aliases?.map((a) => (
+                    <li key={a.join(".")}>
+                      <Link href={`/f/${a.join("/")}`}>{a.join(".")}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {!!signature && !meta?.signature && (
+              <>
+                <Typography
+                  variant="h5"
+                  component={"div"}
+                  sx={{ color: "text.secondary" }}
+                >
+                  Detected Type
+                </Typography>
+                <MDXRemote
+                  options={{
+                    mdxOptions: mdxRenderOptions,
+                  }}
+                  source={`\`\`\`haskell\n${signature.trim()}\n\`\`\`\n`}
+                />
+              </>
+            )}
+          </div>
         </Box>
         <Divider flexItem sx={{ mt: 2 }} />
       </Box>

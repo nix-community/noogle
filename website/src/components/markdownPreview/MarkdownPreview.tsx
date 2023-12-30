@@ -1,6 +1,8 @@
 "use client";
 import { useTheme } from "@mui/material";
 import nix from "highlight.js/lib/languages/nix";
+import haskell from "highlight.js/lib/languages/haskell";
+import bash from "highlight.js/lib/languages/bash";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -32,7 +34,15 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
           h3: "h5",
           h4: "h6",
         }}
-        rehypePlugins={[[rehypeHighlight, { languages: { nix } }]]}
+        rehypePlugins={[
+          [
+            rehypeHighlight,
+            {
+              detect: true,
+              languages: { nix, haskell, bash, default: nix },
+            },
+          ],
+        ]}
       >
         {description}
       </ReactMarkdown>

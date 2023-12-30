@@ -17,7 +17,7 @@ export const Header = () => {
           top: 0,
           width: "100%",
           py: 1.2,
-          zIndex: 1,
+          zIndex: 1000,
           backgroundColor:
             theme.palette.mode === "light" ? "primary.main" : "#101010",
           display: "grid",
@@ -39,8 +39,9 @@ export const Header = () => {
             sx={{
               color: "primary.contrastText",
             }}
+            aria-label="Home"
           >
-            <IconButton color="inherit">
+            <IconButton color="inherit" aria-label="Home">
               <Home />
             </IconButton>
           </Link>
@@ -51,7 +52,7 @@ export const Header = () => {
             display: { xs: "block", md: "none" },
           }}
         >
-          <IconButton color="inherit">
+          <IconButton color="inherit" aria-label="Menu">
             <Menu />
           </IconButton>
         </Box>
@@ -79,6 +80,7 @@ export const Header = () => {
               xs: "none",
               md: "block",
             },
+            color: "primary.contrastText",
           }}
         >
           <SocialIcons />
@@ -88,7 +90,15 @@ export const Header = () => {
       <Box sx={{ width: "100%", height: "3.7rem" }} />
 
       <Suspense fallback={<LinearProgress />}>
-        <Box sx={{ bgcolor: "background.paper", px: 2 }}>
+        <Box
+          sx={{
+            bgcolor: "background.paper",
+            px: 2,
+            position: "sticky",
+            top: "3.7rem",
+            zIndex: 10,
+          }}
+        >
           <Filter disableChevron />
         </Box>
       </Suspense>

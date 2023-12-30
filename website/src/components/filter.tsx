@@ -92,7 +92,12 @@ export const Filter = (props: FilterProps) => {
   return (
     <Collapse in={showFilter}>
       {showDivider && <Divider sx={{ mt: 1, mb: 2 }} />}
-      <Container disableGutters>
+      <Container
+        disableGutters
+        sx={{
+          py: 1,
+        }}
+      >
         <Box
           sx={{
             display: "flex",
