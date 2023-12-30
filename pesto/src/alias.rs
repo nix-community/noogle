@@ -23,6 +23,7 @@ use crate::pasta::{AliasList, Docs, ValuePath};
 ///   Match Non-Primop
 ///      Eq position
 pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
+    dbg!("find alias for", &item.path);
     let res: AliasList = list
         .iter()
         .filter_map(|other| {
@@ -54,6 +55,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         None
                     }
                     (false, false) => {
+                        dbg!("this case", s_meta.countApplied);
                         if s_meta.countApplied != Some(0) {
                             if item.path.last() == other.path.last() {
                                 return Some(other.path.clone());
@@ -61,8 +63,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         }
 
                         if s_meta.position == o_meta.position
-                            && s_meta.countApplied == Some(0)
-                            && s_meta.countApplied == o_meta.countApplied
+                            && (s_meta.countApplied == Some(0) || o_meta.countApplied == Some(0))
                         {
                             return Some(other.path.clone());
                         }

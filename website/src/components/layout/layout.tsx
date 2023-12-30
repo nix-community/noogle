@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import PublicIcon from "@mui/icons-material/Public";
 import { Background } from "./Background";
 
 export interface LayoutProps {
@@ -20,22 +19,11 @@ export const SocialIcons = () => {
       <Link
         href="https://github.com/nix-community/noogle"
         target="_blank"
-        sx={{ color: "text.primary" }}
+        sx={{ color: "inherit" }}
       >
         <Tooltip title="Github">
-          <IconButton color="inherit">
+          <IconButton color="inherit" aria-label="nixos github">
             <GitHubIcon />
-          </IconButton>
-        </Tooltip>
-      </Link>
-      <Link
-        href="https://nixos.org"
-        target="_blank"
-        sx={{ color: "text.primary" }}
-      >
-        <Tooltip title="NixOS">
-          <IconButton color="inherit">
-            <PublicIcon />
           </IconButton>
         </Tooltip>
       </Link>

@@ -11,7 +11,21 @@ export default function SearchLayout({ children }: { children: ReactNode }) {
           <Header />
         </FilterProvider>
       </Suspense>
-      <Container maxWidth="lg">{children}</Container>
+      <Container
+        disableGutters
+        maxWidth="lg"
+        sx={{
+          display: {
+            xs: "block",
+            md: "grid",
+          },
+          // display: "grid",
+          gridTemplateColumns: "1fr 6fr 1fr",
+          alignItems: "start",
+        }}
+      >
+        {children}
+      </Container>
     </>
   );
 }

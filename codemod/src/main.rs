@@ -287,7 +287,7 @@ fn indent_list_item_content(body: &str, indent: &str) -> String {
         if line_nr > 0 {
             res.push_str(&format!("{}  {}\n", indent, line.trim()));
         } else {
-            res.push_str(&format!("{}",line.trim()))
+            res.push_str(&format!("{}", line.trim()))
         }
     }
     res
@@ -314,8 +314,10 @@ fn format_comment(text: &str, token: &SyntaxToken) -> String {
     let mut markdown = parse_doc_comment(&lines.join("\n"), indentation + 2);
 
     if let Some(argument_docs) = get_argument_docs(token, &indent_2) {
-        markdown.push_str(&format!("\n\n{indent_2}# Arguments"));
-        markdown.push_str(&format!("\n\n{argument_docs}"));
+        if !argument_docs.trim().is_empty() {
+            markdown.push_str(&format!("\n\n{indent_2}# Arguments"));
+            markdown.push_str(&format!("\n\n{argument_docs}"));
+        }
     }
 
     return format!("/**\n{}\n{}*/", markdown, indent_1);

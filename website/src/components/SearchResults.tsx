@@ -20,7 +20,6 @@ import { useMiniSearch } from "react-minisearch";
 import { Doc, data } from "@/models/data";
 import { EmptyRecordsPlaceholder } from "./emptyRecordsPlaceholder";
 import { useSearchParams } from "next/navigation";
-import { Excerpt } from "./Excerpt";
 import { useRouter } from "next/navigation";
 
 export type BasicListItem = {
@@ -121,7 +120,7 @@ export function SearchResults() {
                             {meta.title}
                           </Link>
                         }
-                        secondary={<Excerpt meta={meta} content={content} />}
+                        secondary={""}
                       />
                     </ListItem>
                     <Divider
