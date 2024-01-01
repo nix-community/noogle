@@ -1,1 +1,2 @@
 pdefs.nix linguist-vendored
+test_data/assets/* linguist-vendored
