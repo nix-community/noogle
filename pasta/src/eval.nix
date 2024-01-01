@@ -22,6 +22,8 @@ let
 
   # Contains seperate sets of metadata.
   # which then allows running seperate evaluations. Once at a time for better error tracing and memory management.
+
+
   docs = {
     ############# Recusive analysis sets
     lib = collectFns lib { initialPath = [ "lib" ]; };
@@ -42,6 +44,9 @@ let
     builtins =
       getDocsFromSet builtins [ "builtins" ];
   };
+
+
+
   all = builtins.foldl' (acc: name: acc ++ docs.${name}) [ ] (builtins.attrNames docs);
 
   # generate test_data for pesto
