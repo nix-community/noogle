@@ -37,22 +37,12 @@ export default function Home() {
           >
             <Box component="span">N</Box>
 
-            <Box component="span" sx={{ color: "error.main" }}>
-              o
-            </Box>
-            <Box component="span" sx={{ color: "warning.light" }}>
-              o
-            </Box>
-            <Box component="span" sx={{ color: "primary.main" }}>
-              g
-            </Box>
+            <Box component="span">o</Box>
+            <Box component="span">o</Box>
+            <Box component="span">g</Box>
 
-            <Box component="span" sx={{ color: "success.light" }}>
-              l
-            </Box>
-            <Box component="span" sx={{ color: "error.main" }}>
-              e
-            </Box>
+            <Box component="span">λ</Box>
+            <Box component="span">e</Box>
           </Typography>
         </Link>
 
