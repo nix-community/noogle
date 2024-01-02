@@ -1,13 +1,19 @@
 "use client";
 import ClearIcon from "@mui/icons-material/Clear";
 import SearchIcon from "@mui/icons-material/Search";
-import { Autocomplete, Badge, Divider, Input } from "@mui/material";
+import { Autocomplete, Badge, Divider, TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Paper from "@mui/material/Paper";
 import React from "react";
 import { data } from "@/models/data";
 import TuneIcon from "@mui/icons-material/Tune";
 import { useFilter } from "../layout/filterContext";
+
+// import dynamic from "next/dynamic";
+
+// const data = dynamic(() => import("@/models/data"), {
+//   loading: () => <p>Loading...</p>,
+// });
 
 export interface SearchInputProps {
   placeholder: string;
@@ -80,28 +86,28 @@ export function SearchInput(props: SearchInputProps) {
           } as React.ChangeEvent<HTMLInputElement>);
         }}
         value={term}
-        renderInput={(params) => {
-          return (
-            <Input
-              disableUnderline
-              sx={{
-                "& .MuiInputBase-root": {
-                  ml: 1,
-                  flex: 1,
-                  backgroundColor: "paper.main",
-                  px: 1,
-                  py: 0,
-                },
-              }}
-              value={term}
-              onChange={(e) => handleType(e)}
-              placeholder={placeholder}
-              {...params}
-              {...params.InputProps}
-              endAdornment={undefined}
-            />
-          );
-        }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            InputProps={{
+              ...params.InputProps,
+              type: "search",
+              disableUnderline: true,
+              endAdornment: undefined,
+              placeholder: placeholder,
+            }}
+            value={term}
+            onChange={(e) => handleType(e)}
+            variant="standard"
+            sx={{
+              "& .MuiInputBase-root": {
+                backgroundColor: "paper.main",
+                px: 1,
+                py: 0,
+              },
+            }}
+          />
+        )}
       />
       <IconButton
         aria-haspopup="true"

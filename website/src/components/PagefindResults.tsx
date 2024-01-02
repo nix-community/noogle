@@ -21,7 +21,8 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PagefindResult, RawResult, usePagefindSearch } from "./Pagefind";
 import { Clear } from "@mui/icons-material";
-import { useFilter } from "./layout/filterContext";
+import { FilterOptions, useFilter } from "./layout/filterContext";
+import { useSessionStorage } from "usehooks-ts";
 
 // import d from "./example.json";
 
@@ -35,6 +36,11 @@ const useMobile = () => useMediaQuery(useTheme().breakpoints.down("md"));
 export function PagefindResults() {
   const params = useSearchParams();
   const router = useRouter();
+
+  const [, persistFilterOptions] = useSessionStorage<FilterOptions>(
+    "currentFilterOptions",
+    {}
+  );
 
   const query = useMemo(() => new URLSearchParams(params), [params]);
 
@@ -67,6 +73,11 @@ export function PagefindResults() {
   ) => {
     query.set("limit", event.target.value);
     query.set("page", "1");
+    persistFilterOptions((s) => ({
+      ...s,
+      limit: +event.target.value,
+      page: 1,
+    }));
     router.push(`?${query.toString()}`);
   };
 
@@ -81,7 +92,6 @@ export function PagefindResults() {
     const loadData = async () => {
       let items = await Promise.all(pageItems.map(async (r) => await r.data()));
       setItems(items);
-      // setItems(d);
     };
     loadData();
   }, [pageItems]);
@@ -91,6 +101,10 @@ export function PagefindResults() {
     value: number
   ) => {
     query.set("page", (value + 1).toString());
+    persistFilterOptions((s) => ({
+      ...s,
+      page: value + 1,
+    }));
     router.push(`?${query.toString()}`);
   };
 

@@ -64,7 +64,6 @@ export const usePagefindSearch = (): PagefindHooks => {
   }, []);
 
   // @ts-ignore
-  console.log("usePagefind", { pagefind });
   return {
     // @ts-ignore
     search: pagefind?.search,

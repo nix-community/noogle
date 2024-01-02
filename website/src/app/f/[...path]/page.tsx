@@ -1,16 +1,16 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, FilePosition, data } from "@/models/data";
+import { Doc, data } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractHeadings, mdxRenderOptions } from "@/utils";
-import { Edit } from "@mui/icons-material";
-import { Box, Button, Divider, Typography, Link, Chip } from "@mui/material";
+import { Box, Divider, Typography, Link, Chip } from "@mui/material";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { findType, interpretType } from "@/models/nix";
-import LinkIcon from "@mui/icons-material/Link";
 import { FilterProvider } from "@/components/layout/filterContext";
 import { Suspense } from "react";
+import { PositionLink } from "@/components/PositionLink";
+import { SearchNav } from "@/components/SearchNav";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -21,17 +21,6 @@ export async function generateStaticParams(): Promise<{ path: string[] }[]> {
   });
   return paths;
 }
-
-const getSourcePosition = (baseUrl: string, position: FilePosition): string => {
-  const filename = position?.file.split("/").slice(4).join("/");
-  const line = position?.line;
-  const column = position?.column;
-  let res = `${baseUrl}`;
-  if (filename && line && column) {
-    res += `/${filename}#L${line}:C${column}`;
-  }
-  return res;
-};
 
 interface TocProps {
   mdxSource: string;
@@ -58,6 +47,11 @@ const Toc = async (props: TocProps) => {
     >
       <Typography variant="subtitle1">On this page</Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
+        {!headings.length && (
+          <Typography variant="body2" sx={{ color: "text.secondary", py: 1 }}>
+            No content
+          </Typography>
+        )}
         {headings.map((h, idx) => (
           <Link key={idx} href={`#${h.id}`}>
             <Typography
@@ -79,6 +73,51 @@ const Toc = async (props: TocProps) => {
   );
 };
 
+// TODO: figure out why this causes hydration errors
+const MDX = ({ source }: { source: string }) => (
+  <MDXRemote
+    options={{
+      parseFrontmatter: true,
+      mdxOptions: mdxRenderOptions,
+    }}
+    source={source}
+    components={{
+      a: (p) => (
+        // @ts-ignore
+        <Box
+          sx={{
+            color: "inherit",
+            textDecoration: "none",
+          }}
+          component="a"
+          {...p}
+        />
+      ),
+      // @ts-ignore
+      h1: (p) => (
+        // @ts-ignore
+        <Typography variant="h3" component={"h2"} {...p} />
+      ),
+      // @ts-ignore
+      h2: (p) => <Typography variant="h4" component={"h3"} {...p} />,
+      // @ts-ignore
+      h3: (p) => <Typography variant="h5" component={"h4"} {...p} />,
+      // @ts-ignore
+      h4: (p) => <Typography variant="h6" component={"h5"} {...p} />,
+      // @ts-ignore
+      h5: (p) => (
+        // @ts-ignore
+        <Typography variant="subtitle1" component={"h6"} {...p} />
+      ),
+      // @ts-ignore
+      h6: (p) => (
+        // @ts-ignore
+        <Typography variant="subtitle2" component={"h6"} {...p} />
+      ),
+    }}
+  />
+);
+
 // Multiple versions of this page will be statically generated
 // using the `params` returned by `generateStaticParams`
 export default async function Page(props: { params: { path: string[] } }) {
@@ -95,20 +134,7 @@ export default async function Page(props: { params: { path: string[] } }) {
     signature
   );
 
-  const position =
-    meta?.content_meta?.position ||
-    meta?.attr_position ||
-    (meta?.count_applied == 0 && meta?.lambda_position);
-
-  const raw_position =
-    meta?.content_meta?.position ||
-    meta?.attr_position ||
-    meta?.lambda_position;
-
-  const source =
-    meta?.is_primop && meta?.primop_meta
-      ? getPrimopDescription(meta.primop_meta) + mdxSource
-      : mdxSource;
+  const source = mdxSource;
   // Skip generating this builtin.
   // It is internal information of noogle.
   if (meta?.title === "builtins.lambdaMeta") {
@@ -117,7 +143,7 @@ export default async function Page(props: { params: { path: string[] } }) {
 
   return (
     <>
-      <Toc mdxSource={mdxSource} />
+      <Toc mdxSource={source} />
       <Box
         component="main"
         data-pagefind-body
@@ -146,7 +172,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               flexWrap: "wrap",
             }}
           >
-            <Suspense fallback={<BackButton />}>
+            <Suspense fallback={""}>
               <FilterProvider>
                 <BackButton />
               </FilterProvider>
@@ -177,6 +203,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             <ShareButton />
           </Box>
           <Divider flexItem sx={{ mt: 2 }} />
+
           <Box sx={{ display: "block" }}>
             {argTypes.map((t, i) => (
               <meta key={i} data-pagefind-filter={`from:${t}`} />
@@ -195,147 +222,20 @@ export default async function Page(props: { params: { path: string[] } }) {
                 No documentation found yet.
               </Typography>
 
-              {!position && (
-                <div data-pagefind-ignore="all">
-                  <Typography variant="h5" sx={{ pt: 2 }}>
-                    {"Noogle's tip"}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    component={"span"}
-                    gutterBottom
-                    sx={{ py: 2 }}
-                  >
-                    <div>
-                      Position of the source could not be detected
-                      automatically.
-                    </div>
-                    <div>
-                      Sometimes the documentation is missing or the extraction
-                      of the documentation fails. In these cases, it is
-                      advisable to look for the recognized position in the
-                      source code
-                    </div>
-                    {raw_position && (
-                      <Link
-                        target="_blank"
-                        href={getSourcePosition(
-                          "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
-                          raw_position
-                        )}
-                      >
-                        <Button
-                          data-pagefind-ignore="all"
-                          variant="text"
-                          sx={{
-                            textTransform: "none",
-                            my: 1,
-                            placeSelf: "start",
-                          }}
-                          startIcon={<LinkIcon />}
-                        >
-                          Original/underlying function
-                        </Button>
-                      </Link>
-                    )}
-                    <div>You may find further instructions there</div>
-                  </Typography>
-                </div>
-              )}
-              {position && (
-                <Link
-                  target="_blank"
-                  href={getSourcePosition(
-                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
-                    position
-                  )}
-                >
-                  <Button
-                    data-pagefind-ignore="all"
-                    variant="text"
-                    sx={{
-                      textTransform: "none",
-                      my: 1,
-                      placeSelf: "start",
-                    }}
-                    startIcon={<LinkIcon />}
-                  >
-                    Original/underlying function
-                  </Button>
-                </Link>
-              )}
+              <Typography
+                variant="body1"
+                sx={{ color: "text.secondary", py: 2 }}
+              >
+                Contribute now!
+              </Typography>
             </Box>
           )}
-          <MDXRemote
-            options={{
-              parseFrontmatter: true,
-              mdxOptions: mdxRenderOptions,
-            }}
-            source={source}
-            components={{
-              a: (p) => (
-                // @ts-ignore
-                <Box
-                  sx={{
-                    color: "inherit",
-                    textDecoration: "none",
-                  }}
-                  component="a"
-                  {...p}
-                />
-              ),
-              // @ts-ignore
-              h1: (p) => (
-                // @ts-ignore
-                <Typography variant="h3" component={"h2"} {...p} />
-              ),
-              // @ts-ignore
-              h2: (p) => <Typography variant="h4" component={"h3"} {...p} />,
-              // @ts-ignore
-              h3: (p) => <Typography variant="h5" component={"h4"} {...p} />,
-              // @ts-ignore
-              h4: (p) => <Typography variant="h6" component={"h5"} {...p} />,
-              // @ts-ignore
-              h5: (p) => (
-                // @ts-ignore
-                <Typography variant="subtitle1" component={"h6"} {...p} />
-              ),
-              // @ts-ignore
-              h6: (p) => (
-                // @ts-ignore
-                <Typography variant="subtitle2" component={"h6"} {...p} />
-              ),
-            }}
-          />
-          {position && (
-            <div data-pagefind-ignore="all">
-              {!source && (
-                <Typography
-                  variant="body1"
-                  sx={{ color: "text.secondary", py: 2 }}
-                >
-                  Contribute now!
-                </Typography>
-              )}
-              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
-                <Link
-                  target="_blank"
-                  href={getSourcePosition(
-                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
-                    position
-                  )}
-                >
-                  <Button
-                    variant="text"
-                    sx={{ textTransform: "none", my: 1, placeSelf: "start" }}
-                    startIcon={<Edit />}
-                  >
-                    Edit source
-                  </Button>
-                </Link>
-              </Typography>
-            </div>
+          {meta?.primop_meta && (
+            <MDX source={getPrimopDescription(meta?.primop_meta)} />
           )}
+          <Divider />
+          <MDX source={source} />
+          {meta && <PositionLink meta={meta} />}
           <div data-pagefind-ignore="all">
             {(!!meta?.aliases?.length || !!signature) && (
               <>
@@ -380,17 +280,17 @@ export default async function Page(props: { params: { path: string[] } }) {
                 >
                   Detected Type
                 </Typography>
-                <MDXRemote
-                  options={{
-                    mdxOptions: mdxRenderOptions,
-                  }}
-                  source={`\`\`\`haskell\n${signature.trim()}\n\`\`\`\n`}
-                />
+                <MDX source={`\`\`\`haskell\n${signature.trim()}\n\`\`\`\n`} />
               </>
             )}
           </div>
         </Box>
         <Divider flexItem sx={{ mt: 2 }} />
+        <Suspense fallback={""}>
+          <FilterProvider>
+            <SearchNav />
+          </FilterProvider>
+        </Suspense>
       </Box>
     </>
   );
