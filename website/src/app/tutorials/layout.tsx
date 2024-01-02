@@ -1,3 +1,4 @@
+import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { FilterProvider } from "@/components/layout/filterContext";
 import { Header } from "@/components/layout/header";
 import { Container } from "@mui/material";
@@ -11,6 +12,7 @@ export default function SearchLayout({ children }: { children: ReactNode }) {
           <Header />
         </FilterProvider>
       </Suspense>
+      <HighlightBaseline />
       <Container
         maxWidth="lg"
         sx={{
