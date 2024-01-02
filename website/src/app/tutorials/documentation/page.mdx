@@ -1,0 +1,44 @@
+# Contribute Documentation
+
+Writing good documentation is hard. Any contribution towards having a better documentation is highly profitable. Thank you a lot for reading this tutorial.
+
+## Doc-comments
+
+Doc-comments, short for documentation comments, are special comments in source code that are specifically formatted to provide documentation for the 
+associated code. 
+
+These comments serve as a source of reference documentation for noogle, 
+offering valuable information about the purpose, functionality, and usage of the code elements they document. 
+
+## Checklist for writers
+
+- [ ] Describe what the function does.
+- [ ] Provide examples for different scenarios when this function might be useful. -> ` # Example(s) `
+- [ ] Provide a (single) type signature -> `# Type `
+  - [ ] What types does the function expect?
+  - [ ] Try to follow the [typednix](https://typednix.dev) convention for best compatibility with noogle
+- [ ] Describe the purpose of all arguments.-> `# Arguments`
+  - [ ] Positional Arguments
+  - [ ] All known Attributes
+- [ ] Maybe describe edge cases or what else should be taken into account
+- [ ] References to other functions
+
+## Placement
+
+Please place your doc-comments as shown below.
+
+```nix
+/**Doc comment for foo*/
+foo = x: x;
+```
+
+Sometimes the placement shown above wont work out.
+In any case you can place the documentation directly before the lamba. (only whitespace allowed)
+
+```nix
+/**Doc comment*/
+x: x;
+```
+
+> TIP: Open up the file in your editor and go to the exact `line` `column` marker that noogle gave you.
+
