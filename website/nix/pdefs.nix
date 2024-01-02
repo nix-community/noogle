@@ -9271,6 +9271,19 @@
           version = "2.0.0";
         };
       };
+      markdown-table = {
+        "3.0.3" = {
+          fetchInfo = {
+            narHash = "sha256-JVFwcYAc15+6w6TVK6cSOJggGSsMatGTxKcVNawpcl0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.3.tgz";
+          };
+          ident = "markdown-table";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.0.3";
+        };
+      };
       mdast-util-definitions = {
         "5.1.2" = {
           depInfo = {
@@ -9298,6 +9311,40 @@
           ident = "mdast-util-definitions";
           ltype = "file";
           version = "5.1.2";
+        };
+      };
+      mdast-util-find-and-replace = {
+        "3.0.1" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            escape-string-regexp = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+            unist-util-visit-parents = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-gzeVBfPju1GizrtgUTbd+SDuiVxm64hoWzxc/fJfDu0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-find-and-replace/-/mdast-util-find-and-replace-3.0.1.tgz";
+          };
+          ident = "mdast-util-find-and-replace";
+          ltype = "file";
+          version = "3.0.1";
         };
       };
       mdast-util-from-markdown = {
@@ -9488,6 +9535,235 @@
           ident = "mdast-util-frontmatter";
           ltype = "file";
           version = "2.0.1";
+        };
+      };
+      mdast-util-gfm = {
+        "3.0.0" = {
+          depInfo = {
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-gfm-autolink-literal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-gfm-footnote = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-gfm-strikethrough = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-gfm-table = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-gfm-task-list-item = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-tnKXd8rmiN8hT1wvwPB8ZkTRhqel7JpB/zi23VkxUj0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm/-/mdast-util-gfm-3.0.0.tgz";
+          };
+          ident = "mdast-util-gfm";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      mdast-util-gfm-autolink-literal = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            ccount = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-find-and-replace = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-hfUES66/Xm3PN+CLos5UTRPipVHe5szRcUXoSZTlp1M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm-autolink-literal/-/mdast-util-gfm-autolink-literal-2.0.0.tgz";
+          };
+          ident = "mdast-util-gfm-autolink-literal";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      mdast-util-gfm-footnote = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.1.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            micromark-util-normalize-identifier = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-o5FJq2JDsMbOyratRQr/iFEB3/TFWMQBM62CEXf+VVw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm-footnote/-/mdast-util-gfm-footnote-2.0.0.tgz";
+          };
+          ident = "mdast-util-gfm-footnote";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      mdast-util-gfm-strikethrough = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-rFO4ArBGX8tpUb2l4M0LWK21WtCw+tNx+cUMfuO1guc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm-strikethrough/-/mdast-util-gfm-strikethrough-2.0.0.tgz";
+          };
+          ident = "mdast-util-gfm-strikethrough";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      mdast-util-gfm-table = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            markdown-table = {
+              descriptor = "^3.0.0";
+              pin = "3.0.3";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-LjETMhiKvo/p2qU0HwRMGHjn6gunYncHANfAU05w1o0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm-table/-/mdast-util-gfm-table-2.0.0.tgz";
+          };
+          ident = "mdast-util-gfm-table";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      mdast-util-gfm-task-list-item = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-WfbYZ8oW0k1aBdmXzsC3uhezhmka3eWaWUNfJaf+YCI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-gfm-task-list-item/-/mdast-util-gfm-task-list-item-2.0.0.tgz";
+          };
+          ident = "mdast-util-gfm-task-list-item";
+          ltype = "file";
+          version = "2.0.0";
         };
       };
       mdast-util-mdx = {
@@ -10613,6 +10889,289 @@
           ident = "micromark-extension-frontmatter";
           ltype = "file";
           version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm = {
+        "3.0.0" = {
+          depInfo = {
+            micromark-extension-gfm-autolink-literal = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm-footnote = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm-strikethrough = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm-table = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm-tagfilter = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm-task-list-item = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-combine-extensions = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-mzVpvDumZ3HzJmBvIMnIB4d8jmY0vBfr50jJu6UmPck=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm/-/micromark-extension-gfm-3.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      micromark-extension-gfm-autolink-literal = {
+        "2.0.0" = {
+          depInfo = {
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-sanitize-uri = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-G/EAbY5JHSpLPhyRYErZ56oGCfJoYzo6XtgAmF0GTIg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-autolink-literal/-/micromark-extension-gfm-autolink-literal-2.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm-autolink-literal";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm-footnote = {
+        "2.0.0" = {
+          depInfo = {
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-core-commonmark = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-normalize-identifier = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-sanitize-uri = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-6ZQw9Wmu8YrbOxdHVnXCE1eWlF35b96KrBHudjJec6I=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-footnote/-/micromark-extension-gfm-footnote-2.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm-footnote";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm-strikethrough = {
+        "2.0.0" = {
+          depInfo = {
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-util-chunked = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-classify-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-resolve-all = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-HURnhNG4hXu1HiO84vvlTVk9I4ZxuYZuUgDhr9VCYD8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-strikethrough/-/micromark-extension-gfm-strikethrough-2.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm-strikethrough";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm-table = {
+        "2.0.0" = {
+          depInfo = {
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-LJFXSAgYe4DKCGKtPuZwFzXUzBdyKq7S5HmnHQ0MPGU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm-table";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm-tagfilter = {
+        "2.0.0" = {
+          depInfo = {
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-sTeAYan1qqTZubR41UhoF4wi+nM0aqWgRy2I+FiAVTg=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-tagfilter/-/micromark-extension-gfm-tagfilter-2.0.0.tgz";
+          };
+          ident = "micromark-extension-gfm-tagfilter";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-gfm-task-list-item = {
+        "2.0.1" = {
+          depInfo = {
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-ixs0+dQS34j/EgHPmZzQGUqshnkgqdXubZqHQrCtajs=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-gfm-task-list-item/-/micromark-extension-gfm-task-list-item-2.0.1.tgz";
+          };
+          ident = "micromark-extension-gfm-task-list-item";
+          ltype = "file";
+          version = "2.0.1";
         };
       };
       micromark-extension-mdx-expression = {
@@ -12807,6 +13366,11 @@
               pin = "5.0.0";
               runtime = true;
             };
+            remark-gfm = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
             remark-heading-id = {
               descriptor = "^1.0.1";
               pin = "1.0.1";
@@ -14376,6 +14940,9 @@
             "node_modules/markdown-extensions" = {
               key = "markdown-extensions/1.1.1";
             };
+            "node_modules/markdown-table" = {
+              key = "markdown-table/3.0.3";
+            };
             "node_modules/mdast-util-definitions" = {
               key = "mdast-util-definitions/5.1.2";
             };
@@ -14394,6 +14961,12 @@
             "node_modules/mdast-util-definitions/node_modules/unist-util-visit-parents" = {
               key = "unist-util-visit-parents/5.1.3";
             };
+            "node_modules/mdast-util-find-and-replace" = {
+              key = "mdast-util-find-and-replace/3.0.1";
+            };
+            "node_modules/mdast-util-find-and-replace/node_modules/escape-string-regexp" = {
+              key = "escape-string-regexp/5.0.0";
+            };
             "node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/2.0.0";
             };
@@ -14407,6 +14980,54 @@
               key = "mdast-util-phrasing/4.0.0";
             };
             "node_modules/mdast-util-frontmatter/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-gfm" = {
+              key = "mdast-util-gfm/3.0.0";
+            };
+            "node_modules/mdast-util-gfm-autolink-literal" = {
+              key = "mdast-util-gfm-autolink-literal/2.0.0";
+            };
+            "node_modules/mdast-util-gfm-footnote" = {
+              key = "mdast-util-gfm-footnote/2.0.0";
+            };
+            "node_modules/mdast-util-gfm-footnote/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-gfm-footnote/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-gfm-strikethrough" = {
+              key = "mdast-util-gfm-strikethrough/2.0.0";
+            };
+            "node_modules/mdast-util-gfm-strikethrough/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-gfm-strikethrough/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-gfm-table" = {
+              key = "mdast-util-gfm-table/2.0.0";
+            };
+            "node_modules/mdast-util-gfm-table/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-gfm-table/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-gfm-task-list-item" = {
+              key = "mdast-util-gfm-task-list-item/2.0.0";
+            };
+            "node_modules/mdast-util-gfm-task-list-item/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-gfm-task-list-item/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/mdast-util-gfm/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/4.0.0";
+            };
+            "node_modules/mdast-util-gfm/node_modules/mdast-util-to-markdown" = {
               key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/mdast-util-mdx" = {
@@ -14813,6 +15434,27 @@
             };
             "node_modules/micromark-extension-frontmatter" = {
               key = "micromark-extension-frontmatter/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm" = {
+              key = "micromark-extension-gfm/3.0.0";
+            };
+            "node_modules/micromark-extension-gfm-autolink-literal" = {
+              key = "micromark-extension-gfm-autolink-literal/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm-footnote" = {
+              key = "micromark-extension-gfm-footnote/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm-strikethrough" = {
+              key = "micromark-extension-gfm-strikethrough/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm-table" = {
+              key = "micromark-extension-gfm-table/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm-tagfilter" = {
+              key = "micromark-extension-gfm-tagfilter/2.0.0";
+            };
+            "node_modules/micromark-extension-gfm-task-list-item" = {
+              key = "micromark-extension-gfm-task-list-item/2.0.1";
             };
             "node_modules/micromark-extension-mdx-expression" = {
               key = "micromark-extension-mdx-expression/1.0.8";
@@ -15274,6 +15916,9 @@
             };
             "node_modules/remark-frontmatter" = {
               key = "remark-frontmatter/5.0.0";
+            };
+            "node_modules/remark-gfm" = {
+              key = "remark-gfm/4.0.0";
             };
             "node_modules/remark-heading-id" = {
               key = "remark-heading-id/1.0.1";
@@ -17020,6 +17665,50 @@
           ident = "remark-frontmatter";
           ltype = "file";
           version = "5.0.0";
+        };
+      };
+      remark-gfm = {
+        "4.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-util-gfm = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-extension-gfm = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            remark-parse = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            remark-stringify = {
+              descriptor = "^11.0.0";
+              pin = "11.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-igYay5xztQl0uaWTyvlcFicsDIQ9xdp23sLi+RW19zc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-gfm/-/remark-gfm-4.0.0.tgz";
+          };
+          ident = "remark-gfm";
+          ltype = "file";
+          version = "4.0.0";
         };
       };
       remark-heading-id = {
