@@ -12,7 +12,7 @@ import {
 } from "react";
 import { useSessionStorage } from "usehooks-ts";
 
-export const FilterContext = createContext<UseFilter>({} as UseFilter);
+export const FilterContext = createContext<UseFilter | null>(null);
 
 export type UseFilter = {
   showFilter: boolean;
@@ -29,6 +29,8 @@ export type UseFilter = {
 export type FilterOptions = {
   input?: string;
   filter?: { from: string; to: string };
+  page?: number;
+  limit?: number;
 };
 
 export const FilterProvider = ({ children }: { children: ReactNode }) => {
@@ -47,12 +49,11 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [to, setTo] = useState(params.get("to") || "any");
   const [term, setTerm] = useState(params.get("term") || "");
 
-  const submit = ({ input, filter }: FilterOptions) => {
+  const submit = ({ input, filter, page, limit }: FilterOptions) => {
     const _term = input !== undefined ? input : term;
     const _from = filter?.from || from;
     const _to = filter?.to || to;
 
-    console.log({ _term });
     if (_term && _term.trim() !== "") {
       query.set("term", _term);
     } else {
@@ -69,7 +70,14 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
     } else {
       query.delete("to");
     }
-    persistFilterOptions({ input: _term, filter: { from: _from, to: _to } });
+    persistFilterOptions({
+      input: _term,
+      filter: { from: _from, to: _to },
+      page: +params.get("page")! || undefined,
+      limit: +params.get("limit")! || undefined,
+    });
+    if (page) query.set("page", page.toString());
+    if (limit) query.set("page", limit.toString());
     router.push(`/q?${query.toString()}`);
   };
   return (
@@ -91,4 +99,10 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useFilter = () => useContext(FilterContext);
+export const useFilter = () => {
+  const filter = useContext(FilterContext);
+  if (filter === null) {
+    throw "UseFilter used outside of FilterContext!";
+  }
+  return filter;
+};
