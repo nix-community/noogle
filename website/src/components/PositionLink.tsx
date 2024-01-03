@@ -45,7 +45,11 @@ export const PositionLink = ({
         </Typography>
       )}
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+        <Typography
+          variant="subtitle2"
+          sx={{ color: "text.secondary" }}
+          component={"div"}
+        >
           {contentPosition && (
             <Link
               target="_blank"
@@ -107,14 +111,19 @@ export const PositionLink = ({
           <Typography variant="h5" sx={{ pt: 2 }}>
             {"Contribute"}
           </Typography>
-          <Typography variant="body1" gutterBottom sx={{ py: 2 }}>
+          <Typography
+            variant="body1"
+            gutterBottom
+            sx={{ py: 2 }}
+            component={"div"}
+          >
             <Box>
               Enhance the ecosystem with your expertise! Contribute to fill the
               gaps in documentation. Your input can make a difference.
             </Box>
             <List sx={{ width: "100%" }}>
               <ListItem>
-                <Link href="/tutorials/documentation" target="_blank">
+                <Link href="/md/documentation" target="_blank">
                   <ListItemButton>
                     <ListItemText
                       primary="Write API documentation for this function"
@@ -125,7 +134,7 @@ export const PositionLink = ({
               </ListItem>
               {!contentPosition && (
                 <ListItem>
-                  {/* <Link href={"/tutorials/noogle"} target="_blank"> */}
+                  {/* <Link href={"/md/noogle"} target="_blank"> */}
                   <ListItemButton>
                     <ListItemText
                       primary="Improve position tracking"
