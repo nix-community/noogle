@@ -6,10 +6,37 @@ body {
   scroll-behavior: smooth;
 }
 
-/* a {
-  color: inherit;
-  text-decoration: none;
-} */
+table{
+  width: 100%;
+  border-collapse:collapse;
+  border:1px solid #d8e2ff;
+}
+  
+table td{
+  padding: 8px;
+  border:1px solid #d8e2ff;
+}
+table th{
+  padding: 8px;
+  border:1px solid #d8e2ff;
+}
+@media (prefers-color-scheme: dark) {
+  a {
+    color:#adc6ff;
+  }
+  table{
+    border-color:#0f448e;
+  }
+    
+  table td{
+    border-color:#0f448e;
+  }
+  table th{
+    border-color:#0f448e;
+  }
+}
+
+
 
 * {
   box-sizing: border-box;
