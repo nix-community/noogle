@@ -1,0 +1,133 @@
+# Typing 
+
+As the nix language has no static types we use 
+Type informations in doc-comments to communicate type expectations, behaviors and abstract interfaces.
+
+In this short tutorial your will learn how to properly type a nix function, such that it can be discovered by noogle and most imporantantly understood by other developers.
+
+## Primitives 
+
+|Type | Description  |
+|---|---|
+| Bool | A value of type boolean can be either `true` or `false`  |
+| Int | The classical integer type |
+| Float | A float with 64 bits |
+| String | A string of any unicode characters |
+| Path | Path referencing a location or a file. With no assumptions on the existence of that |
+| Null | The value null |
+| Never | The bottom type. e.g. the function `builtins.abort` which returns `Never` |
+
+## Complex
+
+`T`, `U`, ...; are placeholders for any types, those MUST be specifically declared on usage
+
+| Annotation | Type  | Description |
+| --- | --- | --- |
+| `[ T ]` | List  | List of elements with type `T` each |
+| `{ U::T }` | AttrSet  | AttrSet where member `N` references value of type `T` |
+| `T -> U` | Lambda  | A function that takes a single argument of type `T` and returns a value of type `U` |
+
+## Common Aliases
+
+Sometimes common aliases for more complex types can be used. 
+
+They are composed from other types as follows
+
+| Type  | Composition | Description  |
+|---|---|---|
+| `Derivation` | see [builtins.derivation](f/builtins/derivation) | is just a special AttrSet. see [builtins.derivation](f/builtins/derivation) |
+| `Any` | `?` | There is no `Any` type. Avoid using it. Use type variables (e.g. `a -> b`) instead if you want to allow variable type signatures. |
+| `Number` | `Int {or} Float` | The `Number` is either of type `Int` or of type `Float` |
+| `StorePath` | `Path` | The `StorePath` is just a meaningful alias of the type `Path` |
+
+## Examples
+
+These examples should give you a short feeling of correctly using type signatures.
+
+```haskell
+bitOr :: Int -> Int -> Int
+```
+
+```haskell
+map :: (a -> b) -> [a] -> [b]
+```
+
+```haskell
+map :: (a -> b) -> [a] -> [b]
+```
+
+```haskell
+mapAttrs :: (String -> a -> b) -> { ${name} :: a } -> { ${name} :: b }
+```
+
+> **Advice**
+>
+> In some cases it is very hard and complex to describe all behaviors. Keep it simple.
+
+---
+
+Entering the last and likewise important chapter, 'Operators'
+
+## Operators
+
+__All Operators SHOULD be used with surrounding whitespace.__
+
+### `::` declares the type
+
+e.g. `name :: String`
+
+### `()` Parenthesis
+
+Parenthesis to clarify order of type evaluation
+
+e.g. `( a -> b ) | Bool`
+
+Precedence: (Highest)
+
+### `;` Separator for subsequent entries (like in AttrSet)
+
+e.g. `{ foo :: Number; bar :: String }`
+
+> Currently this is very inconsistent in nixpkgs.
+> 
+> Lets improve here
+
+### `|` syntactic or
+
+syntactic `Or` can be used for composition or enums
+
+Precedence: 2
+
+#### Special Cases
+
+```hs
+Any | a
+```
+
+Is always `Any`; Because any other type `a` must already be a subtype of any, due to the definition of `Any`.
+
+```hs
+b | Never
+```
+
+Is always `b`; Due to the definition of `Never`; `b` must be a supertype of `Never`.
+
+### `...` - arbitrary input values
+
+can only be used within an AttrSet to allow any more `name-value pairs`.
+
+`...` = `${rest} :: a` within an AttrSet context
+
+Precedence: None
+
+### `->` arrow operator
+
+Allows for lambda types
+
+Precedence: 1
+
+### `?` optional arguments in an AttrSet
+
+--e.g.  `{ opt ? :: Int }`
+
+Precedence: None

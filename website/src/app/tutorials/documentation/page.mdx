@@ -10,18 +10,6 @@ associated code.
 These comments serve as a source of reference documentation for noogle, 
 offering valuable information about the purpose, functionality, and usage of the code elements they document. 
 
-## Checklist for writers
-
-- [ ] Describe what the function does.
-- [ ] Provide examples for different scenarios when this function might be useful. -> ` # Example(s) `
-- [ ] Provide a (single) type signature -> `# Type `
-  - [ ] What types does the function expect?
-  - [ ] Try to follow the [typednix](https://typednix.dev) convention for best compatibility with noogle
-- [ ] Describe the purpose of all arguments.-> `# Arguments`
-  - [ ] Positional Arguments
-  - [ ] All known Attributes
-- [ ] Maybe describe edge cases or what else should be taken into account
-- [ ] References to other functions
 
 ## Placement
 
@@ -40,5 +28,19 @@ In any case you can place the documentation directly before the lamba. (only whi
 x: x;
 ```
 
-> TIP: Open up the file in your editor and go to the exact `line` `column` marker that noogle gave you.
+> **Advice**
+> 
+> Open up the file in your editor and go to the exact `line` `column` marker that noogle gave you.
 
+## Checklist for writing good documentation
+
+- [ ] Describe what the function does.
+- [ ] Provide examples for different scenarios when this function might be useful. -> ` # Example(s) `
+- [ ] Provide a (single) type signature -> `# Type `
+  - [ ] What types does the function expect?
+  - [ ] Try to use this [typing convention](/tutorials/typing) for best compatibility with noogle
+- [ ] Describe the purpose of all arguments.-> `# Arguments`
+  - [ ] Positional Arguments
+  - [ ] All known Attributes
+- [ ] Maybe describe edge cases or what else should be taken into account
+- [ ] References to other functions

@@ -1,4 +1,4 @@
-import { DocMeta, FilePosition } from "@/models/data";
+import { ContentSource, DocMeta, FilePosition } from "@/models/data";
 import {
   Box,
   Button,
@@ -23,7 +23,13 @@ const getSourcePosition = (baseUrl: string, position: FilePosition): string => {
   return res;
 };
 
-export const PositionLink = ({ meta }: { meta: DocMeta }) => {
+export const PositionLink = ({
+  meta,
+  content,
+}: {
+  meta: DocMeta;
+  content?: ContentSource;
+}) => {
   const { attr_position, lambda_position, count_applied, content_meta } = meta;
 
   const contentPosition = content_meta?.position;
@@ -96,15 +102,15 @@ export const PositionLink = ({ meta }: { meta: DocMeta }) => {
             `(${content_meta?.path?.join(".")})`}
         </Typography>
       </Box>
-      {!contentPosition && (
+      {!content?.content && (
         <>
           <Typography variant="h5" sx={{ pt: 2 }}>
             {"Contribute"}
           </Typography>
           <Typography variant="body1" gutterBottom sx={{ py: 2 }}>
             <Box>
-              Sometimes documentation is missing or tooling support from noogle
-              is missing.
+              Enhance the ecosystem with your expertise! Contribute to fill the
+              gaps in documentation. Your input can make a difference.
             </Box>
             <List sx={{ width: "100%" }}>
               <ListItem>
@@ -117,16 +123,18 @@ export const PositionLink = ({ meta }: { meta: DocMeta }) => {
                   </ListItemButton>
                 </Link>
               </ListItem>
-              <ListItem>
-                {/* <Link href={"/tutorials/noogle"} target="_blank"> */}
-                {/* <ListItemButton> */}
-                <ListItemText
-                  primary="Improve position tracking"
-                  secondary="Contribute to Noogle"
-                />
-                {/* </ListItemButton> */}
-                {/* </Link> */}
-              </ListItem>
+              {!contentPosition && (
+                <ListItem>
+                  {/* <Link href={"/tutorials/noogle"} target="_blank"> */}
+                  <ListItemButton>
+                    <ListItemText
+                      primary="Improve position tracking"
+                      secondary="Contribute to Noogle"
+                    />
+                  </ListItemButton>
+                  {/* </Link> */}
+                </ListItem>
+              )}
             </List>
           </Typography>
         </>

@@ -242,7 +242,7 @@ export default async function Page(props: { params: { path: string[] } }) {
           )}
           <Divider />
           <MDX source={source} />
-          {meta && <PositionLink meta={meta} />}
+          {meta && <PositionLink meta={meta} content={item?.content} />}
           <div data-pagefind-ignore="all">
             {(!!meta?.aliases?.length || !!signature) && (
               <>
