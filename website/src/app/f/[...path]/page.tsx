@@ -49,7 +49,7 @@ const Toc = async (props: TocProps) => {
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         {!headings.length && (
           <Typography variant="body2" sx={{ color: "text.secondary", py: 1 }}>
-            No content
+            No sections
           </Typography>
         )}
         {headings.map((h, idx) => (
