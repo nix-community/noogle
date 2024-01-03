@@ -165,11 +165,18 @@ export default async function Page(props: { params: { path: string[] } }) {
       >
         <HighlightBaseline />
         {meta?.path &&
-          meta.path.map((attr, idx) => (
-            <Box sx={{ display: "none" }} key={`${idx}`}>
-              {attr}
-            </Box>
-          ))}
+          meta.path.map((attr, idx, all) =>
+            idx === all.length - 1 ? (
+              <>
+                <meta key={idx} data-pagefind-meta={`name:${attr}`} />
+                <Box component="h1" sx={{ display: "none" }}>
+                  {attr}
+                </Box>
+              </>
+            ) : (
+              <meta key={idx} data-pagefind-meta={`category:${attr}`} />
+            )
+          )}
         <Box>
           <Box
             sx={{

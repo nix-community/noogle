@@ -7,7 +7,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Noogle",
-  description: "nix api reference. Including nix, nixpkgs and nixos",
+  description:
+    "Nix API reference. Includes nix, nixpkgs and nixos. Search nix functions within the nix ecosystem based on type, name, description, example, category and more.",
   creator: "@hsjobeki",
   abstract: "Nix and NixOS API Documentation",
   robots: { index: true, notranslate: true, nocache: true },
@@ -18,13 +19,6 @@ const inter = localFont({
   src: "../fonts/Inter-Regular.otf",
   display: "swap",
 });
-// /* <title>noogle</title>
-// <meta charSet="utf-8" />
-// <meta
-// name="description"
-// content="Search nix functions. Search functions within the nix ecosystem based on type, name, description, example, category and more."
-// />
-// <meta /> */
 
 export default function RootLayout({
   children,

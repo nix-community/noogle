@@ -1,10 +1,16 @@
 "use client";
-import { Box, IconButton, LinearProgress, Link, useTheme } from "@mui/material";
+import { Box, LinearProgress, Link, useTheme } from "@mui/material";
 import { SearchInput } from "../searchInput";
-import { Home, Menu } from "@mui/icons-material";
 import { Filter } from "../filter";
 import { Suspense } from "react";
 import { SocialIcons } from "./layout";
+
+import localFont from "next/font/local";
+
+const fira = localFont({
+  src: "../../fonts/FiraCode-VF.ttf",
+  display: "swap",
+});
 
 export const Header = () => {
   const theme = useTheme();
@@ -30,32 +36,35 @@ export const Header = () => {
       >
         <Box
           sx={{
-            justifySelf: "start",
-            display: { xs: "none", md: "block" },
+            justifyContent: "start",
+            alignSelf: "center",
+            px: 1,
+            // display: { xs: "none", md: "block" },
           }}
         >
           <Link
             href="/"
+            className={fira.className}
             sx={{
               color: "primary.contrastText",
+              letterSpacing: -0.3,
             }}
             aria-label="Home"
           >
-            <IconButton color="inherit" aria-label="Home">
-              <Home />
-            </IconButton>
+            {"Noogλe"}
           </Link>
         </Box>
-        <Box
+        {/* <Box
           sx={{
             justifySelf: "start",
             display: { xs: "block", md: "none" },
+            color: "primary.contrastText",
           }}
         >
-          <IconButton color="inherit" aria-label="Menu">
-            <Menu />
+          <IconButton color="inherit" aria-label="Home">
+            <Home />
           </IconButton>
-        </Box>
+        </Box> */}
 
         <Box
           sx={{

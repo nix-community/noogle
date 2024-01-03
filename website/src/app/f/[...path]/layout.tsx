@@ -3,7 +3,13 @@ import { Header } from "@/components/layout/header";
 import { Container } from "@mui/material";
 import { ReactNode, Suspense } from "react";
 
-export default function SearchLayout({ children }: { children: ReactNode }) {
+export default function SearchLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: { path: string[] };
+}) {
   return (
     <>
       <Suspense fallback="query">
@@ -20,7 +26,7 @@ export default function SearchLayout({ children }: { children: ReactNode }) {
             md: "grid",
           },
           // display: "grid",
-          gridTemplateColumns: "1fr 6fr 1fr",
+          gridTemplateColumns: "0.4fr 6fr 1fr",
           alignItems: "start",
         }}
       >

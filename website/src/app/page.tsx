@@ -3,7 +3,7 @@ import { FunctionOfTheDay } from "@/components/functionOfTheDay";
 import { LandingPageLayout } from "@/components/layout";
 import { FilterProvider } from "@/components/layout/filterContext";
 import { SearchInput } from "@/components/searchInput";
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Link, Tooltip } from "@mui/material";
 
 import localFont from "next/font/local";
 import { Suspense } from "react";
@@ -24,26 +24,21 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <Link href="/" underline="none">
-          <Typography
-            variant="h1"
-            className={fira.className}
-            sx={{
-              mt: 10,
-              mb: 4,
-              fontSize: "4.5rem",
-              fontVariantLigatures: "normal",
-            }}
-          >
-            <Box component="span">N</Box>
-
-            <Box component="span">o</Box>
-            <Box component="span">o</Box>
-            <Box component="span">g</Box>
-
-            <Box component="span">λ</Box>
-            <Box component="span">e</Box>
-          </Typography>
+        <Link href="/md/release/2024-1" underline="none">
+          <Tooltip title="Whats new">
+            <Typography
+              variant="h1"
+              className={fira.className}
+              sx={{
+                mt: 10,
+                mb: 4,
+                fontSize: "4.5rem",
+                fontVariantLigatures: "normal",
+              }}
+            >
+              Noogλe :: 2024
+            </Typography>
+          </Tooltip>
         </Link>
 
         <Box
