@@ -32,6 +32,12 @@ let
 
   /* *
      Recursively collect documentation for all values
+     [
+      { 
+        path :: [ String ];
+        docs :: GetDocs;
+      }
+     ]
   */
   collectFns = set:
     { initialPath ? [ ], limit ? null, }:
@@ -126,4 +132,4 @@ let
           }]) [ ])
     ];
 in
-{ inherit toFile collectFns getDocsFromSet; }
+{ inherit getDocs toFile collectFns getDocsFromSet; }

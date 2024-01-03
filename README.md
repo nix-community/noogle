@@ -21,14 +21,16 @@
 
 ## Available data
 
-There are the following subsets of nix functions available.
+There are the following subsets of `nix` and `nixpkgs` functions available.
 
-Recursively Indexed:
+Recursively indexed:
 
 - lib
 - pkgs.rustPackages
 
-Normally Indexed:
+> Recursively means all deeply nested sub-attributes.
+
+Normally indexed:
 
 - builtins
 - pkgs.stdenv
@@ -36,7 +38,17 @@ Normally Indexed:
 - pkgs.writers
 - pkgs.pythonPackages
 - pkgs.haskell.lib
-- pkgs.dockerTools
+- pkgs.haskell.lib
+
+# Off the tree functions
+
+Some function are not part of the evaluation value of default.nix in nixpkgs. They must be imported individually.
+
+- make-disk-image
+
+---
+
+All Indexing is done via the [pasta](./pasta/) module. PRs welcome!
 
 ## Contribute
 
@@ -47,7 +59,14 @@ Indexed data can be added very easily in ./pasta/src/eval.nix
 
 ### Build this page
 
-`nix build .#`
+`nix build .#ui`
+
+This page generates static html pages.
+One page per api function.
+
+It automatically includes meta tags for other search engines like google or bing.
+
+Searching within the page is done via [pagefind](https://pagefind.app/) which is only available in the production build.
 
 ### Develop
 
