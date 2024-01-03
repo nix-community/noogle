@@ -169,7 +169,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             idx === all.length - 1 ? (
               <>
                 <meta key={idx} data-pagefind-meta={`name:${attr}`} />
-                <Box component="h1" sx={{ display: "none" }}>
+                <Box component="h3" sx={{ display: "none" }}>
                   {attr}
                 </Box>
               </>
