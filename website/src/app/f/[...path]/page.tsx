@@ -60,11 +60,11 @@ const Toc = async (props: TocProps) => {
                 justifyContent: "start",
                 textTransform: "none",
                 color: "text.secondary",
-                pl: (h.level - 1) * 2 + 1,
+                pl: h.level - 1,
                 py: 0.5,
               }}
             >
-              {h.value}
+              <span dangerouslySetInnerHTML={{ __html: h.value }} />
             </Typography>
           </Link>
         ))}
@@ -88,6 +88,13 @@ const MDX = ({ source }: { source: string }) => (
           sx={{
             color: "inherit",
             textDecoration: "none",
+            ":before": {
+              content: "''",
+              display: "block",
+              height: "75px",
+              visibility: "hidden",
+              marginTop: "-75px",
+            },
           }}
           component="a"
           {...p}

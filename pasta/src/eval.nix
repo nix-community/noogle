@@ -1,28 +1,27 @@
-{ pkgs ? # import (builtins.fetchTree {
+{
+  # import (builtins.fetchTree {
   #   repo = "nixpkgs";
   #   ref = "migrate-doc-comments";
   #   owner = "hsjobeki";
   #   type = "github";
   # }) {},
-  import
-    (builtins.fetchTree {
-      repo = "nixpkgs";
-      ref = "master";
-      owner = "nixos";
-      type = "github";
-    })
-    { }
-,
+  nixpkgs ? (builtins.fetchTree {
+    repo = "nixpkgs";
+    ref = "master";
+    owner = "nixos";
+    type = "github";
+  })
+, pkgs ? import nixpkgs { }
+, repo ? nixpkgs.outPath
 }:
 let
-  inherit pkgs;
   inherit (pkgs) lib;
+  make-disk-image = import (repo + "/nixos/lib/make-disk-image.nix");
   tools = import ./tools.nix { inherit lib; };
   inherit (tools) getDocsFromSet collectFns toFile;
 
   # Contains seperate sets of metadata.
   # which then allows running seperate evaluations. Once at a time for better error tracing and memory management.
-
 
   docs = {
     ############# Recusive analysis sets
@@ -43,9 +42,13 @@ let
       getDocsFromSet pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
     builtins =
       getDocsFromSet builtins [ "builtins" ];
+    mkDiskImage = [
+      {
+        path = [ "make-disk-image" ];
+        docs = tools.getDocs { inherit make-disk-image; } "make-disk-image";
+      }
+    ];
   };
-
-
 
   all = builtins.foldl' (acc: name: acc ++ docs.${name}) [ ] (builtins.attrNames docs);
 
@@ -53,6 +56,5 @@ let
   test_data = {
     attrsets = getDocsFromSet lib.attrsets [ "lib" "attrsets" ];
   };
-
 in
 { inherit tools pkgs docs toFile getDocsFromSet collectFns all test_data; }
