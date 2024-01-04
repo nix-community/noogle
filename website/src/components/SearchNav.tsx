@@ -130,7 +130,11 @@ export const Navigation = ({
             borderRadius: 3,
           }}
         >
-          <Button aria-label="Prev result" endIcon={<ChevronRight />}>
+          <Button
+            aria-label="Prev result"
+            endIcon={<ChevronRight />}
+            sx={{ float: "right" }}
+          >
             Next
           </Button>
           <Typography variant="subtitle1">{next.meta.title}</Typography>

@@ -7,6 +7,7 @@ export type NixType =
   | "string"
   | "number"
   | "bool"
+  | "path"
   | "never"
   | "any";
 
@@ -15,6 +16,7 @@ export const nixTypes: NixType[] = [
   "attrset",
   "list",
   "string",
+  "path",
   "bool",
   "never",
   "number",
@@ -29,6 +31,10 @@ const interpretToken = (token: string): NixType | undefined => {
     return token as NixType;
   } else if (["int", "float", "double"].includes(token)) {
     return "number";
+  } else if (["derivation", "package"].includes(token)) {
+    return "attrset";
+  } else if (["storepath"].includes(token) || token.includes("path")) {
+    return "path";
   } else if (["a", "b", "c", "d", "e"].includes(token)) {
     return "any";
   } else {

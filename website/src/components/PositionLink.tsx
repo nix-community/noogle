@@ -89,7 +89,7 @@ export const PositionLink = ({
                   Underlying function
                 </Button>
               </Link>
-              {count_applied && count_applied > 0 && (
+              {!!count_applied && count_applied > 0 && (
                 <Typography
                   variant="subtitle2"
                   sx={{ color: "text.secondary" }}
