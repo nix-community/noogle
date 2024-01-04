@@ -24,10 +24,11 @@ export async function generateStaticParams(): Promise<{ path: string[] }[]> {
 
 interface TocProps {
   mdxSource: string;
+  title?: string;
 }
 
 const Toc = async (props: TocProps) => {
-  const { mdxSource } = props;
+  const { mdxSource, title } = props;
   const headings = await extractHeadings(mdxSource);
 
   return (
@@ -52,6 +53,21 @@ const Toc = async (props: TocProps) => {
             No sections
           </Typography>
         )}
+        {title && (
+          <Link href={`#${title}`}>
+            <Typography
+              variant="body2"
+              sx={{
+                justifyContent: "start",
+                textTransform: "none",
+                color: "text.secondary",
+                py: 0.5,
+              }}
+            >
+              {title}
+            </Typography>
+          </Link>
+        )}
         {headings.map((h, idx) => (
           <Link key={idx} href={`#${h.id}`}>
             <Typography
@@ -60,7 +76,7 @@ const Toc = async (props: TocProps) => {
                 justifyContent: "start",
                 textTransform: "none",
                 color: "text.secondary",
-                pl: h.level - 1,
+                pl: h.level,
                 py: 0.5,
               }}
             >
@@ -150,7 +166,7 @@ export default async function Page(props: { params: { path: string[] } }) {
 
   return (
     <>
-      <Toc mdxSource={source} />
+      <Toc mdxSource={source} title={item?.meta.title} />
       <Box
         component="main"
         data-pagefind-body
@@ -192,9 +208,12 @@ export default async function Page(props: { params: { path: string[] } }) {
               </FilterProvider>
             </Suspense>
             <Typography
+              id={item?.meta.title}
               variant="h2"
               component={"h1"}
-              sx={{ marginRight: "auto" }}
+              sx={{
+                marginRight: "auto",
+              }}
             >
               {item?.meta.title}
             </Typography>
