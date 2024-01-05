@@ -14,6 +14,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkHeadingId from "remark-heading-id";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import remarkUnlink from "remark-unlink";
 
 import { unified } from "unified";
 
@@ -155,6 +156,6 @@ export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
     [rehypeSlug, {}],
     [rehypeAutolinkHeadings, { behavior: "wrap" }],
   ],
-  remarkPlugins: [remarkHeadingId],
+  remarkPlugins: [remarkHeadingId, remarkUnlink],
   format: "md",
 } as SerializeOptions["mdxOptions"];

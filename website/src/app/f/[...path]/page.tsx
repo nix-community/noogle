@@ -1,7 +1,7 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, data } from "@/models/data";
+import { Doc, data, manualLinks } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractHeadings, mdxRenderOptions } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -136,6 +136,25 @@ const MDX = ({ source }: { source: string }) => (
   />
 );
 
+import fs from "fs";
+import path from "path";
+
+async function getManualSrc(item: Doc): Promise<string | null> {
+  // Path must be at exactly [ "builtins" ":id" ]
+  if (item?.meta?.path?.length != 2 || item?.meta?.path?.[0] !== "builtins") {
+    return null;
+  }
+  const extern = manualLinks.find((link) => link.id === item.meta.path[1]);
+  if (!extern) {
+    return null;
+  }
+  const manPath = path.join(process.cwd(), "src/models/data", extern.file);
+  const source = fs.readFileSync(manPath, { encoding: "utf-8" });
+  // const src = extern.file;
+  // console.log({ source, manPath });
+  return source;
+}
+
 // Multiple versions of this page will be statically generated
 // using the `params` returned by `generateStaticParams`
 export default async function Page(props: { params: { path: string[] } }) {
@@ -152,6 +171,10 @@ export default async function Page(props: { params: { path: string[] } }) {
     signature
   );
 
+  // Some builtins can load external documentation from the official manual
+  // This is configured via "salt" module
+  const externManualSrc = item && (await getManualSrc(item));
+
   const source = mdxSource;
   // Skip generating this builtin.
   // It is internal information of noogle.
@@ -161,7 +184,7 @@ export default async function Page(props: { params: { path: string[] } }) {
 
   return (
     <>
-      <Toc mdxSource={source} title={item?.meta.title} />
+      <Toc mdxSource={source + externManualSrc} title={item?.meta.title} />
       <Box
         component="main"
         data-pagefind-body
@@ -247,8 +270,24 @@ export default async function Page(props: { params: { path: string[] } }) {
                 variant="body1"
                 sx={{ color: "text.secondary", py: 2 }}
               >
-                No documentation found yet.
+                No reference documentation found yet.
               </Typography>
+
+              {externManualSrc && (
+                <>
+                  <Typography
+                    variant="h5"
+                    component={"div"}
+                    sx={{ color: "text.secondary", py: 2, textAlign: "center" }}
+                  >
+                    Noogle found this in the nix manual
+                  </Typography>
+                  <Box sx={{ fontStyle: "italic", p: 1 }}>
+                    <MDX source={externManualSrc} />
+                  </Box>
+                  <Divider />
+                </>
+              )}
 
               <Typography
                 variant="body1"
@@ -265,7 +304,7 @@ export default async function Page(props: { params: { path: string[] } }) {
           <MDX source={source} />
           {meta && <PositionLink meta={meta} content={item?.content} />}
           <div data-pagefind-ignore="all">
-            {(!!meta?.aliases?.length || !!signature) && (
+            {(!!meta?.aliases?.length || (!!signature && !meta?.signature)) && (
               <>
                 <Divider flexItem />
                 <Typography
@@ -275,6 +314,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                     color: "text.secondary",
                     alignSelf: "center",
                     pb: 2,
+                    textAlign: "center",
                   }}
                 >
                   Noogle also knows
@@ -314,7 +354,7 @@ export default async function Page(props: { params: { path: string[] } }) {
           </div>
         </Box>
         <Divider flexItem sx={{ mt: 2 }} />
-        <Suspense fallback={""}>
+        <Suspense fallback={<div />}>
           <FilterProvider>
             <SearchNav />
           </FilterProvider>
