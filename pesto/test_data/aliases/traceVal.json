@@ -1,0 +1,62 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 25,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/default.nix",
+          "line": 153
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "line": 95
+        }
+      }
+    },
+    "path": ["lib", "traceVal"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "line": 114
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "line": 95
+        }
+      }
+    },
+    "path": ["lib", "debug", "traceVal"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/fileset/default.nix",
+          "line": 666
+        }
+      },
+      "lambda": {
+        "isPrimop": false,
+        "position": {
+          "column": 5,
+          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/fileset/default.nix",
+          "line": 672
+        }
+      }
+    },
+    "path": ["lib", "fileset", "traceVal"]
+  }
+]
