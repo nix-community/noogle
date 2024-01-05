@@ -23,6 +23,7 @@ use crate::pasta::{AliasList, Docs, ValuePath};
 ///   Match Non-Primop
 ///      Eq position
 pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
+    // dbg!("finding alias for", &item.path);
     let res: AliasList = list
         .iter()
         .filter_map(|other| {
@@ -31,8 +32,13 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                 if item.path == other.path {
                     return None;
                 }
-
+                // Both functions MUST have the same source position.
+                // Otherwise they CANNOT be a real alias.
+                if s_meta.position != o_meta.position {
+                    return None;
+                }
                 return match (o_meta.isPrimop, s_meta.isPrimop) {
+                    // Both PrimOp
                     (true, true) => {
                         let is_empty = match &s_meta.content {
                             Some(c) => c.is_empty(),
@@ -53,18 +59,25 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         }
                         None
                     }
+                    // Both None PrimOp
                     (false, false) => {
+                        // Both functions may be an alias only if at least one of them is not partially applied
+                        if s_meta.countApplied == Some(0) || o_meta.countApplied == Some(0) {
+                            return Some(other.path.clone());
+                        }
+
+                        // Last resort try to find all functions with:
+                        // - same source position
+                        // - same isPrimop
+                        // - same name
+                        // It is very likely a real alias
                         if s_meta.countApplied != Some(0) {
                             if item.path.last() == other.path.last() {
+                                // dbg!("ADDING Fallback ALIAS", &item.path);
                                 return Some(other.path.clone());
                             }
                         }
 
-                        if s_meta.position == o_meta.position
-                            && (s_meta.countApplied == Some(0) || o_meta.countApplied == Some(0))
-                        {
-                            return Some(other.path.clone());
-                        }
                         None
                     }
                     _ => None,
@@ -81,6 +94,10 @@ pub struct FnCategories<'a> {
     pub casual: Vec<&'a Docs>,
     pub partial: Vec<&'a Docs>,
 }
+/// TODO: Migrate to use a HashMap<SourcePosition, Vec<&Docs>>
+/// Alias can only ever exist if they share the same lambda source position.
+/// False positives can be filtered by using "findAlias" function
+///
 /// Build categories for efficiently finding aliases. (This is very expensive O(n^2). )
 /// Aliases can only exist within one subgroup, iterating over other items is a waste of time.
 /// With the current value introspection, any value that is an alias of a builtin, also inherits the builtins docs and the isPrimop flag set.

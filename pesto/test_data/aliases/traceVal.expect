@@ -1,0 +1,36 @@
+[
+  {
+    "aliases": [
+      [
+        "lib",
+        "debug",
+        "traceVal"
+      ]
+    ],
+    "path": [
+      "lib",
+      "traceVal"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "traceVal"
+      ]
+    ],
+    "path": [
+      "lib",
+      "debug",
+      "traceVal"
+    ]
+  },
+  {
+    "aliases": [],
+    "path": [
+      "lib",
+      "fileset",
+      "traceVal"
+    ]
+  }
+]
