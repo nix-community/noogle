@@ -30,7 +30,13 @@ export const PositionLink = ({
   meta: DocMeta;
   content?: ContentSource;
 }) => {
-  const { attr_position, lambda_position, count_applied, content_meta } = meta;
+  const {
+    attr_position,
+    lambda_position,
+    count_applied,
+    content_meta,
+    is_primop,
+  } = meta;
 
   const contentPosition = content_meta?.position;
   const position = attr_position || lambda_position;
@@ -40,9 +46,22 @@ export const PositionLink = ({
   return (
     <div data-pagefind-ignore="all">
       {!position && (
-        <Typography variant="subtitle1" sx={{ color: "text.secondary", pb: 2 }}>
-          This function is not declared in a .nix file
-        </Typography>
+        <>
+          <Typography
+            variant="subtitle1"
+            sx={{ color: "text.secondary", pb: 2 }}
+          >
+            This function is not declared in a .nix file
+          </Typography>
+          {!is_primop && (
+            <Typography
+              variant="subtitle2"
+              sx={{ color: "text.secondary", pb: 2 }}
+            >
+              This is very likely a bug in noogle please report this error.
+            </Typography>
+          )}
+        </>
       )}
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Typography

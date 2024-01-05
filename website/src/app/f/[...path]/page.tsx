@@ -48,11 +48,6 @@ const Toc = async (props: TocProps) => {
     >
       <Typography variant="subtitle1">On this page</Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        {!headings.length && (
-          <Typography variant="body2" sx={{ color: "text.secondary", py: 1 }}>
-            No sections
-          </Typography>
-        )}
         {title && (
           <Link href={`#${title}`}>
             <Typography
