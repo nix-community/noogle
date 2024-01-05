@@ -4,6 +4,7 @@ let
 
   dropBack = l: lib.reverseList (lib.drop 1 (lib.reverseList l));
 
+  unwrapFunctor = f: f.__functor f;
   /* *
      # Returns
 
@@ -23,7 +24,10 @@ let
     let
       lambda =
         if lib.isFunction parent.${name} then
-          builtins.lambdaMeta parent.${name}
+          if parent.${name} ? __functor then
+            builtins.lambdaMeta (unwrapFunctor parent.${name})
+          else
+            builtins.lambdaMeta parent.${name}
         else
           null;
       attr = { position = builtins.unsafeGetAttrPos name parent; };

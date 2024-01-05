@@ -1,10 +1,7 @@
 {
-  # import (builtins.fetchTree {
-  #   repo = "nixpkgs";
-  #   ref = "migrate-doc-comments";
-  #   owner = "hsjobeki";
-  #   type = "github";
-  # }) {},
+  #
+  # All these arguments can be overriden in production build
+  #
   nixpkgs ? (builtins.fetchTree {
     repo = "nixpkgs";
     ref = "master";
