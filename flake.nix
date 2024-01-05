@@ -4,6 +4,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-master.url = "nixpkgs/master";
 
+    nix-master.url = "github:NixOS/nix/?ref=master";
     # A custom nix version, to introspect lambda values. 
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 

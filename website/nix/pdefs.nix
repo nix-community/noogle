@@ -9284,6 +9284,30 @@
           version = "3.0.3";
         };
       };
+      mdast-squeeze-paragraphs = {
+        "6.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-U9UivetJDDuaqlAJYcQd10q2WhdRNTAulK8tXqzN5Bo=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-squeeze-paragraphs/-/mdast-squeeze-paragraphs-6.0.0.tgz";
+          };
+          ident = "mdast-squeeze-paragraphs";
+          ltype = "file";
+          version = "6.0.0";
+        };
+      };
       mdast-util-definitions = {
         "5.1.2" = {
           depInfo = {
@@ -13391,6 +13415,11 @@
               pin = "11.0.0";
               runtime = true;
             };
+            remark-unlink = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
             seedrandom = {
               descriptor = "^3.0.5";
               pin = "3.0.5";
@@ -14943,6 +14972,9 @@
             "node_modules/markdown-table" = {
               key = "markdown-table/3.0.3";
             };
+            "node_modules/mdast-squeeze-paragraphs" = {
+              key = "mdast-squeeze-paragraphs/6.0.0";
+            };
             "node_modules/mdast-util-definitions" = {
               key = "mdast-util-definitions/5.1.2";
             };
@@ -15949,6 +15981,9 @@
             };
             "node_modules/remark-stringify/node_modules/mdast-util-to-markdown" = {
               key = "mdast-util-to-markdown/2.1.0";
+            };
+            "node_modules/remark-unlink" = {
+              key = "remark-unlink/5.0.0";
             };
             "node_modules/resolve" = {
               key = "resolve/1.22.6";
@@ -17940,6 +17975,35 @@
           ident = "remark-stringify";
           ltype = "file";
           version = "11.0.0";
+        };
+      };
+      remark-unlink = {
+        "5.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-squeeze-paragraphs = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-g+s3EDrnPS/2FOA0Mi/qR1J6FP3eXP2PeQXKX0f6kp8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-unlink/-/remark-unlink-5.0.0.tgz";
+          };
+          ident = "remark-unlink";
+          ltype = "file";
+          version = "5.0.0";
         };
       };
       resolve = {

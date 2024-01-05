@@ -1,8 +1,13 @@
-// import nixTrivialBuilders from "./build_support.json" assert { type: "json" };
-// import nixBuiltins from "./builtins.json" assert { type: "json" };
-// import nixLibs from "./lib.json" assert { type: "json" };
 import all from "./data.json" assert { type: "json" };
 import types from "./builtins.types.json" assert { type: "json" };
+import links from "./manual-link.map.json" assert { type: "json" };
+
+export type ManualLink = {
+  id: string;
+  file: string;
+};
+
+export const manualLinks = links as ManualLink[];
 
 export type FilePosition = {
   file: string;

@@ -31,7 +31,7 @@ const interpretToken = (token: string): NixType | undefined => {
     return token as NixType;
   } else if (["int", "float", "double"].includes(token)) {
     return "number";
-  } else if (["derivation", "package"].includes(token)) {
+  } else if (["derivation", "package", "fileset"].includes(token)) {
     return "attrset";
   } else if (["storepath"].includes(token) || token.includes("path")) {
     return "path";
