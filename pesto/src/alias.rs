@@ -122,6 +122,9 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
 
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
+            if lambda.isFunctor == Some(true) {
+                continue;
+            }
             match lambda.countApplied {
                 // Some(0) | None => {
                 Some(0) => {
@@ -161,6 +164,10 @@ pub fn init_alias_map(data: &Vec<Docs>, categories: FnCategories) -> AliasMap {
     let mut alias_map: AliasMap = HashMap::new();
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
+            // Skip functors
+            if lambda.isFunctor == Some(true) {
+                continue;
+            }
             match lambda.countApplied {
                 Some(0) => {
                     if lambda.isPrimop {

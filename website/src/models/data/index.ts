@@ -35,6 +35,7 @@ export type DocMeta = {
   path: ValuePath;
   aliases?: ValuePath[];
   is_primop?: boolean;
+  is_functor?: boolean;
   primop_meta?: PrimopMatter;
   attr_position?: FilePosition;
   lambda_position?: FilePosition;

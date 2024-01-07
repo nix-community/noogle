@@ -203,7 +203,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             idx === all.length - 1 ? (
               <>
                 <meta key={idx} data-pagefind-meta={`name:${attr}`} />
-                <Box component="h3" sx={{ display: "none" }}>
+                <Box key={idx * 2} component="h3" sx={{ display: "none" }}>
                   {attr}
                 </Box>
               </>
@@ -250,6 +250,13 @@ export default async function Page(props: { params: { path: string[] } }) {
                   />
                 )}
               </>
+            )}
+            {meta?.is_functor && (
+              <Chip
+                label={"Functor"}
+                color="warning"
+                sx={{ ml: "auto", maxWidth: "10rem" }}
+              />
             )}
             <ShareButton />
           </Box>
@@ -304,7 +311,9 @@ export default async function Page(props: { params: { path: string[] } }) {
           <MDX source={source} />
           {meta && <PositionLink meta={meta} content={item?.content} />}
           <div data-pagefind-ignore="all">
-            {(!!meta?.aliases?.length || (!!signature && !meta?.signature)) && (
+            {(!!meta?.aliases?.length ||
+              (!!signature && !meta?.signature) ||
+              meta?.is_functor) && (
               <>
                 <Divider flexItem />
                 <Typography
@@ -319,6 +328,15 @@ export default async function Page(props: { params: { path: string[] } }) {
                 >
                   Noogle also knows
                 </Typography>
+              </>
+            )}
+            {meta?.is_functor && (
+              <>
+                <Typography variant="h5" component={"div"}>
+                  This is a Functor
+                </Typography>
+                <br />
+                <Link href="/md/tutorials/functors">Learn about functors</Link>
               </>
             )}
             {!!meta?.aliases?.length && (

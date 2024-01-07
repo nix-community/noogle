@@ -171,6 +171,8 @@ struct DocumentFrontmatter<'a> {
     /// If an item is primop then it should have the PrimopMeta field.
     is_primop: Option<bool>,
     primop_meta: Option<PrimopMatter<'a>>,
+    /// is functor
+    is_functor: Option<bool>,
     /// Where the attribute is defined at.
     attr_position: Option<&'a FilePosition>,
     /// Where the original lambda is defined at.
@@ -207,6 +209,7 @@ impl<'a> FromDocs<'a> for Document<'a> {
                     .map(|i| i.position.as_ref())
                     .flatten(),
                 is_primop: item.docs.lambda.as_ref().map(|i| i.isPrimop),
+                is_functor: item.docs.lambda.as_ref().map(|i| i.isFunctor).flatten(),
                 count_applied: item.docs.lambda.as_ref().map(|i| i.countApplied).flatten(),
                 primop_meta: match &item.docs.lambda {
                     None => None,
