@@ -24,10 +24,16 @@ let
     let
       lambda =
         if lib.isFunction parent.${name} then
-          if parent.${name} ? __functor then
-            builtins.lambdaMeta (unwrapFunctor parent.${name})
+          let
+            pos = builtins.lambdaMeta parent.${name};
+          in
+          if parent.${name} ? __functor && pos ? position && pos.position == null then
+            let
+              res = builtins.lambdaMeta (unwrapFunctor parent.${name});
+            in
+            res // { countApplied = (res.countApplied or 0) + 1; isFunctor = true; }
           else
-            builtins.lambdaMeta parent.${name}
+            pos
         else
           null;
       attr = { position = builtins.unsafeGetAttrPos name parent; };

@@ -18,6 +18,8 @@ use crate::position::FilePosition;
 pub struct LambdaMeta {
     #[allow(non_snake_case)]
     pub isPrimop: bool,
+    #[allow(non_snake_case)]
+    pub isFunctor: Option<bool>,
     pub name: Option<String>,
     pub position: Option<FilePosition>,
     pub args: Option<Vec<String>>,

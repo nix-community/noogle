@@ -1,0 +1,60 @@
+# Functors in nix
+
+**Functors combine functions and attribute sets**
+
+## Understanding Functors
+
+A functor is a polymorphic data type that can represent both a 
+**lambda function** (`x: x`) and an **attribute set** (`{ key = value; }`). 
+
+This means that the Atribute set can hold data in the form of attributes.
+
+And also be a lambda function that can operate on that data. 
+
+-> The lambda function can access the attributes of the attribute set often called `self`.
+
+## Examples of Functors
+
+In the following example, `build` is both an attribute set and a lambda.
+`__functor` is a reserved attribute name that turns the attribute set `build` into a **functor**.
+
+```nix
+{
+  build = {
+    foo = 1;
+    __functor = self: _arg: self.foo;
+  };
+}
+```
+
+The attribute set `build` can now be used as a lambda via `function application`. 
+
+```nix
+nix-repl> build "linux"
+=> 1
+```
+
+But at the same time `build` is still an Attribute set.
+
+```nix
+nix-repl> build
+=> { __functor = «lambda»; foo = 1; }
+```
+
+## Applications of Functors
+
+Functors find practical applications including some in nixpkgs:
+
+- `lib.makeOverridable`
+- `lib.setFunctionArgs`
+- `lib.mirrorFunctionArgs`
+- `lib.types` and `lib.options` 
+- and many more.
+
+## When to use a functor
+
+(Noogle opinion)
+
+The use of functor should be avoided and is often **unnecessary**. 
+
+Using them can add up in **complexity** and makes is hard to learn and maintain a certain piece of code.

@@ -86,28 +86,52 @@ export const PositionLink = ({
               </Button>
             </Link>
           )}
-          {!contentPosition && position && (
+          {!contentPosition && (
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Link
-                target="_blank"
-                href={getSourcePosition(
-                  "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
-                  position
-                )}
-              >
-                <Button
-                  data-pagefind-ignore="all"
-                  variant="text"
-                  sx={{
-                    textTransform: "none",
-                    my: 1,
-                    placeSelf: "start",
-                  }}
-                  startIcon={<LinkIcon />}
+              {attr_position && (
+                <Link
+                  target="_blank"
+                  href={getSourcePosition(
+                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                    attr_position
+                  )}
                 >
-                  Underlying function
-                </Button>
-              </Link>
+                  <Button
+                    data-pagefind-ignore="all"
+                    variant="text"
+                    sx={{
+                      textTransform: "none",
+                      my: 1,
+                      placeSelf: "start",
+                    }}
+                    startIcon={<LinkIcon />}
+                  >
+                    Attribute position
+                  </Button>
+                </Link>
+              )}
+              {lambda_position && (
+                <Link
+                  target="_blank"
+                  href={getSourcePosition(
+                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                    lambda_position
+                  )}
+                >
+                  <Button
+                    data-pagefind-ignore="all"
+                    variant="text"
+                    sx={{
+                      textTransform: "none",
+                      my: 1,
+                      placeSelf: "start",
+                    }}
+                    startIcon={<LinkIcon />}
+                  >
+                    Underlying function
+                  </Button>
+                </Link>
+              )}
               {!!count_applied && count_applied > 0 && (
                 <Typography
                   variant="subtitle2"
