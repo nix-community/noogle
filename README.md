@@ -4,20 +4,21 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/hsjobeki/noogle)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hsjobeki/noogle/main.yml)
 
-### Noogle is a Nix API search engine. It lets you search nix functions. 
+### Noogle is a simple Nix API search engine. It lets you search nix functions. 
 
 ## Current Features
 
 - [x] Beginners-friendly search for nix and nix-related functions
   - Render documentation comments optimized for readability
+  - Search optimized for English language and nix function-names.
 - [x] Filter by **type** signatures.
   - Function types are parsed and interpreted.
-- [x] Noogle also knows stuff that is not officially documented.
+- [x] Noogle also knows stuff that is not (yet) officially documented.
   - Types of builtins. (including builtins.derivation)
   - Can be extended via markdown contributions to noogle.
   - Always shows the latest docs based on the main branch of nixpkgs.
 - [x] Outputs Pre-rendered static html that is indexable by other search engines.
-- [x] Wasm based performant instant search.
+- [x] Wasm based performant search.
 
 ## Available data
 
