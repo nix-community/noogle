@@ -1,6 +1,10 @@
 "use client";
 import {
+  Avatar,
   Box,
+  Card,
+  CardContent,
+  CardHeader,
   Chip,
   Container,
   IconButton,
@@ -8,7 +12,9 @@ import {
   Link,
   List,
   ListItem,
+  ListItemAvatar,
   ListItemText,
+  Skeleton,
   TablePagination,
   Typography,
   useMediaQuery,
@@ -56,7 +62,7 @@ export function PagefindResults() {
 
   const [items, setItems] = useState<null | PagefindResult[]>(null);
 
-  const { search } = usePagefindSearch();
+  const { search, loading, error } = usePagefindSearch();
   useEffect(() => {
     const init = async () => {
       console.log({ search, term, filters: { from, to } });
@@ -67,6 +73,8 @@ export function PagefindResults() {
     };
     init();
   }, [term, from, to, search]);
+
+  console.log({ search, loading, error });
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -122,6 +130,64 @@ export function PagefindResults() {
       submit({ input: "" });
     }
   };
+
+  if (loading) {
+    return (
+      <Container maxWidth="lg" sx={{ mt: 2 }}>
+        <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
+          {[0, 1].map((key) => (
+            <ListItem
+              sx={{ px: 0, py: 1 }}
+              aria-label={`item-skeleton`}
+              key={key}
+            >
+              <ListItemAvatar>
+                <Avatar>
+                  <Skeleton variant="circular" />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText
+                primaryTypographyProps={{
+                  variant: "h5",
+                  component: "h2",
+                }}
+                secondaryTypographyProps={{
+                  variant: "body1",
+                }}
+                primary={<Skeleton height={80} />}
+                secondary={<Skeleton />}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Container>
+    );
+  }
+  if (!loading && error) {
+    return (
+      <Container maxWidth="lg" sx={{ mt: 2 }}>
+        <Card>
+          <CardHeader title="Search not available" subheader={error} />
+          <CardContent>
+            <Typography variant="h5">Why this might have happened</Typography>
+            <ul>
+              <li>
+                <Typography sx={{ py: 1 }}>
+                  A network error may have occurred. Reload the page
+                </Typography>
+              </li>
+              <li>
+                <Typography sx={{ py: 1 }}>
+                  Make sure you are using the latest browser. And your browser
+                  supports WebAssembly
+                </Typography>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+      </Container>
+    );
+  }
 
   return (
     <Box

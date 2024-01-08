@@ -11,7 +11,8 @@ const lightThemeOptions: ThemeOptions = {
       main: "#6ad541",
     },
     background: {
-      default: "#fafaff",
+      paper: "#fafafa",
+      default: "#f0f1f2",
     },
   },
 };

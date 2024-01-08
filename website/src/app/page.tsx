@@ -56,7 +56,7 @@ export default function Home() {
         >
           <Suspense fallback="search input ">
             <FilterProvider>
-              <SearchInput placeholder="search nix functions" />
+              <SearchInput placeholder="search nix functions" autoFocus />
               <Filter disableChevron disableSubmit showDivider />
             </FilterProvider>
           </Suspense>
