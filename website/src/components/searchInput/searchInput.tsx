@@ -78,13 +78,13 @@ export function SearchInput(props: SearchInputProps) {
         includeInputInList
         aria-label={"search"}
         onInputChange={(e, value, reason) => {
-          if (reason === "reset") {
-            console.log({ value, reason });
-            handleSubmit(value);
-            // if (value) {
-            //   router.push(`/f/${value.split(".").join("/")}`);
-            // } else {
-            // }
+          if (reason === "reset" && e) {
+            console.log({ e, value, reason });
+            if (value) {
+              router.push(`/f/${value.split(".").join("/")}`);
+            } else {
+              handleSubmit(value);
+            }
           }
         }}
         options={data.map((e) => e.meta.title)}
