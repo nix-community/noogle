@@ -8,6 +8,7 @@ import React from "react";
 import { data } from "@/models/data";
 import TuneIcon from "@mui/icons-material/Tune";
 import { useFilter } from "../layout/filterContext";
+import { useRouter } from "next/navigation";
 
 // import dynamic from "next/dynamic";
 
@@ -17,10 +18,11 @@ import { useFilter } from "../layout/filterContext";
 
 export interface SearchInputProps {
   placeholder: string;
+  autoFocus?: boolean;
 }
 
 export function SearchInput(props: SearchInputProps) {
-  const { placeholder } = props;
+  const { placeholder, autoFocus = false } = props;
   const {
     setShowFilter,
     to,
@@ -31,6 +33,7 @@ export function SearchInput(props: SearchInputProps) {
     setFrom,
     setTo,
   } = useFilter();
+  const router = useRouter();
 
   const handleSubmit = (input: string) => {
     submitFilters({ input });
@@ -72,10 +75,15 @@ export function SearchInput(props: SearchInputProps) {
       <Autocomplete
         freeSolo
         includeInputInList
-        aria-label={"search-input"}
+        aria-label={"search"}
         onInputChange={(e, value, reason) => {
           if (reason === "reset") {
-            handleSubmit(value);
+            console.log({ value, reason });
+            if (value) {
+              router.push(`/f/${value.split(".").join("/")}`);
+            } else {
+              handleSubmit(value);
+            }
           }
         }}
         options={data.map((e) => e.meta.title)}
@@ -89,6 +97,7 @@ export function SearchInput(props: SearchInputProps) {
         renderInput={(params) => (
           <TextField
             {...params}
+            autoFocus={autoFocus}
             InputProps={{
               ...params.InputProps,
               type: "search",

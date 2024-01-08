@@ -38,10 +38,15 @@ type PagefindHooks = {
       }>
     | undefined;
   pagefind: any | undefined;
+  loading: boolean;
+  error: undefined | string;
 };
 
 export const usePagefindSearch = (): PagefindHooks => {
   const [pagefind, setPagefind] = useState();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<undefined | string>();
+
   useEffect(() => {
     const init = async () => {
       // @ts-ignore
@@ -53,13 +58,18 @@ export const usePagefindSearch = (): PagefindHooks => {
           );
           // @ts-ignore
           window.pagefind = pagefind;
+
+          setError(undefined);
         } catch (e) {
           console.log({ e });
+          setError("Could not load search wasm module");
         }
       }
       // @ts-ignore
       setPagefind(window.pagefind);
+      setLoading(false);
     };
+
     init();
   }, []);
 
@@ -69,6 +79,9 @@ export const usePagefindSearch = (): PagefindHooks => {
     search: pagefind?.search,
     // @ts-ignore
     pagefind,
+
+    loading,
+    error,
   };
 };
 

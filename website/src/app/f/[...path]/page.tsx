@@ -41,7 +41,7 @@ const Toc = async (props: TocProps) => {
         },
         position: "sticky",
         top: "3.7rem",
-        p: 1,
+        p: 2,
         order: 3,
         whiteSpace: "nowrap",
       }}
@@ -55,7 +55,7 @@ const Toc = async (props: TocProps) => {
               sx={{
                 justifyContent: "start",
                 textTransform: "none",
-                color: "text.secondary",
+                color: "text.primary",
                 py: 0.5,
               }}
             >
@@ -70,7 +70,7 @@ const Toc = async (props: TocProps) => {
               sx={{
                 justifyContent: "start",
                 textTransform: "none",
-                color: "text.secondary",
+                color: "text.primary",
                 pl: h.level,
                 py: 0.5,
               }}
