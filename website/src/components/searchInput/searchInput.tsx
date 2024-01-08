@@ -80,11 +80,11 @@ export function SearchInput(props: SearchInputProps) {
         onInputChange={(e, value, reason) => {
           if (reason === "reset") {
             console.log({ value, reason });
-            if (value) {
-              router.push(`/f/${value.split(".").join("/")}`);
-            } else {
-              handleSubmit(value);
-            }
+            handleSubmit(value);
+            // if (value) {
+            //   router.push(`/f/${value.split(".").join("/")}`);
+            // } else {
+            // }
           }
         }}
         options={data.map((e) => e.meta.title)}
