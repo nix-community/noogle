@@ -63,6 +63,7 @@ export function SearchInput(props: SearchInputProps) {
       sx={{
         width: "100%",
         height: "100%",
+        maxWidth: "90vw",
         display: "flex",
         alignItems: "center",
         bgcolor: "inherit",

@@ -27,7 +27,10 @@ export const Header = () => {
           backgroundColor:
             theme.palette.mode === "light" ? "primary.main" : "#101010",
           display: "grid",
-          gridTemplateColumns: "0.3fr 0.4fr 0.3fr",
+          gridTemplateColumns: {
+            xs: "1fr",
+            md: "0.3fr 0.4fr 0.3fr",
+          },
           alignContent: "center",
           // borderBottomStyle: "solid",
           // borderBottomColor: "#232223",
@@ -39,7 +42,7 @@ export const Header = () => {
             justifyContent: "start",
             alignSelf: "center",
             px: 1,
-            // display: { xs: "none", md: "block" },
+            display: { xs: "none", md: "block" },
           }}
         >
           <Link
@@ -70,10 +73,12 @@ export const Header = () => {
           sx={{
             justifySelf: "center",
             width: "100%",
-            minWidth: "20rem",
+            // minWidth: "20rem",
             bgcolor: "background.paper",
             px: 2,
+            mx: 1,
             borderRadius: 10,
+
             overflow: "hidden",
           }}
         >

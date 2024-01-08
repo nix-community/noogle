@@ -33,11 +33,17 @@ export type FilterOptions = {
   limit?: number;
 };
 
-export const FilterProvider = ({ children }: { children: ReactNode }) => {
+export const FilterProvider = ({
+  children,
+  initialOpen = false,
+}: {
+  children: ReactNode;
+  initialOpen?: boolean;
+}) => {
   const router = useRouter();
   const params = useSearchParams();
 
-  const [showFilter, setShowFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(initialOpen);
 
   const query = useMemo(() => new URLSearchParams(params), [params]);
   const [, persistFilterOptions] = useSessionStorage<FilterOptions>(

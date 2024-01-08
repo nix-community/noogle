@@ -68,7 +68,7 @@ export default function NotFoundPage() {
           }}
         >
           <Suspense fallback="search input ">
-            <FilterProvider>
+            <FilterProvider initialOpen={true}>
               <SearchInput placeholder="Type here to bend time and space..." />
               <Filter disableChevron disableSubmit showDivider />
             </FilterProvider>

@@ -10,17 +10,21 @@ import {
   Container,
   Divider,
   FormControl,
+  IconButton,
   Input,
   InputAdornment,
   InputLabel,
   MenuItem,
   Select,
+  ToggleButton,
+  ToggleButtonGroup,
   Typography,
 } from "@mui/material";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useFilter } from "./layout/filterContext";
+import { Clear } from "@mui/icons-material";
 
 const defaultFilters = {
   from: {
@@ -120,87 +124,104 @@ export const Filter = (props: FilterProps) => {
               </Typography>
             </Button>
           )}
-          <FormControl fullWidth sx={{ my: 1 }}>
-            <InputLabel id="input-type-label">Input Type</InputLabel>
-            <Select
-              labelId="input-type-label"
-              id="input-type"
-              label="Input Type"
+          <FormControl
+            fullWidth
+            sx={{
+              my: 1,
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: {
+                xs: "wrap",
+                md: "unset",
+              },
+              overflowX: {
+                xs: "scroll",
+                md: "hidden",
+              },
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
+              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+                From
+              </Typography>
+            </Box>
+            <ToggleButtonGroup
+              aria-labelledby="input-type-label"
+              exclusive
+              fullWidth
               value={from}
-              onChange={(e) => {
-                setFrom(e.target.value);
-              }}
-              input={
-                <Input
-                  disableUnderline
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <InputIcon />
-                    </InputAdornment>
-                  }
-                />
-              }
-              renderValue={(value) => (
-                <Chip
-                  key={value}
-                  label={<Typography variant="subtitle1">{value}</Typography>}
-                  sx={{ px: 2, textTransform: "capitalize" }}
-                  color="primary"
-                />
-              )}
+              onChange={(e, values) => setFrom(values)}
+              color={"primary"}
             >
               {Object.keys(filters?.from || {}).map((name) => (
-                <MenuItem
+                <ToggleButton
                   key={name}
                   value={name}
-                  sx={{ textTransform: "capitalize" }}
+                  aria-label={name}
+                  sx={{
+                    textTransform: "capitalize",
+                    borderRadius: 10,
+                  }}
                 >
                   {name}
-                </MenuItem>
+                </ToggleButton>
               ))}
-            </Select>
+            </ToggleButtonGroup>
+
+            <Box sx={{ ml: 1, px: 1, display: { xs: "none", md: "block" } }}>
+              <IconButton onClick={() => setFrom("any")}>
+                <Clear />
+              </IconButton>
+            </Box>
           </FormControl>
-          <FormControl fullWidth sx={{ my: 1 }}>
-            <InputLabel id="return-type-label">Return Type</InputLabel>
-            <Select
-              // IconComponent={InputIcon}
-              labelId="return-type-label"
-              id="return-type"
-              label="Return Type"
+
+          <FormControl
+            fullWidth
+            sx={{
+              my: 1,
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: {
+                xs: "wrap",
+                md: "unset",
+              },
+              overflowX: {
+                xs: "scroll",
+                md: "hidden",
+              },
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
+              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+                To
+              </Typography>
+            </Box>
+            <ToggleButtonGroup
+              aria-labelledby="return-type-label"
+              exclusive
+              fullWidth
               value={to}
-              onChange={(e) => {
-                setTo(e.target.value);
-              }}
-              input={
-                <Input
-                  disableUnderline
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <OutputIcon />
-                    </InputAdornment>
-                  }
-                />
-              }
-              renderValue={(value) => (
-                <Chip
-                  key={value}
-                  label={<Typography variant="subtitle1">{value}</Typography>}
-                  sx={{ px: 2, textTransform: "capitalize" }}
-                  color="primary"
-                />
-              )}
+              color={"primary"}
+              onChange={(e, values) => setTo(values)}
             >
               {Object.keys(filters?.to || {}).map((name) => (
-                <MenuItem
+                <ToggleButton
                   key={name}
                   value={name}
-                  sx={{ textTransform: "capitalize" }}
+                  aria-label={name}
+                  sx={{ textTransform: "capitalize", borderRadius: 10 }}
                 >
                   {name}
-                </MenuItem>
+                </ToggleButton>
               ))}
-            </Select>
+              <Box sx={{ ml: 1, px: 1, display: { xs: "none", md: "block" } }}>
+                <IconButton onClick={() => setTo("any")}>
+                  <Clear />
+                </IconButton>
+              </Box>
+            </ToggleButtonGroup>
           </FormControl>
+
           {!disableSubmit && (
             <>
               <Button variant="outlined" type="submit" sx={{ width: "100%" }}>
