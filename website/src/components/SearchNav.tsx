@@ -4,8 +4,6 @@ import { Box, Button, Link, Typography } from "@mui/material";
 import { useSessionStorage } from "usehooks-ts";
 import { FilterOptions } from "./layout/filterContext";
 // import { useRouter } from "next/navigation";
-
-// import d from "./example.json";
 import { PagefindResult, usePagefindSearch } from "./Pagefind";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -15,10 +13,8 @@ export const SearchNav = () => {
     "currentFilterOptions",
     null
   );
-  if (!filterOptions) {
-    return null;
-  }
-  return <Navigation filterOptions={filterOptions} />;
+
+  return filterOptions && <Navigation filterOptions={filterOptions} />;
 };
 
 // const prev = {
@@ -63,11 +59,9 @@ export const Navigation = ({
 
   useEffect(() => {
     const init = async () => {
-      console.log({ search, term, filters: { from, to } });
       if (search) {
         let raw =
           (await search(term, { filters: { from, to } }))?.results || [];
-
         let items = await Promise.all(raw.map(async (r) => await r.data()));
         setItems(items);
       }
