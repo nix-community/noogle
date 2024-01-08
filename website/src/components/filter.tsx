@@ -5,23 +5,15 @@ import { useEffect, useState } from "react";
 import {
   Box,
   Button,
-  Chip,
   Collapse,
   Container,
   Divider,
   FormControl,
   IconButton,
-  Input,
-  InputAdornment,
-  InputLabel,
-  MenuItem,
-  Select,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import InputIcon from "@mui/icons-material/Input";
-import OutputIcon from "@mui/icons-material/Output";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useFilter } from "./layout/filterContext";
 import { Clear } from "@mui/icons-material";
