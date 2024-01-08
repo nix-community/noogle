@@ -8,9 +8,12 @@ import { Box, Divider, Typography, Link, Chip } from "@mui/material";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { findType, interpretType } from "@/models/nix";
 import { FilterProvider } from "@/components/layout/filterContext";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { PositionLink } from "@/components/PositionLink";
 import { SearchNav } from "@/components/SearchNav";
+
+import fs from "fs";
+import path from "path";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -136,9 +139,6 @@ const MDX = ({ source }: { source: string }) => (
   />
 );
 
-import fs from "fs";
-import path from "path";
-
 async function getManualSrc(item: Doc): Promise<string | null> {
   // Path must be at exactly [ "builtins" ":id" ]
   if (item?.meta?.path?.length != 2 || item?.meta?.path?.[0] !== "builtins") {
@@ -201,12 +201,12 @@ export default async function Page(props: { params: { path: string[] } }) {
         {meta?.path &&
           meta.path.map((attr, idx, all) =>
             idx === all.length - 1 ? (
-              <>
-                <meta key={idx} data-pagefind-meta={`name:${attr}`} />
-                <Box key={idx * 2} component="h3" sx={{ display: "none" }}>
+              <React.Fragment key={idx}>
+                <meta data-pagefind-meta={`name:${attr}`} />
+                <Box component="h3" sx={{ display: "none" }}>
                   {attr}
                 </Box>
-              </>
+              </React.Fragment>
             ) : (
               <meta key={idx} data-pagefind-meta={`category:${attr}`} />
             )
@@ -372,7 +372,7 @@ export default async function Page(props: { params: { path: string[] } }) {
           </div>
         </Box>
         <Divider flexItem sx={{ mt: 2 }} />
-        <Suspense fallback={<div />}>
+        <Suspense fallback={<div></div>}>
           <FilterProvider>
             <SearchNav />
           </FilterProvider>

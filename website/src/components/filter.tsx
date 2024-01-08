@@ -125,7 +125,7 @@ export const Filter = (props: FilterProps) => {
             </Button>
           )}
           <FormControl
-            fullWidth
+            fullWidth={true}
             sx={{
               my: 1,
               display: "flex",
@@ -148,7 +148,7 @@ export const Filter = (props: FilterProps) => {
             <ToggleButtonGroup
               aria-labelledby="input-type-label"
               exclusive
-              fullWidth
+              fullWidth={true}
               value={from}
               onChange={(e, values) => setFrom(values)}
               color={"primary"}
@@ -176,7 +176,7 @@ export const Filter = (props: FilterProps) => {
           </FormControl>
 
           <FormControl
-            fullWidth
+            fullWidth={true}
             sx={{
               my: 1,
               display: "flex",
@@ -199,7 +199,7 @@ export const Filter = (props: FilterProps) => {
             <ToggleButtonGroup
               aria-labelledby="return-type-label"
               exclusive
-              fullWidth
+              fullWidth={true}
               value={to}
               color={"primary"}
               onChange={(e, values) => setTo(values)}
@@ -224,8 +224,12 @@ export const Filter = (props: FilterProps) => {
 
           {!disableSubmit && (
             <>
-              <Button variant="outlined" type="submit" sx={{ width: "100%" }}>
-                Apply
+              <Button
+                variant="outlined"
+                type="submit"
+                sx={{ width: "100%", mt: 2 }}
+              >
+                Search
               </Button>
             </>
           )}
