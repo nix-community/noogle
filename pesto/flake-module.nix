@@ -13,8 +13,8 @@
       pesto = craneLib.buildPackage commonArgs;
 
       data-json = pkgs.stdenv.mkDerivation {
-        name = "nixpkgs-migrated";
-        src = inputs.nixpkgs;
+        name = "pesto-data";
+        src = ./.;
         buildPhase = ''
           ${pesto}/bin/pesto --pos-file ${self'.packages.pasta} --format json $out
         '';
