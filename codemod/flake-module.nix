@@ -15,7 +15,7 @@
 
       nixpkgs-migrated = pkgs.stdenv.mkDerivation {
         name = "nixpkgs-migrated";
-        src = inputs.nixpkgs;
+        src = inputs.nixpkgs-master;
         buildPhase = ''
           ${self'.packages.codemod}/bin/codemod .
           cp -r . $out
