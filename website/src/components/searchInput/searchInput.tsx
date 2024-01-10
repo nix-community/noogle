@@ -80,7 +80,12 @@ export function SearchInput(props: SearchInputProps) {
           if (reason === "reset") {
             console.log({ value, reason });
             if (value) {
-              router.push(`/f/${value.split(".").join("/")}`.split(" ")[0]);
+              const target = data.find((d) => d.meta.title === value);
+              if (target) {
+                router.push(`/f/${target.meta.path.join("/")}`);
+              } else {
+                handleSubmit(value);
+              }
             } else {
               handleSubmit(value);
             }
