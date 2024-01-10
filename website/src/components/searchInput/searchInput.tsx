@@ -80,7 +80,7 @@ export function SearchInput(props: SearchInputProps) {
           if (reason === "reset") {
             console.log({ value, reason });
             if (value) {
-              router.push(`/f/${value.split(".").join("/")}`);
+              router.push(`/f/${value.split(".").join("/")}`.split(" ")[0]);
             } else {
               handleSubmit(value);
             }
