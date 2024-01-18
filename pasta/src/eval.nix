@@ -26,6 +26,7 @@ let
     rustTools = collectFns pkgs.rustPackages {
       initialPath = [ "pkgs" "rustPackages" ];
     };
+    appimageTools = collectFns pkgs.appimageTools { initialPath = [ "pkgs" "appimageTools" ]; };
 
     ############# Non-recursive analysis sets (pkgs.<nested>)
     # pkgs cannot be analysed recursively
