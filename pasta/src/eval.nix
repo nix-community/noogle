@@ -27,6 +27,22 @@ let
       initialPath = [ "pkgs" "rustPackages" ];
     };
     appimageTools = collectFns pkgs.appimageTools { initialPath = [ "pkgs" "appimageTools" ]; };
+    elmPackages = collectFns pkgs.elmPackages { initialPath = [ "pkgs" "elmPackages" ]; };
+
+    agdaPackages = collectFns pkgs.agdaPackages { initialPath = [ "pkgs" "agdaPackages" ]; ignores = [ "lib" ]; };
+    dhallPackages = collectFns pkgs.dhallPackages { initialPath = [ "pkgs" "dhallPackages" ]; ignores = [ "lib" ]; };
+
+    beamPackages = collectFns pkgs.beamPackages { initialPath = [ "pkgs" "beamPackages" ]; };
+
+    dotnetCorePackages = collectFns pkgs.dotnetCorePackages { initialPath = [ "pkgs" "dotnetCorePackages" ]; };
+    emacsPackages = collectFns pkgs.emacsPackages { initialPath = [ "pkgs" "emacsPackages" ]; };
+    gradle-packages = collectFns pkgs.gradle-packages { initialPath = [ "pkgs" "gradle-packages" ]; };
+
+    ociTools = collectFns pkgs.ociTools { initialPath = [ "pkgs" "ociTools" ]; };
+    releaseTools = collectFns pkgs.releaseTools { initialPath = [ "pkgs" "releaseTools" ]; };
+    snapTools = collectFns pkgs.snapTools { initialPath = [ "pkgs" "snapTools" ]; };
+    vmTools = collectFns pkgs.vmTools { initialPath = [ "pkgs" "vmTools" ]; };
+
 
     ############# Non-recursive analysis sets (pkgs.<nested>)
     # pkgs cannot be analysed recursively

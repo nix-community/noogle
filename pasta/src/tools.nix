@@ -50,7 +50,7 @@ let
      ]
   */
   collectFns = set:
-    { initialPath ? [ ], limit ? null, }:
+    { initialPath ? [ ], limit ? null, ignores ? [ ] }:
     let
       filterFns = builtins.filter (item:
         item.docs != null &&
@@ -94,7 +94,7 @@ let
                 path = lib.unique (item.key ++ [ name ]);
               in
               if lib.isDerivation nextVal || name == "__functor"
-                || (limit != null && item.depth >= limit) then
+                || (limit != null && item.depth >= limit) || (builtins.any (n: n == name) ignores) then
               # skipping all more nested values by
               # returning the previous item
                 item
