@@ -14,6 +14,7 @@ import { SearchNav } from "@/components/SearchNav";
 
 import fs from "fs";
 import path from "path";
+import { Metadata, ResolvingMetadata } from "next";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -153,6 +154,35 @@ async function getManualSrc(item: Doc): Promise<string | null> {
   // const src = extern.file;
   // console.log({ source, manPath });
   return source;
+}
+
+export async function generateMetadata(
+  { params }: { params: { path: string[] } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const item: Doc | undefined = data.find(
+    (item) => item.meta.path.join(".") === params.path.join(".")
+  );
+
+  // fetch data
+
+  // optionally access and extend (rather than replace) parent metadata
+  const keywords = item?.meta?.path || [];
+  const alias_keywords = item?.meta.aliases?.flat() || [];
+
+  const title = item?.meta.path[item?.meta.path.length - 1];
+  return {
+    title,
+    description: item?.content?.content,
+    authors: [
+      { name: "nixos", url: "https://nixos.org/" },
+      { name: "nixpkgs", url: "https://github.com/NixOS/nixpkgs" },
+      { name: "nix", url: "https://github.com/NixOS/nix" },
+    ],
+    abstract: item?.content?.content,
+    keywords: [...keywords, ...alias_keywords],
+  };
 }
 
 // Multiple versions of this page will be statically generated
