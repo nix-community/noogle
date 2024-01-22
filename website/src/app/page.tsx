@@ -24,7 +24,7 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <Link href="/md/release/2024-1" underline="none">
+        <Link rel="canonical" href="/md/release/2024-1" underline="none">
           <Tooltip title="Whats new">
             <Typography
               variant="h1"

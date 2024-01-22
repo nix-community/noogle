@@ -133,7 +133,11 @@ export const Filter = (props: FilterProps) => {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
-              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+              <Typography
+                variant="subtitle2"
+                component="div"
+                sx={{ color: "text.secondary" }}
+              >
                 From
               </Typography>
             </Box>
@@ -184,7 +188,11 @@ export const Filter = (props: FilterProps) => {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
-              <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+              <Typography
+                variant="subtitle2"
+                component="div"
+                sx={{ color: "text.secondary" }}
+              >
                 To
               </Typography>
             </Box>

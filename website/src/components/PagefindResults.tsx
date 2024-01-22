@@ -284,7 +284,11 @@ export function PagefindResults() {
                         secondaryTypographyProps={{
                           variant: "body1",
                         }}
-                        primary={<Link href={`${url}`}>{meta.title}</Link>}
+                        primary={
+                          <Link rel="canonical" href={`${url}`}>
+                            {meta.title}
+                          </Link>
+                        }
                         secondary={
                           <div dangerouslySetInnerHTML={{ __html: excerpt }} />
                         }

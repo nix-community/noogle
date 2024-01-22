@@ -3,7 +3,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
 import { Doc, data, manualLinks } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
-import { extractHeadings, mdxRenderOptions } from "@/utils";
+import { extractExcerpt, extractHeadings, mdxRenderOptions } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { findType, interpretType } from "@/models/nix";
@@ -50,10 +50,12 @@ const Toc = async (props: TocProps) => {
         whiteSpace: "nowrap",
       }}
     >
-      <Typography variant="subtitle1">On this page</Typography>
+      <Typography variant="subtitle1" component={"div"}>
+        On this page
+      </Typography>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         {title && (
-          <Link href={`#${title}`}>
+          <Link rel="canonical" href={`#${title}`}>
             <Typography
               variant="body2"
               sx={{
@@ -68,7 +70,7 @@ const Toc = async (props: TocProps) => {
           </Link>
         )}
         {headings.map((h, idx) => (
-          <Link key={idx} href={`#${h.id}`}>
+          <Link rel="canonical" key={idx} href={`#${h.id}`}>
             <Typography
               variant="body2"
               sx={{
@@ -171,10 +173,25 @@ export async function generateMetadata(
   const keywords = item?.meta?.path || [];
   const alias_keywords = item?.meta.aliases?.flat() || [];
 
-  const title = item?.meta.path[item?.meta.path.length - 1];
+  // words?.forEach((word) => {
+  //   console.log({ word });
+  // });
+  // console.log({ excerpt });
+
+  const name = item?.meta.path[item?.meta.path.length - 1];
+
+  const content = item?.content?.content || "";
+
+  const summary = await extractExcerpt(content, 35);
+  const description = await extractExcerpt(content, 200);
+
+  const title = `Nix ${name} - ${summary}`;
+
   return {
+    // should be 20-70 characters
     title,
-    description: item?.content?.content,
+    // should be 70-160 characters
+    description,
     authors: [
       { name: "nixos", url: "https://nixos.org/" },
       { name: "nixpkgs", url: "https://github.com/NixOS/nixpkgs" },
@@ -233,7 +250,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             idx === all.length - 1 ? (
               <React.Fragment key={idx}>
                 <meta data-pagefind-meta={`name:${attr}`} />
-                <Box component="h3" sx={{ display: "none" }}>
+                <Box component="h2" sx={{ display: "none" }}>
                   {attr}
                 </Box>
               </React.Fragment>
@@ -348,7 +365,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                 <Divider flexItem />
                 <Typography
                   variant="subtitle1"
-                  component={"h3"}
+                  component={"h4"}
                   sx={{
                     color: "text.secondary",
                     alignSelf: "center",
@@ -366,14 +383,16 @@ export default async function Page(props: { params: { path: string[] } }) {
                   This is a Functor
                 </Typography>
                 <br />
-                <Link href="/md/tutorials/functors">Learn about functors</Link>
+                <Link rel="canonical" href="/md/tutorials/functors">
+                  Learn about functors
+                </Link>
               </>
             )}
             {!!meta?.aliases?.length && (
               <>
                 <Typography
                   variant="h5"
-                  component={"div"}
+                  component={"h5"}
                   sx={{ color: "text.secondary" }}
                 >
                   Aliases
@@ -381,7 +400,9 @@ export default async function Page(props: { params: { path: string[] } }) {
                 <ul>
                   {meta?.aliases?.map((a) => (
                     <li key={a.join(".")}>
-                      <Link href={`/f/${a.join("/")}`}>{a.join(".")}</Link>
+                      <Link rel="canonical" href={`/f/${a.join("/")}`}>
+                        {a.join(".")}
+                      </Link>
                     </li>
                   ))}
                 </ul>

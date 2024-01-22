@@ -116,7 +116,10 @@ export function SearchResults() {
                           variant: "body1",
                         }}
                         primary={
-                          <Link href={`f/${meta.path.join("/")}`}>
+                          <Link
+                            rel="canonical"
+                            href={`f/${meta.path.join("/")}`}
+                          >
                             {meta.title}
                           </Link>
                         }

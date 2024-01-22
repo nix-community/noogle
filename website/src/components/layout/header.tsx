@@ -46,6 +46,7 @@ export const Header = () => {
           }}
         >
           <Link
+            rel="canonical"
             href="/"
             className={fira.className}
             sx={{

@@ -17,6 +17,7 @@ import remarkRehype from "remark-rehype";
 import remarkUnlink from "remark-unlink";
 
 import { unified } from "unified";
+import { rehypeExtractExcerpt } from "./excerpt";
 
 /**
  * Function to generate a set from a path in lodash style
@@ -112,6 +113,23 @@ type Heading = {
   id: string;
 };
 
+export const extractExcerpt = async (
+  content: string,
+  maxLength: number
+): Promise<string> => {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeExtractExcerpt, {
+      maxLength: maxLength,
+      ellipsis: " ...",
+    })
+    .use(rehypeStringify);
+
+  const result = await processor.process(content);
+
+  return result.data.excerpt as string;
+};
 export const extractHeadings = async (content: string): Promise<Heading[]> => {
   const processor = unified()
     .use(remarkParse)
