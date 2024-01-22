@@ -57,14 +57,14 @@
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
-    "@types/node": "18.18.1",
+    "@types/node": "20.11.5",
     "@types/react": "^18.0.25",
-    "@types/react-dom": "18.2.8",
+    "@types/react-dom": "18.2.18",
     "@types/react-highlight": "^0.12.5",
     "@types/seedrandom": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
-    "eslint": "8.50.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "^14.0.3"
   }
 }
