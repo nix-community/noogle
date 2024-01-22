@@ -49,6 +49,7 @@ export const PositionLink = ({
         <>
           <Typography
             variant="subtitle1"
+            component={"div"}
             sx={{ color: "text.secondary", pb: 2 }}
           >
             This function is not declared in a .nix file
@@ -56,6 +57,7 @@ export const PositionLink = ({
           {!is_primop && (
             <Typography
               variant="subtitle2"
+              component={"div"}
               sx={{ color: "text.secondary", pb: 2 }}
             >
               This is very likely a bug in noogle please report this error.
@@ -143,7 +145,11 @@ export const PositionLink = ({
             </Box>
           )}
         </Typography>
-        <Typography variant="subtitle2" sx={{ color: "text.secondary" }}>
+        <Typography
+          variant="subtitle2"
+          component={"div"}
+          sx={{ color: "text.secondary" }}
+        >
           {contentPosition &&
             is_inherited &&
             `(${content_meta?.path?.join(".")})`}
@@ -151,7 +157,7 @@ export const PositionLink = ({
       </Box>
       {!content?.content && (
         <>
-          <Typography variant="h5" sx={{ pt: 2 }}>
+          <Typography variant="h5" component={"div"} sx={{ pt: 2 }}>
             {"Contribute"}
           </Typography>
           <Typography
@@ -184,7 +190,6 @@ export const PositionLink = ({
                       secondary="Contribute to Noogle"
                     />
                   </ListItemButton>
-                  {/* </Link> */}
                 </ListItem>
               )}
             </List>

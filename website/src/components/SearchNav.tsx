@@ -90,6 +90,7 @@ export const Navigation = ({
     <Box sx={{ display: "flex", alignItems: "center" }}>
       {prev && (
         <Link
+          rel="canonical"
           href={prev.url}
           sx={{
             my: 2,
@@ -111,6 +112,7 @@ export const Navigation = ({
 
       {next && (
         <Link
+          rel="canonical"
           href={next.url}
           sx={{
             ml: "auto",

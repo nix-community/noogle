@@ -19,7 +19,7 @@ export const ListGroup = async (props: ListGroupProps) => {
       const matter = await getMdxMeta(entry);
       const { frontmatter } = matter.compiled;
       return (
-        <Link key={`${idx}`} href={`/ref/${entry.join("/")}`}>
+        <Link rel="canonical" key={`${idx}`} href={`/ref/${entry.join("/")}`}>
           <ListItem
             disablePadding
             disableGutters

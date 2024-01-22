@@ -6,7 +6,7 @@ import { ClientSideLayoutContext } from "@/components/ClientSideLayoutContext";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Noogle",
+  title: "Noogle - Simply find Nix API reference documentation.",
   description:
     "Nix API reference. Includes nix, nixpkgs and nixos. Search nix functions within the nix ecosystem based on type, name, description, example, category and more.",
   creator: "@hsjobeki",

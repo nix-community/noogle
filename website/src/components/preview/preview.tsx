@@ -34,7 +34,7 @@ export const Preview = (props: PreviewProps) => {
           width: "100%",
         }}
       >
-        <Link href={`/f/${meta.path.join("/")}`}>
+        <Link rel="canonical" href={`/f/${meta.path.join("/")}`}>
           <Typography
             component="h3"
             variant="h4"
