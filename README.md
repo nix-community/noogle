@@ -4,7 +4,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/hsjobeki/noogle)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hsjobeki/noogle/main.yml)
 
-### Noogle is a simple Nix API search engine. It lets you search nix functions. 
+### Noogle is a simple Nix API search engine. It lets you search nix functions.
 
 ## Current Features
 
@@ -54,7 +54,7 @@ All Indexing is done via the [pasta](./pasta/) module. PRs welcome!
 ## Contribute
 
 Contributions are very welcome just file a PR or issue.
-Indexed data can be added very easily in ./pasta/src/eval.nix
+Indexed data can be added very easily in `./pasta/src/eval.nix`
 
 > Note: Indexed data must evaluate!
 
