@@ -17,7 +17,8 @@
   - Types of `builtins` (including `builtins.derivation`).
   - Can be extended via markdown contributions to Noogle.
   - Always shows the latest docs based on the main branch of Nixpkgs.
-- [x] Outputs pre-rendered static HTML that is indexable by other search engines.
+- [x] Outputs pre-rendered static HTML that is indexable by other search
+      engines.
 - [x] Wasm based performant search.
 
 ## Available data
@@ -43,7 +44,8 @@ Normally indexed:
 
 # Off the tree functions
 
-Some function are not part of the evaluation value of `default.nix` in Nixpkgs. They must be imported individually.
+Some function are not part of the evaluation value of `default.nix` in Nixpkgs.
+They must be imported individually.
 
 - `make-disk-image`
 
@@ -53,8 +55,8 @@ All Indexing is done via the [pasta](./pasta/) module. PRs welcome!
 
 ## Contribute
 
-Contributions are very welcome just file a PR or issue.
-Indexed data can be added very easily in `./pasta/src/eval.nix`.
+Contributions are very welcome just file a PR or issue. Indexed data can be
+added very easily in `./pasta/src/eval.nix`.
 
 > Note: Indexed data must evaluate!
 
@@ -62,16 +64,17 @@ Indexed data can be added very easily in `./pasta/src/eval.nix`.
 
 `nix build .#ui`
 
-This page generates static HTML pages.
-One page per API function.
+This page generates static HTML pages. One page per API function.
 
-It automatically includes meta tags for other search engines like Google or Bing.
+It automatically includes meta tags for other search engines like Google or
+Bing.
 
-Searching within the page is done via [pagefind](https://pagefind.app/) which is only available in the production build.
+Searching within the page is done via [pagefind](https://pagefind.app/) which is
+only available in the production build.
 
 ### Develop
 
 `nix develop`
 
-This command creates the `node_modules` directory
-with all needed dependencies based on `dream2nix`.
+This command creates the `node_modules` directory with all needed dependencies
+based on `dream2nix`.
