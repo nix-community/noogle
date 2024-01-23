@@ -8,13 +8,13 @@
 
 ## Current Features
 
-- [x] Beginners-friendly search for Nix and Nix-related functions
-  - Render documentation comments optimized for readability
+- [x] Beginners-friendly search for Nix and Nix-related functions.
+  - Render documentation comments optimized for readability.
   - Search optimized for English language and Nix function-names.
 - [x] Filter by **type** signatures.
   - Function types are parsed and interpreted.
 - [x] Noogle also knows stuff that is not (yet) officially documented.
-  - Types of `builtins`. (including `builtins.derivation`)
+  - Types of `builtins` (including `builtins.derivation`).
   - Can be extended via markdown contributions to Noogle.
   - Always shows the latest docs based on the main branch of Nixpkgs.
 - [x] Outputs pre-rendered static HTML that is indexable by other search engines.
@@ -54,7 +54,7 @@ All Indexing is done via the [pasta](./pasta/) module. PRs welcome!
 ## Contribute
 
 Contributions are very welcome just file a PR or issue.
-Indexed data can be added very easily in `./pasta/src/eval.nix`
+Indexed data can be added very easily in `./pasta/src/eval.nix`.
 
 > Note: Indexed data must evaluate!
 
