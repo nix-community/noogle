@@ -73,5 +73,5 @@ Searching within the page is done via [pagefind](https://pagefind.app/) which is
 
 `nix develop`
 
-This command creates the `node_modules` folder
+This command creates the `node_modules` directory
 with all needed dependencies based on `dream2nix`.
