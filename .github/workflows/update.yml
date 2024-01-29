@@ -14,7 +14,7 @@ jobs:
         uses: cachix/install-nix-action@v25
         with:
           extra_nix_config: |
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            access-tokens = github.com=${{ secrets.ACTIONS }}
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v20
         with:
