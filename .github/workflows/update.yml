@@ -18,7 +18,7 @@ jobs:
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v20
         with:
-          token: ${{ secrets.ACTIONS }}
+          token: ${{ secrets.GH_ACTIONS }}
           pr-title: "Update: nixpkgs-master input"
           inputs: nixpkgs-master
           
