@@ -444,7 +444,7 @@ fn modify_file(file_path: PathBuf) {
         return;
     }
 
-    println!("Syntax \n {:?}", root.clone().unwrap().syntax().clone());
+    // println!("Syntax \n {:?}", root.clone().unwrap().syntax().clone());
     let syntax = root.unwrap().syntax().clone_for_update();
     let mut maybe_replaced = replace_first_comment(&syntax);
     let mut count = 0;
@@ -469,7 +469,5 @@ fn modify_file(file_path: PathBuf) {
         let mut file = File::create(&file_path).unwrap();
         file.write_all(updates.text().to_string().as_bytes()).ok();
         println!("{display_name} - Changed {count} comments");
-    } else {
-        println!("{display_name} - Doing nothing.");
     }
 }
