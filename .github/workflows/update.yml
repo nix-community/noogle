@@ -20,5 +20,8 @@ jobs:
         with:
           token: ${{ secrets.GH_ACTIONS }}
           pr-title: "Update: nixpkgs-master input"
+          pr-labels: |
+            auto-merge
           inputs: nixpkgs-master
+          
           
