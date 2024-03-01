@@ -1,7 +1,7 @@
 { inputs, ... }: {
   perSystem = { self', inputs', pkgs, lib, ... }:
     let
-      nix = inputs'.nix.packages.nix-clangStdenv;
+      inherit (inputs'.nix.packages) nix;
       nixpkgs = self'.packages.nixpkgs-migrated;
     in
     {
