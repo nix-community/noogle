@@ -88,7 +88,7 @@ export const PositionLink = ({
               </Button>
             </Link>
           )}
-          {!contentPosition && (
+          {!content?.content && (
             <Box sx={{ display: "flex", alignItems: "center" }}>
               {attr_position && (
                 <Link
