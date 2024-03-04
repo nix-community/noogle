@@ -4,6 +4,7 @@ use rnix::{SyntaxKind, SyntaxNode, SyntaxToken};
 use rowan::{ast::AstNode, GreenToken, NodeOrToken, WalkEvent};
 use std::fs::File;
 use std::io::Write;
+use std::iter::Enumerate;
 use std::path::PathBuf;
 use std::println;
 use std::{env, fs};
@@ -148,7 +149,7 @@ fn collect_lambda_args(mut lambda: Lambda) -> Vec<Argument> {
     args
 }
 
-fn parse_doc_comment(raw: &str, indent: usize) -> String {
+fn parse_doc_comment(raw: &str, indent: usize, argument_block: Option<String>) -> String {
     enum ParseState {
         Doc,
         Type,
@@ -212,17 +213,21 @@ fn parse_doc_comment(raw: &str, indent: usize) -> String {
     let formatted_example = format_code(example, indent);
     let formatted_type = format_code(doc_type, indent);
 
-    if let Some(example) = f(formatted_example) {
-        markdown.push_str(&format!("\n\n{left}# Example"));
-        markdown.push_str(&format!(
-            "\n\n{left}```{EXAMPLE_LANG}\n{left}{example}\n{left}```"
-        ));
+    if let Some(argument_block) = argument_block {
+        markdown.push_str(&argument_block);
     }
 
     if let Some(doc_type) = f(formatted_type) {
-        markdown.push_str(&format!("\n\n{left}# Type"));
+        markdown.push_str(&format!("\n{left}# Type"));
         markdown.push_str(&format!(
             "\n\n{left}```{TYPE_LANG}\n{left}{doc_type}\n{left}```"
+        ));
+    }
+
+    if let Some(example) = f(formatted_example) {
+        markdown.push_str(&format!("\n\n{left}# Examples"));
+        markdown.push_str(&format!(
+            "\n\n{left}```{EXAMPLE_LANG}\n{left}{example}\n{left}```"
         ));
     }
 
@@ -262,12 +267,15 @@ fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
             match arg {
                 Argument::Flat(single_arg) => {
                     docs.push_str(&format!(
-                        "{ident}- [{}] {}\n",
+                        "`{}`\n\n: {}\n\n",
                         single_arg.name,
-                        single_arg
-                            .doc
-                            .map(|ref body| indent_list_item_content(body, ident))
-                            .unwrap_or(String::from("")),
+                        handle_indentation(
+                            &single_arg
+                                .clone()
+                                .doc
+                                .unwrap_or(String::from("Function argument"))
+                        )
+                        .unwrap_or(String::from("Function argument")),
                     ));
                 }
                 Argument::Pattern(_pattern) => (),
@@ -281,17 +289,17 @@ fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
 /// Takes care of markdown list indentation
 /// Dont indent the first line
 /// indent the second line, by the parent level to continue the list.
-fn indent_list_item_content(body: &str, indent: &str) -> String {
-    let mut res = String::from("");
-    for (line_nr, line) in body.lines().enumerate() {
-        if line_nr > 0 {
-            res.push_str(&format!("{}  {}\n", indent, line.trim()));
-        } else {
-            res.push_str(&format!("{}", line.trim()))
-        }
-    }
-    res
-}
+// fn indent_list_item_content(body: &str, indent: &str) -> String {
+//     let mut res = String::from("");
+//     for (line_nr, line) in body.lines().enumerate() {
+//         if line_nr > 0 {
+//             res.push_str(&format!("{}  {}\n", indent, line.trim()));
+//         } else {
+//             res.push_str(&format!("{}", line.trim()))
+//         }
+//     }
+//     res
+// }
 
 fn format_comment(text: &str, token: &SyntaxToken) -> String {
     let content = text.strip_prefix("/*").unwrap().strip_suffix("*/").unwrap();
@@ -311,14 +319,25 @@ fn format_comment(text: &str, token: &SyntaxToken) -> String {
         .lines()
         .map(|content| format!("{}{}", indent_2, content))
         .collect();
-    let mut markdown = parse_doc_comment(&lines.join("\n"), indentation + 2);
 
-    if let Some(argument_docs) = get_argument_docs(token, &indent_2) {
+    let argument_block = if let Some(argument_docs) = get_argument_docs(token, &indent_2) {
+        let mut res = String::new();
         if !argument_docs.trim().is_empty() {
-            markdown.push_str(&format!("\n\n{indent_2}# Arguments"));
-            markdown.push_str(&format!("\n\n{argument_docs}"));
+            res.push_str(&format!("\n\n{indent_2}# Inputs\n"));
+            for line in argument_docs.lines() {
+                if !line.trim().is_empty() {
+                    res.push_str(&format!("\n{indent_2}{line}"));
+                } else {
+                    res.push_str(&format!("\n"));
+                }
+            }
         }
-    }
+        Some(res)
+    } else {
+        None
+    };
+
+    let markdown = parse_doc_comment(&lines.join("\n"), indentation + 2, argument_block);
 
     return format!("/**\n{}\n{}*/", markdown, indent_1);
 }
