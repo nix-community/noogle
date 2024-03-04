@@ -33,6 +33,7 @@ let
     dhallPackages = collectFns pkgs.dhallPackages { initialPath = [ "pkgs" "dhallPackages" ]; ignores = [ "lib" ]; };
 
     beamPackages = collectFns pkgs.beamPackages { initialPath = [ "pkgs" "beamPackages" ]; };
+    testers = collectFns pkgs.testers { initialPath = [ "pkgs" "testers" ]; };
 
     dotnetCorePackages = collectFns pkgs.dotnetCorePackages { initialPath = [ "pkgs" "dotnetCorePackages" ]; };
     emacsPackages = collectFns pkgs.emacsPackages { initialPath = [ "pkgs" "emacsPackages" ]; };
