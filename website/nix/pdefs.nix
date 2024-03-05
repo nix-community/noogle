@@ -3597,7 +3597,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             is-array-buffer = {
@@ -3621,7 +3621,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3636,7 +3636,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.1.3";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             is-string = {
@@ -3673,7 +3673,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3693,7 +3693,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -3712,7 +3712,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3746,7 +3746,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3780,7 +3780,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3800,7 +3800,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -3824,7 +3824,7 @@
             };
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -3839,7 +3839,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             is-array-buffer = {
@@ -3861,6 +3861,45 @@
           ident = "arraybuffer.prototype.slice";
           ltype = "file";
           version = "1.0.2";
+        };
+      };
+      "assert" = {
+        "2.1.0" = {
+          depInfo = {
+            call-bind = {
+              descriptor = "^1.0.2";
+              pin = "1.0.7";
+              runtime = true;
+            };
+            is-nan = {
+              descriptor = "^1.3.2";
+              pin = "1.3.2";
+              runtime = true;
+            };
+            object-is = {
+              descriptor = "^1.1.5";
+              pin = "1.1.6";
+              runtime = true;
+            };
+            "object.assign" = {
+              descriptor = "^4.1.4";
+              pin = "4.1.4";
+              runtime = true;
+            };
+            util = {
+              descriptor = "^0.12.5";
+              pin = "0.12.5";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-V5Zooi9N8xX+qjNlVyAp0CQS/uRz9aUsRXW9DzKIQpk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/assert/-/assert-2.1.0.tgz";
+          };
+          ident = "assert";
+          ltype = "file";
+          version = "2.1.0";
         };
       };
       ast-types-flow = {
@@ -4128,27 +4167,42 @@
         };
       };
       call-bind = {
-        "1.0.2" = {
+        "1.0.7" = {
           depInfo = {
+            es-define-property = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+            es-errors = {
+              descriptor = "^1.3.0";
+              pin = "1.3.0";
+              runtime = true;
+            };
             function-bind = {
-              descriptor = "^1.1.1";
-              pin = "1.1.1";
+              descriptor = "^1.1.2";
+              pin = "1.1.2";
               runtime = true;
             };
             get-intrinsic = {
-              descriptor = "^1.0.2";
+              descriptor = "^1.2.4";
+              pin = "1.2.4";
+              runtime = true;
+            };
+            set-function-length = {
+              descriptor = "^1.2.1";
               pin = "1.2.1";
               runtime = true;
             };
           };
           fetchInfo = {
-            narHash = "sha256-CPVK05lbDE13hYj/VV8H6ZqkqCgqqP2XQL+amU5arbI=";
+            narHash = "sha256-vP7wYfJgrJrPBR7RiwwZo92ve8SOkusR3moVtfnHAKs=";
             type = "tarball";
-            url = "https://registry.npmjs.org/call-bind/-/call-bind-1.0.2.tgz";
+            url = "https://registry.npmjs.org/call-bind/-/call-bind-1.0.7.tgz";
           };
           ident = "call-bind";
           ltype = "file";
-          version = "1.0.2";
+          version = "1.0.7";
         };
       };
       callsites = {
@@ -4637,11 +4691,16 @@
         };
       };
       define-data-property = {
-        "1.1.0" = {
+        "1.1.4" = {
           depInfo = {
-            get-intrinsic = {
-              descriptor = "^1.2.1";
-              pin = "1.2.1";
+            es-define-property = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+            es-errors = {
+              descriptor = "^1.3.0";
+              pin = "1.3.0";
               runtime = true;
             };
             gopd = {
@@ -4649,20 +4708,15 @@
               pin = "1.0.1";
               runtime = true;
             };
-            has-property-descriptors = {
-              descriptor = "^1.0.0";
-              pin = "1.0.0";
-              runtime = true;
-            };
           };
           fetchInfo = {
-            narHash = "sha256-7WakClIeZlz8KA0k7TgnDz5L/Ku7JffIRylF+bFPFxQ=";
+            narHash = "sha256-OllacPx8XqMtao5oanbxxZmPWErMZa2LvUjtjlKc1iY=";
             type = "tarball";
-            url = "https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.0.tgz";
+            url = "https://registry.npmjs.org/define-data-property/-/define-data-property-1.1.4.tgz";
           };
           ident = "define-data-property";
           ltype = "file";
-          version = "1.1.0";
+          version = "1.1.4";
         };
       };
       define-properties = {
@@ -4670,12 +4724,12 @@
           depInfo = {
             define-data-property = {
               descriptor = "^1.0.1";
-              pin = "1.1.0";
+              pin = "1.1.4";
               runtime = true;
             };
             has-property-descriptors = {
               descriptor = "^1.0.0";
-              pin = "1.0.0";
+              pin = "1.0.2";
               runtime = true;
             };
             object-keys = {
@@ -4920,7 +4974,7 @@
             };
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             es-set-tostringtag = {
@@ -4940,7 +4994,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             get-symbol-description = {
@@ -4965,7 +5019,7 @@
             };
             has-property-descriptors = {
               descriptor = "^1.0.0";
-              pin = "1.0.0";
+              pin = "1.0.2";
               runtime = true;
             };
             has-proto = {
@@ -5109,6 +5163,38 @@
           version = "1.22.2";
         };
       };
+      es-define-property = {
+        "1.0.0" = {
+          depInfo = {
+            get-intrinsic = {
+              descriptor = "^1.2.4";
+              pin = "1.2.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-8NN/38arfvqFzj5P8heHKImWSI8ZShsSFM8lQDNP5No=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.0.tgz";
+          };
+          ident = "es-define-property";
+          ltype = "file";
+          version = "1.0.0";
+        };
+      };
+      es-errors = {
+        "1.3.0" = {
+          fetchInfo = {
+            narHash = "sha256-qMWUUAwWE/WoJ5ypyTLmp0LGsVwv/C3cMaDFvSQBugU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz";
+          };
+          ident = "es-errors";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.3.0";
+        };
+      };
       es-iterator-helpers = {
         "1.0.15" = {
           depInfo = {
@@ -5119,7 +5205,7 @@
             };
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -5139,12 +5225,12 @@
             };
             function-bind = {
               descriptor = "^1.1.1";
-              pin = "1.1.1";
+              pin = "1.1.2";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             globalthis = {
@@ -5154,7 +5240,7 @@
             };
             has-property-descriptors = {
               descriptor = "^1.0.0";
-              pin = "1.0.0";
+              pin = "1.0.2";
               runtime = true;
             };
             has-proto = {
@@ -5211,7 +5297,7 @@
           depInfo = {
             get-intrinsic = {
               descriptor = "^1.1.3";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             has = {
@@ -6739,16 +6825,16 @@
         };
       };
       function-bind = {
-        "1.1.1" = {
+        "1.1.2" = {
           fetchInfo = {
-            narHash = "sha256-9SZTeDBJ87ogdiEHyC3b2/wr1Bv8qb8rCJeD+OYvf9A=";
+            narHash = "sha256-b04gLPwWVBU4UwTcvImRG+TJhGrqWgHSklJ/ovQA9/U=";
             type = "tarball";
-            url = "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz";
+            url = "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz";
           };
           ident = "function-bind";
           ltype = "file";
           treeInfo = { };
-          version = "1.1.1";
+          version = "1.1.2";
         };
       };
       "function.prototype.name" = {
@@ -6756,7 +6842,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -6799,16 +6885,16 @@
         };
       };
       get-intrinsic = {
-        "1.2.1" = {
+        "1.2.4" = {
           depInfo = {
-            function-bind = {
-              descriptor = "^1.1.1";
-              pin = "1.1.1";
+            es-errors = {
+              descriptor = "^1.3.0";
+              pin = "1.3.0";
               runtime = true;
             };
-            has = {
-              descriptor = "^1.0.3";
-              pin = "1.0.3";
+            function-bind = {
+              descriptor = "^1.1.2";
+              pin = "1.1.2";
               runtime = true;
             };
             has-proto = {
@@ -6821,15 +6907,20 @@
               pin = "1.0.3";
               runtime = true;
             };
+            hasown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
           };
           fetchInfo = {
-            narHash = "sha256-9no1EKud/J4wr6WSN//rpyQqByB0HGgY/jmykJNpyvU=";
+            narHash = "sha256-X+eqNZrZwxXaXhugzQOI964/TgfP/PUTDHYXOBHMdVo=";
             type = "tarball";
-            url = "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.1.tgz";
+            url = "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.4.tgz";
           };
           ident = "get-intrinsic";
           ltype = "file";
-          version = "1.2.1";
+          version = "1.2.4";
         };
       };
       get-symbol-description = {
@@ -6837,12 +6928,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.1.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -7128,7 +7219,7 @@
           depInfo = {
             get-intrinsic = {
               descriptor = "^1.1.3";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -7173,7 +7264,7 @@
           depInfo = {
             function-bind = {
               descriptor = "^1.1.1";
-              pin = "1.1.1";
+              pin = "1.1.2";
               runtime = true;
             };
           };
@@ -7225,22 +7316,22 @@
         };
       };
       has-property-descriptors = {
-        "1.0.0" = {
+        "1.0.2" = {
           depInfo = {
-            get-intrinsic = {
-              descriptor = "^1.1.1";
-              pin = "1.2.1";
+            es-define-property = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
               runtime = true;
             };
           };
           fetchInfo = {
-            narHash = "sha256-4ifPgOoeFgucRb9lxIJmJo2IZdx4Agfb6/y7EBR2f0U=";
+            narHash = "sha256-SF9UhrcNIgN444/fwGVEbDcXEo++V0wF17v+3E1jYTU=";
             type = "tarball";
-            url = "https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.0.tgz";
+            url = "https://registry.npmjs.org/has-property-descriptors/-/has-property-descriptors-1.0.2.tgz";
           };
           ident = "has-property-descriptors";
           ltype = "file";
-          version = "1.0.0";
+          version = "1.0.2";
         };
       };
       has-proto = {
@@ -7288,6 +7379,25 @@
           version = "1.0.0";
         };
       };
+      hasown = {
+        "2.0.1" = {
+          depInfo = {
+            function-bind = {
+              descriptor = "^1.1.2";
+              pin = "1.1.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-30Q5k3gHWL9fPdPAhjSFU5Uw4e1/4jsg4fzmax7Avkw=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hasown/-/hasown-2.0.1.tgz";
+          };
+          ident = "hasown";
+          ltype = "file";
+          version = "2.0.1";
+        };
+      };
       hast = {
         "1.0.0" = {
           fetchInfo = {
@@ -7299,6 +7409,74 @@
           ltype = "file";
           treeInfo = { };
           version = "1.0.0";
+        };
+      };
+      hast-util-definition-list = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.1";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^4.0.1";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-to-mdast = {
+              descriptor = "^10.1.0";
+              pin = "10.1.0";
+              runtime = true;
+            };
+            mdast-util-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-phrasing = {
+              descriptor = "^4.0.0";
+              pin = "4.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-uuvxUB7hEHQyMto0oeoEsOG9dPDLQPw6meFRer73dU4=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-definition-list/-/hast-util-definition-list-2.0.0.tgz";
+          };
+          ident = "hast-util-definition-list";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      hast-util-embedded = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-is-element = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-MfuoNm9b49jWYyHZqvXQedD0Xe+2xYJGGXU4FgAch4k=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-embedded/-/hast-util-embedded-3.0.0.tgz";
+          };
+          ident = "hast-util-embedded";
+          ltype = "file";
+          version = "3.0.0";
         };
       };
       hast-util-from-html = {
@@ -7399,6 +7577,25 @@
           version = "8.0.1";
         };
       };
+      hast-util-has-property = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-D3pJfL4wd8EpDDAlRhq9hPL0ZUI9EjSTk1fWXcHu0GU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-has-property/-/hast-util-has-property-3.0.0.tgz";
+          };
+          ident = "hast-util-has-property";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
       hast-util-heading-rank = {
         "3.0.0" = {
           depInfo = {
@@ -7414,6 +7611,25 @@
             url = "https://registry.npmjs.org/hast-util-heading-rank/-/hast-util-heading-rank-3.0.0.tgz";
           };
           ident = "hast-util-heading-rank";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
+      hast-util-is-body-ok-link = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-OuKfasDwDsOsubPOcRU45Nw5hsEiSpifs/3ErYDY0II=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-is-body-ok-link/-/hast-util-is-body-ok-link-3.0.0.tgz";
+          };
+          ident = "hast-util-is-body-ok-link";
           ltype = "file";
           version = "3.0.0";
         };
@@ -7454,6 +7670,45 @@
           ident = "hast-util-parse-selector";
           ltype = "file";
           version = "4.0.0";
+        };
+      };
+      hast-util-phrasing = {
+        "3.0.1" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-embedded = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-has-property = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-is-body-ok-link = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-is-element = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-nY6k/7mPtPrsyTGI3DJ+r4r4auqeqq42kxtuZIaJlXc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-phrasing/-/hast-util-phrasing-3.0.1.tgz";
+          };
+          ident = "hast-util-phrasing";
+          ltype = "file";
+          version = "3.0.1";
         };
       };
       hast-util-raw = {
@@ -7849,6 +8104,90 @@
           version = "2.2.0";
         };
       };
+      hast-util-to-mdast = {
+        "10.1.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@ungap/structured-clone" = {
+              descriptor = "^1.0.0";
+              pin = "1.2.0";
+              runtime = true;
+            };
+            hast-util-phrasing = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-to-html = {
+              descriptor = "^9.0.0";
+              pin = "9.0.0";
+              runtime = true;
+            };
+            hast-util-to-text = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            hast-util-whitespace = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-phrasing = {
+              descriptor = "^4.0.0";
+              pin = "4.1.0";
+              runtime = true;
+            };
+            mdast-util-to-hast = {
+              descriptor = "^13.0.0";
+              pin = "13.0.2";
+              runtime = true;
+            };
+            mdast-util-to-string = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            rehype-minify-whitespace = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+            trim-trailing-lines = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            unist-util-position = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+            unist-util-visit = {
+              descriptor = "^5.0.0";
+              pin = "5.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-bXfCyDltFf7DGdFzgVnNMOEOzzyn9ga2JEo3fe7zgiA=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/hast-util-to-mdast/-/hast-util-to-mdast-10.1.0.tgz";
+          };
+          ident = "hast-util-to-mdast";
+          ltype = "file";
+          version = "10.1.0";
+        };
+      };
       hast-util-to-parse5 = {
         "8.0.0" = {
           depInfo = {
@@ -8194,7 +8533,7 @@
           depInfo = {
             get-intrinsic = {
               descriptor = "^1.2.0";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             has = {
@@ -8255,17 +8594,41 @@
           version = "2.0.1";
         };
       };
+      is-arguments = {
+        "1.1.1" = {
+          depInfo = {
+            call-bind = {
+              descriptor = "^1.0.2";
+              pin = "1.0.7";
+              runtime = true;
+            };
+            has-tostringtag = {
+              descriptor = "^1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-NA69198poe7Wzmaow34bJ11V4Ta0K/J6KPzvLmMNm8I=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-arguments/-/is-arguments-1.1.1.tgz";
+          };
+          ident = "is-arguments";
+          ltype = "file";
+          version = "1.1.1";
+        };
+      };
       is-array-buffer = {
         "3.0.2" = {
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.2.0";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             is-typed-array = {
@@ -8340,7 +8703,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             has-tostringtag = {
@@ -8454,7 +8817,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
           };
@@ -8530,6 +8893,30 @@
           ltype = "file";
           treeInfo = { };
           version = "2.0.2";
+        };
+      };
+      is-nan = {
+        "1.3.2" = {
+          depInfo = {
+            call-bind = {
+              descriptor = "^1.0.0";
+              pin = "1.0.7";
+              runtime = true;
+            };
+            define-properties = {
+              descriptor = "^1.1.3";
+              pin = "1.2.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-Ab/SegCE04V46SsS/BtseLUNu/pdo/jY6e/LpUa1nj0=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/is-nan/-/is-nan-1.3.2.tgz";
+          };
+          ident = "is-nan";
+          ltype = "file";
+          version = "1.3.2";
         };
       };
       is-negative-zero = {
@@ -8627,7 +9014,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             has-tostringtag = {
@@ -8664,7 +9051,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
           };
@@ -8753,7 +9140,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
           };
@@ -8772,12 +9159,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.1.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -8827,7 +9214,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             has-symbols = {
@@ -9306,6 +9693,55 @@
           ident = "mdast-squeeze-paragraphs";
           ltype = "file";
           version = "6.0.0";
+        };
+      };
+      mdast-util-definition-list = {
+        "2.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.1";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-hast = {
+              descriptor = "^13.0.2";
+              pin = "13.0.2";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.1.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            micromark-extension-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            unist-builder = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-lddidISpsXP2XAzcYKcV65fGA2jdU0mQ8Vw6Cu+fLa8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-definition-list/-/mdast-util-definition-list-2.0.0.tgz";
+          };
+          ident = "mdast-util-definition-list";
+          ltype = "file";
+          version = "2.0.0";
         };
       };
       mdast-util-definitions = {
@@ -10202,7 +10638,7 @@
           ltype = "file";
           version = "3.0.1";
         };
-        "4.0.0" = {
+        "4.1.0" = {
           depInfo = {
             "@types/mdast" = {
               descriptor = "^4.0.0";
@@ -10216,13 +10652,13 @@
             };
           };
           fetchInfo = {
-            narHash = "sha256-aOnm/nwC8o1YYvbckjVU8VtPuFOZEf8xSeDqMX4ZBrU=";
+            narHash = "sha256-jD0P5YFcQDbz1bnsy8vgt3zZo7rTvAQwapJtpr87oHg=";
             type = "tarball";
-            url = "https://registry.npmjs.org/mdast-util-phrasing/-/mdast-util-phrasing-4.0.0.tgz";
+            url = "https://registry.npmjs.org/mdast-util-phrasing/-/mdast-util-phrasing-4.1.0.tgz";
           };
           ident = "mdast-util-phrasing";
           ltype = "file";
-          version = "4.0.0";
+          version = "4.1.0";
         };
       };
       mdast-util-to-hast = {
@@ -10403,7 +10839,7 @@
             };
             mdast-util-phrasing = {
               descriptor = "^4.0.0";
-              pin = "4.0.0";
+              pin = "4.1.0";
               runtime = true;
             };
             mdast-util-to-string = {
@@ -10877,6 +11313,60 @@
             url = "https://registry.npmjs.org/micromark-core-commonmark/-/micromark-core-commonmark-2.0.0.tgz";
           };
           ident = "micromark-core-commonmark";
+          ltype = "file";
+          version = "2.0.0";
+        };
+      };
+      micromark-extension-definition-list = {
+        "2.0.0" = {
+          depInfo = {
+            "assert" = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            micromark-core-commonmark = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.1";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-chunked = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            ts-dedent = {
+              descriptor = "^2.2.0";
+              pin = "2.2.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-yY3I20BxfGXMxXPMW/aH7pphYyepcPl9dKOWanDSQGI=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-definition-list/-/micromark-extension-definition-list-2.0.0.tgz";
+          };
+          ident = "micromark-extension-definition-list";
           ltype = "file";
           version = "2.0.0";
         };
@@ -13385,6 +13875,11 @@
               pin = "10.0.0";
               runtime = true;
             };
+            remark-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
             remark-frontmatter = {
               descriptor = "^5.0.0";
               pin = "5.0.0";
@@ -13641,12 +14136,6 @@
             };
             "node_modules/@mdx-js/loader/node_modules/mdast-util-mdxjs-esm" = {
               key = "mdast-util-mdxjs-esm/2.0.1";
-            };
-            "node_modules/@mdx-js/loader/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/@mdx-js/loader/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/@mdx-js/loader/node_modules/micromark-extension-mdx-expression" = {
               key = "micromark-extension-mdx-expression/3.0.0";
@@ -14184,6 +14673,9 @@
               dev = true;
               key = "arraybuffer.prototype.slice/1.0.2";
             };
+            "node_modules/assert" = {
+              key = "assert/2.1.0";
+            };
             "node_modules/ast-types-flow" = {
               dev = true;
               key = "ast-types-flow/0.0.7";
@@ -14196,7 +14688,6 @@
               key = "asynciterator.prototype/1.0.0";
             };
             "node_modules/available-typed-arrays" = {
-              dev = true;
               key = "available-typed-arrays/1.0.5";
             };
             "node_modules/axe-core" = {
@@ -14234,8 +14725,7 @@
               key = "busboy/1.6.0";
             };
             "node_modules/call-bind" = {
-              dev = true;
-              key = "call-bind/1.0.2";
+              key = "call-bind/1.0.7";
             };
             "node_modules/callsites" = {
               key = "callsites/3.1.0";
@@ -14320,11 +14810,9 @@
               key = "deep-is/0.1.4";
             };
             "node_modules/define-data-property" = {
-              dev = true;
-              key = "define-data-property/1.1.0";
+              key = "define-data-property/1.1.4";
             };
             "node_modules/define-properties" = {
-              dev = true;
               key = "define-properties/1.2.1";
             };
             "node_modules/dequal" = {
@@ -14366,6 +14854,12 @@
             "node_modules/es-abstract" = {
               dev = true;
               key = "es-abstract/1.22.2";
+            };
+            "node_modules/es-define-property" = {
+              key = "es-define-property/1.0.0";
+            };
+            "node_modules/es-errors" = {
+              key = "es-errors/1.3.0";
             };
             "node_modules/es-iterator-helpers" = {
               dev = true;
@@ -14565,7 +15059,6 @@
               key = "flatted/3.2.7";
             };
             "node_modules/for-each" = {
-              dev = true;
               key = "for-each/0.3.3";
             };
             "node_modules/format" = {
@@ -14576,7 +15069,7 @@
               key = "fs.realpath/1.0.0";
             };
             "node_modules/function-bind" = {
-              key = "function-bind/1.1.1";
+              key = "function-bind/1.1.2";
             };
             "node_modules/function.prototype.name" = {
               dev = true;
@@ -14587,8 +15080,7 @@
               key = "functions-have-names/1.2.3";
             };
             "node_modules/get-intrinsic" = {
-              dev = true;
-              key = "get-intrinsic/1.2.1";
+              key = "get-intrinsic/1.2.4";
             };
             "node_modules/get-symbol-description" = {
               dev = true;
@@ -14625,7 +15117,6 @@
               key = "goober/2.1.13";
             };
             "node_modules/gopd" = {
-              dev = true;
               key = "gopd/1.0.1";
             };
             "node_modules/graceful-fs" = {
@@ -14646,23 +15137,28 @@
               key = "has-flag/4.0.0";
             };
             "node_modules/has-property-descriptors" = {
-              dev = true;
-              key = "has-property-descriptors/1.0.0";
+              key = "has-property-descriptors/1.0.2";
             };
             "node_modules/has-proto" = {
-              dev = true;
               key = "has-proto/1.0.1";
             };
             "node_modules/has-symbols" = {
-              dev = true;
               key = "has-symbols/1.0.3";
             };
             "node_modules/has-tostringtag" = {
-              dev = true;
               key = "has-tostringtag/1.0.0";
+            };
+            "node_modules/hasown" = {
+              key = "hasown/2.0.1";
             };
             "node_modules/hast" = {
               key = "hast/1.0.0";
+            };
+            "node_modules/hast-util-definition-list" = {
+              key = "hast-util-definition-list/2.0.0";
+            };
+            "node_modules/hast-util-embedded" = {
+              key = "hast-util-embedded/3.0.0";
             };
             "node_modules/hast-util-from-html" = {
               key = "hast-util-from-html/2.0.1";
@@ -14670,14 +15166,23 @@
             "node_modules/hast-util-from-parse5" = {
               key = "hast-util-from-parse5/8.0.1";
             };
+            "node_modules/hast-util-has-property" = {
+              key = "hast-util-has-property/3.0.0";
+            };
             "node_modules/hast-util-heading-rank" = {
               key = "hast-util-heading-rank/3.0.0";
+            };
+            "node_modules/hast-util-is-body-ok-link" = {
+              key = "hast-util-is-body-ok-link/3.0.0";
             };
             "node_modules/hast-util-is-element" = {
               key = "hast-util-is-element/3.0.0";
             };
             "node_modules/hast-util-parse-selector" = {
               key = "hast-util-parse-selector/4.0.0";
+            };
+            "node_modules/hast-util-phrasing" = {
+              key = "hast-util-phrasing/3.0.1";
             };
             "node_modules/hast-util-raw" = {
               key = "hast-util-raw/9.0.1";
@@ -14702,6 +15207,9 @@
             };
             "node_modules/hast-util-to-jsx-runtime" = {
               key = "hast-util-to-jsx-runtime/2.2.0";
+            };
+            "node_modules/hast-util-to-mdast" = {
+              key = "hast-util-to-mdast/10.1.0";
             };
             "node_modules/hast-util-to-parse5" = {
               key = "hast-util-to-parse5/8.0.0";
@@ -14746,7 +15254,6 @@
               key = "inflight/1.0.6";
             };
             "node_modules/inherits" = {
-              dev = true;
               key = "inherits/2.0.4";
             };
             "node_modules/inline-style-parser" = {
@@ -14761,6 +15268,9 @@
             };
             "node_modules/is-alphanumerical" = {
               key = "is-alphanumerical/2.0.1";
+            };
+            "node_modules/is-arguments" = {
+              key = "is-arguments/1.1.1";
             };
             "node_modules/is-array-buffer" = {
               dev = true;
@@ -14785,7 +15295,6 @@
               key = "is-buffer/2.0.5";
             };
             "node_modules/is-callable" = {
-              dev = true;
               key = "is-callable/1.2.7";
             };
             "node_modules/is-core-module" = {
@@ -14806,7 +15315,6 @@
               key = "is-finalizationregistry/1.0.2";
             };
             "node_modules/is-generator-function" = {
-              dev = true;
               key = "is-generator-function/1.0.10";
             };
             "node_modules/is-glob" = {
@@ -14818,6 +15326,9 @@
             "node_modules/is-map" = {
               dev = true;
               key = "is-map/2.0.2";
+            };
+            "node_modules/is-nan" = {
+              key = "is-nan/1.3.2";
             };
             "node_modules/is-negative-zero" = {
               dev = true;
@@ -14861,7 +15372,6 @@
               key = "is-symbol/1.0.4";
             };
             "node_modules/is-typed-array" = {
-              dev = true;
               key = "is-typed-array/1.1.12";
             };
             "node_modules/is-weakmap" = {
@@ -14975,6 +15485,9 @@
             "node_modules/mdast-squeeze-paragraphs" = {
               key = "mdast-squeeze-paragraphs/6.0.0";
             };
+            "node_modules/mdast-util-definition-list" = {
+              key = "mdast-util-definition-list/2.0.0";
+            };
             "node_modules/mdast-util-definitions" = {
               key = "mdast-util-definitions/5.1.2";
             };
@@ -15008,12 +15521,6 @@
             "node_modules/mdast-util-frontmatter/node_modules/escape-string-regexp" = {
               key = "escape-string-regexp/5.0.0";
             };
-            "node_modules/mdast-util-frontmatter/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-frontmatter/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
-            };
             "node_modules/mdast-util-gfm" = {
               key = "mdast-util-gfm/3.0.0";
             };
@@ -15023,44 +15530,14 @@
             "node_modules/mdast-util-gfm-footnote" = {
               key = "mdast-util-gfm-footnote/2.0.0";
             };
-            "node_modules/mdast-util-gfm-footnote/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-gfm-footnote/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
-            };
             "node_modules/mdast-util-gfm-strikethrough" = {
               key = "mdast-util-gfm-strikethrough/2.0.0";
-            };
-            "node_modules/mdast-util-gfm-strikethrough/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-gfm-strikethrough/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/mdast-util-gfm-table" = {
               key = "mdast-util-gfm-table/2.0.0";
             };
-            "node_modules/mdast-util-gfm-table/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-gfm-table/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
-            };
             "node_modules/mdast-util-gfm-task-list-item" = {
               key = "mdast-util-gfm-task-list-item/2.0.0";
-            };
-            "node_modules/mdast-util-gfm-task-list-item/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-gfm-task-list-item/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
-            };
-            "node_modules/mdast-util-gfm/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/mdast-util-gfm/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/mdast-util-mdx" = {
               key = "mdast-util-mdx/2.0.1";
@@ -15079,6 +15556,12 @@
             };
             "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/3.0.1";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/1.5.0";
             };
             "node_modules/mdast-util-mdx-expression/node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/3.2.0";
@@ -15146,8 +15629,17 @@
             "node_modules/mdast-util-mdx-expression/node_modules/micromark-util-types" = {
               key = "micromark-util-types/1.1.0";
             };
+            "node_modules/mdast-util-mdx-expression/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
             "node_modules/mdast-util-mdx-expression/node_modules/unist-util-stringify-position" = {
               key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-mdx-expression/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
             };
             "node_modules/mdast-util-mdx-jsx" = {
               key = "mdast-util-mdx-jsx/2.1.4";
@@ -15163,6 +15655,12 @@
             };
             "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/3.0.1";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/1.5.0";
             };
             "node_modules/mdast-util-mdx-jsx/node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/3.2.0";
@@ -15230,8 +15728,17 @@
             "node_modules/mdast-util-mdx-jsx/node_modules/micromark-util-types" = {
               key = "micromark-util-types/1.1.0";
             };
+            "node_modules/mdast-util-mdx-jsx/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
             "node_modules/mdast-util-mdx-jsx/node_modules/unist-util-stringify-position" = {
               key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-mdx-jsx/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
             };
             "node_modules/mdast-util-mdx-jsx/node_modules/vfile-message" = {
               key = "vfile-message/3.1.4";
@@ -15244,6 +15751,12 @@
             };
             "node_modules/mdast-util-mdx/node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdx/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/3.0.1";
+            };
+            "node_modules/mdast-util-mdx/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/1.5.0";
             };
             "node_modules/mdast-util-mdx/node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/3.2.0";
@@ -15311,8 +15824,17 @@
             "node_modules/mdast-util-mdx/node_modules/micromark-util-types" = {
               key = "micromark-util-types/1.1.0";
             };
+            "node_modules/mdast-util-mdx/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
             "node_modules/mdast-util-mdx/node_modules/unist-util-stringify-position" = {
               key = "unist-util-stringify-position/3.0.3";
+            };
+            "node_modules/mdast-util-mdx/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-mdx/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
             };
             "node_modules/mdast-util-mdxjs-esm" = {
               key = "mdast-util-mdxjs-esm/1.3.1";
@@ -15328,6 +15850,12 @@
             };
             "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-from-markdown" = {
               key = "mdast-util-from-markdown/1.3.1";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-phrasing" = {
+              key = "mdast-util-phrasing/3.0.1";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-to-markdown" = {
+              key = "mdast-util-to-markdown/1.5.0";
             };
             "node_modules/mdast-util-mdxjs-esm/node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/3.2.0";
@@ -15395,59 +15923,26 @@
             "node_modules/mdast-util-mdxjs-esm/node_modules/micromark-util-types" = {
               key = "micromark-util-types/1.1.0";
             };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/unist-util-is" = {
+              key = "unist-util-is/5.2.1";
+            };
             "node_modules/mdast-util-mdxjs-esm/node_modules/unist-util-stringify-position" = {
               key = "unist-util-stringify-position/3.0.3";
             };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/unist-util-visit" = {
+              key = "unist-util-visit/4.1.2";
+            };
+            "node_modules/mdast-util-mdxjs-esm/node_modules/unist-util-visit-parents" = {
+              key = "unist-util-visit-parents/5.1.3";
+            };
             "node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/3.0.1";
-            };
-            "node_modules/mdast-util-phrasing/node_modules/@types/mdast" = {
-              key = "@types/mdast/3.0.15";
-            };
-            "node_modules/mdast-util-phrasing/node_modules/@types/unist" = {
-              key = "@types/unist/2.0.10";
-            };
-            "node_modules/mdast-util-phrasing/node_modules/unist-util-is" = {
-              key = "unist-util-is/5.2.1";
+              key = "mdast-util-phrasing/4.1.0";
             };
             "node_modules/mdast-util-to-hast" = {
               key = "mdast-util-to-hast/13.0.2";
             };
             "node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/1.5.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/@types/mdast" = {
-              key = "@types/mdast/3.0.15";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/@types/unist" = {
-              key = "@types/unist/2.0.10";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/mdast-util-to-string" = {
-              key = "mdast-util-to-string/3.2.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-character" = {
-              key = "micromark-util-character/1.2.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-decode-numeric-character-reference" = {
-              key = "micromark-util-decode-numeric-character-reference/1.1.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-decode-string" = {
-              key = "micromark-util-decode-string/1.1.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-symbol" = {
-              key = "micromark-util-symbol/1.1.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/micromark-util-types" = {
-              key = "micromark-util-types/1.1.0";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/unist-util-is" = {
-              key = "unist-util-is/5.2.1";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/unist-util-visit" = {
-              key = "unist-util-visit/4.1.2";
-            };
-            "node_modules/mdast-util-to-markdown/node_modules/unist-util-visit-parents" = {
-              key = "unist-util-visit-parents/5.1.3";
+              key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/mdast-util-to-string" = {
               key = "mdast-util-to-string/4.0.0";
@@ -15463,6 +15958,9 @@
             };
             "node_modules/micromark-core-commonmark" = {
               key = "micromark-core-commonmark/2.0.0";
+            };
+            "node_modules/micromark-extension-definition-list" = {
+              key = "micromark-extension-definition-list/2.0.0";
             };
             "node_modules/micromark-extension-frontmatter" = {
               key = "micromark-extension-frontmatter/2.0.0";
@@ -15776,12 +16274,13 @@
               dev = true;
               key = "object-inspect/1.12.3";
             };
+            "node_modules/object-is" = {
+              key = "object-is/1.1.6";
+            };
             "node_modules/object-keys" = {
-              dev = true;
               key = "object-keys/1.1.1";
             };
             "node_modules/object.assign" = {
-              dev = true;
               key = "object.assign/4.1.4";
             };
             "node_modules/object.entries" = {
@@ -15934,6 +16433,9 @@
             "node_modules/rehype-highlight" = {
               key = "rehype-highlight/7.0.0";
             };
+            "node_modules/rehype-minify-whitespace" = {
+              key = "rehype-minify-whitespace/6.0.0";
+            };
             "node_modules/rehype-parse" = {
               key = "rehype-parse/9.0.0";
             };
@@ -15945,6 +16447,9 @@
             };
             "node_modules/rehype-stringify" = {
               key = "rehype-stringify/10.0.0";
+            };
+            "node_modules/remark-definition-list" = {
+              key = "remark-definition-list/2.0.0";
             };
             "node_modules/remark-frontmatter" = {
               key = "remark-frontmatter/5.0.0";
@@ -15975,12 +16480,6 @@
             };
             "node_modules/remark-stringify" = {
               key = "remark-stringify/11.0.0";
-            };
-            "node_modules/remark-stringify/node_modules/mdast-util-phrasing" = {
-              key = "mdast-util-phrasing/4.0.0";
-            };
-            "node_modules/remark-stringify/node_modules/mdast-util-to-markdown" = {
-              key = "mdast-util-to-markdown/2.1.0";
             };
             "node_modules/remark-unlink" = {
               key = "remark-unlink/5.0.0";
@@ -16034,6 +16533,9 @@
             };
             "node_modules/serialize-javascript" = {
               key = "serialize-javascript/6.0.1";
+            };
+            "node_modules/set-function-length" = {
+              key = "set-function-length/1.2.1";
             };
             "node_modules/set-function-name" = {
               dev = true;
@@ -16142,12 +16644,18 @@
             "node_modules/trim-lines" = {
               key = "trim-lines/3.0.1";
             };
+            "node_modules/trim-trailing-lines" = {
+              key = "trim-trailing-lines/2.1.0";
+            };
             "node_modules/trough" = {
               key = "trough/2.1.0";
             };
             "node_modules/ts-api-utils" = {
               dev = true;
               key = "ts-api-utils/1.0.3";
+            };
+            "node_modules/ts-dedent" = {
+              key = "ts-dedent/2.2.0";
             };
             "node_modules/tsconfig-paths" = {
               dev = true;
@@ -16187,6 +16695,9 @@
             };
             "node_modules/unified" = {
               key = "unified/11.0.4";
+            };
+            "node_modules/unist-builder" = {
+              key = "unist-builder/4.0.0";
             };
             "node_modules/unist-util-find-after" = {
               key = "unist-util-find-after/5.0.0";
@@ -16239,6 +16750,9 @@
             "node_modules/usehooks-ts" = {
               key = "usehooks-ts/2.9.1";
             };
+            "node_modules/util" = {
+              key = "util/0.12.5";
+            };
             "node_modules/uvu" = {
               key = "uvu/0.5.6";
             };
@@ -16289,7 +16803,6 @@
               key = "which-collection/1.0.1";
             };
             "node_modules/which-typed-array" = {
-              dev = true;
               key = "which-typed-array/1.1.11";
             };
             "node_modules/wrappy" = {
@@ -16372,6 +16885,30 @@
           version = "1.12.3";
         };
       };
+      object-is = {
+        "1.1.6" = {
+          depInfo = {
+            call-bind = {
+              descriptor = "^1.0.7";
+              pin = "1.0.7";
+              runtime = true;
+            };
+            define-properties = {
+              descriptor = "^1.2.1";
+              pin = "1.2.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-6p61zD7Zblb6T4E7aOHm6FGskp5uo1Eloua4Zod//ec=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/object-is/-/object-is-1.1.6.tgz";
+          };
+          ident = "object-is";
+          ltype = "file";
+          version = "1.1.6";
+        };
+      };
       object-keys = {
         "1.1.1" = {
           fetchInfo = {
@@ -16390,7 +16927,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -16424,7 +16961,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -16453,7 +16990,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -16482,7 +17019,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -16497,7 +17034,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
           };
@@ -16540,7 +17077,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -17373,7 +17910,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -17388,7 +17925,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             globalthis = {
@@ -17430,7 +17967,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -17571,6 +18108,45 @@
           version = "7.0.0";
         };
       };
+      rehype-minify-whitespace = {
+        "6.0.0" = {
+          depInfo = {
+            "@types/hast" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.1";
+              runtime = true;
+            };
+            hast-util-embedded = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-is-element = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            hast-util-whitespace = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            unist-util-is = {
+              descriptor = "^6.0.0";
+              pin = "6.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-8+vzJwYW5xsvC5DeyvaZwuCv5m15kbJ3tQKlZjLapbM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/rehype-minify-whitespace/-/rehype-minify-whitespace-6.0.0.tgz";
+          };
+          ident = "rehype-minify-whitespace";
+          ltype = "file";
+          version = "6.0.0";
+        };
+      };
       rehype-parse = {
         "9.0.0" = {
           depInfo = {
@@ -17666,6 +18242,35 @@
           ident = "rehype-stringify";
           ltype = "file";
           version = "10.0.0";
+        };
+      };
+      remark-definition-list = {
+        "2.0.0" = {
+          depInfo = {
+            hast-util-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-extension-definition-list = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-pYhk1fbbx27nNpbI00LdvHRiQpWNeEBBwqueKOeM7aQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-definition-list/-/remark-definition-list-2.0.0.tgz";
+          };
+          ident = "remark-definition-list";
+          ltype = "file";
+          version = "2.0.0";
         };
       };
       remark-frontmatter = {
@@ -18178,12 +18783,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             has-symbols = {
@@ -18225,12 +18830,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.1.3";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             is-regex = {
@@ -18385,12 +18990,56 @@
           version = "6.0.1";
         };
       };
+      set-function-length = {
+        "1.2.1" = {
+          depInfo = {
+            define-data-property = {
+              descriptor = "^1.1.2";
+              pin = "1.1.4";
+              runtime = true;
+            };
+            es-errors = {
+              descriptor = "^1.3.0";
+              pin = "1.3.0";
+              runtime = true;
+            };
+            function-bind = {
+              descriptor = "^1.1.2";
+              pin = "1.1.2";
+              runtime = true;
+            };
+            get-intrinsic = {
+              descriptor = "^1.2.3";
+              pin = "1.2.4";
+              runtime = true;
+            };
+            gopd = {
+              descriptor = "^1.0.1";
+              pin = "1.0.1";
+              runtime = true;
+            };
+            has-property-descriptors = {
+              descriptor = "^1.0.1";
+              pin = "1.0.2";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-5lrHL1uC0VHP4d0I0T0vkvAssovAOk1rL0nz9eTDqyY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/set-function-length/-/set-function-length-1.2.1.tgz";
+          };
+          ident = "set-function-length";
+          ltype = "file";
+          version = "1.2.1";
+        };
+      };
       set-function-name = {
         "2.0.1" = {
           depInfo = {
             define-data-property = {
               descriptor = "^1.0.1";
-              pin = "1.1.0";
+              pin = "1.1.4";
               runtime = true;
             };
             functions-have-names = {
@@ -18400,7 +19049,7 @@
             };
             has-property-descriptors = {
               descriptor = "^1.0.0";
-              pin = "1.0.0";
+              pin = "1.0.2";
               runtime = true;
             };
           };
@@ -18451,12 +19100,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.0";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.0.2";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             object-inspect = {
@@ -18591,7 +19240,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -18606,7 +19255,7 @@
             };
             get-intrinsic = {
               descriptor = "^1.1.3";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             has-symbols = {
@@ -18645,7 +19294,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -18674,7 +19323,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -18703,7 +19352,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             define-properties = {
@@ -19092,6 +19741,19 @@
           version = "3.0.1";
         };
       };
+      trim-trailing-lines = {
+        "2.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-w3xG6L6smqhwdlEQVowUvgVJoB4nsdR86GR0JfjB0mM=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/trim-trailing-lines/-/trim-trailing-lines-2.1.0.tgz";
+          };
+          ident = "trim-trailing-lines";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.1.0";
+        };
+      };
       trough = {
         "2.1.0" = {
           fetchInfo = {
@@ -19121,6 +19783,19 @@
           };
           treeInfo = { };
           version = "1.0.3";
+        };
+      };
+      ts-dedent = {
+        "2.2.0" = {
+          fetchInfo = {
+            narHash = "sha256-WwHgjnPdahFvoulsWemKuHeBPdv+4OvSz0J8prf7XgQ=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/ts-dedent/-/ts-dedent-2.2.0.tgz";
+          };
+          ident = "ts-dedent";
+          ltype = "file";
+          treeInfo = { };
+          version = "2.2.0";
         };
       };
       tsconfig-paths = {
@@ -19207,12 +19882,12 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             get-intrinsic = {
               descriptor = "^1.2.1";
-              pin = "1.2.1";
+              pin = "1.2.4";
               runtime = true;
             };
             is-typed-array = {
@@ -19236,7 +19911,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             for-each = {
@@ -19275,7 +19950,7 @@
             };
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             for-each = {
@@ -19309,7 +19984,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             for-each = {
@@ -19357,7 +20032,7 @@
           depInfo = {
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             has-bigints = {
@@ -19480,6 +20155,25 @@
           ident = "unified";
           ltype = "file";
           version = "11.0.4";
+        };
+      };
+      unist-builder = {
+        "4.0.0" = {
+          depInfo = {
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-97PL29bX4VXP+K9zU39xw5pXwxjW8rPutIoqfNPWqqk=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/unist-builder/-/unist-builder-4.0.0.tgz";
+          };
+          ident = "unist-builder";
+          ltype = "file";
+          version = "4.0.0";
         };
       };
       unist-util-find-after = {
@@ -19928,6 +20622,45 @@
           };
           treeInfo = { };
           version = "2.9.1";
+        };
+      };
+      util = {
+        "0.12.5" = {
+          depInfo = {
+            inherits = {
+              descriptor = "^2.0.3";
+              pin = "2.0.4";
+              runtime = true;
+            };
+            is-arguments = {
+              descriptor = "^1.0.4";
+              pin = "1.1.1";
+              runtime = true;
+            };
+            is-generator-function = {
+              descriptor = "^1.0.7";
+              pin = "1.0.10";
+              runtime = true;
+            };
+            is-typed-array = {
+              descriptor = "^1.1.3";
+              pin = "1.1.12";
+              runtime = true;
+            };
+            which-typed-array = {
+              descriptor = "^1.1.2";
+              pin = "1.1.11";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-JnT1T9zsNRe31xMo4eDxTv4nsYX1TX3Cp99WrGnPVA8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/util/-/util-0.12.5.tgz";
+          };
+          ident = "util";
+          ltype = "file";
+          version = "0.12.5";
         };
       };
       uvu = {
@@ -20505,7 +21238,7 @@
             };
             call-bind = {
               descriptor = "^1.0.2";
-              pin = "1.0.2";
+              pin = "1.0.7";
               runtime = true;
             };
             for-each = {

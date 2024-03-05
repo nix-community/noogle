@@ -38,6 +38,20 @@ table th{
 
 
 
+dt {
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  /* color: ; */
+}
+dt::after {
+  margin: 0.4rem;
+  content: "";
+}
+
+
 * {
   box-sizing: border-box;
 }
