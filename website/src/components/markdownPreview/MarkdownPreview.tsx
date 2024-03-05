@@ -7,6 +7,10 @@ import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import { HighlightBaseline } from "../HighlightBaseline";
+import {
+  remarkDefinitionList,
+  defListHastHandlers,
+} from "remark-definition-list";
 
 interface MarkdownPreviewProps {
   description: string;
@@ -33,6 +37,12 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
           h2: "h4",
           h3: "h5",
           h4: "h6",
+        }}
+        remarkPlugins={[remarkDefinitionList]}
+        remarkRehypeOptions={{
+          handlers: {
+            ...defListHastHandlers,
+          },
         }}
         rehypePlugins={[
           [

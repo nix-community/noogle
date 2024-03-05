@@ -15,6 +15,12 @@ import remarkHeadingId from "remark-heading-id";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import remarkUnlink from "remark-unlink";
+import {
+  remarkDefinitionList,
+  defListHastHandlers,
+} from "remark-definition-list";
+
+// import remarkDirective from "remark-directive";
 
 import { unified } from "unified";
 import { rehypeExtractExcerpt } from "./excerpt";
@@ -174,6 +180,11 @@ export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
     [rehypeSlug, {}],
     [rehypeAutolinkHeadings, { behavior: "wrap" }],
   ],
-  remarkPlugins: [remarkHeadingId, remarkUnlink],
+  remarkPlugins: [remarkHeadingId, remarkDefinitionList, remarkUnlink],
   format: "md",
+  remarkRehypeOptions: {
+    handlers: {
+      ...(defListHastHandlers as {}),
+    },
+  },
 } as SerializeOptions["mdxOptions"];

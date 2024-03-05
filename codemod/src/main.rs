@@ -263,7 +263,7 @@ fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
     if let Some(Expr::Lambda(l)) = doc_expr {
         let args = collect_lambda_args(l);
         let mut docs = String::new();
-        for arg in args {
+        for (pos, arg) in args.iter().enumerate() {
             match arg {
                 Argument::Flat(single_arg) => {
                     docs.push_str(&format!(
@@ -273,9 +273,9 @@ fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
                             &single_arg
                                 .clone()
                                 .doc
-                                .unwrap_or(String::from("Function argument"))
+                                .unwrap_or(format!("{}\\. Function argument", pos + 1))
                         )
-                        .unwrap_or(String::from("Function argument")),
+                        .unwrap_or(format!("{}\\. Function argument", pos + 1)),
                     ));
                 }
                 Argument::Pattern(_pattern) => (),
@@ -285,21 +285,6 @@ fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
     }
     return argument_docs;
 }
-
-/// Takes care of markdown list indentation
-/// Dont indent the first line
-/// indent the second line, by the parent level to continue the list.
-// fn indent_list_item_content(body: &str, indent: &str) -> String {
-//     let mut res = String::from("");
-//     for (line_nr, line) in body.lines().enumerate() {
-//         if line_nr > 0 {
-//             res.push_str(&format!("{}  {}\n", indent, line.trim()));
-//         } else {
-//             res.push_str(&format!("{}", line.trim()))
-//         }
-//     }
-//     res
-// }
 
 fn format_comment(text: &str, token: &SyntaxToken) -> String {
     let content = text.strip_prefix("/*").unwrap().strip_suffix("*/").unwrap();
