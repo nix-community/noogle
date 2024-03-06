@@ -37,20 +37,141 @@ table th{
 }
 
 
+.caution, .important, .note, .tip, .warning, .example {
+  background-color: #f9f9f9;
+  padding: 10px 15px; /* Top and bottom padding of 10px, left and right padding of 15px */
+  margin: 15px 0; /* Vertical margins to separate the note from surrounding content */
+  font-style: italic; /* Italic font style to indicate note text */
+  color: #333; /* Dark grey color for the text for readability */
+  font-family: Arial, sans-serif; /* A clean, readable font */
+  border-radius: 4px; /* Slightly rounded corners for a modern look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-left: 5px solid; /* Solid left border for distinction */
+}
+@media (prefers-color-scheme: dark) {
+  .caution, .important, .note, .tip, .warning, .example {
+    background-color: #2c2c2c; /* Darker background for dark mode */
+    color: #ccc; /* Lighter text color for readability */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Lighter shadow for depth */
+  }
+}
+
+.caution::before, .important::before, .note::before, .tip::before, .warning::before, .example::before {
+  font-weight: bold; /* Make the "Note: " prefix bold */
+}
+
+
+
+.note::before {
+  content: "Note";
+  color: #007bff; 
+}
+.note {
+  border-left-color: #007bff; 
+}
+@media (prefers-color-scheme: dark) {
+  .note::before {
+    color: #4a9eff;
+  }
+  .note {
+    border-left-color: #4a9eff;
+  }
+}
+
+.example::before{
+  content: "Example";
+  color: #17a2b8;
+}
+.example {
+  border-left-color: #17a2b8;
+}
+@media (prefers-color-scheme: dark) {
+  .example::before {
+    color: #9de1fe;
+  }
+  .example {
+    border-left-color: #9de1fe;
+  }
+}
+
+.warning::before{
+  content: "Warning";
+  color: #ffc107; 
+}
+.warning {
+  border-left-color: #ffc107;
+}
+@media (prefers-color-scheme: dark) {
+  .warning::before {
+    color: #ffeeba;
+  }
+  .warning {
+    border-left-color: #ffeeba;
+  }
+}
+
+.caution::before{
+  content: "Caution";
+  color: #d39e00; 
+}
+.caution {
+  border-left-color: #d39e00;
+}
+@media (prefers-color-scheme: dark) {
+  .caution::before {
+    color: #ffd966;
+  }
+  .caution {
+    border-left-color: #ffd966;
+  }
+}
+
+.important::before{
+  content: "Important";
+  color: #dc3545; 
+}
+.important {
+  border-left-color: #dc3545;
+}
+@media (prefers-color-scheme: dark) {
+  .important::before {
+    color: #f5c6cb;
+  }
+  .important {
+    border-left-color: #f5c6cb;
+  }
+}
+
+.tip::before{
+  content: "Tip";
+  color: #28a745; 
+}
+.tip {
+  border-left-color: #28a745;
+}
+@media (prefers-color-scheme: dark) {
+  .tip::before {
+    color: #73c476;
+  }
+  .tip {
+    border-left-color: #73c476;
+  }
+}
+
+
+a[data-autolinked] {
+  text-decoration: none;
+  color: inherit;
+}
+a[data-autolinked]::after {
+  content: " #"; 
+  font-size: smaller; 
+  font-weight: lighter;
+}
 
 dt {
-  float: left;
-  clear: left;
-  width: 100px;
-  text-align: right;
   font-weight: bold;
-  /* color: ; */
 }
-dt::after {
-  margin: 0.4rem;
-  content: "";
-}
-
 
 * {
   box-sizing: border-box;

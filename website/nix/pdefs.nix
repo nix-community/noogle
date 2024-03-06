@@ -1712,16 +1712,16 @@
           treeInfo = { };
           version = "13.5.6";
         };
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-ek4Om3Y3BOkIV3SWNCIyObHTfreim7liNDDEfJuLf3E=";
+            narHash = "sha256-fQmIkH+++s+UMnU0kMzinBkPAidFAZQ5E03B6wCDMXg=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/env/-/env-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/env/-/env-14.1.2.tgz";
           };
           ident = "@next/env";
           ltype = "file";
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/eslint-plugin-next" = {
@@ -1773,11 +1773,11 @@
         };
       };
       "@next/swc-darwin-arm64" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-Sr4QnFjmaWO+V74I9w8xJJSgxjMbcrhjBXzih3dKUng=";
+            narHash = "sha256-mnItYbLOOvrpPuLHuSwKsZyeYaOmGSMRl7hSK1T4mqw=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.1.2.tgz";
           };
           ident = "@next/swc-darwin-arm64";
           ltype = "file";
@@ -1790,15 +1790,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-darwin-x64" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-xjHt9wejiXRPxYP+GxGXYrxF3QmZ16eRbcrMTleMq6o=";
+            narHash = "sha256-2JoouS2KHkfdIF5DoZfnGo56Iv1lqDzt8sjDyaoOWY8=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.1.2.tgz";
           };
           ident = "@next/swc-darwin-x64";
           ltype = "file";
@@ -1811,15 +1811,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-linux-arm64-gnu" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-tOhQcwJwsmdOeOxo4mXzGd5puh0w9GY0AH+PkPZ3aqw=";
+            narHash = "sha256-WOWlJ37NAwtGVJFF67kzMEwDe4ABhJZBfw0d+6oh6T8=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-14.1.2.tgz";
           };
           ident = "@next/swc-linux-arm64-gnu";
           ltype = "file";
@@ -1832,15 +1832,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-linux-arm64-musl" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-y25pXcg+OnSEyj7D517ZNGlq3luHqjRqIhZ093+kGwU=";
+            narHash = "sha256-Z082DIeUVN5InCyMErEpvVx9vjxs7PPmqNmmQJc3uXE=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-14.1.2.tgz";
           };
           ident = "@next/swc-linux-arm64-musl";
           ltype = "file";
@@ -1853,15 +1853,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-linux-x64-gnu" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-dUTPPjzGKPN7Z/KVjaIc3rDN4FZ+oY1BUPGpX2AACWo=";
+            narHash = "sha256-/2HUy3pD34yB1bp/mfUjNQ3rVVt9r3+ywRFc0Mp4XP0=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.1.2.tgz";
           };
           ident = "@next/swc-linux-x64-gnu";
           ltype = "file";
@@ -1874,15 +1874,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-linux-x64-musl" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-BkgsaiTrIsjCDp3RoTpB6nhUoZoZMH/LcoGZ50OTPDs=";
+            narHash = "sha256-mpfrE7lE2bvHIb1jiI/SdcPppE4iFvYbj7j1Q78uXcA=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.1.2.tgz";
           };
           ident = "@next/swc-linux-x64-musl";
           ltype = "file";
@@ -1895,15 +1895,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-win32-arm64-msvc" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-drbw0ZbEfkx6RpoPMLe3u5dqk5u6qnMG1FBVAkYATY8=";
+            narHash = "sha256-/USec636PYHmU+41fIk1YIiOJXFK6bmYQyzVfhb9ADA=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-14.1.2.tgz";
           };
           ident = "@next/swc-win32-arm64-msvc";
           ltype = "file";
@@ -1916,15 +1916,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-win32-ia32-msvc" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-Hd6yfuK8Ugej5GJ5eMdSa4IvWSOd/abGoF2kHCK/S+M=";
+            narHash = "sha256-PJduNAZhWhgsaVHsjMmRgnTCm9F7NpaOuwYTdaA5f2E=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.1.2.tgz";
           };
           ident = "@next/swc-win32-ia32-msvc";
           ltype = "file";
@@ -1937,15 +1937,15 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@next/swc-win32-x64-msvc" = {
-        "14.0.3" = {
+        "14.1.2" = {
           fetchInfo = {
-            narHash = "sha256-S+4Q8vZ5E3a5U0k8YvJvJN71k+VUy11TVgWW7SY2u6I=";
+            narHash = "sha256-ratBlxIPkRBcUhPs+CywPgI8SE/gAohUuH7cbOCTfaQ=";
             type = "tarball";
-            url = "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.3.tgz";
+            url = "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.1.2.tgz";
           };
           ident = "@next/swc-win32-x64-msvc";
           ltype = "file";
@@ -1958,7 +1958,7 @@
             ];
           };
           treeInfo = { };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       "@nodelib/fs.scandir" = {
@@ -4105,7 +4105,7 @@
           depInfo = {
             caniuse-lite = {
               descriptor = "^1.0.30001565";
-              pin = "1.0.30001566";
+              pin = "1.0.30001594";
               runtime = true;
             };
             electron-to-chromium = {
@@ -4219,16 +4219,16 @@
         };
       };
       caniuse-lite = {
-        "1.0.30001566" = {
+        "1.0.30001594" = {
           fetchInfo = {
-            narHash = "sha256-bDfkT255+HIToCugIDcT9Ht0uCUGI2PkYuMv7TrTnNc=";
+            narHash = "sha256-aOQfum52lC+Us1bxbr8FG73YdELL62WUMJfyfzRO7dA=";
             type = "tarball";
-            url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001566.tgz";
+            url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001594.tgz";
           };
           ident = "caniuse-lite";
           ltype = "file";
           treeInfo = { };
-          version = "1.0.30001566";
+          version = "1.0.30001594";
         };
       };
       ccount = {
@@ -9773,6 +9773,60 @@
           version = "5.1.2";
         };
       };
+      mdast-util-directive = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            "@types/unist" = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            mdast-util-from-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            mdast-util-to-markdown = {
+              descriptor = "^2.0.0";
+              pin = "2.1.0";
+              runtime = true;
+            };
+            parse-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            stringify-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.3";
+              runtime = true;
+            };
+            unist-util-visit-parents = {
+              descriptor = "^6.0.0";
+              pin = "6.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-QHyKFbhNMiK7VjpvReW4uQA0NBiO+OFxpbwr77Lx+Ws=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/mdast-util-directive/-/mdast-util-directive-3.0.0.tgz";
+          };
+          ident = "mdast-util-directive";
+          ltype = "file";
+          version = "3.0.0";
+        };
+      };
       mdast-util-find-and-replace = {
         "3.0.1" = {
           depInfo = {
@@ -11369,6 +11423,55 @@
           ident = "micromark-extension-definition-list";
           ltype = "file";
           version = "2.0.0";
+        };
+      };
+      micromark-extension-directive = {
+        "3.0.0" = {
+          depInfo = {
+            devlop = {
+              descriptor = "^1.0.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+            micromark-factory-space = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-factory-whitespace = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-character = {
+              descriptor = "^2.0.0";
+              pin = "2.0.1";
+              runtime = true;
+            };
+            micromark-util-symbol = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            micromark-util-types = {
+              descriptor = "^2.0.0";
+              pin = "2.0.0";
+              runtime = true;
+            };
+            parse-entities = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-aJPDjit55h/Z2LIvmDxuqaoPLAhI+BlHPgAT0lwPsMs=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/micromark-extension-directive/-/micromark-extension-directive-3.0.0.tgz";
+          };
+          ident = "micromark-extension-directive";
+          ltype = "file";
+          version = "3.0.0";
         };
       };
       micromark-extension-frontmatter = {
@@ -13438,7 +13541,7 @@
         };
       };
       next = {
-        "14.0.3" = {
+        "14.1.2" = {
           binInfo = {
             binPairs = {
               next = "dist/bin/next";
@@ -13446,62 +13549,62 @@
           };
           depInfo = {
             "@next/env" = {
-              descriptor = "14.0.3";
-              pin = "14.0.3";
+              descriptor = "14.1.2";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-darwin-arm64" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-darwin-x64" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-linux-arm64-gnu" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-linux-arm64-musl" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-linux-x64-gnu" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-linux-x64-musl" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-win32-arm64-msvc" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-win32-ia32-msvc" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@next/swc-win32-x64-msvc" = {
-              descriptor = "14.0.3";
+              descriptor = "14.1.2";
               optional = true;
-              pin = "14.0.3";
+              pin = "14.1.2";
               runtime = true;
             };
             "@swc/helpers" = {
@@ -13515,8 +13618,13 @@
               runtime = true;
             };
             caniuse-lite = {
-              descriptor = "^1.0.30001406";
-              pin = "1.0.30001566";
+              descriptor = "^1.0.30001579";
+              pin = "1.0.30001594";
+              runtime = true;
+            };
+            graceful-fs = {
+              descriptor = "^4.2.11";
+              pin = "4.2.11";
               runtime = true;
             };
             postcss = {
@@ -13529,16 +13637,11 @@
               pin = "5.1.1";
               runtime = true;
             };
-            watchpack = {
-              descriptor = "2.4.0";
-              pin = "2.4.0";
-              runtime = true;
-            };
           };
           fetchInfo = {
-            narHash = "sha256-RkR/xWxox5r0fScsjEboCN2xuNxpzOmImGwm7C4cZHs=";
+            narHash = "sha256-qA5qMEkMkD4i5HxhURCt5E1OYQTb9LCmEwjyiycHZaA=";
             type = "tarball";
-            url = "https://registry.npmjs.org/next/-/next-14.0.3.tgz";
+            url = "https://registry.npmjs.org/next/-/next-14.1.2.tgz";
           };
           ident = "next";
           ltype = "file";
@@ -13558,7 +13661,7 @@
               optional = true;
             };
           };
-          version = "14.0.3";
+          version = "14.1.2";
         };
       };
       next-mdx-remote = {
@@ -13786,8 +13889,8 @@
               runtime = true;
             };
             next = {
-              descriptor = "^14.0.3";
-              pin = "14.0.3";
+              descriptor = "^14.1.2";
+              pin = "14.1.2";
               runtime = true;
             };
             next-mdx-remote = {
@@ -13878,6 +13981,11 @@
             remark-definition-list = {
               descriptor = "^2.0.0";
               pin = "2.0.0";
+              runtime = true;
+            };
+            remark-directive = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
               runtime = true;
             };
             remark-frontmatter = {
@@ -14333,7 +14441,7 @@
               key = "react-is/18.2.0";
             };
             "node_modules/@next/env" = {
-              key = "@next/env/14.0.3";
+              key = "@next/env/14.1.2";
             };
             "node_modules/@next/eslint-plugin-next" = {
               dev = true;
@@ -14350,39 +14458,39 @@
               key = "source-map/0.7.4";
             };
             "node_modules/@next/swc-darwin-arm64" = {
-              key = "@next/swc-darwin-arm64/14.0.3";
+              key = "@next/swc-darwin-arm64/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-darwin-x64" = {
-              key = "@next/swc-darwin-x64/14.0.3";
+              key = "@next/swc-darwin-x64/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-linux-arm64-gnu" = {
-              key = "@next/swc-linux-arm64-gnu/14.0.3";
+              key = "@next/swc-linux-arm64-gnu/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-linux-arm64-musl" = {
-              key = "@next/swc-linux-arm64-musl/14.0.3";
+              key = "@next/swc-linux-arm64-musl/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-linux-x64-gnu" = {
-              key = "@next/swc-linux-x64-gnu/14.0.3";
+              key = "@next/swc-linux-x64-gnu/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-linux-x64-musl" = {
-              key = "@next/swc-linux-x64-musl/14.0.3";
+              key = "@next/swc-linux-x64-musl/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-win32-arm64-msvc" = {
-              key = "@next/swc-win32-arm64-msvc/14.0.3";
+              key = "@next/swc-win32-arm64-msvc/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-win32-ia32-msvc" = {
-              key = "@next/swc-win32-ia32-msvc/14.0.3";
+              key = "@next/swc-win32-ia32-msvc/14.1.2";
               optional = true;
             };
             "node_modules/@next/swc-win32-x64-msvc" = {
-              key = "@next/swc-win32-x64-msvc/14.0.3";
+              key = "@next/swc-win32-x64-msvc/14.1.2";
               optional = true;
             };
             "node_modules/@nodelib/fs.scandir" = {
@@ -14731,7 +14839,7 @@
               key = "callsites/3.1.0";
             };
             "node_modules/caniuse-lite" = {
-              key = "caniuse-lite/1.0.30001566";
+              key = "caniuse-lite/1.0.30001594";
             };
             "node_modules/ccount" = {
               key = "ccount/2.0.1";
@@ -15506,6 +15614,9 @@
             "node_modules/mdast-util-definitions/node_modules/unist-util-visit-parents" = {
               key = "unist-util-visit-parents/5.1.3";
             };
+            "node_modules/mdast-util-directive" = {
+              key = "mdast-util-directive/3.0.0";
+            };
             "node_modules/mdast-util-find-and-replace" = {
               key = "mdast-util-find-and-replace/3.0.1";
             };
@@ -15962,6 +16073,9 @@
             "node_modules/micromark-extension-definition-list" = {
               key = "micromark-extension-definition-list/2.0.0";
             };
+            "node_modules/micromark-extension-directive" = {
+              key = "micromark-extension-directive/3.0.0";
+            };
             "node_modules/micromark-extension-frontmatter" = {
               key = "micromark-extension-frontmatter/2.0.0";
             };
@@ -16235,7 +16349,7 @@
               key = "neo-async/2.6.2";
             };
             "node_modules/next" = {
-              key = "next/14.0.3";
+              key = "next/14.1.2";
             };
             "node_modules/next-mdx-remote" = {
               key = "next-mdx-remote/4.4.1";
@@ -16450,6 +16564,9 @@
             };
             "node_modules/remark-definition-list" = {
               key = "remark-definition-list/2.0.0";
+            };
+            "node_modules/remark-directive" = {
+              key = "remark-directive/3.0.0";
             };
             "node_modules/remark-frontmatter" = {
               key = "remark-frontmatter/5.0.0";
@@ -18271,6 +18388,40 @@
           ident = "remark-definition-list";
           ltype = "file";
           version = "2.0.0";
+        };
+      };
+      remark-directive = {
+        "3.0.0" = {
+          depInfo = {
+            "@types/mdast" = {
+              descriptor = "^4.0.0";
+              pin = "4.0.1";
+              runtime = true;
+            };
+            mdast-util-directive = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            micromark-extension-directive = {
+              descriptor = "^3.0.0";
+              pin = "3.0.0";
+              runtime = true;
+            };
+            unified = {
+              descriptor = "^11.0.0";
+              pin = "11.0.4";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+9d2J4GqkN7Jxq/GXgr6xPGcUlmGDj6JKyRcXwkIA7M=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/remark-directive/-/remark-directive-3.0.0.tgz";
+          };
+          ident = "remark-directive";
+          ltype = "file";
+          version = "3.0.0";
         };
       };
       remark-frontmatter = {

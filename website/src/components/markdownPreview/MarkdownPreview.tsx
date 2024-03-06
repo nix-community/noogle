@@ -11,6 +11,12 @@ import {
   remarkDefinitionList,
   defListHastHandlers,
 } from "remark-definition-list";
+import {
+  replaceComponents,
+  sanitizeDirectives,
+  styleDirectives,
+} from "@/plugins";
+import remarkDirective from "remark-directive";
 
 interface MarkdownPreviewProps {
   description: string;
@@ -38,7 +44,7 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
           h3: "h5",
           h4: "h6",
         }}
-        remarkPlugins={[remarkDefinitionList]}
+        remarkPlugins={[remarkDefinitionList, remarkDirective, styleDirectives]}
         remarkRehypeOptions={{
           handlers: {
             ...defListHastHandlers,
@@ -52,9 +58,10 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
               languages: { nix, haskell, bash, default: nix },
             },
           ],
+          replaceComponents,
         ]}
       >
-        {description}
+        {sanitizeDirectives(description)}
       </ReactMarkdown>
     </>
   );

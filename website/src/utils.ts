@@ -20,10 +20,15 @@ import {
   defListHastHandlers,
 } from "remark-definition-list";
 
-// import remarkDirective from "remark-directive";
+import remarkDirective from "remark-directive";
 
 import { unified } from "unified";
 import { rehypeExtractExcerpt } from "./excerpt";
+import {
+  replaceComponents,
+  sanitizeDirectives,
+  styleDirectives,
+} from "./plugins";
 
 /**
  * Function to generate a set from a path in lodash style
@@ -117,6 +122,34 @@ type Heading = {
   level: number;
   value: string;
   id: string;
+};
+
+export const parseMd = async (src: string) => {
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkHeadingId)
+    .use(remarkDefinitionList)
+    .use(remarkUnlink)
+    .use(remarkDirective)
+    .use(styleDirectives)
+    .use(remarkRehype, {
+      handlers: { ...(defListHastHandlers as {}) },
+    })
+    .use(rehypeHighlight, {
+      detect: true,
+      languages: { nix, haskell, bash, default: nix },
+    })
+    .use(rehypeSlug, {})
+    .use(rehypeAutolinkHeadings, {
+      behavior: "wrap",
+      properties: { "data-autolinked": true },
+    })
+    .use(replaceComponents)
+    .use(rehypeStringify)
+    .process(sanitizeDirectives(src));
+
+  // console.log({ result });
+  return result;
 };
 
 export const extractExcerpt = async (
