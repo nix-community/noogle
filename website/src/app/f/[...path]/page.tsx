@@ -3,9 +3,8 @@ import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
 import { Doc, data, manualLinks } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
-import { extractExcerpt, extractHeadings, mdxRenderOptions } from "@/utils";
+import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { findType, interpretType } from "@/models/nix";
 import { FilterProvider } from "@/components/layout/filterContext";
 import React, { Suspense } from "react";
@@ -90,57 +89,11 @@ const Toc = async (props: TocProps) => {
   );
 };
 
-// TODO: figure out why this causes hydration errors
-const MDX = ({ source }: { source: string }) => (
-  <MDXRemote
-    options={{
-      parseFrontmatter: true,
-      mdxOptions: mdxRenderOptions,
-    }}
-    source={source}
-    components={{
-      a: (p) => (
-        // @ts-ignore
-        <Box
-          sx={{
-            color: "inherit",
-            textDecoration: "none",
-            ":before": {
-              content: "''",
-              display: "block",
-              height: "75px",
-              visibility: "hidden",
-              marginTop: "-75px",
-            },
-          }}
-          component="a"
-          {...p}
-        />
-      ),
-      // @ts-ignore
-      h1: (p) => (
-        // @ts-ignore
-        <Typography variant="h3" component={"h2"} {...p} />
-      ),
-      // @ts-ignore
-      h2: (p) => <Typography variant="h4" component={"h3"} {...p} />,
-      // @ts-ignore
-      h3: (p) => <Typography variant="h5" component={"h4"} {...p} />,
-      // @ts-ignore
-      h4: (p) => <Typography variant="h6" component={"h5"} {...p} />,
-      // @ts-ignore
-      h5: (p) => (
-        // @ts-ignore
-        <Typography variant="subtitle1" component={"h6"} {...p} />
-      ),
-      // @ts-ignore
-      h6: (p) => (
-        // @ts-ignore
-        <Typography variant="subtitle2" component={"h6"} {...p} />
-      ),
-    }}
-  />
-);
+const MDX = async ({ source }: { source: string }) => {
+  const html = await parseMd(source);
+
+  return <div dangerouslySetInnerHTML={{ __html: String(html.value) }} />;
+};
 
 async function getManualSrc(item: Doc): Promise<string | null> {
   // Path must be at exactly [ "builtins" ":id" ]

@@ -199,7 +199,7 @@ export const Filter = (props: FilterProps) => {
             <ToggleButtonGroup
               aria-labelledby="return-type-label"
               exclusive
-              fullWidth={true}
+              fullWidth
               value={to}
               color={"primary"}
               onChange={(e, values) => setTo(values)}
