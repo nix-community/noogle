@@ -5,7 +5,7 @@ use rowan::{ast::AstNode, GreenToken, NodeOrToken, WalkEvent};
 use std::fs::File;
 use std::io::Write;
 use std::iter::Enumerate;
-use std::path::{PathBuf, Prefix};
+use std::path::PathBuf;
 use std::println;
 use std::{env, fs};
 use textwrap::{dedent, indent};
@@ -186,26 +186,20 @@ fn parse_doc_comment(
             line = &trimmed[9..]; // trim 'Examples:'
         }
 
-        let trimmed = line.trim();
-
-        let formatted = if !trimmed.is_empty() {
-            format!("{left}{trimmed}\n")
-        } else {
-            format!("")
-        };
         match state {
             // important: trim only trailing whitespaces; as leading ones might be markdown formatting or code examples.
             ParseState::Type => {
                 doc_type.push_str(&format!("{line}\n"));
             }
             ParseState::Doc => {
-                doc.push_str(&formatted);
+                doc.push_str(&format!("{line}\n"));
             }
             ParseState::Example => {
                 example.push_str(&format!("{line}\n"));
             }
         }
     }
+
     let f = |s: String| {
         if s.is_empty() {
             None
@@ -213,7 +207,9 @@ fn parse_doc_comment(
             return Some(s.trim().to_owned());
         }
     };
-    let mut markdown = format!("{left}{}", f(doc).unwrap_or("".to_owned()));
+
+    let mut markdown = format_code(doc, indent);
+
     // example and type can contain indented code
     let formatted_example = format_code(example, indent);
     let formatted_type = format_code(doc_type, indent);
@@ -370,7 +366,7 @@ fn format_comment(text: &str, token: &SyntaxToken) -> String {
 
     let markdown = parse_doc_comment(&lines.join("\n"), indentation + 2, argument_block, name);
 
-    return format!("/**\n{}\n{}*/", markdown, indent_1);
+    return format!("/**\n{}{}*/", markdown, indent_1);
 }
 
 fn format_code(text: String, ident: usize) -> String {
@@ -415,6 +411,8 @@ fn strip_column(text: &str) -> Option<String> {
         for line in text.lines() {
             if let Some(stripped) = line.strip_prefix(" ") {
                 result.push(stripped);
+            } else {
+                result.push("");
             }
         }
         return Some(result.join("\n"));
