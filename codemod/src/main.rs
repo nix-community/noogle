@@ -5,7 +5,7 @@ use rowan::{ast::AstNode, GreenToken, NodeOrToken, WalkEvent};
 use std::fs::File;
 use std::io::Write;
 use std::iter::Enumerate;
-use std::path::PathBuf;
+use std::path::{PathBuf, Prefix};
 use std::println;
 use std::{env, fs};
 use textwrap::{dedent, indent};
@@ -149,7 +149,12 @@ fn collect_lambda_args(mut lambda: Lambda) -> Vec<Argument> {
     args
 }
 
-fn parse_doc_comment(raw: &str, indent: usize, argument_block: Option<String>) -> String {
+fn parse_doc_comment(
+    raw: &str,
+    indent: usize,
+    argument_block: Option<String>,
+    name: Option<String>,
+) -> String {
     enum ParseState {
         Doc,
         Type,
@@ -224,14 +229,53 @@ fn parse_doc_comment(raw: &str, indent: usize, argument_block: Option<String>) -
         ));
     }
 
+    let args: Vec<String> = env::args().collect();
+    let prefix = args.get(2);
+
     if let Some(example) = f(formatted_example) {
         markdown.push_str(&format!("\n\n{left}# Examples"));
+        markdown.push_str(&format!("\n{left}:::{{.example}}"));
+        if let Some(name) = name {
+            if let Some(prefix) = prefix {
+                markdown.push_str(&format!("\n{left}## `{prefix}.{name}` usage example"));
+            } else {
+                markdown.push_str(&format!("\n{left}## `{name}` usage example"));
+            }
+        }
         markdown.push_str(&format!(
             "\n\n{left}```{EXAMPLE_LANG}\n{left}{example}\n{left}```"
         ));
+        markdown.push_str(&format!("\n\n{left}:::"));
     }
 
     markdown
+}
+
+fn get_binding_name(token: &SyntaxToken) -> Option<String> {
+    let mut step = token.next_sibling_or_token();
+
+    // Find the Expr that is a lambda.
+    let name = loop {
+        if step.is_none() {
+            // If there is no next token or node
+            break None;
+        } else if let Some(NodeOrToken::Node(ref node)) = step {
+            match node.kind() {
+                // SyntaxKind::NODE_LAMBDA => break Some(node.clone()),
+                SyntaxKind::NODE_ATTRPATH_VALUE => {
+                    if let Some(value) = AttrpathValue::cast(node.clone()) {
+                        break value.attrpath().map(|p| p.to_string());
+                    } else {
+                        break None;
+                    }
+                }
+                _ => {}
+            };
+        } else {
+        }
+        step = step.unwrap().next_sibling_or_token();
+    };
+    name
 }
 
 fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
@@ -322,7 +366,9 @@ fn format_comment(text: &str, token: &SyntaxToken) -> String {
         None
     };
 
-    let markdown = parse_doc_comment(&lines.join("\n"), indentation + 2, argument_block);
+    let name = get_binding_name(token);
+
+    let markdown = parse_doc_comment(&lines.join("\n"), indentation + 2, argument_block, name);
 
     return format!("/**\n{}\n{}*/", markdown, indent_1);
 }
