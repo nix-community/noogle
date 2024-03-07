@@ -148,7 +148,6 @@ export const parseMd = async (src: string) => {
     .use(rehypeStringify)
     .process(sanitizeDirectives(src));
 
-  // console.log({ result });
   return result;
 };
 

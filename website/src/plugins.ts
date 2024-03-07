@@ -17,7 +17,6 @@ export function styleDirectives() {
         node.type === "textDirective"
       ) {
         if (node.name !== "note") return;
-        // console.log({ node });
 
         const data = node.data || (node.data = {});
         const tagName = node.type === "textDirective" ? "span" : "div";
