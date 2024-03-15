@@ -2,7 +2,8 @@
   perSystem = { self', inputs', pkgs, system, ... }:
     let
       craneLib = inputs.crane.lib.${system};
-      src = craneLib.cleanCargoSource (craneLib.path ./.);
+      # src = craneLib.cleanCargoSource (craneLib.path ./.);
+      src = craneLib.path ./.;
 
       commonArgs = {
         inherit src;
