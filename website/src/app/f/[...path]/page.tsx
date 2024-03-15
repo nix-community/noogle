@@ -126,19 +126,14 @@ export async function generateMetadata(
   const keywords = item?.meta?.path || [];
   const alias_keywords = item?.meta.aliases?.flat() || [];
 
-  // words?.forEach((word) => {
-  //   console.log({ word });
-  // });
-  // console.log({ excerpt });
-
-  const name = item?.meta.path[item?.meta.path.length - 1];
+  // const name = item?.meta.path[item?.meta.path.length - 1];
 
   const content = item?.content?.content || "";
 
-  const summary = await extractExcerpt(content, 35);
+  // const summary = await extractExcerpt(content, 35);
   const description = await extractExcerpt(content, 200);
 
-  const title = `Nix ${name} - ${summary}`;
+  const title = `${item?.meta.path.join(".")} - Nix function reference`;
 
   return {
     // should be 20-70 characters
