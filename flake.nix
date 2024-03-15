@@ -5,7 +5,7 @@
     nixpkgs-master.url = "nixpkgs/master";
 
     nix-master.url = "github:NixOS/nix/?ref=master";
-    # A custom nix version, to introspect lambda values. 
+    # A custom nix version, to introspect lambda values.
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 
     pre-commit-hooks = {
@@ -33,6 +33,7 @@
         ./preCommit.nix
         ./website/flake-module.nix
         ./salt/flake-module.nix
+        ./examples/flake-module.nix
         ./pasta/flake-module.nix
         ./pesto/flake-module.nix
         # Deprecated. Will be removed.
