@@ -4,11 +4,10 @@ use rnix::{SyntaxKind, SyntaxNode, SyntaxToken};
 use rowan::{ast::AstNode, GreenToken, NodeOrToken, WalkEvent};
 use std::fs::File;
 use std::io::Write;
-use std::iter::Enumerate;
 use std::path::PathBuf;
 use std::println;
 use std::{env, fs};
-use textwrap::{dedent, indent};
+use textwrap::dedent;
 use walkdir::WalkDir;
 
 const EXAMPLE_LANG: &str = "nix";
@@ -207,8 +206,9 @@ fn parse_doc_comment(
             return Some(s.trim().to_owned());
         }
     };
-
-    let mut markdown = format_code(doc, indent);
+    let mut markdown = handle_indentation(&doc)
+        .map(|t| format_code(t, indent))
+        .unwrap_or_default();
 
     // example and type can contain indented code
     let formatted_example = format_code(example, indent);
@@ -244,7 +244,7 @@ fn parse_doc_comment(
         markdown.push_str(&format!("\n\n{left}:::"));
     }
 
-    markdown
+    format!("{}\n", markdown.trim_end())
 }
 
 fn get_binding_name(token: &SyntaxToken) -> Option<String> {
