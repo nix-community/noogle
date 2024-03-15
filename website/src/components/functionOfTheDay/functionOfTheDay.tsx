@@ -11,7 +11,10 @@ import {
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
 import { Preview } from "../preview/preview";
-import { Doc, data } from "@/models/data";
+import { Doc, data as raw } from "@/models/data";
+
+// Show only functions with content.
+const data = raw.filter((d) => d.content?.content);
 
 const date = new Date();
 

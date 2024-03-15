@@ -24,21 +24,19 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <Link rel="canonical" href="/md/release/2024-1" underline="none">
-          <Tooltip title="Whats new">
-            <Typography
-              variant="h1"
-              className={fira.className}
-              sx={{
-                mt: 10,
-                mb: 4,
-                fontSize: "4.5rem",
-                fontVariantLigatures: "normal",
-              }}
-            >
-              Noogλe :: 2024
-            </Typography>
-          </Tooltip>
+        <Link rel="canonical" href="/" underline="none">
+          <Typography
+            variant="h1"
+            className={fira.className}
+            sx={{
+              mt: 10,
+              mb: 4,
+              fontSize: "4.5rem",
+              fontVariantLigatures: "normal",
+            }}
+          >
+            Noogλe :: 2024
+          </Typography>
         </Link>
 
         <Box
