@@ -1,3 +1,5 @@
+mod tests;
+
 use regex::Regex;
 use rnix::ast::{AstToken, AttrpathValue, Comment, Expr, Lambda, Param};
 use rnix::{SyntaxKind, SyntaxNode, SyntaxToken};
@@ -169,7 +171,7 @@ fn parse_doc_comment(
     for line in raw.lines() {
         let mut line = line.trim_end();
 
-        let trimmed = line.clone().trim();
+        let trimmed = line.trim();
 
         if trimmed.starts_with("Type:") {
             state = ParseState::Type;
@@ -274,7 +276,7 @@ fn get_binding_name(token: &SyntaxToken) -> Option<String> {
     name
 }
 
-fn get_argument_docs(token: &SyntaxToken, ident: &str) -> Option<String> {
+fn get_argument_docs(token: &SyntaxToken, _ident: &str) -> Option<String> {
     let mut step = token.next_sibling_or_token();
 
     // Find the Expr that is a lambda.
@@ -464,7 +466,7 @@ fn main() {
             let f_name = entry.file_name().to_string_lossy();
 
             if f_name.ends_with(".nix") {
-                modify_file(entry.path().to_path_buf());
+                modify_file_inplace(entry.path().to_path_buf());
             }
         }
     } else {
@@ -472,7 +474,28 @@ fn main() {
     }
 }
 
-fn modify_file(file_path: PathBuf) {
+fn replace_all(syntax: SyntaxNode) -> (Option<SyntaxNode>, i32) {
+    let mut maybe_replaced = replace_first_comment(&syntax);
+    let mut count = 0;
+    let r: Option<SyntaxNode> = loop {
+        if let Some(replaced) = maybe_replaced {
+            // Maybe we can replace more
+            count += 1;
+            let result = replace_first_comment(&replaced);
+
+            // If we cannot replace more comments
+            if result.is_none() {
+                break Some(replaced);
+            }
+            maybe_replaced = result;
+        } else {
+            break None;
+        }
+    };
+    (r, count)
+}
+
+fn modify_file_inplace(file_path: PathBuf) -> () {
     let contents = fs::read_to_string(&file_path);
     if let Err(_) = contents {
         println!("Could not read the file {:?}", file_path);
@@ -492,28 +515,9 @@ fn modify_file(file_path: PathBuf) {
         return;
     }
 
-    // println!("Syntax \n {:?}", root.clone().unwrap().syntax().clone());
     let syntax = root.unwrap().syntax().clone_for_update();
-    let mut maybe_replaced = replace_first_comment(&syntax);
-    let mut count = 0;
-    let r: Option<SyntaxNode> = loop {
-        if let Some(replaced) = maybe_replaced {
-            // Maybe we can replace more
-            count += 1;
-            let result = replace_first_comment(&replaced);
-
-            // If we cannot replace more comments
-            if result.is_none() {
-                break Some(replaced);
-            }
-            maybe_replaced = result;
-        } else {
-            break None;
-        }
-    };
-
     let display_name = file_path.to_str().unwrap();
-    if let Some(updates) = r {
+    if let (Some(updates), count) = replace_all(syntax) {
         let mut file = File::create(&file_path).unwrap();
         file.write_all(updates.text().to_string().as_bytes()).ok();
         println!("{display_name} - Changed {count} comments");

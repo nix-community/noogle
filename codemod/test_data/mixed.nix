@@ -3,6 +3,11 @@
     in multiline
     with empty lines
 
+    indepentent block of lines
+    should not be indented differently
+
+    > Note: this is a note.
+
     ```nix
     {
       a = {
