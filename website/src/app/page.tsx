@@ -3,7 +3,7 @@ import { FunctionOfTheDay } from "@/components/functionOfTheDay";
 import { LandingPageLayout } from "@/components/layout";
 import { FilterProvider } from "@/components/layout/filterContext";
 import { SearchInput } from "@/components/searchInput";
-import { Box, Typography, Link, Tooltip } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 
 import localFont from "next/font/local";
 import { Suspense } from "react";

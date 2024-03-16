@@ -11,6 +11,7 @@ mod tests {
         let path: PathBuf = [env!("CARGO_MANIFEST_DIR"), "test_data", "mixed.nix"]
             .iter()
             .collect();
+        dbg!(&path);
         let src = fs::read_to_string(&path).unwrap();
         let nix = rnix::Root::parse(&src).ok().expect("failed to parse input");
 
