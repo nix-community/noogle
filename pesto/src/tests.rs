@@ -1,7 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use serde::Serialize;
-    use std::{collections::HashMap, ffi::OsStr, format, fs, path::PathBuf, println, rc::Rc};
+
+    use serde::{Deserialize, Serialize};
+    use std::{
+        collections::HashMap, ffi::OsStr, format, fs, path::PathBuf, println, process::Command,
+        rc::Rc,
+    };
+    use yaml_front_matter::{Document as MdDocument, YamlFrontMatter};
 
     use crate::{
         bulk::BulkProcessing,
@@ -165,6 +170,59 @@ mod tests {
         dir_tests("bulk", "json", |path| {
             let data: Pasta = Pasta::new(&PathBuf::from(path));
             serde_json::to_string_pretty(&data.docs[0..10]).unwrap()
+        })
+    }
+
+    fn find_repo_root() -> Option<PathBuf> {
+        let output = Command::new("git")
+            .args(&["rev-parse", "--show-toplevel"])
+            .output()
+            .ok()?
+            .stdout;
+
+        let path_str = String::from_utf8(output).ok()?.trim().to_string();
+        Some(PathBuf::from(path_str))
+    }
+    #[test]
+    fn test_frontmatter() {
+        dir_tests("frontmatter", "md", |path| {
+            #[derive(Deserialize, Serialize, Debug)]
+            struct Meta {
+                #[serde(flatten)]
+                content: HashMap<String, serde_yaml::Value>,
+            }
+            let markdown = fs::read_to_string(&path).unwrap();
+
+            let document: MdDocument<Meta> = YamlFrontMatter::parse(&markdown).unwrap();
+
+            // Access the metadata
+            let metadata = document.metadata.content;
+
+            let final_import: PathBuf = if let Some(field) = metadata.get("import") {
+                let imported = field
+                    .as_str()
+                    .expect("Error: import field must be a string");
+                match PathBuf::from(imported).is_relative() {
+                    true => PathBuf::from_iter(vec![
+                        // Cannot fail because every file has a parent directory
+                        path.parent().unwrap().to_path_buf(),
+                        PathBuf::from(imported),
+                    ]),
+                    false => PathBuf::from_iter(vec![
+                        find_repo_root().expect("Could not find root directoy of repository. Make sure you have git installed and are in a git repository"),
+                        PathBuf::from(format!(".{imported}")),
+                    ]),
+                }
+            } else {
+                // This should never panic
+                // It is only here for testing purposes
+                panic!("No import found");
+            };
+
+            let actual = fs::read_to_string(&final_import)
+                .expect(format!("Could not read file: {:?}", &final_import).as_str());
+
+            serde_json::to_string_pretty(&actual).unwrap()
         })
     }
 }

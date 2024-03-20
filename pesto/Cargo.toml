@@ -23,6 +23,7 @@ expect-test = "1.4.0"
 serde_with = "3.4.0"
 serde_yaml = "0.9.27"
 comrak = "0.20.0"
+yaml-front-matter = "0.1.0"
 
 
 # [dev-dependencies]
