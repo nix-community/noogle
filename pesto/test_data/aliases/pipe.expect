@@ -1,0 +1,36 @@
+[
+  {
+    "aliases": [
+      [
+        "lib",
+        "trivial",
+        "pipe"
+      ]
+    ],
+    "path": [
+      "lib",
+      "pipe"
+    ]
+  },
+  {
+    "aliases": [
+      [
+        "lib",
+        "pipe"
+      ]
+    ],
+    "path": [
+      "lib",
+      "trivial",
+      "pipe"
+    ]
+  },
+  {
+    "aliases": [],
+    "path": [
+      "lib",
+      "lists",
+      "unique"
+    ]
+  }
+]

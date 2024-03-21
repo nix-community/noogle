@@ -1,0 +1,56 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 27,
+          "file": "test_data/assets/default.nix",
+          "line": 73
+        }
+      },
+      "lambda": {
+        "content": "\n      Reduce a list by applying a binary operator, from left to right,\n      e.g. `foldl' op nul [x0 x1 x2 ...] = op (op (op nul x0) x1) x2)\n      ...`. For example, `foldl' (x: y: x + y) 0 [1 2 3]` evaluates to 6.\n      The return value of each application of `op` is evaluated immediately,\n      even for intermediate values.\n    ",
+        "countApplied": 1,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "pipe"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/trivial.nix",
+          "line": 94
+        }
+      },
+      "lambda": {
+        "content": "\n      Reduce a list by applying a binary operator, from left to right,\n      e.g. `foldl' op nul [x0 x1 x2 ...] = op (op (op nul x0) x1) x2)\n      ...`. For example, `foldl' (x: y: x + y) 0 [1 2 3]` evaluates to 6.\n      The return value of each application of `op` is evaluated immediately,\n      even for intermediate values.\n    ",
+        "countApplied": 1,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "trivial", "pipe"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "test_data/assets/lists.nix",
+          "line": 864
+        }
+      },
+      "lambda": {
+        "content": "\n      Reduce a list by applying a binary operator, from left to right,\n      e.g. `foldl' op nul [x0 x1 x2 ...] = op (op (op nul x0) x1) x2)\n      ...`. For example, `foldl' (x: y: x + y) 0 [1 2 3]` evaluates to 6.\n      The return value of each application of `op` is evaluated immediately,\n      even for intermediate values.\n    ",
+        "countApplied": 2,
+        "isPrimop": true,
+        "position": null
+      }
+    },
+    "path": ["lib", "lists", "unique"]
+  }
+]

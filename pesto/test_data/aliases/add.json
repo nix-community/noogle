@@ -45,11 +45,17 @@
   },
   {
     "docs": {
-      "attr": { "content": "", "position": null },
+      "attr": {
+        "position": null
+      },
       "lambda": {
+        "args": ["e1", "e2"],
+        "arity": 2,
         "content": "\n      Return the sum of the numbers *e1* and *e2*.\n    ",
         "countApplied": 0,
+        "experimental": false,
         "isPrimop": true,
+        "name": "add",
         "position": null
       }
     },

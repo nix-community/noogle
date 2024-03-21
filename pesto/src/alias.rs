@@ -13,7 +13,7 @@ use crate::pasta::{AliasList, Docs, ValuePath};
 // }
 
 /// Match
-/// partially applied functions -> special case, don't know how it is "correct". Would need access to the upvalues?
+///
 /// Simple lambdas (not partially applied)
 ///   Match primop: (Doesnt have source position)
 ///      Eq countApplied,
@@ -40,23 +40,21 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                 return match (o_meta.isPrimop, s_meta.isPrimop) {
                     // Both PrimOp
                     (true, true) => {
-                        let is_empty = match &s_meta.content {
-                            Some(c) => c.is_empty(),
-                            None => true,
-                        };
-                        if s_meta.countApplied != Some(0)
-                            && s_meta.countApplied == o_meta.countApplied
-                        {
-                            if item.path.last() == other.path.last() {
-                                return Some(other.path.clone());
-                            } else {
-                                return None;
+                        match s_meta.countApplied {
+                            Some(0) => {
+                                if s_meta.name.is_some() && s_meta.name == o_meta.name {
+                                    return Some(other.path.clone());
+                                }
+                            }
+                            _ => {
+                                if s_meta.countApplied == o_meta.countApplied
+                                    && item.path.last() == other.path.last()
+                                {
+                                    return Some(other.path.clone());
+                                }
                             }
                         }
 
-                        if o_meta.content == s_meta.content && !is_empty {
-                            return Some(other.path.clone());
-                        }
                         None
                     }
                     // Both None PrimOp
@@ -65,7 +63,6 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         if s_meta.countApplied == Some(0) || o_meta.countApplied == Some(0) {
                             return Some(other.path.clone());
                         }
-
                         // Last resort try to find all functions with:
                         // - same source position
                         // - same isPrimop
