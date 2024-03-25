@@ -3,6 +3,11 @@
     let
       inherit (inputs'.nix.packages) nix;
       nixpkgs = self'.packages.nixpkgs-migrated;
+
+      sourceInfo' = {
+        inherit (inputs.nixpkgs-master.sourceInfo) rev lastModified;
+      };
+      metaFile = builtins.toFile "meta.json" (builtins.toJSON sourceInfo');
     in
     {
       packages = {
@@ -10,7 +15,7 @@
           name = "pasta-meta";
           src = ./.;
           buildPhase = ''
-            echo "\"${builtins.toJSON inputs.nixpkgs-master.rev}\"" > $out
+            cat ${metaFile} > $out
           '';
         };
         pasta = pkgs.callPackage ./default.nix { inherit nixpkgs nix pkgs; };
