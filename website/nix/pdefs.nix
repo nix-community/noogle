@@ -4616,6 +4616,19 @@
           version = "1.0.8";
         };
       };
+      date-fns = {
+        "3.6.0" = {
+          fetchInfo = {
+            narHash = "sha256-DQyJylOaiikHJ9QTCxdWaCghyTmeembq3pWc9D/gi9E=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/date-fns/-/date-fns-3.6.0.tgz";
+          };
+          ident = "date-fns";
+          ltype = "file";
+          treeInfo = { };
+          version = "3.6.0";
+        };
+      };
       debug = {
         "3.2.7" = {
           depInfo = {
@@ -13860,6 +13873,11 @@
               pin = "0.1.0";
               runtime = true;
             };
+            date-fns = {
+              descriptor = "^3.6.0";
+              pin = "3.6.0";
+              runtime = true;
+            };
             eslint = {
               descriptor = "8.50.0";
               pin = "8.50.0";
@@ -14906,6 +14924,9 @@
             "node_modules/damerau-levenshtein" = {
               dev = true;
               key = "damerau-levenshtein/1.0.8";
+            };
+            "node_modules/date-fns" = {
+              key = "date-fns/3.6.0";
             };
             "node_modules/debug" = {
               key = "debug/4.3.4";

@@ -11,9 +11,11 @@ import React, { Suspense } from "react";
 import { PositionLink } from "@/components/PositionLink";
 import { SearchNav } from "@/components/SearchNav";
 
+import upstreamInfo from "@/models/data/meta.json" assert { type: "json" };
 import fs from "fs";
 import path from "path";
 import { Metadata, ResolvingMetadata } from "next";
+import { LastUpdatedFromCommit } from "@/components/LastUpdatedFromCommit";
 
 // Important the key ("path") in the returned dict MUST match the dynamic path segment ([...path])
 export async function generateStaticParams(): Promise<{ path: string[] }[]> {
@@ -230,6 +232,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             >
               {item?.meta.title}
             </Typography>
+
             {meta?.is_primop && meta.count_applied == 0 && (
               <>
                 <Chip
@@ -254,6 +257,9 @@ export default async function Page(props: { params: { path: string[] } }) {
               />
             )}
             <ShareButton />
+          </Box>
+          <Box sx={{ pl: 4, m: 1 }} data-pagefind-ignore="all">
+            <LastUpdatedFromCommit {...upstreamInfo} />
           </Box>
           <Divider flexItem sx={{ mt: 2 }} />
 
