@@ -81,8 +81,12 @@ export function interpretType(
 }
 
 export function findType(item: Doc): string | undefined {
-  if (item.meta.path.length === 2 && item.meta.path[0] === "builtins") {
-    const fallbackType = builtinTypes[item.meta.path[1]];
+  return findTypeByPath(item.meta.path);
+}
+
+export function findTypeByPath(path: string[]): string | undefined {
+  if (path.length === 2 && path[0] === "builtins") {
+    const fallbackType = builtinTypes[path[1]];
     return fallbackType?.fn_type;
   }
   return undefined;

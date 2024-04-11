@@ -9,7 +9,6 @@ import {
   Container,
   IconButton,
   LinearProgress,
-  Link,
   List,
   ListItem,
   ListItemAvatar,
@@ -29,7 +28,7 @@ import { PagefindResult, RawResult, usePagefindSearch } from "./Pagefind";
 import { Clear } from "@mui/icons-material";
 import { FilterOptions, useFilter } from "./layout/filterContext";
 import { useSessionStorage } from "usehooks-ts";
-
+import { ResultPreview } from "./ResultPreview";
 // import d from "./example.json";
 
 export type BasicListItem = {
@@ -273,27 +272,9 @@ export function PagefindResults() {
             )}
             <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
               {items.length ? (
-                items.map(({ meta, excerpt, url }, idx) => (
+                items.map((item, idx) => (
                   <React.Fragment key={`${idx}`}>
-                    <ListItem sx={{ px: 0, py: 1 }} aria-label={`item-${idx}`}>
-                      <ListItemText
-                        primaryTypographyProps={{
-                          variant: "h5",
-                          component: "h2",
-                        }}
-                        secondaryTypographyProps={{
-                          variant: "body1",
-                        }}
-                        primary={
-                          <Link rel="canonical" href={`${url}`}>
-                            {meta.title}
-                          </Link>
-                        }
-                        secondary={
-                          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-                        }
-                      />
-                    </ListItem>
+                    <ResultPreview result={item} />
                   </React.Fragment>
                 ))
               ) : (
