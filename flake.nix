@@ -37,8 +37,6 @@
         ./pesto/flake-module.nix
         # Deprecated. Will be removed.
         ./codemod/flake-module.nix
-        ./indexer/flake-module.nix
-        ./scripts/flake-module.nix
       ];
     });
 }
