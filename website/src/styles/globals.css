@@ -189,14 +189,9 @@ mark.noogle-marker {
 
 
 code  {
-  /* padding: 0.3rem; */
   background-color: #f0f1f2;
 }
 pre {
-  /* padding: 0.3rem; */
-  background-color: #f0f1f2;
-}
-code.hljs  {
   background-color: #f0f1f2;
 }
 

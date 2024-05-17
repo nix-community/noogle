@@ -1,4 +1,3 @@
-import { CssBaseline } from "@mui/material";
 import "../styles/globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import localFont from "next/font/local";
@@ -26,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} data-color-scheme="light">
       <head>
         {/* <link rel="icon" href="/favicon.png" /> */}
         <link
@@ -43,7 +42,7 @@ export default function RootLayout({
           }}
         >
           <ClientSideLayoutContext>
-            <CssBaseline />
+            {/* <CssBaseline /> */}
             {children}
           </ClientSideLayoutContext>
         </AppRouterCacheProvider>

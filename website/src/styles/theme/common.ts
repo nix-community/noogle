@@ -1,6 +1,6 @@
-import { ThemeOptions } from "@mui/material/styles";
+import { CssVarsThemeOptions } from "@mui/material";
 
-const commonOptions: Partial<ThemeOptions> = {
+const commonOptions: Partial<CssVarsThemeOptions> = {
   typography: {
     fontFamily: "inherit",
     h1: {

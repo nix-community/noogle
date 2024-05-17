@@ -1,2 +1,1 @@
-export { lightThemeOptions } from "./lightThemeOptions";
-export { darkThemeOptions } from "./darkThemeOptions";
+export { cssThemeOptions } from "./themeOptions";

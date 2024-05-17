@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  useTheme,
+  styled,
 } from "@mui/material";
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
@@ -37,10 +37,20 @@ function getRandomIntInclusive(min: number, max: number, config?: Config) {
   return Math.floor(randomNumber * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
 
+const FunctionCard = styled(
+  Card,
+  {}
+)(({ theme }) => ({
+  width: "100%",
+  borderImageSlice: 1,
+  borderImageSource: `linear-gradient(to left, ${theme.vars.palette.info.light},${theme.vars.palette.error.main})`,
+  // : `linear-gradient(to left, ${info.light},${info.dark})`,
+  borderWidth: 4,
+  borderStyle: "solid",
+}));
+
 export const FunctionOfTheDay = () => {
-  const {
-    palette: { info, error },
-  } = useTheme();
+  // const { mode } = useColorScheme();
 
   const todaysIdx = useMemo(
     () => getRandomIntInclusive(0, data.length - 1),
@@ -74,20 +84,7 @@ export const FunctionOfTheDay = () => {
   };
 
   return (
-    <Card
-      elevation={0}
-      sx={{
-        width: "100%",
-        my: 5,
-        borderImageSlice: 1,
-        borderImageSource:
-          idx === todaysIdx
-            ? `linear-gradient(to left, ${info.light},${error.main})`
-            : `linear-gradient(to left, ${info.light},${info.dark})`,
-        borderWidth: 4,
-        borderStyle: "solid",
-      }}
-    >
+    <FunctionCard sx={{ my: 5 }}>
       <CardHeader
         component="h2"
         sx={{ py: 0 }}
@@ -129,6 +126,6 @@ export const FunctionOfTheDay = () => {
           Next
         </Button>
       </CardActions>
-    </Card>
+    </FunctionCard>
   );
 };

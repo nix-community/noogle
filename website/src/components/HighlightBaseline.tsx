@@ -1,17 +1,18 @@
 "use client";
-import { useTheme } from "@mui/material";
+import { useColorScheme } from "@mui/material";
 import { useEffect } from "react";
 
 export const HighlightBaseline = () => {
-  const theme = useTheme();
+  const { mode } = useColorScheme();
   useEffect(() => {
-    if (theme.palette.mode === "dark") {
-      // @ts-ignore - don't check type of css module
-      import("highlight.js/styles/github-dark.css");
+    console.log({ mode });
+    // @ts-ignore - don't check type of css module
+    import("highlight.js/styles/github-dark.css");
+    if (mode === "dark") {
     } else {
       // @ts-ignore - don't check type of css module
-      import("highlight.js/styles/github.css");
+      // import("highlight.js/styles/github.css");
     }
-  }, [theme]);
+  }, [mode]);
   return <></>;
 };
