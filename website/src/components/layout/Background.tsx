@@ -1,9 +1,8 @@
 "use client";
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import { ReactNode } from "react";
 
 export const Background = ({ children }: { children: ReactNode }) => {
-  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -12,8 +11,7 @@ export const Background = ({ children }: { children: ReactNode }) => {
         flexDirection: "column",
         overflowX: "hidden",
         overflowY: "scroll",
-        bgcolor:
-          theme.palette.mode === "light" ? "rgb(242, 248, 253)" : "#070c16",
+        bgcolor: "background.paper",
       }}
     >
       {children}

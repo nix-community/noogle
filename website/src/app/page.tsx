@@ -4,7 +4,7 @@ import { LandingPageLayout } from "@/components/layout";
 import { FilterProvider } from "@/components/layout/filterContext";
 import { SearchInput } from "@/components/searchInput";
 import { Box, Typography, Link } from "@mui/material";
-
+import type {} from "@mui/material/themeCssVarsAugmentation";
 import localFont from "next/font/local";
 import { Suspense } from "react";
 

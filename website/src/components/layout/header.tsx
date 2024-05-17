@@ -1,5 +1,5 @@
 "use client";
-import { Box, LinearProgress, Link, useTheme } from "@mui/material";
+import { Box, LinearProgress, Link } from "@mui/material";
 import { SearchInput } from "../searchInput";
 import { Filter } from "../filter";
 import { Suspense } from "react";
@@ -13,8 +13,6 @@ const fira = localFont({
 });
 
 export const Header = () => {
-  const theme = useTheme();
-
   return (
     <>
       <Box
@@ -24,8 +22,7 @@ export const Header = () => {
           width: "100%",
           py: 1.2,
           zIndex: 1000,
-          backgroundColor:
-            theme.palette.mode === "light" ? "primary.main" : "#101010",
+          backgroundColor: "header.default",
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
