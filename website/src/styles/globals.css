@@ -9,51 +9,31 @@ body {
 table{
   width: 100%;
   border-collapse:collapse;
-  border:1px solid #d8e2ff;
+  border:1px solid var(--mui-palette-misc-tableBorder);
 }
   
 table td{
   padding: 8px;
-  border:1px solid #d8e2ff;
+  border:1px solid var(--mui-palette-misc-tableBorder);
 }
 table th{
   padding: 8px;
-  border:1px solid #d8e2ff;
-}
-@media (prefers-color-scheme: dark) {
-  a {
-    color:#adc6ff;
-  }
-  table{
-    border-color:#0f448e;
-  }
-    
-  table td{
-    border-color:#0f448e;
-  }
-  table th{
-    border-color:#0f448e;
-  }
+  border:1px solid var(--mui-palette-misc-tableBorder);
 }
 
+a {
+  color: var(--mui-palette-misc-a);
+}
 
 .caution, .important, .note, .tip, .warning, .example {
-  background-color: #f9f9f9;
+  background-color: var(--mui-palette-fenced-bg);
   padding: 10px 15px; /* Top and bottom padding of 10px, left and right padding of 15px */
   margin: 15px 0; /* Vertical margins to separate the note from surrounding content */
   font-style: italic; /* Italic font style to indicate note text */
   /* color: #333; Dark grey color for the text for readability */
   font-family: Arial, sans-serif; /* A clean, readable font */
   border-radius: 4px; /* Slightly rounded corners for a modern look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   border-left: 5px solid; /* Solid left border for distinction */
-}
-@media (prefers-color-scheme: dark) {
-  .caution, .important, .note, .tip, .warning, .example {
-    background-color: #2c2c2c; /* Darker background for dark mode */
-    /* color: #ccc; Lighter text color for readability */
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Lighter shadow for depth */
-  }
 }
 
 .caution::before, .important::before, .note::before, .tip::before, .warning::before, .example::before {
@@ -64,98 +44,52 @@ table th{
 
 .note::before {
   content: "Note";
-  color: #007bff; 
+  color: var(--mui-palette-note-main);; 
 }
 .note {
-  border-left-color: #007bff; 
+  border-left-color: var(--mui-palette-note-main);
 }
-@media (prefers-color-scheme: dark) {
-  .note::before {
-    color: #4a9eff;
-  }
-  .note {
-    border-left-color: #4a9eff;
-  }
-}
+
 
 .example::before{
   /* content: "Example"; */
-  color: #17a2b8;
+  color: #000405;
 }
 .example {
-  border-left-color: #17a2b8;
-}
-@media (prefers-color-scheme: dark) {
-  .example::before {
-    color: #9de1fe;
-  }
-  .example {
-    border-left-color: #9de1fe;
-  }
+  border-left-color: var(--mui-palette-example-main);
 }
 
 .warning::before{
   content: "Warning";
-  color: #ffc107; 
+  color: var(--mui-palette-warning-main);
 }
 .warning {
-  border-left-color: #ffc107;
-}
-@media (prefers-color-scheme: dark) {
-  .warning::before {
-    color: #ffeeba;
-  }
-  .warning {
-    border-left-color: #ffeeba;
-  }
+  border-left-color: var(--mui-palette-warning-main);
 }
 
 .caution::before{
   content: "Caution";
-  color: #d39e00; 
+  color: var(--mui-palette-caution-main);
 }
 .caution {
-  border-left-color: #d39e00;
-}
-@media (prefers-color-scheme: dark) {
-  .caution::before {
-    color: #ffd966;
-  }
-  .caution {
-    border-left-color: #ffd966;
-  }
+  border-left-color: var(--mui-palette-caution-main);
 }
 
 .important::before{
   content: "Important";
-  color: #dc3545; 
+  color: var(--mui-palette-important-main); 
 }
 .important {
-  border-left-color: #dc3545;
+  border-left-color: var(--mui-palette-important-main);
 }
-@media (prefers-color-scheme: dark) {
-  .important::before {
-    color: #f5c6cb;
-  }
-  .important {
-    border-left-color: #f5c6cb;
-  }
-}
+
 
 .tip::before{
   content: "Tip";
-  color: #28a745; 
+  color: var(--mui-palette-tip-main);
 }
 .tip {
-  border-left-color: #28a745;
-}
-@media (prefers-color-scheme: dark) {
-  .tip::before {
-    color: #73c476;
-  }
-  .tip {
-    border-left-color: #73c476;
-  }
+  border-left-color: var(--mui-palette-tip-main);
 }
 
 
@@ -189,20 +123,11 @@ mark.noogle-marker {
 
 
 code  {
-  background-color: #f0f1f2;
+  background-color: var(--mui-palette-code-bg);
 }
 pre {
-  background-color: #f0f1f2;
+  background-color: var(--mui-palette-code-bg);
 }
-
-@media (prefers-color-scheme: dark) {
-  code  {
-    background-color: #0d1117;
-  }
-  pre {
-    background-color: #0d1117;
-  }
-  code.hljs  {
-    background-color: #0d1117;
-  } 
-}
+code.hljs  {
+  background-color: var(--mui-palette-code-dark);
+} 
