@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Background } from "./Background";
+import { ThemeSwitch } from "./themeSwitch";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -38,6 +39,7 @@ export function LandingPageLayout(props: LayoutProps) {
     <Background>
       <Box sx={{ textAlign: "end", px: 2, py: 1 }}>
         <SocialIcons />
+        <ThemeSwitch />
       </Box>
       <main
         style={{

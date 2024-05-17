@@ -35,7 +35,7 @@ export default function Home() {
               fontVariantLigatures: "normal",
             }}
           >
-            Noogλe :: 2024
+            Noogλe
           </Typography>
         </Link>
 
