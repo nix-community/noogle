@@ -66,7 +66,10 @@ export function PagefindResults() {
     const init = async () => {
       console.log({ search, term, filters: { from, to } });
       if (search) {
-        let raw = await search(term, { filters: { from, to } });
+        let raw = await search(term, {
+          filters: { from, to },
+          sort: { weight: "desc" },
+        });
         setSearchResults(raw?.results || []);
       }
     };
