@@ -52,7 +52,9 @@ export const PositionLink = ({
             component={"div"}
             sx={{ color: "text.secondary", pb: 2 }}
           >
-            This function is not declared in a .nix file
+            This function is not defined in a .nix file. It is likely a builtins
+            function or an alias of a builtins function. builtins functions are
+            predefined functions provided by Nix.
           </Typography>
           {!is_primop && (
             <Typography
@@ -60,7 +62,7 @@ export const PositionLink = ({
               component={"div"}
               sx={{ color: "text.secondary", pb: 2 }}
             >
-              This is very likely a bug in noogle please report this error.
+              This is very likely a bug in Noogle please report this error.
             </Typography>
           )}
         </>
@@ -84,7 +86,7 @@ export const PositionLink = ({
                 sx={{ textTransform: "none", my: 1, placeSelf: "start" }}
                 startIcon={<EditIcon />}
               >
-                Edit source
+                Edit Source Code
               </Button>
             </Link>
           )}
@@ -108,7 +110,7 @@ export const PositionLink = ({
                     }}
                     startIcon={<LinkIcon />}
                   >
-                    Attribute position
+                    View Attribute Definition
                   </Button>
                 </Link>
               )}
@@ -130,7 +132,7 @@ export const PositionLink = ({
                     }}
                     startIcon={<LinkIcon />}
                   >
-                    Underlying function
+                    See Function Definition
                   </Button>
                 </Link>
               )}

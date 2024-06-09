@@ -80,10 +80,26 @@ export function interpretType(
   return { args: ["any"], returns: ["any"] };
 }
 
+/**
+ * Find the type of a function that is a builtin or by looking at its builtins aliases
+ */
 export function findType(item: Doc): string | undefined {
+  if (item.meta.is_primop && !item.meta.signature && item.meta.aliases) {
+    for (const alias of item.meta.aliases) {
+      const type = findTypeByPath(alias);
+      if (type) {
+        return type;
+      }
+    }
+  }
+
   return findTypeByPath(item.meta.path);
 }
 
+/**
+ * Find the type of a builtins.* function by looking at its path.
+ * Noogle has a hand-crafted list of builtin types that cannot be retrieved otherwise.
+ */
 export function findTypeByPath(path: string[]): string | undefined {
   if (path.length === 2 && path[0] === "builtins") {
     const fallbackType = builtinTypes[path[1]];
