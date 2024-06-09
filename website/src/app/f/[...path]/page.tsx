@@ -108,8 +108,6 @@ async function getManualSrc(item: Doc): Promise<string | null> {
   }
   const manPath = path.join(process.cwd(), "src/models/data", extern.file);
   const source = fs.readFileSync(manPath, { encoding: "utf-8" });
-  // const src = extern.file;
-  // console.log({ source, manPath });
   return source;
 }
 
@@ -208,6 +206,10 @@ export default async function Page(props: { params: { path: string[] } }) {
               <meta key={idx} data-pagefind-meta={`category:${attr}`} />
             )
           )}
+        <meta
+          data-pagefind-sort="weight[data-weight]"
+          data-weight={meta?.path?.at(0) === "builtins" ? "10" : "1"}
+        />
         <Box>
           <Box
             sx={{
@@ -226,6 +228,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               id={item?.meta.title}
               variant="h2"
               component={"h1"}
+              data-pagefind-weight="15"
               sx={{
                 marginRight: "auto",
               }}

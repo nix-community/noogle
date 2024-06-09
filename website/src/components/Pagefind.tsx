@@ -31,6 +31,9 @@ type PagefindHooks = {
     term: string | null,
     options?: {
       filters?: Filters;
+      sort?: {
+        [name: string]: "asc" | "desc";
+      };
     }
   ) =>
     | Promise<{
@@ -56,6 +59,19 @@ export const usePagefindSearch = (): PagefindHooks => {
             // @ts-ignore
             /* webpackIgnore: true */ "/pagefind/pagefind.js"
           );
+          await pagefind.options({
+            ranking: {
+              // controls how quickly a term “saturates” on a page.
+              // Once a term has appeared on a page many times,
+              // further appearances have a reduced impact on the page rank.
+              // We choose to reduce this to suppress pages that are ranking well due to a high number of search terms existing in their content.
+              termSaturation: 0.5, // default value 1.4
+              // Changes the way ranking compares page lengths with the average page lengths on your site.
+              pageLength: 0.6, // default value 0.75
+              // Increasing the termSimilarity parameter is a good way to suppress pages that are ranking well for long extensions of search terms.
+              termSimilarity: 1.5, // default value 1.0
+            },
+          });
           // @ts-ignore
           window.pagefind = pagefind;
 
