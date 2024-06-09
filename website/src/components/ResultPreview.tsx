@@ -7,9 +7,10 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Tooltip,
 } from "@mui/material";
 import { PagefindResult } from "./Pagefind";
-import { NixLambda, NixBuiltin } from "./Lambda";
+import { Lambda, Nix } from "./Lambda";
 import { data } from "@/models/data";
 import { findType } from "@/models/nix";
 
@@ -30,15 +31,7 @@ export const ResultPreview = (props: ResultPreviewProps) => {
   const cntAliases = item?.meta?.aliases?.length;
   const category = item?.meta?.path?.[0];
 
-  console.log({ isFunctor, item, signature });
-
-  const icon = isFunctor ? (
-    <DataObjectIcon />
-  ) : isPrimop ? (
-    <NixBuiltin />
-  ) : (
-    <NixLambda />
-  );
+  const icon = isFunctor ? <DataObjectIcon /> : isPrimop ? <Lambda /> : <Nix />;
   return (
     <>
       <ListItem
@@ -46,16 +39,26 @@ export const ResultPreview = (props: ResultPreviewProps) => {
         aria-label={`item-${meta.title}`}
       >
         <ListItemAvatar sx={{ color: "primary.light", mr: 1.5 }}>
-          <Badge
-            badgeContent={category || "N/A"}
-            color="primary"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
+          <Tooltip
+            title={
+              isFunctor
+                ? "This function is implemented using a functor. Functors are polymorphic data structures that act both as attribute sets and functions."
+                : isPrimop
+                ? "This function is directly implemented using a builtins function."
+                : `This function is defined in ${category}.`
+            }
           >
-            <Avatar sx={{ bgcolor: "primary.light" }}>{icon}</Avatar>
-          </Badge>
+            <Badge
+              badgeContent={isPrimop ? "builtin" : category || "N/A"}
+              color="primary"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar sx={{ bgcolor: "primary.light" }}>{icon}</Avatar>
+            </Badge>
+          </Tooltip>
         </ListItemAvatar>
         <Box>
           <ListItemText
@@ -65,6 +68,7 @@ export const ResultPreview = (props: ResultPreviewProps) => {
             }}
             secondaryTypographyProps={{
               variant: "body1",
+              color: "text.primary",
             }}
             primary={
               <Link rel="canonical" href={`${url}`}>
@@ -96,28 +100,34 @@ export const ResultPreview = (props: ResultPreviewProps) => {
               />
             )}
             {!!cntAliases && (
-              <Chip
-                size="small"
-                variant="outlined"
-                color="secondary"
-                label={`Aliases: ${cntAliases}`}
-              />
+              <Tooltip title="This function has aliases, which are alternative names for the same function, either shorter or longer.">
+                <Chip
+                  size="small"
+                  variant="outlined"
+                  color="primary"
+                  label={`Aliases: ${cntAliases}`}
+                />
+              </Tooltip>
             )}
             {isFunctor && (
-              <Chip
-                size="small"
-                variant="outlined"
-                color="warning"
-                label="Functor"
-              />
+              <Tooltip title="This function is implemented using a functor. In Nix, functors are polymorphic data structures that can act both as attribute sets and functions.">
+                <Chip
+                  size="small"
+                  variant="outlined"
+                  color="warning"
+                  label="Functor"
+                />
+              </Tooltip>
             )}
             {isPrimop && (
-              <Chip
-                size="small"
-                variant="outlined"
-                color="info"
-                label="Primop"
-              />
+              <Tooltip title="This function is directly implemented using a builtins function. Builtins functions are predefined by Nix and provide its core functionality.">
+                <Chip
+                  size="small"
+                  variant="outlined"
+                  color="warning"
+                  label="builtin"
+                />
+              </Tooltip>
             )}
           </Box>
         </Box>

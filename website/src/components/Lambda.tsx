@@ -1,7 +1,7 @@
 import React from "react";
 import type { SVGProps } from "react";
 
-export function NixLambda(props: SVGProps<SVGSVGElement>) {
+export function Lambda(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path
@@ -12,7 +12,7 @@ export function NixLambda(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function NixBuiltin(props: SVGProps<SVGSVGElement>) {
+export function Nix(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       className="svg-icon"
