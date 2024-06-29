@@ -29,7 +29,7 @@
   "dirOf": { "fn_type": "dirOf :: String -> String" },
   "div": { "fn_type": "div :: Number -> Number -> Number" },
   "elem": { "fn_type": "elem :: a -> [b] -> Bool" },
-  "elemAt": { "fn_type": "elemAt :: [a] -> Int -> b" },
+  "elemAt": { "fn_type": "elemAt :: [a] -> Int -> a" },
   "fetchClosure": { "fn_type": "fetchClosure :: AttrSet -> AttrSet" },
   "fetchGit": { "fn_type": "fetchgit :: AttrSet -> AttrSet" },
   "fetchTarball": { "fn_type": "fetchTarball :: AttrSet -> AttrSet" },
@@ -40,11 +40,11 @@
   },
   "floor": { "fn_type": "floor :: Float -> Int" },
   "foldl'": {
-    "fn_type": "foldl' :: (a -> b -> c) -> a -> [b] -> c"
+    "fn_type": "foldl' :: (a -> b -> a) -> a -> [b] -> a"
   },
   "fromJSON": { "fn_type": "fromJSON :: String -> a" },
   "functionArgs": { "fn_type": "functionArgs :: (a) -> AttrSet" },
-  "genList": { "fn_type": "genList :: (a -> b) -> a -> [b]" },
+  "genList": { "fn_type": "genList :: (Int -> a) -> Int -> [a]" },
   "genericClosure": { "fn_type": "genericClosure :: AttrSet -> [AttrSet]" },
   "getAttr": { "fn_type": "getAttr :: String -> AttrSet -> a" },
   "getEnv": { "fn_type": "getEnv :: String -> String" },
