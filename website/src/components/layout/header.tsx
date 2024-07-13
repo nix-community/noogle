@@ -1,8 +1,7 @@
 "use client";
 import { Box, LinearProgress, Link } from "@mui/material";
-import { SearchInput } from "../searchInput";
 import { Filter } from "../filter";
-import { Suspense } from "react";
+import { ReactNode, Suspense } from "react";
 import { SocialIcons } from "./layout";
 
 import localFont from "next/font/local";
@@ -12,7 +11,11 @@ const fira = localFont({
   display: "swap",
 });
 
-export const Header = () => {
+export type HeaderProps = {
+  search: ReactNode;
+};
+export const Header = (props: HeaderProps) => {
+  const { search } = props;
   return (
     <>
       <Box
@@ -80,9 +83,7 @@ export const Header = () => {
             overflow: "hidden",
           }}
         >
-          <Suspense fallback="search input ">
-            <SearchInput placeholder="search nix functions" />
-          </Suspense>
+          <Suspense fallback="search input ">{search}</Suspense>
         </Box>
         <Box
           sx={{

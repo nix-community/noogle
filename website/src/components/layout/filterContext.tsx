@@ -36,9 +36,11 @@ export type FilterOptions = {
 export const FilterProvider = ({
   children,
   initialOpen = false,
+  queryUrl = "q",
 }: {
   children: ReactNode;
   initialOpen?: boolean;
+  queryUrl?: string;
 }) => {
   const router = useRouter();
   const params = useSearchParams();
@@ -84,7 +86,7 @@ export const FilterProvider = ({
     });
     if (page) query.set("page", page.toString());
     if (limit) query.set("page", limit.toString());
-    router.push(`/q?${query.toString()}`);
+    router.push(`/${queryUrl}?${query.toString()}`);
   };
   return (
     <FilterContext.Provider

@@ -2,6 +2,7 @@ import { FilterProvider } from "@/components/layout/filterContext";
 import { Header } from "@/components/layout/header";
 import { Container } from "@mui/material";
 import { ReactNode, Suspense } from "react";
+import { SearchInput } from "@/components/searchInput";
 
 export default function SearchLayout({
   children,
@@ -14,7 +15,7 @@ export default function SearchLayout({
     <>
       <Suspense fallback="query">
         <FilterProvider>
-          <Header />
+          <Header search={<SearchInput placeholder="Search function" />} />
         </FilterProvider>
       </Suspense>
       <Container
