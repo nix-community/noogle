@@ -1,5 +1,31 @@
 "use client";
 
+import { EmptyRecordsPlaceholder } from "@/components/emptyRecordsPlaceholder";
+import { useFilter } from "@/components/layout/filterContext";
+import Clear from "@mui/icons-material/Clear";
+import {
+  Box,
+  Button,
+  Chip,
+  Collapse,
+  Container,
+  Divider,
+  Icon,
+  IconButton,
+  LinearProgress,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import LinkIcon from "@mui/icons-material/Link";
+import CodeIcon from "@mui/icons-material/Code";
+
+import { ExpandLess, ExpandMore, GitHub, Mail } from "@mui/icons-material";
+
 const getPayload = (term: string) => {
   const extraWildcards = term.split(" ").map((t) => ({
     wildcard: {
@@ -189,18 +215,29 @@ type Hit = {
 
 type PackageItemProps = {
   item: Hit;
+  selected: boolean;
+  setSelected: (id: string) => void;
 };
 const PackageItem = (props: PackageItemProps) => {
-  const { item } = props;
+  const { item, selected, setSelected } = props;
 
   const { _source: meta } = item;
+
+  console.log({ meta, item });
   return (
     <>
       <ListItem
         sx={{ px: 1, py: 2, bgcolor: "background.paper", my: 1 }}
         aria-label={`item-${item._source.package_pname}`}
       >
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            width: "100%",
+          }}
+        >
           <ListItemText
             primaryTypographyProps={{
               variant: "h5",
@@ -209,69 +246,78 @@ const PackageItem = (props: PackageItemProps) => {
             secondaryTypographyProps={{
               component: "div",
               variant: "body1",
-              color: "text.primary",
+              color: "text.secondary",
             }}
-            primary={<Link href={"#"}>{meta.package_attr_name}</Link>}
-            secondary={
-              <ListItemText
-                sx={{
-                  display: "flex",
-                  flexDirection: "column-reverse",
-                }}
-                secondary={"version"}
-                primary={meta.package_pversion}
-              />
-            }
-          />
-          <ListItemText
-            sx={{
-              display: "flex",
-              flexDirection: "column-reverse",
-            }}
-            secondary="outputs"
             primary={
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: "0.5rem",
+              <Link
+                href={"#"}
+                onClick={() => {
+                  setSelected(item._id);
                 }}
               >
-                {meta.package_outputs.map((output) => (
-                  <code key={output}>{output}</code>
-                ))}
-              </div>
+                {meta.package_attr_name}
+              </Link>
             }
-          />
-          <ListItemText
-            primaryTypographyProps={{
-              component: "div",
-              variant: "body1",
-              maxWidth: "40rem",
-            }}
-            sx={{
-              display: "flex",
-              flexDirection: "column-reverse",
-            }}
-            secondary="description"
-            primary={
-              <div
+            secondary={
+              <Box
+                sx={{ maxWidth: "sm" }}
                 dangerouslySetInnerHTML={{
                   __html: meta.package_description,
                 }}
               />
             }
           />
-          <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
-            <Link href={meta.package_homepage?.[0] || "#"}>Homepage</Link>
-            <Link
-              href={`https://github.com/NixOS/nixpkgs/blob/nixos-24.05/${meta.package_position.replace(
-                ":",
-                "#L"
-              )}`}
-            >
-              Source
-            </Link>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}
+          >
+            <ListItemText
+              sx={{
+                display: "flex",
+                flexDirection: "column-reverse",
+              }}
+              secondary={"name"}
+              primary={meta.package_pname}
+            />
+            <ListItemText
+              sx={{
+                display: "flex",
+                flexDirection: "column-reverse",
+              }}
+              secondary={"version"}
+              primary={meta.package_pversion}
+            />
+            <ListItemText
+              sx={{
+                display: "flex",
+                flexDirection: "column-reverse",
+              }}
+              secondary="outputs"
+              primary={
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "0.5rem",
+                  }}
+                >
+                  {meta.package_outputs.map((output) => (
+                    <code key={output}>{output}</code>
+                  ))}
+                </div>
+              }
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}
+          >
             <ListItemText
               sx={{
                 display: "flex",
@@ -285,31 +331,177 @@ const PackageItem = (props: PackageItemProps) => {
                   </Link>
                 )
               }
-            ></ListItemText>
+            />
+            <Button
+              sx={{
+                ml: "auto",
+              }}
+              component={Link}
+              href={meta.package_homepage?.[0] || "#"}
+              startIcon={<LinkIcon fontSize="inherit" />}
+            >
+              Homepage
+            </Button>
+            <Button
+              component={Link}
+              href={`https://github.com/NixOS/nixpkgs/blob/nixos-unstable/${meta.package_position.replace(
+                ":",
+                "#L"
+              )}`}
+              startIcon={<CodeIcon fontSize="inherit" />}
+            >
+              Source
+            </Button>
           </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mt: "-1rem",
+            }}
+          >
+            <IconButton onClick={() => setSelected(item._id)}>
+              {selected ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
+          </Box>
+
+          <Collapse in={selected}>
+            <Divider flexItem orientation="horizontal" />
+            {/* <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <IconButton onClick={() => setSelected(item._id)}>
+                <ExpandLess />
+              </IconButton>
+            </Box> */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                width: "100%",
+              }}
+            >
+              <ListItemText
+                primaryTypographyProps={{
+                  component: "div",
+                  variant: "body1",
+                  color: "text.primary",
+                }}
+                // secondaryTypographyProps={{
+                // }}
+                primary={
+                  <Box
+                    sx={{ width: "100%" }}
+                    dangerouslySetInnerHTML={{
+                      __html: meta.package_longDescription,
+                    }}
+                  />
+                }
+                // secondary={
+                //   ""
+                // }
+              />
+              <ListItemText
+                sx={{
+                  display: "flex",
+                  flexDirection: "column-reverse",
+                }}
+                secondary="programs"
+                primary={
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: "0.5rem",
+                      color: "primary.main",
+                    }}
+                  >
+                    {meta.package_programs.map((output) => (
+                      <code key={output}>{output}</code>
+                    ))}
+                  </Box>
+                }
+              />
+              <ListItemText
+                sx={{
+                  display: "flex",
+                  flexDirection: "column-reverse",
+                }}
+                secondary="Platforms"
+                primary={
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      flexDirection: "row",
+                      gap: "0.5rem",
+                      color: "primary.main",
+                    }}
+                  >
+                    {meta.package_platforms.map((output) => (
+                      <code key={output}>{output}</code>
+                    ))}
+                  </Box>
+                }
+              />
+              <ListItemText
+                sx={{
+                  display: "flex",
+                  flexDirection: "column-reverse",
+                }}
+                secondary="Maintainers"
+                primary={
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "0.5rem",
+                      color: "primary.main",
+                    }}
+                  >
+                    {meta.package_maintainers.map((maintainer) => (
+                      <Box
+                        key={maintainer.github}
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row",
+                          gap: "0.5rem",
+                        }}
+                      >
+                        <Link href={`https://github.com/${maintainer.github}`}>
+                          <Icon fontSize="inherit">
+                            <GitHub fontSize="inherit" />
+                          </Icon>
+                          {maintainer.name}
+                        </Link>
+                        <Box component={"span"} sx={{ color: "text.primary" }}>
+                          via
+                        </Box>
+                        <Link href={`mailto:${maintainer.email}`}>
+                          <Icon fontSize="inherit">
+                            <Mail fontSize="inherit" />
+                          </Icon>
+                          {maintainer.email}
+                        </Link>
+                      </Box>
+                    ))}
+                  </Box>
+                }
+              />
+            </Box>
+          </Collapse>
         </Box>
       </ListItem>
     </>
   );
 };
 
-import { EmptyRecordsPlaceholder } from "@/components/emptyRecordsPlaceholder";
-import { useFilter } from "@/components/layout/filterContext";
-import Clear from "@mui/icons-material/Clear";
-import {
-  Box,
-  Chip,
-  Container,
-  IconButton,
-  LinearProgress,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import AppsIcon from "@mui/icons-material/Apps";
 
 export default function Page() {
   const query = useSearchParams();
@@ -319,18 +511,23 @@ export default function Page() {
   const [items, setItems] = useState<Hit[]>();
   const [loading, setLoading] = useState<boolean>(false);
 
+  const [selected, setSelected] = useState<string | null>(null);
+
   useEffect(() => {
     if (term) {
       setLoading(true);
-      fetch(`https://search.nixos.org/backend/latest-42-nixos-24.05/_search`, {
-        method: "POST",
-        body: JSON.stringify(getPayload(term)),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Basic YVdWU0FMWHBadjpYOGdQSG56TDUyd0ZFZWt1eHNmUTljU2g=",
-        },
-      })
+      fetch(
+        `https://search.nixos.org/backend/latest-42-nixos-unstable/_search`,
+        {
+          method: "POST",
+          body: JSON.stringify(getPayload(term)),
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Basic YVdWU0FMWHBadjpYOGdQSG56TDUyd0ZFZWt1eHNmUTljU2g=",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setResults(data);
@@ -361,54 +558,111 @@ export default function Page() {
       <Container maxWidth="lg" sx={{ mt: 2 }}>
         {loading ? (
           <LinearProgress sx={{ my: 2 }} />
+        ) : !term ? (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              mt: "3.7rem",
+              justifySelf: "center",
+              width: "100%",
+              px: 2,
+              mx: 1,
+            }}
+          >
+            <EmptyRecordsPlaceholder
+              CardProps={{
+                sx: { backgroundColor: "inherit" },
+              }}
+              title="Type something to search"
+              icon={<AppsIcon fontSize="inherit" />}
+            />
+            <Box sx={{ marginLeft: "auto" }}>
+              <Link rel="canonical" href="/">
+                Or search functions
+              </Link>
+            </Box>
+          </Box>
         ) : (
           <>
-            <Typography
-              component="span"
-              variant="subtitle1"
+            <Box
               sx={{
-                p: 1,
-                textTransform: "capitalize",
+                display: "flex",
               }}
             >
-              <Chip
-                label={`${items?.length || "0"} Results`}
-                color="primary"
-                sx={{ color: "primary.contrastText" }}
-              />
-            </Typography>
-            {term && (
               <Typography
                 component="span"
                 variant="subtitle1"
                 sx={{
                   p: 1,
-                  textTransform: "none",
+                  textTransform: "capitalize",
                 }}
               >
                 <Chip
-                  label={
-                    <>
-                      {`${term}`}
-                      <IconButton
-                        size="small"
-                        onClick={() => handleReset("term")}
-                        aria-label="clear term"
-                      >
-                        <Clear fontSize="inherit" />
-                      </IconButton>
-                    </>
-                  }
-                  color="secondary"
-                  sx={{ color: "secondary.contrastText" }}
+                  label={`${items?.length || "0"} Results`}
+                  color="primary"
+                  sx={{ color: "primary.contrastText" }}
                 />
               </Typography>
-            )}
+              <Typography
+                component="span"
+                variant="subtitle1"
+                sx={{
+                  marginLeft: "auto",
+                  order: 1,
+                  p: 1,
+                  textTransform: "capitalize",
+                }}
+              >
+                <Chip
+                  label={`Channel: nixos-unstable`}
+                  color="primary"
+                  sx={{ color: "primary.contrastText" }}
+                />
+              </Typography>
+              {term && (
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  sx={{
+                    p: 1,
+                    textTransform: "none",
+                  }}
+                >
+                  <Chip
+                    label={
+                      <>
+                        {`${term}`}
+                        <IconButton
+                          size="small"
+                          onClick={() => handleReset("term")}
+                          aria-label="clear term"
+                        >
+                          <Clear fontSize="inherit" />
+                        </IconButton>
+                      </>
+                    }
+                    color="secondary"
+                    sx={{ color: "secondary.contrastText" }}
+                  />
+                </Typography>
+              )}
+            </Box>
             <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
               {items?.length ? (
                 items.map((item, idx) => (
                   <React.Fragment key={`${idx}`}>
-                    <PackageItem item={item} />
+                    <PackageItem
+                      item={item}
+                      selected={item._id === selected}
+                      setSelected={(id) => {
+                        if (id === selected) {
+                          setSelected(null);
+                        } else {
+                          setSelected(id);
+                        }
+                      }}
+                    />
                   </React.Fragment>
                 ))
               ) : (
