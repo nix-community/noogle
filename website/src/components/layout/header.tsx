@@ -1,10 +1,14 @@
 "use client";
-import { Box, LinearProgress, Link } from "@mui/material";
+import { Box, Button, LinearProgress, Link } from "@mui/material";
 import { Filter } from "../filter";
 import { ReactNode, Suspense } from "react";
 import { SocialIcons } from "./layout";
-
 import localFont from "next/font/local";
+import { styled } from "@mui/material/styles";
+
+const HeaderLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.primary.contrastText + "!important",
+}));
 
 const fira = localFont({
   src: "../../fonts/FiraCode-VF.ttf",
@@ -45,9 +49,11 @@ export const Header = (props: HeaderProps) => {
             display: { xs: "none", md: "block" },
           }}
         >
-          <Link
+          <Button
+            // component={Link}
             rel="canonical"
             href="/"
+            LinkComponent={HeaderLink}
             className={fira.className}
             sx={{
               color: "primary.contrastText",
@@ -56,7 +62,7 @@ export const Header = (props: HeaderProps) => {
             aria-label="Home"
           >
             {"Noogλe"}
-          </Link>
+          </Button>
         </Box>
         {/* <Box
           sx={{
@@ -69,22 +75,23 @@ export const Header = (props: HeaderProps) => {
             <Home />
           </IconButton>
         </Box> */}
+        {search && (
+          <Box
+            sx={{
+              justifySelf: "center",
+              width: "100%",
+              // minWidth: "20rem",
+              bgcolor: "background.paper",
+              px: 2,
+              mx: 1,
+              borderRadius: 10,
 
-        <Box
-          sx={{
-            justifySelf: "center",
-            width: "100%",
-            // minWidth: "20rem",
-            bgcolor: "background.paper",
-            px: 2,
-            mx: 1,
-            borderRadius: 10,
-
-            overflow: "hidden",
-          }}
-        >
-          <Suspense fallback="search input ">{search}</Suspense>
-        </Box>
+              overflow: "hidden",
+            }}
+          >
+            <Suspense fallback="search input ">{search}</Suspense>
+          </Box>
+        )}
         <Box
           sx={{
             justifySelf: "end",
