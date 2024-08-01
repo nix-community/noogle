@@ -21,6 +21,7 @@
           ${self'.packages.codemod}/bin/codemod .
           cp -r . $out
         '';
+        dontFixup = true;
       };
 
       checks = {
