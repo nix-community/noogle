@@ -50,8 +50,8 @@ rec {
 
     # Arguments
 
-    - [predefined] 
-    - [arg] 
+    - [predefined]
+    - [arg]
 
   */
 
