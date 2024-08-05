@@ -97,7 +97,7 @@ impl<'a> Lookups<'a> for Docs {
             .lambda
             .as_ref()
             .map(|i| {
-                if i.countApplied == Some(0) || (i.countApplied == None && i.isPrimop) {
+                if i.countApplied == Some(0) || (i.countApplied == None && i.isPrimop) || (i.countApplied == Some(1) && i.isFunctor == Some(true)) {
                     Some(ContentSource {
                         content: i.content.as_ref().map(|inner| dedent(inner)),
                         source: Some(SourceOrigin {
@@ -146,7 +146,7 @@ impl<'a> Lookups<'a> for Docs {
                 });
                 x
             }
-            _ => None,
+            None => None,
         }
     }
 }

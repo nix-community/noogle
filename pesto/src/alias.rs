@@ -86,6 +86,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
     res
 }
 
+#[derive(Debug)]
 pub struct FnCategories<'a> {
     pub primop: Vec<&'a Docs>,
     pub casual: Vec<&'a Docs>,
@@ -120,6 +121,22 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
             if lambda.isFunctor == Some(true) {
+                // A functor takes self as first argument
+                // Subtract the first argument from the count of applied arguments.
+                match lambda.countApplied.map(|s|s-1) {
+                    // Some(0) | None => {
+                    Some(0) => {
+                        if lambda.isPrimop {
+                            primop_lambdas.push(&item);
+                        }
+                        if !lambda.isPrimop {
+                            non_primop_lambdas.push(&item);
+                        }
+                    }
+                    _ => {
+                        partially_applieds.push(&item);
+                    }
+                }
                 continue;
             }
             match lambda.countApplied {
