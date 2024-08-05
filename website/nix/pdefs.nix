@@ -3952,6 +3952,19 @@
           version = "1.0.0";
         };
       };
+      asynckit = {
+        "0.4.0" = {
+          fetchInfo = {
+            narHash = "sha256-ySX1KUru2VwlCX4xMQynwHNOtbX8yyqtirHD2ILEuyc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz";
+          };
+          ident = "asynckit";
+          ltype = "file";
+          treeInfo = { };
+          version = "0.4.0";
+        };
+      };
       available-typed-arrays = {
         "1.0.5" = {
           fetchInfo = {
@@ -3976,6 +3989,35 @@
           ltype = "file";
           treeInfo = { };
           version = "4.8.2";
+        };
+      };
+      axios = {
+        "1.7.2" = {
+          depInfo = {
+            follow-redirects = {
+              descriptor = "^1.15.6";
+              pin = "1.15.6";
+              runtime = true;
+            };
+            form-data = {
+              descriptor = "^4.0.0";
+              pin = "4.0.0";
+              runtime = true;
+            };
+            proxy-from-env = {
+              descriptor = "^1.1.0";
+              pin = "1.1.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-6ZDr1YPuBL06YcUI1xBmEo5RFVlpbvtUXuePw0/y7qY=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/axios/-/axios-1.7.2.tgz";
+          };
+          ident = "axios";
+          ltype = "file";
+          version = "1.7.2";
         };
       };
       axobject-query = {
@@ -4470,6 +4512,25 @@
           version = "1.1.4";
         };
       };
+      combined-stream = {
+        "1.0.8" = {
+          depInfo = {
+            delayed-stream = {
+              descriptor = "~1.0.0";
+              pin = "1.0.0";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-+RCvzsa/ScK8HQNe6L6WRdxOuiJuqU1cRvV7qUfEbks=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz";
+          };
+          ident = "combined-stream";
+          ltype = "file";
+          version = "1.0.8";
+        };
+      };
       comma-separated-tokens = {
         "2.0.3" = {
           fetchInfo = {
@@ -4759,6 +4820,19 @@
           ident = "define-properties";
           ltype = "file";
           version = "1.2.1";
+        };
+      };
+      delayed-stream = {
+        "1.0.0" = {
+          fetchInfo = {
+            narHash = "sha256-kUE7OC4/g4RzhwzxU7Cj6hP07jok78tJwAsYWxWIQOc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz";
+          };
+          ident = "delayed-stream";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.0.0";
         };
       };
       dequal = {
@@ -6792,6 +6866,25 @@
           version = "3.2.7";
         };
       };
+      follow-redirects = {
+        "1.15.6" = {
+          fetchInfo = {
+            narHash = "sha256-n/Tbj8agH9BooqGagEbPWkRl7BnoY1tG+FJjE0iWyrc=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.6.tgz";
+          };
+          ident = "follow-redirects";
+          ltype = "file";
+          peerInfo = {
+            debug = {
+              descriptor = "*";
+              optional = true;
+            };
+          };
+          treeInfo = { };
+          version = "1.15.6";
+        };
+      };
       for-each = {
         "0.3.3" = {
           depInfo = {
@@ -6809,6 +6902,35 @@
           ident = "for-each";
           ltype = "file";
           version = "0.3.3";
+        };
+      };
+      form-data = {
+        "4.0.0" = {
+          depInfo = {
+            asynckit = {
+              descriptor = "^0.4.0";
+              pin = "0.4.0";
+              runtime = true;
+            };
+            combined-stream = {
+              descriptor = "^1.0.8";
+              pin = "1.0.8";
+              runtime = true;
+            };
+            mime-types = {
+              descriptor = "^2.1.12";
+              pin = "2.1.35";
+              runtime = true;
+            };
+          };
+          fetchInfo = {
+            narHash = "sha256-ASh2B2n7uaQZkO0SWR3lnu3IeZ6e1KIevUBTfO0ixLU=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz";
+          };
+          ident = "form-data";
+          ltype = "file";
+          version = "4.0.0";
         };
       };
       format = {
@@ -13873,6 +13995,11 @@
               pin = "0.1.0";
               runtime = true;
             };
+            axios = {
+              descriptor = "^1.7.2";
+              pin = "1.7.2";
+              runtime = true;
+            };
             date-fns = {
               descriptor = "^3.6.0";
               pin = "3.6.0";
@@ -14813,12 +14940,18 @@
               dev = true;
               key = "asynciterator.prototype/1.0.0";
             };
+            "node_modules/asynckit" = {
+              key = "asynckit/0.4.0";
+            };
             "node_modules/available-typed-arrays" = {
               key = "available-typed-arrays/1.0.5";
             };
             "node_modules/axe-core" = {
               dev = true;
               key = "axe-core/4.8.2";
+            };
+            "node_modules/axios" = {
+              key = "axios/1.7.2";
             };
             "node_modules/axobject-query" = {
               dev = true;
@@ -14898,6 +15031,9 @@
               dev = true;
               key = "color-name/1.1.4";
             };
+            "node_modules/combined-stream" = {
+              key = "combined-stream/1.0.8";
+            };
             "node_modules/comma-separated-tokens" = {
               key = "comma-separated-tokens/2.0.3";
             };
@@ -14943,6 +15079,9 @@
             };
             "node_modules/define-properties" = {
               key = "define-properties/1.2.1";
+            };
+            "node_modules/delayed-stream" = {
+              key = "delayed-stream/1.0.0";
             };
             "node_modules/dequal" = {
               key = "dequal/2.0.3";
@@ -15187,8 +15326,14 @@
               dev = true;
               key = "flatted/3.2.7";
             };
+            "node_modules/follow-redirects" = {
+              key = "follow-redirects/1.15.6";
+            };
             "node_modules/for-each" = {
               key = "for-each/0.3.3";
+            };
+            "node_modules/form-data" = {
+              key = "form-data/4.0.0";
             };
             "node_modules/format" = {
               key = "format/0.2.2";
@@ -16512,6 +16657,9 @@
             "node_modules/property-information" = {
               key = "property-information/6.2.0";
             };
+            "node_modules/proxy-from-env" = {
+              key = "proxy-from-env/1.1.0";
+            };
             "node_modules/punycode" = {
               key = "punycode/2.1.1";
             };
@@ -17717,6 +17865,19 @@
           ltype = "file";
           treeInfo = { };
           version = "6.2.0";
+        };
+      };
+      proxy-from-env = {
+        "1.1.0" = {
+          fetchInfo = {
+            narHash = "sha256-hWI48SYmBlNnhQgUK/v05p6WiZDu2+UaemuGKrb16g8=";
+            type = "tarball";
+            url = "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz";
+          };
+          ident = "proxy-from-env";
+          ltype = "file";
+          treeInfo = { };
+          version = "1.1.0";
         };
       };
       punycode = {
