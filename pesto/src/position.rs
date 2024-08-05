@@ -148,9 +148,9 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
             if let Some(Some(expr)) = expr {
                 let doc = match expr.kind() {
                     rnix::SyntaxKind::NODE_LAMBDA => {
-                        let (outer_lambda, count_applied) = get_parent_lambda(&expr);
+                        let (_outer_lambda, count_applied) = get_parent_lambda(&expr);
                         NixDocComment {
-                            content: get_expr_docs(&outer_lambda),
+                            content: get_expr_docs(&expr),
                             count_applied: Some(count_applied),
                         }
                     }

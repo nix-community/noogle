@@ -147,7 +147,6 @@ fn find_document_content<'a>(
                 pos_type: Some(PositionType::Attribute),
             }),
         }),
-        // _ if item. item.lambda_content().is_some() => item.lambda_content(),
         _ => match item.fst_alias_content(&all) {
             Some(d) => Some(d),
             None => item.lambda_content(),
