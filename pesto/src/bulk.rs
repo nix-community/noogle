@@ -3,7 +3,10 @@ use std::{collections::HashMap, path::PathBuf, println, rc::Rc, time::Instant, v
 use crate::{
     alias::{categorize, init_alias_map},
     pasta::{Docs, Files, Pasta},
-    position::{DocComment, DocIndex, FilePosition, NixDocComment},
+    position::{
+        get_overridable_fn, seek_file_position, when_overridable_lambda, DocComment, DocIndex,
+        FilePosition, NixDocComment,
+    },
 };
 
 #[derive(Debug)]
@@ -112,6 +115,8 @@ impl<'a> BulkProcessing for Pasta {
         let file_map = build_file_map(&data);
 
         let mut pos_doc_map: HashMap<&FilePosition, Option<NixDocComment>> = HashMap::new();
+
+        let mut file_idx_map: HashMap<&PathBuf, DocIndex> = HashMap::new();
         for (path, lookups) in file_map.iter() {
             if !path.exists() {
                 println!("file does not exist: {:?} Skipping.", path);
@@ -127,6 +132,7 @@ impl<'a> BulkProcessing for Pasta {
             );
 
             let doc_index = DocIndex::new(path, positions);
+            file_idx_map.insert(path, doc_index.clone());
 
             for lookup in lookups {
                 pos_doc_map.insert(
@@ -135,7 +141,28 @@ impl<'a> BulkProcessing for Pasta {
                 );
             }
         }
+
         let mut filled_docs = fill_docs(&data, &pos_doc_map);
+
+        // Do a second pass for potential lib.makeOverridable wrapped functions.
+        let mut restores: Vec<String> = vec![];
+        for doc in filled_docs.iter_mut() {
+            if let Some(orig_file) = when_overridable_lambda(doc, &file_idx_map) {
+                let orig_lambda = get_overridable_fn(&orig_file);
+                let orig_pos =
+                    orig_lambda.map(|n| seek_file_position(&orig_file, &n.text_range().start()));
+                if let Some(orig_pos) = orig_pos {
+                    if let Some(l) = &mut doc.docs.lambda {
+                        l.position = orig_pos;
+                        restores.push(format!("{:?}", doc.path.join(".")));
+                    }
+                }
+            }
+        }
+        println!(
+            "Restored from makeOverridable with edge-case handling: {:?}",
+            restores
+        );
 
         let categories = categorize(&filled_docs);
         let alias_map = init_alias_map(&data, categories);

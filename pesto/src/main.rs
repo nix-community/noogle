@@ -88,7 +88,7 @@ pub fn main() {
             let matter = &document.meta;
             let content = &document.content;
 
-            let signature = content
+            let _signature = content
                 .as_ref()
                 .map(|c| c.content.as_ref().map(|s| find_type(&s)))
                 .flatten();
@@ -132,9 +132,9 @@ pub fn main() {
 /// Find the content which should be displayed.
 /// The own attribute content is the correct one usually.
 /// Sometimes there is no attribute content.
-/// The we search all the aliases for their attribute content.
+/// Then we search all the aliases for their attribute content.
 /// As a fallback we can display the own lambda content.
-fn find_document_content<'a>(
+pub fn find_document_content<'a>(
     item: &'a Docs,
     all: &'a HashMap<Rc<ValuePath>, Docs>,
 ) -> Option<ContentSource<'a>> {
