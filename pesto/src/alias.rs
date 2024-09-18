@@ -123,7 +123,7 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
             if lambda.isFunctor == Some(true) {
                 // A functor takes self as first argument
                 // Subtract the first argument from the count of applied arguments.
-                match lambda.countApplied.map(|s|s-1) {
+                match lambda.countApplied.map(|s| if s != 0 { s - 1 } else { 0 }) {
                     // Some(0) | None => {
                     Some(0) => {
                         if lambda.isPrimop {
