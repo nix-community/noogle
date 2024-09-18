@@ -1,0 +1,24 @@
+[
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/qivk4lp6jhrfrdxlncnkdyg2aza6d83d-nixpkgs-migrated/pkgs/top-level/all-packages.nix",
+          "line": 1181
+        }
+      },
+      "lambda": {
+        "countApplied": 1,
+        "isFunctor": true,
+        "isPrimop": false,
+        "position": {
+          "column": 17,
+          "file": "/nix/store/qivk4lp6jhrfrdxlncnkdyg2aza6d83d-nixpkgs-migrated/lib/customisation.nix",
+          "line": 136
+        }
+      }
+    },
+    "path": ["pkgs", "fetchFromGitHub"]
+  }
+]
