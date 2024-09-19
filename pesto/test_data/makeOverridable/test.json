@@ -4,6 +4,50 @@
       "attr": {
         "position": {
           "column": 3,
+          "file": "/nix/store/sv1ix2lrwxbflx43b1pqbpj5y1fm5frk-nixpkgs-migrated/pkgs/top-level/all-packages.nix",
+          "line": 937
+        }
+      },
+      "lambda": {
+        "countApplied": 1,
+        "isFunctor": true,
+        "isPrimop": false,
+        "position": {
+          "column": 17,
+          "file": "/nix/store/sv1ix2lrwxbflx43b1pqbpj5y1fm5frk-nixpkgs-migrated/lib/customisation.nix",
+          "line": 136
+        }
+      }
+    },
+    "path": ["pkgs", "fetchgit"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
+          "file": "/nix/store/sv1ix2lrwxbflx43b1pqbpj5y1fm5frk-nixpkgs-migrated/pkgs/top-level/all-packages.nix",
+          "line": 922
+        }
+      },
+      "lambda": {
+        "countApplied": 1,
+        "isFunctor": true,
+        "isPrimop": false,
+        "position": {
+          "column": 17,
+          "file": "/nix/store/sv1ix2lrwxbflx43b1pqbpj5y1fm5frk-nixpkgs-migrated/lib/customisation.nix",
+          "line": 136
+        }
+      }
+    },
+    "path": ["pkgs", "fetchcvs"]
+  },
+  {
+    "docs": {
+      "attr": {
+        "position": {
+          "column": 3,
           "file": "/nix/store/qivk4lp6jhrfrdxlncnkdyg2aza6d83d-nixpkgs-migrated/pkgs/top-level/all-packages.nix",
           "line": 1181
         }
