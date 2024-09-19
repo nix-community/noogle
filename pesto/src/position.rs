@@ -51,33 +51,61 @@ pub fn get_src(path: &PathBuf) -> String {
     exit(1);
 }
 
-/// Returns the node path
+/// Returns rnix::SyntaxKind::NODE_PATH
 pub fn get_call_package_file(node: Option<&SyntaxNode>) -> Option<SyntaxNode> {
     if let Some(node) = node {
-        match node.kind() {
-            rnix::SyntaxKind::NODE_ATTRPATH_VALUE => {
-                get_call_package_file(node.last_child().as_ref())
+        for ev in node.preorder() {
+            let res = match ev {
+                WalkEvent::Enter(node) => match node.kind() {
+                    rnix::SyntaxKind::NODE_ATTRPATH_VALUE => {
+                        get_call_package_file(node.last_child().as_ref())
+                    }
+                    rnix::SyntaxKind::NODE_APPLY => {
+                        let maybe_path = filter_path_from_apply(&node);
+                        match maybe_path.as_ref().map(|n| n.kind()) {
+                            Some(rnix::SyntaxKind::NODE_PATH) => maybe_path.clone(),
+                            _ => {
+                                // callPackage ./path/file.nix {}
+                                // Maybe the path is a dynamic expression which is non-trivial to resolve?
+                                println!("Could not find path in apply {:?}", &node);
+                                None
+                            }
+                        }
+                    }
+                    _ => None,
+                },
+                _ => None,
+            };
+            if let Some(res) = res {
+                return Some(res);
             }
-            rnix::SyntaxKind::NODE_PATH => Some(node.clone()),
-            rnix::SyntaxKind::NODE_APPLY => match node.first_child().map(|n| n.kind()) {
-                Some(rnix::SyntaxKind::NODE_APPLY) => {
-                    get_call_package_file(node.first_child().as_ref())
-                }
-                _ => get_call_package_file(node.last_child().as_ref()),
-            },
-            _ => {
-                println!(
-                    "Unhandled node when trying to unpack callPackage expression: {:?}",
-                    node.kind()
-                );
-                None
-            } // n => get_call_package_file(node.last_child().as_ref()),
         }
-    } else {
-        None
     }
+    None
 }
 
+fn filter_path_from_apply(apply: &SyntaxNode) -> Option<SyntaxNode> {
+    for ev in apply.preorder() {
+        let res = match ev {
+            WalkEvent::Enter(node) => match node.kind() {
+                rnix::SyntaxKind::NODE_IDENT => {
+                    // If the first child is callPackage.
+                    // Assume CallPackage takes a second argument, which is the next node.
+                    if node.text().to_string() == "callPackage" {
+                        return node.next_sibling();
+                    }
+                    None
+                }
+                _ => None,
+            },
+            _ => None,
+        };
+        if let Some(res) = res {
+            return res;
+        }
+    }
+    None
+}
 /// Goes up the tree to find the parent node that matches the predicate,
 /// checks starting with the current node
 /// Stops when the limit is reached
@@ -301,19 +329,30 @@ pub fn seek_file_position(path: &PathBuf, text_pos: &TextSize) -> Option<FilePos
 // (( x: ... )) -> x: ...
 // Returns the lambda node, if one exists
 // Aborts if the node is not a lambda
+// Returns rnix::SyntaxKind::NODE_LAMBDA
 fn unpack_lambda(node: &SyntaxNode) -> Option<SyntaxNode> {
     for ev in node.preorder() {
         let res = match ev {
             WalkEvent::Enter(node) => {
                 match node.kind() {
                     // The top level callpackage lambda
-                    rnix::SyntaxKind::NODE_PAREN => None,
                     rnix::SyntaxKind::NODE_LAMBDA => Some(node),
+                    rnix::SyntaxKind::NODE_APPLY => node
+                        .first_child()
+                        .as_ref()
+                        .map(|n| unpack_lambda(n))
+                        .flatten(),
+                    rnix::SyntaxKind::NODE_PAREN => None,
+                    rnix::SyntaxKind::NODE_SELECT => None,
+                    rnix::SyntaxKind::NODE_IDENT => None,
+                    rnix::SyntaxKind::NODE_ATTRPATH => None,
+                    rnix::SyntaxKind::NODE_ATTR_SET => None,
+                    rnix::SyntaxKind::NODE_IF_ELSE => None,
                     _ => {
                         println!(
-                            "Unexpected node kind: {:?}. Expected Parenthesis '(x: ...)' or Lambda 'x: ... '",
-                            node.kind()
-                        );
+                                "Unexpected node kind: {:?}. Expected Parenthesis '(x: ...)' or Lambda 'x: ... '",
+                                node.kind()
+                            );
                         exit(1);
                     }
                 }
