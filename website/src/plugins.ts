@@ -2,6 +2,58 @@ import { h } from "hastscript";
 import { visit } from "unist-util-visit";
 import { Element } from "hast";
 
+export default function remarkBareUrls() {
+  /**
+   * @param {import('mdast').Root} tree
+   *   Tree.
+   * @returns {undefined}
+   *   Nothing.
+   */
+  return function (tree: any) {
+    // Use unist-util-visit to walk through the markdown AST
+    visit(tree, "text", (node, index, parent) => {
+      const urlRegex = /\bhttps?:\/\/[^\s<]+/g;
+      let match;
+      const nodes = [];
+
+      let lastIndex = 0;
+      while ((match = urlRegex.exec(node.value)) !== null) {
+        // Push any text before the URL
+        if (match.index > lastIndex) {
+          nodes.push({
+            type: "text",
+            value: node.value.slice(lastIndex, match.index),
+          });
+        }
+
+        // Create the <a> tag for the URL
+        const url = match[0];
+        nodes.push({
+          type: "link",
+          title: null,
+          url: url,
+          children: [{ type: "text", value: url }],
+        });
+
+        lastIndex = match.index + url.length;
+      }
+
+      // Push any remaining text after the last URL
+      if (lastIndex < node.value.length) {
+        nodes.push({
+          type: "text",
+          value: node.value.slice(lastIndex),
+        });
+      }
+
+      // Replace the original text node with the new nodes (text + links)
+      if (nodes.length > 0) {
+        parent.children.splice(index, 1, ...nodes);
+      }
+    });
+  };
+}
+
 export function styleDirectives() {
   /**
    * @param {import('mdast').Root} tree
@@ -48,6 +100,7 @@ export function replaceComponents() {
           tagName: `a`,
           properties: {
             "data-link-md": true,
+            href: node.properties.href,
           }, // Pass props here if needed
           children: node.children,
         };

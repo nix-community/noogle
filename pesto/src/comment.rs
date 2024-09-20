@@ -63,7 +63,7 @@ pub fn get_expr_docs(expr: &SyntaxNode) -> Option<String> {
                 ast::AttrpathValue(_) => {
                     if let Some(doc_comment) = get_doc_comment(parent) {
                         doc_comment.doc_text().map(|v| v.to_owned())
-                    }else if Some(comment) = get_comment(parent) {
+                    }else if let Some(comment) = get_comment(parent) {
                         Some(comment.text().to_owned())
                     } else {
                         None

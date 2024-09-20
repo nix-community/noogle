@@ -14,7 +14,6 @@ import rehypeStringify from "rehype-stringify";
 import remarkHeadingId from "remark-heading-id";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import remarkUnlink from "remark-unlink";
 import {
   remarkDefinitionList,
   defListHastHandlers,
@@ -24,7 +23,7 @@ import remarkDirective from "remark-directive";
 
 import { unified } from "unified";
 import { rehypeExtractExcerpt } from "./excerpt";
-import {
+import remarkBareUrls, {
   replaceComponents,
   sanitizeDirectives,
   styleDirectives,
@@ -127,9 +126,9 @@ type Heading = {
 export const parseMd = async (src: string) => {
   const result = await unified()
     .use(remarkParse)
+    .use(remarkBareUrls)
     .use(remarkHeadingId)
     .use(remarkDefinitionList)
-    .use(remarkUnlink)
     .use(remarkDirective)
     .use(styleDirectives)
     .use(remarkRehype, {
@@ -212,7 +211,7 @@ export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
     [rehypeSlug, {}],
     [rehypeAutolinkHeadings, { behavior: "wrap" }],
   ],
-  remarkPlugins: [remarkHeadingId, remarkDefinitionList, remarkUnlink],
+  remarkPlugins: [remarkHeadingId, remarkDefinitionList],
   format: "md",
   remarkRehypeOptions: {
     handlers: {
