@@ -93,15 +93,15 @@ export function replaceComponents() {
         };
       }
       if (["a"].includes(node.tagName) && index !== undefined) {
-        //   node,
-        //   c: node.tagName,
-        // });
         parent.children[index] = {
           type: "element",
           tagName: `a`,
           properties: {
             "data-link-md": true,
-            ...redirectNixpkgsManualAnchor(node.properties.href as string),
+            ...redirectNixpkgsManualAnchor(
+              node.properties.href as string,
+              !node.properties["data-autolinked"] as boolean
+            ),
           }, // Pass props here if needed
           children: node.children,
         };
@@ -110,7 +110,10 @@ export function replaceComponents() {
   };
 }
 
-function redirectNixpkgsManualAnchor(href: string) {
+function redirectNixpkgsManualAnchor(href: string, transformLink: boolean) {
+  if (!transformLink) {
+    return { href };
+  }
   if (href.startsWith("@docroot@")) {
     return {
       href: `https://nix.dev/manual/nix/latest/${href
