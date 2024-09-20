@@ -4,7 +4,7 @@
       "attr": {
         "position": {
           "column": 3,
-          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/lists.nix",
+          "file": "test_data/assets/lib/lists.nix",
           "line": 198
         }
       },
@@ -12,7 +12,7 @@
         "isPrimop": false,
         "position": {
           "column": 5,
-          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/lists.nix",
+          "file": "test_data/assets/lib/lists.nix",
           "line": 204
         }
       }

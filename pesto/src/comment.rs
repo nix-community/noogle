@@ -63,7 +63,9 @@ pub fn get_expr_docs(expr: &SyntaxNode) -> Option<String> {
                 ast::AttrpathValue(_) => {
                     if let Some(doc_comment) = get_doc_comment(parent) {
                         doc_comment.doc_text().map(|v| v.to_owned())
-                    }else{
+                    }else if Some(comment) = get_comment(parent) {
+                        Some(comment.text().to_owned())
+                    } else {
                         None
                     }
                 },
@@ -96,6 +98,34 @@ fn get_doc_comment(expr: &SyntaxNode) -> Option<ast::Comment> {
                     },
                     ast::Comment(it) => {
                         if it.doc_text().is_some() {
+                            break Some(it);
+                        }else{
+                            //Ignore non-doc comments.
+                            prev = token.prev_sibling_or_token();
+                        }
+                    },
+                    _ => {
+                        break None;
+                    }
+                }}
+            }
+            _ => break None,
+        };
+    }
+}
+
+/// Function retrieves a comment from the [ast::Expr]
+fn get_comment(expr: &SyntaxNode) -> Option<ast::Comment> {
+    let mut prev = expr.prev_sibling_or_token();
+    loop {
+        match prev {
+            Some(rnix::NodeOrToken::Token(ref token)) => {
+                match_ast! { match token {
+                    ast::Whitespace(_) => {
+                        prev = token.prev_sibling_or_token();
+                    },
+                    ast::Comment(it) => {
+                        if !it.text().is_empty() {
                             break Some(it);
                         }else{
                             //Ignore non-doc comments.
