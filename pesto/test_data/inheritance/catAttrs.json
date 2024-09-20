@@ -22,7 +22,7 @@
       "attr": {
         "position": {
           "column": 28,
-          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/default.nix",
+          "file": "test_data/assets/lib/default.nix",
           "line": 82
         }
       },
@@ -44,7 +44,7 @@
       "attr": {
         "position": {
           "column": 3,
-          "file": "/nix/store/knnp4h12pk09vfn18lrrrnh54zsvw3ba-source/lib/attrsets.nix",
+          "file": "test_data/assets/lib/attrsets.nix",
           "line": 398
         }
       },

@@ -4,7 +4,7 @@
       "attr": {
         "position": {
           "column": 25,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/default.nix",
+          "file": "test_data/assets/lib/default.nix",
           "line": 153
         }
       },
@@ -12,7 +12,7 @@
         "isPrimop": false,
         "position": {
           "column": 5,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "file": "test_data/assets/lib/debug.nix",
           "line": 95
         }
       }
@@ -24,7 +24,7 @@
       "attr": {
         "position": {
           "column": 3,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "file": "test_data/assets/lib/debug.nix",
           "line": 114
         }
       },
@@ -32,7 +32,7 @@
         "isPrimop": false,
         "position": {
           "column": 5,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/debug.nix",
+          "file": "test_data/assets/lib/debug.nix",
           "line": 95
         }
       }
@@ -44,7 +44,7 @@
       "attr": {
         "position": {
           "column": 3,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/fileset/default.nix",
+          "file": "test_data/assets/lib/fileset/default.nix",
           "line": 666
         }
       },
@@ -52,7 +52,7 @@
         "isPrimop": false,
         "position": {
           "column": 5,
-          "file": "/nix/store/ba0p7n38ncj0gx55yj2vddx189nkljs0-nixpkgs-migrated/lib/fileset/default.nix",
+          "file": "test_data/assets/lib/fileset/default.nix",
           "line": 672
         }
       }
