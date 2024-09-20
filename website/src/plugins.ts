@@ -85,7 +85,6 @@ export function replaceComponents() {
     visit(tree, "element", (node: Element, index, parent: Element) => {
       if (["h1", "h2", "h3", "h4", "h5"].includes(node.tagName) && index) {
         const level = +node.tagName.charAt(1) + 1;
-        // Replace h1 node with your custom component represented as an HAST node
         parent.children[index] = {
           type: "element",
           tagName: `h${level}`,
@@ -93,20 +92,40 @@ export function replaceComponents() {
           children: node.children, // Keep the original children
         };
       }
-      if (["a"].includes(node.tagName) && index) {
-        // Replace h1 node with your custom component represented as an HAST node
+      if (["a"].includes(node.tagName) && index !== undefined) {
+        //   node,
+        //   c: node.tagName,
+        // });
         parent.children[index] = {
           type: "element",
           tagName: `a`,
           properties: {
             "data-link-md": true,
-            href: node.properties.href,
+            ...redirectNixpkgsManualAnchor(node.properties.href as string),
           }, // Pass props here if needed
           children: node.children,
         };
       }
     });
   };
+}
+
+function redirectNixpkgsManualAnchor(href: string) {
+  if (href.startsWith("@docroot@")) {
+    return {
+      href: `https://nix.dev/manual/nix/latest/${href
+        .replace("@docroot@/", "")
+        .replace(".md", "")}`,
+      target: "_blank",
+    };
+  }
+  if (href.startsWith("#")) {
+    return {
+      href: `https://nixos.org/manual/nixpkgs/unstable/${href}`,
+      target: "_blank",
+    };
+  }
+  return { href };
 }
 
 export function sanitizeDirectives(markdown: string) {
