@@ -8,7 +8,6 @@ import {
   Chip,
   Container,
   IconButton,
-  LinearProgress,
   List,
   ListItem,
   ListItemAvatar,
@@ -36,6 +35,33 @@ export type BasicListItem = {
   key: string;
 };
 
+const LoadingSkeleton = () => (
+  <Container maxWidth="lg" sx={{ mt: 2 }}>
+    <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
+      {[0, 1].map((key) => (
+        <ListItem sx={{ px: 0, py: 1 }} aria-label={`item-skeleton`} key={key}>
+          <ListItemAvatar>
+            <Avatar>
+              <Skeleton variant="circular" />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText
+            primaryTypographyProps={{
+              variant: "h5",
+              component: "h2",
+            }}
+            secondaryTypographyProps={{
+              variant: "body1",
+            }}
+            primary={<Skeleton height={80} />}
+            secondary={<Skeleton />}
+          />
+        </ListItem>
+      ))}
+    </List>
+  </Container>
+);
+
 const useMobile = () => useMediaQuery(useTheme().breakpoints.down("md"));
 
 export function PagefindResults() {
@@ -58,25 +84,32 @@ export function PagefindResults() {
   const isMobile = useMobile();
 
   const [searchResults, setSearchResults] = useState<null | RawResult[]>(null);
+  const [loading, setLoading] = useState<boolean>();
 
   const [items, setItems] = useState<null | PagefindResult[]>(null);
 
-  const { search, loading, error } = usePagefindSearch();
+  const {
+    search,
+    loading: loadingPagefindModule,
+    error: errorPagefindModule,
+  } = usePagefindSearch();
   useEffect(() => {
     const init = async () => {
       console.log({ search, term, filters: { from, to } });
       if (search) {
+        setLoading(true);
         let raw = await search(term, {
           filters: { from, to },
           sort: { weight: "desc" },
         });
         setSearchResults(raw?.results || []);
+        setLoading(false);
       }
     };
     init();
   }, [term, from, to, search]);
 
-  console.log({ search, loading, error });
+  console.log({ search, loadingPagefindModule, errorPagefindModule });
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -133,43 +166,17 @@ export function PagefindResults() {
     }
   };
 
-  if (loading) {
-    return (
-      <Container maxWidth="lg" sx={{ mt: 2 }}>
-        <List aria-label="basic-list" sx={{ pt: 1, width: "100%" }}>
-          {[0, 1].map((key) => (
-            <ListItem
-              sx={{ px: 0, py: 1 }}
-              aria-label={`item-skeleton`}
-              key={key}
-            >
-              <ListItemAvatar>
-                <Avatar>
-                  <Skeleton variant="circular" />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primaryTypographyProps={{
-                  variant: "h5",
-                  component: "h2",
-                }}
-                secondaryTypographyProps={{
-                  variant: "body1",
-                }}
-                primary={<Skeleton height={80} />}
-                secondary={<Skeleton />}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Container>
-    );
+  if (loadingPagefindModule) {
+    return <LoadingSkeleton />;
   }
-  if (!loading && error) {
+  if (!loadingPagefindModule && errorPagefindModule) {
     return (
       <Container maxWidth="lg" sx={{ mt: 2 }}>
         <Card>
-          <CardHeader title="Search not available" subheader={error} />
+          <CardHeader
+            title="Search not available"
+            subheader={errorPagefindModule}
+          />
           <CardContent>
             <Typography variant="h5">Why this might have happened</Typography>
             <ul>
@@ -201,8 +208,8 @@ export function PagefindResults() {
       }}
     >
       <Container maxWidth="lg" sx={{ mt: 2 }}>
-        {items === null ? (
-          <LinearProgress sx={{ my: 2 }} />
+        {loading || items == null ? (
+          <LoadingSkeleton />
         ) : (
           <>
             <Typography

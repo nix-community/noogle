@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:all": "npm run build && npx pagefind ./out"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
