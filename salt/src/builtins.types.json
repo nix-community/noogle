@@ -76,7 +76,7 @@
   "mapAttrs": { "fn_type": "mapAttrs :: (String -> a -> b) -> AttrSet -> AttrSet" },
   "match": { "fn_type": "match :: String -> String -> Bool" },
   "mul": { "fn_type": "mul :: Number -> Number -> Number" },
-  "parseDrvName": { "fn_type": "parseDrvName :: String -> AttrSet" },
+  "parseDrvName": { "fn_type": "parseDrvName :: String -> { name :: String; version :: String }" },
   "partition": { "fn_type": "partition :: (a -> Bool) -> [a] -> { right :: [a]; wrong :: [a] }" },
   "Path": { "fn_type": "Path :: AttrSet -> StorePath" },
   "pathExists": { "fn_type": "pathExists :: Path -> Bool" },
