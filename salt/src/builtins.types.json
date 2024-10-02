@@ -17,7 +17,7 @@
   "compareVersions": {
     "fn_type": "compareVersions :: String -> String -> Int"
   },
-  "concatLists": { "fn_type": "concatLists :: [List] -> []" },
+  "concatLists": { "fn_type": "concatLists :: [[a]] -> [a]" },
   "concatMap": { "fn_type": "concatMap :: (a -> b) -> [a] -> [b]" },
   "concatStringsSep": {
     "fn_type": "concatStringsSep :: String -> [String] -> String"
