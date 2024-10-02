@@ -91,7 +91,7 @@
   "sort": { "fn_type": "sort :: (a -> b -> Bool) -> [a] -> [b]" },
   "split": { "fn_type": "split :: String -> String -> [String]" },
   "splitVersion": { "fn_type": "splitVersion :: String -> [String]" },
-  "StorePath": { "fn_type": "StorePath :: StorePath -> StorePath" },
+  "storePath": { "fn_type": "storePath :: StorePath -> StorePath" },
   "stringLength": { "fn_type": "stringLength :: String -> Int" },
   "sub": { "fn_type": "sub :: Number -> Number -> Number" },
   "substring": { "fn_type": "substring :: Int -> Int -> String -> String" },
