@@ -83,7 +83,7 @@
   "placeholder": { "fn_type": "placeholder :: String -> String" },
   "readDir": { "fn_type": "readDir :: Path -> AttrSet" },
   "readFile": { "fn_type": "readFile :: Path -> String" },
-  "removeAttrs": { "fn_type": "removeAttrs :: AttrSet -> [a] -> AttrSet" },
+  "removeAttrs": { "fn_type": "removeAttrs :: AttrSet -> [String] -> AttrSet" },
   "replaceStrings": {
     "fn_type": "replaceStrings :: [String] -> [String] -> String -> String"
   },
