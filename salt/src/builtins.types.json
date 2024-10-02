@@ -11,7 +11,7 @@
   "bitXor": { "fn_type": "bitXor :: Int -> Int -> Int" },
   "break": { "fn_type": "break :: a -> a" },
   "catAttrs": {
-    "fn_type": "cattAtrs :: String -> [ { ${name} :: a } ] -> [a]"
+    "fn_type": "catAttrs :: String -> [ { ${name} :: a } ] -> [a]"
   },
   "ceil": { "fn_type": "ceil :: Float -> Int" },
   "compareVersions": {
