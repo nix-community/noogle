@@ -111,6 +111,6 @@
   },
 
   "fromTOML": {
-    "fn_type": "fromTOML :: String -> { Any }"
+    "fn_type": "fromTOML :: String -> AttrSet"
   }
 }
