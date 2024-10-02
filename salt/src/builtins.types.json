@@ -3,7 +3,7 @@
   "add": { "fn_type": "add :: Number -> Number -> Number" },
   "all": { "fn_type": "all :: (a -> Bool) -> [a] -> Bool" },
   "any": { "fn_type": "any :: (a -> Bool) -> [a] -> Bool" },
-  "attrNames": { "fn_type": "attrNames :: AttrSet -> [a]" },
+  "attrNames": { "fn_type": "attrNames :: AttrSet -> [String]" },
   "attrValues": { "fn_type": "attrValues :: AttrSet -> [a]" },
   "baseNameOf": { "fn_type": "baseNameOf :: String -> String" },
   "bitAnd": { "fn_type": "bitAnd :: Int -> Int -> Int" },
