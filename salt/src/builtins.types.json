@@ -34,7 +34,7 @@
   "fetchGit": { "fn_type": "fetchgit :: AttrSet -> AttrSet" },
   "fetchTarball": { "fn_type": "fetchTarball :: AttrSet -> AttrSet" },
   "fetchurl": { "fn_type": "fetchurl :: String -> AttrSet" },
-  "filter": { "fn_type": "filter :: (a -> Bool) -> [a] -> [b]" },
+  "filter": { "fn_type": "filter :: (a -> Bool) -> [a] -> [a]" },
   "filterSource": {
     "fn_type": "filterSource :: (Path -> String -> Bool) -> Path -> StorePath"
   },
