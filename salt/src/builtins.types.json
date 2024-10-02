@@ -96,7 +96,7 @@
   "sub": { "fn_type": "sub :: Number -> Number -> Number" },
   "substring": { "fn_type": "substring :: Int -> Int -> String -> String" },
   "tail": { "fn_type": "tail :: [a] -> [a]" },
-  "throw": { "fn_type": "throw :: String" },
+  "throw": { "fn_type": "throw :: String -> Never" },
   "toFile": { "fn_type": "toFile :: Path -> String -> StorePath" },
   "toJSON": { "fn_type": "toJSON :: a -> String" },
   "toPath": { "fn_type": "toPath :: String -> Path" },
