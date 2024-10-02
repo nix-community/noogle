@@ -73,7 +73,7 @@
     "fn_type": "listToAttrs :: [{name :: String; value :: a}] -> AttrSet"
   },
   "map": { "fn_type": "map :: (a -> b) -> [a] -> [b]" },
-  "mapAttrs": { "fn_type": "mapAttrs :: (a -> b -> c) -> AttrSet -> AttrSet" },
+  "mapAttrs": { "fn_type": "mapAttrs :: (String -> a -> b) -> AttrSet -> AttrSet" },
   "match": { "fn_type": "match :: String -> String -> Bool" },
   "mul": { "fn_type": "mul :: Number -> Number -> Number" },
   "parseDrvName": { "fn_type": "parseDrvName :: String -> AttrSet" },
