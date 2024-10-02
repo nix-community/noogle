@@ -2,7 +2,7 @@
   "abort": { "fn_type": "abort :: String -> Never" },
   "add": { "fn_type": "add :: Number -> Number -> Number" },
   "all": { "fn_type": "all :: (a -> Bool) -> [a] -> Bool" },
-  "Any": { "fn_type": "Any :: (a -> Bool) -> [a] -> Bool" },
+  "any": { "fn_type": "any :: (a -> Bool) -> [a] -> Bool" },
   "attrNames": { "fn_type": "attrNames :: AttrSet -> [a]" },
   "attrValues": { "fn_type": "attrValues :: AttrSet -> [a]" },
   "baseNameOf": { "fn_type": "baseNameOf :: String -> String" },
