@@ -174,8 +174,10 @@ struct DocumentFrontmatter<'a> {
     is_functor: Option<bool>,
     /// Where the attribute is defined at.
     attr_position: Option<&'a FilePosition>,
+    attr_expr: Option<&'a String>,
     /// Where the original lambda is defined at.
     lambda_position: Option<&'a FilePosition>,
+    lambda_expr: Option<&'a String>,
     /// How many times the function is applied.
     count_applied: Option<usize>,
     content_meta: Option<SourceOrigin<'a>>,
@@ -201,12 +203,14 @@ impl<'a> FromDocs<'a> for Document<'a> {
                 path: &item.path,
                 aliases: item.aliases.as_ref(),
                 attr_position: item.docs.attr.position.as_ref(),
+                attr_expr: item.docs.attr.expr.as_ref(),
                 lambda_position: item
                     .docs
                     .lambda
                     .as_ref()
                     .map(|i| i.position.as_ref())
                     .flatten(),
+                lambda_expr: item.docs.lambda.as_ref().map(|i| i.expr.as_ref()).flatten(),
                 is_primop: item.docs.lambda.as_ref().map(|i| i.isPrimop),
                 is_functor: item.docs.lambda.as_ref().map(|i| i.isFunctor).flatten(),
                 count_applied: item.docs.lambda.as_ref().map(|i| i.countApplied).flatten(),
