@@ -177,6 +177,8 @@ export default async function Page(props: { params: { path: string[] } }) {
     return undefined;
   }
 
+  const expr_code = (meta?.lambda_expr || meta?.attr_expr) ?? null;
+
   return (
     <>
       <Toc mdxSource={source + externManualSrc} title={item?.meta.title} />
@@ -315,7 +317,8 @@ export default async function Page(props: { params: { path: string[] } }) {
           <MDX source={source} />
           {meta && <PositionLink meta={meta} content={item?.content} />}
           <div data-pagefind-ignore="all">
-            {(!!meta?.aliases?.length ||
+            {(expr_code ||
+              !!meta?.aliases?.length ||
               (!!signature && !meta?.signature) ||
               meta?.is_functor) && (
               <>
@@ -330,7 +333,7 @@ export default async function Page(props: { params: { path: string[] } }) {
                     textAlign: "center",
                   }}
                 >
-                  Noogle also knows
+                  Noogle detected
                 </Typography>
               </>
             )}
@@ -347,13 +350,7 @@ export default async function Page(props: { params: { path: string[] } }) {
             )}
             {!!meta?.aliases?.length && (
               <>
-                <Typography
-                  variant="h5"
-                  component={"h5"}
-                  sx={{ color: "text.secondary" }}
-                >
-                  Aliases
-                </Typography>
+                <MDX source={`## Aliases`} />
                 <ul>
                   {meta?.aliases?.map((a) => (
                     <li key={a.join(".")}>
@@ -376,6 +373,33 @@ export default async function Page(props: { params: { path: string[] } }) {
                 </Typography>
                 <MDX source={`\`\`\`haskell\n${signature.trim()}\n\`\`\`\n`} />
               </>
+            )}
+            {meta?.is_primop && (
+              <Box>
+                <MDX
+                  source={`## Implementation
+:::{.tip}
+This function is implemented in c++ and is part of the native nix runtime.
+:::
+`}
+                />
+              </Box>
+            )}
+            {expr_code && (
+              <Box>
+                <MDX
+                  source={`## Implementation
+:::{.tip}
+The following is the current implementation of this function.
+
+\`\`\`nix
+${expr_code.trim()}
+\`\`\`
+
+:::
+`}
+                />
+              </Box>
             )}
           </div>
         </Box>

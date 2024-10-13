@@ -498,15 +498,21 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                 let doc = match expr.kind() {
                     rnix::SyntaxKind::NODE_LAMBDA => {
                         let (_outer_lambda, count_applied) = get_parent_lambda(&expr);
+                        let res = get_expr_docs(&expr);
+
                         NixDocComment {
-                            content: get_expr_docs(&expr),
+                            content: res.as_ref().map(|v| v.0.to_owned()),
                             count_applied: Some(count_applied),
+                            expr: res.as_ref().map(|v| v.1.to_owned()),
                         }
                     }
-                    _ => NixDocComment {
-                        content: get_expr_docs(&expr),
+                    _ => {
+                        let res = get_expr_docs(&expr);
+                        NixDocComment {
+                        content: res.as_ref().map(|v| v.0.to_owned()),
                         count_applied: None,
-                    },
+                        expr: res.as_ref().map(|v| v.1.to_owned()),
+                    }},
                 };
                 return Some(doc);
             }
@@ -535,6 +541,7 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
 pub struct NixDocComment {
     pub content: Option<String>,
     pub count_applied: Option<usize>,
+    pub expr: Option<SyntaxNode>,
 }
 
 fn get_parent_lambda(expr: &SyntaxNode) -> (SyntaxNode, usize) {

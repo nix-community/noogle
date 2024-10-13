@@ -93,6 +93,7 @@ fn fill_docs(
         if let Some(position) = &item.docs.attr.position {
             if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
                 item.docs.attr.content = doc_comment.content.clone();
+                item.docs.attr.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string() );
             }
         }
         if let Some(lambda) = item.docs.lambda.as_mut() {
@@ -100,6 +101,7 @@ fn fill_docs(
                 if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
                     lambda.content = doc_comment.content.clone();
                     lambda.countApplied = doc_comment.count_applied;
+                    lambda.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string() );
                 }
             }
         }
@@ -150,10 +152,11 @@ impl<'a> BulkProcessing for Pasta {
             if let Some(orig_file) = when_overridable_lambda(doc, &file_idx_map) {
                 let orig_lambda = get_overridable_fn(&orig_file);
                 let orig_pos =
-                    orig_lambda.map(|n| seek_file_position(&orig_file, &n.text_range().start()));
+                    orig_lambda.as_ref().map(|n| seek_file_position(&orig_file, &n.text_range().start()));
                 if let Some(orig_pos) = orig_pos {
                     if let Some(l) = &mut doc.docs.lambda {
                         l.position = orig_pos;
+                        l.expr = orig_lambda.as_ref().map(|n| n.text().to_string());
                         restores.push(format!("{:?}", doc.path.join(".")));
                     }
                 }

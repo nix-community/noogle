@@ -38,7 +38,9 @@ export type DocMeta = {
   is_functor?: boolean;
   primop_meta?: PrimopMatter;
   attr_position?: FilePosition;
+  attr_expr?: string;
   lambda_position?: FilePosition;
+  lambda_expr?: string;
   count_applied?: number;
   content_meta?: SourceOrigin;
   signature?: string;

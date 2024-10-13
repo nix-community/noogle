@@ -53,18 +53,18 @@ impl DocComment for ast::Comment {
 /// If the doc-comment is not found in place (1) the search continues at place (2)
 /// More precisely before the NODE_ATTRPATH_VALUE (ast)
 /// If no doc-comment was found in place (1) or (2) this function returns None.
-pub fn get_expr_docs(expr: &SyntaxNode) -> Option<String> {
+pub fn get_expr_docs(expr: &SyntaxNode) -> Option<(String, SyntaxNode)> {
     if let Some(doc) = get_doc_comment(expr) {
         // Found in place (1)
-        doc.doc_text().map(|v| v.to_owned())
+        doc.doc_text().map(|v| (v.to_owned(), expr.clone()))
     } else if let Some(ref parent) = expr.parent() {
         match_ast! {
             match parent {
                 ast::AttrpathValue(_) => {
                     if let Some(doc_comment) = get_doc_comment(parent) {
-                        doc_comment.doc_text().map(|v| v.to_owned())
+                        doc_comment.doc_text().map(|v| (v.to_owned(), parent.clone()))
                     }else if let Some(comment) = get_comment(parent) {
-                        Some(comment.text().to_owned())
+                        Some((comment.text().to_owned(),parent.clone()))
                     } else {
                         None
                     }

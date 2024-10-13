@@ -30,12 +30,16 @@ pub struct LambdaMeta {
     pub content: Option<String>,
     #[allow(non_snake_case)]
     pub countApplied: Option<usize>,
+    // Serialized AST
+    pub expr: Option<String>,
 }
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AttrMeta {
     pub position: Option<FilePosition>,
     /// I want to add this
     pub content: Option<String>,
+    // Serialized AST
+    pub expr: Option<String>,
 }
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct DocsMeta {
