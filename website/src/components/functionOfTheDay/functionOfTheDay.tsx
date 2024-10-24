@@ -14,7 +14,10 @@ import { Preview } from "../preview/preview";
 import { Doc, data as raw } from "@/models/data";
 
 // Show only functions with content.
-const data = raw.filter((d) => d.content?.content);
+const data = raw;
+const emptyIdxs = raw
+  .map((d, idx) => (d.content?.content ? false : idx))
+  .filter(Boolean);
 
 const date = new Date();
 
@@ -77,7 +80,11 @@ export const FunctionOfTheDay = () => {
   };
 
   const setRandom = () => {
-    setIdx(getRandomIntInclusive(0, data.length - 1, { init: Math.random() }));
+    const random = getRandomIntInclusive(0, emptyIdxs.length - 1, {
+      init: Math.random(),
+    });
+
+    setIdx(emptyIdxs[random]);
   };
   const setFunctionOfTheDay = () => {
     setIdx(todaysIdx);
@@ -112,7 +119,7 @@ export const FunctionOfTheDay = () => {
         </Button>
         <Divider flexItem orientation="vertical" />
         <Button sx={{ width: "100%" }} onClick={() => setRandom()}>
-          Random
+          Random Undocumented
         </Button>
         <Button sx={{ width: "100%" }} onClick={() => setFunctionOfTheDay()}>
           Todays function
