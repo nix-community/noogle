@@ -1,6 +1,7 @@
 import all from "./data.json" assert { type: "json" };
 import types from "./builtins.types.json" assert { type: "json" };
 import links from "./manual-link.map.json" assert { type: "json" };
+import meta from "./meta.json" assert { type: "json" };
 
 export type ManualLink = {
   id: string;
@@ -63,3 +64,10 @@ export type BuiltinTypes = {
 };
 
 export const builtinTypes = types as BuiltinTypes;
+
+export type UpstreamInfo = {
+  rev: string;
+  lastModified: number;
+}
+
+export const upstreamInfo = meta as UpstreamInfo;
