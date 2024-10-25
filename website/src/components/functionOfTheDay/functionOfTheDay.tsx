@@ -15,8 +15,8 @@ import { Doc, data as raw } from "@/models/data";
 
 // Show only functions with content.
 const data = raw;
-const emptyIdxs = raw
-  .map((d, idx) => (d.content?.content ? false : idx))
+const emptyIdxs: number[] = raw
+  .map((d, idx) => (d.content?.content ? 0 : idx))
   .filter(Boolean);
 
 const date = new Date();
