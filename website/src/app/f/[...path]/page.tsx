@@ -1,7 +1,7 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, data, manualLinks } from "@/models/data";
+import { Doc, data, manualLinks, upstreamInfo } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -11,7 +11,6 @@ import React, { Suspense } from "react";
 import { PositionLink } from "@/components/PositionLink";
 import { SearchNav } from "@/components/SearchNav";
 
-import upstreamInfo from "@/models/data/meta.json" assert { type: "json" };
 import fs from "fs";
 import path from "path";
 import { Metadata, ResolvingMetadata } from "next";
