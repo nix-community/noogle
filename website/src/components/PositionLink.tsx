@@ -86,7 +86,7 @@ export const PositionLink = ({
                 sx={{ textTransform: "none", my: 1, placeSelf: "start" }}
                 startIcon={<EditIcon />}
               >
-                Edit Source Code
+                Jump to Source Code
               </Button>
             </Link>
           )}
@@ -110,7 +110,7 @@ export const PositionLink = ({
                     }}
                     startIcon={<LinkIcon />}
                   >
-                    View Attribute Definition
+                    Jump to Attribute Definition
                   </Button>
                 </Link>
               )}
@@ -132,7 +132,7 @@ export const PositionLink = ({
                     }}
                     startIcon={<LinkIcon />}
                   >
-                    See Function Definition
+                    Jump to Function Definition
                   </Button>
                 </Link>
               )}
