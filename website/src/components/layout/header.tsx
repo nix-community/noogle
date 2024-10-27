@@ -5,6 +5,7 @@ import { ReactNode, Suspense } from "react";
 import { SocialIcons } from "./layout";
 import localFont from "next/font/local";
 import { styled } from "@mui/material/styles";
+import { ThemeSwitch } from "./themeSwitch";
 
 const HeaderLink = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.contrastText + "!important",
@@ -64,17 +65,6 @@ export const Header = (props: HeaderProps) => {
             {"Noogλe"}
           </Button>
         </Box>
-        {/* <Box
-          sx={{
-            justifySelf: "start",
-            display: { xs: "block", md: "none" },
-            color: "primary.contrastText",
-          }}
-        >
-          <IconButton color="inherit" aria-label="Home">
-            <Home />
-          </IconButton>
-        </Box> */}
         {search && (
           <Box
             sx={{
@@ -104,6 +94,7 @@ export const Header = (props: HeaderProps) => {
           }}
         >
           <SocialIcons />
+          <ThemeSwitch />
         </Box>
       </Box>
 

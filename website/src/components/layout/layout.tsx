@@ -23,7 +23,12 @@ export const SocialIcons = () => {
         sx={{ color: "inherit" }}
       >
         <Tooltip title="Github">
-          <IconButton color="inherit" aria-label="nixos github">
+          <IconButton
+            sx={{
+              color: "#fff",
+            }}
+            aria-label="nixos github"
+          >
             <GitHubIcon />
           </IconButton>
         </Tooltip>
