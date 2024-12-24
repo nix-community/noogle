@@ -10,7 +10,7 @@ use clap::{Parser, ValueEnum};
 use markdown::find_type;
 use pasta::{AliasList, ContentSource, Docs, Lookups, PositionType, SourceOrigin, ValuePath};
 use position::FilePosition;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::{
     collections::HashMap,
     fs::{create_dir_all, File},
@@ -44,6 +44,9 @@ struct Options {
 
     #[arg(long)]
     format: Format,
+
+    #[arg(long)]
+    language: Option<PathBuf>,
     /// Path to a directory for the output file(s).
     out: String,
 
@@ -57,6 +60,18 @@ struct Options {
     /// Column of the expression.
     #[arg(short, long, requires_all=["line", "column", "file"])]
     column: Option<usize>,
+}
+
+#[derive(Deserialize, Debug, Clone)]
+struct BuiltinItem {
+    doc: String,
+    // ...
+}
+
+#[derive(Deserialize, Debug, Clone)]
+struct LanguageData {
+    builtins: HashMap<String, BuiltinItem>,
+    // constants: HashMap<String, String>,
 }
 
 pub fn main() {
@@ -78,20 +93,38 @@ pub fn main() {
         }
     }
 
+    // Load the up-to-date language data if provided
+    let language_data: Option<LanguageData> = if let Some(laguage) = opts.language {
+        let data = std::fs::read_to_string(laguage).unwrap();
+        serde_json::from_str(&data).unwrap()
+    } else {
+        None
+    };
+
     if let Some(pos_file) = opts.pos_file {
         let data = Pasta::new(&pos_file);
         // data.doc_map
 
         let mut json_list: Vec<Document> = vec![];
         for item in data.docs.iter() {
-            let document = Document::new(&item, &data.doc_map);
+            let mut document = Document::new(&item, &data.doc_map);
             let matter = &document.meta;
-            let content = &document.content;
 
-            let _signature = content
-                .as_ref()
-                .map(|c| c.content.as_ref().map(|s| find_type(&s)))
-                .flatten();
+            if let Some(ref language_data) = language_data {
+                if document.meta.is_primop.unwrap_or(false) {
+                    let new_content = language_data.builtins.iter().find(|p| {
+                        Some(p.0) == document.meta.primop_meta.as_ref().map(|m| m.name).flatten()
+                            && document.meta.count_applied == Some(0)
+                    });
+
+                    if let Some(new_content) = new_content {
+                        document.content = Some(ContentSource {
+                            content: Some(new_content.1.doc.clone()),
+                            source: document.content.clone().map(|c| c.source).flatten(),
+                        })
+                    }
+                }
+            }
 
             match opts.format {
                 Format::DIR => {
@@ -110,8 +143,11 @@ pub fn main() {
                             .unwrap();
                         file.write_all("---\n".as_bytes()).unwrap();
 
-                        if let Some(content) =
-                            content.as_ref().map(|ref i| i.content.as_ref()).flatten()
+                        if let Some(content) = document
+                            .content
+                            .as_ref()
+                            .map(|ref i| i.content.as_ref())
+                            .flatten()
                         {
                             // let fmt = dedent(content.strip_prefix("\n").unwrap_or(&content));
                             file.write_all(content.as_bytes()).unwrap();
