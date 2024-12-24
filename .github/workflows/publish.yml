@@ -1,0 +1,63 @@
+name: preview
+on:
+  workflow_run:
+    workflows: ["build"]
+    types: ["completed"]
+env:
+  cloudflare_project: noogle
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+    steps:
+    - name: Fetch output
+      uses: actions/github-script@v3.1.0
+      with:
+        script: |
+         var artifacts = await github.actions.listWorkflowRunArtifacts({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: ${{github.event.workflow_run.id}},
+         });
+         var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+           return artifact.name == "out"
+         })[0];
+         var download = await github.actions.downloadArtifact({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            artifact_id: matchArtifact.id,
+            archive_format: 'zip',
+         });
+         var fs = require('fs');
+         fs.writeFileSync('${{github.workspace}}/out.zip', Buffer.from(download.data));
+    - run: unzip out.zip
+    - name: Publish to Cloudflare Pages
+      id: publish
+      if: github.event_name == 'pull_request_target'
+      uses: cloudflare/pages-action@1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: noogle
+        directory: ./out
+        branch: pr-${{ github.event.pull_request.number }}
+    - uses: peter-evans/create-or-update-comment@v3
+      if: github.event_name == 'pull_request_target'
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          <!-- DEPLOYMENT_COMMENT -->
+          <table><tr><td><strong>Latest commit:</strong> </td><td>
+          <code>${{ github.event.pull_request.head.sha }}</code>
+          </td></tr>
+          <tr><td><strong>Preview URL:</strong></td><td>
+          <a href='${{ steps.publish.outputs.url }}'>${{ steps.publish.outputs.url }}</a>
+          </td></tr>
+          <tr><td><strong>Branch Preview URL:</strong></td><td>
+          <a href='https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev'>https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev</a>
+          </td></tr>
+          </table>
+        edit-mode: replace
