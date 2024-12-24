@@ -1,11 +1,14 @@
 {
   description = "Noogle.dev | Discover the nix api surface";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    # --- sources of documentation ---
+    # Updated automatically
     nixpkgs-master.url = "nixpkgs/master";
-
     nix-master.url = "github:NixOS/nix/?ref=master";
-    # A custom nix version, to introspect lambda values. 
+
+    # --- Other flake inputs ---
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    # A custom nix version, to introspect lambda values.
     nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 
     pre-commit-hooks = {
