@@ -1,0 +1,25 @@
+name: update-nix-master-lock
+on:
+  workflow_dispatch: # allows manual triggering
+  schedule:
+    - cron: "0 1 * * *" # runs daily at 00:00
+
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Update flake.lock
+        uses: DeterminateSystems/update-flake-lock@v20
+        with:
+          token: ${{ secrets.GH_ACTIONS }}
+          pr-title: "Update: nix-master input"
+          pr-labels: |
+            auto-merge
+          inputs: nix-master
