@@ -2,7 +2,7 @@ name: "build"
 on:
   push:
   pull_request_target:
-    branches: [ "main" ]
+    branches: ["main"]
 env:
   cloudflare_project: noogle
 jobs:
@@ -13,49 +13,53 @@ jobs:
       deployments: write
       pull-requests: write
     steps:
-    - uses: actions/checkout@v4
-    - uses: cachix/install-nix-action@v23
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-    - uses: cachix/cachix-action@v12
-      with:
-        name: nix-community
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'  
-    - run: nix build .#ui -L
-    - name: Publish to Cloudflare Pages
-      if: github.event_name == 'push'
-      uses: cloudflare/pages-action@1
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} 
-        projectName: ${{ env.cloudflare_project }}
-        directory: ./result/lib/node_modules/noogle/out
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-    - name: Publish to Cloudflare Pages
-      id: publish
-      if: github.event_name == 'pull_request_target'
-      uses: cloudflare/pages-action@1
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} 
-        projectName: noogle
-        directory: ./result/lib/node_modules/noogle/out
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        branch: pr-${{ github.event.pull_request.number }}
-    - uses: peter-evans/create-or-update-comment@v3
-      if: github.event_name == 'pull_request_target'
-      with:
-        issue-number: ${{ github.event.pull_request.number }}
-        body: |
-          <!-- DEPLOYMENT_COMMENT -->
-          <table><tr><td><strong>Latest commit:</strong> </td><td>
-          <code>${{ github.event.pull_request.head.sha }}</code>
-          </td></tr>
-          <tr><td><strong>Preview URL:</strong></td><td>
-          <a href='${{ steps.publish.outputs.url }}'>${{ steps.publish.outputs.url }}</a>
-          </td></tr>
-          <tr><td><strong>Branch Preview URL:</strong></td><td>
-          <a href='https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev'>https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev</a>
-          </td></tr>
-          </table>
-        edit-mode: replace
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: cachix/cachix-action@v12
+        with:
+          name: nix-community
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      # Since ubuntu 22.30, unprivileged usernamespaces are no longer allowed to map to the root user:
+      # https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces
+      # This is a workaround needed to build nix itself in github actions
+      - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - run: nix build .#ui -L
+      - name: Publish to Cloudflare Pages
+        if: github.event_name == 'push'
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ env.cloudflare_project }}
+          directory: ./result/lib/node_modules/noogle/out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to Cloudflare Pages
+        id: publish
+        if: github.event_name == 'pull_request_target'
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: noogle
+          directory: ./result/lib/node_modules/noogle/out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: pr-${{ github.event.pull_request.number }}
+      - uses: peter-evans/create-or-update-comment@v3
+        if: github.event_name == 'pull_request_target'
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            <!-- DEPLOYMENT_COMMENT -->
+            <table><tr><td><strong>Latest commit:</strong> </td><td>
+            <code>${{ github.event.pull_request.head.sha }}</code>
+            </td></tr>
+            <tr><td><strong>Preview URL:</strong></td><td>
+            <a href='${{ steps.publish.outputs.url }}'>${{ steps.publish.outputs.url }}</a>
+            </td></tr>
+            <tr><td><strong>Branch Preview URL:</strong></td><td>
+            <a href='https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev'>https://pr-${{ github.event.pull_request.number }}.${{ env.cloudflare_project }}.pages.dev</a>
+            </td></tr>
+            </table>
+          edit-mode: replace
