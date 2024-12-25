@@ -68,12 +68,6 @@ struct BuiltinItem {
     // ...
 }
 
-#[derive(Deserialize, Debug, Clone)]
-struct LanguageData {
-    builtins: HashMap<String, BuiltinItem>,
-    // constants: HashMap<String, String>,
-}
-
 pub fn main() {
     // let mut output = io::stdout();
     let opts = Options::parse();
@@ -94,8 +88,10 @@ pub fn main() {
     }
 
     // Load the up-to-date language data if provided
-    let language_data: Option<LanguageData> = if let Some(laguage) = opts.language {
-        let data = std::fs::read_to_string(laguage).unwrap();
+    let language_data: Option<HashMap<String, BuiltinItem>> = if let Some(language) = opts.language
+    {
+        println!("Loading additional laguage data from {:?}", language);
+        let data = std::fs::read_to_string(language).unwrap();
         serde_json::from_str(&data).unwrap()
     } else {
         None
@@ -112,7 +108,7 @@ pub fn main() {
 
             if let Some(ref language_data) = language_data {
                 if document.meta.is_primop.unwrap_or(false) {
-                    let new_content = language_data.builtins.iter().find(|p| {
+                    let new_content = language_data.iter().find(|p| {
                         Some(p.0) == document.meta.primop_meta.as_ref().map(|m| m.name).flatten()
                             && document.meta.count_applied == Some(0)
                     });
