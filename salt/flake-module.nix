@@ -2,7 +2,7 @@
   perSystem = { self', inputs', pkgs, ... }:
     let
       nix-manual = "${inputs.nix-master}/doc/manual/source/language/derivations.md";
-      inherit (inputs'.nix-master.packages) nix;
+      inherit (inputs'.nix-master.packages) nix-cli;
 
       # https://github.com/NixOS/nix/blob/master/doc/manual/src/language/derivations.md
       salt = pkgs.stdenv.mkDerivation {
@@ -14,7 +14,7 @@
           cp -rf . $out
           cp ${nix-manual} $out
 
-          ${nix}/bin/nix __dump-language > $out/language.json
+          ${nix-cli}/bin/nix __dump-language > $out/language.json
         '';
       };
     in
