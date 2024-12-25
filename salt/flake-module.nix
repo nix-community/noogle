@@ -1,7 +1,7 @@
 { inputs, ... }: {
   perSystem = { self', inputs', pkgs, ... }:
     let
-      nix-manual = "${inputs.nix-master}/doc/manual/src/language/derivations.md";
+      nix-manual = "${inputs.nix-master}/doc/manual/source/language/derivations.md";
       inherit (inputs'.nix-master.packages) nix;
 
       # https://github.com/NixOS/nix/blob/master/doc/manual/src/language/derivations.md
