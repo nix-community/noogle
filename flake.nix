@@ -41,6 +41,11 @@
         # Deprecated. Will be removed.
         ./codemod/flake-module.nix
       ];
+      perSystem = { inputs', ... }: {
+        packages = {
+          nix = inputs'.nix-master.packages.nix-cli;
+        };
+      };
     });
 }
 
