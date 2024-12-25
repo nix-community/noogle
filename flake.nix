@@ -43,7 +43,12 @@
       ];
       perSystem = { inputs', ... }: {
         packages = {
-          nix = inputs'.nix-master.packages.nix-cli;
+          # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
+          #   # doCheck = false;
+          #   mesonFlags = prev.mesonFlags or [] ++ [
+          #     "-Dunit-tests=false"
+          #   ];
+          # });
         };
       };
     });
