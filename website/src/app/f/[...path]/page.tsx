@@ -1,7 +1,7 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, data, manualLinks, upstreamInfo } from "@/models/data";
+import { Doc, data, manualLinks, upstreamInfo, nixInfo } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -177,7 +177,7 @@ export default async function Page(props: { params: { path: string[] } }) {
   }
 
   const expr_code = (meta?.lambda_expr || meta?.attr_expr) ?? null;
-
+  console.log(meta?.is_primop, meta?.content_meta, item?.content);
   return (
     <>
       <Toc mdxSource={source + externManualSrc} title={item?.meta.title} />
@@ -263,7 +263,12 @@ export default async function Page(props: { params: { path: string[] } }) {
             <ShareButton />
           </Box>
           <Box sx={{ pl: 4, m: 1 }} data-pagefind-ignore="all">
-            <LastUpdatedFromCommit {...upstreamInfo} />
+            {meta?.is_primop &&
+            meta.content_meta?.path?.includes("builtins") ? (
+              <LastUpdatedFromCommit {...nixInfo} type="nix" />
+            ) : (
+              <LastUpdatedFromCommit {...upstreamInfo} type="nixpkgs" />
+            )}
           </Box>
           <Divider flexItem sx={{ mt: 2 }} />
 

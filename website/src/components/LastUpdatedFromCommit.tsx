@@ -4,13 +4,16 @@ import { useMemo } from "react";
 import { fromUnixTime, formatDistanceToNow, formatISO } from "date-fns";
 import { Chip, Link, Tooltip } from "@mui/material";
 
+interface LastUpdatedFromCommitProps {
+  lastModified: number;
+  rev: string;
+  type: "nix" | "nixpkgs";
+}
 export const LastUpdatedFromCommit = ({
   lastModified,
   rev,
-}: {
-  lastModified: number;
-  rev: string;
-}) => {
+  type,
+}: LastUpdatedFromCommitProps) => {
   const date = useMemo(() => {
     const date = fromUnixTime(lastModified);
     return {
@@ -26,7 +29,11 @@ export const LastUpdatedFromCommit = ({
           <span>
             {"Docs pulled from | "}
             <Link
-              href={`https://github.com/NixOS/nixpkgs/tree/${rev}`}
+              href={
+                type === "nixpkgs"
+                  ? `https://github.com/NixOS/nixpkgs/tree/${rev}`
+                  : `https://github.com/NixOS/nix/tree/${rev}`
+              }
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"

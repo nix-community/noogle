@@ -107,12 +107,21 @@ pub fn main() {
             let matter = &document.meta;
 
             if let Some(ref language_data) = language_data {
-                if document.meta.is_primop.unwrap_or(false) {
+                let content_from = &document
+                    .content
+                    .as_ref()
+                    .map(|c| c.source.as_ref().map(|s| s.path))
+                    .flatten()
+                    .flatten();
+                // Maybe replace the content
+                // Only if the content_meta includes "builtins"
+                if Some(true) == content_from.map(|p| p.contains(&String::from("builtins"))) {
+                    dbg!(content_from);
+
                     let new_content = language_data.iter().find(|p| {
                         Some(p.0) == document.meta.primop_meta.as_ref().map(|m| m.name).flatten()
                             && document.meta.count_applied == Some(0)
                     });
-
                     if let Some(new_content) = new_content {
                         document.content = Some(ContentSource {
                             content: Some(new_content.1.doc.clone()),

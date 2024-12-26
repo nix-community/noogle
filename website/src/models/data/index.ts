@@ -1,7 +1,8 @@
 import all from "./data.json" assert { type: "json" };
 import types from "./builtins.types.json" assert { type: "json" };
 import links from "./manual-link.map.json" assert { type: "json" };
-import meta from "./meta.json" assert { type: "json" };
+import libMeta from "./lib-meta.json" assert { type: "json" };
+import nixMeta from "./nix-meta.json" assert { type: "json" };
 
 export type ManualLink = {
   id: string;
@@ -68,6 +69,7 @@ export const builtinTypes = types as BuiltinTypes;
 export type UpstreamInfo = {
   rev: string;
   lastModified: number;
-}
+};
 
-export const upstreamInfo = meta as UpstreamInfo;
+export const upstreamInfo = libMeta as UpstreamInfo;
+export const nixInfo = nixMeta as UpstreamInfo;

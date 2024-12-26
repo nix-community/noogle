@@ -21,37 +21,17 @@
       engines.
 - [x] Wasm based performant search.
 
-## Available data
+## Nice features
 
-There are the following subsets of Nix and Nixpkgs functions available.
-
-Recursively indexed:
-
-- `lib`
-- `pkgs.rustPackages`
-
-> Recursively means all deeply nested sub-attributes.
-
-Normally indexed:
-
-- `builtins`
-- `pkgs.stdenv`
-- `pkgs.dockerTools`
-- `pkgs.writers`
-- `pkgs.pythonPackages`
-- `pkgs.haskell.lib`
-- `pkgs.haskell.lib`
-
-# Off the tree functions
-
-Some function are not part of the evaluation value of `default.nix` in Nixpkgs.
-They must be imported individually.
-
-- `make-disk-image`
+- Detect aliases of (most) `lib` and `builtins` functions
+- Override `builtins` documentation by documenting their alias in `nixpkgs.lib`. So you don't need to change and rebuild cpp nix anymore.
+- `nix` and `nixpkgs` are updated daily. All documentation changes will be picked up just the next day.
 
 ---
 
 All Indexing is done via the [pasta](./pasta/) module. PRs welcome!
+
+Additional data - such as types of builtins - are available in [salt](./salt)
 
 ## Contribute
 
