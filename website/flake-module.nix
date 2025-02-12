@@ -17,7 +17,9 @@
             chmod -R +w ${data_path}
 
             # Website fonts
-            cp -rf ${pkgs.inter}/share/fonts/opentype/* ${fonts_path}
+            echo "Copying fonts (1/2)..."
+            cp -rf ${pkgs.inter}/share/fonts/truetype/* ${fonts_path}
+            echo "Copying fonts (2/2)..."
             cp -rf ${pkgs.fira-code}/share/fonts/truetype/* ${fonts_path}
             chmod -R +w ${fonts_path}
           '';
