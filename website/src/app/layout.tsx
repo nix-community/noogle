@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const inter = localFont({
-  src: "../fonts/Inter-Regular.otf",
+  src: "../fonts/InterVariable.ttf",
   display: "swap",
 });
 
