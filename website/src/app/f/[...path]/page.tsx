@@ -177,7 +177,6 @@ export default async function Page(props: { params: { path: string[] } }) {
   }
 
   const expr_code = (meta?.lambda_expr || meta?.attr_expr) ?? null;
-  console.log(meta?.is_primop, meta?.content_meta, item?.content);
   return (
     <>
       <Toc mdxSource={source + externManualSrc} title={item?.meta.title} />
@@ -229,12 +228,17 @@ export default async function Page(props: { params: { path: string[] } }) {
               id={item?.meta.title}
               variant="h2"
               component={"h1"}
-              data-pagefind-weight="15"
+              data-pagefind-weight="100"
               sx={{
                 marginRight: "auto",
               }}
             >
-              {item?.meta.title}
+              {item?.meta.path?.map((p, idx) => (
+                <>
+                  {idx !== 0 && "."}
+                  <span key={p}>{p}</span>
+                </>
+              ))}
             </Typography>
 
             {meta?.is_primop && meta.count_applied == 0 && (
