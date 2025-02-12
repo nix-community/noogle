@@ -4,7 +4,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/hsjobeki/noogle)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hsjobeki/noogle/main.yml)
 
-### Noogle is a simple Nix API search engine. It lets you search Nix functions.
+## Noogle is a simple Nix API search engine. It lets you search Nix functions
 
 ## Current Features
 
