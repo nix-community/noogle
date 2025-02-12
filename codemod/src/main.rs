@@ -1,13 +1,16 @@
 mod tests;
 
+use clap::{Parser, ValueEnum};
 use regex::Regex;
 use rnix::ast::{AstToken, AttrpathValue, Comment, Expr, Lambda, Param};
 use rnix::{SyntaxKind, SyntaxNode, SyntaxToken};
 use rowan::{ast::AstNode, GreenToken, NodeOrToken, WalkEvent};
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::Write;
 use std::path::PathBuf;
 use std::println;
+use std::process::exit;
 use std::{env, fs};
 use textwrap::dedent;
 use walkdir::WalkDir;
@@ -155,6 +158,7 @@ fn parse_doc_comment(
     indent: usize,
     argument_block: Option<String>,
     name: Option<String>,
+    prefix: Option<&String>,
 ) -> String {
     enum ParseState {
         Doc,
@@ -226,9 +230,6 @@ fn parse_doc_comment(
             "\n\n{left}```{TYPE_LANG}\n{left}{doc_type}\n{left}```"
         ));
     }
-
-    let args: Vec<String> = env::args().collect();
-    let prefix = args.get(2);
 
     if let Some(example) = f(formatted_example) {
         markdown.push_str(&format!("\n\n{left}# Examples"));
@@ -328,7 +329,7 @@ fn get_argument_docs(token: &SyntaxToken, _ident: &str) -> Option<String> {
     return argument_docs;
 }
 
-fn format_comment(text: &str, token: &SyntaxToken) -> String {
+fn format_comment(text: &str, token: &SyntaxToken, prefix: Option<&String>) -> String {
     let content = text.strip_prefix("/*").unwrap().strip_suffix("*/").unwrap();
     let mut whitespace = "";
     let prev = &token.prev_token();
@@ -366,7 +367,13 @@ fn format_comment(text: &str, token: &SyntaxToken) -> String {
 
     let name = get_binding_name(token);
 
-    let markdown = parse_doc_comment(&lines.join("\n"), indentation + 2, argument_block, name);
+    let markdown = parse_doc_comment(
+        &lines.join("\n"),
+        indentation + 2,
+        argument_block,
+        name,
+        prefix,
+    );
 
     return format!("/**\n{}{}*/", markdown, indent_1);
 }
@@ -422,7 +429,7 @@ fn strip_column(text: &str) -> Option<String> {
     return None;
 }
 
-fn replace_first_comment(syntax: &SyntaxNode) -> Option<SyntaxNode> {
+fn replace_first_comment(syntax: &SyntaxNode, prefix: Option<&String>) -> Option<SyntaxNode> {
     let mut result = None;
     for ev in syntax.preorder_with_tokens() {
         match ev {
@@ -435,7 +442,7 @@ fn replace_first_comment(syntax: &SyntaxNode) -> Option<SyntaxNode> {
                         }
                         let replacement: GreenToken = GreenToken::new(
                             rowan::SyntaxKind(token.kind() as u16),
-                            &format_comment(token.text(), &token),
+                            &format_comment(token.text(), &token, prefix),
                         );
                         let green = token.replace_with(replacement);
                         let updated = syntax.replace_with(green);
@@ -453,35 +460,63 @@ fn replace_first_comment(syntax: &SyntaxNode) -> Option<SyntaxNode> {
     result
 }
 
+#[derive(Debug, Parser)]
+#[command(author, version, about)]
+struct Options {
+    #[arg(help = "The path to the directory to search for nix files")]
+    pub path: PathBuf,
+    #[arg(long, help = "Path to a json file containing prefixes for each path")]
+    pub prefixes: Option<PathBuf>,
+}
+
 fn main() {
+    let options = Options::parse();
     let args: Vec<String> = env::args().collect();
 
-    if let Some(path) = &args.get(1) {
-        println!("trying to read path: {path}");
-        for entry in WalkDir::new(path)
-            .follow_links(true)
-            .into_iter()
-            .filter_map(|e| e.ok())
-        {
-            let f_name = entry.file_name().to_string_lossy();
+    let path = options.path;
 
-            if f_name.ends_with(".nix") {
-                modify_file_inplace(entry.path().to_path_buf());
+    println!("trying to read path: {:?}", path);
+
+    let contents: Option<HashMap<String, String>> = options.prefixes.map(|p| {
+        let file_contents = fs::read_to_string(&p);
+        if let Err(_) = file_contents {
+            println!("Could not read the file {:?}", p);
+            exit(1);
+        }
+        serde_json::from_str(&file_contents.unwrap()).unwrap()
+    });
+
+    for entry in WalkDir::new(path)
+        .follow_links(true)
+        .into_iter()
+        .filter_map(|e| e.ok())
+    {
+        let f_name = entry.file_name().to_string_lossy();
+
+        if f_name.ends_with(".nix") {
+            if let Some(ref contents) = contents {
+                let prefix = contents.get(f_name.trim());
+                if prefix.is_none() {
+                    println!("No prefix found for file {:?}", f_name);
+                    // exit(1);
+                    continue;
+                }
+                modify_file_inplace(entry.path().to_path_buf(), prefix);
+            } else {
+                modify_file_inplace(entry.path().to_path_buf(), None);
             }
         }
-    } else {
-        println!("Usage: codemod <dirPath>");
     }
 }
 
-fn replace_all(syntax: SyntaxNode) -> (Option<SyntaxNode>, i32) {
-    let mut maybe_replaced = replace_first_comment(&syntax);
+fn replace_all(syntax: SyntaxNode, prefix: Option<&String>) -> (Option<SyntaxNode>, i32) {
+    let mut maybe_replaced = replace_first_comment(&syntax, prefix);
     let mut count = 0;
     let r: Option<SyntaxNode> = loop {
         if let Some(replaced) = maybe_replaced {
             // Maybe we can replace more
             count += 1;
-            let result = replace_first_comment(&replaced);
+            let result = replace_first_comment(&replaced, prefix);
 
             // If we cannot replace more comments
             if result.is_none() {
@@ -495,7 +530,7 @@ fn replace_all(syntax: SyntaxNode) -> (Option<SyntaxNode>, i32) {
     (r, count)
 }
 
-fn modify_file_inplace(file_path: PathBuf) -> () {
+fn modify_file_inplace(file_path: PathBuf, prefix: Option<&String>) -> () {
     let contents = fs::read_to_string(&file_path);
     if let Err(_) = contents {
         println!("Could not read the file {:?}", file_path);
@@ -517,7 +552,7 @@ fn modify_file_inplace(file_path: PathBuf) -> () {
 
     let syntax = root.unwrap().syntax().clone_for_update();
     let display_name = file_path.to_str().unwrap();
-    if let (Some(updates), count) = replace_all(syntax) {
+    if let (Some(updates), count) = replace_all(syntax, prefix) {
         let mut file = File::create(&file_path).unwrap();
         file.write_all(updates.text().to_string().as_bytes()).ok();
         println!("{display_name} - Changed {count} comments");

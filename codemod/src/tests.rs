@@ -15,7 +15,7 @@ mod tests {
         let src = fs::read_to_string(&path).unwrap();
         let nix = rnix::Root::parse(&src).ok().expect("failed to parse input");
 
-        let (res, _count) = replace_all(nix.syntax().to_owned());
+        let (res, _count) = replace_all(nix.syntax().to_owned(), None);
 
         let actual = res.unwrap().to_string();
 
