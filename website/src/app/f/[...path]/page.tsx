@@ -176,6 +176,11 @@ export default async function Page(props: { params: { path: string[] } }) {
     return undefined;
   }
 
+  const {attr_position, lambda_position} = item.meta;
+  const contentPosition = item.meta.content_meta?.position;
+
+  const isDeprecated = [ attr_position, contentPosition, lambda_position ].filter(Boolean).some(p => p?.file?.includes("deprecated") );
+
   const expr_code = (meta?.lambda_expr || meta?.attr_expr) ?? null;
   return (
     <>
@@ -241,6 +246,7 @@ export default async function Page(props: { params: { path: string[] } }) {
               ))}
             </Typography>
 
+
             {meta?.is_primop && meta.count_applied == 0 && (
               <>
                 <Chip
@@ -274,6 +280,16 @@ export default async function Page(props: { params: { path: string[] } }) {
               <LastUpdatedFromCommit {...upstreamInfo} type="nixpkgs" />
             )}
           </Box>
+          {isDeprecated && (
+            <Box
+              sx={{widht: "100%", px: 4}}>
+              <Chip
+                label="Deprecated"
+                color="error"
+                sx={{ width: "100%" }}
+              />
+             </Box>
+          )}
           <Divider flexItem sx={{ mt: 2 }} />
 
           <Box sx={{ display: "block" }}>
