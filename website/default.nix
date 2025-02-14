@@ -1,39 +1,17 @@
-{ floco, system, pkgs, hooks }:
-let
+{ pkgs, hooks, nodejs }:
 
-  inherit (floco) lib;
+pkgs.buildNpmPackage {
+  pname = "noogle";
+  version = "0.1.0";
+  src = ./.;
 
-  pjs =
-    let
-      msg = "default.nix: Expected to find `package.json' to lookup "
-        + "package name/version, but no such file exists at: "
-        + (toString ./package.json);
-    in
-    if builtins.pathExists ./package.json then
-      lib.importJSON ./package.json
-    else
-      throw msg;
-  ident = pjs.name;
-  inherit (pjs) version;
+  inherit nodejs;
 
-  fmod = lib.evalModules {
-    modules = [
-      floco.nixosModules.floco
-      {
-        config.floco.settings = {
-          inherit system;
-          nodePackage = pkgs.nodejs_20;
-          basedir = ./.;
-        };
-      }
-      ./nix/floco-cfg.nix
-    ];
-    specialArgs = { inherit pkgs hooks; };
+  npmDeps = pkgs.importNpmLock {
+    npmRoot = ./.;
   };
 
-  # This attrset holds a few derivations related to our package.
-  # We'll expose these below to the CLI.
-  pkg = fmod.config.floco.packages.${ident}.${version};
+  preConfigure = hooks.prepare;
 
-in
-{ inherit pkg fmod; }
+  npmConfigHook = pkgs.importNpmLock.npmConfigHook;
+}

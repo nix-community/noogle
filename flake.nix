@@ -23,9 +23,6 @@
 
     crane.url = "github:ipetkov/crane";
     crane.inputs.nixpkgs.follows = "nixpkgs";
-
-    floco.url = "github:aakropotkin/floco";
-    floco.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -55,4 +52,3 @@
       };
     });
 }
-

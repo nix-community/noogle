@@ -1,22 +1,19 @@
-{ fmod, pkg, pkgs, hooks, ... }:
-pkgs.mkShell {
-  packages = [ fmod.config.floco.settings.nodePackage ];
+{ mkShell, importNpmLock, nodejs, hooks, ... }:
+
+mkShell {
+  packages = [
+    importNpmLock.hooks.linkNodeModulesHook
+    nodejs
+  ];
+
+  npmDeps = importNpmLock.buildNodeModules {
+    npmRoot = ./.;
+    inherit nodejs;
+  };
+
+  preConfigure = hooks.prepare;
+
   shellHook = ''
-    ${hooks.prepare}
-  
-
-    ID=${pkg.built.tree}
-    currID=$(cat .floco/.node_modules_id 2> /dev/null)
-
-    mkdir -p .floco
-    if [[ "$ID" != "$currID" || ! -d "node_modules"  ]];
-    then
-      ${pkgs.rsync}/bin/rsync -a  --checksum  --chmod=ug+w  --delete ${pkg.built.tree}/node_modules/ ./node_modules/
-      echo -n $ID > .floco/.node_modules_id
-      echo "floco ok: node_modules updated"
-    fi
-
     export PATH="$PATH:$(realpath ./node_modules)/.bin"
-
   '';
 }

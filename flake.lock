@@ -129,26 +129,6 @@
         "type": "github"
       }
     },
-    "floco": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1694873346,
-        "narHash": "sha256-Uvh03bg0a6ZnNWiX1Gb8g+m343wSJ/wb8ryUASt0loc=",
-        "owner": "aakropotkin",
-        "repo": "floco",
-        "rev": "d16bd444ab9d29a6640f52ee4e43a66528e07515",
-        "type": "github"
-      },
-      "original": {
-        "owner": "aakropotkin",
-        "repo": "floco",
-        "type": "github"
-      }
-    },
     "git-hooks-nix": {
       "inputs": {
         "flake-compat": [
@@ -366,7 +346,6 @@
       "inputs": {
         "crane": "crane",
         "flake-parts": "flake-parts",
-        "floco": "floco",
         "nix-master": "nix-master",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
