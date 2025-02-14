@@ -9,7 +9,7 @@
     # --- Other flake inputs ---
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # A custom nix version, to introspect lambda values.
-    nix.url = "github:hsjobeki/nix/?ref=feat/positions";
+    # nix.url = "github:hsjobeki/nix/?ref=feat/positions";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
@@ -40,6 +40,8 @@
         ./pesto/flake-module.nix
         # Deprecated. Will be removed.
         ./codemod/flake-module.nix
+        #
+        ./nixPlugin/flake-module.nix
       ];
       perSystem = { inputs', ... }: {
         packages = {

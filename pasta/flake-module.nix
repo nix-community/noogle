@@ -1,7 +1,7 @@
 { inputs, ... }: {
   perSystem = { self', inputs', pkgs, lib, ... }:
     let
-      inherit (inputs'.nix.packages) nix;
+      # inherit (inputs'.nix.packages) nix;
       nixpkgs = self'.packages.nixpkgs-migrated;
 
       sourceInfo' = {
@@ -18,8 +18,11 @@
             cat ${metaFile} > $out
           '';
         };
-        pasta = pkgs.callPackage ./default.nix { inherit nixpkgs nix pkgs; };
+        pasta = pkgs.callPackage ./default.nix {
+          inherit nixpkgs pkgs;
+          inherit (self'.packages) noogle-plugin;
+        };
       };
-      devShells.pastaMaker = pkgs.callPackage ./shell.nix { inherit pkgs nix; };
+      devShells.pastaMaker = pkgs.callPackage ./shell.nix { inherit pkgs; inherit (self'.packages) noogle-plugin; };
     };
 }

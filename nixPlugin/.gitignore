@@ -1,0 +1,7 @@
+*.o
+*.so
+Makefile
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+nix-plugins-config.h
