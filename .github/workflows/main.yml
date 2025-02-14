@@ -63,3 +63,10 @@ jobs:
             </td></tr>
             </table>
           edit-mode: replace
+
+  collect:
+    runs-on: ubuntu-latest
+    needs:
+      - deploy
+    steps:
+      - run: true

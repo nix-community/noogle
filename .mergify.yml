@@ -4,7 +4,7 @@ queue_rules:
       - base=main
       - label~=merge-queue|auto-merge|dependencies
     merge_conditions:
-      - check-success=deploy
+      - check-success=collect
     merge_method: rebase
 
 pull_request_rules:
