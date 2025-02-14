@@ -13,5 +13,10 @@ pkgs.buildNpmPackage {
 
   preConfigure = hooks.prepare;
 
+  postBuild = ''
+    npx next-sitemap
+    npx pagefind --site ./out
+  '';
+
   npmConfigHook = pkgs.importNpmLock.npmConfigHook;
 }
