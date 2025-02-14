@@ -3,9 +3,9 @@
 coverage
 
 # nix
-.floco
 .direnv/
 result
 result-*
+node_modules
 
 .pre-commit-config.yaml

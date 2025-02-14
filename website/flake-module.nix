@@ -1,7 +1,8 @@
-{ self, ... }: {
+{ ... }: {
   perSystem = { self', pkgs, ... }:
     let
-      inherit (self.inputs) floco;
+      nodejs = pkgs.nodejs_20;
+
       hooks = {
         prepare =
           let
@@ -24,15 +25,12 @@
             chmod -R +w ${fonts_path}
           '';
       };
-      base = pkgs.callPackage ./default.nix {
-        inherit floco hooks;
-      };
+      base = pkgs.callPackage ./default.nix { inherit nodejs hooks; };
     in
     {
-      packages = { ui = base.pkg.global; };
+      packages = { ui = base; };
       devShells.ui = pkgs.callPackage ./shell.nix {
-        inherit pkgs hooks;
-        inherit (base) fmod pkg;
+        inherit pkgs hooks nodejs;
         inherit (self'.packages) data-json pasta-meta;
       };
     };
