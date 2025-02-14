@@ -15,7 +15,13 @@ pkgs.buildNpmPackage {
 
   postBuild = ''
     npx next-sitemap
+  '';
+
+  installPhase = ''
+    runHook preInstall
     npx pagefind --site ./out
+    mv out $out
+    runHook postInstall
   '';
 
   npmConfigHook = pkgs.importNpmLock.npmConfigHook;

@@ -33,7 +33,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ${{ env.cloudflare_project }}
-          directory: ./result/lib/node_modules/noogle/out
+          directory: ./result
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to Cloudflare Pages
         id: publish
@@ -43,7 +43,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: noogle
-          directory: ./result/lib/node_modules/noogle/out
+          directory: ./result
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: pr-${{ github.event.pull_request.number }}
       - uses: peter-evans/create-or-update-comment@v3
