@@ -176,8 +176,8 @@ export default async function Page(props: { params: { path: string[] } }) {
     return undefined;
   }
 
-  const {attr_position, lambda_position} = item.meta;
-  const contentPosition = item.meta.content_meta?.position;
+  const {attr_position, lambda_position} = item?.meta || {};
+  const contentPosition = item?.meta?.content_meta?.position;
 
   const isDeprecated = [ attr_position, contentPosition, lambda_position ].filter(Boolean).some(p => p?.file?.includes("deprecated") );
 

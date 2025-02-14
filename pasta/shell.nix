@@ -1,4 +1,7 @@
-{ pkgs, nix, ... }:
+{ pkgs, noogle-plugin, ... }:
+let
+  nix = noogle-plugin.passthru.nix;
+in
 pkgs.mkShell {
   buildInputs = [ nix ];
   shellHook = ''
