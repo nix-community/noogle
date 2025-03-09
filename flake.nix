@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    systems.url = "github:nix-systems/default-linux";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
@@ -25,9 +26,9 @@
     crane.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
+  outputs = inputs@{ flake-parts, systems, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
-      systems = [ "x86_64-linux" ];
+      systems = import systems;
       imports = [
         ./devShell.nix
         ./preCommit.nix
