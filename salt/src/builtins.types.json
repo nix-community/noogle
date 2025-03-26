@@ -49,7 +49,7 @@
   "getAttr": { "fn_type": "getAttr :: String -> AttrSet -> a" },
   "getEnv": { "fn_type": "getEnv :: String -> String" },
   "getFlake": { "fn_type": "getFlake :: String -> AttrSet" },
-  "groupBy": { "fn_type": "groupBy :: (a -> b) -> [a] -> AttrSet" },
+  "groupBy": { "fn_type": "groupBy :: (a -> String) -> [ a ] -> { [String] :: [a] }" },
   "hasAttr": { "fn_type": "hasAttr :: String -> AttrSet -> Bool" },
   "hashFile": { "fn_type": "hashFile :: String -> Path -> String" },
   "hashString": { "fn_type": "hashString :: String -> String -> String" },
