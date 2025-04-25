@@ -1,6 +1,7 @@
 {
   "abort": { "fn_type": "abort :: String -> Never" },
   "add": { "fn_type": "add :: Number -> Number -> Number" },
+  "addErrorContext": { "fn_type": "addErrorContext :: String -> a -> a" },
   "all": { "fn_type": "all :: (a -> Bool) -> [a] -> Bool" },
   "any": { "fn_type": "any :: (a -> Bool) -> [a] -> Bool" },
   "attrNames": { "fn_type": "attrNames :: AttrSet -> [String]" },
