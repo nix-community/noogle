@@ -517,7 +517,7 @@ export default function Page() {
     if (term) {
       setLoading(true);
       fetch(
-        `https://search.nixos.org/backend/latest-42-nixos-unstable/_search`,
+        `https://search.nixos.org/backend/latest-43-nixos-unstable/_search`,
         {
           method: "POST",
           body: JSON.stringify(getPayload(term)),
