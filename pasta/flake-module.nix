@@ -1,8 +1,7 @@
 { inputs, ... }: {
   perSystem = { self', inputs', pkgs, lib, ... }:
     let
-      # inherit (inputs'.nix.packages) nix;
-      nixpkgs = self'.packages.nixpkgs-migrated;
+      nixpkgs = inputs.nixpkgs-master;
 
       sourceInfo' = {
         inherit (inputs.nixpkgs-master.sourceInfo) rev lastModified;
