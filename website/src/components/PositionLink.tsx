@@ -1,4 +1,10 @@
-import { ContentSource, DocMeta, FilePosition } from "@/models/data";
+import {
+  ContentSource,
+  DocMeta,
+  FilePosition,
+  nixInfo,
+  upstreamInfo,
+} from "@/models/data";
 import {
   Box,
   Button,
@@ -77,7 +83,7 @@ export const PositionLink = ({
             <Link
               target="_blank"
               href={getSourcePosition(
-                "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                `https://github.com/nixos/nixpkgs/tree/${upstreamInfo.rev}`,
                 contentPosition
               )}
             >
@@ -96,7 +102,7 @@ export const PositionLink = ({
                 <Link
                   target="_blank"
                   href={getSourcePosition(
-                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                    `https://github.com/nixos/nixpkgs/tree/${upstreamInfo.rev}`,
                     attr_position
                   )}
                 >
@@ -118,7 +124,7 @@ export const PositionLink = ({
                 <Link
                   target="_blank"
                   href={getSourcePosition(
-                    "https://github.com/hsjobeki/nixpkgs/tree/migrate-doc-comments",
+                    `https://github.com/nixos/nixpkgs/tree/${upstreamInfo.rev}`,
                     lambda_position
                   )}
                 >

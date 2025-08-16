@@ -11,9 +11,8 @@ mkShell {
     inherit nodejs;
   };
 
-  preConfigure = hooks.prepare;
-
   shellHook = ''
+    ${hooks.prepare}
     export PATH="$PATH:$(realpath ./node_modules)/.bin"
   '';
 }
