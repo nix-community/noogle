@@ -2,7 +2,6 @@ import {
   ContentSource,
   DocMeta,
   FilePosition,
-  nixInfo,
   upstreamInfo,
 } from "@/models/data";
 import {
