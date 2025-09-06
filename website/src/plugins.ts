@@ -135,3 +135,11 @@ export function sanitizeDirectives(markdown: string) {
   const res = markdown.replace(/:::\{/g, ":::note{");
   return res;
 }
+
+// Plugin to normalize directive spacing
+export const normalizeDirectives = (src: string) => {
+  // Normalize directive spacing - remove spaces between ::: and attributes
+  const normalized = src.replace(/^(:::+)\s+(\{[^}]*\})/gm, "$1$2");
+
+  return normalized;
+};
