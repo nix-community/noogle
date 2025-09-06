@@ -27,6 +27,7 @@ import remarkBareUrls, {
   replaceComponents,
   sanitizeDirectives,
   styleDirectives,
+  normalizeDirectives,
 } from "./plugins";
 
 /**
@@ -124,6 +125,8 @@ type Heading = {
 };
 
 export const parseMd = async (src: string) => {
+  const normalized = normalizeDirectives(src);
+
   const result = await unified()
     .use(remarkParse)
     .use(remarkBareUrls)
@@ -145,7 +148,7 @@ export const parseMd = async (src: string) => {
     })
     .use(replaceComponents)
     .use(rehypeStringify)
-    .process(sanitizeDirectives(src));
+    .process(sanitizeDirectives(normalized));
 
   return result;
 };
