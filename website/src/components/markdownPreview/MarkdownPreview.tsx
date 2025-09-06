@@ -12,6 +12,7 @@ import {
   defListHastHandlers,
 } from "remark-definition-list";
 import {
+  normalizeDirectives,
   replaceComponents,
   sanitizeDirectives,
   styleDirectives,
@@ -62,7 +63,7 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
           replaceComponents,
         ]}
       >
-        {sanitizeDirectives(description)}
+        {sanitizeDirectives(normalizeDirectives(description))}
       </ReactMarkdown>
     </>
   );
