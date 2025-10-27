@@ -58,7 +58,7 @@ export const PositionLink = ({
             sx={{ color: "text.secondary", pb: 2 }}
           >
             This function is not defined in a .nix file. It is likely a builtins
-            function or an alias of a builtins function. builtins functions are
+            function or an alias of a builtins function. Builtins functions are
             predefined functions provided by Nix.
           </Typography>
           {!is_primop && (
