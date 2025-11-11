@@ -8,6 +8,7 @@
     let
       formatters = with pkgs; [
         nixfmt
+        nixpkgs-fmt
         nodePackages.prettier #3.0.0 installed over nixpkgs
         rustfmt
       ];
