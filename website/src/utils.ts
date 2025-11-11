@@ -42,7 +42,7 @@ import remarkBareUrls, {
  * }
  * ```
  * @param obj Object in which to insert records
- * @param path Path/String in "." seperated form
+ * @param path Path/String in "." separated form
  * @param value Any value to insert.
  */
 export function set(obj: Record<string, any>, path: string, value: any): void {
