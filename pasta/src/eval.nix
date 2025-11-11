@@ -1,6 +1,6 @@
 {
   #
-  # All these arguments can be overriden in production build
+  # All these arguments can be overridden in production build
   #
   nixpkgs ? (builtins.fetchTree {
     repo = "nixpkgs";
@@ -17,8 +17,8 @@ let
   tools = import ./tools.nix { inherit lib; };
   inherit (tools) getDocsFromSet collectFns toFile;
 
-  # Contains seperate sets of metadata.
-  # which then allows running seperate evaluations. Once at a time for better error tracing and memory management.
+  # Contains separate sets of metadata.
+  # which then allows running separate evaluations. Once at a time for better error tracing and memory management.
 
   docs = {
     ############# Recusive analysis sets

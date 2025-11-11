@@ -282,7 +282,7 @@ export default async function Page(props: { params: { path: string[] } }) {
           </Box>
           {isDeprecated && (
             <Box
-              sx={{widht: "100%", px: 4}}>
+              sx={{width: "100%", px: 4}}>
               <Chip
                 label="Deprecated"
                 color="error"

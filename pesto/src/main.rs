@@ -90,7 +90,7 @@ pub fn main() {
     // Load the up-to-date language data if provided
     let language_data: Option<HashMap<String, BuiltinItem>> = if let Some(language) = opts.language
     {
-        println!("Loading additional laguage data from {:?}", language);
+        println!("Loading additional language data from {:?}", language);
         let data = std::fs::read_to_string(language).unwrap();
         serde_json::from_str(&data).unwrap()
     } else {

@@ -64,7 +64,7 @@ rec {
       '';
       makeFlags = [ "LOADADDR=0x8000" ];
       target = "uImage";
-      # TODO reenable once manual-config's config actually builds a .dtb and this is checked to be working
+      # TODO re-enable once manual-config's config actually builds a .dtb and this is checked to be working
       #DTB = true;
     };
     gcc = {

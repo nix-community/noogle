@@ -1,6 +1,6 @@
 [package]
 name = "pesto"
-description = "Gien a list of positions extract doc-comment into markdown and frontmatter."
+description = "Given a list of positions extract doc-comment into markdown and frontmatter."
 version = "0.1.0"
 edition = "2021"
 

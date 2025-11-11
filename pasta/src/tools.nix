@@ -117,7 +117,7 @@ let
           [ ];
     }));
 
-  # Convinient wrapper for debugging.
+  # Convenient wrapper for debugging.
   toFile = thing: builtins.toFile "data.json" (builtins.toJSON thing);
 
   # Non-rcusively collect docs of all functions present in a set
