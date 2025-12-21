@@ -43,7 +43,7 @@ let
   /* *
      Recursively collect documentation for all values
      [
-      { 
+      {
         path :: [ String ];
         docs :: GetDocs;
       }
@@ -125,7 +125,7 @@ let
     let
       docs = lib.pipe s [
         # Filter out all attributes that are not a function or __functor
-        (lib.filterAttrs (v: v: lib.isFunction (force v)))
+        (lib.filterAttrs (n: v: lib.isFunction (force v)))
         # Call getDocs for each name value pair
         (lib.mapAttrs (n: v: getDocs s n))
       ];

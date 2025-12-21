@@ -41,7 +41,6 @@ let
 
     ociTools = collectFns pkgs.ociTools { initialPath = [ "pkgs" "ociTools" ]; };
     releaseTools = collectFns pkgs.releaseTools { initialPath = [ "pkgs" "releaseTools" ]; };
-    snapTools = collectFns pkgs.snapTools { initialPath = [ "pkgs" "snapTools" ]; };
     vmTools = collectFns pkgs.vmTools { initialPath = [ "pkgs" "vmTools" ]; };
 
 
@@ -54,7 +53,7 @@ let
     writers = getDocsFromSet pkgs.writers [ "pkgs" "writers" ];
     haskellLib = getDocsFromSet pkgs.haskell.lib [ "pkgs" "haskell" "lib" ];
     pythonTools =
-      getDocsFromSet pkgs.pythonPackages [ "pkgs" "pythonPackages" ];
+      getDocsFromSet pkgs.python3Packages [ "pkgs" "python3Packages" ];
     builtins =
       getDocsFromSet builtins [ "builtins" ];
     mkDiskImage = [
