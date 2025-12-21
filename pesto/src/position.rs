@@ -348,11 +348,18 @@ fn unpack_lambda(node: &SyntaxNode) -> Option<SyntaxNode> {
                     rnix::SyntaxKind::NODE_ATTRPATH => None,
                     rnix::SyntaxKind::NODE_ATTR_SET => None,
                     rnix::SyntaxKind::NODE_IF_ELSE => None,
+                    // Added on 25.11
+                    // fetchgit is now wrapped in extendMkDerivation
+                    // which obfuscates the original function signature by wrapping the function in a factory
+                    rnix::SyntaxKind::NODE_ATTRPATH_VALUE => None,
+                    rnix::SyntaxKind::NODE_LIST => None,
+                    rnix::SyntaxKind::NODE_STRING => None,
                     _ => {
                         println!(
-                                "Unexpected node kind: {:?}. Expected Parenthesis '(x: ...)' or Lambda 'x: ... '",
-                                node.kind()
-                            );
+                            "Unexpected node kind: {:?}. Expected Parenthesis '(x: ...)' or Lambda 'x: ... ' {:#?}",
+                            node.kind(),
+                            node.text()
+                        );
                         exit(1);
                     }
                 }
@@ -509,10 +516,11 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                     _ => {
                         let res = get_expr_docs(&expr);
                         NixDocComment {
-                        content: res.as_ref().map(|v| v.0.to_owned()),
-                        count_applied: None,
-                        expr: res.as_ref().map(|v| v.1.to_owned()),
-                    }},
+                            content: res.as_ref().map(|v| v.0.to_owned()),
+                            count_applied: None,
+                            expr: res.as_ref().map(|v| v.1.to_owned()),
+                        }
+                    }
                 };
                 return Some(doc);
             }
