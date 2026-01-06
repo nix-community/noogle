@@ -21,7 +21,7 @@ void prim_lambdaMeta(EvalState &state, const PosIdx pos, Value **args,
   auto attrs = state.buildBindings(10);
   bool isPrimOp = false;
   if (value.isLambda()) {
-    auto lambda = value.payload.lambda;
+    auto lambda = value.lambda();
     PosIdx posIdx = lambda.fun->getPos();
     Pos funPos = state.positions[posIdx];
     state.mkPos(attrs.alloc("position"), posIdx);
@@ -29,10 +29,10 @@ void prim_lambdaMeta(EvalState &state, const PosIdx pos, Value **args,
   // Special case for __functors
   if (value.type() == nAttrs) {
     auto i =
-        value.payload.attrs->find(state.symbols.create("__functor"));
+        value.attrs()->find(state.symbols.create("__functor"));
 
-    if (i != value.payload.attrs->end()) {
-      PosIdx posIdx = value.payload.attrs->pos;
+    if (i != value.attrs()->end()) {
+      PosIdx posIdx = value.attrs()->pos;
       Pos funPos = state.positions[posIdx];
       state.mkPos(attrs.alloc("position"), posIdx);
       attrs.alloc("isFunctor").mkBool(true);
@@ -47,16 +47,16 @@ void prim_lambdaMeta(EvalState &state, const PosIdx pos, Value **args,
 
     if (value.isPrimOp()) {
       // Primops should have documentation"
-      auto primDoc = value.payload.primOp->doc;
+      auto primDoc = value.primOp()->doc;
       if (primDoc != nullptr) {
         std::string s(primDoc);
         attrs.alloc("content").mkString(s);
       }
 
-      auto args = value.payload.primOp->args;
-      auto arity = value.payload.primOp->arity;
-      auto experimentalFeature = value.payload.primOp->experimentalFeature;
-      auto name = value.payload.primOp->name;
+      auto args = value.primOp()->args;
+      auto arity = value.primOp()->arity;
+      auto experimentalFeature = value.primOp()->experimentalFeature;
+      auto name = value.primOp()->name;
       attrs.alloc("name").mkString(name);
 
       auto & argsList = attrs.alloc("args");
@@ -78,17 +78,17 @@ void prim_lambdaMeta(EvalState &state, const PosIdx pos, Value **args,
     }
 
     if (value.isPrimOpApp()) {
-      Value *maybePrimop = value.payload.primOpApp.left;
+      Value *maybePrimop = value.primOpApp().left;
       unsigned int countApplied = 1;
       // Find the primop by traversing left
       while (maybePrimop != nullptr && !maybePrimop->isPrimOp() &&
       maybePrimop->isPrimOpApp()) {
-        maybePrimop = maybePrimop->payload.primOpApp.left;
+        maybePrimop = maybePrimop->primOpApp().left;
         countApplied++;
       }
       attrs.alloc("countApplied").mkInt(countApplied);
       if (maybePrimop->isPrimOp()) {
-        std::string doc = maybePrimop->payload.primOp->doc;
+        std::string doc = maybePrimop->primOp()->doc;
         attrs.alloc("content").mkString(doc);
       }
     }
