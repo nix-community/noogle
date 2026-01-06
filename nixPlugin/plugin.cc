@@ -1,12 +1,12 @@
-#include <common-eval-args.hh>
-#include <config-global.hh>
-#include <eval-inline.hh>
-#include <eval-settings.hh>
-#include <eval.hh>
-#include <globals.hh>
-#include <primops.hh>
+#include <nix/cmd/common-eval-args.hh>
+#include <nix/expr/eval-inline.hh>
+#include <nix/expr/eval-settings.hh>
+#include <nix/expr/eval.hh>
+#include <nix/expr/primops.hh>
+#include <nix/expr/value.hh>
+#include <nix/store/globals.hh>
+#include <nix/util/config-global.hh>
 #include <string>
-#include <value.hh>
 
 using namespace nix;
 
