@@ -7,10 +7,16 @@
       commonArgs = {
         inherit src;
         strictDeps = true;
-        cargoArtifacts = craneLib.buildDepsOnly commonArgs;
+        buildInputs = [ pkgs.oniguruma ];
+        nativeBuildInputs = [ pkgs.pkg-config ];
+        RUSTONIG_SYSTEM_LIBONIG = "1";
       };
 
-      pesto = craneLib.buildPackage commonArgs;
+      cargoArtifacts = craneLib.buildDepsOnly commonArgs;
+
+      pesto = craneLib.buildPackage (commonArgs // {
+        inherit cargoArtifacts;
+      });
 
       data-json = pkgs.stdenv.mkDerivation {
         name = "pesto-data";
@@ -23,10 +29,12 @@
       checks = {
         inherit pesto;
         pesto-clippy = craneLib.cargoClippy (commonArgs // {
+          inherit cargoArtifacts;
           cargoClippyExtraArgs = "--all-targets -- --deny warnings";
         });
         pesto-fmt = craneLib.cargoFmt { inherit src; };
         pesto-nextest = craneLib.cargoNextest (commonArgs // {
+          inherit cargoArtifacts;
           partitions = 1;
           partitionType = "count";
         });
