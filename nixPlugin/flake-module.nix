@@ -1,7 +1,7 @@
 { ... }: {
   perSystem = { pkgs, system, ... }:
     let
-      nix = pkgs.nixVersions.nix_2_25;
+      nix = pkgs.nixVersions.nix_2_31;
     in
     {
       packages = {
