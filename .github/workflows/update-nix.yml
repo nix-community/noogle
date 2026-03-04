@@ -1,11 +1,16 @@
-name: update-nixpkgs-master-lock
+name: update-nix-master-lock
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: "0 0 * * *" # runs daily at 00:00
+    - cron: "0 1 * * *" # runs daily at 01:00
 
 jobs:
   lockfile:
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,10 +21,11 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v25
+        uses: DeterminateSystems/update-flake-lock@v28
         with:
           token: ${{ secrets.GH_ACTIONS }}
-          pr-title: "Update: nixpkgs-master input"
+          pr-title: "Update: nix-master input"
           pr-labels: |
             auto-merge
-          inputs: nixpkgs-master
+          inputs: nix-master
+          branch: update_flake_lock_action_nix
