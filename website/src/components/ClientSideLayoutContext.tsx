@@ -4,13 +4,13 @@ import { cssThemeOptions } from "@/styles/theme";
 import { ReactNode, useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import {
-  Experimental_CssVarsProvider as CssVarsProvider,
-  experimental_extendTheme as extendTheme,
-  getInitColorSchemeScript,
+  ThemeProvider,
+  createTheme,
   useColorScheme,
 } from "@mui/material/styles";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 
-const theme = extendTheme(cssThemeOptions);
+const theme = createTheme(cssThemeOptions);
 
 const ModeTracker = () => {
   const { setMode } = useColorScheme();
@@ -19,9 +19,9 @@ const ModeTracker = () => {
   useEffect(
     () => {
       setMounted(true);
-      const persistedMode = localStorage.getItem("mui-mode");
+      const persistedMode = localStorage.getItem("mode");
       if (!persistedMode) {
-        setMode("dark");
+        setMode("system");
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,13 +44,13 @@ export const ClientSideLayoutContext = ({
 }) => {
   return (
     <>
-      {getInitColorSchemeScript()}
-      <CssVarsProvider theme={theme}>
+      <InitColorSchemeScript defaultMode="system" />
+      <ThemeProvider theme={theme} defaultMode="system">
         <CssBaseline />
         <ModeTracker />
         <Toaster />
         {children}
-      </CssVarsProvider>
+      </ThemeProvider>
     </>
   );
 };

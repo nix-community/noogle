@@ -1,15 +1,10 @@
-{ mkShell, importNpmLock, nodejs, hooks, ... }:
+{ mkShell, nodejs, pnpm_10, hooks, ... }:
 
 mkShell {
   packages = [
-    importNpmLock.hooks.linkNodeModulesHook
     nodejs
+    pnpm_10
   ];
-
-  npmDeps = importNpmLock.buildNodeModules {
-    npmRoot = ./.;
-    inherit nodejs;
-  };
 
   shellHook = ''
     ${hooks.prepare}
