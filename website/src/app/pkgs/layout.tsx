@@ -7,10 +7,8 @@ import { ReactNode, Suspense } from "react";
 
 export default function SearchLayout({
   children,
-  params,
 }: {
   children: ReactNode;
-  params: { path: string[] };
 }) {
   return (
     <>

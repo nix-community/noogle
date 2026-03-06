@@ -1,4 +1,8 @@
-{ pkgs, hooks, nodejs }:
+{ pkgs
+, hooks
+, nodejs
+,
+}:
 
 pkgs.buildNpmPackage {
   pname = "noogle";
@@ -10,6 +14,8 @@ pkgs.buildNpmPackage {
   npmDeps = pkgs.importNpmLock {
     npmRoot = ./.;
   };
+
+  npmFlags = [ "--legacy-peer-deps" ];
 
   preConfigure = hooks.prepare;
 
