@@ -7,7 +7,6 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { MarkdownPreview } from "../markdownPreview";
 import { getPrimopDescription } from "@/models/primop";
 

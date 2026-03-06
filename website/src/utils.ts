@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
 // @ts-expect-error: Could not find type declaration file.
 import remarkHeadingId from "remark-heading-id";
 import remarkParse from "remark-parse";
@@ -22,6 +23,7 @@ import {
 import remarkDirective from "remark-directive";
 
 import { unified } from "unified";
+import type { Plugin } from "unified";
 import { rehypeExtractExcerpt } from "./excerpt";
 import remarkBareUrls, {
   replaceComponents,
@@ -69,7 +71,7 @@ export async function generateStaticSidebarEntries() {
     files
       .filter((f) => !f.isDirectory())
       .map(async (f) => {
-        const dirname = path.relative(docsDir, f.path);
+        const dirname = path.relative(docsDir, path.join(docsDir, f.name));
         const filename = path.parse(f.name).name;
         const id = [...dirname.split("/"), filename];
         return {
@@ -147,7 +149,7 @@ export const parseMd = async (src: string) => {
       properties: { "data-autolinked": true },
     })
     .use(replaceComponents)
-    .use(rehypeStringify)
+    .use(rehypeStringify as Plugin)
     .process(sanitizeDirectives(normalized));
 
   return result;
@@ -163,12 +165,13 @@ export const extractExcerpt = async (
     .use(rehypeExtractExcerpt, {
       maxLength: maxLength,
       ellipsis: " ...",
-    })
-    .use(rehypeStringify);
+    });
 
-  const result = await processor.process(content);
+  const file = { value: content, data: {} } as any;
+  const tree = processor.parse(content);
+  await processor.run(tree, file);
 
-  return result.data.excerpt as string;
+  return file.data.excerpt as string;
 };
 export const extractHeadings = async (content: string): Promise<Heading[]> => {
   const processor = unified()
@@ -176,7 +179,7 @@ export const extractHeadings = async (content: string): Promise<Heading[]> => {
     .use(remarkHeadingId)
     .use(remarkRehype)
     .use(rehypeSlug)
-    .use(rehypeStringify);
+    .use(rehypeStringify as Plugin);
 
   const result = await processor.process(content);
 
@@ -214,8 +217,8 @@ export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
     [rehypeSlug, {}],
     [rehypeAutolinkHeadings, { behavior: "wrap" }],
   ],
-  remarkPlugins: [remarkHeadingId, remarkDefinitionList],
-  format: "md",
+  remarkPlugins: [remarkGfm, remarkHeadingId, remarkDefinitionList],
+  format: "mdx",
   remarkRehypeOptions: {
     handlers: {
       ...(defListHastHandlers as {}),
