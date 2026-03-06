@@ -4,13 +4,13 @@ import { cssThemeOptions } from "@/styles/theme";
 import { ReactNode, useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import {
-  Experimental_CssVarsProvider as CssVarsProvider,
-  experimental_extendTheme as extendTheme,
-  getInitColorSchemeScript,
+  ThemeProvider,
+  createTheme,
   useColorScheme,
 } from "@mui/material/styles";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 
-const theme = extendTheme(cssThemeOptions);
+const theme = createTheme(cssThemeOptions);
 
 const ModeTracker = () => {
   const { setMode } = useColorScheme();
@@ -44,13 +44,13 @@ export const ClientSideLayoutContext = ({
 }) => {
   return (
     <>
-      {getInitColorSchemeScript()}
-      <CssVarsProvider theme={theme}>
+      <InitColorSchemeScript />
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <ModeTracker />
         <Toaster />
         {children}
-      </CssVarsProvider>
+      </ThemeProvider>
     </>
   );
 };

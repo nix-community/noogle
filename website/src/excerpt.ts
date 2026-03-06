@@ -1,4 +1,4 @@
-import type { Root } from "hast";
+type Root = any;
 import { toString as hastToString } from "hast-util-to-string";
 import type { Plugin } from "unified";
 import { EXIT, visit } from "unist-util-visit";

@@ -3,6 +3,8 @@ import { commonOptions } from "./common";
 import type {} from "@mui/material/themeCssVarsAugmentation";
 
 const cssThemeOptions: CssVarsThemeOptions = {
+  cssVariables: true,
+  colorSchemeSelector: "data-mui-color-scheme",
   ...commonOptions,
   colorSchemes: {
     light: {

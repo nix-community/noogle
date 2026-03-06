@@ -1,7 +1,7 @@
 { ... }: {
   perSystem = { self', pkgs, ... }:
     let
-      nodejs = pkgs.nodejs_20;
+      nodejs = pkgs.nodejs_25;
 
       hooks = {
         prepare =
