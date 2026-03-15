@@ -1,4 +1,9 @@
-{ mkShell, importNpmLock, nodejs, hooks, ... }:
+{ mkShell
+, importNpmLock
+, nodejs
+, hooks
+, ...
+}:
 
 mkShell {
   packages = [
@@ -9,6 +14,9 @@ mkShell {
   npmDeps = importNpmLock.buildNodeModules {
     npmRoot = ./.;
     inherit nodejs;
+    derivationArgs = {
+      NPM_CONFIG_LEGACY_PEER_DEPS = "true";
+    };
   };
 
   shellHook = ''

@@ -6,10 +6,8 @@ import { SearchInput } from "@/components/searchInput";
 
 export default function SearchLayout({
   children,
-  params,
 }: {
   children: ReactNode;
-  params: { path: string[] };
 }) {
   return (
     <>

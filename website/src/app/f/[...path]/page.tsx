@@ -111,12 +111,13 @@ async function getManualSrc(item: Doc): Promise<string | null> {
 }
 
 export async function generateMetadata(
-  { params }: { params: { path: string[] } },
+  { params }: { params: Promise<{ path: string[] }> },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const resolvedParams = await params;
   // read route params
   const item: Doc | undefined = data.find(
-    (item) => item.meta.path.join(".") === params.path.join(".")
+    (item) => item.meta.path.join(".") === resolvedParams.path.join(".")
   );
 
   // fetch data
@@ -151,10 +152,12 @@ export async function generateMetadata(
 
 // Multiple versions of this page will be statically generated
 // using the `params` returned by `generateStaticParams`
-export default async function Page(props: { params: { path: string[] } }) {
-  const { params } = props;
+export default async function Page(props: {
+  params: Promise<{ path: string[] }>;
+}) {
+  const resolvedParams = await props.params;
   const item: Doc | undefined = data.find(
-    (item) => item.meta.path.join(".") === params.path.join(".")
+    (item) => item.meta.path.join(".") === resolvedParams.path.join(".")
   );
   const mdxSource = item?.content?.content || "";
   const meta = item?.meta;
@@ -239,10 +242,10 @@ export default async function Page(props: { params: { path: string[] } }) {
               }}
             >
               {item?.meta.path?.map((p, idx) => (
-                <>
+                <React.Fragment key={`${idx}-${p}`}>
                   {idx !== 0 && "."}
-                  <span key={p}>{p}</span>
-                </>
+                  <span>{p}</span>
+                </React.Fragment>
               ))}
             </Typography>
 

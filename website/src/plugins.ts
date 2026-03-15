@@ -1,6 +1,5 @@
-import { h } from "hastscript";
 import { visit } from "unist-util-visit";
-import { Element } from "hast";
+type Element = any;
 
 export default function remarkBareUrls() {
   /**
@@ -74,7 +73,7 @@ export function styleDirectives() {
         const tagName = node.type === "textDirective" ? "span" : "div";
 
         data.hName = tagName;
-        data.hProperties = h(tagName, node.attributes || {}).properties;
+        data.hProperties = node.attributes || {};
       }
     });
   };
