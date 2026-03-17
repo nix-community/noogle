@@ -44,7 +44,7 @@ export function PkgsSearch(props: SearchInputProps) {
     setTo("any");
   };
   const handleType = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setTerm(e.target.value);
   };
