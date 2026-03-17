@@ -49,11 +49,6 @@ export function SearchInput(props: SearchInputProps) {
     setFrom("any");
     setTo("any");
   };
-  const handleType = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setTerm(e.target.value);
-  };
 
   return (
     <Paper
@@ -77,29 +72,29 @@ export function SearchInput(props: SearchInputProps) {
         freeSolo
         includeInputInList
         aria-label={"search"}
+        options={data.map((e) => e.meta.title)}
+        sx={{ width: "100%" }}
+        inputValue={term}
         onInputChange={(e, value, reason) => {
-          if (reason === "reset" && e) {
-            console.log({ e, value, reason });
-            if (value) {
-              const target = data.find((d) => d.meta.title === value);
-              if (target) {
-                router.push(`/f/${target.meta.path.join("/")}`);
-              } else {
-                handleSubmit(value);
-              }
+          if (reason === "input") {
+            setTerm(value);
+          } else if (reason === "clear") {
+            setTerm("");
+          }
+        }}
+        onChange={(e, value) => {
+          if (value) {
+            setTerm(value);
+            const target = data.find((d) => d.meta.title === value);
+            if (target) {
+              router.push(`/f/${target.meta.path.join("/")}`);
             } else {
               handleSubmit(value);
             }
+          } else {
+            setTerm("");
           }
         }}
-        options={data.map((e) => e.meta.title)}
-        sx={{ width: "100%" }}
-        onChange={(e, value) => {
-          handleType({
-            target: { value: value || "" },
-          } as React.ChangeEvent<HTMLInputElement>);
-        }}
-        value={term}
         renderInput={(params) => (
           <TextField
             {...params}
@@ -111,8 +106,6 @@ export function SearchInput(props: SearchInputProps) {
               endAdornment: undefined,
               placeholder: placeholder,
             }}
-            value={term}
-            onChange={(e) => handleType(e)}
             variant="standard"
             sx={{
               "& .MuiInputBase-root": {
