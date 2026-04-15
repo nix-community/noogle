@@ -33,8 +33,8 @@
   "elemAt": { "fn_type": "elemAt :: [a] -> Int -> a" },
   "fetchClosure": { "fn_type": "fetchClosure :: AttrSet -> AttrSet" },
   "fetchGit": { "fn_type": "fetchgit :: AttrSet -> AttrSet" },
-  "fetchTarball": { "fn_type": "fetchTarball :: AttrSet -> AttrSet" },
-  "fetchurl": { "fn_type": "fetchurl :: String -> AttrSet" },
+  "fetchTarball": { "fn_type": "fetchTarball :: AttrSet -> String" },
+  "fetchurl": { "fn_type": "fetchurl :: String -> String" },
   "filter": { "fn_type": "filter :: (a -> Bool) -> [a] -> [a]" },
   "filterSource": {
     "fn_type": "filterSource :: (Path -> String -> Bool) -> Path -> StorePath"
