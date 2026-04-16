@@ -26,6 +26,10 @@ pkgs.buildNpmPackage {
   installPhase = ''
     runHook preInstall
     npx pagefind --site ./out
+    # Remove Next.js RSC prefetch payloads to stay under Cloudflare Pages' 20k file limit.
+    # Navigation will use full page loads instead of client-side transitions.
+    find ./out -name '__next.*.txt' -delete
+    find ./out -name 'index.txt' -delete
     mv out $out
     runHook postInstall
   '';
