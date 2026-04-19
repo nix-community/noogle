@@ -1,7 +1,14 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, data, upstreamInfo, nixInfo, language } from "@/models/data";
+import {
+  Doc,
+  data,
+  upstreamInfo,
+  nixInfo,
+  language,
+  builtinImpls,
+} from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -199,7 +206,8 @@ export default async function Page(props: {
 
   // in case source rendering is skipped, source is a primop
   // That mean language docs MUST exist (unless export is incomplete)
-  const tocSource = (skipNixpkgsRender ? "" : source) + languageDocs;
+  const tocSource =
+    (skipNixpkgsRender ? "" : source) + (languageDocs ? languageDocs?.doc : "");
   return (
     <>
       <Toc mdxSource={tocSource} title={item?.meta.title} />
@@ -414,17 +422,38 @@ export default async function Page(props: {
                 <MDX source={`\`\`\`haskell\n${signature.trim()}\n\`\`\`\n`} />
               </>
             )}
-            {meta?.is_primop && (
-              <Box>
-                <MDX
-                  source={`## Implementation
+            {meta?.is_primop &&
+              (() => {
+                const builtinName = meta?.path?.[meta.path.length - 1];
+                // Need to check hasOwn, because javascript adds prototype methods, which return true for index checks.
+                // nice js footgun
+                const impl =
+                  builtinName && Object.hasOwn(builtinImpls, builtinName)
+                    ? builtinImpls[builtinName]
+                    : undefined;
+                return (
+                  <Box>
+                    <MDX
+                      source={`## Implementation
 :::{.tip}
 This function is implemented in c++ and is part of the native nix runtime.
+${
+  impl
+    ? `
+[\`${impl.file}:${impl.line}\`](https://github.com/NixOS/nix/blob/${nixInfo.rev}/${impl.file}#L${impl.line})
+
+\`\`\`cpp
+${impl.code?.trim() ?? ""}
+\`\`\`
+`
+    : ""
+}
 :::
 `}
-                />
-              </Box>
-            )}
+                    />
+                  </Box>
+                );
+              })()}
             {expr_code && (
               <Box>
                 <MDX
