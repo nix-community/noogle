@@ -9,11 +9,6 @@
     # --- Other flake inputs ---
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     systems.url = "github:nix-systems/default-linux";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -29,7 +24,6 @@
       systems = import systems;
       imports = [
         ./devShell.nix
-        ./preCommit.nix
         ./website/flake-module.nix
         ./salt/flake-module.nix
         ./pasta/flake-module.nix
@@ -37,6 +31,10 @@
         #
         ./nixPlugin/flake-module.nix
       ];
+
+      flake = {
+        inherit inputs;
+      };
       perSystem = { inputs', ... }: {
         packages = {
           # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
