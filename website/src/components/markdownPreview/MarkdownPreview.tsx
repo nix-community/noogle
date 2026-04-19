@@ -3,6 +3,7 @@ import { useColorScheme } from "@mui/material";
 import nix from "highlight.js/lib/languages/nix";
 import haskell from "highlight.js/lib/languages/haskell";
 import bash from "highlight.js/lib/languages/bash";
+import cpp from "highlight.js/lib/languages/cpp";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -57,7 +58,7 @@ export const MarkdownPreview = (props: MarkdownPreviewProps) => {
             rehypeHighlight,
             {
               detect: true,
-              languages: { nix, haskell, bash, default: nix },
+              languages: { nix, haskell, bash, cpp, default: nix },
             },
           ],
           replaceComponents,
