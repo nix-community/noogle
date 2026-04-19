@@ -1,7 +1,7 @@
 import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
-import { Doc, data, manualLinks, upstreamInfo, nixInfo } from "@/models/data";
+import { Doc, data, upstreamInfo, nixInfo, language } from "@/models/data";
 import { getPrimopDescription } from "@/models/primop";
 import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -11,8 +11,6 @@ import React, { Suspense } from "react";
 import { PositionLink } from "@/components/PositionLink";
 import { SearchNav } from "@/components/SearchNav";
 
-import fs from "fs";
-import path from "path";
 import { Metadata, ResolvingMetadata } from "next";
 import { LastUpdatedFromCommit } from "@/components/LastUpdatedFromCommit";
 
@@ -96,28 +94,21 @@ const MDX = async ({ source }: { source: string }) => {
   return <div dangerouslySetInnerHTML={{ __html: String(html.value) }} />;
 };
 
-async function getManualSrc(item: Doc): Promise<string | null> {
-  // Path must be at exactly [ "builtins" ":id" ]
-  if (item?.meta?.path?.length != 2 || item?.meta?.path?.[0] !== "builtins") {
-    return null;
-  }
-  const extern = manualLinks.find((link) => link.id === item.meta.path[1]);
-  if (!extern) {
-    return null;
-  }
-  const manPath = path.join(process.cwd(), "src/models/data", extern.file);
-  const source = fs.readFileSync(manPath, { encoding: "utf-8" });
-  return source;
+function getLanguageDocs(item: Doc) {
+  const name = item.meta?.path && item.meta.path[item.meta.path.length - 1];
+  const language_info =
+    name in language && language[name as keyof typeof language];
+  return language_info;
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ path: string[] }> },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const resolvedParams = await params;
   // read route params
   const item: Doc | undefined = data.find(
-    (item) => item.meta.path.join(".") === resolvedParams.path.join(".")
+    (item) => item.meta.path.join(".") === resolvedParams.path.join("."),
   );
 
   // fetch data
@@ -157,7 +148,7 @@ export default async function Page(props: {
 }) {
   const resolvedParams = await props.params;
   const item: Doc | undefined = data.find(
-    (item) => item.meta.path.join(".") === resolvedParams.path.join(".")
+    (item) => item.meta.path.join(".") === resolvedParams.path.join("."),
   );
   const mdxSource = item?.content?.content || "";
   const meta = item?.meta;
@@ -165,12 +156,12 @@ export default async function Page(props: {
   const signature = meta?.signature || (item && findType(item)) || "";
   const { args: argTypes, returns: retTypes } = interpretType(
     meta?.path[meta?.path?.length - 1],
-    signature
+    signature,
   );
 
   // Some builtins can load external documentation from the official manual
   // This is configured via "salt" module
-  const externManualSrc = item && (await getManualSrc(item));
+  const languageDocs = item && (await getLanguageDocs(item));
 
   const source = mdxSource;
   // Skip generating this builtin.
@@ -179,15 +170,25 @@ export default async function Page(props: {
     return undefined;
   }
 
-  const {attr_position, lambda_position} = item?.meta || {};
+  const { attr_position, lambda_position } = item?.meta || {};
   const contentPosition = item?.meta?.content_meta?.position;
 
-  const isDeprecated = [ attr_position, contentPosition, lambda_position ].filter(Boolean).some(p => p?.file?.includes("deprecated") );
+  const isDeprecated = [attr_position, contentPosition, lambda_position]
+    .filter(Boolean)
+    .some((p) => p?.file?.includes("deprecated"));
 
   const expr_code = (meta?.lambda_expr || meta?.attr_expr) ?? null;
+
+  const skipNixpkgsRender = !item?.content?.source?.position && meta?.is_primop;
+
+  console.log({ languageDocs });
+
+  // in case source rendering is skipped, source is a primop
+  // That mean language docs MUST exist (unless export is incomplete)
+  const tocSource = (skipNixpkgsRender ? "" : source) + languageDocs;
   return (
     <>
-      <Toc mdxSource={source + externManualSrc} title={item?.meta.title} />
+      <Toc mdxSource={tocSource} title={item?.meta.title} />
       <Box
         component="main"
         data-pagefind-body
@@ -212,7 +213,7 @@ export default async function Page(props: {
               </React.Fragment>
             ) : (
               <meta key={idx} data-pagefind-meta={`category:${attr}`} />
-            )
+            ),
           )}
         <meta
           data-pagefind-sort="weight[data-weight]"
@@ -249,7 +250,6 @@ export default async function Page(props: {
               ))}
             </Typography>
 
-
             {meta?.is_primop && meta.count_applied == 0 && (
               <>
                 <Chip
@@ -284,14 +284,9 @@ export default async function Page(props: {
             )}
           </Box>
           {isDeprecated && (
-            <Box
-              sx={{width: "100%", px: 4}}>
-              <Chip
-                label="Deprecated"
-                color="error"
-                sx={{ width: "100%" }}
-              />
-             </Box>
+            <Box sx={{ width: "100%", px: 4 }}>
+              <Chip label="Deprecated" color="error" sx={{ width: "100%" }} />
+            </Box>
           )}
           <Divider flexItem sx={{ mt: 2 }} />
 
@@ -304,52 +299,56 @@ export default async function Page(props: {
             ))}
           </Box>
 
-          {!source && (
-            <Box data-pagefind-ignore="all">
-              <Typography
-                variant="body1"
-                sx={{ color: "text.secondary", py: 2 }}
-              >
-                No reference documentation found yet.
-              </Typography>
-
-              {externManualSrc && (
-                <>
-                  <Typography
-                    variant="h5"
-                    component={"div"}
-                    sx={{ color: "text.secondary", py: 2, textAlign: "center" }}
-                  >
-                    Noogle found this in the nix manual
-                  </Typography>
-                  <Box sx={{ fontStyle: "italic", p: 1 }}>
-                    <MDX source={externManualSrc} />
-                  </Box>
-                  <Divider />
-                </>
-              )}
-
-              <Typography
-                variant="body1"
-                sx={{ color: "text.secondary", py: 2 }}
-              >
-                Contribute now!
-              </Typography>
-            </Box>
-          )}
-          {meta?.primop_meta && (
-            <MDX source={getPrimopDescription(meta?.primop_meta)} />
-          )}
           <Divider />
-          <MDX source={source} />
+          {source && !skipNixpkgsRender && (
+            <>
+              <Typography
+                variant="subtitle1"
+                component={"h4"}
+                sx={{
+                  color: "text.secondary",
+                  alignSelf: "center",
+                  pb: 2,
+                  textAlign: "center",
+                }}
+              >
+                Nixpkgs manual
+              </Typography>
+              <MDX source={source} />
+            </>
+          )}
           {meta && <PositionLink meta={meta} content={item?.content} />}
+
+          <Box>
+            {languageDocs && (
+              <>
+                <Typography
+                  variant="subtitle1"
+                  component={"h4"}
+                  sx={{
+                    color: "text.secondary",
+                    alignSelf: "center",
+                    pb: 2,
+                    textAlign: "center",
+                  }}
+                >
+                  Nix manual
+                </Typography>
+                {meta?.primop_meta && (
+                  <MDX source={getPrimopDescription(meta?.primop_meta)} />
+                )}
+                <Box sx={{ fontStyle: "italic", p: 1 }}>
+                  <MDX source={languageDocs.doc} />
+                </Box>
+              </>
+            )}
+          </Box>
           <div data-pagefind-ignore="all">
             {(expr_code ||
               !!meta?.aliases?.length ||
               (!!signature && !meta?.signature) ||
               meta?.is_functor) && (
               <>
-                <Divider flexItem />
                 <Typography
                   variant="subtitle1"
                   component={"h4"}
