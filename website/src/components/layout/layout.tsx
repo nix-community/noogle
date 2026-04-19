@@ -42,7 +42,21 @@ export function LandingPageLayout(props: LayoutProps) {
 
   return (
     <Background>
-      <Box sx={{ textAlign: "end", px: 2, py: 1 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          gap: 1,
+          px: 2,
+          py: 1,
+          ml: "auto",
+          width: "fit-content",
+          backgroundColor: "header.default",
+          clipPath: "polygon(0% 0, 100% 0, 100% 100%, 15% 100%)",
+          pl: 6,
+        }}
+      >
         <SocialIcons />
         <ThemeSwitch />
       </Box>
