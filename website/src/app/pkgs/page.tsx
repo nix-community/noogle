@@ -223,7 +223,6 @@ const PackageItem = (props: PackageItemProps) => {
 
   const { _source: meta } = item;
 
-  console.log({ meta, item });
   return (
     <>
       <ListItem
@@ -346,7 +345,7 @@ const PackageItem = (props: PackageItemProps) => {
               component={Link}
               href={`https://github.com/NixOS/nixpkgs/blob/nixos-unstable/${meta.package_position.replace(
                 ":",
-                "#L"
+                "#L",
               )}`}
               startIcon={<CodeIcon fontSize="inherit" />}
             >
@@ -526,7 +525,7 @@ export default function Page() {
             Authorization:
               "Basic YVdWU0FMWHBadjpYOGdQSG56TDUyd0ZFZWt1eHNmUTljU2g=",
           },
-        }
+        },
       )
         .then((res) => res.json())
         .then((data) => {
