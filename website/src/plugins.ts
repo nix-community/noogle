@@ -1,5 +1,134 @@
 import { visit } from "unist-util-visit";
+import { data } from "@/models/data";
+
 type Element = any;
+
+// Build function lookups at module load time
+// Qualified title -> URL (e.g. "lib.attrsets.zipAttrsWithNames" -> "/f/lib/attrsets/zipAttrsWithNames")
+const functionUrlsByTitle = new Map<string, string>();
+// Bare name -> URL (e.g. "zipAttrsWithNames" -> "/f/lib/attrsets/zipAttrsWithNames")
+const functionUrlsByName = new Map<string, string>();
+
+for (const doc of data) {
+  const title = doc.meta.path.join(".");
+  const name = doc.meta.path[doc.meta.path.length - 1];
+  const url = `/f/${doc.meta.path.join("/")}`;
+  functionUrlsByTitle.set(title, url);
+  if (!functionUrlsByName.has(name)) {
+    functionUrlsByName.set(name, url);
+  }
+}
+
+const NIX_KEYWORDS = new Set([
+  "if",
+  "then",
+  "else",
+  "let",
+  "in",
+  "with",
+  "rec",
+  "inherit",
+  "import",
+  "or",
+  "assert",
+  "abort",
+  "throw",
+  "true",
+  "false",
+  "null",
+]);
+
+// Matches qualified (dot-separated) and bare identifiers
+const IDENT_RE = /[a-zA-Z_][a-zA-Z0-9_']*(?:\.[a-zA-Z_][a-zA-Z0-9_']*)*/g;
+
+function resolveUrl(match: string, inCode: boolean): string | undefined {
+  // Try full qualified match first
+  const titleUrl = functionUrlsByTitle.get(match);
+  if (titleUrl) return titleUrl;
+
+  // Try matching suffixes of the qualified name (e.g. "attrsets.zipAttrsWithNames" from "lib.attrsets.zipAttrsWithNames")
+  if (match.includes(".")) {
+    let rest = match;
+    while (rest.includes(".")) {
+      rest = rest.slice(rest.indexOf(".") + 1);
+      const suffixUrl = functionUrlsByTitle.get(rest);
+      if (suffixUrl) return suffixUrl;
+    }
+  }
+
+  // For bare names, only link inside code
+  const name = match.includes(".") ? match.slice(match.lastIndexOf(".") + 1) : match;
+  if (inCode && !NIX_KEYWORDS.has(name)) {
+    return functionUrlsByName.get(name);
+  }
+
+  return undefined;
+}
+
+function splitText(text: string, inCode: boolean): any[] {
+  const result: any[] = [];
+  let lastIndex = 0;
+  let match;
+
+  IDENT_RE.lastIndex = 0;
+  while ((match = IDENT_RE.exec(text)) !== null) {
+    const token = match[0];
+    const url = resolveUrl(token, inCode);
+
+    if (url) {
+      if (match.index > lastIndex) {
+        result.push({ type: "text", value: text.slice(lastIndex, match.index) });
+      }
+      result.push({
+        type: "element",
+        tagName: "a",
+        properties: { href: url, "data-noogle-link": true },
+        children: [{ type: "text", value: token }],
+      });
+      lastIndex = match.index + token.length;
+    }
+  }
+
+  if (lastIndex === 0) {
+    return [{ type: "text", value: text }];
+  }
+  if (lastIndex < text.length) {
+    result.push({ type: "text", value: text.slice(lastIndex) });
+  }
+  return result;
+}
+
+function processNode(node: any, inCode: boolean, inPre: boolean) {
+  if (!node.children) return;
+
+  const newChildren: any[] = [];
+  for (const child of node.children) {
+    if (child.type === "text") {
+      newChildren.push(...splitText(child.value, inCode));
+    } else if (child.type === "element" && child.tagName !== "a") {
+      const childIsPre = child.tagName === "pre";
+      const childIsCode = child.tagName === "code";
+      // Only treat inline code (not inside <pre>) as linkable code context
+      const isInlineCode = childIsCode && !inPre;
+      // Skip processing children of block code entirely
+      if (childIsCode && inPre) {
+        newChildren.push(child);
+      } else {
+        processNode(child, inCode || isInlineCode, inPre || childIsPre);
+        newChildren.push(child);
+      }
+    } else {
+      newChildren.push(child);
+    }
+  }
+  node.children = newChildren;
+}
+
+export function rehypeLinkNoogleFunctions() {
+  return (tree: any) => {
+    processNode(tree, false, false);
+  };
+}
 
 export default function remarkBareUrls() {
   /**
