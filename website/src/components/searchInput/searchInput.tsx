@@ -10,12 +10,6 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { useFilter } from "../layout/filterContext";
 import { useRouter } from "next/navigation";
 
-// import dynamic from "next/dynamic";
-
-// const data = dynamic(() => import("@/models/data"), {
-//   loading: () => <p>Loading...</p>,
-// });
-
 export interface SearchInputProps {
   placeholder: string;
   autoFocus?: boolean;
@@ -80,6 +74,22 @@ export function SearchInput(props: SearchInputProps) {
             setTerm(value);
           } else if (reason === "clear") {
             setTerm("");
+          }
+        }}
+        onKeyDown={(e) => {
+          if (e.code === "Enter") {
+            // check if e.target.value is a known site
+            // If yes navigate directly and don't search
+            // @ts-ignore: typescript is stupid
+            const value: string = e.target.value;
+            const target = data.find((d) => d.meta.title === value);
+            if (target) {
+              console.log("navigate!!!");
+              router.push(`/f/${target.meta.path.join("/")}`);
+              e.preventDefault();
+            } else {
+              handleSubmit(value);
+            }
           }
         }}
         onChange={(e, value) => {
