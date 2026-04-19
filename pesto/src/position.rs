@@ -342,18 +342,18 @@ fn unpack_lambda(node: &SyntaxNode) -> Option<SyntaxNode> {
                         .as_ref()
                         .map(|n| unpack_lambda(n))
                         .flatten(),
-                    rnix::SyntaxKind::NODE_PAREN => None,
-                    rnix::SyntaxKind::NODE_SELECT => None,
-                    rnix::SyntaxKind::NODE_IDENT => None,
-                    rnix::SyntaxKind::NODE_ATTRPATH => None,
-                    rnix::SyntaxKind::NODE_ATTR_SET => None,
-                    rnix::SyntaxKind::NODE_IF_ELSE => None,
+                    rnix::SyntaxKind::NODE_PAREN
+                    | rnix::SyntaxKind::NODE_SELECT
+                    | rnix::SyntaxKind::NODE_IDENT
+                    | rnix::SyntaxKind::NODE_ATTRPATH
+                    | rnix::SyntaxKind::NODE_ATTR_SET
+                    | rnix::SyntaxKind::NODE_IF_ELSE => None,
                     // Added on 25.11
                     // fetchgit is now wrapped in extendMkDerivation
                     // which obfuscates the original function signature by wrapping the function in a factory
-                    rnix::SyntaxKind::NODE_ATTRPATH_VALUE => None,
-                    rnix::SyntaxKind::NODE_LIST => None,
-                    rnix::SyntaxKind::NODE_STRING => None,
+                    rnix::SyntaxKind::NODE_ATTRPATH_VALUE
+                    | rnix::SyntaxKind::NODE_LIST
+                    | rnix::SyntaxKind::NODE_STRING => None,
                     _ => {
                         println!(
                             "Unexpected node kind: {:?}. Expected Parenthesis '(x: ...)' or Lambda 'x: ... ' {:#?}",
