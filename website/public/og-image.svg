@@ -1,0 +1,42 @@
+<!-- To regenerate og-image.png from this SVG:
+     convert -background none -size 1200x630 og-image.svg og-image.png
+-->
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b1d22"/>
+      <stop offset="100%" stop-color="#0f192c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(101,134,200,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Everything centered as a group -->
+  <!-- Nix snowflake centered above text -->
+  <!-- Original snowflake center is at ~(250, -282) in local coords -->
+  <g transform="translate(600, 220) scale(0.42)">
+    <!-- Translate to center the snowflake paths at origin: subtract (250, -282) -->
+    <g transform="translate(-250, 282)">
+      <path d="m 153.16521 -277.0618 122.19683 211.6751 -56.15706 0.5268 -32.6236 -56.8692 -32.85645 56.5653 -27.90237 -0.011 -14.29086 -24.6896 46.81047 -80.4902 -33.22946 -57.8256 z" fill="#7ebae4"/>
+      <path d="m 197.27082 -364.2527 -122.21756 211.6631 -28.53477 -48.37 32.93839 -56.6875 -65.41521 -0.1719 -13.9414 -24.1698 14.23637 -24.721 93.11177 0.2939 33.46371 -57.6903 z" fill="#7ebae4"/>
+      <path d="m 206.64693 -195.0524 244.41439 0.012 -27.62229 48.8968 -65.56199 -0.1817 32.55876 56.7371 -13.96098 24.1585 -28.52722 0.032 -46.3013 -80.7841 -66.69317 -0.1353 z" fill="#7ebae4"/>
+      <path d="m 153.16521 -277.0618 122.19683 211.6751 -56.15706 0.5268 -32.6236 -56.8692 -32.85645 56.5653 -27.90237 -0.011 -14.29086 -24.6896 46.81047 -80.4902 -33.22946 -57.8256 z" fill="#5277c3"/>
+      <path d="m 295.09803 -370.3421 -244.4144 -0.012 27.62229 -48.89685 65.56199 0.18175 -32.55875 -56.73717 13.96097 -24.15851 28.52722 -0.0315 46.3013 80.78414 66.69317 0.13524 z" fill="#5277c3"/>
+      <path d="m 304.47414 -200.6519 122.21757 -211.66304 28.53477 48.37003 -32.93839 56.68751 65.4152 0.1718 13.9414 24.1698 -14.23636 24.7211 -93.11177 -0.294 -33.46371 57.6904 z" fill="#5277c3"/>
+      <path d="m 348.90474 -287.798 -122.19683 -211.6751 56.15706 -0.5268 32.6236 56.8692 32.85645 -56.5653 27.90237 0.011 14.29086 24.6896 -46.81047 80.4902 33.22946 57.8256 z" fill="#5277c3"/>
+    </g>
+  </g>
+
+  <!-- "Noogle" text centered -->
+  <text x="600" y="430" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="110" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-2">Noogle</text>
+
+  <!-- Tagline centered below -->
+  <text x="600" y="490" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="400" fill="#8899bb" text-anchor="middle">Simply find Nix API reference documentation</text>
+</svg>
