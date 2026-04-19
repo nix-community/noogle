@@ -125,6 +125,15 @@ mark.noogle-marker {
 code  {
   background-color: var(--mui-palette-code-bg);
 }
+
+a[data-noogle-link] {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+a[data-noogle-link]:hover {
+  text-decoration: underline solid;
+}
 pre {
   background-color: var(--mui-palette-code-bg);
 }

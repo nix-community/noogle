@@ -27,6 +27,7 @@ import type { Plugin } from "unified";
 import { rehypeExtractExcerpt } from "./excerpt";
 import remarkBareUrls, {
   replaceComponents,
+  rehypeLinkNoogleFunctions,
   sanitizeDirectives,
   styleDirectives,
   normalizeDirectives,
@@ -143,6 +144,7 @@ export const parseMd = async (src: string) => {
       detect: true,
       languages: { nix, haskell, bash, default: nix },
     })
+    .use(rehypeLinkNoogleFunctions)
     .use(rehypeSlug, {})
     .use(rehypeAutolinkHeadings, {
       behavior: "wrap",
