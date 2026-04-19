@@ -23,12 +23,15 @@
         pname = "salt-data";
         version = "0.1.0";
         src = ./src;
+        nativeBuildInputs = [ pkgs.python3 ];
         installPhase = ''
           mkdir $out
           cp -rf . $out
           cp ${nix-manual} $out
 
           ${nix}/bin/nix __dump-language > $out/language.json
+
+          python3 extract-primop-impl.py ${inputs.nix-master} > $out/builtins.impl.json
         '';
       };
     in
