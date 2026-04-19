@@ -20,6 +20,10 @@ pesto --file "attrsets.nix" --line "11" --column "3"
 }
 ```
 
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for a detailed overview of the data flow and module responsibilities.
+
 ## Contribute
 
 Generating test dataset
@@ -28,6 +32,6 @@ Generating test dataset
 
 Which can the be passed
 
-`cargo run -- --pos-file result --format json ./out.json`
+`cargo run -- --pos-file result ./out.json`
 
 It is recommended to remove all unneeded entries and operate on minimal list that contains only one entry.

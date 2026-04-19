@@ -24,6 +24,7 @@ pub struct LambdaMeta {
     pub position: Option<FilePosition>,
     pub args: Option<Vec<String>>,
     pub experimental: Option<bool>,
+    pub primop_doc: Option<String>,
     pub arity: Option<usize>,
 
     // I want to potentially overwrite those two
@@ -101,7 +102,10 @@ impl<'a> Lookups<'a> for Docs {
             .lambda
             .as_ref()
             .map(|i| {
-                if i.countApplied == Some(0) || (i.countApplied == None && i.isPrimop) || (i.countApplied == Some(1) && i.isFunctor == Some(true)) {
+                if i.countApplied == Some(0)
+                    || (i.countApplied == None && i.isPrimop)
+                    || (i.countApplied == Some(1) && i.isFunctor == Some(true))
+                {
                     Some(ContentSource {
                         content: i.content.as_ref().map(|inner| dedent(inner)),
                         source: Some(SourceOrigin {

@@ -22,7 +22,7 @@
         name = "pesto-data";
         src = ./.;
         buildPhase = ''
-          ${pesto}/bin/pesto --pos-file ${self'.packages.pasta} --format json --language ${self'.packages.salt}/language.json $out
+          ${pesto}/bin/pesto --pos-file ${self'.packages.pasta} --language ${self'.packages.salt}/language.json $out
         '';
       };
 

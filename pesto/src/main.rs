@@ -6,19 +6,13 @@ mod pasta;
 mod position;
 mod tests;
 
-use clap::{Parser, ValueEnum};
+use clap::Parser;
 use markdown::find_type;
 use pasta::{AliasList, ContentSource, Docs, Lookups, PositionType, SourceOrigin, ValuePath};
 use position::FilePosition;
 use serde::{Deserialize, Serialize};
 use std::{
-    collections::HashMap,
-    fs::{create_dir_all, File},
-    io::Write,
-    path::PathBuf,
-    println,
-    process::exit,
-    rc::Rc,
+    collections::HashMap, fs::File, io::Write, path::PathBuf, println, process::exit, rc::Rc,
 };
 use textwrap::dedent;
 
@@ -28,12 +22,6 @@ use crate::{
     position::{DocComment, DocIndex},
 };
 
-#[derive(ValueEnum, Clone, Debug, PartialEq, Eq)]
-enum Format {
-    JSON,
-    DIR,
-}
-
 #[derive(Debug, Parser)]
 #[command(author, version, about)]
 struct Options {
@@ -41,9 +29,6 @@ struct Options {
     /// Format: [{ file: String, line: Number, column: Number }]
     #[arg(long, conflicts_with_all=["line", "column", "file"])]
     pos_file: Option<PathBuf>,
-
-    #[arg(long)]
-    format: Format,
 
     #[arg(long)]
     language: Option<PathBuf>,
@@ -116,57 +101,25 @@ pub fn main() {
                 // Maybe replace the content
                 // Only if the content_meta includes "builtins"
                 if Some(true) == content_from.map(|p| p.contains(&String::from("builtins"))) {
-                    dbg!(content_from);
-
                     let new_content = language_data.iter().find(|p| {
                         Some(p.0) == document.meta.primop_meta.as_ref().map(|m| m.name).flatten()
                             && document.meta.count_applied == Some(0)
                     });
                     if let Some(new_content) = new_content {
                         document.content = Some(ContentSource {
-                            content: Some(new_content.1.doc.clone()),
                             source: document.content.clone().map(|c| c.source).flatten(),
+                            content: Some(new_content.1.doc.clone()),
                         })
                     }
                 }
             }
 
-            match opts.format {
-                Format::DIR => {
-                    if let Some((_, dir)) = item.path.split_last() {
-                        let dir_dest = format!("{}/{}", opts.out, dir.join("/"));
-                        let file_dest = format!(
-                            "{}/{}.md",
-                            opts.out,
-                            item.path.join("/").replace("'", "' (Prime)")
-                        );
-                        create_dir_all(dir_dest).unwrap();
-                        let mut file = File::create(file_dest).unwrap();
-
-                        file.write_all("---\n".as_bytes()).unwrap();
-                        file.write_all(serde_yaml::to_string(&matter).unwrap().as_bytes())
-                            .unwrap();
-                        file.write_all("---\n".as_bytes()).unwrap();
-
-                        if let Some(content) = document
-                            .content
-                            .as_ref()
-                            .map(|ref i| i.content.as_ref())
-                            .flatten()
-                        {
-                            // let fmt = dedent(content.strip_prefix("\n").unwrap_or(&content));
-                            file.write_all(content.as_bytes()).unwrap();
-                        }
-                    }
-                }
-                Format::JSON => json_list.push(document.clone()),
-            }
+            json_list.push(document.clone());
         }
-        if opts.format == Format::JSON {
-            let mut file = File::create(opts.out).unwrap();
-            file.write_all(serde_json::to_string(&json_list).unwrap().as_bytes())
-                .unwrap();
-        }
+
+        let mut file = File::create(opts.out).unwrap();
+        file.write_all(serde_json::to_string(&json_list).unwrap().as_bytes())
+            .unwrap();
     }
 }
 
@@ -278,53 +231,3 @@ struct PrimopMatter<'a> {
     pub experimental: Option<bool>,
     pub arity: Option<usize>,
 }
-
-#[derive(Serialize, Debug, Clone)]
-struct CompressedDocument<'a> {
-    /// meta
-    m: CompressedDocumentFrontmatter<'a>,
-    /// content
-    c: Option<ContentSource<'a>>,
-}
-
-#[derive(Serialize, Debug, Clone)]
-struct CompressedDocumentFrontmatter<'a> {
-    /// path
-    pa: &'a Rc<ValuePath>,
-    // aliases
-    al: Option<&'a AliasList>,
-    /// If an item is primop then it should have the PrimopMeta field.
-    ip: Option<bool>,
-    /// primop meta
-    pm: Option<CompressedPrimopMatter<'a>>,
-}
-
-#[derive(Serialize, Debug, Clone)]
-struct CompressedContentSource<'a> {
-    // content
-    c: Option<&'a String>,
-    // position
-    p: Option<&'a FilePosition>,
-}
-
-#[derive(Serialize, Debug, Clone)]
-struct CompressedPrimopMatter<'a> {
-    // arguments
-    pub ar: Option<&'a Vec<String>>,
-    // arity
-    pub ay: Option<usize>,
-}
-
-// Translation matrix
-// m: meta
-// c: content
-// p: position
-//
-// al: aliases
-// ar: arguments
-// ay: arity
-//
-// ip: is primop
-//
-// pa: path
-// pm: primop meta
