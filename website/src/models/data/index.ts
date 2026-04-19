@@ -4,8 +4,20 @@ import links from "./manual-link.map.json" assert { type: "json" };
 import libMeta from "./lib-meta.json" assert { type: "json" };
 import nixMeta from "./nix-meta.json" assert { type: "json" };
 import language_json from "./language.json" assert { type: "json" };
+import builtinsImpl_json from "./builtins.impl.json" assert { type: "json" };
 
 export const language = language_json;
+
+export type BuiltinImpl = {
+  file: string;
+  line: number;
+  code: string;
+};
+export type BuiltinImpls = {
+  [name: string]: BuiltinImpl;
+};
+
+export const builtinImpls = builtinsImpl_json as BuiltinImpls;
 
 export type ManualLink = {
   id: string;
