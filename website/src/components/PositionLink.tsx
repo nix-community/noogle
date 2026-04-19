@@ -27,7 +27,6 @@ const getSourcePosition = (baseUrl: string, position: FilePosition): string => {
   }
   return res;
 };
-
 export const PositionLink = ({
   meta,
   content,
@@ -35,16 +34,9 @@ export const PositionLink = ({
   meta: DocMeta;
   content?: ContentSource;
 }) => {
-  const {
-    attr_position,
-    lambda_position,
-    count_applied,
-    content_meta,
-    is_primop,
-  } = meta;
+  const { attr_position, lambda_position, count_applied, content_meta } = meta;
 
   const contentPosition = content_meta?.position;
-  const position = attr_position || lambda_position;
 
   const is_inherited =
     JSON.stringify(content_meta?.path) !== JSON.stringify(meta.path);

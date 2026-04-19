@@ -181,8 +181,6 @@ export default async function Page(props: {
 
   const skipNixpkgsRender = !item?.content?.source?.position && meta?.is_primop;
 
-  console.log({ languageDocs });
-
   // in case source rendering is skipped, source is a primop
   // That mean language docs MUST exist (unless export is incomplete)
   const tocSource = (skipNixpkgsRender ? "" : source) + languageDocs;
