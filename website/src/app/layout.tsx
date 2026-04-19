@@ -5,6 +5,7 @@ import { ClientSideLayoutContext } from "@/components/ClientSideLayoutContext";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://noogle.dev"),
   title: "Noogle - Simply find Nix API reference documentation.",
   description:
     "Nix API reference. Includes nix, nixpkgs and nixos. Search nix functions within the nix ecosystem based on type, name, description, example, category and more.",
@@ -12,6 +13,29 @@ export const metadata: Metadata = {
   abstract: "Nix and NixOS API Documentation",
   robots: { index: true, notranslate: true, nocache: true },
   icons: "/favicon.png",
+  openGraph: {
+    title: "Noogle - Simply find Nix API reference documentation.",
+    description:
+      "Nix API reference. Includes nix, nixpkgs and nixos. Search nix functions within the nix ecosystem based on type, name, description, example, category and more.",
+    url: "https://noogle.dev",
+    siteName: "Noogle",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Noogle - Nix API reference documentation",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noogle - Simply find Nix API reference documentation.",
+    description:
+      "Nix API reference. Includes nix, nixpkgs and nixos. Search nix functions within the nix ecosystem based on type, name, description, example, category and more.",
+    images: ["/og-image.png"],
+  },
 };
 
 const inter = localFont({
