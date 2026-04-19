@@ -39,4 +39,7 @@
 
   <!-- Tagline centered below -->
   <text x="600" y="490" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="400" fill="#8899bb" text-anchor="middle">Simply find Nix API reference documentation</text>
+
+  <!-- URL bottom right -->
+  <text x="1160" y="600" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="500" fill="#6586c8" text-anchor="end">noogle.dev</text>
 </svg>

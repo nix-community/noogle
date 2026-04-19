@@ -124,13 +124,18 @@ export async function generateMetadata(
   // const summary = await extractExcerpt(content, 35);
   const description = await extractExcerpt(content, 200);
 
-  const title = `${item?.meta.path.join(".")} - Nix function reference`;
+  const title = `${item?.meta.path.join(".")} - Nix function reference | Noogle`;
+
+  const fullDescription =
+    description && description.length < 110
+      ? `${description} Find more Nix functions on Noogle.`
+      : description;
 
   return {
     // should be 20-70 characters
     title,
     // should be 70-160 characters
-    description,
+    description: fullDescription,
     authors: [
       { name: "nixos", url: "https://nixos.org/" },
       { name: "nixpkgs", url: "https://github.com/NixOS/nixpkgs" },
@@ -140,13 +145,13 @@ export async function generateMetadata(
     keywords: [...keywords, ...alias_keywords],
     openGraph: {
       title,
-      description,
+      description: fullDescription,
       images: ["/og-image.png"],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: fullDescription,
       images: ["/og-image.png"],
     },
   };
