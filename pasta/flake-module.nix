@@ -17,9 +17,11 @@
             cat ${metaFile} > $out
           '';
         };
+        # Default "nix" dataset (nixpkgs-master)
         pasta = pkgs.callPackage ./default.nix {
           inherit nixpkgs pkgs;
           inherit (self'.packages) noogle-plugin;
+          dataset = "nix";
         };
       };
       devShells.pastaMaker = pkgs.callPackage ./shell.nix { inherit pkgs; inherit (self'.packages) noogle-plugin; };
