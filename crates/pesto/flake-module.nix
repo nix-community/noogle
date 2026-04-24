@@ -37,7 +37,7 @@
           inherit cargoArtifacts;
           cargoClippyExtraArgs = "--all-targets --workspace -- --deny warnings";
         });
-        pesto-fmt = craneLib.cargoFmt { inherit src; };
+        pesto-fmt = craneLib.cargoFmt { inherit src; pname = "pesto"; version = "0.1.0"; };
         pesto-nextest = craneLib.cargoNextest (commonArgs // {
           inherit cargoArtifacts;
           partitions = 1;
