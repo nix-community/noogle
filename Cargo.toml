@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/pesto"]
+members = ["crates/pesto", "crates/noogle-types"]
 
 [profile.release]
 debug = true

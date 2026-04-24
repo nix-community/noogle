@@ -8,6 +8,7 @@
           let
             data_path = "src/models/data";
             fonts_path = "src/fonts";
+            bindings_path = "src/types/bindings";
           in
           ''
             # New data
@@ -16,6 +17,12 @@
             cp -f ${self'.packages.nix-meta} ${data_path}/nix-meta.json
             cp -rf ${self'.packages.salt}/* ${data_path}
             chmod -R +w ${data_path}
+
+            # Shared ts-rs bindings (generated from crates/noogle-types)
+            mkdir -p ${bindings_path}
+            rm -f ${bindings_path}/*.ts
+            cp -f ${self'.packages.noogle-types-bindings}/*.ts ${bindings_path}/
+            chmod -R +w ${bindings_path}
 
             # Website fonts
             echo "Copying fonts (1/2)..."

@@ -1,0 +1,9 @@
+[package]
+name = "noogle-types"
+description = "Shared types between pesto and the website"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+ts-rs = { version = "10", features = ["serde-compat"] }

@@ -13,6 +13,9 @@ src/models/data/*
 src/fonts/*
 !src/fonts/index
 
+# generated ts-rs bindings from crates/noogle-types
+src/types/bindings/
+
 
 # nix
 .direnv/
