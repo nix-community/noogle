@@ -8,3 +8,5 @@ result
 result-*
 node_modules
 
+# cargo
+target
