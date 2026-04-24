@@ -28,6 +28,7 @@
         ./salt/flake-module.nix
         ./pasta/flake-module.nix
         ./crates/pesto/flake-module.nix
+        ./crates/noogle-types/flake-module.nix
         #
         ./nixPlugin/flake-module.nix
       ];
