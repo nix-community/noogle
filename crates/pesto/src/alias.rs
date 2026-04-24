@@ -37,17 +37,17 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                 if s_meta.position != o_meta.position {
                     return None;
                 }
-                return match (o_meta.isPrimop, s_meta.isPrimop) {
+                return match (o_meta.is_primop, s_meta.is_primop) {
                     // Both PrimOp
                     (true, true) => {
-                        match s_meta.countApplied {
+                        match s_meta.count_applied {
                             Some(0) => {
                                 if s_meta.name.is_some() && s_meta.name == o_meta.name {
                                     return Some(other.path.clone());
                                 }
                             }
                             _ => {
-                                if s_meta.countApplied == o_meta.countApplied
+                                if s_meta.count_applied == o_meta.count_applied
                                     && item.path.last() == other.path.last()
                                 {
                                     return Some(other.path.clone());
@@ -60,7 +60,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                     // Both None PrimOp
                     (false, false) => {
                         // Both functions may be an alias only if at least one of them is not partially applied
-                        if s_meta.countApplied == Some(0) || o_meta.countApplied == Some(0) {
+                        if s_meta.count_applied == Some(0) || o_meta.count_applied == Some(0) {
                             return Some(other.path.clone());
                         }
                         // Last resort try to find all functions with:
@@ -68,7 +68,7 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         // - same isPrimop
                         // - same name
                         // It is very likely a real alias
-                        if s_meta.countApplied != Some(0) {
+                        if s_meta.count_applied != Some(0) {
                             if item.path.last() == other.path.last() {
                                 // dbg!("ADDING Fallback ALIAS", &item.path);
                                 return Some(other.path.clone());
@@ -120,16 +120,16 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
 
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
-            if lambda.isFunctor == Some(true) {
+            if lambda.is_functor == Some(true) {
                 // A functor takes self as first argument
                 // Subtract the first argument from the count of applied arguments.
-                match lambda.countApplied.map(|s| if s != 0 { s - 1 } else { 0 }) {
+                match lambda.count_applied.map(|s| if s != 0 { s - 1 } else { 0 }) {
                     // Some(0) | None => {
                     Some(0) => {
-                        if lambda.isPrimop {
+                        if lambda.is_primop {
                             primop_lambdas.push(&item);
                         }
-                        if !lambda.isPrimop {
+                        if !lambda.is_primop {
                             non_primop_lambdas.push(&item);
                         }
                     }
@@ -139,13 +139,13 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories {
                 }
                 continue;
             }
-            match lambda.countApplied {
+            match lambda.count_applied {
                 // Some(0) | None => {
                 Some(0) => {
-                    if lambda.isPrimop {
+                    if lambda.is_primop {
                         primop_lambdas.push(&item);
                     }
-                    if !lambda.isPrimop {
+                    if !lambda.is_primop {
                         non_primop_lambdas.push(&item);
                     }
                 }
@@ -179,24 +179,24 @@ pub fn init_alias_map(data: &Vec<Docs>, categories: FnCategories) -> AliasMap {
     for item in data.iter() {
         if let Some(lambda) = &item.docs.lambda {
             // Skip functors
-            if lambda.isFunctor == Some(true) {
+            if lambda.is_functor == Some(true) {
                 continue;
             }
-            match lambda.countApplied {
+            match lambda.count_applied {
                 Some(0) => {
-                    if lambda.isPrimop {
+                    if lambda.is_primop {
                         alias_map.insert(item.path.clone(), find_aliases(&item, &primop_lambdas));
                     }
-                    if !lambda.isPrimop {
+                    if !lambda.is_primop {
                         alias_map
                             .insert(item.path.clone(), find_aliases(&item, &non_primop_lambdas));
                     }
                 }
                 None => {
-                    if lambda.isPrimop {
+                    if lambda.is_primop {
                         alias_map.insert(item.path.clone(), find_aliases(&item, &primops));
                     }
-                    if !lambda.isPrimop {
+                    if !lambda.is_primop {
                         alias_map.insert(item.path.clone(), find_aliases(&item, &non_primops));
                     }
                 }

@@ -100,7 +100,7 @@ fn fill_docs(
             if let Some(position) = &lambda.position {
                 if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
                     lambda.content = doc_comment.content.clone();
-                    lambda.countApplied = doc_comment.count_applied;
+                    lambda.count_applied = doc_comment.count_applied;
                     lambda.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string());
                 }
             }

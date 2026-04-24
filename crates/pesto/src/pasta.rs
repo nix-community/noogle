@@ -15,11 +15,10 @@ use crate::position::FilePosition;
 
 #[serde_with::skip_serializing_none]
 #[derive(Debug, Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct LambdaMeta {
-    #[allow(non_snake_case)]
-    pub isPrimop: bool,
-    #[allow(non_snake_case)]
-    pub isFunctor: Option<bool>,
+    pub is_primop: bool,
+    pub is_functor: Option<bool>,
     pub name: Option<String>,
     pub position: Option<FilePosition>,
     pub args: Option<Vec<String>>,
@@ -29,8 +28,7 @@ pub struct LambdaMeta {
 
     // I want to potentially overwrite those two
     pub content: Option<String>,
-    #[allow(non_snake_case)]
-    pub countApplied: Option<usize>,
+    pub count_applied: Option<usize>,
     // Serialized AST
     pub expr: Option<String>,
 }
@@ -102,9 +100,9 @@ impl<'a> Lookups<'a> for Docs {
             .lambda
             .as_ref()
             .map(|i| {
-                if i.countApplied == Some(0)
-                    || (i.countApplied == None && i.isPrimop)
-                    || (i.countApplied == Some(1) && i.isFunctor == Some(true))
+                if i.count_applied == Some(0)
+                    || (i.count_applied == None && i.is_primop)
+                    || (i.count_applied == Some(1) && i.is_functor == Some(true))
                 {
                     Some(ContentSource {
                         content: i.content.as_ref().map(|inner| dedent(inner)),
