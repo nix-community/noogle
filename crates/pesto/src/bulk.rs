@@ -36,7 +36,7 @@ fn insert_position<'a>(
     file_map
 }
 
-fn build_file_map(data: &Vec<Docs>) -> HashMap<&PathBuf, Vec<LookupReason>> {
+fn build_file_map(data: &Vec<Docs>) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> {
     let mut file_map: HashMap<&PathBuf, Vec<LookupReason>> = HashMap::new();
     for doc_item in data.iter() {
         if let Some(position) = &doc_item.docs.attr.position {

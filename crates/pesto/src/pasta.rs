@@ -1,7 +1,6 @@
 use std::{
     collections::HashMap,
-    fs::{self, File},
-    io::Write,
+    fs,
     path::PathBuf,
     println,
     process::exit,
@@ -164,7 +163,6 @@ pub struct Pasta {
 
 pub trait Files {
     fn from_file(path: &PathBuf) -> Vec<Docs>;
-    fn to_file(self, file_name: &str) -> Result<(), std::io::Error>;
 }
 
 impl<'a> Files for Pasta {
@@ -183,11 +181,5 @@ impl<'a> Files for Pasta {
                 exit(1);
             }
         }
-    }
-
-    fn to_file(self, file_name: &str) -> Result<(), std::io::Error> {
-        let mut file = File::create(file_name).unwrap();
-
-        file.write_all(serde_json::to_string_pretty(&self.docs).unwrap().as_bytes())
     }
 }

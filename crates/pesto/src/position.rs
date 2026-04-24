@@ -1,4 +1,3 @@
-use expect_test::Position;
 use rnix::ast::{self};
 use rnix::{match_ast, SyntaxNode};
 use rowan::TextSize;
@@ -17,6 +16,7 @@ use crate::find_document_content;
 use crate::pasta::{Docs, ValuePath};
 
 #[derive(Debug, Serialize, Deserialize)]
+#[cfg_attr(not(test), allow(dead_code))]
 pub struct TextPosition {
     pub line: usize,
     pub column: usize,
