@@ -2,13 +2,13 @@ import { HighlightBaseline } from "@/components/HighlightBaseline";
 import { ShareButton } from "@/components/ShareButton";
 import { BackButton } from "@/components/BackButton";
 import {
-  Doc,
   data,
   upstreamInfo,
   nixInfo,
   language,
   builtinImpls,
 } from "@/models/data";
+import type { Document } from "@/types/bindings/Document";
 import { getPrimopDescription } from "@/models/primop";
 import { extractExcerpt, extractHeadings, parseMd } from "@/utils";
 import { Box, Divider, Typography, Link, Chip } from "@mui/material";
@@ -101,7 +101,7 @@ const MDX = async ({ source }: { source: string }) => {
   return <div dangerouslySetInnerHTML={{ __html: String(html.value) }} />;
 };
 
-function getLanguageDocs(item: Doc) {
+function getLanguageDocs(item: Document) {
   const name = item.meta?.path && item.meta.path[item.meta.path.length - 1];
   const language_info =
     name in language && language[name as keyof typeof language];
@@ -114,7 +114,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const resolvedParams = await params;
   // read route params
-  const item: Doc | undefined = data.find(
+  const item: Document | undefined = data.find(
     (item) => item.meta.path.join(".") === resolvedParams.path.join("."),
   );
 
@@ -170,7 +170,7 @@ export default async function Page(props: {
   params: Promise<{ path: string[] }>;
 }) {
   const resolvedParams = await props.params;
-  const item: Doc | undefined = data.find(
+  const item: Document | undefined = data.find(
     (item) => item.meta.path.join(".") === resolvedParams.path.join("."),
   );
   const mdxSource = item?.content?.content || "";
