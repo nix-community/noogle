@@ -48,9 +48,5 @@
     {
       packages = { inherit pesto data-json; };
       inherit checks;
-      devShells.pesto = craneLib.devShell {
-        # Inherit inputs from checks.
-        inherit checks;
-      };
     };
 }
