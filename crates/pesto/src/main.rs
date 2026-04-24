@@ -89,8 +89,6 @@ pub fn main() {
         let mut json_list: Vec<Document> = vec![];
         for item in data.docs.iter() {
             let mut document = Document::new(&item, &data.doc_map);
-            let matter = &document.meta;
-
             if let Some(ref language_data) = language_data {
                 let content_from = &document
                     .content

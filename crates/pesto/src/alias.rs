@@ -110,7 +110,7 @@ pub struct FnCategories<'a> {
 /// 3.partially_applied lambdas
 /// e.g., concatLines (is concatMapStrings applied with f := Lambda<(s: s + "\n");>)
 /// This is a special case, it is very hard, to properly detect aliases at this level. Although the alias must also be found in this subgroup.
-pub fn categorize(data: &Vec<Docs>) -> FnCategories {
+pub fn categorize(data: &Vec<Docs>) -> FnCategories<'_> {
     // For finding aliases.
     // Group docs into these subgroups.
     // Aliases can only exist within one subgroup, iterating over other items is a waste of time.
