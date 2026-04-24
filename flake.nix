@@ -27,7 +27,7 @@
         ./website/flake-module.nix
         ./salt/flake-module.nix
         ./pasta/flake-module.nix
-        ./pesto/flake-module.nix
+        ./crates/pesto/flake-module.nix
         #
         ./nixPlugin/flake-module.nix
       ];

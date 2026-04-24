@@ -2,11 +2,15 @@
   perSystem = { self', inputs', pkgs, system, ... }:
     let
       craneLib = inputs.crane.lib.${system};
-      src = craneLib.cleanCargoSource (craneLib.path ./.);
+
+      # Source is the workspace root (includes Cargo.toml, crates/)
+      src = craneLib.cleanCargoSource (craneLib.path ./../..);
 
       commonArgs = {
         inherit src;
         strictDeps = true;
+        pname = "pesto";
+        version = "0.1.0";
         buildInputs = [ pkgs.oniguruma ];
         nativeBuildInputs = [ pkgs.pkg-config ];
         RUSTONIG_SYSTEM_LIBONIG = "1";
@@ -16,6 +20,7 @@
 
       pesto = craneLib.buildPackage (commonArgs // {
         inherit cargoArtifacts;
+        cargoExtraArgs = "--package pesto";
       });
 
       data-json = pkgs.stdenv.mkDerivation {
@@ -30,7 +35,7 @@
         inherit pesto;
         pesto-clippy = craneLib.cargoClippy (commonArgs // {
           inherit cargoArtifacts;
-          cargoClippyExtraArgs = "--all-targets -- --deny warnings";
+          cargoClippyExtraArgs = "--all-targets --workspace -- --deny warnings";
         });
         pesto-fmt = craneLib.cargoFmt { inherit src; };
         pesto-nextest = craneLib.cargoNextest (commonArgs // {
