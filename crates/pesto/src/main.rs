@@ -205,12 +205,12 @@ impl<'a> FromDocs<'a> for Document<'a> {
                     .map(|i| i.position.as_ref())
                     .flatten(),
                 lambda_expr: item.docs.lambda.as_ref().map(|i| i.expr.as_ref()).flatten(),
-                is_primop: item.docs.lambda.as_ref().map(|i| i.isPrimop),
-                is_functor: item.docs.lambda.as_ref().map(|i| i.isFunctor).flatten(),
-                count_applied: item.docs.lambda.as_ref().map(|i| i.countApplied).flatten(),
+                is_primop: item.docs.lambda.as_ref().map(|i| i.is_primop),
+                is_functor: item.docs.lambda.as_ref().map(|i| i.is_functor).flatten(),
+                count_applied: item.docs.lambda.as_ref().map(|i| i.count_applied).flatten(),
                 primop_meta: match &item.docs.lambda {
                     None => None,
-                    Some(lambda) if lambda.isPrimop => Some(PrimopMatter {
+                    Some(lambda) if lambda.is_primop => Some(PrimopMatter {
                         name: lambda.name.as_ref(),
                         args: lambda.args.as_ref(),
                         experimental: lambda.experimental,
