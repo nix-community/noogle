@@ -6,6 +6,8 @@ import nixMeta from "./nix-meta.json" assert { type: "json" };
 import language_json from "./language.json" assert { type: "json" };
 import builtinsImpl_json from "./builtins.impl.json" assert { type: "json" };
 
+import type { Document } from "@/types/bindings/Document";
+
 export const language = language_json;
 
 export type BuiltinImpl = {
@@ -26,53 +28,7 @@ export type ManualLink = {
 
 export const manualLinks = links as ManualLink[];
 
-export type FilePosition = {
-  file: string;
-  line: number;
-  column: number;
-};
-
-export type PositionType = "Lambda" | "Attribute";
-export type SourceOrigin = {
-  position?: FilePosition;
-  path?: ValuePath;
-  pos_type?: PositionType;
-};
-
-export type PrimopMatter = {
-  name?: string;
-  args?: string[];
-  experimental?: boolean;
-  arity?: number;
-};
-export type ValuePath = string[];
-
-export type DocMeta = {
-  title: string;
-  path: ValuePath;
-  aliases?: ValuePath[];
-  is_primop?: boolean;
-  is_functor?: boolean;
-  primop_meta?: PrimopMatter;
-  attr_position?: FilePosition;
-  attr_expr?: string;
-  lambda_position?: FilePosition;
-  lambda_expr?: string;
-  count_applied?: number;
-  content_meta?: SourceOrigin;
-  signature?: string;
-};
-export type ContentSource = {
-  content?: string;
-  source?: SourceOrigin;
-};
-
-export type Doc = {
-  meta: DocMeta;
-  content?: ContentSource;
-};
-
-export const data: Doc[] = (all as unknown as Doc[])
+export const data: Document[] = (all as unknown as Document[])
   // filter out nixPlugin builtin
   .filter((docItem) => !docItem.meta.path.includes("lambdaMeta"));
 

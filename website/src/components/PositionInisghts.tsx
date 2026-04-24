@@ -1,11 +1,11 @@
 "use client";
 
-import { DocMeta } from "@/models/data";
+import type { DocumentMeta } from "@/types/bindings/DocumentMeta";
 import { Box, Button, Collapse, Typography } from "@mui/material";
 import { useState } from "react";
 import CodeIcon from "@mui/icons-material/Code";
 
-export const PositionInsights = ({ meta }: { meta: DocMeta }) => {
+export const PositionInsights = ({ meta }: { meta: DocumentMeta }) => {
   // const { attr_position, lambda_position, count_applied, content_meta } = meta;
 
   const [open, setOpen] = useState(true);

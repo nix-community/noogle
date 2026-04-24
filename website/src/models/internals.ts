@@ -1,4 +1,5 @@
-import { Doc, data } from "./data";
+import { data } from "./data";
+import type { Document } from "@/types/bindings/Document";
 import { NixType } from "./nix";
 
 export type ViewMode = "explore" | "browse";
@@ -8,7 +9,7 @@ export type ComputedState = {
 };
 
 export type PageState = {
-  data: Doc[];
+  data: Document[];
   selected: string | null;
   term: string;
   filter: Filter;

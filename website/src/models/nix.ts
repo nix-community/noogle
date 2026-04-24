@@ -1,4 +1,5 @@
-import { Doc, builtinTypes } from "./data";
+import { builtinTypes } from "./data";
+import type { Document } from "@/types/bindings/Document";
 
 export type NixType =
   | "function"
@@ -83,7 +84,7 @@ export function interpretType(
 /**
  * Find the type of a function that is a builtin or by looking at its builtins aliases
  */
-export function findType(item: Doc): string | undefined {
+export function findType(item: Document): string | undefined {
   if (item.meta.is_primop && !item.meta.signature && item.meta.aliases) {
     for (const alias of item.meta.aliases) {
       const type = findTypeByPath(alias);

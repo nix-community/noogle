@@ -1,9 +1,7 @@
-import {
-  ContentSource,
-  DocMeta,
-  FilePosition,
-  upstreamInfo,
-} from "@/models/data";
+import { upstreamInfo } from "@/models/data";
+import type { ContentSource } from "@/types/bindings/ContentSource";
+import type { DocumentMeta } from "@/types/bindings/DocumentMeta";
+import type { FilePosition } from "@/types/bindings/FilePosition";
 import {
   Box,
   Button,
@@ -31,8 +29,8 @@ export const PositionLink = ({
   meta,
   content,
 }: {
-  meta: DocMeta;
-  content?: ContentSource;
+  meta: DocumentMeta;
+  content?: ContentSource | null;
 }) => {
   const { attr_position, lambda_position, count_applied, content_meta } = meta;
 

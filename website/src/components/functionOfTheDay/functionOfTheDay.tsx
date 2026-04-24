@@ -11,7 +11,8 @@ import {
 import { useMemo, useState } from "react";
 import seedrandom from "seedrandom";
 import { Preview } from "../preview/preview";
-import { Doc, data as raw } from "@/models/data";
+import { data as raw } from "@/models/data";
+import type { Document } from "@/types/bindings/Document";
 
 // Show only functions with content.
 const data = raw;
@@ -60,7 +61,7 @@ export const FunctionOfTheDay = () => {
     []
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
-  const selectedFunction = useMemo(() => data.at(idx) as Doc, [idx]);
+  const selectedFunction = useMemo(() => data.at(idx) as Document, [idx]);
 
   const setNext = () => {
     setIdx((curr) => {

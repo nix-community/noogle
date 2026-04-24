@@ -17,7 +17,8 @@ import React, { useEffect, useMemo } from "react";
 
 import { useMiniSearch } from "react-minisearch";
 
-import { Doc, data } from "@/models/data";
+import { data } from "@/models/data";
+import type { Document } from "@/types/bindings/Document";
 import { EmptyRecordsPlaceholder } from "./emptyRecordsPlaceholder";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -41,7 +42,7 @@ export function SearchResults() {
 
   const isMobile = useMobile();
 
-  const { search, searchResults } = useMiniSearch<Doc>(data, {
+  const { search, searchResults } = useMiniSearch<Document>(data, {
     idField: "meta.title",
     fields: ["meta.title", "content.content", "bla.bu"],
     // @ts-ignore

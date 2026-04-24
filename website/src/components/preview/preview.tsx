@@ -1,4 +1,4 @@
-import { Doc } from "@/models/data";
+import type { Document } from "@/types/bindings/Document";
 import {
   Box,
   Link,
@@ -11,7 +11,7 @@ import { MarkdownPreview } from "../markdownPreview";
 import { getPrimopDescription } from "@/models/primop";
 
 interface PreviewProps {
-  docItem: Doc;
+  docItem: Document;
 }
 
 export const Preview = (props: PreviewProps) => {

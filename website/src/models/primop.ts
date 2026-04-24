@@ -1,6 +1,6 @@
-import { PrimopMatter } from "./data";
+import type { PrimopMeta } from "@/types/bindings/PrimopMeta";
 
-export const getPrimopDescription = (meta: PrimopMatter) => {
+export const getPrimopDescription = (meta: PrimopMeta) => {
   const args = meta?.args?.map((a) => `__${a}__`) || [];
   return !meta?.arity
     ? ""
