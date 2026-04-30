@@ -491,6 +491,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "noogle-parser"
+version = "0.1.0"
+dependencies = [
+ "expect-test",
+ "noogle-types",
+ "rowan 0.16.1",
+]
+
+[[package]]
 name = "noogle-types"
 version = "0.1.0"
 dependencies = [
@@ -534,7 +543,7 @@ dependencies = [
  "expect-test",
  "regex",
  "rnix",
- "rowan",
+ "rowan 0.15.18",
  "serde",
  "serde_json",
  "serde_with",
@@ -622,7 +631,7 @@ version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bb35cedbeb70e0ccabef2a31bcff0aebd114f19566086300b8f42c725fc2cb5f"
 dependencies = [
- "rowan",
+ "rowan 0.15.18",
 ]
 
 [[package]]
@@ -634,6 +643,18 @@ dependencies = [
  "countme",
  "hashbrown 0.14.5",
  "memoffset",
+ "rustc-hash",
+ "text-size",
+]
+
+[[package]]
+name = "rowan"
+version = "0.16.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "417a3a9f582e349834051b8a10c8d71ca88da4211e4093528e36b9845f6b5f21"
+dependencies = [
+ "countme",
+ "hashbrown 0.14.5",
  "rustc-hash",
  "text-size",
 ]

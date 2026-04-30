@@ -1,0 +1,12 @@
+[package]
+name = "noogle-parser"
+description = "Rowan-based parser for Nix function type signatures."
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+noogle-types = { path = "../noogle-types" }
+rowan = "0.16"
+
+[dev-dependencies]
+expect-test = "1.5"
