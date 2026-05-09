@@ -507,18 +507,35 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                         let (_outer_lambda, count_applied) = get_parent_lambda(&expr);
                         let res = get_expr_docs(&expr);
 
-                        NixDocComment {
-                            content: res.as_ref().map(|v| v.0.to_owned()),
-                            count_applied: Some(count_applied),
-                            expr: res.as_ref().map(|v| v.1.to_owned()),
+                        if res.is_none() {
+                            NixDocComment {
+                                content: None,
+                                count_applied: Some(count_applied),
+                                expr: Some(expr.clone()),
+                            }
+                        } else {
+                            NixDocComment {
+                                content: res.as_ref().map(|v| v.0.to_owned()),
+                                count_applied: Some(count_applied),
+                                expr: res.as_ref().map(|v| v.1.to_owned()),
+                            }
                         }
                     }
                     _ => {
                         let res = get_expr_docs(&expr);
-                        NixDocComment {
-                            content: res.as_ref().map(|v| v.0.to_owned()),
-                            count_applied: None,
-                            expr: res.as_ref().map(|v| v.1.to_owned()),
+
+                        if res.is_none() {
+                            NixDocComment {
+                                content: None,
+                                count_applied: None,
+                                expr: Some(expr.clone()),
+                            }
+                        } else {
+                            NixDocComment {
+                                content: res.as_ref().map(|v| v.0.to_owned()),
+                                count_applied: None,
+                                expr: res.as_ref().map(|v| v.1.to_owned()),
+                            }
                         }
                     }
                 };
