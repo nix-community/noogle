@@ -33,7 +33,7 @@ impl DocComment for ast::Comment {
 
 /// Function retrieves a doc-comment from the [ast::Expr]
 ///
-/// Returns an [Option<String>] of the first suitable doc-comment.
+/// Returns a tuple [Option<String,SyntaxNode>] of the first suitable doc-comment.
 /// Returns [None] in case no suitable comment was found.
 ///
 /// Doc-comments can appear in two places for any expression
