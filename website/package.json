@@ -21,7 +21,6 @@
     "@mui/material-nextjs": "^7.3.9",
     "@types/mdx": "^2.0.13",
     "@vcarl/remark-headings": "^0.1.0",
-    "axios": "^1.13.6",
     "date-fns": "^4.1.0",
     "hast-util-to-string": "^3.0.1",
     "highlight.js": "^11.11.1",
