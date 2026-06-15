@@ -3,7 +3,6 @@ import bash from "highlight.js/lib/languages/bash";
 import cpp from "highlight.js/lib/languages/cpp";
 import haskell from "highlight.js/lib/languages/haskell";
 import nix from "highlight.js/lib/languages/nix";
-import { SerializeOptions } from "next-mdx-remote/dist/types";
 import { CompileMDXResult, compileMDX } from "next-mdx-remote/rsc";
 import { parse, serialize } from "parse5";
 import path from "path";
@@ -79,7 +78,7 @@ export async function generateStaticSidebarEntries() {
         return {
           id,
         };
-      })
+      }),
   );
   return paths;
 }
@@ -87,7 +86,7 @@ export async function generateStaticSidebarEntries() {
 export type DocsFrontmatter = { title: String; path?: string[] };
 
 export const getMdxMeta = async (
-  parts: string[]
+  parts: string[],
 ): Promise<{
   mdxSource: string;
   compiled: CompileMDXResult<DocsFrontmatter>;
@@ -160,7 +159,7 @@ export const parseMd = async (src: string) => {
 
 export const extractExcerpt = async (
   content: string,
-  maxLength: number
+  maxLength: number,
 ): Promise<string> => {
   const processor = unified()
     .use(remarkParse)
@@ -208,7 +207,7 @@ export const extractHeadings = async (content: string): Promise<Heading[]> => {
   return headings as Heading[];
 };
 
-export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
+export const mdxRenderOptions = {
   rehypePlugins: [
     [
       rehypeHighlight,
@@ -227,4 +226,4 @@ export const mdxRenderOptions: SerializeOptions["mdxOptions"] = {
       ...(defListHastHandlers as {}),
     },
   },
-} as SerializeOptions["mdxOptions"];
+};
