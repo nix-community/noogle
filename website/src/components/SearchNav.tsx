@@ -87,7 +87,14 @@ export const Navigation = ({
   }, [pathname, items]);
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        justifyContent: "space-between",
+        alignItems: { xs: "stretch", md: "center" },
+      }}
+    >
       {prev && (
         <Link
           rel="canonical"
@@ -101,6 +108,7 @@ export const Navigation = ({
             borderColor: "primary.main",
             borderWidth: 1,
             borderRadius: 3,
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Button aria-label="Prev result" startIcon={<ChevronLeft />}>
@@ -109,14 +117,13 @@ export const Navigation = ({
           <Typography variant="subtitle1">{prev.meta.title}</Typography>
         </Link>
       )}
-
       {next && (
         <Link
           rel="canonical"
           href={next.url}
           sx={{
-            ml: "auto",
-            my: 2,
+            mb: 2,
+            ml: { md: "auto" },
             py: 1,
             px: 2,
             display: "block",
@@ -124,13 +131,10 @@ export const Navigation = ({
             borderColor: "primary.main",
             borderWidth: 1,
             borderRadius: 3,
+            textAlign: { xs: "center", md: "right" },
           }}
         >
-          <Button
-            aria-label="Prev result"
-            endIcon={<ChevronRight />}
-            sx={{ float: "right" }}
-          >
+          <Button aria-label="Next result" endIcon={<ChevronRight />}>
             Next
           </Button>
           <Typography variant="subtitle1">{next.meta.title}</Typography>
