@@ -84,8 +84,12 @@ export const FilterProvider = ({
       page: +params.get("page")! || undefined,
       limit: +params.get("limit")! || undefined,
     });
-    if (page) query.set("page", page.toString());
-    if (limit) query.set("page", limit.toString());
+    if (page) {
+      query.set("page", page.toString());
+    } else {
+      query.delete("page");
+    }
+    if (limit) query.set("limit", limit.toString());
     router.push(`/${queryUrl}?${query.toString()}`);
   };
   return (
