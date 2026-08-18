@@ -4,6 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    # We track branch tips, so always take the newest commit. Dependabot's
+    # default 3-day cooldown stalls nixpkgs-master forever: its candidate list is
+    # one page (100 pushes) of the branch activity feed, and nixpkgs master burns
+    # through that in under a day, so every candidate stays inside the cooldown.
+    cooldown:
+      default-days: 0
     allow:
       - dependency-name: "nixpkgs-master"
       - dependency-name: "nix-master"
