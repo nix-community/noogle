@@ -5,11 +5,7 @@ import { PkgsSearch } from "@/components/searchInput/pkgsSearch";
 import { Container } from "@mui/material";
 import { ReactNode, Suspense } from "react";
 
-export default function SearchLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function SearchLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Suspense fallback="query">

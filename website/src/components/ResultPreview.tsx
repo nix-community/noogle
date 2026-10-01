@@ -44,8 +44,8 @@ export const ResultPreview = (props: ResultPreviewProps) => {
               isFunctor
                 ? "This function is implemented using a functor. Functors are polymorphic data structures that act both as attribute sets and functions."
                 : isPrimop
-                ? "This function is directly implemented using a builtins function."
-                : `This function is defined in ${category}.`
+                  ? "This function is directly implemented using a builtins function."
+                  : `This function is defined in ${category}.`
             }
           >
             <Badge

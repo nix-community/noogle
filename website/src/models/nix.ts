@@ -45,7 +45,7 @@ const interpretToken = (token: string): NixType | undefined => {
 
 export function interpretType(
   fnName?: string,
-  fnType?: string
+  fnType?: string,
 ): { args: NixType[]; returns: NixType[] } {
   if (fnType) {
     let cleanType = fnType

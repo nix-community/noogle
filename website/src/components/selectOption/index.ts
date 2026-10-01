@@ -1,1 +1,1 @@
-export {SelectOption} from "./selectOption"
+export { SelectOption } from "./selectOption";

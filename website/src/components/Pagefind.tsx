@@ -34,7 +34,7 @@ type PagefindHooks = {
       sort?: {
         [name: string]: "asc" | "desc";
       };
-    }
+    },
   ) =>
     | Promise<{
         results: RawResult[];

@@ -43,7 +43,7 @@ function getRandomIntInclusive(min: number, max: number, config?: Config) {
 
 const FunctionCard = styled(
   Card,
-  {}
+  {},
 )(({ theme }) => ({
   width: "100%",
   borderImageSlice: 1,
@@ -58,7 +58,7 @@ export const FunctionOfTheDay = () => {
 
   const todaysIdx = useMemo(
     () => getRandomIntInclusive(0, data.length - 1),
-    []
+    [],
   );
   const [idx, setIdx] = useState<number>(todaysIdx);
   const selectedFunction = useMemo(() => data.at(idx) as Document, [idx]);

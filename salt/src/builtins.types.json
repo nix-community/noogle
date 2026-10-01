@@ -50,7 +50,9 @@
   "getAttr": { "fn_type": "getAttr :: String -> AttrSet -> a" },
   "getEnv": { "fn_type": "getEnv :: String -> String" },
   "getFlake": { "fn_type": "getFlake :: String -> AttrSet" },
-  "groupBy": { "fn_type": "groupBy :: (a -> String) -> [ a ] -> { [String] :: [a] }" },
+  "groupBy": {
+    "fn_type": "groupBy :: (a -> String) -> [ a ] -> { [String] :: [a] }"
+  },
   "hasAttr": { "fn_type": "hasAttr :: String -> AttrSet -> Bool" },
   "hashFile": { "fn_type": "hashFile :: String -> Path -> String" },
   "hashString": { "fn_type": "hashString :: String -> String -> String" },
@@ -74,11 +76,17 @@
     "fn_type": "listToAttrs :: [{name :: String; value :: a}] -> AttrSet"
   },
   "map": { "fn_type": "map :: (a -> b) -> [a] -> [b]" },
-  "mapAttrs": { "fn_type": "mapAttrs :: (String -> a -> b) -> AttrSet -> AttrSet" },
+  "mapAttrs": {
+    "fn_type": "mapAttrs :: (String -> a -> b) -> AttrSet -> AttrSet"
+  },
   "match": { "fn_type": "match :: String -> String -> Bool" },
   "mul": { "fn_type": "mul :: Number -> Number -> Number" },
-  "parseDrvName": { "fn_type": "parseDrvName :: String -> { name :: String; version :: String }" },
-  "partition": { "fn_type": "partition :: (a -> Bool) -> [a] -> { right :: [a]; wrong :: [a] }" },
+  "parseDrvName": {
+    "fn_type": "parseDrvName :: String -> { name :: String; version :: String }"
+  },
+  "partition": {
+    "fn_type": "partition :: (a -> Bool) -> [a] -> { right :: [a]; wrong :: [a] }"
+  },
   "Path": { "fn_type": "Path :: AttrSet -> StorePath" },
   "pathExists": { "fn_type": "pathExists :: Path -> Bool" },
   "placeholder": { "fn_type": "placeholder :: String -> String" },

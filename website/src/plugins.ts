@@ -57,7 +57,9 @@ function resolveUrl(match: string, inCode: boolean): string | undefined {
   }
 
   // For bare names, only link inside code
-  const name = match.includes(".") ? match.slice(match.lastIndexOf(".") + 1) : match;
+  const name = match.includes(".")
+    ? match.slice(match.lastIndexOf(".") + 1)
+    : match;
   if (inCode && !NIX_KEYWORDS.has(name)) {
     return functionUrlsByName.get(name);
   }
@@ -77,7 +79,10 @@ function splitText(text: string, inCode: boolean): any[] {
 
     if (url) {
       if (match.index > lastIndex) {
-        result.push({ type: "text", value: text.slice(lastIndex, match.index) });
+        result.push({
+          type: "text",
+          value: text.slice(lastIndex, match.index),
+        });
       }
       result.push({
         type: "element",
@@ -228,7 +233,7 @@ export function replaceComponents() {
             "data-link-md": true,
             ...redirectNixpkgsManualAnchor(
               node.properties.href as string,
-              !node.properties["data-autolinked"] as boolean
+              !node.properties["data-autolinked"] as boolean,
             ),
           }, // Pass props here if needed
           children: node.children,

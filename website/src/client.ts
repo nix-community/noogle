@@ -17,7 +17,7 @@ type Config = {
 export function pseudoRandomIntInclusive(
   min: number,
   max: number,
-  config?: Config
+  config?: Config,
 ) {
   min = Math.ceil(min);
   max = Math.floor(max);
