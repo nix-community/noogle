@@ -4,6 +4,7 @@ mod comment;
 mod markdown;
 mod pasta;
 mod position;
+#[cfg(test)]
 mod tests;
 
 use clap::Parser;
@@ -194,11 +195,7 @@ impl<'a> FromDocs<'a> for Document<'a> {
                 aliases: item.aliases.as_ref(),
                 attr_position: item.docs.attr.position.as_ref(),
                 attr_expr: item.docs.attr.expr.as_ref(),
-                lambda_position: item
-                    .docs
-                    .lambda
-                    .as_ref()
-                    .and_then(|i| i.position.as_ref()),
+                lambda_position: item.docs.lambda.as_ref().and_then(|i| i.position.as_ref()),
                 lambda_expr: item.docs.lambda.as_ref().and_then(|i| i.expr.as_ref()),
                 is_primop: item.docs.lambda.as_ref().map(|i| i.is_primop),
                 is_functor: item.docs.lambda.as_ref().and_then(|i| i.is_functor),

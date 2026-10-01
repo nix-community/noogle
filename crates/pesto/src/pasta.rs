@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs, path::PathBuf, println, process::exit, rc::Rc};
+use std::{collections::HashMap, fs, path::Path, println, process::exit, rc::Rc};
 
 use serde::{Deserialize, Serialize};
 use textwrap::dedent;
@@ -88,26 +88,23 @@ pub trait Lookups<'a> {
 
 impl<'a> Lookups<'a> for Docs {
     fn lambda_content(&'a self) -> Option<ContentSource<'a>> {
-        self.docs
-            .lambda
-            .as_ref()
-            .and_then(|i| {
-                if i.count_applied == Some(0)
-                    || (i.count_applied.is_none() && i.is_primop)
-                    || (i.count_applied == Some(1) && i.is_functor == Some(true))
-                {
-                    Some(ContentSource {
-                        content: i.content.as_ref().map(|inner| dedent(inner)),
-                        source: Some(SourceOrigin {
-                            position: i.position.as_ref(),
-                            path: Some(&self.path),
-                            pos_type: Some(PositionType::Lambda),
-                        }),
-                    })
-                } else {
-                    None
-                }
-            })
+        self.docs.lambda.as_ref().and_then(|i| {
+            if i.count_applied == Some(0)
+                || (i.count_applied.is_none() && i.is_primop)
+                || (i.count_applied == Some(1) && i.is_functor == Some(true))
+            {
+                Some(ContentSource {
+                    content: i.content.as_ref().map(|inner| dedent(inner)),
+                    source: Some(SourceOrigin {
+                        position: i.position.as_ref(),
+                        path: Some(&self.path),
+                        pos_type: Some(PositionType::Lambda),
+                    }),
+                })
+            } else {
+                None
+            }
+        })
     }
 
     fn fst_alias_content(
@@ -117,27 +114,22 @@ impl<'a> Lookups<'a> for Docs {
         match &self.aliases {
             Some(aliases) => {
                 let x = aliases.iter().find_map(|alias_path| {
-                    let alias_docs = data
-                        .get(alias_path)
-                        .and_then(|i| {
-                            if i.docs.attr.content.is_some()
-                                && !i.docs.attr.content.as_ref().unwrap().is_empty()
-                            {
-                                Some(ContentSource {
-                                    content: i.docs.attr.content.as_ref().map(|inner| {
-                                        
-                                        dedent(inner)
-                                    }),
-                                    source: Some(SourceOrigin {
-                                        position: i.docs.attr.position.as_ref(),
-                                        path: Some(&i.path),
-                                        pos_type: Some(PositionType::Attribute),
-                                    }),
-                                })
-                            } else {
-                                None
-                            }
-                        });
+                    let alias_docs = data.get(alias_path).and_then(|i| {
+                        if i.docs.attr.content.is_some()
+                            && !i.docs.attr.content.as_ref().unwrap().is_empty()
+                        {
+                            Some(ContentSource {
+                                content: i.docs.attr.content.as_ref().map(|inner| dedent(inner)),
+                                source: Some(SourceOrigin {
+                                    position: i.docs.attr.position.as_ref(),
+                                    path: Some(&i.path),
+                                    pos_type: Some(PositionType::Attribute),
+                                }),
+                            })
+                        } else {
+                            None
+                        }
+                    });
                     alias_docs
                 });
                 x
@@ -153,11 +145,11 @@ pub struct Pasta {
 }
 
 pub trait Files {
-    fn from_file(path: &PathBuf) -> Vec<Docs>;
+    fn from_file(path: &Path) -> Vec<Docs>;
 }
 
-impl<'a> Files for Pasta {
-    fn from_file(path: &PathBuf) -> Vec<Docs> {
+impl Files for Pasta {
+    fn from_file(path: &Path) -> Vec<Docs> {
         let raw = fs::read_to_string(path);
         match raw {
             Ok(content) => match serde_json::from_str(&content) {

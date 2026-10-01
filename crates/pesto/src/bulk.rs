@@ -1,4 +1,11 @@
-use std::{collections::HashMap, path::PathBuf, println, rc::Rc, time::Instant, vec};
+use std::{
+    collections::HashMap,
+    path::{Path, PathBuf},
+    println,
+    rc::Rc,
+    time::Instant,
+    vec,
+};
 
 use crate::{
     alias::{categorize, init_alias_map},
@@ -17,7 +24,7 @@ struct LookupReason<'a> {
 }
 
 pub trait BulkProcessing {
-    fn new(path: &PathBuf) -> Self;
+    fn new(path: &Path) -> Self;
 }
 
 fn insert_position<'a>(
@@ -36,7 +43,7 @@ fn insert_position<'a>(
     file_map
 }
 
-fn build_file_map(data: &Vec<Docs>) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> {
+fn build_file_map(data: &[Docs]) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> {
     let mut file_map: HashMap<&PathBuf, Vec<LookupReason>> = HashMap::new();
     for doc_item in data.iter() {
         if let Some(position) = &doc_item.docs.attr.position {
@@ -85,10 +92,10 @@ fn collect_file_positions(lookups: &Vec<LookupReason>) -> HashMap<usize, Vec<usi
 }
 
 fn fill_docs(
-    data: &Vec<Docs>,
+    data: &[Docs],
     pos_doc_map: &HashMap<&FilePosition, Option<NixDocComment>>,
 ) -> Vec<Docs> {
-    let mut filled_docs = data.clone();
+    let mut filled_docs = data.to_owned();
     for item in filled_docs.iter_mut() {
         if let Some(position) = &item.docs.attr.position {
             if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
@@ -109,8 +116,8 @@ fn fill_docs(
     filled_docs
 }
 
-impl<'a> BulkProcessing for Pasta {
-    fn new(path: &PathBuf) -> Self {
+impl BulkProcessing for Pasta {
+    fn new(path: &Path) -> Self {
         let start_time = Instant::now();
         let data = Pasta::from_file(path);
 

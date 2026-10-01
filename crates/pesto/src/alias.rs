@@ -22,7 +22,7 @@ use crate::pasta::{AliasList, Docs, ValuePath};
 ///      Content not empty
 ///   Match Non-Primop
 ///      Eq position
-pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
+pub fn find_aliases(item: &Docs, list: &[&Docs]) -> AliasList {
     // dbg!("finding alias for", &item.path);
     let res: AliasList = list
         .iter()
@@ -68,11 +68,11 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         // - same isPrimop
                         // - same name
                         // It is very likely a real alias
-                        if s_meta.count_applied != Some(0)
-                            && item.path.last() == other.path.last() {
-                                // dbg!("ADDING Fallback ALIAS", &item.path);
-                                return Some(other.path.clone());
-                            }
+                        if s_meta.count_applied != Some(0) && item.path.last() == other.path.last()
+                        {
+                            // dbg!("ADDING Fallback ALIAS", &item.path);
+                            return Some(other.path.clone());
+                        }
 
                         None
                     }
@@ -101,15 +101,15 @@ pub struct FnCategories<'a> {
 ///
 /// Group docs into the following subgroups
 /// 1. primop_lambdas
-/// e.g, lib.add, builtins.add
+///    e.g, lib.add, builtins.add
 ///
-/// 2.non_primop_lambdas
-/// e.g, lib.attrByPath
+/// 2. non_primop_lambdas
+///    e.g, lib.attrByPath
 ///
-/// 3.partially_applied lambdas
-/// e.g., concatLines (is concatMapStrings applied with f := Lambda<(s: s + "\n");>)
-/// This is a special case, it is very hard, to properly detect aliases at this level. Although the alias must also be found in this subgroup.
-pub fn categorize(data: &Vec<Docs>) -> FnCategories<'_> {
+/// 3. partially_applied lambdas
+///    e.g., concatLines (is concatMapStrings applied with f := Lambda<(s: s + "\n");>)
+///    This is a special case, it is very hard, to properly detect aliases at this level. Although the alias must also be found in this subgroup.
+pub fn categorize(data: &[Docs]) -> FnCategories<'_> {
     // For finding aliases.
     // Group docs into these subgroups.
     // Aliases can only exist within one subgroup, iterating over other items is a waste of time.
@@ -163,7 +163,7 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories<'_> {
 
 pub type AliasMap = HashMap<Rc<ValuePath>, AliasList>;
 
-pub fn init_alias_map(data: &Vec<Docs>, categories: FnCategories) -> AliasMap {
+pub fn init_alias_map(data: &[Docs], categories: FnCategories) -> AliasMap {
     let primop_lambdas = categories.primop;
     let non_primop_lambdas = categories.casual;
     let partially_applieds = categories.partial;
