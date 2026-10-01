@@ -52,7 +52,7 @@
                   edition = "2021";
                 };
                 prettier.enable = true;
-                # ruff-format.enable = true;
+                ruff-format.enable = true;
               };
               # pesto indexes these fixtures by line and column
               settings.global.excludes = [ "crates/pesto/test_data/**" ];
