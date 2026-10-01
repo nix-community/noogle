@@ -1,1 +1,1 @@
-export {MarkdownPreview} from "./MarkdownPreview"
+export { MarkdownPreview } from "./MarkdownPreview";

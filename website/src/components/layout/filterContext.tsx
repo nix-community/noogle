@@ -50,7 +50,7 @@ export const FilterProvider = ({
   const query = useMemo(() => new URLSearchParams(params), [params]);
   const [, persistFilterOptions] = useSessionStorage<FilterOptions>(
     "currentFilterOptions",
-    {}
+    {},
   );
 
   const [from, setFrom] = useState(params.get("from") || "any");

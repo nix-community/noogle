@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 export const BackButton = () => {
   const [currentFilterOptions] = useSessionStorage<FilterOptions | null>(
     "currentFilterOptions",
-    null
+    null,
   );
   const router = useRouter();
   const { submit } = useFilter();

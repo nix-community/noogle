@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 export const SearchNav = () => {
   const [filterOptions] = useSessionStorage<FilterOptions | null>(
     "currentFilterOptions",
-    null
+    null,
   );
 
   return filterOptions && <Navigation filterOptions={filterOptions} />;

@@ -6,7 +6,7 @@ export function pipe<T>(...fns: ((arr: T) => T)[]) {
 
 export function getTypes(
   fnName: string,
-  fnType: string | undefined
+  fnType: string | undefined,
 ): { args: NixType[]; types: NixType[] } {
   if (fnType) {
     let cleanType = fnType.replace(/ /g, "").replace(`${fnName}::`, "");

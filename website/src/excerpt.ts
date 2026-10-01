@@ -29,7 +29,7 @@ const defaults: RehypeExtractExcerptOptions = {
 };
 
 const rehypeExtractExcerpt: Plugin<[RehypeExtractExcerptOptions?], Root> = (
-  userOptions?: RehypeExtractExcerptOptions
+  userOptions?: RehypeExtractExcerptOptions,
 ) => {
   const options = { ...defaults, ...userOptions };
 
@@ -37,13 +37,13 @@ const rehypeExtractExcerpt: Plugin<[RehypeExtractExcerptOptions?], Root> = (
     str: string,
     maxLength: number,
     ellipsis: string,
-    wordBoundaries: boolean
+    wordBoundaries: boolean,
   ): string {
     if (str.length > maxLength) {
       if (wordBoundaries) {
         return `${str.slice(
           0,
-          str.lastIndexOf(" ", maxLength - 1)
+          str.lastIndexOf(" ", maxLength - 1),
         )}${ellipsis}`;
       }
       return `${str.slice(0, maxLength)}${ellipsis}`;
@@ -64,8 +64,8 @@ const rehypeExtractExcerpt: Plugin<[RehypeExtractExcerptOptions?], Root> = (
           hastToString(node),
           options.maxLength!,
           options.ellipsis!,
-          options.wordBoundaries!
-        )
+          options.wordBoundaries!,
+        ),
       );
 
       return EXIT;

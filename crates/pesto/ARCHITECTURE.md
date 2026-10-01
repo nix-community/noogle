@@ -140,15 +140,15 @@ Vec<Docs>  ──bulk.rs──→  Vec<Docs>       (content/countApplied filled)
 
 ## Key files
 
-| File | Role |
-|---|---|
-| `main.rs` | CLI (clap), content selection, output formatting |
-| `pasta.rs` | Core data types (`Docs`, `LambdaMeta`, `AttrMeta`), JSON I/O |
-| `bulk.rs` | Batch pipeline: file grouping → comment extraction → alias detection |
-| `position.rs` | Bidirectional index mapping `(line,col)` ↔ AST nodes via rnix |
-| `comment.rs` | RFC145 `/** */` doc-comment extraction from syntax tree |
-| `alias.rs` | Groups functions that share the same lambda position |
-| `markdown.rs` | Extracts type signatures from markdown content using comrak |
+| File          | Role                                                                 |
+| ------------- | -------------------------------------------------------------------- |
+| `main.rs`     | CLI (clap), content selection, output formatting                     |
+| `pasta.rs`    | Core data types (`Docs`, `LambdaMeta`, `AttrMeta`), JSON I/O         |
+| `bulk.rs`     | Batch pipeline: file grouping → comment extraction → alias detection |
+| `position.rs` | Bidirectional index mapping `(line,col)` ↔ AST nodes via rnix       |
+| `comment.rs`  | RFC145 `/** */` doc-comment extraction from syntax tree              |
+| `alias.rs`    | Groups functions that share the same lambda position                 |
+| `markdown.rs` | Extracts type signatures from markdown content using comrak          |
 
 ## Content selection logic
 

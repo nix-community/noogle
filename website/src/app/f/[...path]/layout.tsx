@@ -4,11 +4,7 @@ import { Container } from "@mui/material";
 import { ReactNode, Suspense } from "react";
 import { SearchInput } from "@/components/searchInput";
 
-export default function SearchLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function SearchLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Suspense fallback="query">

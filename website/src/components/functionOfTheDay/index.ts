@@ -1,1 +1,1 @@
-export {FunctionOfTheDay} from "./functionOfTheDay"
+export { FunctionOfTheDay } from "./functionOfTheDay";

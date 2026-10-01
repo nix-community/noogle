@@ -25,7 +25,7 @@ const ModeTracker = () => {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [],
   );
 
   if (!mounted) {

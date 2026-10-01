@@ -52,7 +52,7 @@ export function SearchResults() {
       return fieldName.split(".").reduce(
         // @ts-ignore
         (doc, key) => doc && doc[key],
-        document
+        document,
       ) as Document[keyof Document];
     },
   });
@@ -61,7 +61,7 @@ export function SearchResults() {
   }, [term, search]);
 
   const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     query.set("limit", event.target.value);
     query.set("page", "1");
@@ -77,7 +77,7 @@ export function SearchResults() {
 
   const handlePageChange = (
     event: React.MouseEvent<HTMLButtonElement> | null,
-    value: number
+    value: number,
   ) => {
     query.set("page", (value + 1).toString());
     router.push(`?${query.toString()}`);

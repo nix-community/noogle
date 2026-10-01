@@ -51,7 +51,7 @@
                   enable = true;
                   edition = "2021";
                 };
-                # prettier.enable = true;
+                prettier.enable = true;
                 # ruff-format.enable = true;
               };
               # pesto indexes these fixtures by line and column

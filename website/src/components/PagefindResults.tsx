@@ -70,7 +70,7 @@ export function PagefindResults() {
 
   const [, persistFilterOptions] = useSessionStorage<FilterOptions>(
     "currentFilterOptions",
-    {}
+    {},
   );
 
   const query = useMemo(() => new URLSearchParams(params), [params]);
@@ -112,7 +112,7 @@ export function PagefindResults() {
   console.log({ search, loadingPagefindModule, errorPagefindModule });
 
   const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     query.set("limit", event.target.value);
     query.set("page", "1");
@@ -141,7 +141,7 @@ export function PagefindResults() {
 
   const handlePageChange = (
     event: React.MouseEvent<HTMLButtonElement> | null,
-    value: number
+    value: number,
   ) => {
     query.set("page", (value + 1).toString());
     persistFilterOptions((s) => ({

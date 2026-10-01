@@ -6,26 +6,31 @@ body {
   scroll-behavior: smooth;
 }
 
-table{
+table {
   width: 100%;
-  border-collapse:collapse;
-  border:1px solid var(--mui-palette-misc-tableBorder);
+  border-collapse: collapse;
+  border: 1px solid var(--mui-palette-misc-tableBorder);
 }
-  
-table td{
+
+table td {
   padding: 8px;
-  border:1px solid var(--mui-palette-misc-tableBorder);
+  border: 1px solid var(--mui-palette-misc-tableBorder);
 }
-table th{
+table th {
   padding: 8px;
-  border:1px solid var(--mui-palette-misc-tableBorder);
+  border: 1px solid var(--mui-palette-misc-tableBorder);
 }
 
 a {
   color: var(--mui-palette-misc-a);
 }
 
-.caution, .important, .note, .tip, .warning, .example {
+.caution,
+.important,
+.note,
+.tip,
+.warning,
+.example {
   background-color: var(--mui-palette-fenced-bg);
   padding: 10px 15px; /* Top and bottom padding of 10px, left and right padding of 15px */
   margin: 15px 0; /* Vertical margins to separate the note from surrounding content */
@@ -36,22 +41,24 @@ a {
   border-left: 5px solid; /* Solid left border for distinction */
 }
 
-.caution::before, .important::before, .note::before, .tip::before, .warning::before, .example::before {
+.caution::before,
+.important::before,
+.note::before,
+.tip::before,
+.warning::before,
+.example::before {
   font-weight: bold; /* Make the "Note: " prefix bold */
 }
 
-
-
 .note::before {
   content: "Note";
-  color: var(--mui-palette-note-main);; 
+  color: var(--mui-palette-note-main);
 }
 .note {
   border-left-color: var(--mui-palette-note-main);
 }
 
-
-.example::before{
+.example::before {
   /* content: "Example"; */
   color: #000405;
 }
@@ -59,7 +66,7 @@ a {
   border-left-color: var(--mui-palette-example-main);
 }
 
-.warning::before{
+.warning::before {
   content: "Warning";
   color: var(--mui-palette-warning-main);
 }
@@ -67,7 +74,7 @@ a {
   border-left-color: var(--mui-palette-warning-main);
 }
 
-.caution::before{
+.caution::before {
   content: "Caution";
   color: var(--mui-palette-caution-main);
 }
@@ -75,16 +82,15 @@ a {
   border-left-color: var(--mui-palette-caution-main);
 }
 
-.important::before{
+.important::before {
   content: "Important";
-  color: var(--mui-palette-important-main); 
+  color: var(--mui-palette-important-main);
 }
 .important {
   border-left-color: var(--mui-palette-important-main);
 }
 
-
-.tip::before{
+.tip::before {
   content: "Tip";
   color: var(--mui-palette-tip-main);
 }
@@ -92,14 +98,13 @@ a {
   border-left-color: var(--mui-palette-tip-main);
 }
 
-
 a[data-autolinked] {
   text-decoration: none;
   color: inherit;
 }
 a[data-autolinked]::after {
-  content: " #"; 
-  font-size: smaller; 
+  content: " #";
+  font-size: smaller;
   font-weight: lighter;
 }
 
@@ -118,11 +123,10 @@ dt {
 mark.noogle-marker {
   /* :rgb(106, 213, 65); */
   color: inherit;
-  background-color: #88DD67;
+  background-color: #88dd67;
 }
 
-
-code  {
+code {
   background-color: var(--mui-palette-code-bg);
 }
 
@@ -137,6 +141,6 @@ a[data-noogle-link]:hover {
 pre {
   background-color: var(--mui-palette-code-bg);
 }
-code.hljs  {
+code.hljs {
   background-color: var(--mui-palette-code-dark);
-} 
+}

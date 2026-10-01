@@ -10,7 +10,7 @@ interface EmptyRecordsPlaceholderProps {
 }
 
 export const EmptyRecordsPlaceholder = (
-  props: EmptyRecordsPlaceholderProps
+  props: EmptyRecordsPlaceholderProps,
 ) => {
   const { title, subtitle, icon, CardProps = {} } = props;
   return (
