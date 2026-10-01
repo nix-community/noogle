@@ -11,8 +11,8 @@ use crate::{
     alias::{categorize, init_alias_map},
     pasta::{Docs, Files, Pasta},
     position::{
-        get_overridable_fn, seek_file_position, when_overridable_lambda, DocComment, DocIndex,
-        FilePosition, NixDocComment,
+        DocComment, DocIndex, FilePosition, NixDocComment, get_overridable_fn, seek_file_position,
+        when_overridable_lambda,
     },
 };
 
@@ -57,18 +57,18 @@ fn build_file_map(data: &[Docs]) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> {
                 },
             );
         }
-        if let Some(lambda) = &doc_item.docs.lambda {
-            if let Some(position) = &lambda.position {
-                file_map = insert_position(
-                    file_map,
+        if let Some(lambda) = &doc_item.docs.lambda
+            && let Some(position) = &lambda.position
+        {
+            file_map = insert_position(
+                file_map,
+                position,
+                LookupReason {
+                    // docs: doc_item,
                     position,
-                    LookupReason {
-                        // docs: doc_item,
-                        position,
-                        // field: FieldType::Lambda,
-                    },
-                );
-            }
+                    // field: FieldType::Lambda,
+                },
+            );
         }
     }
     file_map
@@ -97,20 +97,19 @@ fn fill_docs(
 ) -> Vec<Docs> {
     let mut filled_docs = data.to_owned();
     for item in filled_docs.iter_mut() {
-        if let Some(position) = &item.docs.attr.position {
-            if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
-                item.docs.attr.content = doc_comment.content.clone();
-                item.docs.attr.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string());
-            }
+        if let Some(position) = &item.docs.attr.position
+            && let Some(Some(doc_comment)) = pos_doc_map.get(&position)
+        {
+            item.docs.attr.content = doc_comment.content.clone();
+            item.docs.attr.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string());
         }
-        if let Some(lambda) = item.docs.lambda.as_mut() {
-            if let Some(position) = &lambda.position {
-                if let Some(Some(doc_comment)) = pos_doc_map.get(&position) {
-                    lambda.content = doc_comment.content.clone();
-                    lambda.count_applied = doc_comment.count_applied;
-                    lambda.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string());
-                }
-            }
+        if let Some(lambda) = item.docs.lambda.as_mut()
+            && let Some(position) = &lambda.position
+            && let Some(Some(doc_comment)) = pos_doc_map.get(&position)
+        {
+            lambda.content = doc_comment.content.clone();
+            lambda.count_applied = doc_comment.count_applied;
+            lambda.expr = doc_comment.expr.as_ref().map(|nix| nix.text().to_string());
         }
     }
     filled_docs
@@ -161,12 +160,12 @@ impl BulkProcessing for Pasta {
                 let orig_pos = orig_lambda
                     .as_ref()
                     .map(|n| seek_file_position(&orig_file, &n.text_range().start()));
-                if let Some(orig_pos) = orig_pos {
-                    if let Some(l) = &mut doc.docs.lambda {
-                        l.position = orig_pos;
-                        l.expr = orig_lambda.as_ref().map(|n| n.text().to_string());
-                        restores.push(format!("{:?}", doc.path.join(".")));
-                    }
+                if let Some(orig_pos) = orig_pos
+                    && let Some(l) = &mut doc.docs.lambda
+                {
+                    l.position = orig_pos;
+                    l.expr = orig_lambda.as_ref().map(|n| n.text().to_string());
+                    restores.push(format!("{:?}", doc.path.join(".")));
                 }
             }
         }

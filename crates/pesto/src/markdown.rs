@@ -1,5 +1,5 @@
 use comrak::nodes::{AstNode, NodeValue};
-use comrak::{parse_document, Arena, Options};
+use comrak::{Arena, Options, parse_document};
 
 fn iter_nodes<'a, F>(node: &'a AstNode<'a>, f: &mut F)
 where
