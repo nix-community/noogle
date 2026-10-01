@@ -2,7 +2,7 @@
 name = "pesto"
 description = "Given a list of positions extract doc-comment into markdown and frontmatter."
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 
 [dependencies]

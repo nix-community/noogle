@@ -112,28 +112,24 @@ impl<'a> Lookups<'a> for Docs {
         data: &'a HashMap<Rc<ValuePath>, Docs>,
     ) -> Option<ContentSource<'a>> {
         match &self.aliases {
-            Some(aliases) => {
-                let x = aliases.iter().find_map(|alias_path| {
-                    let alias_docs = data.get(alias_path).and_then(|i| {
-                        if i.docs.attr.content.is_some()
-                            && !i.docs.attr.content.as_ref().unwrap().is_empty()
-                        {
-                            Some(ContentSource {
-                                content: i.docs.attr.content.as_ref().map(|inner| dedent(inner)),
-                                source: Some(SourceOrigin {
-                                    position: i.docs.attr.position.as_ref(),
-                                    path: Some(&i.path),
-                                    pos_type: Some(PositionType::Attribute),
-                                }),
-                            })
-                        } else {
-                            None
-                        }
-                    });
-                    alias_docs
-                });
-                x
-            }
+            Some(aliases) => aliases.iter().find_map(|alias_path| {
+                data.get(alias_path).and_then(|i| {
+                    if i.docs.attr.content.is_some()
+                        && !i.docs.attr.content.as_ref().unwrap().is_empty()
+                    {
+                        Some(ContentSource {
+                            content: i.docs.attr.content.as_ref().map(|inner| dedent(inner)),
+                            source: Some(SourceOrigin {
+                                position: i.docs.attr.position.as_ref(),
+                                path: Some(&i.path),
+                                pos_type: Some(PositionType::Attribute),
+                            }),
+                        })
+                    } else {
+                        None
+                    }
+                })
+            }),
             None => None,
         }
     }

@@ -1,7 +1,7 @@
 use rnix::ast::{self};
-use rnix::{match_ast, SyntaxNode};
+use rnix::{SyntaxNode, match_ast};
 use rowan::TextSize;
-use rowan::{ast::AstNode, WalkEvent};
+use rowan::{WalkEvent, ast::AstNode};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs::File;
@@ -211,7 +211,7 @@ pub fn when_overridable_lambda(
                 }
                 let rel_package_file = package_file.unwrap();
 
-                let resolved_path = pos.file.parent().and_then(|parent_path| {
+                pos.file.parent().and_then(|parent_path| {
                     parent_path
                         .join(rel_package_file)
                         .canonicalize()
@@ -223,8 +223,7 @@ pub fn when_overridable_lambda(
                                 p.join("default.nix")
                             }
                         })
-                });
-                resolved_path
+                })
             } else {
                 None
             }

@@ -1,5 +1,5 @@
 use rnix::ast::{self, AstToken};
-use rnix::{match_ast, SyntaxNode};
+use rnix::{SyntaxNode, match_ast};
 use rowan::ast::AstNode;
 
 /// Implements functions for doc-comments according to rfc145.

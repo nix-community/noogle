@@ -49,7 +49,7 @@
                 nixfmt.enable = true;
                 rustfmt = {
                   enable = true;
-                  edition = "2021";
+                  edition = "2024";
                 };
                 prettier.enable = true;
                 ruff-format.enable = true;

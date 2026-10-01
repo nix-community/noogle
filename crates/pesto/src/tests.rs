@@ -2,11 +2,11 @@ use serde::Serialize;
 use std::{collections::HashMap, ffi::OsStr, format, fs, path::PathBuf, println, rc::Rc};
 
 use crate::{
+    Document, FromDocs,
     bulk::BulkProcessing,
     markdown::find_type,
     pasta::{AliasList, Pasta, ValuePath},
     position::{DocComment, DocIndex, TextPosition},
-    Document, FromDocs,
 };
 
 use expect_test::expect_file;

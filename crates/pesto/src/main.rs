@@ -130,8 +130,8 @@ pub fn find_document_content<'a>(
     item: &'a Docs,
     all: &'a HashMap<Rc<ValuePath>, Docs>,
 ) -> Option<ContentSource<'a>> {
-    let content = match &item.docs.attr.content {
-        Some(ref c) if !c.is_empty() => Some(ContentSource {
+    match &item.docs.attr.content {
+        Some(c) if !c.is_empty() => Some(ContentSource {
             content: Some(dedent(c)),
             source: Some(SourceOrigin {
                 position: item.docs.attr.position.as_ref(),
@@ -143,8 +143,7 @@ pub fn find_document_content<'a>(
             Some(d) => Some(d),
             None => item.lambda_content(),
         },
-    };
-    content
+    }
 }
 
 #[derive(Serialize, Debug, Clone)]
