@@ -1,5 +1,7 @@
-{ ... }: {
-  perSystem = { pkgs, system, ... }:
+{ ... }:
+{
+  perSystem =
+    { pkgs, system, ... }:
     let
       # Statically pin nix to 2_31 used for the plugin
       # We override the language docs seperately

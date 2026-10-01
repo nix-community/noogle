@@ -1,7 +1,7 @@
-{ pkgs
-, hooks
-, nodejs
-,
+{
+  pkgs,
+  hooks,
+  nodejs,
 }:
 
 pkgs.buildNpmPackage {

@@ -1,8 +1,9 @@
-{ mkShell
-, importNpmLock
-, nodejs
-, hooks
-, ...
+{
+  mkShell,
+  importNpmLock,
+  nodejs,
+  hooks,
+  ...
 }:
 
 mkShell {

@@ -1,5 +1,7 @@
-{ ... }: {
-  perSystem = { self', pkgs, ... }:
+{ ... }:
+{
+  perSystem =
+    { self', pkgs, ... }:
     let
       nodejs = pkgs.nodejs_25;
 
@@ -35,7 +37,9 @@
       base = pkgs.callPackage ./default.nix { inherit nodejs hooks; };
     in
     {
-      packages = { ui = base; };
+      packages = {
+        ui = base;
+      };
       devShells.ui = pkgs.callPackage ./shell.nix {
         inherit pkgs hooks nodejs;
         inherit (self'.packages) data-json pasta-meta;

@@ -1,5 +1,13 @@
-{ inputs, ... }: {
-  perSystem = { self', inputs', pkgs, lib, ... }:
+{ inputs, ... }:
+{
+  perSystem =
+    {
+      self',
+      inputs',
+      pkgs,
+      lib,
+      ...
+    }:
     let
       nixpkgs = inputs.nixpkgs-master;
 
@@ -24,6 +32,9 @@
           dataset = "nix";
         };
       };
-      devShells.pastaMaker = pkgs.callPackage ./shell.nix { inherit pkgs; inherit (self'.packages) noogle-plugin; };
+      devShells.pastaMaker = pkgs.callPackage ./shell.nix {
+        inherit pkgs;
+        inherit (self'.packages) noogle-plugin;
+      };
     };
 }

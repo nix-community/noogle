@@ -1,5 +1,7 @@
-{ inputs, ... }: {
-  perSystem = { self', system, ... }:
+{ inputs, ... }:
+{
+  perSystem =
+    { self', system, ... }:
     let
       craneLib = inputs.crane.lib.${system};
     in

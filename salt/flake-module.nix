@@ -1,5 +1,13 @@
-{ inputs, ... }: {
-  perSystem = { self', inputs', pkgs, system, ... }:
+{ inputs, ... }:
+{
+  perSystem =
+    {
+      self',
+      inputs',
+      pkgs,
+      system,
+      ...
+    }:
     let
       nix-manual = "${inputs.nix-master}/doc/manual/source/language/derivations.md";
       # pkgs = import inputs.nixpkgs-master { inherit system; };
@@ -16,7 +24,6 @@
           cat ${metaFile} > $out
         '';
       };
-
 
       # https://github.com/NixOS/nix/blob/master/doc/manual/src/language/derivations.md
       salt = pkgs.stdenv.mkDerivation {

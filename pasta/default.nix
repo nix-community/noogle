@@ -1,5 +1,13 @@
-{ pkgs, nixpkgs, noogle-plugin, dataset ? "nix", ... }:
-let nix = noogle-plugin.passthru.nix; in
+{
+  pkgs,
+  nixpkgs,
+  noogle-plugin,
+  dataset ? "nix",
+  ...
+}:
+let
+  nix = noogle-plugin.passthru.nix;
+in
 pkgs.stdenv.mkDerivation {
   name = "pasta-${dataset}";
   src = ./src;
