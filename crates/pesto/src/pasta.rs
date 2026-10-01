@@ -1,11 +1,4 @@
-use std::{
-    collections::HashMap,
-    fs,
-    path::PathBuf,
-    println,
-    process::exit,
-    rc::Rc,
-};
+use std::{collections::HashMap, fs, path::PathBuf, println, process::exit, rc::Rc};
 
 use serde::{Deserialize, Serialize};
 use textwrap::dedent;
