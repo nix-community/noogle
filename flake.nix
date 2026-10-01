@@ -23,6 +23,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
       systems = import systems;
       imports = [
+        inputs.treefmt-nix.flakeModule
         ./devShell.nix
         ./website/flake-module.nix
         ./salt/flake-module.nix
@@ -37,6 +38,21 @@
         inherit inputs;
       };
       perSystem = { inputs', ... }: {
+        treefmt = {
+          projectRootFile = "flake.nix";
+          programs = {
+            # nixfmt.enable = true;
+            # rustfmt = {
+            #   enable = true;
+            #   edition = "2021";
+            # };
+            # prettier.enable = true;
+            # ruff-format.enable = true;
+          };
+          # pesto indexes these fixtures by line and column
+          settings.global.excludes = [ "crates/pesto/test_data/**" ];
+        };
+        
         packages = {
           # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
           #   # doCheck = false;
