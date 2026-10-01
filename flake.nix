@@ -7,7 +7,7 @@
     nix-master.url = "github:NixOS/nix/?ref=master";
 
     # --- Other flake inputs ---
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     systems.url = "github:nix-systems/triplet";
     flake-parts.url = "github:hercules-ci/flake-parts";

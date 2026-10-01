@@ -39,10 +39,8 @@ pub fn find_type(content: &str) -> Option<String> {
                 }
             }
         }
-        NodeValue::CodeBlock(code_block) => {
-            if signature.is_none() && do_capture {
-                signature = Some(code_block.literal.clone());
-            }
+        NodeValue::CodeBlock(code_block) if signature.is_none() && do_capture => {
+            signature = Some(code_block.literal.clone());
         }
         _ => (),
     });
