@@ -47,10 +47,10 @@
               projectRootFile = "flake.nix";
               programs = {
                 nixfmt.enable = true;
-                # rustfmt = {
-                #   enable = true;
-                #   edition = "2021";
-                # };
+                rustfmt = {
+                  enable = true;
+                  edition = "2021";
+                };
                 # prettier.enable = true;
                 # ruff-format.enable = true;
               };

@@ -190,7 +190,10 @@ pub fn when_overridable_lambda(
                 }
                 let pos = pos.unwrap();
 
-                println!("Found function that is wrapped in lib.makeOverridable: {:?}. Trying to infer original lambda. From {:?}", &doc.path, &pos);
+                println!(
+                    "Found function that is wrapped in lib.makeOverridable: {:?}. Trying to infer original lambda. From {:?}",
+                    &doc.path, &pos
+                );
 
                 let package_file_idx = file_idx_map.get(&pos.file).unwrap();
                 let node = package_file_idx.get_node_at_position(pos);
@@ -209,7 +212,10 @@ pub fn when_overridable_lambda(
                     .flatten();
 
                 if package_file.is_none() {
-                    println!("Could not find package file for {:?}; While trying to cover lib.makeOverridable case handling", &doc.path);
+                    println!(
+                        "Could not find package file for {:?}; While trying to cover lib.makeOverridable case handling",
+                        &doc.path
+                    );
                     return None;
                 }
                 let rel_package_file = package_file.unwrap();
