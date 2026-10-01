@@ -1,5 +1,13 @@
-{ inputs, ... }: {
-  perSystem = { self', inputs', pkgs, system, ... }:
+{ inputs, ... }:
+{
+  perSystem =
+    {
+      self',
+      inputs',
+      pkgs,
+      system,
+      ...
+    }:
     let
       craneLib = inputs.crane.lib.${system};
 
@@ -18,10 +26,13 @@
 
       cargoArtifacts = craneLib.buildDepsOnly commonArgs;
 
-      pesto = craneLib.buildPackage (commonArgs // {
-        inherit cargoArtifacts;
-        cargoExtraArgs = "--package pesto";
-      });
+      pesto = craneLib.buildPackage (
+        commonArgs
+        // {
+          inherit cargoArtifacts;
+          cargoExtraArgs = "--package pesto";
+        }
+      );
 
       data-json = pkgs.stdenv.mkDerivation {
         name = "pesto-data";
@@ -33,15 +44,21 @@
 
       checks = {
         inherit pesto;
-        pesto-clippy = craneLib.cargoClippy (commonArgs // {
-          inherit cargoArtifacts;
-          cargoClippyExtraArgs = "--all-targets --workspace -- --deny warnings";
-        });
-        pesto-nextest = craneLib.cargoNextest (commonArgs // {
-          inherit cargoArtifacts;
-          partitions = 1;
-          partitionType = "count";
-        });
+        pesto-clippy = craneLib.cargoClippy (
+          commonArgs
+          // {
+            inherit cargoArtifacts;
+            cargoClippyExtraArgs = "--all-targets --workspace -- --deny warnings";
+          }
+        );
+        pesto-nextest = craneLib.cargoNextest (
+          commonArgs
+          // {
+            inherit cargoArtifacts;
+            partitions = 1;
+            partitionType = "count";
+          }
+        );
       };
     in
     {

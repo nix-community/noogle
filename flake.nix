@@ -19,48 +19,54 @@
     crane.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ flake-parts, systems, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
-      systems = import systems;
-      imports = [
-        inputs.treefmt-nix.flakeModule
-        ./devShell.nix
-        ./website/flake-module.nix
-        ./salt/flake-module.nix
-        ./pasta/flake-module.nix
-        ./crates/pesto/flake-module.nix
-        ./crates/noogle-types/flake-module.nix
-        #
-        ./nixPlugin/flake-module.nix
-      ];
+  outputs =
+    inputs@{ flake-parts, systems, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      { ... }:
+      {
+        systems = import systems;
+        imports = [
+          inputs.treefmt-nix.flakeModule
+          ./devShell.nix
+          ./website/flake-module.nix
+          ./salt/flake-module.nix
+          ./pasta/flake-module.nix
+          ./crates/pesto/flake-module.nix
+          ./crates/noogle-types/flake-module.nix
+          #
+          ./nixPlugin/flake-module.nix
+        ];
 
-      flake = {
-        inherit inputs;
-      };
-      perSystem = { inputs', ... }: {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs = {
-            # nixfmt.enable = true;
-            # rustfmt = {
-            #   enable = true;
-            #   edition = "2021";
-            # };
-            # prettier.enable = true;
-            # ruff-format.enable = true;
+        flake = {
+          inherit inputs;
+        };
+        perSystem =
+          { inputs', ... }:
+          {
+            treefmt = {
+              projectRootFile = "flake.nix";
+              programs = {
+                nixfmt.enable = true;
+                # rustfmt = {
+                #   enable = true;
+                #   edition = "2021";
+                # };
+                # prettier.enable = true;
+                # ruff-format.enable = true;
+              };
+              # pesto indexes these fixtures by line and column
+              settings.global.excludes = [ "crates/pesto/test_data/**" ];
+            };
+
+            packages = {
+              # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
+              #   # doCheck = false;
+              #   mesonFlags = prev.mesonFlags or [] ++ [
+              #     "-Dunit-tests=false"
+              #   ];
+              # });
+            };
           };
-          # pesto indexes these fixtures by line and column
-          settings.global.excludes = [ "crates/pesto/test_data/**" ];
-        };
-        
-        packages = {
-          # nix = inputs'.nix-master.packages.nix-cli.overrideAttrs (prev: {
-          #   # doCheck = false;
-          #   mesonFlags = prev.mesonFlags or [] ++ [
-          #     "-Dunit-tests=false"
-          #   ];
-          # });
-        };
-      };
-    });
+      }
+    );
 }

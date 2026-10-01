@@ -1,6 +1,7 @@
-{ pkgs
-, nix
-, system
+{
+  pkgs,
+  nix,
+  system,
 }:
 pkgs.llvmPackages.stdenv.mkDerivation {
   name = "noogle-plugin";
