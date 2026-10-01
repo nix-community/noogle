@@ -68,12 +68,11 @@ pub fn find_aliases(item: &Docs, list: &Vec<&Docs>) -> AliasList {
                         // - same isPrimop
                         // - same name
                         // It is very likely a real alias
-                        if s_meta.count_applied != Some(0) {
-                            if item.path.last() == other.path.last() {
+                        if s_meta.count_applied != Some(0)
+                            && item.path.last() == other.path.last() {
                                 // dbg!("ADDING Fallback ALIAS", &item.path);
                                 return Some(other.path.clone());
                             }
-                        }
 
                         None
                     }
@@ -127,14 +126,14 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories<'_> {
                     // Some(0) | None => {
                     Some(0) => {
                         if lambda.is_primop {
-                            primop_lambdas.push(&item);
+                            primop_lambdas.push(item);
                         }
                         if !lambda.is_primop {
-                            non_primop_lambdas.push(&item);
+                            non_primop_lambdas.push(item);
                         }
                     }
                     _ => {
-                        partially_applieds.push(&item);
+                        partially_applieds.push(item);
                     }
                 }
                 continue;
@@ -143,14 +142,14 @@ pub fn categorize(data: &Vec<Docs>) -> FnCategories<'_> {
                 // Some(0) | None => {
                 Some(0) => {
                     if lambda.is_primop {
-                        primop_lambdas.push(&item);
+                        primop_lambdas.push(item);
                     }
                     if !lambda.is_primop {
-                        non_primop_lambdas.push(&item);
+                        non_primop_lambdas.push(item);
                     }
                 }
                 _ => {
-                    partially_applieds.push(&item);
+                    partially_applieds.push(item);
                 }
             }
         }
@@ -185,23 +184,23 @@ pub fn init_alias_map(data: &Vec<Docs>, categories: FnCategories) -> AliasMap {
             match lambda.count_applied {
                 Some(0) => {
                     if lambda.is_primop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &primop_lambdas));
+                        alias_map.insert(item.path.clone(), find_aliases(item, &primop_lambdas));
                     }
                     if !lambda.is_primop {
                         alias_map
-                            .insert(item.path.clone(), find_aliases(&item, &non_primop_lambdas));
+                            .insert(item.path.clone(), find_aliases(item, &non_primop_lambdas));
                     }
                 }
                 None => {
                     if lambda.is_primop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &primops));
+                        alias_map.insert(item.path.clone(), find_aliases(item, &primops));
                     }
                     if !lambda.is_primop {
-                        alias_map.insert(item.path.clone(), find_aliases(&item, &non_primops));
+                        alias_map.insert(item.path.clone(), find_aliases(item, &non_primops));
                     }
                 }
                 Some(_) => {
-                    alias_map.insert(item.path.clone(), find_aliases(&item, &partially_applieds));
+                    alias_map.insert(item.path.clone(), find_aliases(item, &partially_applieds));
                 }
             };
         }

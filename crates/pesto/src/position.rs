@@ -91,7 +91,7 @@ fn filter_path_from_apply(apply: &SyntaxNode) -> Option<SyntaxNode> {
                 rnix::SyntaxKind::NODE_IDENT => {
                     // If the first child is callPackage.
                     // Assume CallPackage takes a second argument, which is the next node.
-                    if node.text().to_string() == "callPackage" {
+                    if node.text() == "callPackage" {
                         return node.next_sibling();
                     }
                     None
@@ -114,13 +114,13 @@ where
     F: Fn(&SyntaxNode) -> bool,
 {
     if pred(node) {
-        return true;
+        true
     } else if curr < limit {
         node.parent()
             .map(|parent| check_outwards(&parent, pred, limit, curr + 1))
             .unwrap_or(false)
     } else {
-        return false;
+        false
     }
 }
 
@@ -131,7 +131,7 @@ fn match_attrpath_ident(node: &SyntaxNode, text: &str) -> bool {
                 .first_child()
                 .and_then(|attrpath| attrpath.first_child());
             if let Some(ident) = maybe_ident {
-                ident.text().to_string() == text
+                ident.text() == text
             } else {
                 false
             }
@@ -151,16 +151,10 @@ pub fn when_overridable_lambda(
                 return None;
             }
 
-            if content.source.is_none() {
-                // println!("Could not find source position for {:?}", &doc.path);
-                return None;
-            }
+            content.source.as_ref()?;
             let position = content.source.unwrap().position;
 
-            if position.is_none() {
-                // println!("Could not find source position for {:?}", &doc.path);
-                return None;
-            }
+            position?;
 
             let position = position.unwrap();
             let doc_index = file_idx_map.get(&position.file);
@@ -171,8 +165,8 @@ pub fn when_overridable_lambda(
                     node.unwrap(),
                     |node| match node.kind() {
                         rnix::SyntaxKind::NODE_ATTRPATH_VALUE => {
-                            let check = match_attrpath_ident(node, "makeOverridable");
-                            check
+                            
+                            match_attrpath_ident(node, "makeOverridable")
                         }
                         _ => false,
                     },
@@ -199,17 +193,16 @@ pub fn when_overridable_lambda(
                 let node = package_file_idx.get_node_at_position(pos);
                 let package_file = node
                     .as_ref()
-                    .map(|node| {
+                    .and_then(|node| {
                         let is_node = match_attrpath_ident(node, doc.path.last().unwrap());
                         if !is_node {
                             println!("Could not find node for {:?}", doc.path.last().unwrap());
                             return None;
                         }
                         let path = get_call_package_file(Some(node));
-                        let package_file = path.map(|v| v.text().to_string());
-                        package_file
-                    })
-                    .flatten();
+                        
+                        path.map(|v| v.text().to_string())
+                    });
 
                 if package_file.is_none() {
                     println!(
@@ -223,7 +216,7 @@ pub fn when_overridable_lambda(
                 let resolved_path = pos
                     .file
                     .parent()
-                    .map(|parent_path| {
+                    .and_then(|parent_path| {
                         parent_path
                             .join(rel_package_file)
                             .canonicalize()
@@ -235,9 +228,8 @@ pub fn when_overridable_lambda(
                                     p.join("default.nix")
                                 }
                             })
-                    })
-                    .flatten();
-                return resolved_path;
+                    });
+                resolved_path
             } else {
                 None
             }
@@ -265,20 +257,17 @@ fn init_pos_idx(
 
     let mut curr_position = 0;
     for (curr_line, line) in reader.lines().enumerate() {
-        match line {
-            Ok(line) => {
-                if let Some(cols) = positions.get(&(curr_line + 1)) {
-                    cols.iter().for_each(|col| {
-                        let lc_tuple = (curr_line + 1, *col);
-                        let absolute =
-                            TextSize::from(u32::try_from(curr_position + col - 1).unwrap());
-                        res.insert(lc_tuple, absolute);
-                        inverse.insert(absolute, lc_tuple);
-                    });
-                }
-                curr_position += line.len() + 1;
+        if let Ok(line) = line {
+            if let Some(cols) = positions.get(&(curr_line + 1)) {
+                cols.iter().for_each(|col| {
+                    let lc_tuple = (curr_line + 1, *col);
+                    let absolute =
+                        TextSize::from(u32::try_from(curr_position + col - 1).unwrap());
+                    res.insert(lc_tuple, absolute);
+                    inverse.insert(absolute, lc_tuple);
+                });
             }
-            _ => {}
+            curr_position += line.len() + 1;
         }
     }
     (res, inverse)
@@ -293,11 +282,10 @@ pub fn get_overridable_fn(file: &PathBuf) -> Option<SyntaxNode> {
     let rc: Rc<String> = Rc::new(src);
     let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
     get_call_package_lambda_body(&ast)
-        .map(|body| {
+        .and_then(|body| {
             let maybe_wrapped_lambda = get_apply_make_overridable_body(&body);
             maybe_wrapped_lambda.map(|l| unpack_lambda(&l))
         })
-        .flatten()
         .flatten()
 }
 
@@ -346,8 +334,7 @@ fn unpack_lambda(node: &SyntaxNode) -> Option<SyntaxNode> {
                     rnix::SyntaxKind::NODE_APPLY => node
                         .first_child()
                         .as_ref()
-                        .map(|n| unpack_lambda(n))
-                        .flatten(),
+                        .and_then(unpack_lambda),
                     rnix::SyntaxKind::NODE_PAREN
                     | rnix::SyntaxKind::NODE_SELECT
                     | rnix::SyntaxKind::NODE_IDENT
@@ -458,19 +445,17 @@ fn init_node_idx(
         match ev {
             WalkEvent::Enter(node) => {
                 let cursor = node.text_range().start();
-                if let Some(_) = pos.get(&cursor) {
-                    if res.get(&cursor).is_none() {
+                if pos.get(&cursor).is_some()
+                    && res.get(&cursor).is_none() {
                         res.insert(cursor, Some(node));
                     }
-                }
             }
             WalkEvent::Leave(node) => {
                 let cursor = node.text_range().end();
-                if let Some(_) = pos.get(&cursor) {
-                    if res.get(&cursor).is_none() {
+                if pos.get(&cursor).is_some()
+                    && res.get(&cursor).is_none() {
                         res.insert(cursor, Some(node));
                     }
-                }
             }
         }
     }
@@ -484,15 +469,15 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
 
         let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
 
-        let (pos_idx, inverse_pos_idx) = init_pos_idx(&file, positions);
+        let (pos_idx, inverse_pos_idx) = init_pos_idx(file, positions);
 
         let node_idx = init_node_idx(&ast, &inverse_pos_idx);
 
-        return Self {
+        Self {
             file,
             pos_idx,
             node_idx,
-        };
+        }
     }
 
     fn get_docs(&self, line: usize, column: usize) -> Option<NixDocComment> {
@@ -510,8 +495,8 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
             if let Some(Some(expr)) = expr {
                 let doc = match expr.kind() {
                     rnix::SyntaxKind::NODE_LAMBDA => {
-                        let (_outer_lambda, count_applied) = get_parent_lambda(&expr);
-                        let res = get_expr_docs(&expr);
+                        let (_outer_lambda, count_applied) = get_parent_lambda(expr);
+                        let res = get_expr_docs(expr);
 
                         if res.is_none() {
                             NixDocComment {
@@ -528,7 +513,7 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                         }
                     }
                     _ => {
-                        let res = get_expr_docs(&expr);
+                        let res = get_expr_docs(expr);
 
                         if res.is_none() {
                             NixDocComment {
@@ -548,7 +533,7 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
                 return Some(doc);
             }
         }
-        return None;
+        None
     }
 
     fn get_node_at_position(&self, position: &'a FilePosition) -> &Option<SyntaxNode> {
@@ -562,9 +547,8 @@ impl<'a> DocComment<'a> for DocIndex<'a> {
         let res = self
             .pos_idx
             .get(&(position.line, position.column))
-            .map(|idx| self.node_idx.get(&idx))
-            .flatten();
-        return res.unwrap_or(&None);
+            .and_then(|idx| self.node_idx.get(idx));
+        res.unwrap_or(&None)
     }
 }
 
@@ -589,7 +573,7 @@ fn get_parent_lambda(expr: &SyntaxNode) -> (SyntaxNode, usize) {
             None => break,
         }
     }
-    return (res, count_outer_lambda);
+    (res, count_outer_lambda)
 }
 
 fn peek_parent_lambda(expr: &SyntaxNode) -> Option<SyntaxNode> {

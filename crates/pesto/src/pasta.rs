@@ -74,26 +74,26 @@ pub trait Lookups<'a> {
     ///
     /// Partially applied functions still cary the underlying documentation which is wrong.
     /// This inherited (but wrong) documentation is discarded
-    fn lambda_content(self: &'a Self) -> Option<ContentSource<'a>>;
+    fn lambda_content(&'a self) -> Option<ContentSource<'a>>;
 
     /// Return the docs of the first alias with docs.
     ///
     /// Only look at the aliases with content in the following order.
     /// Return content from an alias with (1) attribute content, or (2) lambda content.
     fn fst_alias_content(
-        self: &'a Self,
+        &'a self,
         data: &'a HashMap<Rc<ValuePath>, Docs>,
     ) -> Option<ContentSource<'a>>;
 }
 
 impl<'a> Lookups<'a> for Docs {
-    fn lambda_content(self: &'a Self) -> Option<ContentSource<'a>> {
+    fn lambda_content(&'a self) -> Option<ContentSource<'a>> {
         self.docs
             .lambda
             .as_ref()
-            .map(|i| {
+            .and_then(|i| {
                 if i.count_applied == Some(0)
-                    || (i.count_applied == None && i.is_primop)
+                    || (i.count_applied.is_none() && i.is_primop)
                     || (i.count_applied == Some(1) && i.is_functor == Some(true))
                 {
                     Some(ContentSource {
@@ -108,11 +108,10 @@ impl<'a> Lookups<'a> for Docs {
                     None
                 }
             })
-            .flatten()
     }
 
     fn fst_alias_content(
-        self: &'a Self,
+        &'a self,
         data: &'a HashMap<Rc<ValuePath>, Docs>,
     ) -> Option<ContentSource<'a>> {
         match &self.aliases {
@@ -120,14 +119,14 @@ impl<'a> Lookups<'a> for Docs {
                 let x = aliases.iter().find_map(|alias_path| {
                     let alias_docs = data
                         .get(alias_path)
-                        .map(|i| {
+                        .and_then(|i| {
                             if i.docs.attr.content.is_some()
                                 && !i.docs.attr.content.as_ref().unwrap().is_empty()
                             {
                                 Some(ContentSource {
                                     content: i.docs.attr.content.as_ref().map(|inner| {
-                                        let fmt = dedent(inner);
-                                        fmt
+                                        
+                                        dedent(inner)
                                     }),
                                     source: Some(SourceOrigin {
                                         position: i.docs.attr.position.as_ref(),
@@ -138,8 +137,7 @@ impl<'a> Lookups<'a> for Docs {
                             } else {
                                 None
                             }
-                        })
-                        .flatten();
+                        });
                     alias_docs
                 });
                 x
@@ -160,17 +158,17 @@ pub trait Files {
 
 impl<'a> Files for Pasta {
     fn from_file(path: &PathBuf) -> Vec<Docs> {
-        let raw = fs::read_to_string(&path);
+        let raw = fs::read_to_string(path);
         match raw {
             Ok(content) => match serde_json::from_str(&content) {
                 Ok(data) => data,
                 Err(e) => {
-                    println!("Error could not parse data. {}", e.to_string());
+                    println!("Error could not parse data. {}", e);
                     exit(1);
                 }
             },
             Err(e) => {
-                println!("Could not read input file: {:?} {}", path, e.to_string());
+                println!("Could not read input file: {:?} {}", path, e);
                 exit(1);
             }
         }

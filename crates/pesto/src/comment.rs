@@ -63,11 +63,7 @@ pub fn get_expr_docs(expr: &SyntaxNode) -> Option<(String, SyntaxNode)> {
                 ast::AttrpathValue(_) => {
                     if let Some(doc_comment) = get_doc_comment(parent) {
                         doc_comment.doc_text().map(|v| (v.to_owned(), parent.clone()))
-                    }else if let Some(comment) = get_comment(parent) {
-                        Some((comment.text().to_owned(),parent.clone()))
-                    } else {
-                        None
-                    }
+                    }else { get_comment(parent).map(|comment| (comment.text().to_owned(),parent.clone())) }
                 },
                 _ => {
                     // Yet unhandled ast-nodes
