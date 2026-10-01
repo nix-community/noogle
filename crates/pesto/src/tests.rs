@@ -43,43 +43,40 @@ mod tests {
         let contents: Vec<TestContent> = data
             .docs
             .iter()
-            .map(|ref i| {
+            .map(|i| {
                 let document = &Document::new(i, &data.doc_map);
-                return TestContent {
+                TestContent {
                     name: document.meta.path.join("."),
                     content: document
                         .content
                         .as_ref()
-                        .map(|inner| inner.content.as_ref().map(|i| i.clone()))
-                        .flatten(),
-                };
+                        .and_then(|inner| inner.content.clone()),
+                }
             })
             .collect();
-        return contents;
+        contents
     }
     fn docs_to_test_source(data: &Pasta) -> Vec<TestSource> {
         let contents: Vec<TestSource> = data
             .docs
             .iter()
-            .map(|ref i| {
+            .map(|i| {
                 let document = &Document::new(i, &data.doc_map);
-                return TestSource {
+                TestSource {
                     name: document.meta.path.join("."),
                     source: document
                         .content
                         .as_ref()
-                        .map(|inner| {
+                        .and_then(|inner| {
                             inner
                                 .source
                                 .as_ref()
-                                .map(|i| i.path.map(|p| p.join(".")))
-                                .flatten()
-                        })
-                        .flatten(),
-                };
+                                .and_then(|i| i.path.map(|p| p.join(".")))
+                        }),
+                }
             })
             .collect();
-        return contents;
+        contents
     }
 
     #[test]
@@ -154,7 +151,7 @@ mod tests {
     #[test]
     fn test_type_from_markdown() {
         dir_tests("types", "md", |path| {
-            let markdown = fs::read_to_string(&path).unwrap();
+            let markdown = fs::read_to_string(path).unwrap();
             let signature = find_type(&markdown);
             format!("{:#?}", signature)
         })

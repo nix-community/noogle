@@ -88,24 +88,23 @@ pub fn main() {
 
         let mut json_list: Vec<Document> = vec![];
         for item in data.docs.iter() {
-            let mut document = Document::new(&item, &data.doc_map);
+            let mut document = Document::new(item, &data.doc_map);
             if let Some(ref language_data) = language_data {
                 let content_from = &document
                     .content
                     .as_ref()
-                    .map(|c| c.source.as_ref().map(|s| s.path))
-                    .flatten()
+                    .and_then(|c| c.source.as_ref().map(|s| s.path))
                     .flatten();
                 // Maybe replace the content
                 // Only if the content_meta includes "builtins"
                 if Some(true) == content_from.map(|p| p.contains(&String::from("builtins"))) {
                     let new_content = language_data.iter().find(|p| {
-                        Some(p.0) == document.meta.primop_meta.as_ref().map(|m| m.name).flatten()
+                        Some(p.0) == document.meta.primop_meta.as_ref().and_then(|m| m.name)
                             && document.meta.count_applied == Some(0)
                     });
                     if let Some(new_content) = new_content {
                         document.content = Some(ContentSource {
-                            source: document.content.clone().map(|c| c.source).flatten(),
+                            source: document.content.clone().and_then(|c| c.source),
                             content: Some(new_content.1.doc.clone()),
                         })
                     }
@@ -139,12 +138,12 @@ pub fn find_document_content<'a>(
                 pos_type: Some(PositionType::Attribute),
             }),
         }),
-        _ => match item.fst_alias_content(&all) {
+        _ => match item.fst_alias_content(all) {
             Some(d) => Some(d),
             None => item.lambda_content(),
         },
     };
-    return content;
+    content
 }
 
 #[derive(Serialize, Debug, Clone)]
@@ -182,15 +181,14 @@ pub trait FromDocs<'a> {
 
 impl<'a> FromDocs<'a> for Document<'a> {
     fn new(item: &'a Docs, data: &'a HashMap<Rc<ValuePath>, Docs>) -> Self {
-        let content = find_document_content(item, &data);
+        let content = find_document_content(item, data);
         Self {
             meta: DocumentFrontmatter {
                 signature: content
                     .as_ref()
-                    .map(|c| c.content.as_ref().map(|s| find_type(s)))
-                    .flatten()
+                    .and_then(|c| c.content.as_ref().map(|s| find_type(s)))
                     .flatten(),
-                content_meta: content.as_ref().map(|inner| inner.source.clone()).flatten(),
+                content_meta: content.as_ref().and_then(|inner| inner.source.clone()),
                 title: item.path.join(".").replace("'", "' (Prime)"),
                 path: &item.path,
                 aliases: item.aliases.as_ref(),
@@ -200,12 +198,11 @@ impl<'a> FromDocs<'a> for Document<'a> {
                     .docs
                     .lambda
                     .as_ref()
-                    .map(|i| i.position.as_ref())
-                    .flatten(),
-                lambda_expr: item.docs.lambda.as_ref().map(|i| i.expr.as_ref()).flatten(),
+                    .and_then(|i| i.position.as_ref()),
+                lambda_expr: item.docs.lambda.as_ref().and_then(|i| i.expr.as_ref()),
                 is_primop: item.docs.lambda.as_ref().map(|i| i.is_primop),
-                is_functor: item.docs.lambda.as_ref().map(|i| i.is_functor).flatten(),
-                count_applied: item.docs.lambda.as_ref().map(|i| i.count_applied).flatten(),
+                is_functor: item.docs.lambda.as_ref().and_then(|i| i.is_functor),
+                count_applied: item.docs.lambda.as_ref().and_then(|i| i.count_applied),
                 primop_meta: match &item.docs.lambda {
                     None => None,
                     Some(lambda) if lambda.is_primop => Some(PrimopMatter {

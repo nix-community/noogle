@@ -45,7 +45,7 @@ fn build_file_map(data: &Vec<Docs>) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> 
                 position,
                 LookupReason {
                     // docs: doc_item,
-                    position: position,
+                    position,
                     // field: FieldType::Attr,
                 },
             );
@@ -57,7 +57,7 @@ fn build_file_map(data: &Vec<Docs>) -> HashMap<&PathBuf, Vec<LookupReason<'_>>> 
                     position,
                     LookupReason {
                         // docs: doc_item,
-                        position: position,
+                        position,
                         // field: FieldType::Lambda,
                     },
                 );
