@@ -1,9 +1,9 @@
 { inputs, ... }:
 {
   perSystem =
-    { self', system, ... }:
+    { self', pkgs, ... }:
     let
-      craneLib = inputs.crane.lib.${system};
+      craneLib = inputs.crane.mkLib pkgs;
     in
     {
       devShells.default = craneLib.devShell {

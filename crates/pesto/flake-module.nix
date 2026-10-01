@@ -9,7 +9,7 @@
       ...
     }:
     let
-      craneLib = inputs.crane.lib.${system};
+      craneLib = inputs.crane.mkLib pkgs;
 
       # Source is the workspace root (includes Cargo.toml, crates/)
       src = craneLib.cleanCargoSource (craneLib.path ./../..);

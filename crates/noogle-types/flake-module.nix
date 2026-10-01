@@ -3,7 +3,7 @@
   perSystem =
     { pkgs, system, ... }:
     let
-      craneLib = inputs.crane.lib.${system};
+      craneLib = inputs.crane.mkLib pkgs;
 
       # Workspace root so Cargo.lock and siblings are visible.
       src = craneLib.cleanCargoSource (craneLib.path ./../..);
