@@ -68,7 +68,7 @@ pub fn get_call_package_file(node: Option<&SyntaxNode>) -> Option<SyntaxNode> {
                             _ => {
                                 // callPackage ./path/file.nix {}
                                 // Maybe the path is a dynamic expression which is non-trivial to resolve?
-                                println!("Could not find path in apply {:?}", &node);
+                                println!("Could not find path in apply {:?}", node);
                                 None
                             }
                         }
@@ -174,19 +174,19 @@ pub fn when_overridable_lambda(
                     0,
                 );
                 if !is_in_overridable {
-                    println!("function is not wrapped in makeOverridable {:?}", &doc.path);
+                    println!("function is not wrapped in makeOverridable {:?}", doc.path);
                     return None;
                 }
                 let pos = &doc.docs.attr.position.as_ref();
                 if pos.is_none() {
-                    println!("Could not find source position for {:?}", &doc.path);
+                    println!("Could not find source position for {:?}", doc.path);
                     return None;
                 }
                 let pos = pos.unwrap();
 
                 println!(
                     "Found function that is wrapped in lib.makeOverridable: {:?}. Trying to infer original lambda. From {:?}",
-                    &doc.path, &pos
+                    doc.path, pos
                 );
 
                 let package_file_idx = file_idx_map.get(&pos.file).unwrap();
@@ -205,7 +205,7 @@ pub fn when_overridable_lambda(
                 if package_file.is_none() {
                     println!(
                         "Could not find package file for {:?}; While trying to cover lib.makeOverridable case handling",
-                        &doc.path
+                        doc.path
                     );
                     return None;
                 }
@@ -271,7 +271,7 @@ fn init_pos_idx(
 /// Reads the whole file and iterates over the AST
 /// Returns a SyntaxNode if found
 pub fn get_overridable_fn(file: &PathBuf) -> Option<SyntaxNode> {
-    println!("get_overridable_fn from {:?}", &file);
+    println!("get_overridable_fn from {:?}", file);
     let src: String = get_src(file);
     let rc: Rc<String> = Rc::new(src);
     let ast = rnix::Root::parse(Rc::clone(&rc).as_str()).syntax();
