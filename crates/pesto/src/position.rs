@@ -30,10 +30,16 @@ pub struct FilePosition {
     pub column: usize,
 }
 
+/// Absolute offset of each indexed (line, column) pair in a file.
+pub type PosIdx = HashMap<(usize, usize), TextSize>;
+
+/// The (line, column) pair behind each indexed absolute offset.
+pub type InversePosIdx = HashMap<TextSize, (usize, usize)>;
+
 #[derive(Debug, Clone)]
 pub struct DocIndex<'a> {
     file: &'a Path,
-    pos_idx: HashMap<(usize, usize), TextSize>,
+    pos_idx: PosIdx,
     node_idx: HashMap<TextSize, Option<SyntaxNode>>,
 }
 
@@ -236,16 +242,9 @@ pub fn when_overridable_lambda(
 /// Returns both
 /// Position HashMap from l:c -> abs
 /// Reverse Position HashMap from abs -> l:c
-#[allow(clippy::type_complexity)]
-fn init_pos_idx(
-    path: &Path,
-    positions: HashMap<usize, Vec<usize>>,
-) -> (
-    HashMap<(usize, usize), TextSize>,
-    HashMap<TextSize, (usize, usize)>,
-) {
+fn init_pos_idx(path: &Path, positions: HashMap<usize, Vec<usize>>) -> (PosIdx, InversePosIdx) {
     let mut res = HashMap::new();
-    let mut inverse: HashMap<TextSize, (usize, usize)> = HashMap::new();
+    let mut inverse: InversePosIdx = HashMap::new();
 
     let file = File::open(path).unwrap();
     let reader = BufReader::new(file);
@@ -428,10 +427,7 @@ fn get_apply_make_overridable_body(body: &SyntaxNode) -> Option<SyntaxNode> {
 
 // Take a list of lookup operations
 // Since iterating over the AST can be expensive
-fn init_node_idx(
-    ast: &SyntaxNode,
-    pos: &HashMap<TextSize, (usize, usize)>,
-) -> HashMap<TextSize, Option<SyntaxNode>> {
+fn init_node_idx(ast: &SyntaxNode, pos: &InversePosIdx) -> HashMap<TextSize, Option<SyntaxNode>> {
     let mut res: HashMap<TextSize, Option<SyntaxNode>> = HashMap::new();
 
     for ev in ast.preorder() {
