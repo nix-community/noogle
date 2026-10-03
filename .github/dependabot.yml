@@ -4,8 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    # `default-days` must be 1-90, so the only way to opt out of the
+    # default 3-day cooldown is to exclude every dependency from it.
     cooldown:
-      default-days: 0
+      exclude:
+        - "*"
     allow:
       - dependency-name: "nixpkgs-master"
       - dependency-name: "nix-master"
