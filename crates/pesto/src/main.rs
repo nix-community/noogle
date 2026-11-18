@@ -38,13 +38,13 @@ struct Options {
 
     /// Path to the *.nix file that should be inspected.
     /// If provided, --line and --column must also be set.
-    #[arg(long, requires_all=["line", "column", "file"])]
+    #[arg(long, requires_all=["line", "column"])]
     file: Option<PathBuf>,
     /// Line of the expression.
-    #[arg(short, long, requires_all=["line", "column", "file"])]
+    #[arg(short, long, requires_all=["column", "file"])]
     line: Option<usize>,
     /// Column of the expression.
-    #[arg(short, long, requires_all=["line", "column", "file"])]
+    #[arg(short, long, requires_all=["line", "file"])]
     column: Option<usize>,
 }
 
